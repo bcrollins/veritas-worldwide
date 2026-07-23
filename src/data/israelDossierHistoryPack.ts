@@ -2519,6 +2519,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-women-killed-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['mk84-use', 'artillery-use', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Women Killed — Multi-Source Wartime Floor (2023–2025)',
+    date: 'October 2023 – 2025 (women cohort)',
+    location: 'Gaza Strip',
+    summary:
+      'UN Women, OHCHR, and multi-source reporting document women as a large share of Palestinian civilian fatalities in the Gaza war. Pattern card for the women-killed wartime floor, complementary to children and elderly/disabled cohort cards.',
+    evidence:
+      'UN Women statements, multi-source sex-disaggregated fatality reporting, and OHCHR materials establish elevated female civilian deaths. Exact totals evolve; multi-source magnitude is the claim.',
+    sources: [
+      { label: 'UN Women public statements — Gaza', url: 'https://www.unwomen.org' },
+      { label: 'OHCHR OPT materials', url: 'https://www.ohchr.org/en/countries/palestine' },
+      { label: 'Multi-outlet sex-disaggregated casualty coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UN Women public materials', url: 'https://www.unwomen.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 10000 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3551,6 +3578,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-orphan-crisis-pattern-2023-2025', 'gaza-children-killed-pattern-2023-2025'],
     tags: ['children', 'orphans', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-women-killed-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Women Killed — Multi-Source Wartime Floor',
+    description: 'UN Women/OHCHR multi-source documentation of large female civilian fatality share.',
+    source: 'UN Women / OHCHR',
+    sourceUrl: 'https://www.unwomen.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-women-killed-pattern-2023-2025', 'gaza-children-killed-pattern-2023-2025'],
+    tags: ['women', 'civilians', 'gaza', 'casualties'],
   },
 
 ]
