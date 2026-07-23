@@ -39,6 +39,7 @@ const PREVIEW_ASSETS = [
   { label: 'Bluesky Banner', href: '/brand-kit/04-social/bluesky-banner.svg', bg: 'bg-black' },
   { label: 'Discord Invite', href: '/brand-kit/04-social/discord-invite.svg', bg: 'bg-black' },
   { label: 'Citation Card', href: '/brand-kit/04-social/citation-card.svg', bg: 'bg-parchment' },
+  { label: 'Pinterest Pin', href: '/brand-kit/04-social/pinterest-pin.svg', bg: 'bg-black' },
 ]
 
 const TOKEN_SWATCHES = [
@@ -427,6 +428,14 @@ export default function AdminBrandKit() {
             className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
           >
             Correction template →
+          </a>
+          <a
+            href="/brand-kit/07-docs/SOCIAL-LAUNCH.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Social launch checklist →
           </a>
           <a
             href="/brand-kit/07-docs/brand-do-dont.svg"
