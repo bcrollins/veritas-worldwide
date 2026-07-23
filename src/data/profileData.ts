@@ -6677,6 +6677,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'stefanik-fulton-140k-ineligible-voters-jan6-2021',
+        statement:
+          'In Georgia, “more than 140,000 votes came from underage, deceased and otherwise unauthorized voters — in Fulton County alone.”',
+        saidAt: 'January 6, 2021',
+        context:
+          'House floor objection remarks and open letter objecting to certain electors; repeated as a justification for challenging Georgia’s 2020 electoral votes.',
+        whyFalse:
+          'CNN Fact Check and contemporaneous Georgia SOS rebuttal: the claim is false. PolitiFact/AFP had already debunked related “~132,000 ineligible Fulton ballots” viral claims. Georgia SOS (Raffensperger) reported no underage voters (age is known from registration) and only two votes statewide credited to deceased voters after review — not 140,000 in one county (~¼ of Fulton ballots).',
+        correction:
+          'Fulton County did not cast 140,000 ballots from underage, dead, or otherwise unauthorized voters; state election officials found the claim ludicrous against registration and audit data.',
+        statementSource: 'Rep. Elise Stefanik House floor remarks objecting to electors (Jan. 6, 2021)',
+        statementUrl:
+          'https://stefanik.house.gov/media-center/press-releases/stefanik-house-floor-remarks-objecting-certain-electors',
+        debunkSource: 'CNN Fact Check (May 6, 2021); Georgia SOS Raffensperger office; PolitiFact Fulton ineligible-ballot viral claim debunk',
+        debunkUrl: 'https://www.cnn.com/2021/05/06/politics/fact-check-stefanik-big-lie-election-trump',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://stefanik.house.gov' },
@@ -6686,6 +6705,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — H.R. 1 voter rolls (False)',
         url: 'https://www.politifact.com/factchecks/2021/mar/04/elise-stefanik/gop-lawmaker-misleads-about-hr-1-and-removal-ineli/',
+      },
+      {
+        label: 'CNN — Stefanik Fulton 140k claim (False)',
+        url: 'https://www.cnn.com/2021/05/06/politics/fact-check-stefanik-big-lie-election-trump',
       },
       {
         label: 'PolitiFact — laptop poll 53% claim (False)',

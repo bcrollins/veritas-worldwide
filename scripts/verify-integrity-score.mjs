@@ -594,14 +594,17 @@ for (const f of (gaetzP.documentedFalsehoods || []).filter((x) => x.tier === 've
 
 // Elise Stefanik integrity gate
 const stefanik = scores['elise-stefanik'];
-if (!stefanik || stefanik.n < 2) throw new Error('elise-stefanik needs ≥2 verified falsehoods, got ' + (stefanik?.n ?? 0));
-if (stefanik.score > 75) throw new Error('elise-stefanik score expected ≤75, got ' + stefanik.score);
+if (!stefanik || stefanik.n < 3) throw new Error('elise-stefanik needs ≥3 verified falsehoods, got ' + (stefanik?.n ?? 0));
+if (stefanik.score > 50) throw new Error('elise-stefanik score expected ≤50 after densify, got ' + stefanik.score);
 const stefanikP = getProfileBySlug('elise-stefanik');
-if (!(stefanikP.documentedFalsehoods || []).some((f) => f.id === 'stefanik-hr1-prevent-removal-ineligible-voters-2021')) {
-  throw new Error('elise-stefanik missing H.R. 1 voter-roll docket id');
-}
-if (!(stefanikP.documentedFalsehoods || []).some((f) => f.id === 'stefanik-53-percent-laptop-changed-vote-2023')) {
-  throw new Error('elise-stefanik missing laptop poll 53% docket id');
+for (const id of [
+  'stefanik-hr1-prevent-removal-ineligible-voters-2021',
+  'stefanik-53-percent-laptop-changed-vote-2023',
+  'stefanik-fulton-140k-ineligible-voters-jan6-2021',
+]) {
+  if (!(stefanikP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('elise-stefanik missing docket id: ' + id);
+  }
 }
 for (const f of (stefanikP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('elise-stefanik dual-cite collision: ' + f.id);
