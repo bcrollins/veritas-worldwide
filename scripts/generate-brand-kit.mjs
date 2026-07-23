@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.9.1'
+const KIT_VERSION = '2.9.2'
 
 const C = {
   parchment: '#FAF8F5',
@@ -444,7 +444,7 @@ All paths are relative to \`https://veritasworldwide.com\`.
 | **Facebook Page** | profile PNG | \`social-banner-facebook.svg\` (820×312) | News/Media category |
 | **YouTube** | app-icon / social-profile | \`social-banner-youtube.svg\` (2560×1440) | @VeritasWorldwide |
 | **TikTok** | social-profile-400.png | N/A | @veritasworldwidepress |
-| **Pinterest** | social-profile | story or OG for pins | veritasworldwide |
+| **Pinterest** | social-profile | \`pinterest-pin.svg\` (1000×1500) | veritasworldwide |
 | **Substack / Newsletter** | logo-mark-512 | \`newsletter-header.svg\` (1200×400) | Weekly dispatch header |
 | **Podcast (Apple/Spotify)** | \`podcast-cover.svg\` / \`.png\` (1400×1400) | — | The Record cover art |
 | **X feed posts** | — | \`x-post-card.svg\` (1600×900) | Shareable documentary cards |
@@ -695,7 +695,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.1 — ${new Date().toISOString().slice(0, 10)}
+## 2.9.2 — ${new Date().toISOString().slice(0, 10)}
+- Pinterest pin template + SOCIAL-LAUNCH.md checklist
+
+## 2.9.1
 - Dedicated Media Kit Open Graph card (05-og/og-media-kit)
 
 ## 2.9.0
@@ -966,6 +969,59 @@ function ogMediaKitSvg() {
   <text x="230" y="420" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="${C.inkMuted}">Ultimate Brand Kit ZIP · veritasworldwide.com/media-kit</text>
   <text x="230" y="540" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" letter-spacing="3" fill="${C.gold}">VERITAS WORLDWIDE PRESS</text>
 </svg>`
+}
+
+
+function pinterestPinSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500" role="img" aria-label="Pinterest pin template">
+  <rect width="1000" height="1500" fill="${C.black}"/>
+  <rect x="0" y="0" width="1000" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="1492" width="1000" height="8" fill="${C.crimson}"/>
+  <text x="80" y="160" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5" fill="${C.gold}">THE RECORD</text>
+  <text x="80" y="420" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.white}">Primary sources.</text>
+  <text x="80" y="500" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.white}">Public record.</text>
+  <text x="80" y="580" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.white}">Your conclusions.</text>
+  <line x1="80" y1="680" x2="320" y2="680" stroke="${C.crimson}" stroke-width="2"/>
+  <circle cx="500" cy="1000" r="110" fill="none" stroke="${C.crimson}" stroke-width="7"/>
+  <text x="500" y="1030" text-anchor="middle" font-family="Georgia, serif" font-size="88" font-weight="700" fill="${C.white}">V</text>
+  <text x="80" y="1360" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" letter-spacing="3" fill="${C.gold}">VERITAS WORLDWIDE PRESS</text>
+  <text x="80" y="1410" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.45)">veritasworldwide.com</text>
+</svg>`
+}
+
+function socialLaunchMd() {
+  return `# Social Launch Checklist — Veritas Worldwide Press
+
+Brand kit v${KIT_VERSION}
+
+## Before go-live
+1. Download Ultimate Brand Kit ZIP + verify SHA-256
+2. Read \`07-docs/BRAND-VOICE.md\` and \`07-docs/HASHTAGS.md\`
+3. Set bios from \`04-social/SOCIAL-ASSET-MATRIX.md\`
+
+## Per platform (assets)
+| Platform | Profile | Banner / primary |
+|----------|---------|------------------|
+| X | social-profile-400.png | social-banner-x.png + x-post-card |
+| Instagram | social-profile-400.png | story + ig-carousel + evidence tiers |
+| Threads | same profile | threads-post.svg |
+| LinkedIn | logo-mark-512.png | social-banner-linkedin + article header |
+| YouTube | app-icon-512.png | youtube banner + thumbnail |
+| Bluesky | social-profile-400.png | bluesky-banner |
+| Discord | app-icon | discord-invite |
+| Pinterest | social-profile | pinterest-pin |
+| Substack | logo-mark-512 | newsletter-header |
+
+## Evidence labels (product)
+Always use **Verified / Circumstantial / Disputed** — see \`07-docs/EVIDENCE-TIERS.md\`.
+
+## Press
+- Media kit: /media-kit
+- Rights: rights@veritasworldwide.com
+- vCard: 09-templates/press-contact.vcf
+- Corrections: 09-templates/correction-notice.html
+`
 }
 
 function brandVoiceMd() {
@@ -1354,6 +1410,8 @@ Editorial and licensing: rights@veritasworldwide.com
   writeSvg('04-social/bluesky-banner.svg', blueskyBannerSvg())
   writeSvg('04-social/discord-invite.svg', discordInviteSvg())
   writeSvg('04-social/citation-card.svg', citationCardSvg())
+  writeSvg('04-social/pinterest-pin.svg', pinterestPinSvg())
+  writeFileSync(join(KIT, '07-docs', 'SOCIAL-LAUNCH.md'), socialLaunchMd())
   writeFileSync(join(KIT, '09-templates', 'correction-notice.html'), correctionNoticeHtml())
 
   // Rasterize key assets
@@ -1404,6 +1462,7 @@ Editorial and licensing: rights@veritasworldwide.com
     ['04-social/bluesky-banner.svg', '04-social/bluesky-banner.png', 1500],
     ['04-social/discord-invite.svg', '04-social/discord-invite.png', 1920],
     ['04-social/citation-card.svg', '04-social/citation-card.png', 1080],
+    ['04-social/pinterest-pin.svg', '04-social/pinterest-pin.png', 1000],
   ]
   const criticalPng = new Set([
     '01-logos/logo-mark-512.png',
@@ -1539,6 +1598,7 @@ Editorial and licensing: rights@veritasworldwide.com
       newsletter: { header: '/brand-kit/04-social/newsletter-header.svg' },
       bluesky: { profile: '/brand-kit/04-social/social-profile-400.png', banner: '/brand-kit/04-social/bluesky-banner.svg' },
       discord: { invite: '/brand-kit/04-social/discord-invite.svg' },
+      pinterest: { pin: '/brand-kit/04-social/pinterest-pin.svg' },
       evidenceTiers: {
         verified: '/brand-kit/04-social/evidence-tier-verified.svg',
         circumstantial: '/brand-kit/04-social/evidence-tier-circumstantial.svg',

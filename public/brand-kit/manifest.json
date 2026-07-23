@@ -1,7 +1,7 @@
 {
-  "version": "2.9.1",
+  "version": "2.9.2",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-23T07:41:33.382Z",
+  "generatedAt": "2026-07-23T07:44:30.769Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "publicMediaKit": "/media-kit",
   "staticMediaKit": "/brand-kit/09-templates/media-kit.html",
@@ -293,6 +293,9 @@
     "discord": {
       "invite": "/brand-kit/04-social/discord-invite.svg"
     },
+    "pinterest": {
+      "pin": "/brand-kit/04-social/pinterest-pin.svg"
+    },
     "evidenceTiers": {
       "verified": "/brand-kit/04-social/evidence-tier-verified.svg",
       "circumstantial": "/brand-kit/04-social/evidence-tier-circumstantial.svg",
@@ -302,6 +305,6 @@
       "unverified": "/brand-kit/04-social/evidence-tier-unverified.svg"
     }
   },
-  "zipBytes": 1819824,
-  "zipSha256": "d8ef1261efd566461801c71cc897e642059a0c91d45877ee213dee031f52c57f"
+  "zipBytes": 1854635,
+  "zipSha256": "82261dc40ec050c6809ec02ba970cdb450d951060e61c4ad75b7d66d0c9e6f84"
 }

@@ -35,6 +35,8 @@ const required = [
   '05-og/og-image.svg',
   '05-og/og-image.png',
   '05-og/og-media-kit.png',
+  '07-docs/SOCIAL-LAUNCH.md',
+  '04-social/pinterest-pin.svg',
   '05-og/og-media-kit.svg',
   '06-tokens/tokens.json',
   '07-docs/BRAND-GUIDE.md',
@@ -221,6 +223,8 @@ if (base) {
     '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
     '/og-image.png',
     '/brand-kit/05-og/og-media-kit.png',
+    '/brand-kit/07-docs/SOCIAL-LAUNCH.md',
+    '/brand-kit/04-social/pinterest-pin.svg',
   ]
   async function headOk(url) {
     try {

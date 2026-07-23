@@ -12,7 +12,7 @@ All paths are relative to `https://veritasworldwide.com`.
 | **Facebook Page** | profile PNG | `social-banner-facebook.svg` (820×312) | News/Media category |
 | **YouTube** | app-icon / social-profile | `social-banner-youtube.svg` (2560×1440) | @VeritasWorldwide |
 | **TikTok** | social-profile-400.png | N/A | @veritasworldwidepress |
-| **Pinterest** | social-profile | story or OG for pins | veritasworldwide |
+| **Pinterest** | social-profile | `pinterest-pin.svg` (1000×1500) | veritasworldwide |
 | **Substack / Newsletter** | logo-mark-512 | `newsletter-header.svg` (1200×400) | Weekly dispatch header |
 | **Podcast (Apple/Spotify)** | `podcast-cover.svg` / `.png` (1400×1400) | — | The Record cover art |
 | **X feed posts** | — | `x-post-card.svg` (1600×900) | Shareable documentary cards |

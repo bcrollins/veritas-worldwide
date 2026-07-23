@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500" role="img" aria-label="Pinterest pin template">
+  <rect width="1000" height="1500" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1000" height="8" fill="#8B1A1A"/>
+  <rect x="0" y="1492" width="1000" height="8" fill="#8B1A1A"/>
+  <text x="80" y="160" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5" fill="#B8860B">THE RECORD</text>
+  <text x="80" y="420" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#FFFFFF">Primary sources.</text>
+  <text x="80" y="500" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#FFFFFF">Public record.</text>
+  <text x="80" y="580" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#FFFFFF">Your conclusions.</text>
+  <line x1="80" y1="680" x2="320" y2="680" stroke="#8B1A1A" stroke-width="2"/>
+  <circle cx="500" cy="1000" r="110" fill="none" stroke="#8B1A1A" stroke-width="7"/>
+  <text x="500" y="1030" text-anchor="middle" font-family="Georgia, serif" font-size="88" font-weight="700" fill="#FFFFFF">V</text>
+  <text x="80" y="1360" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" letter-spacing="3" fill="#B8860B">VERITAS WORLDWIDE PRESS</text>
+  <text x="80" y="1410" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.45)">veritasworldwide.com</text>
+</svg>

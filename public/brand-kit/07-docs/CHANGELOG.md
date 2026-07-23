@@ -1,6 +1,9 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.1 — 2026-07-23
+## 2.9.2 — 2026-07-23
+- Pinterest pin template + SOCIAL-LAUNCH.md checklist
+
+## 2.9.1
 - Dedicated Media Kit Open Graph card (05-og/og-media-kit)
 
 ## 2.9.0
