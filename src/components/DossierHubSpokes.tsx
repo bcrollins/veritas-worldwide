@@ -95,7 +95,7 @@ export default function DossierHubSpokes({
                 key={spoke.id}
                 to={spoke.to}
                 data-testid={`dossier-spoke-${spoke.id}`}
-                className={`inline-flex min-h-[44px] items-center rounded-full border px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold tracking-wide transition-colors ${
+                className={`inline-flex min-h-[44px] items-center rounded-full border px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 ${
                   active
                     ? 'border-crimson bg-crimson text-white'
                     : 'border-border bg-surface text-ink-muted hover:border-crimson/50 hover:text-crimson'
@@ -121,7 +121,7 @@ export default function DossierHubSpokes({
       >
         <Link
           to="/israel-dossier"
-          className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-crimson hover:text-crimson-dark"
+          className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-crimson hover:text-crimson-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         >
           Dossiers
         </Link>
@@ -140,7 +140,7 @@ export default function DossierHubSpokes({
               <Link
                 to={spoke.to}
                 data-testid={`dossier-spoke-${spoke.id}`}
-                className={`inline-flex min-h-[44px] items-center font-sans text-[0.7rem] font-semibold transition-colors ${
+                className={`inline-flex min-h-[44px] items-center font-sans text-[0.7rem] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 ${
                   active ? 'text-crimson' : 'text-ink-muted hover:text-crimson'
                 }`}
                 {...(active ? { 'aria-current': 'page' as const } : {})}
@@ -177,7 +177,7 @@ export default function DossierHubSpokes({
                 key={spoke.id}
                 to={spoke.to}
                 data-testid={`dossier-spoke-${spoke.id}`}
-                className={`inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full px-3 py-1.5 font-sans text-[0.6rem] font-semibold tracking-wide uppercase transition-all ${
+                className={`inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full px-3 py-1.5 font-sans text-[0.6rem] font-semibold tracking-wide uppercase transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 ${
                   active
                     ? 'bg-crimson text-white'
                     : 'text-ink-muted hover:bg-crimson/5 hover:text-crimson'
