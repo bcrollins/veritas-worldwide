@@ -1772,6 +1772,11 @@ const PATH_ALIASES = new Map([
   ['/contact', '/about'],
   // Sitemap bare path (robots.txt advertises /sitemap.xml).
   ['/sitemap', '/sitemap.xml'],
+  // Feed / blog crawl guesses (paired with /rss.xml handler below for .xml paths).
+  ['/feed', '/feed.xml'],
+  ['/atom', '/feed.xml'],
+  ['/feeds', '/feed.xml'],
+  ['/blog', '/news'],
 ])
 
 app.use((req, res, next) => {
@@ -1893,8 +1898,9 @@ app.get(['/.well-known/security.txt', '/security.txt'], (_req, res) => {
   return res.send(body)
 })
 
-// Common RSS discovery path — canonical feed remains /feed.xml (atom:self).
-app.get(['/rss.xml', '/rss'], (_req, res) => {
+// Common RSS / Atom discovery paths — canonical feed remains /feed.xml (atom:self).
+// .xml paths are handled here because PATH_ALIASES middleware skips path.extname hits.
+app.get(['/rss.xml', '/rss', '/atom.xml', '/feed.xml/'], (_req, res) => {
   res.setHeader('Cache-Control', 'public, max-age=3600')
   return res.redirect(301, '/feed.xml')
 })

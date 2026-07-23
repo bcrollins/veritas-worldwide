@@ -181,6 +181,10 @@ const CANONICAL_301 = [
   { path: '/support', expectLocation: '/membership' },
   { path: '/contact', expectLocation: '/about' },
   { path: '/sitemap', expectLocation: '/sitemap.xml' },
+  { path: '/feed', expectLocation: '/feed.xml' },
+  { path: '/atom', expectLocation: '/feed.xml' },
+  { path: '/atom.xml', expectLocation: '/feed.xml' },
+  { path: '/blog', expectLocation: '/news' },
   { path: '/methodology/', expectLocation: '/methodology' },
 ]
 async function check301({ path, expectLocation }) {

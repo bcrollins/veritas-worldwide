@@ -663,8 +663,15 @@ assert(
     server.includes("'/donate'") &&
     server.includes("'/support'") &&
     server.includes("'/contact'") &&
-    server.includes("'/sitemap'"),
-  'PATH_ALIASES complete key freeze: content-packs/share/brand-kit/home/index/packs/donate/support/contact/sitemap',
+    server.includes("'/sitemap'") &&
+    server.includes("'/feed'") &&
+    server.includes("'/atom'") &&
+    server.includes("'/blog'"),
+  'PATH_ALIASES complete key freeze incl. feed/atom/blog/sitemap aliases',
+)
+assert(
+  server.includes("'/atom.xml'") || server.includes("'/rss.xml'"),
+  'server must 301 Atom/RSS .xml discovery paths to /feed.xml',
 )
 assert(server.includes("'/about'") && server.includes("'/read'") && server.includes("'/methodology'"), 'STATIC_CANONICAL_PATHS must include core hubs')
 const knownExactBlock = server.match(/const knownExact = new Set\(\[([\s\S]*?)\]\)/)?.[1] || ''
