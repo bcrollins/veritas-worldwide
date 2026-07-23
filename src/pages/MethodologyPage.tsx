@@ -11,6 +11,8 @@ import {
   breadcrumbJsonLd,
 } from '../lib/seo'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
+import CorrectionsCTA from '../components/CorrectionsCTA'
+import EvidenceTierLegend from '../components/EvidenceTierLegend'
 
 const methodologySections = [
   { id: 'five-tier-source-hierarchy', label: 'Five-Tier Source Hierarchy' },
@@ -477,6 +479,10 @@ export default function MethodologyPage() {
               </div>
 
               {/* Support CTA */}
+              <div className="border-t border-border pt-6 mb-6">
+                <EvidenceTierLegend mode="compact" className="mb-4" />
+                <CorrectionsCTA pageLabel="Methodology" />
+              </div>
               <div className="border-t border-border pt-6">
                 <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-ink-faint mb-3">
                   Support This Work

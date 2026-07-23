@@ -24,6 +24,8 @@ import ContentGate from '../components/ContentGate'
 import ReadingProgress from '../components/ReadingProgress'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
+import LicenseCard from '../components/LicenseCard'
+import CorrectionsCTA from '../components/CorrectionsCTA'
 import { getProfileBySlug, getProfilePhoto } from '../data/profileData'
 import { ISRAEL_DOSSIER_ACTORS, type DossierActorEnablement } from '../data/israelDossierActors'
 import { ISRAEL_DOSSIER_ERA_META, type DossierEra } from '../data/israelDossierHistoryPack'
@@ -2020,6 +2022,7 @@ export default function IsraelDossierPage() {
         <p className="font-body text-sm text-ink-muted leading-relaxed mb-8 max-w-3xl">
           Download the complete dossier as a PDF, share a 10-slide Instagram carousel, or pin high-impact images to your profile. Every asset is free to use — the documented record only matters if people see it.
         </p>
+        <LicenseCard assetLabel="Israel Dossier PDF, corpus.json, and workbooks" className="mb-6" />
         <div className="mb-6 mt-4 rounded-sm border border-border bg-surface p-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.14em] text-crimson mb-1">Machine-readable corpus</p>
@@ -2185,8 +2188,9 @@ export default function IsraelDossierPage() {
           Where figures are disputed or represent estimates with methodological uncertainty, this is noted. All "last verified" dates indicate when the editorial team last confirmed the source was active and the figure unchanged.
         </p>
         <p className="font-body text-sm text-ink-muted leading-relaxed">
-          Readers are encouraged to verify all claims independently using the linked primary sources. If you find an error or an outdated figure, contact <a href="mailto:rights@veritasworldwide.com" className="text-crimson hover:underline">rights@veritasworldwide.com</a>.
+          Readers are encouraged to verify all claims independently using the linked primary sources.
         </p>
+        <CorrectionsCTA pageLabel="Israel Dossier" className="mt-3" />
       </section>
 
       {/* ─── SHARE BAR ─── */}
