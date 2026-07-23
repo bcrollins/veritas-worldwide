@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useState, useMemo, useEffect } from 'react'
 import {
   setMetaTags,
@@ -641,6 +642,12 @@ export default function DeepStatePage() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-sans text-[0.6rem] tracking-[0.3em] uppercase text-white/40 mb-4">Veritas Worldwide — Investigative Dossier</p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4 tracking-tight">The Deep State</h1>
+          <p className="mt-4 font-body text-sm text-white/70" data-testid="deep-state-methodology-link">
+            Evidence tiers and source hierarchy follow the public{' '}
+            <Link to="/methodology" className="text-crimson-light hover:underline">methodology</Link>
+            {' '}and{' '}
+            <Link to="/sources" className="text-crimson-light hover:underline">sources library</Link>.
+          </p>
           <div className="w-16 h-px bg-crimson mx-auto mb-4" />
           <p className="font-serif text-lg md:text-xl text-white/70 italic max-w-2xl mx-auto mb-6">
             The Epstein Network — Documented Connections, Court Records & the Architecture of Impunity

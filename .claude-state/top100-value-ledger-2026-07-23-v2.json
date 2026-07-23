@@ -15,8 +15,8 @@
   },
   "summary": "Wave 2: $499 Comprehensive Online Profile + OPSEC residual + integrity densify queue.",
   "statusCounts": {
-    "Implemented": 70,
-    "Pending": 30
+    "Implemented": 76,
+    "Pending": 24
   },
   "items": [
     {
@@ -1360,7 +1360,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-trust-disclaimer-2026-07-23"
     },
     {
       "rank": 72,
@@ -1488,7 +1489,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-trust-disclaimer-2026-07-23"
     },
     {
       "rank": 79,
@@ -1542,7 +1544,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-trust-disclaimer-2026-07-23"
     },
     {
       "rank": 82,
@@ -1634,7 +1637,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-trust-disclaimer-2026-07-23"
     },
     {
       "rank": 87,
@@ -1707,7 +1711,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-trust-disclaimer-2026-07-23"
     },
     {
       "rank": 91,
@@ -1725,7 +1730,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-trust-disclaimer-2026-07-23"
     },
     {
       "rank": 92,

@@ -149,10 +149,13 @@ function getCommunityHeaderLabel(activity: CommunityActivity) {
 
 function ForumTruthNotice() {
   return (
-    <div className="mb-4 rounded border border-crimson/20 bg-parchment px-4 py-3 shadow-sm">
+    <div className="mb-4 rounded border border-crimson/20 bg-parchment px-4 py-3 shadow-sm" data-testid="forum-evidence-disclaimer">
       <p className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.24em] text-crimson">Reader Beta</p>
       <p className="mt-1 font-body text-sm leading-relaxed text-ink-muted">
         This forum currently stores discussion on this device only while live moderation, persistent community data, and approved-member workflows are still being built.
+      </p>
+      <p className="mt-2 font-body text-sm leading-relaxed text-ink-muted">
+        <strong className="text-ink">Not evidence-weighted.</strong> Forum posts, votes, and comments are reader discussion — they do not change Verified / Circumstantial / Disputed tiers, source hierarchies, Integrity Scores, or any claim in The Record. Cite primary sources, not upvotes.
       </p>
     </div>
   )

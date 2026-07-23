@@ -135,6 +135,13 @@ export default function CitationGenerator({ chapter }: { chapter: Chapter }) {
           >
             {copied ? '✓ Copied to Clipboard' : 'Copy Citation'}
           </button>
+          <p className="mt-3 font-sans text-[0.58rem] leading-relaxed text-ink-faint" data-testid="citation-service-disclaimer">
+            Citation for The Record&apos;s public archive chapters only. Private Comprehensive Online Profile ($499) reports are separate client deliverables and are not cited here — see{' '}
+            <a href="/comprehensive-profile" className="text-crimson hover:underline">
+              /comprehensive-profile
+            </a>
+            .
+          </p>
         </div>
       )}
     </div>
