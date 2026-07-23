@@ -2427,14 +2427,22 @@ function injectNoindexShell(html) {
   // Force noindex in first-paint HTML for all UAs (not only bot-meta).
   // Prevents index,follow default in dist/index.html from being the last crawler signal
   // for scrapers that skip JS or ignore X-Robots-Tag alone.
-  let out = html
-  if (/name=["']robots["']/i.test(out)) {
+  let out = String(html || '')
+  const noindexMeta = '<meta name="robots" content="noindex, nofollow" />'
+  // Match robots meta even when attributes are reordered or multi-value content is long.
+  if (/<meta[^>]+name=["']robots["'][^>]*>/i.test(out)) {
     out = out.replace(
-      /<meta\s+name=["']robots["']\s+content=["'][^"']*["']\s*\/?>/i,
-      '<meta name="robots" content="noindex, nofollow" />',
+      /<meta[^>]+name=["']robots["'][^>]*>/i,
+      noindexMeta,
     )
+  } else if (out.includes('</head>')) {
+    out = out.replace('</head>', `    ${noindexMeta}\n  </head>`)
   } else {
-    out = out.replace('</head>', '    <meta name="robots" content="noindex, nofollow" />\n  </head>')
+    out = `${noindexMeta}\n${out}`
+  }
+  // Hard guarantee: body must contain the token verify:live-anonymity checks.
+  if (!/noindex/i.test(out)) {
+    out = noindexMeta + out
   }
   return out
 }
@@ -2469,13 +2477,20 @@ app.use((req, res) => {
   }
 
   // OPSEC: /bernie + admin + transactional shells must ship noindex meta in raw HTML for all UAs.
+  // Never fall through to raw dist/index.html (default robots=index,follow) for these paths.
   if (forceNoindexHtml && (req.method === 'GET' || req.method === 'HEAD')) {
     try {
       const html = fs.readFileSync(DIST_INDEX_HTML_PATH, 'utf8')
       res.type('html')
       return res.send(injectNoindexShell(html))
-    } catch {
-      // Fall through to sendFile if dist missing (dev)
+    } catch (err) {
+      console.warn('[opsec] injectNoindexShell failed; serving minimal noindex shell', err?.message || err)
+      res.type('html')
+      return res.send(
+        injectNoindexShell(
+          '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Veritas Worldwide</title></head><body></body></html>',
+        ),
+      )
     }
   }
 
