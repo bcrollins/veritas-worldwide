@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:28:36.498Z",
+  "generatedAt": "2026-07-23T08:29:22.012Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 114,
-    "timelineEvents": 102,
+    "incidents": 115,
+    "timelineEvents": 103,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 100,
+    "historicalWarCrimesPack": 101,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 54
+      "post-oct7": 55
     },
     "incidentsByTier": {
-      "verified": 112,
+      "verified": 113,
       "circumstantial": 2
     },
-    "childrenTagged": 94,
-    "civiliansTagged": 112,
+    "childrenTagged": 95,
+    "civiliansTagged": 113,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3405,6 +3405,26 @@
       "tags": [
         "children",
         "orphans",
+        "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-blackouts-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Telecommunications Blackouts Pattern",
+      "description": "Multi-source documentation of repeated total/near-total communications blackouts during major operations.",
+      "source": "NetBlocks / OCHA / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-telecommunications-blackouts-pattern-2023-2025",
+        "gaza-fuel-electricity-siege-pattern-2023-2025"
+      ],
+      "tags": [
+        "communications",
+        "blackout",
         "civilians",
         "gaza"
       ]
@@ -7769,6 +7789,50 @@
           "type": "document",
           "label": "WFP public materials",
           "url": "https://www.wfp.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-telecommunications-blackouts-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Telecommunications Blackouts Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (comms cohort)",
+      "location": "Gaza Strip",
+      "summary": "Multi-source telecom operators, NetBlocks, and humanitarian agencies document repeated total or near-total communications blackouts in Gaza during major operations — cutting civilian access to emergency services, family contact, and journalism. Pattern card for communications siege as a civilian-harm multiplier.",
+      "evidence": "NetBlocks/internet observatory outage data, multi-source telecom operator statements, and OCHA/humanitarian access reports establish multi-source blackout episodes. Exact outage durations evolve; multi-source repeated total blackouts is the claim.",
+      "sources": [
+        {
+          "label": "NetBlocks / multi-source outage monitoring",
+          "url": "https://netblocks.org"
+        },
+        {
+          "label": "OCHA humanitarian access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza blackout coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
         }
       ],
       "tier": "verified",

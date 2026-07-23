@@ -2681,6 +2681,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-telecommunications-blackouts-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Telecommunications Blackouts Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (comms cohort)',
+    location: 'Gaza Strip',
+    summary:
+      'Multi-source telecom operators, NetBlocks, and humanitarian agencies document repeated total or near-total communications blackouts in Gaza during major operations — cutting civilian access to emergency services, family contact, and journalism. Pattern card for communications siege as a civilian-harm multiplier.',
+    evidence:
+      'NetBlocks/internet observatory outage data, multi-source telecom operator statements, and OCHA/humanitarian access reports establish multi-source blackout episodes. Exact outage durations evolve; multi-source repeated total blackouts is the claim.',
+    sources: [
+      { label: 'NetBlocks / multi-source outage monitoring', url: 'https://netblocks.org' },
+      { label: 'OCHA humanitarian access materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza blackout coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3791,6 +3818,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-bakeries-food-system-collapse-2023-2025', 'gaza-starvation-ipc-phases-2024-2025', 'gaza-fuel-electricity-siege-pattern-2023-2025'],
     tags: ['food', 'starvation', 'civilians', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-blackouts-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Telecommunications Blackouts Pattern',
+    description: 'Multi-source documentation of repeated total/near-total communications blackouts during major operations.',
+    source: 'NetBlocks / OCHA / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-telecommunications-blackouts-pattern-2023-2025', 'gaza-fuel-electricity-siege-pattern-2023-2025'],
+    tags: ['communications', 'blackout', 'civilians', 'gaza'],
   },
 
 ]
