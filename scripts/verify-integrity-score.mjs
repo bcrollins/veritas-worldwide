@@ -117,6 +117,7 @@ const required = [
   'bernie-sanders',
   'hakeem-jeffries',
   'elizabeth-warren',
+  'jared-kushner',
 ];
 const scores = {};
 for (const id of required) {
@@ -460,8 +461,20 @@ for (const f of (warrenP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('warren dual-cite collision: ' + f.id);
 }
 
+// Jared Kushner integrity gate (Pants on Fire Russia ads)
+const kushner = scores['jared-kushner'];
+if (!kushner || kushner.n < 1) throw new Error('jared-kushner needs ≥1 verified falsehood, got ' + (kushner?.n ?? 0));
+if (kushner.score > 80) throw new Error('jared-kushner score expected ≤80, got ' + kushner.score);
+const kushnerP = getProfileBySlug('jared-kushner');
+if (!(kushnerP.documentedFalsehoods || []).some((f) => f.id === 'kushner-russia-couple-facebook-ads-2019')) {
+  throw new Error('jared-kushner missing Russia Facebook-ads docket id');
+}
+for (const f of (kushnerP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('kushner dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 30) throw new Error('expected ≥30 compiled dockets, got ' + docketCount);
+if (docketCount < 31) throw new Error('expected ≥31 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

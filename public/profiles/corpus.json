@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:40:14.388Z",
+  "generatedAt": "2026-07-23T07:42:57.470Z",
   "count": 96,
   "profiles": [
     {
@@ -89,7 +89,7 @@
       "name": "Jared Kushner",
       "title": "Senior Advisor to the President (2017–2021); Abraham Accords architect",
       "category": "politician",
-      "summary": "Son-in-law and Senior Advisor to President Trump (2017–2021). Led White House Middle East portfolio including the Abraham Accords (2020), the U.S. embassy move to Jerusalem (2018), and Golan Heights recognition (2019). Post-government investor via Affinity Partners with reported Gulf capital. Public record of structural diplomatic enablement of Israeli government positions — not a PAC megadonor like Adelson, but an executive-branch policy principal. Primary: White House archives, State Department, Abraham Accords texts.",
+      "summary": "Son-in-law and Senior Advisor to President Trump (2017–2021). Led White House Middle East portfolio including the Abraham Accords (2020), the U.S. embassy move to Jerusalem (2018), and Golan Heights recognition (2019). Post-government investor via Affinity Partners with reported Gulf capital. Public record of structural diplomatic enablement of Israeli government positions — not a PAC megadonor like Adelson, but an executive-branch policy principal. Integrity docket: dual-cited PolitiFact Pants on Fire for reducing 2016 Russian interference to “a couple of Facebook ads” (vs Mueller/ICA record). Primary: White House archives, State Department, Abraham Accords texts, Mueller report, PolitiFact.",
       "photo": "/profiles/jared-kushner.svg",
       "url": "https://veritasworldwide.com/profile/jared-kushner",
       "bioguideId": null,
@@ -100,11 +100,12 @@
         "Golan Recognition",
         "Middle East Envoy",
         "Affinity Partners",
-        "Pro-Israel"
+        "Pro-Israel",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 75,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "chuck-schumer",

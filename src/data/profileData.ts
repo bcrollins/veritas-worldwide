@@ -579,7 +579,7 @@ export const PROFILES: PowerProfile[] = [
     party: 'R',
     photoUrl: getProfilePhoto('jared-kushner'),
     summary:
-      'Son-in-law and Senior Advisor to President Trump (2017–2021). Led White House Middle East portfolio including the Abraham Accords (2020), the U.S. embassy move to Jerusalem (2018), and Golan Heights recognition (2019). Post-government investor via Affinity Partners with reported Gulf capital. Public record of structural diplomatic enablement of Israeli government positions — not a PAC megadonor like Adelson, but an executive-branch policy principal. Primary: White House archives, State Department, Abraham Accords texts.',
+      'Son-in-law and Senior Advisor to President Trump (2017–2021). Led White House Middle East portfolio including the Abraham Accords (2020), the U.S. embassy move to Jerusalem (2018), and Golan Heights recognition (2019). Post-government investor via Affinity Partners with reported Gulf capital. Public record of structural diplomatic enablement of Israeli government positions — not a PAC megadonor like Adelson, but an executive-branch policy principal. Integrity docket: dual-cited PolitiFact Pants on Fire for reducing 2016 Russian interference to “a couple of Facebook ads” (vs Mueller/ICA record). Primary: White House archives, State Department, Abraham Accords texts, Mueller report, PolitiFact.',
     tags: [
       'Trump Administration',
       'Abraham Accords',
@@ -588,6 +588,7 @@ export const PROFILES: PowerProfile[] = [
       'Middle East Envoy',
       'Affinity Partners',
       'Pro-Israel',
+      'Integrity Docket',
     ],
     career: [
       'Kushner Companies real estate',
@@ -686,10 +687,42 @@ export const PROFILES: PowerProfile[] = [
         tier: 'circumstantial',
         date: '2021–2024',
       },
+      {
+        claim:
+          'Integrity docket: April 2019 claim Russia’s 2016 interference amounted to “a couple of Facebook ads” rated Pants on Fire (IRA multi-platform campaign + GRU hack-and-dump; Facebook estimated ~126M people reached).',
+        source: 'PolitiFact Pants on Fire; Mueller report; ODNI ICA 2017',
+        url: 'https://www.politifact.com/factchecks/2019/apr/24/jared-kushner/jared-kushner-wrong-scope-russias-interference/',
+        tier: 'verified',
+        date: '2019',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'kushner-russia-couple-facebook-ads-2019',
+        statement:
+          'Russia’s 2016 election interference amounted to “buying some Facebook ads” / “a couple of Facebook ads.”',
+        saidAt: 'April 23, 2019',
+        context: 'TIME magazine event interview minimizing Russian active measures relative to the Mueller investigation’s impact.',
+        whyFalse:
+          'PolitiFact rated Pants on Fire. Mueller and U.S. intelligence documented a multi-platform IRA social-media operation (thousands of ads, hundreds of accounts, Facebook estimate of up to ~126 million people reached) plus a GRU hack-and-dump of Democratic materials via WikiLeaks — far beyond “a couple of Facebook ads.”',
+        correction:
+          'Russian interference included industrial-scale social-media influence operations and stolen-document releases aimed at the 2016 race, not merely a handful of Facebook ads.',
+        statementSource: 'TIME magazine event remarks by Jared Kushner (Apr 23, 2019; contemporaneous multi-outlet capture)',
+        statementUrl: 'https://twitter.com/TIME/status/1120702516814123020',
+        debunkSource: 'PolitiFact — Pants on Fire (Apr 24, 2019); Mueller report + ODNI ICA 2017',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/apr/24/jared-kushner/jared-kushner-wrong-scope-russias-interference/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'State Department — Abraham Accords', url: 'https://www.state.gov/the-abraham-accords/' },
       { label: 'U.S. Embassy Jerusalem', url: 'https://il.usembassy.gov' },
+      {
+        label: 'PolitiFact — Russia Facebook ads (Pants on Fire)',
+        url: 'https://www.politifact.com/factchecks/2019/apr/24/jared-kushner/jared-kushner-wrong-scope-russias-interference/',
+      },
       { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Jared_Kushner' },
     ],
   },
