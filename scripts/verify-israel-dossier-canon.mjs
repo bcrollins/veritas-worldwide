@@ -409,6 +409,17 @@ assert(canon.includes('relatedProfileIds'), 'canon missing relatedProfileIds wir
   assert(page.includes('vi-quick-chips') || page.includes('Video + civilians'), 'page missing quick media filter chips')
 }
 
+
+// Soft-floor companion tracks video densify (lag-aware live verify)
+{
+  const sfPath = path.join(root, 'public/israel-dossier/soft-floor.json')
+  assert(fs.existsSync(sfPath), 'israel soft-floor.json missing')
+  const sf = JSON.parse(fs.readFileSync(sfPath, 'utf8'))
+  assert(typeof sf.incidentCount === 'number' && sf.incidentCount >= 800, `soft-floor incidentCount too low: ${sf.incidentCount}`)
+  assert(sf.visualInvestigations && typeof sf.visualInvestigations.withVideo === 'number', 'soft-floor missing visualInvestigations.withVideo')
+  assert(sf.visualInvestigations.withVideo >= 40, `soft-floor withVideo floor ≥40, got ${sf.visualInvestigations.withVideo}`)
+}
+
 if (errors.length) {
   console.error('[verify:israel-dossier] FAIL')
   for (const error of errors) console.error(`- ${error}`)
