@@ -40,6 +40,7 @@ const PREVIEW_ASSETS = [
   { label: 'Discord Invite', href: '/brand-kit/04-social/discord-invite.svg', bg: 'bg-black' },
   { label: 'Citation Card', href: '/brand-kit/04-social/citation-card.svg', bg: 'bg-parchment' },
   { label: 'Pinterest Pin', href: '/brand-kit/04-social/pinterest-pin.svg', bg: 'bg-black' },
+  { label: 'TikTok Cover', href: '/brand-kit/04-social/tiktok-cover.svg', bg: 'bg-black' },
 ]
 
 const TOKEN_SWATCHES = [
@@ -172,8 +173,8 @@ export default function AdminBrandKit() {
         </div>
         <div className="rounded-lg border border-white/5 bg-white/5 p-4">
           <p className="font-sans text-[10px] uppercase tracking-widest text-white/30">Admin Access</p>
-          <p className="mt-1 font-serif text-lg font-bold text-white">brollins565@gmail.com</p>
-          <p className="font-sans text-[10px] text-white/25">+ rights@veritasworldwide.com</p>
+          <p className="mt-1 font-serif text-lg font-bold text-white">rights@veritasworldwide.com</p>
+          <p className="font-sans text-[10px] text-white/25">Entity-only admin · password via env hash</p>
         </div>
       </div>
 
@@ -474,6 +475,8 @@ export default function AdminBrandKit() {
                 ['Bluesky', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/bluesky-banner.svg'],
                 ['Discord', '/brand-kit/02-icons/app-icon-512.png', '/brand-kit/04-social/discord-invite.svg'],
                 ['Threads', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/threads-post.svg'],
+                ['TikTok', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/tiktok-cover.svg'],
+                ['Pinterest', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/pinterest-pin.svg'],
               ].map(row => (
                 <tr key={row[0]} className="border-b border-white/5">
                   <td className="px-2 py-2 font-semibold text-white/90">{row[0]}</td>
