@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:12:29.878Z",
+  "generatedAt": "2026-07-23T10:16:28.833Z",
   "count": 96,
   "profiles": [
     {
@@ -1871,9 +1871,9 @@
         "Political Commentary",
         "Controversial"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "joe-rogan",

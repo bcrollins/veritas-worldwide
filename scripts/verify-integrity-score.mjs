@@ -132,6 +132,7 @@ const required = [
   'michael-flynn',
   'steve-bannon',
   'rashida-tlaib',
+  'tucker-carlson',
 ];
 const scores = {};
 for (const id of required) {
@@ -930,8 +931,27 @@ for (const f of (tlaibP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('tlaib dual-cite collision: ' + f.id);
 }
 
+
+// Tucker Carlson densify gate (n≥3)
+const tucker = scores['tucker-carlson'];
+if (!tucker || tucker.n < 3) throw new Error('tucker-carlson needs ≥3 verified falsehoods, got ' + (tucker?.n ?? 0));
+if (tucker.score > 50) throw new Error('tucker-carlson score expected ≤50 after densify, got ' + tucker.score);
+const tuckerP = getProfileBySlug('tucker-carlson');
+for (const id of [
+  'carlson-capitol-police-no-firearms-jan6-2023',
+  'carlson-fbi-orchestrated-jan6-2021',
+  'carlson-migrants-illegal-voting-comparison-2024',
+]) {
+  if (!(tuckerP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('tucker-carlson missing docket id: ' + id);
+  }
+}
+for (const f of (tuckerP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('tucker dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 45) throw new Error('expected ≥45 compiled dockets, got ' + docketCount);
+if (docketCount < 46) throw new Error('expected ≥46 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

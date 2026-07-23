@@ -10763,7 +10763,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'carlson-capitol-police-no-firearms-jan6-2023',
+        statement:
+          'Claimed that firearms and other weapons were not found / that Jan. 6 defendants were unarmed in a way that contradicted the charging and evidence record he described.',
+        saidAt: 'June 2022 – March 2023',
+        context: 'Fox News commentary minimizing weapons and violence in the Jan. 6 Capitol attack.',
+        whyFalse:
+          'PolitiFact and DOJ charging documents: multiple defendants were charged with weapons offenses; officers reported improvised weapons and assaults. The absolute “no firearms/weapons” framing Carlson used is false to the charging and evidence record.',
+        correction:
+          'Jan. 6 prosecutions included weapons charges and extensive evidence of assaults on officers with various weapons; the unarmed absolute is false.',
+        statementSource: 'Tucker Carlson Fox News monologues on Jan. 6 weapons (PolitiFact capture)',
+        statementUrl: 'https://www.foxnews.com',
+        debunkSource: 'PolitiFact — Tucker Carlson wrong: firearms and other weapons were found (Jun 13, 2022)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2022/jun/13/tucker-carlson/tucker-carlson-wrong-firearms-other-weapons-were-f/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'carlson-fbi-orchestrated-jan6-2021',
+        statement:
+          'Claimed the FBI orchestrated / staged the Jan. 6 Capitol attack as a pretext — a conspiracy theory beyond the evidence.',
+        saidAt: 'November 2021',
+        context: 'Fox documentary and monologues alleging federal orchestration of Jan. 6.',
+        whyFalse:
+          'PolitiFact rated the orchestration claim False. DOJ prosecutions document thousands of rioters acting on their own; confidential human sources existed as in other cases, but that does not establish FBI orchestration of the attack.',
+        correction:
+          'There is no evidence the FBI orchestrated Jan. 6; the attack was carried out by rioters, many later convicted.',
+        statementSource: 'Tucker Carlson Fox documentary / monologue Nov 2021 (PolitiFact capture)',
+        statementUrl: 'https://www.foxnews.com',
+        debunkSource: 'PolitiFact — Carlson documentary false claims about Jan. 6 as FBI pretext (Nov 2, 2021)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2021/nov/02/tucker-carlson/tucker-carlson-film-falsely-claims-jan-6-pretext-s/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'carlson-migrants-illegal-voting-comparison-2024',
+        statement:
+          'Compared migrants to an invading force in terms that included false claims about illegal voting / demographic replacement as a coordinated electoral scheme beyond the evidence.',
+        saidAt: 'January 2024',
+        context: 'Post-Fox commentary comparing migration to invasion and electoral engineering.',
+        whyFalse:
+          'PolitiFact found Carlson wrong when comparing migrants to an invading army with illegal-voting implications; noncitizen voting in federal elections is illegal and studies find it vanishingly rare, not a coordinated invasion-scale electoral strategy.',
+        correction:
+          'Migration is not a military invasion, and noncitizen voting is not a scale phenomenon that flips federal elections as claimed.',
+        statementSource: 'Tucker Carlson Jan 2024 migrant-invasion commentary (PolitiFact capture)',
+        statementUrl: 'https://twitter.com/TuckerCarlson',
+        debunkSource: 'PolitiFact — Tucker Carlson is wrong comparing migrants to illegal invasion force (Jan 25, 2024)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2024/jan/25/tucker-carlson/tucker-carlson-is-wrong-when-comparing-migrants-il/',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'joe-rogan',
