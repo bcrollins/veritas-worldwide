@@ -5112,6 +5112,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-water-trucking-dependence-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Water Trucking Dependence Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (water-trucking cohort)',
+    location: 'Gaza Strip displacement sites and urban neighborhoods',
+    summary:
+      'UNICEF, OCHA, and multi-source WASH reporting document collapse of piped water systems forcing civilian dependence on expensive or scarce water trucking — a daily survival burden for families including children, distinct from desalination plant, well-contamination, and sewage cards.',
+    evidence:
+      'UNICEF WASH situation reports, OCHA access notes, and multi-outlet water-trucking coverage establish multi-source dependence on trucked water under infrastructure collapse. Exact liters-per-capita figures evolve; multi-source wartime water-trucking dependence is the claim.',
+    sources: [
+      { label: 'UNICEF WASH materials', url: 'https://www.unicef.org' },
+      { label: 'OCHA water-access materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza water trucking coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-release-deal-waves-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostage Release Deal Waves Pattern (2023–2025)',
+    date: 'November 2023 – 2025 (release-wave cohort)',
+    location: 'Gaza Strip / Israel exchange corridors',
+    summary:
+      'Israeli government, Qatari/Egyptian mediation statements, and multi-source reporting document multi-wave hostage release deals returning Israeli civilians including children and elderly from Gaza captivity — a continuous civilian-protection negotiation pattern distinct from hostages-held and bodies-not-returned cards.',
+    evidence:
+      'Israeli government release lists, multi-source mediation coverage, and multi-outlet release-day reporting establish multi-source phased civilian hostage releases. Exact remaining counts change with each wave; multi-source multi-wave release pattern is the claim.',
+    sources: [
+      { label: 'Israeli government hostage release materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet hostage deal coverage', url: 'https://apnews.com' },
+      { label: 'ICRC humanitarian intermediary context', url: 'https://www.icrc.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-unrwa-staff-detention-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza UNRWA Staff Detention & Allegations Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (UNRWA-staff cohort)',
+    location: 'Gaza Strip / Israeli detention facilities',
+    summary:
+      'UNRWA, Israeli government allegations, UN investigations, and multi-source reporting document detention of UNRWA staff and contested allegations of staff involvement with Hamas — a dual-source contested accountability pattern that coexists with the UNRWA-ban and UNRWA-staff-deaths cards. Pattern card for staff-detention/allegation complexity required for non-selective documentation.',
+    evidence:
+      'UNRWA public statements, Israeli government allegation packages, UN Office of Internal Oversight / independent review materials, and multi-outlet coverage establish multi-source staff-detention and allegation record. Individual guilt determinations vary by case; multi-source existence of detentions and formal allegation processes is the claim.',
+    sources: [
+      { label: 'UNRWA public materials', url: 'https://www.unrwa.org' },
+      { label: 'Israeli government public allegation materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet UNRWA staff investigation coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNRWA public updates', url: 'https://www.unrwa.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -7741,6 +7822,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['settlements', 'outposts', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-water-trucking-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Water Trucking Dependence Pattern',
+    description: 'UNICEF/OCHA multi-source documentation of civilian dependence on scarce water trucking after piped systems collapsed.',
+    source: 'UNICEF / OCHA / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-water-trucking-dependence-pattern-2023-2025',
+      'gaza-water-sanitation-collapse-2023-2025',
+      'gaza-water-wells-aquifers-contamination-pattern-2023-2025',
+    ],
+    tags: ['water', 'trucking', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-release-waves-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostage Release Deal Waves Pattern',
+    description: 'Multi-source documentation of multi-wave hostage release deals returning Israeli civilians from Gaza captivity.',
+    source: 'Israeli government / multi-outlet / ICRC',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-release-deal-waves-pattern-2023-2025',
+      'hostage-prisoner-exchange-nov-2023',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'releases', 'civilians', 'children', 'israel'],
+  },
+
+  {
+    id: 'tl-unrwa-staff-detention-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza UNRWA Staff Detention Pattern',
+    description: 'Multi-source documentation of UNRWA staff detentions and contested allegation processes after October 7.',
+    source: 'UNRWA / Israeli government / multi-outlet',
+    sourceUrl: 'https://www.unrwa.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-unrwa-staff-detention-pattern-2023-2025',
+      'gaza-unrwa-ban-pattern-2024-2025',
+      'unrwa-staff-deaths',
+    ],
+    tags: ['unrwa', 'detention', 'accountability', 'gaza'],
+  },
+
+
 
 
 
