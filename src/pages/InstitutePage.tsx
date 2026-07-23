@@ -16,6 +16,7 @@ import {
   setJsonLd,
   setMetaTags,
   breadcrumbJsonLd,
+  faqJsonLd,
   itemListJsonLd,
   SITE_NAME,
   SITE_URL,
@@ -57,6 +58,28 @@ export default function InstitutePage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Veritas Institute', url: `${SITE_URL}/institute` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What is Veritas Institute?',
+          answer:
+            'A source-backed practical learning surface: a printable Field Manual for ordinary emergencies plus trade, repair, preparedness, food, and healthcare-support course paths rooted in public safety and licensing guidance.',
+        },
+        {
+          question: 'Is the Field Manual free?',
+          answer:
+            'Yes. The Field Manual page and PDF download are free. The catalog of guides and courses is free to read; membership is optional funding for The Record and Institute infrastructure.',
+        },
+        {
+          question: 'How does Institute sourcing work?',
+          answer:
+            'Official rules, public safety agencies, extension systems, licensing boards, and accredited training routes are treated as verified foundations. Market outcomes and earnings claims are framed more cautiously unless proof is strong.',
+        },
+        {
+          question: 'Where is the Field Manual PDF?',
+          answer:
+            'Download at /veritas-institute-field-manual.pdf or from /institute/book. Print-friendly HTML is at /institute/book.',
+        },
       ]),
       itemListJsonLd({
         name: 'Veritas Institute practical guides',

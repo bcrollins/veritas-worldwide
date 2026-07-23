@@ -3261,6 +3261,44 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
           { '@type': 'ListItem', position: 2, name: 'Veritas Institute', item: url },
         ],
       },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What is Veritas Institute?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'A source-backed practical learning surface: a printable Field Manual for ordinary emergencies plus trade, repair, preparedness, food, and healthcare-support course paths rooted in public safety and licensing guidance.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is the Field Manual free?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. The Field Manual page and PDF download are free. The catalog of guides and courses is free to read; membership is optional funding for The Record and Institute infrastructure.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How does Institute sourcing work?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Official rules, public safety agencies, extension systems, licensing boards, and accredited training routes are treated as verified foundations. Market outcomes and earnings claims are framed more cautiously unless proof is strong.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Where is the Field Manual PDF?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Download at /veritas-institute-field-manual.pdf or from /institute/book. Print-friendly HTML is at /institute/book.',
+            },
+          },
+        ],
+      },
     ]
   }
 
@@ -3700,6 +3738,61 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
             acceptedAnswer: {
               '@type': 'Answer',
               text: 'At /record-of-jesus-christ/corpus.json (500+ tier-labeled claims), with on-page JSON/CSV export and a portable PDF index. Publisher: Veritas Worldwide only.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
+  if (route === '/topics') {
+    return [
+      {
+        ...basePage,
+        '@type': 'CollectionPage',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Research Topics', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What are Veritas research topic hubs?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Curated hubs connecting The Record chapters, current reporting, Power Profiles, and related primary-source trails by subject — Federal Reserve, AIPAC, surveillance, JFK, Epstein network, Israel policy, and more.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How do topic hubs differ from individual chapters?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Chapters are long-form archive units. Topic hubs are discovery surfaces that route readers to the best chapters, news, and profiles for a research question without replacing the underlying sourced documents.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Are topic hubs free to use?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Topic hubs and the linked archive paths are free to read. Membership is optional public-interest funding.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Who publishes the topic hubs?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas Worldwide only. Entity attribution — no personal byline. Methodology explains evidence tiers used across hubs.',
             },
           },
         ],

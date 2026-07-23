@@ -676,3 +676,18 @@ assert(prerender.includes("route: '/content-pack'"), 'prerender must emit canoni
 assert(botMeta.includes('omitCanonical'), 'bot-meta soft-404 shells must omit canonical (/404 not a real page)')
 assert(!server.includes('veritasworldwide.com/404'), 'server buildNotFoundHtml must not invent /404 canonical')
 assert(!notFound.includes("url: `${SITE_URL}/404`") && !notFound.includes("url: '${SITE_URL}/404'"), 'NotFoundPage must not invent /404 canonical URL')
+
+assert(
+  prerender.includes("route === '/topics'") &&
+    prerender.includes('What are Veritas research topic hubs?'),
+  'prerender must emit Topics index FAQPage for hub discovery queries',
+)
+assert(
+  /if \(route === '\/institute'\) \{[\s\S]*?What is Veritas Institute\?/.test(prerender),
+  'prerender must emit Institute hub FAQPage for practical-skills discovery',
+)
+const topicsIndexPage = read('src/pages/TopicsIndexPage.tsx')
+assert(topicsIndexPage.includes('faqJsonLd'), 'TopicsIndexPage must emit FAQPage schema')
+const institutePage = read('src/pages/InstitutePage.tsx')
+assert(institutePage.includes('faqJsonLd'), 'InstitutePage must emit FAQPage schema')
+
