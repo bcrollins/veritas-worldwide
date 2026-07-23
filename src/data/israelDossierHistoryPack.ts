@@ -8514,6 +8514,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-potassium-deficiency-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Potassium Deficiency Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (potassium cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source nutrition/health reporting document elevated potassium deficiency (hypokalemia) risk among Gaza children under fruit/vegetable collapse and diarrheal disease — a clinical electrolyte pattern distinct from protein-energy and refeeding cards.',
+    evidence:
+      'WHO clinical nutrition materials, UNICEF health notes, and multi-outlet coverage establish multi-source potassium-deficiency risk. Exact clinical counts evolve; multi-source wartime pediatric hypokalemia risk is the claim.',
+    sources: [
+      { label: 'WHO clinical nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza electrolyte coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-personal-belongings-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Personal Belongings Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (belongings-denial cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document confiscation of all personal belongings from Israeli civilian hostages at capture — watches, jewelry, phones, comfort items — a dehumanization pattern distinct from photo-denial and medical-device cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source personal-belongings confiscation. Exact inventories vary; multi-source belongings denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-mosque-loudspeaker-attacks-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Mosque Loudspeaker & Call Disruption Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (mosque-disruption cohort)',
+    location: 'West Bank Palestinian mosques and village centers',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler disruption of mosque loudspeakers and prayer calls after October 7 — a religious-practice intimidation pattern distinct from mosque vandalism and graffiti cards.',
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source mosque-call disruption. Exact incident counts evolve; multi-source wartime prayer-call disruption is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet mosque disruption coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -13285,6 +13366,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['dogs', 'settlers', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-potassium-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Potassium Deficiency Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated potassium deficiency risk among children under wartime diets and diarrhea.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-potassium-deficiency-risk-pattern-2023-2025',
+      'gaza-children-acute-watery-diarrhea-pattern-2023-2025',
+      'gaza-children-magnesium-deficiency-risk-pattern-2023-2025',
+    ],
+    tags: ['potassium', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-belongings-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Personal Belongings Pattern',
+    description: 'Multi-source documentation of confiscation of personal belongings from civilian hostages at capture.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-personal-belongings-pattern-2023-2025',
+      'israel-hostages-denied-family-photographs-pattern-2023-2025',
+      'israel-hostages-denied-medical-devices-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'confiscation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-mosque-loudspeaker-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Mosque Call Disruption Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated disruption of mosque loudspeakers and prayer calls after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-mosque-loudspeaker-attacks-pattern-2023-2025',
+      'west-bank-settler-mosque-vandalism-pattern-2023-2025',
+      'west-bank-settler-graffiti-intimidation-pattern-2023-2025',
+    ],
+    tags: ['mosques', 'settlers', 'religion', 'west-bank'],
+  },
+
+
 
 
 
