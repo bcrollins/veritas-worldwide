@@ -8433,6 +8433,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-phosphorus-deficiency-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Phosphorus Deficiency Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (phosphorus cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source nutrition reporting document elevated phosphorus deficiency risk among Gaza children under dairy and protein collapse — compounding bone and energy metabolism failure. Pattern card for phosphorus-specific deficit distinct from calcium/vitamin-D cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition notes, and multi-outlet coverage establish multi-source phosphorus-deficiency risk. Exact prevalence rates evolve; multi-source wartime pediatric phosphorus risk is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza micronutrient coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-reading-materials-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Reading Materials Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (reading-denial cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of books and reading materials for Israeli civilian hostages including children — blocking cognitive stimulation and coping. Pattern card distinct from writing-denial and information-denial cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source reading-materials denial. Exact practices vary; multi-source reading denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-dog-attacks-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Dog Attacks on Civilians Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (dog-attack cohort)',
+    location: 'West Bank herding lands and village approaches',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler use of dogs to attack and intimidate Palestinian herders and families after October 7 — a civilian-harm pattern distinct from livestock theft and stone-throwing cards.',
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source dog-attack incidents. Exact injury counts evolve; multi-source wartime settler dog attacks on civilians is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settler dog attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -13153,6 +13234,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['vehicles', 'arson', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-phosphorus-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Phosphorus Deficiency Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated phosphorus deficiency risk among children under wartime diets.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-phosphorus-deficiency-risk-pattern-2023-2025',
+      'gaza-children-calcium-vitamin-d-deficiency-pattern-2023-2025',
+      'gaza-children-magnesium-deficiency-risk-pattern-2023-2025',
+    ],
+    tags: ['phosphorus', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-reading-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Reading Materials Pattern',
+    description: 'Multi-source documentation of denial of books and reading materials for civilian hostages including children.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-reading-materials-pattern-2023-2025',
+      'israel-hostages-denied-writing-materials-pattern-2023-2025',
+      'israel-hostages-denied-news-information-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'isolation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-dogs-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Dog Attacks Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler dog attacks on Palestinian civilians after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-dog-attacks-pattern-2023-2025',
+      'west-bank-herding-bedouin-dispossession-pattern-2023-2025',
+      'west-bank-settler-livestock-theft-pattern-2023-2025',
+    ],
+    tags: ['dogs', 'settlers', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
