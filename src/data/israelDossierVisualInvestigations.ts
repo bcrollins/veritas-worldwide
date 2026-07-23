@@ -118,7 +118,7 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     summary:
       'During 2018 border protests, multi-outlet visual investigations and rights monitors documented Israeli sniper fire killing and maiming unarmed protesters, journalists, and medics—including clearly marked medical workers. The ICJ and UN commissions later treated the pattern as a major accountability file.',
     evidence:
-      'B’Tselem video banks, Al Jazeera/AJ+ field video, HRW/Amnesty investigations, and UN commission materials form a multi-source visual record of live-fire against civilians and medics. Rules-of-engagement disputes do not erase the multi-source casualty and footage record.',
+      "B’Tselem video banks, Al Jazeera/AJ+ field video, HRW/Amnesty investigations, and UN commission materials form a multi-source visual record of live-fire against civilians and medics. Rules-of-engagement disputes do not erase the multi-source casualty and footage record.",
     sources: [
       { label: 'B’Tselem — Great March of Return documentation', url: 'https://www.btselem.org/firearms' },
       { label: 'HRW — Israel: Gaza Killings Unlawful and Willful (2018)', url: 'https://www.hrw.org/news/2018/04/03/israel-gaza-killings-unlawful-and-willful' },
@@ -451,7 +451,7 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     summary:
       'Repeated smartphone and press video shows Israeli settlers assaulting Palestinian paramedics, blocking ambulances, and attacking clearly marked medical personnel during and after raids or settler marches.',
     evidence:
-      'B’Tselem video bank, PRCS incident logs, and multi-outlet verification establish multi-source visual documentation of settler attacks on medical personnel. Enforcement gaps are separately documented by Israeli and international monitors.',
+      "B’Tselem video bank, PRCS incident logs, and multi-outlet verification establish multi-source visual documentation of settler attacks on medical personnel. Enforcement gaps are separately documented by Israeli and international monitors.",
     sources: [
       { label: 'B’Tselem video documentation', url: 'https://www.btselem.org/video' },
       { label: 'PRCS West Bank incident updates', url: 'https://www.palestinercs.org/' },
@@ -519,9 +519,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2021–2023',
     location: 'Beita and other West Bank protest sites',
     summary:
-      'Sustained protests against settlement outposts produced a large B’Tselem and press video record of live fire killing and wounding Palestinian civilians—including bystanders and medics—during weekly demonstrations.',
+      "Sustained protests against settlement outposts produced a large B’Tselem and press video record of live fire killing and wounding Palestinian civilians—including bystanders and medics—during weekly demonstrations.",
     evidence:
-      'B’Tselem video case files, medical records cited by rights monitors, and multi-outlet reporting establish multi-source live-fire civilian harm. Rules-of-engagement defenses do not erase the footage record.',
+      "B’Tselem video case files, medical records cited by rights monitors, and multi-outlet reporting establish multi-source live-fire civilian harm. Rules-of-engagement defenses do not erase the footage record.",
     sources: [
       { label: 'B’Tselem Beita / protest documentation', url: 'https://www.btselem.org/firearms' },
       { label: '972 Magazine / +972 investigations', url: 'https://www.972mag.com/' },
@@ -615,9 +615,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank agricultural lands (multiple villages)',
     summary:
-      'Annual olive harvest seasons produce a large B’Tselem and press video record of settlers attacking Palestinian farmers, burning trees, and assaulting harvesters—often with soldiers present and non-intervening.',
+      "Annual olive harvest seasons produce a large B’Tselem and press video record of settlers attacking Palestinian farmers, burning trees, and assaulting harvesters—often with soldiers present and non-intervening.",
     evidence:
-      'B’Tselem video case files, OCHA settler-violence tallies, and multi-outlet harvest-season reporting establish multi-source visual documentation of civilian agricultural violence.',
+      "B’Tselem video case files, OCHA settler-violence tallies, and multi-outlet harvest-season reporting establish multi-source visual documentation of civilian agricultural violence.",
     sources: [
       { label: 'B’Tselem — settler violence / harvest documentation', url: 'https://www.btselem.org/settler_violence' },
       { label: 'OCHA settler violence reporting', url: 'https://www.ochaopt.org/' },
@@ -640,7 +640,7 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     summary:
       'Extensive video shows Israeli forces demolishing Palestinian homes as families watch. Rights monitors and multi-outlet packages treat this as a continuous visual record of punitive and administrative demolitions affecting civilians.',
     evidence:
-      'B’Tselem demolition video banks, OCHA demolition tallies, and multi-outlet reporting establish multi-source documentation. Legal rationales (permits/punitive) are contested; filmed civilian displacement is verified.',
+      "B’Tselem demolition video banks, OCHA demolition tallies, and multi-outlet reporting establish multi-source documentation. Legal rationales (permits/punitive) are contested; filmed civilian displacement is verified.",
     sources: [
       { label: 'B’Tselem — home demolitions', url: 'https://www.btselem.org/planning_and_building' },
       { label: 'OCHA demolition & displacement data', url: 'https://www.ochaopt.org/' },
@@ -807,7 +807,7 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     summary:
       'Israeli commercial and social channels recirculated soldier-recorded videos of demolitions, detainee humiliation, and residential destruction. Multi-outlet authentication treated large volumes as genuine unit-level conduct documentation—primary visual evidence of tactics and attitudes toward civilians and property.',
     evidence:
-      'B’Tselem video banks, Israeli media self-reporting, and international wire authentication establish multi-source circulation of genuine soldier content. Individual prosecutions are incomplete; the aggregate visual record is multi-source.',
+      "B’Tselem video banks, Israeli media self-reporting, and international wire authentication establish multi-source circulation of genuine soldier content. Individual prosecutions are incomplete; the aggregate visual record is multi-source.",
     sources: [
       { label: 'B’Tselem video archives', url: 'https://www.btselem.org/video' },
       { label: 'Reuters Middle East authentication packages', url: 'https://www.reuters.com/world/middle-east/' },
@@ -878,7 +878,7 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     summary:
       'Intensified West Bank raids produced extensive resident smartphone video and occasional military bodycam releases showing civilian injuries, home damage, and medical obstruction during night operations.',
     evidence:
-      'B’Tselem video banks, PRCS incident logs, and multi-outlet raid reporting establish multi-source visual documentation of civilian harm during raids. Rules of engagement are contested; filmed civilian injury is multi-source.',
+      "B’Tselem video banks, PRCS incident logs, and multi-outlet raid reporting establish multi-source visual documentation of civilian harm during raids. Rules of engagement are contested; filmed civilian injury is multi-source.",
     sources: [
       { label: 'B’Tselem video documentation', url: 'https://www.btselem.org/video' },
       { label: 'PRCS operational updates', url: 'https://www.palestinercs.org/' },
@@ -968,9 +968,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2021–2025',
     location: 'West Bank protest sites (Beita, Kafr Qaddum, and others)',
     summary:
-      'Multi-year B’Tselem and press video banks document live fire wounding and killing Palestinian civilians—including medics and bystanders—during weekly protests against settlement expansion and land seizure.',
+      "Multi-year B’Tselem and press video banks document live fire wounding and killing Palestinian civilians—including medics and bystanders—during weekly protests against settlement expansion and land seizure.",
     evidence:
-      'B’Tselem video case files, medical records cited by rights monitors, and multi-outlet reporting establish multi-source live-fire civilian harm. Rules-of-engagement defenses do not erase the footage record.',
+      "B’Tselem video case files, medical records cited by rights monitors, and multi-outlet reporting establish multi-source live-fire civilian harm. Rules-of-engagement defenses do not erase the footage record.",
     sources: [
       { label: 'B’Tselem video / firearms documentation', url: 'https://www.btselem.org/firearms' },
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
@@ -1042,7 +1042,7 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     summary:
       'Authenticated bodycam and helmet-cam footage from ground operations shows civilian detentions, home entries, and property destruction. Multi-outlet authentication treats large volumes as genuine unit footage—primary visual evidence of ground-force conduct toward civilians.',
     evidence:
-      'B’Tselem compilations, Israeli media recirculation, and international wire authentication establish multi-source circulation of genuine bodycam content. Legal character of each engagement is case-level; civilian presence in footage is multi-source.',
+      "B’Tselem compilations, Israeli media recirculation, and international wire authentication establish multi-source circulation of genuine bodycam content. Legal character of each engagement is case-level; civilian presence in footage is multi-source.",
     sources: [
       { label: 'B’Tselem video archives', url: 'https://www.btselem.org/video' },
       { label: 'Reuters Middle East packages', url: 'https://www.reuters.com/world/middle-east/' },
@@ -1086,9 +1086,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2024',
     location: 'Huwara and nearby West Bank villages',
     summary:
-      'Beyond the February 2023 Huwara rampage, multi-outlet and B’Tselem video banks document repeated settler arson, assaults, and property destruction in the same corridor—often with soldiers present and non-intervening.',
+      "Beyond the February 2023 Huwara rampage, multi-outlet and B’Tselem video banks document repeated settler arson, assaults, and property destruction in the same corridor—often with soldiers present and non-intervening.",
     evidence:
-      'B’Tselem video case files, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source visual documentation of repeated civilian-targeted settler violence.',
+      "B’Tselem video case files, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source visual documentation of repeated civilian-targeted settler violence.",
     sources: [
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
@@ -1160,7 +1160,7 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     summary:
       'Settlers have live-streamed and self-recorded assaults, arson, and intimidation of Palestinian civilians. Multi-outlet authentication treats many of these as genuine primary visual records of civilian-targeted violence—often more direct than third-party reporting alone.',
     evidence:
-      'B’Tselem video banks, Israeli media recirculation, and international wire authentication establish multi-source documentation of self-recorded settler violence against civilians.',
+      "B’Tselem video banks, Israeli media recirculation, and international wire authentication establish multi-source documentation of self-recorded settler violence against civilians.",
     sources: [
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
@@ -1277,9 +1277,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2024',
     location: 'Nablus corridor / Huwara-area villages',
     summary:
-      'B’Tselem and multi-outlet video document repeated mass settler attacks along the Nablus corridor after October 7—arson, assaults, and road blockades filmed as primary visual evidence of civilian-targeted violence.',
+      "B’Tselem and multi-outlet video document repeated mass settler attacks along the Nablus corridor after October 7—arson, assaults, and road blockades filmed as primary visual evidence of civilian-targeted violence.",
     evidence:
-      'B’Tselem video banks, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of corridor-scale settler violence.',
+      "B’Tselem video banks, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of corridor-scale settler violence.",
     sources: [
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
@@ -1394,9 +1394,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank villages and agricultural access roads',
     summary:
-      'B’Tselem video banks and multi-outlet packages include phone and bodycam footage of settler assaults on Palestinian civilians, including children, often livestreamed or filmed contemporaneously. Multi-source visual record of civilian-targeted settler violence distinct from Huwara corridor and olive-harvest cards.',
+      "B’Tselem video banks and multi-outlet packages include phone and bodycam footage of settler assaults on Palestinian civilians, including children, often livestreamed or filmed contemporaneously. Multi-source visual record of civilian-targeted settler violence distinct from Huwara corridor and olive-harvest cards.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of filmed settler assaults on civilians.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of filmed settler assaults on civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -1465,9 +1465,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank villages and East Jerusalem neighborhoods',
     summary:
-      'B’Tselem video banks and multi-outlet packages document home demolitions and family evictions affecting Palestinian civilians including children. Multi-source visual record distinct from prior home-demolition live-video card by emphasizing family-eviction sequences; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document home demolitions and family evictions affecting Palestinian civilians including children. Multi-source visual record distinct from prior home-demolition live-video card by emphasizing family-eviction sequences; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA demolition tallies, and multi-outlet reporting establish multi-source documentation of civilian home demolitions and forced displacement.',
+      "B’Tselem video documentation, OCHA demolition tallies, and multi-outlet reporting establish multi-source documentation of civilian home demolitions and forced displacement.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem home demolition documentation', url: 'https://www.btselem.org/' },
@@ -1537,9 +1537,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank checkpoints and ambulance routes',
     summary:
-      'PRCS, B’Tselem video banks, and multi-outlet packages document ambulance delays and denials at West Bank checkpoints affecting Palestinian civilians including children. Multi-source visual record distinct from paramedic-attack cards; ethnicity is never evidence.',
+      "PRCS, B’Tselem video banks, and multi-outlet packages document ambulance delays and denials at West Bank checkpoints affecting Palestinian civilians including children. Multi-source visual record distinct from paramedic-attack cards; ethnicity is never evidence.",
     evidence:
-      'PRCS operational updates, B’Tselem video documentation, and multi-outlet reporting establish multi-source documentation of checkpoint delays affecting medical transport of civilians.',
+      "PRCS operational updates, B’Tselem video documentation, and multi-outlet reporting establish multi-source documentation of checkpoint delays affecting medical transport of civilians.",
     sources: [
       { label: 'Palestine Red Crescent updates', url: 'https://www.palestinercs.org/' },
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
@@ -1609,9 +1609,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank villages under night settler attacks',
     summary:
-      'B’Tselem video banks and multi-outlet packages document night arson attacks on Palestinian civilian homes and property, including families with children. Multi-source visual record distinct from Huwara corridor and livestreamed assault cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document night arson attacks on Palestinian civilian homes and property, including families with children. Multi-source visual record distinct from Huwara corridor and livestreamed assault cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of night arson against civilians.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of night arson against civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -1681,9 +1681,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village access roads',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler roadblocks confining Palestinian civilian movement, including families with children. Multi-source visual record distinct from olive-harvest and Huwara corridor cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler roadblocks confining Palestinian civilian movement, including families with children. Multi-source visual record distinct from olive-harvest and Huwara corridor cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA access tallies, and multi-outlet reporting establish multi-source documentation of settler roadblocks affecting civilians.',
+      "B’Tselem video documentation, OCHA access tallies, and multi-outlet reporting establish multi-source documentation of settler roadblocks affecting civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -1753,9 +1753,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank grazing routes and village livestock pens',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler theft of and attacks on Palestinian civilian livestock, denying food and income for families with children. Multi-source visual record distinct from shepherd-route and veterinary-visit attack cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler theft of and attacks on Palestinian civilian livestock, denying food and income for families with children. Multi-source visual record distinct from shepherd-route and veterinary-visit attack cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of livestock theft and herd attacks against civilians.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of livestock theft and herd attacks against civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -1825,9 +1825,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank roads used by Palestinian civilian traffic',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler stone-throwing at Palestinian civilian vehicles, including families with children. Multi-source visual record distinct from roadblock and olive-harvest attack cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler stone-throwing at Palestinian civilian vehicles, including families with children. Multi-source visual record distinct from roadblock and olive-harvest attack cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of stone-throwing attacks on civilian vehicles.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of stone-throwing attacks on civilian vehicles.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -1897,9 +1897,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village water cisterns and access roads',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler destruction of Palestinian civilian water cisterns, denying household water including for families with children. Multi-source visual record distinct from cistern-repair and water-filter cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler destruction of Palestinian civilian water cisterns, denying household water including for families with children. Multi-source visual record distinct from cistern-repair and water-filter cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA water-access tallies, and multi-outlet reporting establish multi-source documentation of cistern destruction affecting civilians.',
+      "B’Tselem video documentation, OCHA water-access tallies, and multi-outlet reporting establish multi-source documentation of cistern destruction affecting civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -1969,9 +1969,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village agricultural land',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler bulldozer clearance of Palestinian civilian agricultural land, denying multi-year crop investment including food for families with children. Multi-source visual record; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler bulldozer clearance of Palestinian civilian agricultural land, denying multi-year crop investment including food for families with children. Multi-source visual record; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence and land-access tallies, and multi-outlet reporting establish multi-source documentation of land clearance harming civilian agriculture.',
+      "B’Tselem video documentation, OCHA settler-violence and land-access tallies, and multi-outlet reporting establish multi-source documentation of land clearance harming civilian agriculture.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -2041,9 +2041,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village homes',
     summary:
-      'B’Tselem video banks and multi-outlet packages document night settler raids on Palestinian civilian homes, including families with children. Multi-source visual record distinct from night arson and livestreamed assault cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document night settler raids on Palestinian civilian homes, including families with children. Multi-source visual record distinct from night arson and livestreamed assault cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of night raids on civilian homes.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of night raids on civilian homes.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -2113,9 +2113,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village farm gates and agricultural access roads',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler blockades of Palestinian civilian farm gates, denying agricultural access including food production for families with children. Multi-source visual record distinct from roadblock and olive-harvest cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler blockades of Palestinian civilian farm gates, denying agricultural access including food production for families with children. Multi-source visual record distinct from roadblock and olive-harvest cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA access tallies, and multi-outlet reporting establish multi-source documentation of farm-gate blockades affecting civilians.',
+      "B’Tselem video documentation, OCHA access tallies, and multi-outlet reporting establish multi-source documentation of farm-gate blockades affecting civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -2185,9 +2185,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank hilltops and village agricultural land',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler tent outposts established on Palestinian civilian land, displacing agricultural use including food production for families with children. Multi-source visual record; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler tent outposts established on Palestinian civilian land, displacing agricultural use including food production for families with children. Multi-source visual record; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settlement and land-access materials, and multi-outlet reporting establish multi-source documentation of outpost expansion affecting civilian land use.',
+      "B’Tselem video documentation, OCHA settlement and land-access materials, and multi-outlet reporting establish multi-source documentation of outpost expansion affecting civilian land use.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settlements documentation', url: 'https://www.btselem.org/' },
@@ -2257,9 +2257,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village roads and demonstration sites',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler vehicle ramming incidents against Palestinian civilians, including children. Multi-source visual record distinct from stone-throwing and roadblock cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler vehicle ramming incidents against Palestinian civilians, including children. Multi-source visual record distinct from stone-throwing and roadblock cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of vehicle-ramming attacks on civilians.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of vehicle-ramming attacks on civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -2400,9 +2400,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village olive groves',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler uprooting of Palestinian civilian olive trees, denying multi-year crop investment including food for families with children. Multi-source visual record distinct from harvest-equipment destruction cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler uprooting of Palestinian civilian olive trees, denying multi-year crop investment including food for families with children. Multi-source visual record distinct from harvest-equipment destruction cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of olive-tree uprooting against civilians.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of olive-tree uprooting against civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -2614,9 +2614,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village homes',
     summary:
-      'B’Tselem video banks and multi-outlet packages document daytime settler arson attacks on Palestinian civilian homes, including families with children. Distinct from night-arson visual card by focusing on multi-source daytime packages; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document daytime settler arson attacks on Palestinian civilian homes, including families with children. Distinct from night-arson visual card by focusing on multi-source daytime packages; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of daytime home arson against civilians.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of daytime home arson against civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -2757,9 +2757,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village fields and agricultural plots',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler burning of Palestinian civilian crops, denying food production including for families with children. Multi-source visual record distinct from home-arson cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler burning of Palestinian civilian crops, denying food production including for families with children. Multi-source visual record distinct from home-arson cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of crop burning against civilians.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of crop burning against civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -2829,9 +2829,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village greenhouses',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler arson of Palestinian civilian greenhouses, denying food production including for families with children. Multi-source visual record distinct from home-arson and crop-burning cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler arson of Palestinian civilian greenhouses, denying food production including for families with children. Multi-source visual record distinct from home-arson and crop-burning cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of greenhouse arson against civilians.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of greenhouse arson against civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -2972,9 +2972,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village schools',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian schools, denying educational space for children. Multi-source visual record distinct from individual school-event pattern cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian schools, denying educational space for children. Multi-source visual record distinct from individual school-event pattern cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA education-access tallies, and multi-outlet reporting establish multi-source documentation of school attacks affecting civilian children.',
+      "B’Tselem video documentation, OCHA education-access tallies, and multi-outlet reporting establish multi-source documentation of school attacks affecting civilian children.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -3257,9 +3257,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village agricultural fields',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler tractor attacks on Palestinian civilian fields and property, denying food production including for families with children. Multi-source visual record; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler tractor attacks on Palestinian civilian fields and property, denying food production including for families with children. Multi-source visual record; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of tractor attacks affecting civilian agriculture.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of tractor attacks affecting civilian agriculture.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -3329,9 +3329,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank grazing routes and village flocks',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian sheep flocks, denying food and income for families with children. Multi-source visual record distinct from livestock-theft cards; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian sheep flocks, denying food and income for families with children. Multi-source visual record distinct from livestock-theft cards; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of flock attacks affecting civilians.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of flock attacks affecting civilians.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -3472,9 +3472,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village irrigation networks',
     summary:
-      'B’Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian irrigation infrastructure, denying agricultural water including for families with children. Multi-source visual record; ethnicity is never evidence.',
+      "B’Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian irrigation infrastructure, denying agricultural water including for families with children. Multi-source visual record; ethnicity is never evidence.",
     evidence:
-      'B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of irrigation attacks affecting civilian agriculture.',
+      "B’Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of irrigation attacks affecting civilian agriculture.",
     sources: [
       { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
       { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
@@ -5414,9 +5414,9 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     date: '2023–2025',
     location: 'West Bank village vineyards and trellis rows',
     summary:
-      'B'Tselem video banks and multi-outlet packages document settler cutting of Palestinian civilian grape vines, denying multi-year fruit production including income for families with children. Multi-source visual record; ethnicity is never evidence.',
+      "B'Tselem video banks and multi-outlet packages document settler cutting of Palestinian civilian grape vines, denying multi-year fruit production including income for families with children. Multi-source visual record; ethnicity is never evidence.",
     evidence:
-      'B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of vine cutting affecting civilian agricultural livelihoods.',
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of vine cutting affecting civilian agricultural livelihoods.",
     sources: [
       { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
       { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },

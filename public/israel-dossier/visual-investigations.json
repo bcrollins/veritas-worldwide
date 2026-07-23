@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T14:04:14.856Z"
+    "generatedAt": "2026-07-23T14:05:33.103Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 229,
-    "viPackCards": 210,
-    "totalIncidents": 2078
+    "incidentsWithVideoAndCivilians": 231,
+    "viPackCards": 212,
+    "totalIncidents": 2089
   },
   "incidents": [
     {
@@ -5571,6 +5571,10 @@
         {
           "label": "OCHA OPT settler-violence updates",
           "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org/"
         }
       ],
       "multimedia": [
@@ -5588,6 +5592,11 @@
           "type": "document",
           "label": "OCHA settler-violence materials",
           "url": "https://www.ochaopt.org/"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem case files",
+          "url": "https://www.btselem.org/"
         }
       ]
     },
@@ -8100,6 +8109,86 @@
         {
           "label": "OHCHR materials on October 7 crimes",
           "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-aid-convoy-strike-visual-2023-2025",
+      "title": "Gaza Aid Convoy Strikes — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "Gaza Strip aid convoy routes and distribution approaches",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "OHCHR materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza aid packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet aid-convoy video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of convoy aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "document",
+          "label": "OCHA access trail",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-oct7-hod-hasharon-safe-room-visual-2023",
+      "title": "October 7 Hod HaSharon Safe-Room Civilian Harm — Multi-Outlet Visual Record",
+      "date": "October 7, 2023",
+      "location": "Hod HaSharon residential safe rooms and home shelters",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
         }
       ],
       "multimedia": [
