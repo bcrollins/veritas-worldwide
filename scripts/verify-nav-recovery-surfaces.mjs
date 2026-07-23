@@ -1461,4 +1461,26 @@ for (const [rel, id] of [
 }
 
 
+
+// ResearchHubChips mount pages reaffirm final
+const researchChipPages = [
+  'MethodologyPage','SourcesPage','ContentPackPage','ResearcherHubPage','InstitutePage',
+  'InstituteCoursePage','InstituteGuidePage','InstituteBookPage','InstituteMethodologyPage',
+  'BibleHistoryPage','RecordOfJesusChristPage','VolumeIIHubPage','PersonalTimelinePage',
+]
+for (const name of researchChipPages) {
+  assert(read(`src/pages/${name}.tsx`).includes('ResearchHubChips'), `${name} ResearchHubChips final`)
+}
+
+// Browse recovery hubs reaffirm final
+for (const [rel, id] of [
+  ['src/pages/NewsPage.tsx', 'news-related-hubs'],
+  ['src/pages/TimelinePage.tsx', 'timeline-related-hubs'],
+  ['src/pages/TopicsIndexPage.tsx', 'topics-related-hubs'],
+]) {
+  assert(read(rel).includes(id), `${id} final`)
+  assert(read(rel).includes('RelatedHubs'), `${rel} RelatedHubs final`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
