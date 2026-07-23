@@ -858,6 +858,7 @@ const corpusRateLimit = rateLimit({ name: 'corpus-json', windowMs: 60_000, max: 
 app.use('/profiles/corpus.json', corpusRateLimit)
 app.use('/record-of-jesus-christ/corpus.json', corpusRateLimit)
 app.use('/israel-dossier/corpus.json', corpusRateLimit)
+app.use('/israel-dossier/visual-investigations.json', corpusRateLimit)
 app.use('/evidence-taxonomy.json', corpusRateLimit)
 app.use('/profiles/soft-floor.json', corpusRateLimit)
 app.use('/record-of-jesus-christ/soft-floor.json', corpusRateLimit)

@@ -28,6 +28,11 @@ const ENTRIES = [
   { disk: 'public/profiles/corpus.json', archive: 'profiles/corpus.json', required: true },
   { disk: 'public/record-of-jesus-christ/corpus.json', archive: 'record-of-jesus-christ/corpus.json', required: true },
   { disk: 'public/israel-dossier/corpus.json', archive: 'israel-dossier/corpus.json', required: true },
+  {
+    disk: 'public/israel-dossier/visual-investigations.json',
+    archive: 'israel-dossier/visual-investigations.json',
+    required: true,
+  },
   { disk: 'public/profiles/soft-floor.json', archive: 'profiles/soft-floor.json' },
   { disk: 'public/record-of-jesus-christ/soft-floor.json', archive: 'record-of-jesus-christ/soft-floor.json' },
   { disk: 'public/israel-dossier/soft-floor.json', archive: 'israel-dossier/soft-floor.json' },
