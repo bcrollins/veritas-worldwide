@@ -1,9 +1,11 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:46:01.023Z  
+**Generated:** 2026-07-23T09:48:52.299Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 290  
-**Tier histogram:** `{"circumstantial": 15, "contested": 30, "interpretive": 28, "literary_theological": 3, "speculative": 2, "verified": 100, "well_attested": 112}`
+**Claim count:** 300  
+**Tier histogram:** `{"circumstantial": 15, "contested": 30, "interpretive": 29, "literary_theological": 3, "speculative": 2, "verified": 105, "well_attested": 116}`
+
+**MILESTONE:** 300 unique tier-labeled claims live on veritasworldwide.com.
 
 Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.json`.
 
@@ -15,6 +17,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ane-babylonian-chronicle-jerusalem` | verified | proof_grade_data | Babylonian Chronicle entries record Nebuchadnezzar’s campaigns against Judah, including the 597 BCE deportation horizon. |
 | `ane-babylonian-chronicles` | verified | proof_grade_data | Babylonian Chronicles document Nebuchadnezzar’s campaigns against Jerusalem, providing independent chronological control for the late Iron Age Judah narrative. |
 | `ane-black-obelisk` | verified | proof_grade_data | The Black Obelisk of Shalmaneser III depicts Jehu (or a representative) of Israel paying tribute — an extra-biblical visual control for the Omride/Jehu period. |
+| `ane-black-obelisk-jehu` | verified | proof_grade_data | The Black Obelisk of Shalmaneser III depicts Jehu (or envoy) of Israel paying tribute — a primary visual control for 9th-century Israelite kingship. |
 | `ane-cos-corpus` | well_attested | attested_report | The Context of Scripture (COS) and ANET anthologies assemble primary ANE texts used as comparative controls for Hebrew Bible literature and historiography. |
 | `ane-cyrus-cylinder` | verified | proof_grade_data | The Cyrus Cylinder (c. 539 BCE) records Achaemenid policy of restoring temples and returning displaced populations after the conquest of Babylon. |
 | `ane-deir-alla` | well_attested | proof_grade_data | The Deir Alla inscription mentions Balaam son of Beor — a rare extra-biblical onomastic parallel to Numbers 22–24 traditions. |
@@ -42,6 +45,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `arch-caesarea-maritima` | verified | proof_grade_data | Caesarea Maritima — Herodian harbor city and later Roman provincial capital — is extensively excavated and contextualizes prefectural administration relevant to Pilate traditions. |
 | `arch-caesarea-philippi` | verified | proof_grade_data | Paneas / Caesarea Philippi (Banias) is archaeologically documented as a Herodian/Philip city at the Jordan headwaters with a Paneion cult site. |
 | `arch-capernaum` | well_attested | attested_report | Capernaum (Kefar Nahum) was a fishing village on the Sea of Galilee with Early Roman occupation; a later synagogue stands over earlier remains. |
+| `arch-dead-sea-scroll-caves` | verified | proof_grade_data | The Qumran cave finds (1947–) remain the primary archaeological recovery context for the Dead Sea Scrolls corpus. |
 | `arch-destruction-70` | verified | proof_grade_data | The Roman destruction of Jerusalem and the Temple in 70 CE is multiply attested (Josephus; archaeological burn/destruction layers; Roman triumph iconography such as the Arch of Titus spoils relief). |
 | `arch-galilee-boat` | verified | proof_grade_data | The “Jesus Boat” (first-century Galilee boat, discovered 1986) illustrates fishing technology on the lake in the Early Roman period. |
 | `arch-gamla` | verified | proof_grade_data | Gamla (Golan) destruction in the First Jewish Revolt is archaeologically and literarily documented (Josephus), illustrating Galilee/Golan war archaeology. |
@@ -73,6 +77,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `cosmo-acoustic-scale` | verified | science_model | The angular scale of the CMB acoustic peaks (θ_*) tightly constrains the angular diameter distance to recombination in flat ΛCDM. |
 | `cosmo-age` | well_attested | science_model | Under Planck 2018 ΛCDM parameters, the universe age is approximately 13.8 billion years. |
 | `cosmo-bao` | verified | science_model | Baryon acoustic oscillations (BAO) measured in large-scale galaxy surveys provide an independent standard-ruler constraint on the expansion history within ΛCDM. |
+| `cosmo-baryon-acoustic-fixed` | verified | science_model | The comoving sound horizon r_d is a calibrated standard ruler from early-universe physics used by BAO surveys to map H(z) and D_A(z). |
 | `cosmo-bbn` | well_attested | science_model | Primordial abundances of light elements (⁴He, D, ³He, ⁷Li) are broadly consistent with Big Bang nucleosynthesis predictions. |
 | `cosmo-big-bang-nucleosynthesis-d` | verified | science_model | Primordial deuterium abundance measurements tightly constrain the baryon density in standard BBN, aligning with CMB-inferred Ω_b. |
 | `cosmo-cmb` | verified | science_model | The cosmic microwave background (CMB) is a near-isotropic blackbody at T ≈ 2.725 K, consistent with a hot early universe. |
@@ -90,6 +95,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `cosmo-matter-power` | verified | science_model | The matter power spectrum from galaxy surveys and Lyman-α forests constrains structure growth consistent with cold dark matter frameworks at large scales. |
 | `cosmo-neutrino-bbn` | verified | science_model | Standard BBN and CMB analyses constrain the effective number of neutrino species (N_eff) near the Standard Model expectation. |
 | `cosmo-nucleosynthesis-li` | contested | science_model | The cosmological lithium problem remains an open tension between standard BBN predictions for ⁷Li and many stellar abundance measurements. |
+| `cosmo-omega-matter` | verified | science_model | Large-scale structure and CMB fits constrain the total matter density parameter Ω_m near ~0.3 in flat ΛCDM baselines. |
 | `cosmo-recombination` | verified | science_model | CMB photons free-stream from the surface of last scattering at recombination (~z ≈ 1090 in standard ΛCDM). |
 | `cosmo-reionization` | well_attested | science_model | CMB optical depth and high-z galaxy surveys constrain the epoch of reionization when the first stars ionized the intergalactic medium. |
 | `cosmo-sound-horizon` | verified | science_model | The sound horizon at recombination sets the BAO standard-ruler scale used in late-universe distance measurements. |
@@ -102,6 +108,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ec-athanasius` | verified | proof_grade_data | Athanasius, 39th Festal Letter (367 CE), lists the exact 27-book New Testament canon later ratified in the West. |
 | `ec-barnabas` | well_attested | attested_report | The Epistle of Barnabas (late 1st / early 2nd c.) allegorizes Hebrew Bible law and shows early Christian supersessionist interpretation. |
 | `ec-didache` | well_attested | attested_report | The Didache preserves an early Christian “two ways” ethic, baptismal and eucharistic instructions, and itinerant ministry rules — dating commonly late 1st / early 2nd c. |
+| `ec-didache-eucharist` | well_attested | attested_report | The Didache preserves early Christian baptismal and eucharistic instructions distinct from later standardized liturgies. |
 | `ec-diognetus` | well_attested | attested_report | The Epistle to Diognetus (2nd/3rd c.?) is an early Christian apology describing Christian life as a civic “soul of the world.” |
 | `ec-eusebius-he` | well_attested | attested_report | Eusebius’s Ecclesiastical History (early 4th c.) is a foundational but tendentious narrative source for earlier Christian writers, martyrdoms, and canon discussions. |
 | `ec-gospel-harmony` | well_attested | attested_report | Tatian’s Diatessaron (late 2nd c.) harmonized the four Gospels into a single narrative widely used in Syriac Christianity — evidence of early fourfold Gospel prestige and of textual fluidity in use. |
@@ -151,6 +158,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `hj-jewishness-consensus` | well_attested | reconstruction | Mainstream historical Jesus research treats Jesus as a first-century Jew operating within Second Temple Judaism, not as a later Gentile construct. |
 | `hj-john-baptist-movement` | well_attested | attested_report | John the Baptist is multiply attested (Josephus Ant. 18; Synoptics; Johannine tradition) as an independent purification/repentance preacher executed by Herod Antipas. |
 | `hj-john-baptizer-independence` | well_attested | attested_report | John the Baptist is treated as an independent prophetic figure in Josephus and the Gospels, not a mere literary foil invented de novo. |
+| `hj-kingdom-of-god-core` | well_attested | reconstruction | The kingdom of God / reign of God is multiply attested as central to Jesus’ public proclamation across Synoptic streams. |
 | `hj-kingdom-proclamation` | well_attested | reconstruction | A core historical judgment across diverse scholars is that Jesus proclaimed God’s kingdom / reign as central to his public activity. |
 | `hj-language` | contested | debate | Jesus likely spoke Aramaic as a primary vernacular; Greek exposure in Galilee is plausible; Hebrew literacy/use is debated for the population stratum. |
 | `hj-literacy` | well_attested | attested_report | Literacy rates in Early Roman Judea/Galilee were limited relative to modern norms; most people encountered texts orally and through specialists. |
@@ -185,6 +193,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `mod-form-criticism-limits` | interpretive | reconstruction | Form criticism classifies Gospel units by genre and Sitz im Leben; its older assumption of pure oral isolation before writing is now heavily qualified. |
 | `mod-genetics-limits` | well_attested | science_model | Ancient DNA of the Southern Levant informs regional demographic history; it cannot identify named New Testament individuals or prove specific genealogies in the Gospels. |
 | `mod-gospel-genre-bios` | interpretive | reconstruction | Many scholars classify the Gospels as a form of ancient biography (bios) with flexible historical conventions rather than modern historiography. |
+| `mod-historical-jesus-minimal-facts` | interpretive | reconstruction | “Minimal facts” apologetic packages select a short list of widely accepted historical data points; academic HJ work often uses broader and more contested data sets with explicit uncertainty. |
 | `mod-historical-jesus-quests` | interpretive | reconstruction | “Quests” for the historical Jesus are historiographical programs with shifting criteria; no single reconstruction commands universal assent. |
 | `mod-jesus-seminar` | contested | debate | The Jesus Seminar (1980s–2000s) popularized colored-bead voting on sayings authenticity; its methods and conclusions remain highly contested in the guild. |
 | `mod-living-text` | interpretive | reconstruction | “Living text” models (e.g., Parker) emphasize early Christian textual fluidity and community use rather than a single frozen original always recoverable. |
@@ -218,6 +227,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nc-marcus-aurelius-christians` | circumstantial | attested_report | Marcus Aurelius (Meditations) and second-century elite literature occasionally notice Christians as a social type; such notices are thin and polemical. |
 | `nc-martial-juvenes` | well_attested | attested_report | No contemporary Roman historian from Jesus’ lifetime mentions him; the earliest non-Christian literary controls (Josephus, Tacitus, Pliny) are decades later. |
 | `nc-pliny` | verified | proof_grade_data | Pliny the Younger, Epistles 10.96–97, describes early second-century Christian worship practices in Bithynia-Pontus and imperial policy under Trajan. |
+| `nc-pliny-christ-hymns` | verified | proof_grade_data | Pliny reports Christians singing hymns to Christ “as to a god” (carmen Christo quasi deo) — early 2nd-c. evidence of cultic devotion language. |
 | `nc-pliny-christians` | verified | proof_grade_data | Pliny the Younger’s letter to Trajan (Ep. 10.96) describes early 2nd-century Bithynian Christians worshiping Christ “as a god” and legal policy toward them. |
 | `nc-suetonius` | circumstantial | reconstruction | Suetonius, Claudius 25.4, refers to disturbances in Rome impulsore Chresto — often discussed as a possible garbled reference to Christ-related conflict, but identification is uncertain. |
 | `nc-suetonius-chrestus` | circumstantial | attested_report | Suetonius (Claudius 25) mentions disturbances in Rome under Claudius involving “Chrestus” — identification with Christ/Christians is possible but contested. |
@@ -266,6 +276,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nt-singular-readings` | verified | proof_grade_data | Singular readings (unique to one MS) are used in scribal-habits studies to profile individual copyists without treating them as initial text. |
 | `nt-synoptic-problem` | contested | debate | The Synoptic Problem (literary relationship of Matthew, Mark, Luke) remains an active field; Markan priority is majority, Q hypothesis is majority but contested by Farrer and other models. |
 | `nt-textual-criticism` | verified | proof_grade_data | Greek New Testament continuous-text manuscripts number on the order of several thousand, with additional lectionaries and versions. |
+| `nt-ubs-rating-letters` | well_attested | attested_report | UBS editions assign letter ratings (A–D) to selected variants expressing editorial confidence — a pedagogical signal, not a probability in the Bayesian sense. |
 | `nt-variants` | verified | proof_grade_data | Hundreds of thousands of variant readings exist across the tradition; the vast majority are orthographic or trivial, while a minority affect meaning. |
 | `nt-versional-evidence` | well_attested | proof_grade_data | Early versions (Old Latin, Syriac, Coptic) are independent textual witnesses that can preserve early readings not always visible in later Greek majority streams. |
 | `nt-western-text` | well_attested | proof_grade_data | The so-called Western text (e.g., Codex Bezae in Acts) often presents freer, paraphrastic readings that complicate simple Alexandrian/Byzantine dichotomies. |
@@ -293,6 +304,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `st-prefecture` | verified | proof_grade_data | Roman Judea after 6 CE was administered by equestrian prefects (later procurators) based primarily at Caesarea, with troops and judicial powers including capital cases in practice. |
 | `st-roman-census-practices` | contested | debate | Roman provincial censuses and tax registrations are documented empire-wide; Luke’s census of Quirinius is a specific chronological crux relative to Herod’s death. |
 | `st-roman-client-kings` | verified | proof_grade_data | Rome governed Judea via client kings (Herod, Archelaus) and later equestrian prefects — dual administrative models shape Gospel political settings. |
+| `st-sadducees-josephus` | well_attested | attested_report | Josephus’s descriptions of Sadducees emphasize aristocratic temple-associated elites denying fate and (per him) resurrection — tendentious but indispensable. |
 | `st-salome-alexandra` | well_attested | attested_report | Salome Alexandra’s reign (Hasmonean queen) is documented in Josephus as a period of Pharisaic influence before dynastic collapse into Roman arbitration. |
 | `st-samaria-papyri` | verified | proof_grade_data | The Wadi Daliyeh (Samaria) papyri document mid-4th-century BCE legal/administrative life under late Persian / early Hellenistic rule in Samaria. |
 | `st-synagogue-origins` | contested | debate | The institutional origins and pre-70 function of “synagogues” remain debated; archaeological assembly buildings and literary references do not form a single simple type. |

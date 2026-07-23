@@ -17,7 +17,7 @@
 
 **Estimated impact of full 50-item program:** +15–35% qualified organic discovery over 3–6 months for documentary/archive queries (Jesus evidence, primary-source history, institute guides) if content quality holds—driven by index hygiene, rich results eligibility, and Discover-safe previews—not by keyword stuffing.
 
-**Implemented this sprint (HIGH + key MEDIUM):** Suggestions #1–8, #11–14, #18–20, #24–26, #33, #40 (partial), ROC waves 4–12 to **209 claims** (live), HowTo+Dataset schema (client+prerender), Bible/Sources/Methodology FAQ dual taxonomy, NT textual figure, topic-hub expansion, personal-GH sameAs scrub (P0 live), verify:live-anonymity (+verify:live gate), verify-seo-meta forbid floors, Sources discoverability card, 190+ depth copy on hubs.
+**Implemented this sprint (HIGH + key MEDIUM):** Suggestions #1–8, #11–14, #18–20, #24–26, #33, #40 (partial), ROC waves 4–22 to **300 claims** (live), HowTo+Dataset schema (client+prerender), Bible/Sources/Methodology FAQ dual taxonomy, NT textual figure, topic-hub expansion, personal-GH sameAs scrub (P0 live), verify:live-anonymity (+verify:live gate), verify-seo-meta forbid floors, Sources discoverability card, 190+ depth copy on hubs.
 
 ---
 

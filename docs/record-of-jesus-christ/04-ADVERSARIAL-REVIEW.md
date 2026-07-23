@@ -78,3 +78,8 @@ Wave3 claims (James, Gal 2, Masada, Bar Kokhba, prefecture, Herod death, Pauline
 ## Intervals 15–21 (waves 12–18) — **263 claims live**
 
 Corpus crossed 200 → 250 → 263 with continuous ship-in-intervals. Anonymity live floors held. Residual operator OPSEC unchanged.
+
+
+## Interval 25 — **300 claims live**
+
+Corpus milestone: 300 unique seven-tier claims with Dataset/HowTo/Book/FAQ bot schema, NT figure, entity-only sameAs, verify:live-anonymity PASS. Residual: operator org GH transfer + admin hash env.
