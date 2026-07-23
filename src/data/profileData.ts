@@ -6102,7 +6102,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'FL',
     photoUrl: getProfilePhoto('matt-gaetz'),
     summary:
-      'Former Florida Republican House member (2017–2024) and Freedom Caucus firebrand. Consistent pro-Israel security voting with high-visibility Trump-aligned politics. Documented pro-Israel PAC support (OpenSecrets). Left Congress 2024 amid attorney general nomination fight. Integrity docket: dual-cited PolitiFact Falses — “1 of 5” federal murder charges being illegal aliens (cherry-picked USSC year) and Biden “arming up the IRS” for Fallujah-style tax enforcement (CI ammo is century-old law-enforcement routine). Primary: OpenSecrets, House record, PolitiFact, USSC, IRS CI.',
+      'Former Florida Republican House member (2017–2024) and Freedom Caucus firebrand. Consistent pro-Israel security voting with high-visibility Trump-aligned politics. Documented pro-Israel PAC support (OpenSecrets). Left Congress 2024 amid attorney general nomination fight. Integrity docket: dual-cited PolitiFact Falses — “1 of 5” federal murder charges being illegal aliens; Biden “arming up the IRS”; and FBI “actively investigating” Clinton server on Sept 2, 2016 (investigation was not active then). Primary: OpenSecrets, House record, PolitiFact, USSC, IRS CI, WSJ/Comey record.',
     tags: [
       'Former Representative',
       'Freedom Caucus',
@@ -6196,6 +6196,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2022',
       },
+      {
+        claim:
+          'Integrity docket: Feb 2018 claim FBI was “actively investigating” Clinton’s private email server on Sept 2, 2016 rated False (Comey had announced completion in July; activity resumed only after Weiner laptop in October).',
+        source: 'PolitiFact False; Comey July 2016 statement; Gaetz tweet',
+        url: 'https://www.politifact.com/factchecks/2018/feb/12/matt-gaetz/fbi-not-actively-investigating-clinton-emails/',
+        tier: 'verified',
+        date: '2018',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -6236,6 +6244,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'gaetz-fbi-actively-investigating-clinton-sept-2016',
+        statement:
+          'On Sept. 2, 2016, “while the FBI was actively investigating Hillary Clinton’s use of a private email server,” Page texted that “POTUS wants to know everything we’re doing.”',
+        saidAt: 'February 7, 2018',
+        context:
+          'X/Twitter after release of Page–Strzok texts from Sen. Ron Johnson’s Clinton-email interim report; later deleted after PolitiFact inquiry.',
+        whyFalse:
+          'PolitiFact rated False. FBI Director Comey announced July 5, 2016 that the bureau was completing the Clinton email investigation and recommending no charges. Reporting indicates the matter was not being actively worked in early September; renewed investigative steps began only after the Weiner laptop discovery in late October. Gaetz’s office deleted the tweet and said they meant the State Department’s separate review — but FBI agents texting about a State probe is implausible, and the public claim named the FBI.',
+        correction:
+          'The FBI was not actively investigating Clinton’s server on Sept. 2, 2016; post-July work was largely administrative until the October Weiner-related review.',
+        statementSource: 'Rep. Matt Gaetz X/Twitter post, Feb. 7, 2018 (since deleted; PolitiFact capture)',
+        statementUrl: 'https://twitter.com/RepMattGaetz/status/961322020951744513',
+        debunkSource: 'PolitiFact — False (Feb. 12, 2018); Comey July 5, 2016 statement; contemporaneous reporting',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2018/feb/12/matt-gaetz/fbi-not-actively-investigating-clinton-emails/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/matt-gaetz/summary?cid=N00039794' },
@@ -6246,6 +6273,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — IRS arming claim (False)',
         url: 'https://www.politifact.com/factchecks/2022/aug/12/matt-gaetz/no-biden-not-arming-irs-guns-and-ammunition/',
+      },
+      {
+        label: 'PolitiFact — FBI actively investigating Clinton (False)',
+        url: 'https://www.politifact.com/factchecks/2018/feb/12/matt-gaetz/fbi-not-actively-investigating-clinton-emails/',
       },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Matt_Gaetz' },
     ],
