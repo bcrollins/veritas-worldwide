@@ -342,4 +342,17 @@ assert(
   'public visual-investigations.json must exist',
 )
 
+
+// Wave2 — soft-floor.json companions keep soft claim floors deploy-safe
+assert(
+  existsSync(join(root, 'public/record-of-jesus-christ/soft-floor.json')) ||
+    existsSync(join(root, 'public/record-of-jesus-christ/corpus.json')),
+  'ROC soft-floor or corpus required',
+)
+assert(
+  existsSync(join(root, 'public/israel-dossier/soft-floor.json')) ||
+    existsSync(join(root, 'public/israel-dossier/corpus.json')),
+  'Israel soft-floor or corpus required',
+)
+
 console.log(`[verify:top100-floors] PASS — ${failures.length === 0 ? 'all' : ''} Top-100 remaining floors green`)
