@@ -7173,7 +7173,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'SC',
     photoUrl: getProfilePhoto('tim-scott'),
     summary:
-      'South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact Falses — “Secret Service remains unpaid” during 2026 DHS funding lapse and Aug 2022 claim CBO said 90% of new IRS-agent revenue comes from people making under $200k (wrong agency/wrong policy letter). Primary: OpenSecrets, Senate roll calls, CRS RL33222, PolitiFact.',
+      'South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact Falses — Secret Service unpaid during 2026 DHS lapse; IRS 90% under-$200k revenue claim; and more illegal encounters under Biden than Trump+Obama combined (CBP data contradict). Primary: OpenSecrets, Senate roll calls, CRS RL33222, PolitiFact, CBP.',
     tags: [
       'Senator',
       'Pro-Israel',
@@ -7276,6 +7276,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2022',
       },
+      {
+        claim:
+          'Integrity docket: July 2023 claim more illegal encounters under Biden than previous two administrations combined rated False (CBP nationwide/southwest data; inconsistent metrics).',
+        source: 'PolitiFact False; CBP Nationwide Encounters; Scott X',
+        url: 'https://www.politifact.com/factchecks/2023/jul/26/tim-scott/tim-scott-is-wrong-about-more-illegal-immigration/',
+        tier: 'verified',
+        date: '2023',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -7314,6 +7322,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'scott-more-encounters-biden-than-trump-obama-2023',
+        statement:
+          '“There have been more illegal encounters under Biden than the previous two administrations combined.”',
+        saidAt: 'July 11, 2023',
+        context: 'X post comparing Biden-era border enforcement metrics to Trump and Obama combined.',
+        whyFalse:
+          'PolitiFact rated False. Available CBP nationwide and southwest border data do not show more enforcement actions under Biden than under Trump and Obama combined. Title 42 pandemic changes complicate apples-to-apples counts; Scott’s math used inconsistent metrics and cast a wider net for Biden than for the prior two presidents.',
+        correction:
+          'CBP data available at the time of the claim did not support more Biden-era illegal encounters than Trump and Obama combined; methodology and pandemic-era definition changes undermine the absolute comparison.',
+        statementSource: 'Sen. Tim Scott X post, July 11, 2023 (PolitiFact statement capture)',
+        statementUrl: 'https://www.scott.senate.gov',
+        debunkSource: 'PolitiFact — False (July 26, 2023); CBP Nationwide Encounters + Border Patrol historical series',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2023/jul/26/tim-scott/tim-scott-is-wrong-about-more-illegal-immigration/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.scott.senate.gov' },
@@ -7326,6 +7352,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — IRS agents 90% claim (False)',
         url: 'https://www.politifact.com/factchecks/2022/aug/17/tim-scott/tim-scott-mangles-false-gop-talking-point-irs-houn/',
+      },
+      {
+        label: 'PolitiFact — Biden encounters vs Trump+Obama (False)',
+        url: 'https://www.politifact.com/factchecks/2023/jul/26/tim-scott/tim-scott-is-wrong-about-more-illegal-immigration/',
       },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Tim_Scott' },
     ],

@@ -602,14 +602,17 @@ for (const f of (stefanikP.documentedFalsehoods || []).filter((x) => x.tier === 
 
 // Tim Scott integrity gate (multi-entry)
 const timScott = scores['tim-scott'];
-if (!timScott || timScott.n < 2) throw new Error('tim-scott needs ≥2 verified falsehoods, got ' + (timScott?.n ?? 0));
-if (timScott.score > 75) throw new Error('tim-scott score expected ≤75, got ' + timScott.score);
+if (!timScott || timScott.n < 3) throw new Error('tim-scott needs ≥3 verified falsehoods, got ' + (timScott?.n ?? 0));
+if (timScott.score > 60) throw new Error('tim-scott score expected ≤60, got ' + timScott.score);
 const timScottP = getProfileBySlug('tim-scott');
 if (!(timScottP.documentedFalsehoods || []).some((f) => f.id === 'scott-secret-service-remains-unpaid-2026')) {
   throw new Error('tim-scott missing Secret Service unpaid docket id');
 }
 if (!(timScottP.documentedFalsehoods || []).some((f) => f.id === 'scott-irs-agents-90pct-under-200k-2022')) {
   throw new Error('tim-scott missing IRS 90% revenue docket id');
+}
+if (!(timScottP.documentedFalsehoods || []).some((f) => f.id === 'scott-more-encounters-biden-than-trump-obama-2023')) {
+  throw new Error('tim-scott missing Biden vs Trump+Obama encounters docket id');
 }
 for (const f of (timScottP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('tim-scott dual-cite collision: ' + f.id);

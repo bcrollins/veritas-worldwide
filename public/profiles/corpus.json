@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:31:14.984Z",
+  "generatedAt": "2026-07-23T08:32:31.296Z",
   "count": 96,
   "profiles": [
     {
@@ -1117,7 +1117,7 @@
       "name": "Tim Scott",
       "title": "U.S. Senator (R-SC)",
       "category": "politician",
-      "summary": "South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact Falses — “Secret Service remains unpaid” during 2026 DHS funding lapse and Aug 2022 claim CBO said 90% of new IRS-agent revenue comes from people making under $200k (wrong agency/wrong policy letter). Primary: OpenSecrets, Senate roll calls, CRS RL33222, PolitiFact.",
+      "summary": "South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact Falses — Secret Service unpaid during 2026 DHS lapse; IRS 90% under-$200k revenue claim; and more illegal encounters under Biden than Trump+Obama combined (CBP data contradict). Primary: OpenSecrets, Senate roll calls, CRS RL33222, PolitiFact, CBP.",
       "photo": "/profiles/tim-scott.jpg",
       "url": "https://veritasworldwide.com/profile/tim-scott",
       "bioguideId": "S001184",
@@ -1131,8 +1131,8 @@
         "FMF",
         "Integrity Docket"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {
