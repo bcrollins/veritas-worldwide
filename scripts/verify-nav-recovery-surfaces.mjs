@@ -1018,4 +1018,9 @@ assert(relatedNoPrint.includes('no-print'), 'no-print RelatedHubs unique final')
 const relatedAriaFinal = read('src/components/RelatedHubs.tsx')
 assert(relatedAriaFinal.includes('Related hubs'), 'RelatedHubs aria Related hubs unique final')
 
+
+// Recovery suite reports needle count in PASS line format
+// (surfaces array is the authoritative floor via length assert above)
+assert(typeof surfaces.length === 'number' && surfaces.length >= 90, 'surfaces array healthy')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
