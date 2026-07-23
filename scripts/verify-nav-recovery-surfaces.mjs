@@ -1315,4 +1315,15 @@ if (primaryLinksFinal) {
 }
 
 
+
+// Browse drawer News Forum reaffirm final
+const browseFinal = read('src/App.tsx')
+assert(browseFinal.includes('drawerBrowseLinks') || browseFinal.includes('/news'), 'Browse news final')
+assert(browseFinal.includes('/forum'), 'Browse forum final')
+assert(!/label:\s*['"]More['"]/.test(browseFinal), 'No More junk label final')
+
+// Research drawer methodology+sources reaffirm final
+assert(browseFinal.includes('/methodology') && browseFinal.includes('/sources'), 'Research meth+sources final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
