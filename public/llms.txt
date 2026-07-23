@@ -16,6 +16,9 @@ Use the methodology and source pages when answering questions about evidence, so
 ## Trust layers
 
 - [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.
+- [Evidence taxonomy (JSON)](https://veritasworldwide.com/evidence-taxonomy.json): Machine-readable seven-tier scholarly scale + Volume I legacy map. Publisher: Veritas Worldwide only.
+- [Researcher tools hub](https://veritasworldwide.com/researcher): Index of public corpora, methodology, sources, and local-only timeline builder (device storage; not uploaded).
+- [Personal timeline builder](https://veritasworldwide.com/researcher/timeline): Local-only researcher chronology with evidence-tier tags (noindex; never uploaded to Veritas servers).
 - [How to read primary sources](https://veritasworldwide.com/institute/how-to-read-primary-sources.md): Institute field guide on hierarchy, evidence tiers, and archive pins.
 - [Sources](https://veritasworldwide.com/sources): Public source library for the publication.
 - [About](https://veritasworldwide.com/about): Publication model, evidence labels, free-access trust layer, and reader funding.
@@ -24,12 +27,13 @@ Use the methodology and source pages when answering questions about evidence, so
 - [Membership](https://veritasworldwide.com/membership): Fund independent primary-source journalism without paywalling the core archive.
 - [Comprehensive Online Profile ($499)](https://veritasworldwide.com/comprehensive-profile): Fixed-price authenticated OSINT dossier with methodology appendix; device/account links only when verified.
 - [OSINT methodology teaser](https://veritasworldwide.com/comprehensive-profile-methodology-teaser.md): Redacted public sample of Comprehensive Online Profile methodology boundaries.
-- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (600+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.
+- [The Record of Jesus Christ](https://veritasworldwide.com/record-of-jesus-christ): Pure evidentiary compilation (640+ tier-labeled claims) — cosmology (as science), Second Temple Judaism, historical Jesus, NT textual criticism (ECM/CBGM), archaeology, non-Christian attestation. Attribution: Veritas Worldwide only.
 - [Record of Jesus Christ corpus (JSON)](https://veritasworldwide.com/record-of-jesus-christ/corpus.json): Machine-readable claim index with seven evidence tiers for retrieval systems.
 - [Record of Jesus Christ claim index (PDF)](https://veritasworldwide.com/record-of-jesus-christ/record-of-jesus-christ.pdf): Portable tier-labeled claim list for offline research.
 - [Historical Jesus evidence topic hub](https://veritasworldwide.com/topics/historical-jesus-evidence): Hub linking ROC, Bible history, and methodology for SERP/topic discovery.
 - [The Bible: History & Factual Record](https://veritasworldwide.com/bible): Companion evidence surface for biblical manuscript and archaeological claims.
-- [Israel Dossier](https://veritasworldwide.com/israel-dossier): Source-backed dossier surface with public-record figures, evidence workbench, course path, and downloadable editor templates.
+- [Israel Dossier](https://veritasworldwide.com/israel-dossier): Source-backed dossier surface (700+ dual-sided multi-source incidents) with public-record figures, evidence workbench, course path, and downloadable editor templates.
+- [Israel Dossier corpus (JSON)](https://veritasworldwide.com/israel-dossier/corpus.json): Machine-readable incidents, timeline, actors, and money-trail nodes.
 - [Israel Dossier public briefing](https://veritasworldwide.com/israel-dossier/briefing): Source-boundary briefing generated from populated workbook rows with visible confidence limits and open questions.
 - [Israel Dossier template manifest](https://veritasworldwide.com/israel-dossier/templates/manifest.json): Machine-readable list of the source ledger, aid ledger, humanitarian attribution, incident matrix, legal-status, and briefing templates.
 - [Israel Dossier workbook manifest](https://veritasworldwide.com/israel-dossier/workbooks/manifest.json): Machine-readable list of populated source-ledger, aid-ledger, humanitarian, incident, legal-status, briefing draft, and archive-manifest artifacts.

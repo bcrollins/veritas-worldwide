@@ -21,6 +21,7 @@ import {
   SITE_NAME,
 } from '../lib/seo'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
+import PrimarySourceLink from '../components/PrimarySourceLink'
 
 function csvEscape(value: string | number | undefined | null): string {
   const raw = value == null ? '' : String(value)
@@ -568,9 +569,14 @@ export default function SourcesPage() {
                                   {source.url && (
                                     <>
                                       {' '}
-                                      <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-crimson hover:text-crimson-dark underline underline-offset-2">
-                                        View &rarr;
-                                      </a>
+                                      <PrimarySourceLink
+                                        href={source.url}
+                                        archiveHref={(source as { archiveUrl?: string }).archiveUrl}
+                                        title={source.text}
+                                        className="text-crimson hover:text-crimson-dark underline underline-offset-2 inline-flex min-h-[44px] items-center"
+                                      >
+                                        View →
+                                      </PrimarySourceLink>
                                     </>
                                   )}
                                 </span>

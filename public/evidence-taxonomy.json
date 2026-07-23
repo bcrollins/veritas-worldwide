@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-23T11:34:25.644Z",
+  "publisher": "Veritas Worldwide",
+  "publisherUrl": "https://veritasworldwide.com",
+  "contact": "rights@veritasworldwide.com",
+  "methodologyUrl": "https://veritasworldwide.com/methodology",
+  "license": "CC BY-NC-SA 4.0 (see https://veritasworldwide.com/terms)",
+  "scholarlyOrder": [
+    "verified",
+    "well_attested",
+    "circumstantial",
+    "contested",
+    "interpretive",
+    "speculative",
+    "literary_theological"
+  ],
+  "scholarlyTiers": {
+    "verified": {
+      "id": "verified",
+      "label": "Verified",
+      "shortLabel": "Verified",
+      "description": "Multiple independent primary sources and/or physical/scientific corroboration with high confidence. Proof-grade within the domain of historical or scientific method.",
+      "legacyMap": "verified"
+    },
+    "well_attested": {
+      "id": "well_attested",
+      "label": "Well-Attested",
+      "shortLabel": "Well-Attested",
+      "description": "Strong primary or early secondary attestation with limited contrary evidence. Not multi-source physical proof, but historically robust.",
+      "legacyMap": "verified"
+    },
+    "circumstantial": {
+      "id": "circumstantial",
+      "label": "Circumstantial",
+      "shortLabel": "Circumstantial",
+      "description": "Indirect but coherent supporting evidence. Individual facts may be documented; the connection between them is inference.",
+      "legacyMap": "circumstantial"
+    },
+    "contested": {
+      "id": "contested",
+      "label": "Contested / Scholarly Debate",
+      "shortLabel": "Contested",
+      "description": "Significant disagreement among qualified specialists. Multiple positions are presented with evidence weights; consensus is not certainty.",
+      "legacyMap": "disputed"
+    },
+    "interpretive": {
+      "id": "interpretive",
+      "label": "Interpretive Analysis",
+      "shortLabel": "Interpretive",
+      "description": "Reasoned reconstruction that goes beyond raw data. Labeled as analysis, not as primary fact.",
+      "legacyMap": "circumstantial"
+    },
+    "speculative": {
+      "id": "speculative",
+      "label": "Speculative / Unverifiable",
+      "shortLabel": "Speculative",
+      "description": "Hypothesis or tradition lacking sufficient primary or physical support for historical or scientific assertion.",
+      "legacyMap": "disputed"
+    },
+    "literary_theological": {
+      "id": "literary_theological",
+      "label": "Literary / Theological Development",
+      "shortLabel": "Literary-Theological",
+      "description": "Later interpretive, liturgical, or doctrinal elaboration. Never presented as historical or scientific fact.",
+      "legacyMap": "disputed"
+    }
+  },
+  "volumeILegacyTiers": {
+    "verified": {
+      "id": "verified",
+      "label": "Verified",
+      "mapsToScholarly": "verified",
+      "note": "Primary-source / multi-source documentation in Volume I sense."
+    },
+    "circumstantial": {
+      "id": "circumstantial",
+      "label": "Circumstantial",
+      "mapsToScholarly": "circumstantial",
+      "alsoMayMapTo": [
+        "interpretive"
+      ],
+      "note": "Documented facts with interpretive connection."
+    },
+    "disputed": {
+      "id": "disputed",
+      "label": "Disputed",
+      "mapsToScholarly": "contested",
+      "alsoMayMapTo": [
+        "speculative",
+        "literary_theological"
+      ],
+      "note": "Volume I disputed ≈ scholarly Contested; some rows Speculative or Literary/Theological."
+    }
+  },
+  "sourceHierarchy": [
+    {
+      "tier": 1,
+      "label": "Government & Legal Records"
+    },
+    {
+      "tier": 2,
+      "label": "Institutional Records"
+    },
+    {
+      "tier": 3,
+      "label": "Investigative Journalism"
+    },
+    {
+      "tier": 4,
+      "label": "Academic & Scholarly Works"
+    },
+    {
+      "tier": 5,
+      "label": "Secondary Reporting & Analysis"
+    }
+  ]
+}

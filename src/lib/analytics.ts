@@ -152,6 +152,58 @@ export async function recordPageView(path: string, title: string): Promise<void>
   }
 }
 
+/** Keys that must never leave the browser as analytics event properties (reader or operator PII). */
+const FORBIDDEN_ANALYTICS_PROP_KEYS = new Set([
+  'email',
+  'e-mail',
+  'mail',
+  'phone',
+  'telephone',
+  'mobile',
+  'fullname',
+  'fullname',
+  'firstname',
+  'lastname',
+  'fullname',
+  'username',
+  'password',
+  'author',
+  'authoremail',
+  'author_email',
+  'userid',
+  'user_id',
+  'useremail',
+  'user_email',
+  'ip',
+  'ipaddress',
+  'ip_address',
+  'ssn',
+  'address',
+  'street',
+])
+
+/**
+ * Strip PII-shaped keys from analytics event properties.
+ * Keeps analytics purpose-specific and protects operator + reader anonymity.
+ */
+export function sanitizeAnalyticsProperties(
+  properties?: Record<string, string>,
+): Record<string, string> | undefined {
+  if (!properties || typeof properties !== 'object') return undefined
+  const out: Record<string, string> = {}
+  for (const [key, value] of Object.entries(properties)) {
+    if (typeof key !== 'string' || typeof value !== 'string') continue
+    const norm = key.toLowerCase().replace(/[\s-]+/g, '')
+    if (FORBIDDEN_ANALYTICS_PROP_KEYS.has(norm) || FORBIDDEN_ANALYTICS_PROP_KEYS.has(key.toLowerCase())) {
+      continue
+    }
+    // Drop values that look like emails even under benign keys
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) continue
+    out[key] = value.slice(0, 200)
+  }
+  return Object.keys(out).length ? out : undefined
+}
+
 // ── Record a behavioral event ──────────────────────────────────────
 export function recordAnalyticsEvent(
   name: AnalyticsEventName,
@@ -159,13 +211,15 @@ export function recordAnalyticsEvent(
 ): void {
   if (typeof window === 'undefined') return
 
+  const safeProps = sanitizeAnalyticsProperties(properties)
+
   void fetch('/api/analytics/event', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       name,
       path: window.location.pathname,
-      properties,
+      properties: safeProps,
     }),
     keepalive: true,
   }).catch(() => {

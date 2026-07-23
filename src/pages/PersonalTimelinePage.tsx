@@ -1,6 +1,16 @@
-import { FormEvent, useEffect, useMemo, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  SCHOLARLY_TIER_ORDER,
+  SCHOLARLY_TIERS,
+  type ScholarlyEvidenceTier,
+} from '../data/evidenceTiers'
+
+type CorpusRef = {
+  kind: 'roc' | 'israel' | 'chapter' | 'other'
+  id: string
+}
 
 type TimelineEvent = {
   id: string
@@ -9,16 +19,61 @@ type TimelineEvent = {
   notes: string
   sourceUrl: string
   createdAt: string
+  /** Scholarly evidence tier label for the researcher's own assessment (optional). */
+  evidenceTier?: ScholarlyEvidenceTier | ''
+  /** Free-form researcher tags (local only). */
+  tags?: string[]
+  /** Optional pin into a public Veritas corpus row. */
+  corpusRef?: CorpusRef | null
 }
 
 const STORAGE_KEY = 'veritas_personal_timeline_v1'
+const SCHEMA_VERSION = 2
+
+function normalizeEvent(raw: unknown): TimelineEvent | null {
+  if (!raw || typeof raw !== 'object') return null
+  const e = raw as Partial<TimelineEvent>
+  if (typeof e.id !== 'string' || typeof e.title !== 'string') return null
+  const tags = Array.isArray(e.tags)
+    ? e.tags.filter((t): t is string => typeof t === 'string' && t.trim().length > 0).map((t) => t.trim())
+    : []
+  let corpusRef: CorpusRef | null = null
+  if (e.corpusRef && typeof e.corpusRef === 'object') {
+    const kind = (e.corpusRef as CorpusRef).kind
+    const id = (e.corpusRef as CorpusRef).id
+    if (
+      (kind === 'roc' || kind === 'israel' || kind === 'chapter' || kind === 'other') &&
+      typeof id === 'string' &&
+      id.trim()
+    ) {
+      corpusRef = { kind, id: id.trim() }
+    }
+  }
+  const tier =
+    typeof e.evidenceTier === 'string' &&
+    (SCHOLARLY_TIER_ORDER as string[]).includes(e.evidenceTier)
+      ? (e.evidenceTier as ScholarlyEvidenceTier)
+      : ''
+  return {
+    id: e.id,
+    date: typeof e.date === 'string' ? e.date : new Date().toISOString().slice(0, 10),
+    title: e.title,
+    notes: typeof e.notes === 'string' ? e.notes : '',
+    sourceUrl: typeof e.sourceUrl === 'string' ? e.sourceUrl : '',
+    createdAt: typeof e.createdAt === 'string' ? e.createdAt : new Date().toISOString(),
+    evidenceTier: tier,
+    tags,
+    corpusRef,
+  }
+}
 
 function loadEvents(): TimelineEvent[] {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (!raw) return []
     const parsed = JSON.parse(raw)
-    return Array.isArray(parsed) ? parsed : []
+    const list = Array.isArray(parsed) ? parsed : Array.isArray(parsed?.events) ? parsed.events : []
+    return list.map(normalizeEvent).filter(Boolean) as TimelineEvent[]
   } catch {
     return []
   }
@@ -28,30 +83,60 @@ function saveEvents(events: TimelineEvent[]) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(events))
 }
 
+function parseTags(input: string): string[] {
+  return input
+    .split(/[,;]+/)
+    .map((t) => t.trim())
+    .filter(Boolean)
+    .slice(0, 24)
+}
+
 export default function PersonalTimelinePage() {
   const [events, setEvents] = useState<TimelineEvent[]>([])
   const [date, setDate] = useState('')
   const [title, setTitle] = useState('')
   const [notes, setNotes] = useState('')
   const [sourceUrl, setSourceUrl] = useState('')
+  const [evidenceTier, setEvidenceTier] = useState<ScholarlyEvidenceTier | ''>('')
+  const [tagsInput, setTagsInput] = useState('')
+  const [filterTier, setFilterTier] = useState<ScholarlyEvidenceTier | 'all'>('all')
+  const [filterTag, setFilterTag] = useState('')
+  const [importError, setImportError] = useState('')
+  const fileRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     setEvents(loadEvents())
     setMetaTags({
       title: `Personal Timeline Builder | ${SITE_NAME}`,
       description:
-        'Local-only researcher timeline builder. Events stay in this browser — never uploaded to Veritas servers.',
+        'Local-only researcher timeline builder with evidence-tier tags. Events stay in this browser — never uploaded to Veritas servers.',
       url: `${SITE_URL}/researcher/timeline`,
       robots: 'noindex, nofollow',
     })
     return () => clearMetaTags()
   }, [])
 
-  const sorted = useMemo(
-    () =>
-      [...events].sort((a, b) => String(a.date).localeCompare(String(b.date)) || a.title.localeCompare(b.title)),
-    [events],
-  )
+  const allTags = useMemo(() => {
+    const set = new Set<string>()
+    for (const ev of events) {
+      for (const t of ev.tags || []) set.add(t)
+    }
+    return [...set].sort((a, b) => a.localeCompare(b))
+  }, [events])
+
+  const sorted = useMemo(() => {
+    let list = [...events]
+    if (filterTier !== 'all') {
+      list = list.filter((ev) => ev.evidenceTier === filterTier)
+    }
+    if (filterTag.trim()) {
+      const needle = filterTag.trim().toLowerCase()
+      list = list.filter((ev) => (ev.tags || []).some((t) => t.toLowerCase() === needle))
+    }
+    return list.sort(
+      (a, b) => String(a.date).localeCompare(String(b.date)) || a.title.localeCompare(b.title),
+    )
+  }, [events, filterTier, filterTag])
 
   const onAdd = (e: FormEvent) => {
     e.preventDefault()
@@ -63,6 +148,9 @@ export default function PersonalTimelinePage() {
       notes: notes.trim(),
       sourceUrl: sourceUrl.trim(),
       createdAt: new Date().toISOString(),
+      evidenceTier: evidenceTier || '',
+      tags: parseTags(tagsInput),
+      corpusRef: null,
     }
     const updated = [next, ...events]
     setEvents(updated)
@@ -70,6 +158,8 @@ export default function PersonalTimelinePage() {
     setTitle('')
     setNotes('')
     setSourceUrl('')
+    setEvidenceTier('')
+    setTagsInput('')
   }
 
   const onRemove = (id: string) => {
@@ -79,7 +169,15 @@ export default function PersonalTimelinePage() {
   }
 
   const onExport = () => {
-    const blob = new Blob([`${JSON.stringify({ exportedAt: new Date().toISOString(), events: sorted }, null, 2)}\n`], {
+    const payload = {
+      schemaVersion: SCHEMA_VERSION,
+      exportedAt: new Date().toISOString(),
+      publisherNote: 'Local researcher export. Not a Veritas server dataset. Attribution for public corpora: Veritas Worldwide.',
+      events: sorted.length === events.length ? sorted : [...events].sort(
+        (a, b) => String(a.date).localeCompare(String(b.date)) || a.title.localeCompare(b.title),
+      ),
+    }
+    const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], {
       type: 'application/json',
     })
     const url = URL.createObjectURL(blob)
@@ -88,6 +186,36 @@ export default function PersonalTimelinePage() {
     a.download = 'veritas-personal-timeline.json'
     a.click()
     URL.revokeObjectURL(url)
+  }
+
+  const onImportFile = async (e: ChangeEvent<HTMLInputElement>) => {
+    setImportError('')
+    const file = e.target.files?.[0]
+    if (!file) return
+    try {
+      const text = await file.text()
+      const parsed = JSON.parse(text)
+      const list = Array.isArray(parsed) ? parsed : Array.isArray(parsed?.events) ? parsed.events : null
+      if (!list) {
+        setImportError('JSON must be an array of events or { events: [] }.')
+        return
+      }
+      const incoming = list.map(normalizeEvent).filter(Boolean) as TimelineEvent[]
+      if (!incoming.length) {
+        setImportError('No valid events found in file.')
+        return
+      }
+      const byId = new Map<string, TimelineEvent>()
+      for (const ev of events) byId.set(ev.id, ev)
+      for (const ev of incoming) byId.set(ev.id, ev)
+      const merged = [...byId.values()]
+      setEvents(merged)
+      saveEvents(merged)
+    } catch {
+      setImportError('Could not parse JSON file.')
+    } finally {
+      if (fileRef.current) fileRef.current.value = ''
+    }
   }
 
   const onClear = () => {
@@ -103,13 +231,18 @@ export default function PersonalTimelinePage() {
       </p>
       <h1 className="mt-2 font-display text-3xl font-bold text-ink">Personal Timeline Builder</h1>
       <p className="mt-3 font-body text-sm text-ink-muted leading-relaxed">
-        Build a private chronology for your own research notes. Events are stored in this browser only
-        (localStorage) and are never sent to Veritas servers. Export JSON for offline work.
+        Build a private chronology for your own research notes. Tag events with scholarly evidence tiers
+        and free-form tags. Events are stored in this browser only (localStorage) and are never sent to
+        Veritas servers. Export or import JSON for offline work.
       </p>
       <p className="mt-2 font-body text-xs text-ink-faint">
         Not an Integrity Score surface. For public archive timelines see{' '}
         <Link to="/timeline" className="text-crimson hover:underline">
           /timeline
+        </Link>
+        . Researcher tools hub:{' '}
+        <Link to="/researcher" className="text-crimson hover:underline">
+          /researcher
         </Link>
         .
       </p>
@@ -124,6 +257,21 @@ export default function PersonalTimelinePage() {
               onChange={(e) => setDate(e.target.value)}
               className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm"
             />
+          </label>
+          <label className="block">
+            <span className="font-sans text-xs text-ink-muted">Evidence tier (optional)</span>
+            <select
+              value={evidenceTier}
+              onChange={(e) => setEvidenceTier(e.target.value as ScholarlyEvidenceTier | '')}
+              className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm"
+            >
+              <option value="">— none —</option>
+              {SCHOLARLY_TIER_ORDER.map((id) => (
+                <option key={id} value={id}>
+                  {SCHOLARLY_TIERS[id].label}
+                </option>
+              ))}
+            </select>
           </label>
           <label className="block sm:col-span-2">
             <span className="font-sans text-xs text-ink-muted">Title</span>
@@ -141,6 +289,15 @@ export default function PersonalTimelinePage() {
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               className="mt-1 w-full min-h-[88px] border border-border bg-parchment px-3 py-2 font-body text-sm"
+            />
+          </label>
+          <label className="block sm:col-span-2">
+            <span className="font-sans text-xs text-ink-muted">Tags (comma-separated, optional)</span>
+            <input
+              value={tagsInput}
+              onChange={(e) => setTagsInput(e.target.value)}
+              className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm"
+              placeholder="hostages, primary-source, west-bank"
             />
           </label>
           <label className="block sm:col-span-2">
@@ -170,6 +327,20 @@ export default function PersonalTimelinePage() {
           </button>
           <button
             type="button"
+            onClick={() => fileRef.current?.click()}
+            className="inline-flex min-h-[44px] items-center rounded-sm border border-border px-4 font-sans text-xs font-bold uppercase tracking-wider text-ink"
+          >
+            Import JSON
+          </button>
+          <input
+            ref={fileRef}
+            type="file"
+            accept="application/json,.json"
+            className="hidden"
+            onChange={onImportFile}
+          />
+          <button
+            type="button"
             onClick={onClear}
             disabled={events.length === 0}
             className="inline-flex min-h-[44px] items-center rounded-sm border border-border px-4 font-sans text-xs font-bold uppercase tracking-wider text-ink-muted disabled:opacity-40"
@@ -177,14 +348,55 @@ export default function PersonalTimelinePage() {
             Clear local
           </button>
         </div>
+        {importError && (
+          <p className="font-body text-xs text-crimson" role="alert">
+            {importError}
+          </p>
+        )}
       </form>
+
+      <div className="mt-6 flex flex-wrap gap-3 rounded-sm border border-border bg-parchment/50 p-4">
+        <label className="block min-w-[10rem] flex-1">
+          <span className="font-sans text-xs text-ink-muted">Filter by tier</span>
+          <select
+            value={filterTier}
+            onChange={(e) => setFilterTier(e.target.value as ScholarlyEvidenceTier | 'all')}
+            className="mt-1 w-full min-h-[44px] border border-border bg-surface px-3 font-body text-sm"
+          >
+            <option value="all">All tiers</option>
+            {SCHOLARLY_TIER_ORDER.map((id) => (
+              <option key={id} value={id}>
+                {SCHOLARLY_TIERS[id].label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="block min-w-[10rem] flex-1">
+          <span className="font-sans text-xs text-ink-muted">Filter by tag</span>
+          <select
+            value={filterTag}
+            onChange={(e) => setFilterTag(e.target.value)}
+            className="mt-1 w-full min-h-[44px] border border-border bg-surface px-3 font-body text-sm"
+          >
+            <option value="">All tags</option>
+            {allTags.map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
 
       <section className="mt-10">
         <h2 className="font-sans text-xs font-bold uppercase tracking-[0.14em] text-ink-faint">
-          Events ({sorted.length})
+          Events ({sorted.length}
+          {sorted.length !== events.length ? ` of ${events.length}` : ''})
         </h2>
         {sorted.length === 0 ? (
-          <p className="mt-4 font-body text-sm text-ink-muted">No local events yet.</p>
+          <p className="mt-4 font-body text-sm text-ink-muted">
+            {events.length === 0 ? 'No local events yet.' : 'No events match the current filters.'}
+          </p>
         ) : (
           <ol className="mt-4 space-y-3">
             {sorted.map((ev) => (
@@ -193,7 +405,29 @@ export default function PersonalTimelinePage() {
                   <div>
                     <p className="font-mono text-[0.65rem] text-crimson">{ev.date}</p>
                     <p className="font-display text-base font-bold text-ink">{ev.title}</p>
+                    {ev.evidenceTier ? (
+                      <p className="mt-1 font-sans text-[0.65rem] font-bold uppercase tracking-wider text-ink-muted">
+                        {SCHOLARLY_TIERS[ev.evidenceTier].label}
+                      </p>
+                    ) : null}
+                    {ev.tags && ev.tags.length > 0 && (
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        {ev.tags.map((t) => (
+                          <span
+                            key={t}
+                            className="inline-flex min-h-[28px] items-center rounded-sm border border-border bg-surface px-2 font-sans text-[0.65rem] text-ink-muted"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                     {ev.notes && <p className="mt-1 font-body text-sm text-ink-muted">{ev.notes}</p>}
+                    {ev.corpusRef && (
+                      <p className="mt-1 font-mono text-[0.65rem] text-ink-faint">
+                        corpus:{ev.corpusRef.kind}/{ev.corpusRef.id}
+                      </p>
+                    )}
                     {ev.sourceUrl && (
                       <a
                         href={ev.sourceUrl}

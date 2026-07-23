@@ -14,6 +14,7 @@ import {
 const sections = [
   { id: 'collection', title: 'Information We Collect' },
   { id: 'usage', title: 'How We Use Your Information' },
+  { id: 'researcher-tools', title: 'Researcher Local Tools' },
   { id: 'third-party', title: 'Third-Party Services' },
   { id: 'cookies', title: 'Cookies & Tracking' },
   { id: 'rights', title: 'Your Rights' },
@@ -112,6 +113,21 @@ export default function PrivacyPage() {
               <div className="space-y-3 text-sm text-ink-muted leading-relaxed">
                 <p>Your information is used to provide and improve our services, process subscriptions, send editorial updates, and maintain site security. We use analytics data to understand how readers engage with our investigations and to improve the reading experience.</p>
                 <p>We use HubSpot CRM to manage subscriber relationships and deliver targeted content recommendations based on your reading interests. You can opt out of marketing communications at any time.</p>
+              </div>
+            </section>
+
+            <section id="researcher-tools" className="mb-10">
+              <h2 className="text-xl font-serif font-semibold text-ink mb-3">Researcher Local Tools</h2>
+              <div className="space-y-3 text-sm text-ink-muted leading-relaxed">
+                <p>
+                  Optional researcher tools such as the Personal Timeline Builder (<Link to="/researcher/timeline" className="text-crimson hover:underline">/researcher/timeline</Link>) store notes, evidence-tier tags, and source URLs only in your browser (localStorage). Veritas does not receive, upload, or back up those events on our servers.
+                </p>
+                <p>
+                  You can export a JSON copy for offline work, import a prior export, or clear all local events from the tool itself. Clearing site data for veritasworldwide.com in your browser settings also removes local researcher state, bookmarks, and similar device-only preferences.
+                </p>
+                <p>
+                  Public machine corpora (for example Israel Dossier and Record of Jesus Christ JSON exports) are separate publication artifacts published by Veritas Worldwide; they are not tied to your personal timeline.
+                </p>
               </div>
             </section>
 
