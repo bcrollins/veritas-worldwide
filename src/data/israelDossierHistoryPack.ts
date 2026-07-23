@@ -1477,6 +1477,85 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 214 },
   },
 
+  {
+    id: 'operation-cast-lead-white-phosphorus-un',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'barack-obama'],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons', 'artillery-use'],
+    legalStatus: 'un-finding',
+    title: 'Cast Lead White Phosphorus in Civilian Areas — UN Fact-Finding (Goldstone era)',
+    date: 'December 2008 – January 2009',
+    location: 'Gaza Strip urban areas',
+    summary:
+      'During Operation Cast Lead, UN fact-finding (Goldstone mission and related human-rights documentation) recorded Israeli use of white phosphorus munitions in densely populated civilian areas, producing severe burn injuries and infrastructure fires. Distinct from the generic Cast Lead entry — this isolates the munition-in-urban-area finding chain.',
+    evidence:
+      'UN Human Rights Council Fact-Finding Mission on the Gaza Conflict (Goldstone Report) and HRW/Amnesty field investigations document white phosphorus use over Gaza City and other populated zones. Israel later said it would restrict such use; the historical record of use is multi-source.',
+    sources: [
+      { label: 'UNHRC — Goldstone Fact-Finding Mission report', url: 'https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission' },
+      { label: 'Human Rights Watch — Rain of Fire (white phosphorus)', url: 'https://www.hrw.org/report/2009/03/25/rain-fire/israels-unlawful-use-white-phosphorus-gaza' },
+      { label: 'Amnesty International — Cast Lead findings', url: 'https://www.amnesty.org/en/documents/mde15/015/2009/en/' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'HRW Rain of Fire', url: 'https://www.hrw.org/report/2009/03/25/rain-fire/israels-unlawful-use-white-phosphorus-gaza' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+  {
+    id: 'world-food-programme-gaza-starvation-2024',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden', 'antony-blinken'],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou', 'fmf-weapons'],
+    legalStatus: 'un-finding',
+    title: 'WFP / IPC Catastrophic Hunger Findings — Gaza (2024)',
+    date: '2024',
+    location: 'Gaza Strip',
+    summary:
+      'The Integrated Food Security Phase Classification (IPC) and World Food Programme documented catastrophic hunger (IPC Phase 5) risk and famine conditions in parts of Gaza during the war, attributing the crisis to conflict intensity and constrained aid access. Distinct from generic siege entries — this isolates the formal food-security classification record used by UN agencies.',
+    evidence:
+      'IPC special briefs and WFP emergency statements are primary technical sources. Israel disputes some characterizations and cites Hamas diversion claims; the multi-agency classification process is the checkable floor for starvation risk documentation.',
+    sources: [
+      { label: 'IPC — Gaza Strip special briefs', url: 'https://www.ipcinfo.org/' },
+      { label: 'WFP — Palestine emergency', url: 'https://www.wfp.org/emergencies/palestine-emergency' },
+      { label: 'OCHA — humanitarian updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'IPC portal', url: 'https://www.ipcinfo.org/' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+  {
+    id: 'nablus-balata-pattern-2002',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Balata / Nablus Urban Assaults — Defensive Shield Era (2002)',
+    date: 'April 2002',
+    location: 'Balata refugee camp / Nablus, West Bank',
+    summary:
+      'During Operation Defensive Shield, Israeli forces conducted intense urban operations in Nablus and Balata refugee camp. Human-rights organizations documented significant civilian casualties and home demolitions amid fighting with armed groups. Distinct from the Jenin camp entry — this isolates the Nablus/Balata theater.',
+    evidence:
+      'B\'Tselem, Amnesty, and contemporaneous UN/press documentation establish civilian harm in Nablus-area operations. Exact combatant/civilian ratios remain contested; the multi-source civilian casualty floor is the dossier claim.',
+    sources: [
+      { label: 'B\'Tselem — Operation Defensive Shield documentation', url: 'https://www.btselem.org' },
+      { label: 'Amnesty International — Defensive Shield findings', url: 'https://www.amnesty.org/en/location/middle-east-and-north-africa/israel-and-occupied-palestinian-territories/' },
+      { label: 'UNISPAL — 2002 West Bank operations index', url: 'https://www.un.org/unispal/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'B\'Tselem archives', url: 'https://www.btselem.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 80 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -2022,6 +2101,34 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     relatedIncidentIds: ['gaza-great-march-snipers-2018', 'great-march-return-2018', 'great-march-return-medics-2018'],
     relatedProfileIds: ['benjamin-netanyahu', 'donald-trump'],
     tags: ['civilians', 'children', 'un-finding', 'gaza'],
+  },
+
+  {
+    id: 'tl-goldstone-wp-2009',
+    year: '2009',
+    era: 'blockade-2007-2023',
+    title: 'Goldstone / HRW — White Phosphorus in Gaza Urban Areas',
+    description:
+      'UN fact-finding and HRW document white phosphorus use over populated Gaza during Cast Lead.',
+    source: 'UNHRC Goldstone / HRW Rain of Fire',
+    sourceUrl: 'https://www.hrw.org/report/2009/03/25/rain-fire/israels-unlawful-use-white-phosphorus-gaza',
+    tier: 'verified',
+    relatedIncidentIds: ['operation-cast-lead-white-phosphorus-un', 'cast-lead-2008-09', 'gaza-war-2008-white-phosphorus'],
+    tags: ['civilians', 'children', 'white-phosphorus', 'un-finding'],
+  },
+  {
+    id: 'tl-ipc-gaza-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'IPC / WFP — Catastrophic Hunger Classification Gaza',
+    description:
+      'IPC and WFP document catastrophic hunger risk in Gaza tied to conflict and constrained aid access.',
+    source: 'IPC / WFP',
+    sourceUrl: 'https://www.ipcinfo.org/',
+    tier: 'verified',
+    relatedIncidentIds: ['world-food-programme-gaza-starvation-2024', 'starvation-aid-blockade'],
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    tags: ['civilians', 'children', 'starvation', 'un-finding'],
   },
 
 ]
