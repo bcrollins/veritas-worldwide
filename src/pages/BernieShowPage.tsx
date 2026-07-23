@@ -477,19 +477,14 @@ export default function BernieShowPage() {
   useEffect(() => {
     setMetaTags({
       title: 'The Bernie Rollins Show — Freedom Lies in Being Bold',
-      description: 'Unfiltered. Unapologetic. Unstoppable. The podcast that says what everyone\'s thinking and nobody\'s saying.',
+      description:
+        "Unfiltered. Unapologetic. Unstoppable. The podcast that says what everyone's thinking and nobody's saying.",
       url: 'https://veritasworldwide.com/bernie',
+      // Residual surname OPSEC surface — never index (also X-Robots-Tag on server).
+      robots: 'noindex, nofollow',
     })
-    let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null
-    if (!robotsMeta) {
-      robotsMeta = document.createElement('meta')
-      robotsMeta.name = 'robots'
-      document.head.appendChild(robotsMeta)
-    }
-    robotsMeta.content = 'noindex, nofollow'
     return () => {
       clearMetaTags()
-      if (robotsMeta) robotsMeta.content = ''
     }
   }, [])
 

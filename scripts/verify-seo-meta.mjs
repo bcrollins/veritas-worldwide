@@ -244,6 +244,16 @@ assert(
   server.includes("'/institute/methodology'") && server.includes("'/content-pack'"),
   'soft-404 allowlist must include institute methodology + content-pack exact routes',
 )
+assert(
+  server.includes("/bernie") && server.includes("X-Robots-Tag"),
+  'server must emit X-Robots-Tag noindex path handling for /bernie OPSEC surface',
+)
+assert(server.includes("req.path === '/bernie'") || server.includes("path === '/bernie'"), 'server must special-case /bernie noindex')
+const berne = read('src/pages/BernieShowPage.tsx')
+assert(berne.includes("robots: 'noindex, nofollow'"), 'BernieShowPage must set robots noindex via setMetaTags')
+const robotsTxt = read('public/robots.txt')
+assert(robotsTxt.includes('Disallow: /bernie'), 'robots.txt must Disallow /bernie')
+assert(botMeta.includes('/bernie'), 'bot meta must noindex /bernie for JS-skipping crawlers')
 
 assert(botMeta.includes('applyBotPageMeta'), 'bot meta must use applyBotPageMeta helper for shell rewrite')
 assert(

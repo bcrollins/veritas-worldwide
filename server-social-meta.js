@@ -209,6 +209,29 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
       },
     }
 
+    // Podcast landing: product surface with residual surname OPSEC risk — bots must see noindex.
+    if (req.path === '/bernie' || req.path.startsWith('/bernie/')) {
+      html = applyBotPageMeta(html, {
+        title: 'The Bernie Rollins Show — Freedom Lies in Being Bold',
+        description:
+          "Unfiltered. Unapologetic. Unstoppable. The podcast that says what everyone's thinking and nobody's saying.",
+        url: `${SITE_URL}/bernie`,
+        type: 'website',
+      })
+      html = html.replace(
+        /<meta name="robots" content="[^"]*"/,
+        '<meta name="robots" content="noindex, nofollow"',
+      )
+      if (!html.includes('name="robots"')) {
+        html = html.replace(
+          '</head>',
+          '    <meta name="robots" content="noindex, nofollow" />\n  </head>',
+        )
+      }
+      res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+      return res.send(html)
+    }
+
     const staticMeta = staticPages[req.path]
     if (staticMeta) {
       const staticUrl = `${SITE_URL}${req.path}`

@@ -14,6 +14,9 @@ Disallow: /donation/success
 Disallow: /thank-you
 # Client-only reader state (auth-gated; low SEO value).
 Disallow: /bookmarks
+# Family-brand podcast landing (product surface; residual OPSEC — keep out of index).
+Disallow: /bernie
+Disallow: /bernie/
 # Internal search UI (also noindex in HTML) — avoid thin/duplicate result URLs.
 Disallow: /search
 Disallow: /search?

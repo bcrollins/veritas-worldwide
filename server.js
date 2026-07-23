@@ -1913,6 +1913,11 @@ app.use((req, res) => {
   if (req.path === '/admin' || req.path.startsWith('/admin/')) {
     res.setHeader('X-Robots-Tag', 'noindex, nofollow')
   }
+  // Family-brand podcast landing is a product surface with residual surname OPSEC risk.
+  // Client also sets noindex; crawlers that skip JS must still receive noindex.
+  if (req.path === '/bernie' || req.path.startsWith('/bernie/')) {
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+  }
 
   // Soft-404 kill: unknown URLs must not return 200 with the homepage shell.
   if ((req.method === 'GET' || req.method === 'HEAD') && !path.extname(req.path) && !isKnownSpaRoute(req.path)) {
