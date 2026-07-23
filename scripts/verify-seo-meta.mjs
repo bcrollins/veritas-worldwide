@@ -405,3 +405,9 @@ const topicHubs = read('src/data/topicHubs.json')
 assert(topicHubs.includes('historical-jesus-evidence'), 'topic hubs must include historical-jesus-evidence')
 assert(!topicHubs.includes('150+ tier-labeled'), 'historical Jesus topic must not advertise stale 150+ claim floor')
 assert(topicHubs.includes('250+ tier-labeled') || topicHubs.includes('230+ tier-labeled') || topicHubs.includes('200+ tier-labeled'), 'historical Jesus topic must advertise current 250+ claim floor')
+
+// Soft-404: unknown /chapter/* must not soft-serve homepage shells to crawlers.
+assert(botMeta.includes('isKnownChapterSlug') || server.includes('isKnownChapterSlug'), 'server must validate known chapter slugs for soft-404')
+assert(botMeta.includes('chapter-29') || botMeta.includes("'chapter-29'"), 'bot meta must include chapter-29 archive part')
+assert(server.includes('isKnownChapterSlug'), 'isKnownSpaRoute must gate /chapter/* via isKnownChapterSlug')
+assert(botMeta.includes('Unknown chapter slug') || botMeta.includes('not part of The Record public archive'), 'bot meta must 404 unknown chapter slugs for Googlebot')

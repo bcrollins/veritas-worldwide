@@ -37,10 +37,19 @@ function getChapterMeta(slug) {
     'chapter-26': { title: 'Bohemian Grove & Elite Gatherings', desc: 'Inside the private retreat where American presidents, defense contractors, and media moguls gather each summer in the redwoods of Northern California.' },
     'chapter-27': { title: 'The Surveillance State — From ECHELON to Pegasus', desc: 'The documented history of government mass surveillance — from Cold War signals intelligence to the smartphone in your pocket.' },
     'chapter-28': { title: 'The Epstein Files', desc: "The intelligence-linked operation that compromised the world's most powerful people — documented through court filings, flight logs, and the testimony of surv" },
+    'chapter-29': {
+      title: 'The Evidence Chain - How Claims Become Public Record',
+      desc: 'A field guide for turning allegations, rumors, filings, disclosures, and public data into a disciplined research trail without confusing documentation with inference.',
+    },
     epilogue: { title: 'A Note on Continued Research & Primary Source Access', desc: 'Where to find the original documents, how to verify the claims in this book, and how to continue the investigation.' },
   }
 
   return chapters[slug] || null
+}
+
+/** Known archive chapter slugs — soft-404 allowlist must reject unknown /chapter/* paths. */
+export function isKnownChapterSlug(slug) {
+  return Boolean(getChapterMeta(slug))
 }
 
 /**
@@ -313,6 +322,23 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
     const chapterMatch = req.path.match(/^\/chapter\/(.+)$/)
     if (chapterMatch) {
       const meta = getChapterMeta(chapterMatch[1])
+      if (!meta) {
+        // Unknown chapter slug — never soft-serve homepage index,follow (Google soft-404).
+        res.status(404)
+        res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+        let notFound = applyBotPageMeta(html, {
+          title: 'Page Not Found | Veritas Worldwide',
+          description: 'This chapter is not part of The Record public archive.',
+          url: `${SITE_URL}/404`,
+          type: 'website',
+        })
+        notFound = notFound.replace(
+          /<meta name="robots" content="[^"]*"/,
+          '<meta name="robots" content="noindex, nofollow"',
+        )
+        return res.type('html').send(notFound)
+      }
       if (meta) {
         const chapterUrl = `${SITE_URL}/chapter/${chapterMatch[1]}`
         const chapterSlug = chapterMatch[1]
