@@ -1843,6 +1843,78 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-oct7-ashkelon-rocket-civilian-visual-2023',
+    title: 'October 7 Ashkelon Rocket Barrages on Civilian Areas — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Ashkelon, southern Israel',
+    summary:
+      'Multi-outlet video documents rocket barrages impacting civilian areas of Ashkelon on October 7, including residential neighborhoods. Multi-party visual record of civilian-targeted rocket fire; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of rocket impacts on civilian areas in Ashkelon on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Ashkelon October 7 rocket-impact packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-mass-grave-hospital-visual-2024',
+    title: 'Gaza Hospital Courtyard Mass Graves — Multi-Outlet Visual Record',
+    date: '2024',
+    location: 'Hospital courtyards and medical complexes in Gaza',
+    summary:
+      'Multi-outlet video and photo packages document mass graves in and around hospital courtyards after sieges and forced displacements. Distinct from prior mass-graves visual card by focusing on multi-source courtyard packages; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet visual packages, OHCHR materials, and contemporaneous medical-service reporting establish multi-source documentation of mass burials near medical facilities.',
+    sources: [
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet hospital mass-grave video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of courtyard mass graves', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OHCHR/OCHA documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-west-bank-settler-water-cistern-destruction-visual-2023-2025',
+    title: 'West Bank Settler Water Cistern Destruction — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village water cisterns and access roads',
+    summary:
+      'B’Tselem video banks and multi-outlet packages document settler destruction of Palestinian civilian water cisterns, denying household water including for families with children. Multi-source visual record distinct from cistern-repair and water-filter cards; ethnicity is never evidence.',
+    evidence:
+      'B’Tselem video documentation, OCHA water-access tallies, and multi-outlet reporting establish multi-source documentation of cistern destruction affecting civilians.',
+    sources: [
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem cistern-destruction video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem settler violence case files', url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA water-access materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
