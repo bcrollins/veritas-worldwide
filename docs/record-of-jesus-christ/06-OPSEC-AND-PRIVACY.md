@@ -44,3 +44,9 @@
 - [ ] Registrant org = Veritas Worldwide (or privacy service)  
 - [ ] Admin/tech contacts = entity mailboxes only  
 - [ ] DNS host does not publish personal account handles publicly  
+
+
+## Continuous verification
+
+- `npm run verify:live-anonymity` — live HTML + corpus must not contain personal identity strings; sameAs entity-only; claimCount floor tracks corpus growth.
+- `npm run verify:seo-meta` — forbids `bcrollins` in organization sameAs sources.
