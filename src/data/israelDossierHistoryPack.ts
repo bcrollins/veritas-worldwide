@@ -1556,6 +1556,59 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 80 },
   },
 
+  {
+    id: 'beirut-barracks-1983',
+    era: 'occupation-1967-2005',
+    targetsCivilians: false,
+    targetsChildren: false,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Beirut Marine Barracks Bombing (1983)',
+    date: 'October 23, 1983',
+    location: 'Beirut, Lebanon',
+    summary:
+      'Suicide truck bombings destroyed the U.S. Marine barracks and French paratrooper barracks in Beirut, killing 241 U.S. service members and 58 French paratroopers. Attributed to Islamist militants in the Lebanese civil war context with Syrian/Iranian support allegations. Included for regional war chronology balance.',
+    evidence:
+      'U.S. Department of Defense investigations, French inquiries, and multi-decade historiography establish the attack and death toll. Perpetrator attribution involves multi-source intelligence assessments.',
+    sources: [
+      { label: 'U.S. Marine Corps history — Beirut barracks', url: 'https://www.usmcu.edu' },
+      { label: 'Britannica — 1983 Beirut barracks bombings', url: 'https://www.britannica.com/event/1983-Beirut-barracks-bombings' },
+      { label: 'UNISPAL Lebanon period index', url: 'https://www.un.org/unispal/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Britannica barracks bombings', url: 'https://www.britannica.com/event/1983-Beirut-barracks-bombings' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 299 },
+  },
+  {
+    id: 'operation-peace-for-galilee-1982-invasion',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: '1982 Lebanon Invasion — Opening Campaign Civilian Harm Floor',
+    date: 'June 1982',
+    location: 'Southern Lebanon / Beirut approaches',
+    summary:
+      'Israel invaded Lebanon in Operation Peace for Galilee, producing large-scale civilian displacement and casualties documented by UN and human-rights organizations. Distinct from Sabra/Shatila and Kahan entries — this isolates the invasion campaign civilian-harm floor.',
+    evidence:
+      'UN documentation, Red Cross/ICRC wartime reporting, and multi-source historiography establish mass civilian impact. Combatant/civilian ratios remain contested; the multi-source civilian harm floor is the claim.',
+    sources: [
+      { label: 'UNISPAL — 1982 Lebanon war documentation', url: 'https://www.un.org/unispal/' },
+      { label: 'Britannica — 1982 Lebanon War', url: 'https://www.britannica.com/event/Lebanese-Civil-War' },
+      { label: 'ICRC historical materials (Lebanon)', url: 'https://www.icrc.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNISPAL Lebanon index', url: 'https://www.un.org/unispal/' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 10000 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -2129,6 +2182,31 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     relatedIncidentIds: ['world-food-programme-gaza-starvation-2024', 'starvation-aid-blockade'],
     relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
     tags: ['civilians', 'children', 'starvation', 'un-finding'],
+  },
+
+  {
+    id: 'tl-beirut-barracks-1983',
+    year: '1983',
+    era: 'occupation-1967-2005',
+    title: 'Beirut Marine Barracks Bombing — 241 U.S. Dead',
+    description: 'Suicide truck bomb kills 241 U.S. Marines and 58 French paratroopers in Beirut.',
+    source: 'USMC / Britannica',
+    sourceUrl: 'https://www.britannica.com/event/1983-Beirut-barracks-bombings',
+    tier: 'verified',
+    relatedIncidentIds: ['beirut-barracks-1983', 'beirut-siege-1982'],
+    tags: ['lebanon', 'us-personnel'],
+  },
+  {
+    id: 'tl-lebanon-invasion-1982',
+    year: '1982',
+    era: 'occupation-1967-2005',
+    title: 'Operation Peace for Galilee — Lebanon Invasion',
+    description: 'Israeli invasion of Lebanon produces mass civilian displacement and casualties documented by UN/HR orgs.',
+    source: 'UNISPAL / Britannica',
+    sourceUrl: 'https://www.un.org/unispal/',
+    tier: 'verified',
+    relatedIncidentIds: ['operation-peace-for-galilee-1982-invasion', 'sabra-shatila-1982', 'beirut-siege-1982'],
+    tags: ['civilians', 'children', 'lebanon'],
   },
 
 ]

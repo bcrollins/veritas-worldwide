@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:04:37.070Z",
+  "generatedAt": "2026-07-23T07:10:10.592Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 73,
-    "timelineEvents": 60,
+    "incidents": 75,
+    "timelineEvents": 62,
     "actors": 45,
     "moneyTrailNodes": 19,
-    "historicalWarCrimesPack": 58,
+    "historicalWarCrimesPack": 60,
     "legalCases": 12,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 3,
       "1948-1967": 6,
-      "occupation-1967-2005": 22,
+      "occupation-1967-2005": 24,
       "blockade-2007-2023": 24,
       "post-oct7": 18
     },
     "incidentsByTier": {
-      "verified": 71,
+      "verified": 73,
       "circumstantial": 2
     },
-    "childrenTagged": 63,
-    "civiliansTagged": 72,
+    "childrenTagged": 64,
+    "civiliansTagged": 73,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 26,
@@ -2067,6 +2067,26 @@
       ]
     },
     {
+      "id": "tl-lebanon-invasion-1982",
+      "year": "1982",
+      "era": "occupation-1967-2005",
+      "title": "Operation Peace for Galilee — Lebanon Invasion",
+      "description": "Israeli invasion of Lebanon produces mass civilian displacement and casualties documented by UN/HR orgs.",
+      "source": "UNISPAL / Britannica",
+      "sourceUrl": "https://www.un.org/unispal/",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "operation-peace-for-galilee-1982-invasion",
+        "sabra-shatila-1982",
+        "beirut-siege-1982"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "lebanon"
+      ]
+    },
+    {
       "year": "1982",
       "title": "Sabra and Shatila Massacre",
       "description": "Israeli-allied Lebanese Phalangist militia massacres between 800 and 3,500 Palestinian and Lebanese Shia civilians in the Sabra and Shatila refugee camps. Israeli forces surround the camps and provide illumination. The Kahan Commission finds Defense Minister Ariel Sharon bears \"personal responsibility.\"",
@@ -2091,6 +2111,24 @@
         "civilians",
         "children",
         "lebanon"
+      ]
+    },
+    {
+      "id": "tl-beirut-barracks-1983",
+      "year": "1983",
+      "era": "occupation-1967-2005",
+      "title": "Beirut Marine Barracks Bombing — 241 U.S. Dead",
+      "description": "Suicide truck bomb kills 241 U.S. Marines and 58 French paratroopers in Beirut.",
+      "source": "USMC / Britannica",
+      "sourceUrl": "https://www.britannica.com/event/1983-Beirut-barracks-bombings",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "beirut-barracks-1983",
+        "beirut-siege-1982"
+      ],
+      "tags": [
+        "lebanon",
+        "us-personnel"
       ]
     },
     {
@@ -3418,6 +3456,48 @@
       "tier": "verified"
     },
     {
+      "id": "operation-peace-for-galilee-1982-invasion",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "fmf-weapons"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "1982 Lebanon Invasion — Opening Campaign Civilian Harm Floor",
+      "date": "June 1982",
+      "location": "Southern Lebanon / Beirut approaches",
+      "summary": "Israel invaded Lebanon in Operation Peace for Galilee, producing large-scale civilian displacement and casualties documented by UN and human-rights organizations. Distinct from Sabra/Shatila and Kahan entries — this isolates the invasion campaign civilian-harm floor.",
+      "evidence": "UN documentation, Red Cross/ICRC wartime reporting, and multi-source historiography establish mass civilian impact. Combatant/civilian ratios remain contested; the multi-source civilian harm floor is the claim.",
+      "sources": [
+        {
+          "label": "UNISPAL — 1982 Lebanon war documentation",
+          "url": "https://www.un.org/unispal/"
+        },
+        {
+          "label": "Britannica — 1982 Lebanon War",
+          "url": "https://www.britannica.com/event/Lebanese-Civil-War"
+        },
+        {
+          "label": "ICRC historical materials (Lebanon)",
+          "url": "https://www.icrc.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNISPAL Lebanon index",
+          "url": "https://www.un.org/unispal/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 10000
+      }
+    },
+    {
       "id": "sabra-shatila-kahan-1983",
       "era": "occupation-1967-2005",
       "targetsCivilians": true,
@@ -3457,6 +3537,45 @@
       "tier": "verified",
       "casualties": {
         "killed": 800
+      }
+    },
+    {
+      "id": "beirut-barracks-1983",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": false,
+      "targetsChildren": false,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Beirut Marine Barracks Bombing (1983)",
+      "date": "October 23, 1983",
+      "location": "Beirut, Lebanon",
+      "summary": "Suicide truck bombings destroyed the U.S. Marine barracks and French paratrooper barracks in Beirut, killing 241 U.S. service members and 58 French paratroopers. Attributed to Islamist militants in the Lebanese civil war context with Syrian/Iranian support allegations. Included for regional war chronology balance.",
+      "evidence": "U.S. Department of Defense investigations, French inquiries, and multi-decade historiography establish the attack and death toll. Perpetrator attribution involves multi-source intelligence assessments.",
+      "sources": [
+        {
+          "label": "U.S. Marine Corps history — Beirut barracks",
+          "url": "https://www.usmcu.edu"
+        },
+        {
+          "label": "Britannica — 1983 Beirut barracks bombings",
+          "url": "https://www.britannica.com/event/1983-Beirut-barracks-bombings"
+        },
+        {
+          "label": "UNISPAL Lebanon period index",
+          "url": "https://www.un.org/unispal/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Britannica barracks bombings",
+          "url": "https://www.britannica.com/event/1983-Beirut-barracks-bombings"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 299
       }
     },
     {
