@@ -2238,4 +2238,11 @@ assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'
 assert(surfaces.length >= 102, `final surfaces ${surfaces.length}`)
 
 
+
+// surfaces length and platform complete mutual end
+assert(surfaces.length >= 102, `mutual end surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('export default function RelatedHubs'), 'RelatedHubs export mutual end')
+assert(read('src/pages/NotFoundPage.tsx').includes('RelatedHubs'), 'NotFound RelatedHubs mutual end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
