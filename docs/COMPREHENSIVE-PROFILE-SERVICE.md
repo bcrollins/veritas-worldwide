@@ -34,3 +34,10 @@ Public copy is entity-only. Never put operator personal identity in client repor
 ```bash
 npm run verify:comprehensive-profile
 ```
+
+## Abuse controls
+
+- Rate limit: 8 requests/minute per client key on `/api/services/comprehensive-profile/*`.
+- Keyword refuse-list blocks clear harassment/stalking/hacking language at intake (400).
+- Lawful-purpose attestations required client-side and server-side.
+- Health: `orderIntakeCount` is a non-PII counter only.

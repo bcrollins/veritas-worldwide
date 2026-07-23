@@ -4,3 +4,7 @@ dist
 *.local
 /generated
 /data
+
+# OSINT Comprehensive Profile intake (PII)
+data/osint-orders.ndjson
+data/osint-orders*.ndjson
