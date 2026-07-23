@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:16:35.853Z",
+  "generatedAt": "2026-07-23T09:17:04.681Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 155,
-    "timelineEvents": 143,
+    "incidents": 156,
+    "timelineEvents": 144,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 141,
+    "historicalWarCrimesPack": 142,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 95
+      "post-oct7": 96
     },
     "incidentsByTier": {
-      "verified": 153,
+      "verified": 154,
       "circumstantial": 2
     },
-    "childrenTagged": 131,
-    "civiliansTagged": 153,
+    "childrenTagged": 132,
+    "civiliansTagged": 154,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3393,6 +3393,27 @@
         "displacement",
         "civilians",
         "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-cold-chain-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Cold-Chain & Routine Immunization Collapse Pattern",
+      "description": "UNICEF/WHO multi-source documentation of cold-chain failure and disrupted childhood vaccination schedules.",
+      "source": "UNICEF / WHO / OCHA",
+      "sourceUrl": "https://www.unicef.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-cold-chain-vaccine-collapse-pattern-2023-2025",
+        "gaza-polio-outbreak-pattern-2024",
+        "gaza-fuel-electricity-siege-pattern-2023-2025"
+      ],
+      "tags": [
+        "vaccines",
+        "children",
+        "health",
         "gaza"
       ]
     },
@@ -10345,6 +10366,50 @@
           "type": "document",
           "label": "FAO public materials",
           "url": "https://www.fao.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-cold-chain-vaccine-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Cold-Chain & Routine Immunization Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (cold-chain cohort)",
+      "location": "Gaza Strip clinics / vaccine stores",
+      "summary": "UNICEF, WHO, and multi-source immunization reporting document collapse of cold-chain capacity and disruption of routine childhood vaccination schedules under bombardment and power failure — elevating preventable disease risk for children. Pattern card for immunization-system collapse distinct from polio emergency campaigns and pharmacy shortage cards.",
+      "evidence": "UNICEF immunization updates, WHO EPI materials, and multi-source clinic reporting establish multi-source cold-chain and routine immunization disruption. Exact coverage drops evolve; multi-source routine immunization system collapse is the claim.",
+      "sources": [
+        {
+          "label": "UNICEF immunization materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "WHO immunization / emergency materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA health access materials",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNICEF public updates",
+          "url": "https://www.unicef.org"
         }
       ],
       "tier": "verified",
