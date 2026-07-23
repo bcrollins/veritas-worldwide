@@ -2168,6 +2168,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 15000 },
   },
 
+  {
+    id: 'gaza-aid-workers-killed-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['fmf-weapons', 'oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Aid Workers Killed — Multi-Source Wartime Floor (2023–2025)',
+    date: 'October 2023 – 2025 (aid-worker cohort)',
+    location: 'Gaza Strip (humanitarian operations)',
+    summary:
+      'UN agencies and humanitarian NGOs document the highest aid-worker death toll of recent conflicts in Gaza, including UNRWA staff, WCK convoy deaths (separate card), Red Crescent paramedics, and other NGO personnel. Pattern card for the aid-worker killing floor across the war.',
+    evidence:
+      'UNRWA staff fatality statements, multi-source NGO tallies, and OHCHR reporting establish elevated aid-worker deaths. Individual incidents (WCK, Rafah paramedic convoy) are multi-source; the aggregate floor is the claim of this pattern card.',
+    sources: [
+      { label: 'UNRWA public statements', url: 'https://www.unrwa.org' },
+      { label: 'OHCHR OPT materials', url: 'https://www.ohchr.org/en/countries/palestine' },
+      { label: 'Multi-outlet aid-worker casualty reporting', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNRWA public materials', url: 'https://www.unrwa.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 200 },
+  },
+
+
 
 
 
@@ -3043,6 +3071,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-children-killed-pattern-2023-2025'],
     tags: ['children', 'civilians', 'gaza', 'casualties'],
+  },
+
+  {
+    id: 'tl-gaza-aid-workers-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Aid Workers Killed — Conflict High Floor',
+    description: 'UN/NGO multi-source tallies of elevated aid-worker deaths including UNRWA and NGO personnel.',
+    source: 'UNRWA / OHCHR',
+    sourceUrl: 'https://www.unrwa.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-aid-workers-killed-pattern-2023-2025', 'wck-drone-strikes-2024', 'rafah-paramedic-convoy-2025', 'unrwa-staff-deaths'],
+    tags: ['aid-workers', 'civilians', 'gaza', 'humanitarian'],
   },
 
 ]
