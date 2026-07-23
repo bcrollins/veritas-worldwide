@@ -569,3 +569,14 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip past 2223+ |
 
+
+## densify ship 2026-07-23T15:26Z — tip 2810/v553/VI554
+- intervals: 2774 (713f23f traction/scoop/vacuum + cobbler/Nahal-Oz/sumac), 2792 (1fc26eb aed/pacing/picc + basket-weaver/Kerem-Shalom/apiary), 2810 (9a81197 floors+pack; content co-landed with peer 645ad44)
+- pure: visual-floor/canon/research-pack green; live lag-aware ~2738/v517
+- multi-agent: left peer nav pure-floor WIP unstaged; densify-only commits
+
+## densify ship 2026-07-23T15:30Z — tip 2864/v580/VI581
+- intervals this continuation: 2774 (713f23f), 2792 (1fc26eb), 2822 (d51d526 malaria/tinsmith), 2834 (15361f6 urine-dip), 2852 (72a9a6a), 2864 (47f97f9 FFP/goggles)
+- pure: visual-floor/canon/research-pack green each ship
+- live lag-aware ~2756/v526 (no long Railway poll)
+- multi-agent: densify-only staging; peer nav/page pure-floor WIP left unstaged
