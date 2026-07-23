@@ -73,6 +73,10 @@ assert(
   page.includes('/research-pack.zip'),
   'OSINT product page must distinguish free offline research pack from paid dossier',
 )
+assert(
+  success.includes('/research-pack.zip') || success.includes('osint-success-research-pack'),
+  'OSINT success page must surface free research pack download',
+)
 
 const liveAnon = read('scripts/verify-live-anonymity.mjs')
 assert(liveAnon.includes('/comprehensive-profile'), 'live-anonymity must probe OSINT HTML')

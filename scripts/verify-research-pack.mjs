@@ -99,6 +99,18 @@ assert(
   platformHealth.includes('/research-pack.zip') && platformHealth.includes('Research pack'),
   'platform health must HEAD research-pack.zip',
 )
+const serverSrc = read('server.js')
+assert(
+  serverSrc.includes('RESEARCH_PACK_ZIP_PATH') &&
+    serverSrc.includes('researchPackZip') &&
+    serverSrc.includes('researchPackManifest'),
+  'health probe must report researchPackZip + researchPackManifest presence',
+)
+const successPage = read('src/pages/ComprehensiveProfileSuccessPage.tsx')
+assert(
+  successPage.includes('/research-pack.zip') && successPage.includes('osint-success-research-pack'),
+  'OSINT success page must offer free research pack download',
+)
 
 const llms = read('public/llms.txt')
 assert(llms.includes('research-pack'), 'llms.txt must index research pack')

@@ -18,6 +18,8 @@ app.set('trust proxy', 1)
 const PORT = process.env.PORT || 3000
 const RECORD_PDF_PATH = path.join(__dirname, 'dist', 'the-record.pdf')
 const INSTITUTE_FIELD_MANUAL_PDF_PATH = path.join(__dirname, 'dist', 'veritas-institute-field-manual.pdf')
+const RESEARCH_PACK_ZIP_PATH = path.join(__dirname, 'dist', 'research-pack.zip')
+const RESEARCH_PACK_MANIFEST_PATH = path.join(__dirname, 'dist', 'research-pack-manifest.json')
 const DIST_INDEX_HTML_PATH = path.join(__dirname, 'dist', 'index.html')
 const PACKAGE_JSON_PATH = path.join(__dirname, 'package.json')
 
@@ -1343,6 +1345,10 @@ app.get('/api/build-info', (req, res) => {
     recordPdf: fs.existsSync(RECORD_PDF_PATH),
     instituteFieldManualPdf: fs.existsSync(INSTITUTE_FIELD_MANUAL_PDF_PATH),
     instituteFieldManualPdfUrl: '/veritas-institute-field-manual.pdf',
+    researchPackZip: fs.existsSync(RESEARCH_PACK_ZIP_PATH),
+    researchPackManifest: fs.existsSync(RESEARCH_PACK_MANIFEST_PATH),
+    researchPackZipUrl: '/research-pack.zip',
+    researchPackManifestUrl: '/research-pack-manifest.json',
     nodeRuntime: process.version,
     packageEnginesNode: readPackageEnginesNode(),
   })
@@ -1629,6 +1635,8 @@ app.get('/api/health', (req, res) => {
     analyticsStore: typeof store.lifetime === 'number' && Number.isFinite(store.lifetime) && store.lifetime >= 0,
     recordPdf: fs.existsSync(RECORD_PDF_PATH),
     instituteFieldManualPdf: fs.existsSync(INSTITUTE_FIELD_MANUAL_PDF_PATH),
+    researchPackZip: fs.existsSync(RESEARCH_PACK_ZIP_PATH),
+    researchPackManifest: fs.existsSync(RESEARCH_PACK_MANIFEST_PATH),
     databaseConfigured: HAS_DATABASE_URL,
   }
 
