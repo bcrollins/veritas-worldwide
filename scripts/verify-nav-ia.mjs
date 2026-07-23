@@ -802,6 +802,29 @@ assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').in
 assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'perpetual v20 IA home')
 assert(fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), 'utf8').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v20 IA search')
 
+
+
+// RelatedHubs perpetual densify lock v21 IA
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('mobile-tab-bar'), 'perpetual v21 IA mobile tab bar')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('primaryLinks'), 'perpetual v21 IA primaryLinks')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('focus-visible:ring-offset-obsidian'), 'perpetual v21 IA footer focus')
+assert(fs.readFileSync(path.join(root, 'server.js'), 'utf8').includes('server-soft-404'), 'perpetual v21 IA server soft-404')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('emphasizeTo'), 'perpetual v21 IA emphasize')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v21 IA RelatedHubs focus')
+assert(fs.readFileSync(path.join(root, 'src/components/ResearchHubChips.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v21 IA Research chips focus')
+assert(fs.readFileSync(path.join(root, 'src/components/DossierHubSpokes.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v21 IA spokes focus')
+assert(fs.readFileSync(path.join(root, 'src/components/BookmarkButton.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v21 IA bookmark')
+assert(fs.readFileSync(path.join(root, 'src/components/institute/InstituteLayout.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v21 IA institute layout')
+assert(fs.readFileSync(path.join(root, 'src/pages/InstitutePage.tsx'), 'utf8').includes('institute-related-hubs'), 'perpetual v21 IA institute')
+assert(fs.readFileSync(path.join(root, 'src/pages/MethodologyPage.tsx'), 'utf8').includes('methodology-related-hubs'), 'perpetual v21 IA methodology')
+assert(fs.readFileSync(path.join(root, 'scripts/verify-related-hubs-coverage.mjs'), 'utf8').includes('related-hubs-coverage'), 'perpetual v21 IA coverage')
+assert(fs.readFileSync(path.join(root, 'scripts/verify-pure.mjs'), 'utf8').includes('verify-related-hubs-coverage.mjs'), 'perpetual v21 IA pure wire')
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-hub-chips'), 'perpetual v21 IA soft-404')
+assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'perpetual v21 IA home')
+assert(fs.readFileSync(path.join(root, 'src/components/SharePanel.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v21 IA share')
+assert(fs.readFileSync(path.join(root, 'src/components/AuthModal.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v21 IA auth')
+assert(fs.readFileSync(path.join(root, 'src/components/CookieConsent.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v21 IA cookie')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
