@@ -2076,9 +2076,12 @@ function isKnownSpaRoute(pathname) {
   const profileMatch = route.match(/^\/profile\/([a-z0-9-]+)$/i)
   if (profileMatch) return isKnownProfileSlug(profileMatch[1], __dirname)
 
+  const newsMatch = route.match(/^\/news\/([a-z0-9-]+)$/i)
+  if (newsMatch) return isKnownNewsSlug(newsMatch[1], __dirname)
+  const topicMatch = route.match(/^\/topics\/([a-z0-9-]+)$/i)
+  if (topicMatch) return isKnownTopicSlug(topicMatch[1], __dirname)
+
   const patterns = [
-    /^\/news\/[a-z0-9-]+$/i,
-    /^\/topics\/[a-z0-9-]+$/i,
     /^\/institute\/courses\/[a-z0-9-]+$/i,
     /^\/institute\/guides\/[a-z0-9-]+$/i,
     /^\/admin(\/|$)/i,

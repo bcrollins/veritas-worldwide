@@ -409,6 +409,28 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
       }
     }
 
+
+    const topicMatch = req.path.match(/^\/topics\/([^/]+)$/)
+    if (topicMatch) {
+      const slug = topicMatch[1]
+      if (!isKnownTopicSlug(slug, rootDir)) {
+        res.status(404)
+        res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+        let notFound = applyBotPageMeta(html, {
+          title: 'Page Not Found | Veritas Worldwide',
+          description: 'This topic hub is not part of The Record public archive.',
+          url: `${SITE_URL}/404`,
+          type: 'website',
+        })
+        notFound = notFound.replace(
+          /<meta name="robots" content="[^"]*"/,
+          '<meta name="robots" content="noindex, nofollow"',
+        )
+        return res.type('html').send(notFound)
+      }
+    }
+
     const profileMatch = req.path.match(/^\/profile\/(.+)$/)
     if (profileMatch) {
       const slug = profileMatch[1]
@@ -470,6 +492,22 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
     const newsMatch = req.path.match(/^\/news\/([^/]+)$/)
     if (newsMatch) {
       const slug = newsMatch[1]
+      if (!isKnownNewsSlug(slug, rootDir)) {
+        res.status(404)
+        res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+        let notFound = applyBotPageMeta(html, {
+          title: 'Page Not Found | Veritas Worldwide',
+          description: 'This article is not part of The Record public archive.',
+          url: `${SITE_URL}/404`,
+          type: 'website',
+        })
+        notFound = notFound.replace(
+          /<meta name="robots" content="[^"]*"/,
+          '<meta name="robots" content="noindex, nofollow"',
+        )
+        return res.type('html').send(notFound)
+      }
       const candidates = [
         path.join(rootDir, 'dist', 'news', 'meta.json'),
         path.join(rootDir, 'public', 'news', 'meta.json'),
