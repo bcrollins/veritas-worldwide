@@ -1269,4 +1269,16 @@ for (const label of ['Record', 'Read', 'Dossiers', 'Profiles', 'Search']) {
 }
 
 
+
+// MobileTabBar safe-area reaffirm final
+const tabSafeFinal = read('src/App.tsx')
+assert(tabSafeFinal.includes('safe-area-inset-bottom') || tabSafeFinal.includes('env(safe-area-inset-bottom)'), 'tab safe-area final')
+assert(tabSafeFinal.includes('mobile-tab-bar'), 'mobile-tab-bar testid final')
+
+// RelatedHubs darkChip reaffirm final
+const darkChipFinal = read('src/components/RelatedHubs.tsx')
+assert(darkChipFinal.includes('darkChip') || darkChipFinal.includes('border-white/20'), 'darkChip styles final')
+assert(darkChipFinal.includes("tone === 'dark'") || darkChipFinal.includes('tone === "dark"'), 'dark tone branch final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
