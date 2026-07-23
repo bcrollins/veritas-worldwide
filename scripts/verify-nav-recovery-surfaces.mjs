@@ -1582,4 +1582,16 @@ assert(suiteSelf.includes('DossierHubSpokes') || suiteSelf.includes('dossier-hub
 assert(suiteSelf.includes('ResearchHubChips') || suiteSelf.includes('research-hub-chips'), 'suite owns research chips')
 
 
+
+// Bernie RelatedHubs dark recovery + quarantine chrome end
+const bernieEnd = read('src/pages/BernieShowPage.tsx')
+assert(bernieEnd.includes('bernie-related-hubs'), 'bernie-related-hubs end')
+assert(bernieEnd.includes('tone="dark"') || bernieEnd.includes("tone='dark'"), 'bernie dark end')
+assert(bernieEnd.includes('RelatedHubs'), 'bernie RelatedHubs end')
+
+// MediaKit dual rows end
+const mediaEnd = read('src/pages/MediaKitPage.tsx')
+assert(mediaEnd.includes('media-kit-related-hubs') && mediaEnd.includes('media-kit-primary-hubs'), 'media kit dual end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
