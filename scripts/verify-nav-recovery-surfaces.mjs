@@ -1621,4 +1621,15 @@ for (const dest of ["'/'", "'/read'", "'/israel-dossier'", "'/profiles'", "'/sea
 }
 
 
+
+// surfaces.length end floor 102 ultimate final
+assert(surfaces.length >= 102, `surfaces end ultimate ${surfaces.length}`)
+
+// RelatedHubs dark + parchment + surface tones ultimate
+const tonesUlt = read('src/components/RelatedHubs.tsx')
+assert(tonesUlt.includes("'surface'") || tonesUlt.includes('"surface"'), 'tone surface ultimate')
+assert(tonesUlt.includes("'parchment'") || tonesUlt.includes('"parchment"'), 'tone parchment ultimate')
+assert(tonesUlt.includes("'dark'") || tonesUlt.includes('"dark"'), 'tone dark ultimate')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
