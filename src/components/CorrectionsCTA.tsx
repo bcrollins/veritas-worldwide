@@ -29,7 +29,7 @@ export default function CorrectionsCTA({ pageLabel = 'Veritas page', className =
       Found an error?{' '}
       <a
         href={href}
-        className="inline-flex min-h-[44px] items-center font-sans font-semibold text-crimson hover:underline"
+        className="inline-flex min-h-[44px] items-center font-sans font-semibold text-crimson hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
       >
         Email corrections@veritasworldwide.com
       </a>
