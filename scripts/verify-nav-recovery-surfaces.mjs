@@ -1008,4 +1008,9 @@ assert(stickyZFinal.includes('z-40'), 'membership z-40 unique final')
 const relatedTouch = read('src/components/RelatedHubs.tsx')
 assert(relatedTouch.includes('min-h-[44px]'), 'RelatedHubs min-h 44 unique final')
 
+
+// RelatedHubs no-print unique final
+const relatedNoPrint = read('src/components/RelatedHubs.tsx')
+assert(relatedNoPrint.includes('no-print'), 'no-print RelatedHubs unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
