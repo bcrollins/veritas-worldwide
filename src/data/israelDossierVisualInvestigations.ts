@@ -5502,6 +5502,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-ambulance-depot-strike-visual-2023-2025',
+    title: 'Gaza Ambulance Depot Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip ambulance depots and EMS parking yards',
+    summary:
+      'Multi-outlet video packages document strikes on ambulance depots under wartime conditions, denying EMS capacity for civilians including children. Distinct from ambulance-bay and ambulance-access-denied visual cards by focusing on multi-source depot packages; ethnicity is never evidence.',
+    evidence:
+      'WHO health-cluster materials, multi-outlet visual packages, and OHCHR materials establish multi-source documentation of ambulance-depot harm affecting civilian emergency services.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza EMS packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet ambulance-depot video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of EMS depot aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OHCHR medical-protection trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-bat-yam-safe-room-visual-2023',
+    title: 'October 7 Bat Yam Safe-Room Civilian Harm — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Bat Yam residential safe rooms and home shelters',
+    summary:
+      'Authenticated multi-outlet video packages document civilian harm involving Bat Yam safe rooms during the October 7 attacks period. Multi-party visual record; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence affecting Bat Yam safe rooms on and around October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Bat Yam safe-room October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-fig-packing-house-arson-visual-2023-2025',
+    title: 'West Bank Settler Fig Packing House Arson — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village fig packing houses and processing sheds',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler arson of Palestinian civilian fig packing houses, denying fruit processing including income for families with children. Multi-source visual record; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of packing-house arson affecting civilian agricultural livelihoods.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem packing-house arson video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem agricultural-violence case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */

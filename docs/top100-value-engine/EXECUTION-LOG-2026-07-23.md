@@ -459,3 +459,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip |
 
+
+## Interval densify — tip post-2101 airway densify + ambulance depot / Bat Yam / fig packing-house
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza salbutamol/ipratropium/hydrocortisone · hostage drainage-ditches/scooter-marches/elements-exposure · WB celeriac/oxygen-concentrator/rosemary-seedlings |
+| VI | ambulance depot · Bat Yam · fig packing-house arson |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip past 2100 |
+
