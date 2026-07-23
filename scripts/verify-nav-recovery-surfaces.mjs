@@ -1785,4 +1785,18 @@ assert(spokesZEnd.includes('exclude'), 'spokes exclude end')
 assert(spokesZEnd.includes('DOSSIER_SPOKES'), 'DOSSIER_SPOKES end')
 
 
+
+// ResearchHubChips Research hub aria ultimate end
+const rhcAriaEnd = read('src/components/ResearchHubChips.tsx')
+assert(rhcAriaEnd.includes('Research hub') || rhcAriaEnd.includes('aria-label'), 'RHC aria end')
+assert(rhcAriaEnd.includes('min-h-[44px]') || rhcAriaEnd.includes('min-h-11'), 'RHC touch end')
+assert(rhcAriaEnd.includes('excludePath'), 'RHC excludePath end')
+
+// RelatedHubs Related hubs aria ultimate end  
+const relatedAriaEnd = read('src/components/RelatedHubs.tsx')
+assert(relatedAriaEnd.includes('Related hubs'), 'RelatedHubs aria end')
+assert(relatedAriaEnd.includes('min-h-[44px]'), 'RelatedHubs touch end')
+assert(relatedAriaEnd.includes('no-print'), 'RelatedHubs no-print end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
