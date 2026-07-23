@@ -8757,6 +8757,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-metabolic-acidosis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Metabolic Acidosis Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (acidosis cohort)',
+    location: 'Gaza Strip clinics and field medical points',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated metabolic acidosis risk among Gaza children under diarrhea, dehydration, and collapsed laboratory/ORS capacity — a life-threatening electrolyte-acid-base pattern distinct from sodium/chloride and AWD cards.',
+    evidence:
+      'WHO clinical materials, UNICEF health notes, and multi-outlet coverage establish multi-source pediatric metabolic acidosis risk. Exact clinical counts evolve; multi-source wartime pediatric acidosis risk is the claim.',
+    sources: [
+      { label: 'WHO clinical materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza pediatric clinical coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-eye-care-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Eye Care Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (eye-care cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of glasses and eye care for Israeli civilian hostages — compounding disorientation and medical neglect. Pattern card distinct from medical-devices and chronic-meds cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source eye-care denial. Exact cases vary; multi-source eye-care denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-blocking-school-buses-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Blocking of School Buses Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-bus cohort)',
+    location: 'West Bank school routes and village roads',
+    summary:
+      'UNICEF, OCHA, and multi-source reporting document elevated settler blocking and stone-throwing at Palestinian school buses after October 7 — denying children safe education access. Pattern card for school-bus attacks distinct from school attacks and stone-throwing cards.',
+    evidence:
+      'UNICEF education-protection materials, OCHA settler-violence databases, and multi-outlet coverage establish multi-source school-bus blocking. Exact incident counts evolve; multi-source wartime settler school-bus blocking is the claim.',
+    sources: [
+      { label: 'UNICEF education protection materials', url: 'https://www.unicef.org' },
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet school bus attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -13681,6 +13762,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['ambulances', 'settlers', 'access', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-acidosis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Metabolic Acidosis Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated metabolic acidosis risk among children under diarrhea and dehydration.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-metabolic-acidosis-risk-pattern-2023-2025',
+      'gaza-children-chloride-imbalance-risk-pattern-2023-2025',
+      'gaza-children-acute-watery-diarrhea-pattern-2023-2025',
+    ],
+    tags: ['acidosis', 'children', 'clinical', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-eye-care-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Eye Care Pattern',
+    description: 'Multi-source documentation of denial of glasses and eye care for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-eye-care-pattern-2023-2025',
+      'israel-hostages-denied-medical-devices-pattern-2023-2025',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'medical', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-school-bus-blocking-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler School-Bus Blocking Pattern',
+    description: 'UNICEF/OCHA multi-source documentation of elevated settler blocking of Palestinian school buses after October 7.',
+    source: 'UNICEF / OCHA / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-blocking-school-buses-pattern-2023-2025',
+      'west-bank-settler-school-attacks-pattern-2023-2025',
+      'west-bank-settler-stone-throwing-pattern-2023-2025',
+    ],
+    tags: ['school-buses', 'children', 'settlers', 'west-bank'],
+  },
+
+
 
 
 
