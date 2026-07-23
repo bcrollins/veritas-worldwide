@@ -2654,6 +2654,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-bakeries-food-system-collapse-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Bakeries & Food System Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (food-system cohort)',
+    location: 'Gaza Strip',
+    summary:
+      'WFP, FAO, and multi-source reporting document collapse of commercial food markets, bakery capacity, and agricultural production under bombardment, fuel siege, and aid restrictions — a civilian-harm multiplier linked to IPC famine phases. Pattern card for food-system destruction.',
+    evidence:
+      'WFP market assessments, multi-source bakery closure reporting, and FAO agricultural damage tallies establish multi-source food-system collapse. Exact market functionality percentages evolve; multi-source system collapse is the claim.',
+    sources: [
+      { label: 'WFP market and food security materials', url: 'https://www.wfp.org' },
+      { label: 'FAO agricultural damage materials', url: 'https://www.fao.org' },
+      { label: 'IPC food security assessments', url: 'https://www.ipcinfo.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WFP public materials', url: 'https://www.wfp.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3751,6 +3778,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-fuel-electricity-siege-pattern-2023-2025', 'gaza-health-system-collapse-2023-2025', 'gaza-water-sanitation-collapse-2023-2025'],
     tags: ['siege', 'fuel', 'electricity', 'civilians', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-food-system-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Bakeries & Food System Collapse Pattern',
+    description: 'WFP/FAO multi-source documentation of market, bakery, and agricultural system collapse.',
+    source: 'WFP / FAO / IPC',
+    sourceUrl: 'https://www.wfp.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-bakeries-food-system-collapse-2023-2025', 'gaza-starvation-ipc-phases-2024-2025', 'gaza-fuel-electricity-siege-pattern-2023-2025'],
+    tags: ['food', 'starvation', 'civilians', 'children', 'gaza'],
   },
 
 ]
