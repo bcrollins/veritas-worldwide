@@ -1,4 +1,9 @@
 
+## Recently Closed (2026-07-23 — integrity densify + OSINT hardening wave)
+
+- **Integrity n≥3 LIVE floor at 22 profiles.** McConnell, Rand Paul, Omar, Haley, Sanders, Graham densified with dual-cite False dockets this session; live corpus confirms 22 n≥3 including Graham 55/3.
+- **OSINT product abuse controls live-bound:** rate-limit 8/min, refuse-list keywords, privacy retention language, gitignore PII orders, health orderIntakeCount + admin ops note.
+
 ## Recently Closed (2026-07-23 — Top-100 Value Engine Wave 2)
 
 - **Comprehensive Online Profile ($499) is live.**

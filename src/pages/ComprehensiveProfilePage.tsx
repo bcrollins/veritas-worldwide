@@ -345,7 +345,7 @@ export default function ComprehensiveProfilePage() {
               </p>
             </div>
 
-            <form onSubmit={onSubmit} className="px-6 py-6 space-y-4" noValidate>
+            <form onSubmit={onSubmit} className="px-6 py-6 space-y-4" noValidate aria-describedby={error ? 'osint-form-error' : undefined}>
               <fieldset className="space-y-3">
                 <legend className="font-sans text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-1">
                   Client
@@ -509,7 +509,7 @@ export default function ComprehensiveProfilePage() {
               </fieldset>
 
               {error && (
-                <p className="font-body text-sm text-crimson border border-crimson/30 bg-crimson/5 px-3 py-2" role="alert">
+                <p id="osint-form-error" className="font-body text-sm text-crimson border border-crimson/30 bg-crimson/5 px-3 py-2" role="alert">
                   {error}
                   {orderId ? ` Order reference: ${orderId}` : ''}
                 </p>
