@@ -1412,6 +1412,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+  {
+    id: 'vi-oct7-kibbutz-nir-oz-visual-2023',
+    title: 'October 7 Kibbutz Nir Oz — Multi-Outlet Capture & Civilian Murder Visual Record',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Nir Oz, southern Israel',
+    summary:
+      'Multi-outlet video and authenticated phone footage document the October 7 assault on Kibbutz Nir Oz, including civilian murders and mass hostage-taking. Multi-party visual record distinct from Be’eri and Nova packages; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence at Nir Oz on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Nir Oz October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-school-shelter-night-strike-visual-2023-2025',
+    title: 'Gaza School-Shelter Night Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'UNRWA and public school shelters across Gaza',
+    summary:
+      'Multi-outlet phone video and OHCHR materials document night strikes on school buildings used as civilian shelters after displacement. Distinct from prior UNRWA school-shelter visual card by focusing on night-sequence multi-source packages; multi-source civilian-harm floor.',
+    evidence:
+      'OCHA shelter tallies, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of civilian harm at school shelters.',
+    sources: [
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'OHCHR civilian-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters school-shelter packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet school-shelter strike video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of school-shelter aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OCHA/OHCHR shelter and civilian-harm trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-west-bank-home-demolition-family-eviction-visual-2023-2025',
+    title: 'West Bank Home Demolition & Family Eviction — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank villages and East Jerusalem neighborhoods',
+    summary:
+      'B’Tselem video banks and multi-outlet packages document home demolitions and family evictions affecting Palestinian civilians including children. Multi-source visual record distinct from prior home-demolition live-video card by emphasizing family-eviction sequences; ethnicity is never evidence.',
+    evidence:
+      'B’Tselem video documentation, OCHA demolition tallies, and multi-outlet reporting establish multi-source documentation of civilian home demolitions and forced displacement.',
+    sources: [
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'B’Tselem home demolition documentation', url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem demolition and eviction video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem demolition case files', url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA demolition materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
