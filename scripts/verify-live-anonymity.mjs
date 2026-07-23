@@ -16,6 +16,8 @@ const paths = [
   '/privacy',
   '/terms',
   '/institute/methodology',
+  // OPSEC quarantine surface: must never reintroduce personal social profile URLs
+  '/bernie',
 ]
 
 const FORBIDDEN = [
@@ -26,6 +28,9 @@ const FORBIDDEN = [
   /@incollection\{rollins/i,
   /Brandon\s+Rollins/i,
   /aerolink\.one/i,
+  // Personal social profiles must never appear on any public Veritas HTML
+  /facebook\.com\/bernie\.rollins/i,
+  /facebook\.com\/brandon\.rollins/i,
 ]
 
 const failures = []
