@@ -34,6 +34,13 @@ const block = m[1]
 const toCount = (block.match(/to:\s*['"]/g) || []).length
 assert(toCount <= 5, `primaryLinks must be ≤5 hubs (Hick's Law); got ${toCount}`)
 assert(toCount >= 4, `primaryLinks unexpectedly sparse (${toCount})`)
+assert(toCount === 5, `primaryLinks must be exactly 5 hubs; got ${toCount}`)
+// primaryLinks short labels for Hick scent + mobile tab parity
+assert(block.includes('Record') || block.includes('The Record'), 'primary label Record')
+assert(block.includes('Read'), 'primary label Read')
+assert(block.includes('Dossiers') || block.includes('Dossier'), 'primary label Dossiers')
+assert(block.includes('Profiles') || block.includes('Profile'), 'primary label Profiles')
+assert(block.includes('Search'), 'primary label Search')
 assert(block.includes("/search"), 'Search must be a primary hub')
 assert(block.includes('/read'), 'Read must be a primary hub')
 assert(block.includes('/israel-dossier'), 'Dossiers hub required')
