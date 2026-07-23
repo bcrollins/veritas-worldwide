@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T08:42:46.452Z",
-  "claimCount": 132,
+  "generatedAt": "2026-07-23T08:51:48.961Z",
+  "claimCount": 152,
   "tierHistogram": {
-    "verified": 46,
-    "contested": 20,
-    "well_attested": 49,
+    "verified": 51,
+    "well_attested": 58,
+    "contested": 22,
+    "interpretive": 10,
     "speculative": 2,
-    "interpretive": 7,
     "literary_theological": 3,
-    "circumstantial": 5
+    "circumstantial": 6
   },
   "claims": [
     {
@@ -31,6 +31,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "ane-cos-corpus",
+      "claim": "The Context of Scripture (COS) and ANET anthologies assemble primary ANE texts used as comparative controls for Hebrew Bible literature and historiography.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "ane-cyrus-cylinder",
@@ -82,6 +89,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "ane-sennacherib",
+      "claim": "Sennacherib’s annals (Taylor Prism / related prisms) describe the 701 BCE campaign against Judah and Hezekiah’s tribute without claiming Jerusalem’s capture.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
       "id": "ane-tel-dan",
       "claim": "The Tel Dan Stele (9th century BCE) attests the phrase “House of David” (bytdwd) outside the Bible.",
       "tier": "verified",
@@ -110,11 +124,25 @@
       "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
+      "id": "arch-caesarea-maritima",
+      "claim": "Caesarea Maritima — Herodian harbor city and later Roman provincial capital — is extensively excavated and contextualizes prefectural administration relevant to Pilate traditions.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
       "id": "arch-capernaum",
       "claim": "Capernaum (Kefar Nahum) was a fishing village on the Sea of Galilee with Early Roman occupation; a later synagogue stands over earlier remains.",
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-destruction-70",
+      "claim": "The Roman destruction of Jerusalem and the Temple in 70 CE is multiply attested (Josephus; archaeological burn/destruction layers; Roman triumph iconography such as the Arch of Titus spoils relief).",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "arch-galilee-boat",
@@ -166,6 +194,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "arch-quran-not-control",
+      "claim": "The Qur’an (7th c. CE) is a late secondary witness for first-century Palestinian history and is not used here as a primary control for the historical Jesus.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
       "id": "arch-sepphoris",
       "claim": "Sepphoris (Zippori), ~6 km from Nazareth, was a significant urban center in Early Roman Galilee under Antipas.",
       "tier": "verified",
@@ -187,6 +222,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "arch-titus",
+      "claim": "1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
       "id": "arch-yehohanan",
       "claim": "The crucified remains of Yehohanan son of Hagkol (Giv‘at ha-Mivtar) provide osteological evidence of Roman crucifixion practice in Judea (nail through heel bone).",
       "tier": "verified",
@@ -199,6 +241,13 @@
       "tier": "well_attested",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "cosmo-bao",
+      "claim": "Baryon acoustic oscillations (BAO) measured in large-scale galaxy surveys provide an independent standard-ruler constraint on the expansion history within ΛCDM.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "cosmo-bbn",
@@ -236,6 +285,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "cosmo-hubble-tension",
+      "claim": "The Hubble tension denotes a statistically significant discrepancy between early-universe (CMB-inferred) and some late-universe local H₀ measurements.",
+      "tier": "contested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
       "id": "cosmo-matter-energy",
       "claim": "Planck baseline ΛCDM reports cold dark matter and dark energy as dominant density components of the present universe.",
       "tier": "well_attested",
@@ -255,6 +311,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
+      "id": "ec-1clement",
+      "claim": "1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "ec-apostolic-fathers",
@@ -278,6 +341,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "ec-gospel-harmony",
+      "claim": "Tatian’s Diatessaron (late 2nd c.) harmonized the four Gospels into a single narrative widely used in Syriac Christianity — evidence of early fourfold Gospel prestige and of textual fluidity in use.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
       "id": "ec-gospel-thomas",
       "claim": "The Gospel of Thomas (Nag Hammadi) is a sayings gospel whose dating and dependence on canonical Gospels are contested.",
       "tier": "contested",
@@ -297,6 +367,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ec-justin-apology",
+      "claim": "Justin Martyr’s First Apology (mid-2nd c.) describes Christian worship, “memoirs of the apostles,” and defends Christians before a Roman audience.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "ec-marcion",
@@ -362,6 +439,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "hj-criteria-limits",
+      "claim": "Classical authenticity criteria (multiple attestation, embarrassment, dissimilarity) are heuristic tools with known biases; they do not yield laboratory-grade “proof” of individual sayings.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
       "id": "hj-crucifixion",
       "claim": "Crucifixion of Jesus under Pontius Pilate (prefect of Judea c. 26–36 CE) is multiply attested and coheres with Roman practice.",
       "tier": "verified",
@@ -390,6 +474,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "hj-family-rejection",
+      "claim": "Traditions of family misunderstanding or tension (Mark 3; John 7) are often cited under the criterion of embarrassment as unlikely free invention by later church idealization.",
+      "tier": "circumstantial",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
       "id": "hj-gal2-conflict",
       "claim": "Galatians 2 records a conflict between Paul and Cephas (Peter) at Antioch over table fellowship with gentiles — primary evidence of diversity and dispute in the earliest movement.",
       "tier": "well_attested",
@@ -416,6 +507,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "hj-john-baptist-movement",
+      "claim": "John the Baptist is multiply attested (Josephus Ant. 18; Synoptics; Johannine tradition) as an independent purification/repentance preacher executed by Herod Antipas.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "hj-kingdom-proclamation",
@@ -572,11 +670,32 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "mod-mythicism-fringe",
+      "claim": "Full mythicism (Jesus of Nazareth as entirely non-historical) remains a fringe position in mainstream historical scholarship of Second Temple Judaism and early Christianity.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "mod-na28-ubs5",
+      "claim": "Nestle-Aland 28 and UBS5 are the standard working critical Greek NT editions for most academic exegesis; their apparatus documents selected variants, not every known reading.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
       "id": "mod-open-access-trend",
       "claim": "Open digital libraries (INTF NT.VMR, IAA DSS, British Library codices) have lowered barriers to primary manuscript inspection since the 2010s.",
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
+      "id": "mod-open-data-ethics",
+      "claim": "Modern digital manuscript projects raise access, conservation, provenance, and citation-ethics issues distinct from the content of any single reading.",
+      "tier": "interpretive",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "mod-population-genetics",
@@ -619,6 +738,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nc-celsus",
+      "claim": "Celsus (2nd c.), preserved mainly via Origen’s Contra Celsum, is an early pagan critic who treats Jesus as a historical magician/charlatan figure rather than a mythic non-entity.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "nc-james",
@@ -692,10 +818,10 @@
     },
     {
       "id": "nc-thallus-phlegon",
-      "claim": "Later Christian authors cite Thallus and Phlegon regarding darkness at the crucifixion; the original pagan contexts are lost and the citations are mediated.",
+      "claim": "Later Christian authors cite Thallus and Phlegon regarding a darkness or eclipse around the time of the crucifixion; the original works are lost and the citations are mediated.",
       "tier": "circumstantial",
-      "proofVsConcept": "reconstruction",
-      "file": "src/data/recordOfJesusChristWave4.ts"
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "nt-codex-alexandrinus",
@@ -713,10 +839,17 @@
     },
     {
       "id": "nt-ecm-method",
-      "claim": "The Editio Critica Maior (ECM) and CBGM (Coherence-Based Genealogical Method) represent the current large-scale critical reconstruction program for the Greek NT at INTF.",
+      "claim": "The Editio Critica Maior (ECM) and the Coherence-Based Genealogical Method (CBGM) model manuscript relationships as a guided stemmatic network rather than a simple bipartite Alexandrian/Byzantine tree.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "nt-ending-mark",
+      "claim": "The longer ending of Mark (16:9–20) is absent from the earliest major Greek witnesses (ℵ B) and is treated in critical editions as secondary, while shorter alternative endings also exist.",
       "tier": "well_attested",
-      "proofVsConcept": "attested_report",
-      "file": "src/data/recordOfJesusChristWave4.ts"
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "nt-eusebius-ch",
@@ -797,10 +930,10 @@
     },
     {
       "id": "nt-p66-p75",
-      "claim": "Bodmer papyri P66 and P75 are early substantial witnesses to John (and Luke/John for P75), foundational for Alexandrian text studies.",
+      "claim": "Bodmer papyri P66 (John) and P75 (Luke/John) are major early substantial witnesses typically dated to the late 2nd / early 3rd century and foundational for early Alexandrian text studies.",
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
-      "file": "src/data/recordOfJesusChristExtras.ts"
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "nt-paul-dates",
@@ -811,10 +944,10 @@
     },
     {
       "id": "nt-pericope-adulterae",
-      "claim": "John 7:53–8:11 (pericope adulterae) is widely judged a later insertion into John; early Greek continuous-text support is weak.",
-      "tier": "verified",
+      "claim": "The pericope adulterae (John 7:53–8:11) is widely judged a later insertion on strong external manuscript grounds, though the story circulated early in the Latin and some Greek traditions.",
+      "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
-      "file": "src/data/recordOfJesusChristExtras.ts"
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "nt-synoptic-problem",
@@ -867,10 +1000,10 @@
     },
     {
       "id": "st-herod-temple",
-      "claim": "Herod’s expansion of the Jerusalem Temple platform is archaeologically and literarily well documented for the late first century BCE – first century CE.",
+      "claim": "Herod’s expansion of the Jerusalem Temple Mount is archaeologically and literarily documented (Josephus; Western Wall / Temple Mount retaining architecture).",
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
-      "file": "src/data/recordOfJesusChristExtras.ts"
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "st-isaiah-stability",
@@ -934,6 +1067,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "st-synagogue-origins",
+      "claim": "The institutional origins and pre-70 function of “synagogues” remain debated; archaeological assembly buildings and literary references do not form a single simple type.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
       "id": "st-temple-economy",

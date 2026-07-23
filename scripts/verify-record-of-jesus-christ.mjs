@@ -64,16 +64,32 @@ assert(data.includes('ROC_EXTRA_CLAIMS'), 'extras merge missing')
 assert(extras.includes('ROC_TIMELINE'), 'timeline export missing')
 assert(extras.includes('ROC_EXTRA_CLAIMS'), 'extra claims map missing')
 
+const wave4 = fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave4.ts'))
+  ? fs.readFileSync(path.join(root, 'src/data/recordOfJesusChristWave4.ts'), 'utf8')
+  : ''
+const wave5 = fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave5.ts'))
+  ? fs.readFileSync(path.join(root, 'src/data/recordOfJesusChristWave5.ts'), 'utf8')
+  : ''
+const wave6src = fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave6.ts'))
+  ? fs.readFileSync(path.join(root, 'src/data/recordOfJesusChristWave6.ts'), 'utf8')
+  : ''
 const tierHits =
   (data.match(/tier: '/g) || []).length +
   (extras.match(/tier: '/g) || []).length +
-  (wave3.match(/tier: '/g) || []).length
-assert(tierHits >= 90, `expected ≥90 tiered claims across base+extras+wave3, got ${tierHits}`)
+  (wave3.match(/tier: '/g) || []).length +
+  (wave4.match(/tier: '/g) || []).length +
+  (wave5.match(/tier: '/g) || []).length +
+  (wave6src.match(/tier: '/g) || []).length
+assert(tierHits >= 120, `expected ≥120 tiered claims across base+waves, got ${tierHits}`)
 assert(data.includes('ROC_WAVE3_CLAIMS'), 'wave3 merge missing')
 assert(data.includes('ROC_WAVE4_CLAIMS'), 'wave4 merge missing')
 assert(data.includes('ROC_WAVE5_CLAIMS'), 'wave5 merge missing')
+assert(data.includes('ROC_WAVE6_CLAIMS'), 'wave6 merge missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave4.ts')), 'wave4 file missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave5.ts')), 'wave5 file missing')
+assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave6.ts')), 'wave6 file missing')
+assert(!/brollins|bcrollins|brandoncrollins/i.test(wave6src), 'wave6 must not contain operator identity')
+assert((wave6src.match(/tier: '/g) || []).length >= 18, 'wave6 should add a substantial claim batch')
 assert(page.includes('Copy citation'), 'per-claim cite control missing')
 assert(page.includes('Skip to evidence content'), 'skip link missing for a11y')
 assert(page.includes('faqJsonLd'), 'ROC FAQ schema missing')
@@ -96,7 +112,7 @@ assert(llms.includes('record-of-jesus-christ/corpus.json'), 'llms.txt missing co
 const corpusPath = path.join(root, 'public/record-of-jesus-christ/corpus.json')
 assert(fs.existsSync(corpusPath), 'public ROC corpus.json missing — run npm run export:roc-corpus')
 const corpus = JSON.parse(fs.readFileSync(corpusPath, 'utf8'))
-assert(corpus.claimCount >= 50, `corpus claimCount too low: ${corpus.claimCount}`)
+assert(corpus.claimCount >= 140, `corpus claimCount should include wave6 (≥140), got ${corpus.claimCount}`)
 assert(corpus.meta?.publisher === 'Veritas Worldwide', 'corpus publisher must be entity-only')
 assert(fs.existsSync(path.join(root, 'public/og/record-of-jesus-christ.png')), 'ROC OG PNG missing')
 assert(fs.existsSync(path.join(root, 'public/record-of-jesus-christ/figures/cmb-power-spectrum-schematic.svg')), 'CMB figure missing')
