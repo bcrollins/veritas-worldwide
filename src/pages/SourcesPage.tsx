@@ -22,6 +22,63 @@ import {
 } from '../lib/seo'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
 
+function csvEscape(value: string | number | undefined | null): string {
+  const raw = value == null ? '' : String(value)
+  if (/[",\n\r]/.test(raw)) return `"${raw.replace(/"/g, '""')}"`
+  return raw
+}
+
+function buildSourcesCsv(
+  rows: Array<{
+    chapterNumber: string
+    chapterTitle: string
+    sourceId: number
+    text: string
+    url?: string
+    hierarchy: string
+    chapterEvidenceTiers: string
+  }>,
+): string {
+  const header = [
+    'chapter_number',
+    'chapter_title',
+    'source_id',
+    'source_text',
+    'source_url',
+    'hierarchy',
+    'chapter_evidence_tiers',
+  ]
+  const lines = [header.join(',')]
+  for (const row of rows) {
+    lines.push(
+      [
+        csvEscape(row.chapterNumber),
+        csvEscape(row.chapterTitle),
+        csvEscape(row.sourceId),
+        csvEscape(row.text),
+        csvEscape(row.url || ''),
+        csvEscape(row.hierarchy),
+        csvEscape(row.chapterEvidenceTiers),
+      ].join(','),
+    )
+  }
+  return `${lines.join('\n')}\n`
+}
+
+function downloadTextFile(filename: string, content: string, mime: string) {
+  const blob = new Blob([content], { type: mime })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  a.rel = 'noopener'
+  document.body.appendChild(a)
+  a.click()
+  a.remove()
+  URL.revokeObjectURL(url)
+}
+
+
 type SourceHierarchyFilter = SourceHierarchy | 'all'
 
 const SOURCE_HIERARCHY_OPTIONS: Array<{ value: SourceHierarchyFilter; label: string }> = [
@@ -185,6 +242,31 @@ export default function SourcesPage() {
 
   const isDegradedProfile = isLoggedIn && !canAccessProtectedContent && authMode === 'degraded'
   const filteredCount = filteredChapterSources.reduce((sum, chapter) => sum + chapter.sources.length, 0)
+
+  const exportSourcesCsv = () => {
+    const rows = filteredChapterSources.flatMap((chapter) => {
+      const tiers =
+        chapter.availableEvidenceTiers.length > 0
+          ? chapter.availableEvidenceTiers.join('|')
+          : ''
+      return chapter.sources.map((source) => ({
+        chapterNumber: chapter.number,
+        chapterTitle: chapter.title,
+        sourceId: source.id,
+        text: source.text,
+        url: source.url,
+        hierarchy: getSourceHierarchyLabel(normalizeSourceHierarchy(source)),
+        chapterEvidenceTiers: tiers,
+      }))
+    })
+    const csv = buildSourcesCsv(rows)
+    downloadTextFile(
+      `veritas-sources-library${evidenceTierFilter !== 'all' ? `-${evidenceTierFilter}` : ''}.csv`,
+      csv,
+      'text/csv;charset=utf-8',
+    )
+  }
+
   const hasActiveSourceFilters =
     Boolean(sourceFilter.trim()) ||
     sourceHierarchyFilter !== 'all' ||
@@ -287,13 +369,25 @@ export default function SourcesPage() {
             ) : publicSourceLibrary || canAccessProtectedContent ? (
               <>
                 <section className="mb-8 no-print border border-border bg-surface-raised p-4 sm:p-5">
-                  <div className="mb-4">
-                    <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
-                      Source Filters
-                    </p>
-                    <p className="font-body text-sm text-ink-muted leading-relaxed">
-                      Filter the full bibliography by source provenance and by the evidence mix present in each chapter.
-                    </p>
+                  <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                      <p className="font-sans text-[0.6rem] font-bold tracking-[0.18em] uppercase text-crimson mb-2">
+                        Source Filters
+                      </p>
+                      <p className="font-body text-sm text-ink-muted leading-relaxed">
+                        Filter the full bibliography by source provenance and by the evidence mix present in each chapter.
+                        Export the current view as CSV (includes chapter evidence-tier column).
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={exportSourcesCsv}
+                      disabled={filteredCount === 0}
+                      data-testid="sources-export-csv"
+                      className="inline-flex min-h-[44px] shrink-0 items-center justify-center rounded-sm border border-border bg-surface px-4 py-2 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      Export CSV ({filteredCount})
+                    </button>
                   </div>
 
                   <div className="space-y-4">

@@ -1030,6 +1030,8 @@ app.get('/api/analytics/snapshot', async (req, res) => {
     searches: eventCounts.search_performed || 0,
     pdfDownloads: eventCounts.pdf_downloaded || 0,
     profiles: eventCounts.profile_viewed || 0,
+    serviceOrders:
+      (eventCounts.service_order_recorded || 0) + (eventCounts.service_checkout_started || 0),
   }
   const instituteSignupLabels = new Set(['institute_course', 'institute_guide', 'institute_catalog', 'institute_book'])
   const instituteSignups = signupSources.reduce(
@@ -2049,7 +2051,26 @@ app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '
       userAgent: sanitizeOsintString(req.get('user-agent') || '', 400),
     }
 
-    appendOsintOrder(record)
+        appendOsintOrder(record)
+
+    // Funnel signal: OSINT service order intake (PII stripped — order id + purpose only)
+    try {
+      const now = new Date()
+      await commitAnalyticsMutation((targetStore) => {
+        recordAnalyticsEvent(targetStore, {
+          name: 'service_order_recorded',
+          eventPath: '/comprehensive-profile',
+          cleanProperties: {
+            service: 'comprehensive_profile',
+            order_id: orderId,
+            lawful_purpose: record.lawfulPurpose || '',
+          },
+          now,
+        })
+      })
+    } catch (analyticsErr) {
+      console.warn('[osint] analytics service_order_recorded failed', analyticsErr?.message || analyticsErr)
+    }
 
     const site = process.env.PUBLIC_SITE_URL || 'https://veritasworldwide.com'
     const successUrl = `${site}/comprehensive-profile/success?order=${encodeURIComponent(orderId)}`

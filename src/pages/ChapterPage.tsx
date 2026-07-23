@@ -801,17 +801,25 @@ function SocialShareBar({ chapter }: { chapter: Chapter }) {
    MAIN COMPONENT — NYT-STYLE TWO-COLUMN LAYOUT
    ══════════════════════════════════════════════════════════ */
 
+type EvidenceTierFilter = 'all' | 'verified' | 'circumstantial' | 'disputed'
+
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
   const { isLoggedIn, saveReadingProgress } = useAuth()
   const staticMetadata = chapterMeta.find(ch => ch.id === id)
   const [chapter, setChapter] = useState<LoadedChapter | null>(null)
   const [isLoading, setIsLoading] = useState(!staticMetadata)
+  const [evidenceTierFilter, setEvidenceTierFilter] = useState<EvidenceTierFilter>('all')
   const chapterScope = 'full'
   
   const readingTime = useMemo(() => chapter ? estimateReadingTime(chapter) : 0, [chapter])
   const evidenceCounts = useMemo(() => chapter ? getEvidenceCounts(chapter) : { verified: 0, circumstantial: 0, disputed: 0 }, [chapter])
   const hasEvidence = evidenceCounts.verified + evidenceCounts.circumstantial + evidenceCounts.disputed > 0
+
+  // Reset tier filter when navigating between chapters
+  useEffect(() => {
+    setEvidenceTierFilter('all')
+  }, [id])
 
   useScrollRestore(id)
   useReadingHistory(id)
@@ -977,7 +985,18 @@ export default function ChapterPage() {
   const refreshChapterPayload = () => {
     window.location.reload()
   }
-  const visibleBlocks = chapter.content
+  // Evidence-tier filter: hide non-matching evidence boxes; keep all non-evidence blocks.
+  const visibleBlocks =
+    evidenceTierFilter === 'all'
+      ? chapter.content
+      : chapter.content.filter((block) => {
+          if (block.type !== 'evidence' || !block.evidence) return true
+          return block.evidence.tier === evidenceTierFilter
+        })
+  const filteredEvidenceCount =
+    evidenceTierFilter === 'all'
+      ? evidenceCounts.verified + evidenceCounts.circumstantial + evidenceCounts.disputed
+      : evidenceCounts[evidenceTierFilter] || 0
   const remainingBlocks = Math.max(chapter.totalBlocks - chapter.content.length, 0)
   const sourceCount = chapter.sourceCount ?? chapter.sources.length
   const sidebarChapter = hasLockedContent ? { ...chapter, content: visibleBlocks } : chapter
@@ -1088,32 +1107,86 @@ export default function ChapterPage() {
             <BookmarkButton chapterId={chapter.id} />
           </div>
 
-          {/* Evidence Tier Summary — compact inline badges */}
+          {/* Evidence Tier Summary — interactive filter chips (Volume I reader) */}
           {hasEvidence && (
-            <div className="flex flex-wrap items-center gap-3 mt-5" aria-label="Evidence classification summary">
-              <span className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint">Evidence:</span>
+            <div
+              className="flex flex-wrap items-center gap-2 mt-5"
+              role="group"
+              aria-label="Filter chapter evidence by tier"
+              data-testid="chapter-evidence-tier-filters"
+            >
+              <span className="font-sans text-[0.6rem] font-bold tracking-[0.1em] uppercase text-ink-faint mr-1">
+                Evidence:
+              </span>
+              <button
+                type="button"
+                onClick={() => setEvidenceTierFilter('all')}
+                aria-pressed={evidenceTierFilter === 'all'}
+                className={`inline-flex min-h-[44px] items-center gap-1.5 rounded-sm border px-3 py-1.5 font-sans text-[0.65rem] font-semibold transition-colors ${
+                  evidenceTierFilter === 'all'
+                    ? 'border-crimson bg-crimson/5 text-crimson'
+                    : 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+                }`}
+              >
+                All ({evidenceCounts.verified + evidenceCounts.circumstantial + evidenceCounts.disputed})
+              </button>
               {evidenceCounts.verified > 0 && (
-                <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-verified bg-verified-bg border border-verified-border px-2.5 py-1 rounded-sm relative group cursor-help">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setEvidenceTierFilter((prev) => (prev === 'verified' ? 'all' : 'verified'))
+                  }
+                  aria-pressed={evidenceTierFilter === 'verified'}
+                  title="Supported by primary source documents — court filings, congressional records, executive orders, peer-reviewed studies."
+                  className={`inline-flex min-h-[44px] items-center gap-1.5 rounded-sm border px-3 py-1.5 font-sans text-[0.65rem] font-semibold transition-colors ${
+                    evidenceTierFilter === 'verified'
+                      ? 'border-verified-border bg-verified-bg text-verified'
+                      : 'border-border text-ink-muted hover:border-verified-border hover:text-verified'
+                  }`}
+                >
                   <span aria-hidden="true">✓</span> {evidenceCounts.verified} Verified
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-obsidian text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
-                    Supported by primary source documents — court filings, congressional records, executive orders, peer-reviewed studies.
-                  </span>
-                </span>
+                </button>
               )}
               {evidenceCounts.circumstantial > 0 && (
-                <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-circumstantial bg-circumstantial-bg border border-circumstantial-border px-2.5 py-1 rounded-sm relative group cursor-help">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setEvidenceTierFilter((prev) =>
+                      prev === 'circumstantial' ? 'all' : 'circumstantial',
+                    )
+                  }
+                  aria-pressed={evidenceTierFilter === 'circumstantial'}
+                  title="Individual facts are documented. The connection drawn between them is an interpretation."
+                  className={`inline-flex min-h-[44px] items-center gap-1.5 rounded-sm border px-3 py-1.5 font-sans text-[0.65rem] font-semibold transition-colors ${
+                    evidenceTierFilter === 'circumstantial'
+                      ? 'border-circumstantial-border bg-circumstantial-bg text-circumstantial'
+                      : 'border-border text-ink-muted hover:border-circumstantial-border hover:text-circumstantial'
+                  }`}
+                >
                   <span aria-hidden="true">◐</span> {evidenceCounts.circumstantial} Circumstantial
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-obsidian text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
-                    Individual facts are documented. The connection drawn between them is an interpretation. Alternative explanations noted.
-                  </span>
-                </span>
+                </button>
               )}
               {evidenceCounts.disputed > 0 && (
-                <span className="inline-flex items-center gap-1.5 font-sans text-[0.65rem] font-semibold text-disputed bg-disputed-bg border border-disputed-border px-2.5 py-1 rounded-sm relative group cursor-help">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setEvidenceTierFilter((prev) => (prev === 'disputed' ? 'all' : 'disputed'))
+                  }
+                  aria-pressed={evidenceTierFilter === 'disputed'}
+                  title="Claimed by a named source or in sworn testimony but not independently confirmed."
+                  className={`inline-flex min-h-[44px] items-center gap-1.5 rounded-sm border px-3 py-1.5 font-sans text-[0.65rem] font-semibold transition-colors ${
+                    evidenceTierFilter === 'disputed'
+                      ? 'border-disputed-border bg-disputed-bg text-disputed'
+                      : 'border-border text-ink-muted hover:border-disputed-border hover:text-disputed'
+                  }`}
+                >
                   <span aria-hidden="true">⚠</span> {evidenceCounts.disputed} Disputed
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-obsidian text-white text-[11px] font-normal leading-relaxed rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 normal-case tracking-normal">
-                    Claimed by a named source or in sworn testimony but not independently confirmed. Clearly labeled.
-                  </span>
+                </button>
+              )}
+              {evidenceTierFilter !== 'all' && (
+                <span className="font-sans text-[0.6rem] text-ink-faint" aria-live="polite">
+                  Showing {filteredEvidenceCount} {evidenceTierFilter} box
+                  {filteredEvidenceCount === 1 ? '' : 'es'}
                 </span>
               )}
             </div>

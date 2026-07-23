@@ -119,6 +119,11 @@ function FunnelSection({ funnel }: { funnel: FunnelSnapshot }) {
     { label: 'Reader Signups', value: funnel.signups, description: 'Free account creation and newsletter subscriptions.' },
     { label: 'Checkout Starts', value: funnel.checkoutStarts, description: 'Donation or membership checkout intent.' },
     { label: 'Completed Support', value: funnel.payments, description: 'Confirmed donation or membership return.' },
+    {
+      label: 'OSINT Service Orders',
+      value: funnel.serviceOrders ?? 0,
+      description: 'Comprehensive Online Profile ($499) intake records + service checkout starts.',
+    },
   ]
 
   return (
@@ -129,7 +134,7 @@ function FunnelSection({ funnel }: { funnel: FunnelSnapshot }) {
             Reader Funnel
           </h3>
           <p className="font-body text-sm text-ink-muted mt-1">
-            Public visibility from reading through support. Conversion rates are measured against the previous stage.
+            Public visibility from reading through support and OSINT service orders. Conversion rates are measured against the previous stage (OSINT is a parallel product lane).
           </p>
         </div>
         <p className="font-sans text-[10px] uppercase tracking-[0.08em] text-ink-faint">
@@ -137,10 +142,17 @@ function FunnelSection({ funnel }: { funnel: FunnelSnapshot }) {
         </p>
       </div>
 
-      <div className="grid gap-3 md:grid-cols-5">
+      <div className="grid gap-3 md:grid-cols-3 lg:grid-cols-6">
         {stages.map((stage, index) => {
           const previous = index > 0 ? stages[index - 1].value : 0
-          const conversion = index === 0 || previous === 0 ? 'Baseline' : `${((stage.value / previous) * 100).toFixed(1)}%`
+          const conversion =
+            index === 0 || previous === 0 || stage.label === 'OSINT Service Orders'
+              ? index === 0
+                ? 'Baseline'
+                : stage.label === 'OSINT Service Orders'
+                  ? 'Product lane'
+                  : 'Baseline'
+              : `${((stage.value / previous) * 100).toFixed(1)}%`
 
           return (
             <div key={stage.label} className="rounded-sm border border-border bg-parchment px-4 py-4">
@@ -1080,6 +1092,7 @@ export default function AnalyticsPage() {
             <StatCard label="Reader Signups" value={data.funnel.signups} />
             <StatCard label="Checkout Starts" value={data.funnel.checkoutStarts} />
             <StatCard label="Completed Support" value={data.funnel.payments} />
+            <StatCard label="OSINT Orders" value={data.funnel.serviceOrders ?? 0} accent />
             <StatCard label="Shares" value={data.funnel.shares} />
           </div>
 

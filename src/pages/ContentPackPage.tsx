@@ -517,6 +517,43 @@ export default function ContentPackPage() {
         </div>
       </section>
 
+      {/* Research service — paid OSINT product (not free brand assets) */}
+      <section
+        className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8 border-b border-border"
+        data-testid="content-pack-osint-card"
+        aria-labelledby="content-pack-osint-heading"
+      >
+        <div className="rounded-sm border border-crimson/30 bg-crimson/5 p-5 sm:p-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div className="min-w-0">
+            <p className="font-sans text-[0.58rem] font-bold uppercase tracking-[0.14em] text-crimson mb-2">
+              Research service
+            </p>
+            <h2 id="content-pack-osint-heading" className="font-display text-xl sm:text-2xl font-bold text-ink mb-2">
+              Comprehensive Online Profile — $499
+            </h2>
+            <p className="font-body text-sm text-ink-muted leading-relaxed max-w-2xl">
+              Commission a fixed-price authenticated OSINT dossier with methodology appendix.
+              Separate from free content packs and Power Profiles. Lawful-purpose attestation required.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 shrink-0">
+            <Link
+              to="/comprehensive-profile"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-crimson px-5 font-sans text-[0.7rem] font-bold uppercase tracking-[0.08em] text-white hover:bg-crimson-dark"
+            >
+              Commission report
+            </Link>
+            <a
+              href="/og-comprehensive-profile.svg"
+              download
+              className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-border bg-surface px-5 font-sans text-[0.7rem] font-bold uppercase tracking-[0.08em] text-ink hover:border-crimson hover:text-crimson"
+            >
+              Social card SVG
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Download All CTA */}
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-wrap items-center gap-4 border-b border-border">
         <button

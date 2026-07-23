@@ -1,4 +1,12 @@
 
+## Recently Closed (2026-07-23 — product QA / evidence / OSINT funnel wave)
+
+- **Chapter evidence-tier filter chips** on Volume I reader (`chapter-evidence-tier-filters`).
+- **Sources CSV export** with `chapter_evidence_tiers` column + active filters.
+- **Analytics `serviceOrders` funnel** + server `service_order_recorded` on OSINT intake.
+- **OG card** `/og-comprehensive-profile.svg` + content-pack OSINT service card.
+- **CSP Stripe Checkout hosts** + comprehensive-profile verify gates (robots/OG/anonymity).
+
 ## Recently Closed (2026-07-23 — integrity densify + OSINT hardening wave)
 
 - **Integrity n≥3 LIVE floor at 22 profiles.** McConnell, Rand Paul, Omar, Haley, Sanders, Graham densified with dual-cite False dockets this session; live corpus confirms 22 n≥3 including Graham 55/3.

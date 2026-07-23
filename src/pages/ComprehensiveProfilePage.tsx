@@ -73,7 +73,8 @@ export default function ComprehensiveProfilePage() {
         'Commission a $499 comprehensive online profile: expert OSINT investigators gather every authenticated public trail on a subject — devices and accounts only when verified — with full methodology.',
       url,
       type: 'website',
-      imageAlt: 'Comprehensive Online Profile — Veritas Worldwide research service',
+      image: `${SITE_URL}/og-comprehensive-profile.svg`,
+      imageAlt: 'Comprehensive Online Profile ($499) — Veritas Worldwide research service',
     })
     setJsonLd([
       {

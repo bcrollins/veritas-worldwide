@@ -48,9 +48,31 @@ assert(server.includes('createStripeCheckoutSessionForOsint') || server.includes
 assert(server.includes("'/comprehensive-profile'"), 'known SPA route missing')
 assert(social.includes('/comprehensive-profile'), 'bot social meta missing')
 assert(prerender.includes("route: '/comprehensive-profile'"), 'prerender route missing')
+
+assert(
+  prerender.includes('og-comprehensive-profile') || page.includes('og-comprehensive-profile'),
+  'OSINT social OG image path missing',
+)
 assert(llms.includes('comprehensive-profile'), 'llms.txt entry missing')
 assert(product.includes('PROFILE_REPORT_SECTIONS'), 'report sections data missing')
 assert(product.includes('PROFILE_FAQS'), 'FAQ data missing')
+
+const robots = read('public/robots.txt')
+assert(robots.includes('Allow: /comprehensive-profile'), 'robots must Allow product path')
+assert(robots.includes('Disallow: /comprehensive-profile/success'), 'robots must Disallow success path')
+
+const ogAsset = path.join(root, 'public/og-comprehensive-profile.svg')
+assert(fs.existsSync(ogAsset), 'public/og-comprehensive-profile.svg missing')
+
+const contentPack = read('src/pages/ContentPackPage.tsx')
+assert(contentPack.includes('/comprehensive-profile'), 'content pack must link OSINT service')
+assert(contentPack.includes('content-pack-osint-card') || contentPack.includes('Comprehensive Online Profile'), 'content pack OSINT card missing')
+
+const liveAnon = read('scripts/verify-live-anonymity.mjs')
+assert(liveAnon.includes('/comprehensive-profile'), 'live-anonymity must probe OSINT HTML')
+
+assert(server.includes("service_order_recorded"), 'server must allow service_order_recorded analytics')
+assert(server.includes('serviceOrders') || server.includes('service_order_recorded'), 'funnel serviceOrders wiring missing')
 
 // Methodology completeness floor
 const methodologyHits = (constants.match(/methodology/gi) || []).length

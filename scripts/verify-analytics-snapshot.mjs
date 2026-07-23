@@ -73,6 +73,7 @@ function getDerivedEventCounts(eventCounts) {
     searches: count('search_performed'),
     pdfDownloads: count('pdf_downloaded'),
     profiles: count('profile_viewed'),
+    serviceOrders: count('service_order_recorded') + count('service_checkout_started'),
   }
 }
 
@@ -332,6 +333,7 @@ async function main() {
         searches: funnel.searches ?? 0,
         pdfDownloads: funnel.pdfDownloads ?? 0,
         profiles: funnel.profiles ?? 0,
+        serviceOrders: funnel.serviceOrders ?? 0,
       },
       eventCounts,
       topPagesCount: topPages.length,

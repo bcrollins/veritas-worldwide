@@ -15,6 +15,8 @@ export type AnalyticsEventName =
   | 'checkout_started'
   | 'donation_started'
   | 'payment_completed'
+  | 'service_checkout_started'
+  | 'service_order_recorded'
 
 export interface AnalyticsSnapshot {
   lifetime: number
@@ -75,6 +77,8 @@ export interface FunnelSnapshot {
   searches: number
   pdfDownloads: number
   profiles: number
+  /** $499 Comprehensive Online Profile intake records */
+  serviceOrders: number
 }
 
 export interface SignupAttributionEntry {
