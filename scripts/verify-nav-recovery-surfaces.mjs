@@ -65,4 +65,11 @@ for (const rel of [
   assert(read(rel).includes('DossierHubSpokes'), `${rel} mounts DossierHubSpokes`)
 }
 
+// Server soft-404 HTML hubs (crawler / no-JS)
+const server = read('server.js')
+assert(server.includes('data-testid="server-soft-404"'), 'server soft-404 testid')
+assert(server.includes('href="/israel-dossier"'), 'server soft-404 dossiers')
+assert(server.includes('href="/profiles"'), 'server soft-404 profiles')
+assert(server.includes('class="primary"'), 'server soft-404 primary Record')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
