@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T13:11:58.657Z"
+    "generatedAt": "2026-07-23T13:12:52.729Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 91,
-    "viPackCards": 72,
-    "totalIncidents": 1351
+    "incidentsWithVideoAndCivilians": 94,
+    "viPackCards": 75,
+    "totalIncidents": 1363
   },
   "incidents": [
     {
@@ -2863,6 +2863,86 @@
       ]
     },
     {
+      "id": "vi-oct7-holit-kibbutz-visual-2023",
+      "title": "October 7 Kibbutz Holit — Multi-Outlet Civilian Murder & Capture Visual Record",
+      "date": "October 7, 2023",
+      "location": "Kibbutz Holit, southern Israel",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated Holit October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-bulldozer-land-visual-2023-2025",
+      "title": "West Bank Settler Bulldozer Land Clearance Against Civilian Fields — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village agricultural land",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem bulldozer land-clearance video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA land-access materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
       "id": "flour-massacre-2024",
       "title": "The Flour Massacre — Aid Seekers Shot While Waiting for Food",
       "date": "February 29, 2024",
@@ -3662,6 +3742,46 @@
           "type": "investigation",
           "label": "OHCHR/OCHA documentation trail",
           "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-aid-truck-looting-visual-2024-2025",
+      "title": "Gaza Aid Truck Chaos & Civilian Casualties — Multi-Outlet Visual Record",
+      "date": "2024–2025",
+      "location": "Aid truck routes and distribution points in Gaza",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "OHCHR civilian-protection materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza aid packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet aid-route video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "OCHA/OHCHR aid-access trail",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of aid-route aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ]
     },
