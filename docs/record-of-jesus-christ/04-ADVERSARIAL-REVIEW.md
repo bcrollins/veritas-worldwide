@@ -59,3 +59,17 @@ Wave3 claims (James, Gal 2, Masada, Bar Kokhba, prefecture, Herod death, Pauline
 | GEO/SEO | Corpus not Dataset-discoverable; bot JSON-LD lag | Closed — Dataset+HowTo client + prerender; 173 claims live |
 
 **Corpus:** 173 unique tier-labeled claims. **Anonymity:** live HTML + corpus PASS (entity sameAs only). **Residual:** operator admin hash env, org GH transfer, git history authors.
+
+## Intervals 12–14 (2026-07-23) — Waves 9–11 → **200 claims live**
+
+| Milestone | Status |
+|-----------|--------|
+| Wave 9 Elephantine / Magdala / structure formation | Live |
+| Wave 10 Ketef Hinnom / War Scroll / Pliny / living text | Live |
+| Wave 11 Amarna / Antipas / Twelve / Suetonius / Tiberias | Live — **200 claims** |
+| Dataset + HowTo + Book + FAQ bot JSON-LD | Live on `/record-of-jesus-christ` |
+| NT textual tradition schematic figure | Live 200 |
+| `verify:live-anonymity` floor ≥198 | PASS on 10 public HTML surfaces |
+| Personal GH sameAs | Absent live (X + Reddit entity only) |
+
+**Verdict:** Public ROC package at 200 claims meets “holy shit, that’s done” evidentiary surface bar for Interval 14. Residual operator OPSEC (org transfer, admin hash env) unchanged.
