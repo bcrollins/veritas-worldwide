@@ -378,25 +378,29 @@ Expected: Continuous improvement loop.
 ### 3.1 Sprints
 | Sprint | Focus | Suggestions |
 |--------|--------|-------------|
-| **1 (shipped this session)** | Soft-404, noindex, robots, FAQ, image sitemap, meta clamps, pure lock | #1–10, #30, #32, #41 |
-| **2** | Titles, breadcrumbs, profile densify, fonts/CWV | #11–19, #21–24, #36–38 |
-| **3** | GSC ops, outreach, hreflang readiness, scorecard | #26–27, #33, #40, #49–50 |
+| **1 (shipped)** | Soft-404, noindex, robots, FAQ, image sitemap, meta clamps, pure lock | #1–10, #30, #32, #41 |
+| **2 (shipped 2026-07-23)** | First-paint shell metas + static JSON-LD, fonts/CWV, breadcrumbs, Sources/Dossier FAQ, Discover robots, consent wire | #11–21, #22–24, #26, #35, #45–48 |
+| **3 (remaining)** | Profile densify wave, news cadence, topic hubs, GSC ops, outreach, scorecard | #27–29, #36–40, #49–50 |
 
-### 3.2 File-by-file (this ship)
+### 3.2 File-by-file (Sprint 1 + 2 ship)
 | File | Change |
 |------|--------|
 | `server.js` | Known-route classifier; HTTP 404 HTML for unknown paths |
-| `src/pages/NotFoundPage.tsx` | New noindex 404 UI |
-| `src/App.tsx` | Catch-all → NotFoundPage |
+| `src/pages/NotFoundPage.tsx` | noindex 404 UI + hub recovery links |
+| `src/App.tsx` | Catch-all → NotFoundPage; 44px logo touch targets |
 | `src/pages/SubscribeSuccessPage.tsx` | noindex |
-| `src/lib/seo.ts` | clamps, og:locale, FAQ/breadcrumb/org helpers |
+| `src/lib/seo.ts` | clamps, og:locale/image:alt, Discover robots, FAQ/breadcrumb/org/HowTo/Person/ItemList, speakable, DEFAULT_* shell resets |
+| `src/pages/HomePage.tsx` | Primary-source title; `websiteJsonLd()` + `organizationJsonLd()` |
+| `index.html` | First-paint title/desc/robots, static WebSite+Org JSON-LD, non-blocking fonts |
 | `src/pages/MethodologyPage.tsx` | FAQPage + breadcrumbs |
-| `public/robots.txt` | Transactional Disallow; AI Allow; llms |
-| `scripts/prerender.mjs` | Image sitemap namespace + entries |
-| `server-social-meta.js` | Stronger /news bot description |
-| `scripts/verify-seo-meta.mjs` | New pure floors |
-| `scripts/verify-pure.mjs` | Suite 20 |
-| `scripts/verify-server-security-invariants.mjs` | Soft-404 + pure 20 locks |
+| `src/pages/SourcesPage.tsx` | FAQ + voice H2 |
+| `src/pages/IsraelDossierPage.tsx` | FAQ + breadcrumbs + compact meta |
+| `src/pages/ArticlePage.tsx` / `ProfilePage.tsx` | Breadcrumbs + free-access flags |
+| `public/robots.txt` | Transactional + search Disallow; AI Allow; llms; ROC |
+| `scripts/prerender.mjs` | Image sitemap; bot-visible FAQ for methodology/sources |
+| `src/components/CookieConsent.tsx` | gtag consent update for SEO analytics accuracy |
+| `public/sw.js` | Network-first navigations |
+| `scripts/verify-seo-meta.mjs` | Pure SEO floors |
 
 ### 3.3 Testing checklist
 - [x] `node scripts/verify-seo-meta.mjs`
