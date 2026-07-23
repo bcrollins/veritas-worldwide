@@ -147,6 +147,11 @@ const profiles = fs.readFileSync(path.join(root, 'src/pages/ProfilesIndexPage.ts
 assert(profiles.includes('to="/search"') || profiles.includes("to: '/search'"), 'Profiles strip links Search')
 assert(profiles.includes('to="/israel-dossier"'), 'Profiles strip links Dossiers')
 
+// Timeline related hubs (Browse ↔ Read scent)
+const timeline = fs.readFileSync(path.join(root, 'src/pages/TimelinePage.tsx'), 'utf8')
+assert(timeline.includes('data-testid="timeline-related-hubs"'), 'Timeline related hubs required')
+assert(timeline.includes('to="/read"'), 'Timeline links Read hub')
+
 console.log(
-  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, home/search/404 recovery, cookie z-order`,
+  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, timeline hubs, home/search/404 recovery, cookie z-order`,
 )

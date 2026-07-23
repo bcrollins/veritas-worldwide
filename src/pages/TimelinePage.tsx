@@ -229,6 +229,36 @@ export default function TimelinePage() {
               A chronological map of the events, institutions, and turning points documented across
               all {entries.length} chapters of The Record — spanning {minYear} to the present day.
             </p>
+            <nav
+              className="mb-6 flex flex-wrap gap-2"
+              aria-label="Related hubs"
+              data-testid="timeline-related-hubs"
+            >
+              <Link
+                to="/read"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Read hub
+              </Link>
+              <Link
+                to="/search"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Search
+              </Link>
+              <Link
+                to="/israel-dossier"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Dossiers
+              </Link>
+              <Link
+                to="/methodology"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Methodology
+              </Link>
+            </nav>
             <div className="mb-8 flex flex-wrap items-center gap-3 border-b border-border pb-8">
               <button
                 type="button"
