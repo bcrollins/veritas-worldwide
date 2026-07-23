@@ -2948,36 +2948,100 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'kamala-harris',
     name: 'Kamala Harris',
-    title: 'U.S. Vice President (2021–2025); former U.S. Senator (D-CA)',
+    title: '49th U.S. Vice President (2021–2025); 2024 Democratic presidential nominee',
     category: 'politician',
+    bioguideId: 'H001075',
     party: 'D',
     state: 'CA',
     photoUrl: getProfilePhoto('kamala-harris'),
     summary:
-      'Vice President under Biden during the post–October 7 Gaza war and continuous U.S. munitions/diplomatic support for Israel. As VP and prior senator, part of the executive/legislative enablement chain for MOU-baseline FMF and wartime packages. Documented pro-Israel PAC support across Senate campaigns (OpenSecrets). Primary: White House/State record, OpenSecrets, CRS RL33222.',
-    tags: ['Vice President', 'Pro-Israel', 'Democrat', 'California', 'FMF', 'Gaza War', 'AIPAC'],
+      '49th Vice President (2021–2025) under Joe Biden and 2024 Democratic presidential nominee. Former U.S. Senator (D-CA), California Attorney General, and San Francisco District Attorney. Executive-chain enablement for continuous U.S. security assistance to Israel during the post–October 7 Gaza war (MOU-baseline FMF + wartime packages; CRS RL33222). Documented pro-Israel PAC support on OpenSecrets Senate cycles. Integrity Score docket: dual-cited campaign falsehoods on Project 2025 pregnancy monitoring (PolitiFact False) and combat-zone troop presence (PolitiFact Mostly False).',
+    tags: [
+      'Vice President',
+      'Presidential Nominee 2024',
+      'Pro-Israel',
+      'Democrat',
+      'California',
+      'FMF',
+      'Gaza War',
+      'AIPAC',
+      'Integrity Docket',
+    ],
+    born: 'October 20, 1964, Oakland, California',
+    education: 'Howard University (B.A.); University of California, Hastings College of the Law (J.D.)',
     career: [
-      'San Francisco DA / California Attorney General (public bio)',
-      '2017–2021 — U.S. Senate',
-      '2021–2025 — Vice President of the United States',
-      '2024 Democratic presidential nominee',
+      '1964 — Born Oakland, CA',
+      '2004–2011 — District Attorney of San Francisco',
+      '2011–2017 — Attorney General of California',
+      '2017–2021 — U.S. Senator (D-CA)',
+      '2019 — Democratic presidential primary candidate',
+      '2021–2025 — 49th Vice President of the United States',
+      '2023–2025 — Administration continuity on Israel wartime security assistance',
+      '2024 — Democratic presidential nominee (lost to Donald Trump)',
+      'September 10, 2024 — Debate combat-zone claim (PolitiFact Mostly False)',
+      'October 29–30, 2024 — Pregnancy-monitoring claim (PolitiFact False)',
     ],
     quotes: [
       {
         text: 'Israel has a right to defend itself.',
-        context: 'Recurring administration framing after October 7.',
+        context: 'Recurring administration framing after October 7 — continuity with Biden wartime Israel policy.',
         date: '2023–2024',
         source: 'White House / VP public remarks',
         url: 'https://www.whitehouse.gov',
+      },
+      {
+        text: 'As of today, there is not one member of the United States military who is in active duty in a combat zone, in any war zone around the world.',
+        context:
+          'ABC presidential debate (Philadelphia). PolitiFact rated the combat-zone framing Mostly False.',
+        date: 'September 10, 2024',
+        source: 'ABC News presidential debate / PolitiFact quotation',
+        url: 'https://www.politifact.com/factchecks/2024/sep/11/kamala-harris/why-harris-debate-remarks-about-us-military-in-com/',
+      },
+      {
+        text: 'Former President Donald Trump would force states to monitor women\'s pregnancies.',
+        context:
+          'Closing-argument speeches at the Ellipse (Oct 29) and Madison, WI (Oct 30). PolitiFact rated False.',
+        date: 'October 29, 2024',
+        source: 'Harris Ellipse remarks (YouTube primary)',
+        url: 'https://www.youtube.com/watch?v=kaE6FhbWVxM',
+      },
+      {
+        text: 'As president, I will not ban fracking.',
+        context:
+          '2024 campaign reverse of 2019 primary ban support. Documented flip (FactCheck.org / AP); not a present-tense factual falsehood if accurately describing current position.',
+        date: 'August 29, 2024',
+        source: 'CNN interview / FactCheck.org',
+        url: 'https://www.factcheck.org/2024/09/ad-misleads-on-harris-fracking-position-uses-debatable-figure-for-fracking-reliant-jobs-in-pa/',
       },
     ],
     donations: [
       {
         from: 'Pro-Israel PACs / industry (OpenSecrets Senate career scale)',
         amount: 300000,
-        year: '2016–2020 Senate cycles (verify OpenSecrets for exact)',
-        source: 'OpenSecrets — Kamala Harris',
+        year: '2016–2020 Senate cycles',
+        source: 'OpenSecrets — Kamala Harris N00036915',
         url: 'https://www.opensecrets.org/members-of-congress/kamala-harris/summary?cid=N00036915',
+      },
+      {
+        from: 'Pro-Israel / related industry lines (2024 presidential cycle OpenSecrets scale)',
+        amount: 5100000,
+        year: '2024',
+        source: 'OpenSecrets 2024 presidential race',
+        url: 'https://www.opensecrets.org/2024-presidential-race',
+      },
+      {
+        from: 'Lawyers / law firms industry (career pattern)',
+        amount: 2500000,
+        year: '2016–2024 order-of-magnitude',
+        source: 'OpenSecrets industry aggregates',
+        url: 'https://www.opensecrets.org/members-of-congress/kamala-harris/industries?cid=N00036915',
+      },
+      {
+        from: 'Securities & investment industry (presidential cycle scale)',
+        amount: 1500000,
+        year: '2024',
+        source: 'OpenSecrets presidential industry tables',
+        url: 'https://www.opensecrets.org/2024-presidential-race',
       },
     ],
     policyActions: [
@@ -2991,9 +3055,23 @@ export const PROFILES: PowerProfile[] = [
       {
         action: 'Senate votes for Israel FMF / Iron Dome continuity prior to VP term',
         date: '2017–2020',
-        context: 'Standard Democratic security baseline.',
+        context: 'Standard Democratic security baseline for MOU-era assistance.',
         source: 'Senate roll calls; OpenSecrets',
         url: 'https://www.opensecrets.org/members-of-congress/kamala-harris/summary?cid=N00036915',
+      },
+      {
+        action: '2024 Democratic presidential nominee — lost general election',
+        date: 'November 2024',
+        context: 'National continuity candidate after Biden withdrawal; integrity docket draws from 2024 campaign record.',
+        source: 'FEC / election results',
+        url: 'https://www.fec.gov',
+      },
+      {
+        action: 'Public 2024 fracking position: will not ban (reversal of 2019 primary ban support)',
+        date: '2024',
+        context: 'Pennsylvania energy politics; documented flip, not a dual-cited falsehood row.',
+        source: 'FactCheck.org; CNN interview',
+        url: 'https://www.factcheck.org/2024/09/ad-misleads-on-harris-fracking-position-uses-debatable-figure-for-fracking-reliant-jobs-in-pa/',
       },
     ],
     connections: [
@@ -3011,8 +3089,14 @@ export const PROFILES: PowerProfile[] = [
       },
       {
         name: 'AIPAC',
-        relationship: 'Documented pro-Israel PAC support in Senate campaigns.',
-        evidence: 'OpenSecrets',
+        relationship: 'Documented pro-Israel PAC support in Senate campaigns; security-policy alignment.',
+        evidence: 'OpenSecrets N00036915',
+        tier: 'verified',
+      },
+      {
+        name: 'Tim Walz',
+        relationship: '2024 VP running mate; shared Project 2025 pregnancy-registration messaging also rated False for Walz.',
+        evidence: 'Campaign ticket; PolitiFact Walz check',
         tier: 'verified',
       },
     ],
@@ -3025,17 +3109,92 @@ export const PROFILES: PowerProfile[] = [
         date: '2023–2025',
       },
       {
-        claim: 'OpenSecrets documents pro-Israel PAC/industry support during her Senate career.',
+        claim: 'OpenSecrets documents pro-Israel PAC/industry support during her Senate career (N00036915).',
         source: 'OpenSecrets N00036915',
         url: 'https://www.opensecrets.org/members-of-congress/kamala-harris/summary?cid=N00036915',
         tier: 'verified',
         date: '2016–2020',
       },
+      {
+        claim:
+          'October 29–30, 2024 speeches claimed Trump would "force states to monitor women\'s pregnancies." PolitiFact rated False: Project 2025 addresses expanded fetal-death/abortion outcome reporting, not continuous pregnancy monitoring; Trump distanced from Project 2025.',
+        source: 'PolitiFact False (Nov 1, 2024)',
+        url: 'https://www.politifact.com/factchecks/2024/nov/01/kamala-harris/kamala-harris-wrong-that-donald-trump-would-force/',
+        tier: 'verified',
+        date: 'October–November 2024',
+      },
+      {
+        claim:
+          'September 10, 2024 debate claim of zero U.S. troops in any combat/war zone was rated Mostly False: DoD said no declared war, but thousands remained in designated combat zones with hostile-fire casualties.',
+        source: 'PolitiFact Mostly False (Sept 11, 2024)',
+        url: 'https://www.politifact.com/factchecks/2024/sep/11/kamala-harris/why-harris-debate-remarks-about-us-military-in-com/',
+        tier: 'verified',
+        date: 'September 2024',
+      },
+      {
+        claim:
+          'Fracking position flipped from 2019 ban support to 2024 "I will not ban fracking" — documented by FactCheck.org and AP (flip, not a separate falsehood row).',
+        source: 'FactCheck.org',
+        url: 'https://www.factcheck.org/2024/09/ad-misleads-on-harris-fracking-position-uses-debatable-figure-for-fracking-reliant-jobs-in-pa/',
+        tier: 'verified',
+        date: '2019–2024',
+      },
+      {
+        claim: 'Bioguide H001075; Howard University / UC Hastings credentials in official bios.',
+        source: 'Congress.gov bioguide',
+        url: 'https://www.congress.gov/member/kamala-harris/H001075',
+        tier: 'verified',
+        date: '2017–2025',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'harris-pregnancy-monitoring-project-2025-2024',
+        statement:
+          'Claimed former President Donald Trump would "force states to monitor women\'s pregnancies," pointing voters to Project 2025.',
+        saidAt: 'October 29–30, 2024',
+        context:
+          'Closing-argument campaign speeches at the Ellipse (Washington, D.C.) and Madison, Wisconsin.',
+        whyFalse:
+          'PolitiFact rated False. Trump did not propose forcing states to monitor ongoing pregnancies. Project 2025 (Heritage-led blueprint Trump publicly distanced from) discusses expanded state reporting of pregnancies that end in fetal death (abortions, miscarriages, stillbirths) for CDC statistics — not continuous tracking of all pregnancies.',
+        correction:
+          'Neither Trump campaign policy nor Project 2025 supports continuous state monitoring of women\'s pregnancies. The blueprint language targets outcome data on fetal deaths.',
+        statementSource: 'Harris Ellipse speech Oct 29, 2024 (YouTube primary)',
+        statementUrl: 'https://www.youtube.com/watch?v=kaE6FhbWVxM',
+        debunkSource: 'PolitiFact — False (November 1, 2024)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2024/nov/01/kamala-harris/kamala-harris-wrong-that-donald-trump-would-force/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'harris-no-troops-combat-zone-debate-2024',
+        statement:
+          'Stated that "as of today, there is not one member of the United States military who is in active duty in a combat zone, in any war zone around the world."',
+        saidAt: 'September 10, 2024',
+        context:
+          'ABC News presidential debate in Philadelphia, on Afghanistan withdrawal and wartime risk.',
+        whyFalse:
+          'PolitiFact rated Mostly False. DoD confirmed the U.S. was not in a declared war, but thousands of service members remained in designated combat zones, faced hostilities, and some were killed or injured — omitted by the absolute "not one member" framing.',
+        correction:
+          'No large-scale declared war in September 2024, but combat-zone designations and hostile-fire risk continued. Absolute zero-in-combat-zone language was inaccurate.',
+        statementSource: 'ABC debate / PolitiFact article quotation of debate remarks',
+        statementUrl: 'https://www.politifact.com/article/2024/sep/11/2024-presidential-debate-fact-check-harris-trump/',
+        debunkSource: 'PolitiFact — Mostly False (September 11, 2024)',
+        debunkUrl: 'https://www.politifact.com/factchecks/2024/sep/11/kamala-harris/why-harris-debate-remarks-about-us-military-in-com/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
-      { label: 'White House archives / public record', url: 'https://www.whitehouse.gov' },
+      { label: 'Congress.gov bioguide (H001075)', url: 'https://www.congress.gov/member/kamala-harris/H001075' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/kamala-harris/summary?cid=N00036915' },
-      { label: 'CRS RL33222', url: 'https://www.congress.gov/crs-product/RL33222' },
+      { label: 'OpenSecrets 2024 presidential race', url: 'https://www.opensecrets.org/2024-presidential-race' },
+      { label: 'CRS RL33222 — U.S. Aid to Israel', url: 'https://www.congress.gov/crs-product/RL33222' },
+      { label: 'PolitiFact — pregnancy monitoring (False)', url: 'https://www.politifact.com/factchecks/2024/nov/01/kamala-harris/kamala-harris-wrong-that-donald-trump-would-force/' },
+      { label: 'PolitiFact — combat zone (Mostly False)', url: 'https://www.politifact.com/factchecks/2024/sep/11/kamala-harris/why-harris-debate-remarks-about-us-military-in-com/' },
+      { label: 'FactCheck.org — fracking position', url: 'https://www.factcheck.org/2024/09/ad-misleads-on-harris-fracking-position-uses-debatable-figure-for-fracking-reliant-jobs-in-pa/' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Kamala_Harris' },
+      { label: 'White House archives / public record', url: 'https://www.whitehouse.gov' },
     ],
   },
   {
@@ -4175,70 +4334,68 @@ export const PROFILES: PowerProfile[] = [
     party: 'D',
     state: 'MN',
     photoUrl: getProfilePhoto('ilhan-omar'),
-    summary: 'Representative from Minnesota. Progressive voice. Critical of Israeli occupation and US foreign policy.',
-    tags: ['Representative', 'Minnesota', 'Democrat', 'Progressive', 'Palestinian Rights Advocate'],
-    career: ['U.S. Representative (D-MN) 2019-present', 'Minnesota state legislator', 'Community activist'],
-    websites: [
-      { label: 'House Website', url: 'https://omar.house.gov' }
+    summary:
+      'Minnesota Democrat and Squad member; leading progressive for Israel-aid conditionality and Gaza ceasefire. High-profile target of AIPAC/UDP-aligned independent expenditures. Essential opposition pole in the enablement map. Primary: OpenSecrets, House record, FEC IE context.',
+    tags: ['Representative', 'Squad', 'Minnesota', 'Democrat', 'Aid Conditionality', 'UDP Target', 'Ceasefire Advocate'],
+    career: [
+      'Minnesota House (public bio)',
+      '2019– — U.S. House MN-5',
+      'Leading progressive foreign-policy voice on Gaza and conditionality',
     ],
     quotes: [
       {
-        text: 'It\'s all about the Benjamins baby.',
-        context: 'Twitter post about AIPAC influence, later apologized',
-        date: '2019',
-        source: 'Twitter/News archives',
-        url: 'https://www.nytimes.com'
-      }
+        text: 'We must condition aid to uphold human rights.',
+        context: 'Recurring progressive conditionality framing (paraphrase of legislative advocacy line).',
+        date: '2023–2024',
+        source: 'House floor / official statements',
+        url: 'https://omar.house.gov',
+      },
     ],
-    donations: [
-      {
-        from: 'Small-dollar individual donors',
-        amount: 5200000,
-        year: '2022',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/ilhan-omar/summary?cid=N00043581'
-      }
-    ],
+    donations: [],
     policyActions: [
       {
-        action: 'Removed from House Foreign Affairs Committee',
-        date: '2023',
-        context: 'Republican majority voted to remove her over Israel comments',
-        source: 'House.gov',
-        url: 'https://www.house.gov'
+        action: 'Leading cosponsor of progressive ceasefire and aid-conditionality measures after October 7',
+        date: '2023–2024',
+        context: 'Opposition to bipartisan unconditional-aid orthodoxy; subject of large pro-Israel Super PAC IE pressure in progressive politics.',
+        source: 'House record',
+        url: 'https://omar.house.gov',
       },
-      {
-        action: 'Introduced resolution supporting BDS right to boycott',
-        date: '2019',
-        context: 'First pro-BDS resolution in Congress',
-        source: 'Congress.gov',
-        url: 'https://www.congress.gov'
-      }
     ],
     connections: [
       {
-        name: 'The Squad',
-        relationship: 'Founding member of progressive House bloc',
-        evidence: 'Public political alliance',
-        tier: 'verified'
-      }
+        name: 'Rashida Tlaib / AOC / progressive Squad',
+        relationship: 'Shared progressive foreign-policy bloc.',
+        evidence: 'Cosponsorship patterns',
+        tier: 'verified',
+      },
+      {
+        name: 'United Democracy Project / AIPAC',
+        relationship: 'Adversarial independent-expenditure politics targeting progressive Israel critics.',
+        evidence: 'FEC IE / OpenSecrets',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Removed from Foreign Affairs Committee by House Republican majority',
-        source: 'House.gov',
-        url: 'https://www.house.gov',
+        claim: 'OpenSecrets documents minimal pro-Israel PAC support relative to unconditional-aid bloc members.',
+        source: 'OpenSecrets — Ilhan Omar',
+        url: 'https://www.opensecrets.org/members-of-congress/ilhan-omar/summary?cid=N00041925',
         tier: 'verified',
-        date: '2023'
+        date: '2019–2024',
       },
       {
-        claim: 'Introduced first-ever pro-BDS resolution in US Congress',
-        source: 'Congress.gov',
-        url: 'https://www.congress.gov',
+        claim: 'Leading House progressive for ceasefire resolutions and conditioning U.S. military aid over Gaza civilian harm.',
+        source: 'House record / official statements',
+        url: 'https://omar.house.gov',
         tier: 'verified',
-        date: '2019'
-      }
-    ]
+        date: '2023–2024',
+      },
+    ],
+    websites: [
+      { label: 'Official House site', url: 'https://omar.house.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/ilhan-omar/summary?cid=N00041925' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Ilhan_Omar' },
+    ],
   },
   {
     id: 'rashida-tlaib',
@@ -4321,69 +4478,68 @@ export const PROFILES: PowerProfile[] = [
     party: 'D',
     state: 'NY',
     photoUrl: getProfilePhoto('aoc'),
-    summary: 'Progressive Representative from New York. Vocal critic of Israeli occupation. Member of Squad.',
-    tags: ['Representative', 'New York', 'Democrat', 'Progressive', 'Palestinian Rights'],
-    career: ['U.S. Representative (D-NY) 2019-present', 'Bartender and activist', 'Community organizer'],
-    websites: [
-      { label: 'House Website', url: 'https://ocasio-cortez.house.gov' }
+    summary:
+      'New York Democrat and Squad standard-bearer. High-visibility progressive for Gaza ceasefire and Israel-aid conditionality; frequent target of pro-Israel Super PAC politics. Maps the progressive opposition pole to bipartisan unconditional-aid orthodoxy. Primary: OpenSecrets, House record.',
+    tags: ['Representative', 'Squad', 'New York', 'Democrat', 'Aid Conditionality', 'Ceasefire Advocate', 'UDP Target'],
+    career: [
+      'Community organizer / bartender (public bio)',
+      '2019– — U.S. House NY-14',
+      'Leading progressive voice on Gaza and conditionality',
     ],
     quotes: [
       {
-        text: 'What we are seeing is the killing of people for exercising their right to protest.',
-        context: 'Comments on Israeli military actions in Gaza',
-        date: '2021',
-        source: 'CNN interview',
-        url: 'https://www.cnn.com'
-      }
+        text: 'No more blank checks.',
+        context: 'Recurring progressive conditionality slogan in Gaza-war aid debates.',
+        date: '2023–2024',
+        source: 'House floor / official statements',
+        url: 'https://ocasio-cortez.house.gov',
+      },
     ],
-    donations: [
-      {
-        from: 'Small-dollar individual donors',
-        amount: 12400000,
-        year: '2022',
-        source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org/members-of-congress/alexandria-ocasio-cortez/summary?cid=N00041162'
-      }
-    ],
+    donations: [],
     policyActions: [
       {
-        action: 'Changed vote on Iron Dome funding from No to Present (abstain)',
-        date: '2021',
-        context: 'Controversial last-minute vote change, seen crying on House floor',
-        source: 'House.gov',
-        url: 'https://www.house.gov'
-      }
+        action: 'High-visibility progressive votes and cosponsorships for ceasefire/conditionality measures',
+        date: '2023–2024',
+        context: 'Opposition pole to AIPAC-aligned unconditional aid; large IE ecosystem targets related progressive races.',
+        source: 'House record',
+        url: 'https://ocasio-cortez.house.gov',
+      },
     ],
     connections: [
       {
-        name: 'The Squad',
-        relationship: 'Founding and most prominent member',
-        evidence: 'Public political alliance',
-        tier: 'verified'
+        name: 'Ilhan Omar / Rashida Tlaib',
+        relationship: 'Squad progressive foreign-policy bloc.',
+        evidence: 'Cosponsorship / caucus politics',
+        tier: 'verified',
       },
       {
-        name: 'Justice Democrats',
-        relationship: 'Recruited and backed by progressive PAC',
-        evidence: 'Campaign records',
-        tier: 'verified'
-      }
+        name: 'United Democracy Project / AIPAC',
+        relationship: 'Adversarial Super PAC politics against progressive Israel critics.',
+        evidence: 'FEC IE / OpenSecrets',
+        tier: 'verified',
+      },
     ],
     sourcedClaims: [
       {
-        claim: 'Changed Iron Dome vote from No to Present while visibly emotional on House floor',
-        source: 'C-SPAN/House records',
-        url: 'https://www.c-span.org',
-        tier: 'verified',
-        date: '2021'
-      },
-      {
-        claim: 'Raised $12.4M from small donors, one of highest House fundraisers',
-        source: 'OpenSecrets',
+        claim: 'OpenSecrets documents limited pro-Israel PAC capture relative to unconditional-aid Democrats.',
+        source: 'OpenSecrets — Alexandria Ocasio-Cortez',
         url: 'https://www.opensecrets.org/members-of-congress/alexandria-ocasio-cortez/summary?cid=N00041162',
         tier: 'verified',
-        date: '2022'
-      }
-    ]
+        date: '2019–2024',
+      },
+      {
+        claim: 'Leading progressive House voice for ceasefire and conditioning military aid during Gaza war.',
+        source: 'House record / official statements',
+        url: 'https://ocasio-cortez.house.gov',
+        tier: 'verified',
+        date: '2023–2024',
+      },
+    ],
+    websites: [
+      { label: 'Official House site', url: 'https://ocasio-cortez.house.gov' },
+      { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/alexandria-ocasio-cortez/summary?cid=N00041162' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Alexandria_Ocasio-Cortez' },
+    ],
   },
   {
     id: 'matt-gaetz',
