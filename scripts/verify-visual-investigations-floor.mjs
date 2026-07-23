@@ -35,19 +35,19 @@ const urls = (vi.match(/url: 'https?:\/\//g) || []).length
 assert(urls >= cards * 2, `VI dual-cite floor: cards=${cards} urls=${urls}`)
 
 const n = (corpus.incidents || []).length
-assert(n >= 3106, `corpus incidents \${n} < 1141`)
+assert(n >= 3112, `corpus incidents \${n} < 1141`)
 const withVideo = (corpus.incidents || []).filter((i) =>
   (i.multimedia || []).some((m) => m.type === 'video'),
 ).length
-assert(withVideo >= 636, `corpus video-linked incidents \${withVideo} < 76`)
+assert(withVideo >= 639, `corpus video-linked incidents \${withVideo} < 76`)
 assert(soft.incidentCount >= 3106, `soft-floor \${soft.incidentCount} < 1141`)
 assert(
-  soft.visualInvestigations && soft.visualInvestigations.withVideo >= 636,
+  soft.visualInvestigations && soft.visualInvestigations.withVideo >= 639,
   `soft-floor withVideo \${soft.visualInvestigations?.withVideo} < 76`,
 )
 assert(viIndex.meta?.publisher === 'Veritas Worldwide', 'VI index publisher must be entity-only')
 assert(
-  (viIndex.counts?.incidentsWithVideoAndCivilians || 0) >= 636,
+  (viIndex.counts?.incidentsWithVideoAndCivilians || 0) >= 639,
   `VI index video+civilian \${viIndex.counts?.incidentsWithVideoAndCivilians} < 76`,
 )
 
