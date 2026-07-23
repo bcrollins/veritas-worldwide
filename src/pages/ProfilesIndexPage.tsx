@@ -384,13 +384,27 @@ export default function ProfilesIndexPage(): React.ReactNode {
               Offline research pack ZIP of public corpora (profiles, ROC, Israel, taxonomy) — not a private investigation.
             </p>
           </div>
-          <a
-            href="/research-pack.zip"
-            download="veritas-research-pack.zip"
-            className="inline-flex min-h-[44px] items-center justify-center px-5 border border-obsidian font-sans text-xs font-semibold tracking-wide uppercase text-ink hover:border-crimson hover:text-crimson whitespace-nowrap"
-          >
-            Download pack (ZIP)
-          </a>
+          <div className="flex flex-wrap gap-2 shrink-0">
+            <a
+              href="/research-pack.zip"
+              download="veritas-research-pack.zip"
+              className="inline-flex min-h-[44px] items-center justify-center px-5 border border-obsidian font-sans text-xs font-semibold tracking-wide uppercase text-ink hover:border-crimson hover:text-crimson whitespace-nowrap"
+            >
+              Download pack (ZIP)
+            </a>
+            <Link
+              to="/search"
+              className="inline-flex min-h-[44px] items-center justify-center px-5 border border-border font-sans text-xs font-semibold tracking-wide uppercase text-ink-muted hover:border-crimson hover:text-crimson whitespace-nowrap"
+            >
+              Search hub
+            </Link>
+            <Link
+              to="/israel-dossier"
+              className="inline-flex min-h-[44px] items-center justify-center px-5 border border-border font-sans text-xs font-semibold tracking-wide uppercase text-ink-muted hover:border-crimson hover:text-crimson whitespace-nowrap"
+            >
+              Dossiers
+            </Link>
+          </div>
         </div>
       </div>
 
