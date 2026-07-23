@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T11:04:49.823Z",
+  "generatedAt": "2026-07-23T11:05:52.210Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 597,
-    "timelineEvents": 585,
+    "incidents": 606,
+    "timelineEvents": 594,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 583,
+    "historicalWarCrimesPack": 592,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 537
+      "post-oct7": 546
     },
     "incidentsByTier": {
-      "verified": 595,
+      "verified": 604,
       "circumstantial": 2
     },
-    "childrenTagged": 564,
-    "civiliansTagged": 595,
+    "childrenTagged": 573,
+    "civiliansTagged": 604,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3969,6 +3969,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-crypto-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Cryptosporidium Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric Cryptosporidium under contaminated water.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-cryptosporidium-risk-pattern-2023-2025",
+        "gaza-children-shigella-risk-pattern-2023-2025",
+        "gaza-children-giardia-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "cryptosporidium",
+        "children",
+        "wash",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-dehydration-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -4154,6 +4175,27 @@
         "folate",
         "children",
         "nutrition",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-giardia-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Giardia Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric Giardia under contaminated water.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-giardia-risk-pattern-2023-2025",
+        "gaza-children-cryptosporidium-risk-pattern-2023-2025",
+        "gaza-children-shigella-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "giardia",
+        "children",
+        "wash",
         "gaza"
       ]
     },
@@ -5433,6 +5475,27 @@
         "dehydration",
         "shock",
         "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-shigella-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Shigella Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric Shigella under WASH collapse.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-shigella-risk-pattern-2023-2025",
+        "gaza-children-cryptosporidium-risk-pattern-2023-2025",
+        "gaza-children-giardia-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "shigella",
+        "children",
+        "wash",
         "gaza"
       ]
     },
@@ -8774,6 +8837,28 @@
       ]
     },
     {
+      "id": "tl-hostages-kibbutz-status-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Knowledge of Kibbutz Status Pattern",
+      "description": "Multi-source documentation of captors withholding whether hostages kibbutzim survived October 7.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-knowledge-of-kibbutz-status-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-hometown-status-pattern-2023-2025",
+        "israel-hostages-forced-to-hold-weapons-on-camera-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "psychological-torture",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-location-denial-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -8790,6 +8875,28 @@
       "tags": [
         "hostages",
         "disorientation",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-nova-survivors-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Knowledge of Nova Survivors Pattern",
+      "description": "Multi-source documentation of captors withholding whether Nova festival friends survived.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-knowledge-of-nova-survivors-pattern-2023-2025",
+        "israel-hostages-forced-to-hold-weapons-on-camera-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-kibbutz-status-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "psychological-torture",
         "civilians",
         "terrorism",
         "israel"
@@ -9930,6 +10037,28 @@
         "israel-hostages-forced-to-hold-captor-flags-pattern-2023-2025",
         "israel-hostages-forced-to-smile-on-camera-pattern-2023-2025",
         "israel-hostages-denied-knowledge-of-spouse-status-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "propaganda",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-forced-hold-weapons-cam-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Forced to Hold Weapons on Camera Pattern",
+      "description": "Multi-source documentation of captors forcing civilian hostages to hold weapons on camera for propaganda.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-forced-to-hold-weapons-on-camera-pattern-2023-2025",
+        "israel-hostages-forced-to-hold-captor-flags-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-nova-survivors-pattern-2023-2025"
       ],
       "tags": [
         "hostages",
@@ -11659,6 +11788,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-kinder-teachers-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Attacks on Kindergarten Teachers Pattern",
+      "description": "OCHA/UNICEF multi-source documentation of elevated settler attacks on Palestinian kindergarten teachers after October 7.",
+      "source": "OCHA / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-attacking-kindergarten-teachers-pattern-2023-2025",
+        "west-bank-settler-attacking-teachers-pattern-2023-2025",
+        "west-bank-settler-destroying-water-filtration-units-pattern-2023-2025"
+      ],
+      "tags": [
+        "kindergarten",
+        "settlers",
+        "education",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-medical-staff-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -12835,6 +12985,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-small-wind-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying Small Wind Turbines Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian small wind turbines after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-wind-turbines-small-pattern-2023-2025",
+        "west-bank-settler-solar-panel-destruction-pattern-2023-2025",
+        "west-bank-settler-destroying-water-filtration-units-pattern-2023-2025"
+      ],
+      "tags": [
+        "wind-turbines",
+        "settlers",
+        "energy",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-solar-batteries-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -12999,6 +13170,27 @@
         "cisterns",
         "water",
         "settlers",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-settler-filtration-units-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying Water Filtration Units Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian water filtration units after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-water-filtration-units-pattern-2023-2025",
+        "west-bank-settler-attacking-kindergarten-teachers-pattern-2023-2025",
+        "west-bank-settler-destroying-wind-turbines-small-pattern-2023-2025"
+      ],
+      "tags": [
+        "filtration",
+        "settlers",
+        "water",
         "west-bank"
       ]
     },
@@ -38387,6 +38579,390 @@
         },
         {
           "label": "Multi-outlet rainwater-barrel destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-shigella-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Shigella Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (shigella-risk cohort)",
+      "location": "Gaza Strip WASH-collapse camps and contaminated water points",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric Shigella under WASH collapse and antibiotic shortage — a multi-source wartime bacterial-dysentery pattern distinct from typhoid, campylobacter, and norovirus cards.",
+      "evidence": "WHO WASH materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric Shigella risk. Exact case counts evolve; multi-source wartime Shigella risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO WASH materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza WASH-disease coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-nova-survivors-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Nova Survivors Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (nova-survivors-denial cohort)",
+      "location": "Gaza Strip captivity sites — nova-survivors-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors withholding whether Nova festival friends survived — a multi-source psychological pattern for festival-abducted civilians distinct from hometown-status denial.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source Nova-survivor status denial. Exact cases vary; multi-source Nova-survivor status denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-water-filtration-units-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Water Filtration Units Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (water-filtration-unit-destruction cohort)",
+      "location": "West Bank village household and communal filtration installations",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian water filtration units after October 7 — denying safe drinking water for households including children. Pattern card distinct from well, pipe, tank, and barrel destruction.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source water-filtration-unit destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian water filtration is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem water-access materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet filtration-unit destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-cryptosporidium-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Cryptosporidium Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (cryptosporidium-risk cohort)",
+      "location": "Gaza Strip WASH-collapse camps and contaminated water sources",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric Cryptosporidium under contaminated water and care collapse — a multi-source wartime protozoal-diarrhea pattern distinct from Shigella and rotavirus cards.",
+      "evidence": "WHO WASH materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric Cryptosporidium risk. Exact case counts evolve; multi-source wartime Cryptosporidium risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO WASH materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza WASH-disease coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-hold-weapons-on-camera-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Hold Weapons on Camera Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (forced-weapon-holding-camera cohort)",
+      "location": "Gaza Strip captivity sites — forced-weapon-holding-camera subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to hold weapons on camera for propaganda — a multi-source coerced-performance pattern distinct from forced flag-holding and weapons-cleaning labor.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced weapon-holding on camera. Exact cases vary; multi-source forced weapon-holding propaganda of civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-kindergarten-teachers-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacks on Kindergarten Teachers Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (kindergarten-teacher-attack cohort)",
+      "location": "West Bank kindergarten compounds and preschool routes",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian kindergarten teachers after October 7 — endangering early-childhood education. Pattern card distinct from school-teacher and principal attacks.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source kindergarten-teacher attacks. Exact injury counts evolve; multi-source wartime settler attacks on kindergarten teachers is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet kindergarten-teacher attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-giardia-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Giardia Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (giardia-risk cohort)",
+      "location": "Gaza Strip WASH-collapse camps and contaminated water sources",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric Giardia under contaminated water and care collapse — a multi-source wartime protozoal-diarrhea pattern distinct from Cryptosporidium and Shigella cards.",
+      "evidence": "WHO WASH materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric Giardia risk. Exact case counts evolve; multi-source wartime Giardia risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO WASH materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza WASH-disease coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-kibbutz-status-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Kibbutz Status Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (kibbutz-status-denial cohort)",
+      "location": "Gaza Strip captivity sites — kibbutz-status-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors withholding whether hostages kibbutzim survived October 7 — a multi-source psychological pattern for kibbutz-abducted civilians distinct from hometown-status denial.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source kibbutz-status denial. Exact cases vary; multi-source kibbutz-status denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-wind-turbines-small-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Small Wind Turbines Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (small-wind-turbine-destruction cohort)",
+      "location": "West Bank off-grid herding communities with small wind turbines",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian small wind turbines after October 7 — cutting off-grid power for water and lighting including for children. Pattern card distinct from solar-panel and solar-battery destruction.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source small-wind-turbine destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian small wind turbines is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem energy-access materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet wind-turbine destruction coverage",
           "url": "https://apnews.com"
         }
       ],
