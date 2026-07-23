@@ -11,6 +11,7 @@ import {
   SITE_NAME,
   SITE_URL,
 } from '../lib/seo'
+import ResearchHubChips from '../components/ResearchHubChips'
 
 const practicalTracks = getInstitutePracticalTrackCounts()
 
@@ -66,6 +67,9 @@ export default function InstituteMethodologyPage() {
 
   return (
     <div className="space-y-8">
+      <div className="px-1">
+        <ResearchHubChips />
+      </div>
       <section className="institute-panel-strong px-6 py-8 sm:px-8 lg:px-10">
         <p className="institute-eyebrow">Institute methodology</p>
         <h1 className="mt-4 max-w-5xl text-4xl font-semibold tracking-tight text-[color:var(--institute-ink)] sm:text-5xl">

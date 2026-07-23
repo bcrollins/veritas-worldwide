@@ -21,6 +21,7 @@ import {
   SITE_NAME,
   SITE_URL,
 } from '../lib/seo'
+import ResearchHubChips from '../components/ResearchHubChips'
 
 const practicalTracks = getInstitutePracticalTrackCounts()
 const fieldManualCategories = Array.from(new Set(instituteFieldManualEntries.map((entry) => entry.category)))
@@ -86,6 +87,9 @@ export default function InstituteBookPage() {
 
   return (
     <div className="space-y-8">
+      <div className="px-1">
+        <ResearchHubChips />
+      </div>
       <section className="institute-panel-strong px-6 py-8 sm:px-8 lg:px-10">
         <p className="institute-eyebrow">Field Manual</p>
         <div className="mt-4 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">

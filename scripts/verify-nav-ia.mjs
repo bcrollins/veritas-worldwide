@@ -192,6 +192,10 @@ assert(bible.includes('ResearchHubChips'), 'Bible history mounts research chips'
 assert(roc.includes('ResearchHubChips'), 'ROC mounts research chips')
 const personalTl = fs.readFileSync(path.join(root, 'src/pages/PersonalTimelinePage.tsx'), 'utf8')
 assert(personalTl.includes('ResearchHubChips'), 'Personal timeline mounts research chips')
+const instMeth = fs.readFileSync(path.join(root, 'src/pages/InstituteMethodologyPage.tsx'), 'utf8')
+const instBook = fs.readFileSync(path.join(root, 'src/pages/InstituteBookPage.tsx'), 'utf8')
+assert(instMeth.includes('ResearchHubChips'), 'Institute methodology mounts research chips')
+assert(instBook.includes('ResearchHubChips'), 'Institute book mounts research chips')
 
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
