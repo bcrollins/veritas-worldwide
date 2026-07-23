@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:00:07.778Z",
+  "generatedAt": "2026-07-23T09:00:38.722Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 130,
-    "timelineEvents": 118,
+    "incidents": 131,
+    "timelineEvents": 119,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 116,
+    "historicalWarCrimesPack": 117,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 70
+      "post-oct7": 71
     },
     "incidentsByTier": {
-      "verified": 128,
+      "verified": 129,
       "circumstantial": 2
     },
-    "childrenTagged": 106,
-    "civiliansTagged": 128,
+    "childrenTagged": 107,
+    "civiliansTagged": 129,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3704,6 +3704,27 @@
         "civilians",
         "children",
         "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-killed-captivity-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Hostages Killed in Captivity Pattern",
+      "description": "Multi-source documentation of civilian hostages killed while held in Gaza, distinct from abduction and exchange cards.",
+      "source": "Israeli government / ICRC / multi-outlet",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "oct7-hostages-killed-captivity-pattern-2023-2025",
+        "oct7-hostages-held-pattern",
+        "oct7-hamas-attack-2023"
+      ],
+      "tags": [
+        "hostages",
+        "civilians",
+        "children",
+        "terrorism"
       ]
     },
     {
@@ -8720,6 +8741,47 @@
           "type": "document",
           "label": "WHO public health updates",
           "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "oct7-hostages-killed-captivity-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "October 7 Hostages Killed in Captivity Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (captivity-death cohort)",
+      "location": "Gaza Strip captivity sites (multi-source forensic windows)",
+      "summary": "Israeli government hostage lists, multi-source forensic reporting, and negotiated-release disclosures document civilian hostages killed in captivity in Gaza — including during IDF operations and by captors. Pattern card for deaths in captivity as a continuous civilian-targeting crime, distinct from the hostages-held and exchange cards.",
+      "evidence": "Israeli government confirmed death announcements, multi-source forensic reporting, and hostage-family/government public lists establish multi-source captive deaths. Exact attribution of each death (captor execution vs crossfire vs medical neglect) varies by case; multi-source civilian deaths in captivity is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government hostage public record",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "ICRC statements on hostages/detainees",
+          "url": "https://www.icrc.org"
+        },
+        {
+          "label": "Multi-outlet hostage death reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "ICRC public statements",
+          "url": "https://www.icrc.org"
         }
       ],
       "tier": "verified",
