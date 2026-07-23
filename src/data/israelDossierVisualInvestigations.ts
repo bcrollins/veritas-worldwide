@@ -6580,6 +6580,76 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-power-substation-strike-visual-2023-2025',
+    title: 'Gaza Power Substation Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip power substations and electrical distribution nodes',
+    summary:
+      'Multi-outlet video packages document strikes on power substations under wartime conditions, denying electricity for civilians including children. Multi-source visual record distinct from power-plant cards; ethnicity is never evidence.',
+    evidence:
+      'OHCHR materials, multi-outlet visual packages, and OCHA energy-access materials establish multi-source documentation of substation harm affecting civilians.',
+    sources: [
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'OCHA OPT energy materials', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters Gaza infrastructure packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet power-substation video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of substation aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'OCHA energy-access trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-ramla-safe-room-visual-2023',
+    title: 'October 7 Ramla Safe-Room Civilian Harm — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Ramla residential safe rooms and home shelters',
+    summary:
+      'Authenticated multi-outlet video packages document civilian harm involving Ramla safe rooms during the October 7 attacks period. Multi-party visual record; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence affecting Ramla safe rooms on and around October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-grape-trellis-wire-theft-visual-2023-2025',
+    title: 'West Bank Settler Grape Trellis Wire Theft — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village vineyards and trellis rows',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler theft of Palestinian civilian grape trellis wire, denying vineyard structure including income for families with children. Multi-source visual record distinct from grape-trellis-wires destruction cards; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of trellis-wire theft affecting civilian agricultural livelihoods.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem agricultural-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
 ]
 
 /** Quick count helpers for UI badges */

@@ -549,3 +549,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip past 2181+ |
 
+
+## Interval densify — tip post-2238 adolescent vaccine densify + substation / Ramla / trellis-wire theft
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza varicella/meningococcal/HPV · hostage ammo-to-positions/helmet-install/ceiling-cuffs · WB watercress/tuning-fork/mint-baskets |
+| VI | power substation · Ramla · grape trellis-wire theft |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip past 2199+ |
+
