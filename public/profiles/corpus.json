@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:33:56.112Z",
+  "generatedAt": "2026-07-23T10:34:54.245Z",
   "count": 96,
   "profiles": [
     {
@@ -1174,9 +1174,9 @@
         "Political Influence",
         "News Mogul"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 35,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "michael-bloomberg",
@@ -1313,9 +1313,9 @@
         "Financial Power",
         "Policy Influence"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "warren-buffett",

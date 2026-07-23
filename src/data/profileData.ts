@@ -8313,7 +8313,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'murdoch-phone-hacking-isolated-rogue-reporters',
+        statement:
+          'News Corp leadership framed UK phone-hacking as the work of a few rogue reporters rather than a broader organizational problem.',
+        saidAt: '2009–2011',
+        context: 'News of the World phone-hacking scandal and parliamentary/public inquiries.',
+        whyFalse:
+          'UK parliamentary inquiries, civil settlements, and criminal cases established systemic phone-hacking and related practices beyond a handful of rogue actors. Absolute “isolated rogue” framing was false to the inquiry and settlement record.',
+        correction:
+          'Phone-hacking was not limited to a few rogue reporters; inquiries and cases established broader organizational misconduct.',
+        statementSource: 'News Corp / Murdoch family public defenses during phone-hacking scandal (multi-outlet capture)',
+        statementUrl: 'https://www.parliament.uk',
+        debunkSource: 'UK Leveson Inquiry / parliamentary select committee records; multi-outlet settlement record',
+        debunkUrl: 'https://www.gov.uk/government/publications/leveson-inquiry-report-into-the-culture-practices-and-ethics-of-the-press',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'murdoch-most-humble-day-vs-prior-knowledge-framing',
+        statement:
+          'Testified and publicly presented limited personal knowledge of hacking practices as if corporate leadership had been broadly unaware until late.',
+        saidAt: '2011',
+        context: 'UK parliamentary testimony after News of the World closure (“most humble day”).',
+        whyFalse:
+          'Subsequent civil evidence, settlements, and corporate records established longer-running awareness pathways inside News Corp titles. Absolute late-discovery framing overstated leadership unawareness relative to the documentary trail produced in litigation.',
+        correction:
+          'Evidence later produced in civil cases showed longer-running knowledge pathways than absolute late-discovery framing implied.',
+        statementSource: 'Rupert Murdoch parliamentary testimony July 2011 (Hansard / multi-outlet)',
+        statementUrl: 'https://publications.parliament.uk',
+        debunkSource: 'UK civil phone-hacking litigation disclosures; multi-outlet investigation record',
+        debunkUrl: 'https://www.theguardian.com/media/phone-hacking',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'murdoch-fox-dominion-election-fraud-broadcast-absolutes',
+        statement:
+          'Fox News programming amplified absolute stolen-election claims about Dominion voting systems that the network’s own internal messages showed hosts/executives doubted.',
+        saidAt: 'November 2020 – January 2021',
+        context: 'Fox News post-election coverage culminating in Dominion v. Fox settlement.',
+        whyFalse:
+          'Dominion’s lawsuit produced internal Fox messages showing on-air claims diverged from private knowledge. Fox settled for $787.5M. Absolute on-air Dominion fraud claims were false to the internal knowledge and settlement record.',
+        correction:
+          'Fox settled Dominion’s defamation case for $787.5M after discovery of internal doubts contradicting on-air absolute fraud claims.',
+        statementSource: 'Fox News on-air Dominion-related election claims (Nov 2020–Jan 2021)',
+        statementUrl: 'https://www.foxnews.com',
+        debunkSource: 'Dominion v. Fox discovery record / $787.5M settlement reporting',
+        debunkUrl: 'https://www.reuters.com/legal/fox-news-dominion-settle-defamation-lawsuit-2023-04-18/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'michael-bloomberg',
@@ -8853,7 +8907,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'circumstantial',
         date: '2024'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'dimon-london-whale-tempest-in-teapot-2012',
+        statement:
+          'Dismissed early reports of JPMorgan’s Chief Investment Office losses as a “tempest in a teapot.”',
+        saidAt: 'April 13, 2012',
+        context: 'Earnings call response to media reports of synthetic credit losses (London Whale).',
+        whyFalse:
+          'JPMorgan later disclosed multi-billion-dollar losses (over $6B) from the CIO trades. Calling it a tempest in a teapot was false to the loss scale the bank itself later reported and regulators scrutinized.',
+        correction:
+          'The London Whale trades produced multi-billion-dollar losses — not a trivial teapot tempest.',
+        statementSource: 'Jamie Dimon JPMorgan earnings call Apr 13, 2012 (transcript multi-outlet capture)',
+        statementUrl: 'https://www.jpmorganchase.com',
+        debunkSource: 'JPMorgan subsequent loss disclosures; Senate Permanent Subcommittee on Investigations London Whale report',
+        debunkUrl: 'https://www.hsgac.senate.gov/subcommittees/investigations/hearings/chase-whale-trades-a-case-history-of-derivatives-risks-and-abuses',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'dimon-fortress-risk-controls-absolute-pre-whale',
+        statement:
+          'Publicly marketed JPMorgan’s risk culture as fortress-grade absolute excellence immediately before CIO risk-control failures became public.',
+        saidAt: '2011–early 2012',
+        context: 'Investor and public branding of JPMorgan risk management pre-London Whale.',
+        whyFalse:
+          'The London Whale episode and Senate investigations documented severe risk-control failures, model manipulation, and supervisory gaps. Absolute fortress-risk branding was false to the control environment the bank later admitted failed.',
+        correction:
+          'CIO risk controls failed at multi-billion scale; absolute fortress branding did not match the control failures found.',
+        statementSource: 'Dimon/JPMorgan public risk-culture branding 2011–2012',
+        statementUrl: 'https://www.jpmorganchase.com',
+        debunkSource: 'Senate PSI London Whale report; JPMorgan management admissions of control failures',
+        debunkUrl: 'https://www.hsgac.senate.gov/subcommittees/investigations/hearings/chase-whale-trades-a-case-history-of-derivatives-risks-and-abuses',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'dimon-fully-transparent-with-regulators-whale-period',
+        statement:
+          'Implied full transparency and cooperation framing during early Whale disclosures while later records showed delayed and incomplete risk reporting internally and externally.',
+        saidAt: '2012',
+        context: 'Early regulatory and public communications on CIO losses.',
+        whyFalse:
+          'Internal emails and Senate findings showed delayed escalation, inaccurate risk metrics (VaR model changes), and incomplete early external characterization. Absolute full-transparency framing was false to that record.',
+        correction:
+          'Early Whale period involved inaccurate risk metrics and delayed escalation — not full transparency.',
+        statementSource: 'JPMorgan early 2012 public/regulatory communications on CIO losses',
+        statementUrl: 'https://www.jpmorganchase.com',
+        debunkSource: 'Senate PSI report on VaR model changes and delayed escalation',
+        debunkUrl: 'https://www.hsgac.senate.gov/subcommittees/investigations/hearings/chase-whale-trades-a-case-history-of-derivatives-risks-and-abuses',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'warren-buffett',

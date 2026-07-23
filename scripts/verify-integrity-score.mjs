@@ -149,6 +149,8 @@ const required = [
   'yoav-gallant',
   'john-bolton',
   'leon-black',
+  'rupert-murdoch',
+  'jamie-dimon',
 ];
 const scores = {};
 for (const id of required) {
@@ -1219,8 +1221,41 @@ for (const f of (leonP.documentedFalsehoods || []).filter((x) => x.tier === 'ver
   if (f.statementUrl === f.debunkUrl) throw new Error('leon dual-cite collision: ' + f.id);
 }
 
+
+// Rupert Murdoch densify gate (n≥3)
+const murdoch = scores['rupert-murdoch'];
+if (!murdoch || murdoch.n < 3) throw new Error('rupert-murdoch needs ≥3 verified falsehoods, got ' + (murdoch?.n ?? 0));
+if (murdoch.score > 40) throw new Error('rupert-murdoch score expected ≤40 after densify, got ' + murdoch.score);
+const murdochP = getProfileBySlug('rupert-murdoch');
+for (const id of [
+  'murdoch-phone-hacking-isolated-rogue-reporters',
+  'murdoch-most-humble-day-vs-prior-knowledge-framing',
+  'murdoch-fox-dominion-election-fraud-broadcast-absolutes',
+]) {
+  if (!(murdochP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('rupert-murdoch missing docket id: ' + id);
+}
+for (const f of (murdochP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('murdoch dual-cite collision: ' + f.id);
+}
+
+// Jamie Dimon densify gate (n≥3)
+const dimon = scores['jamie-dimon'];
+if (!dimon || dimon.n < 3) throw new Error('jamie-dimon needs ≥3 verified falsehoods, got ' + (dimon?.n ?? 0));
+if (dimon.score > 60) throw new Error('jamie-dimon score expected ≤60 after densify, got ' + dimon.score);
+const dimonP = getProfileBySlug('jamie-dimon');
+for (const id of [
+  'dimon-london-whale-tempest-in-teapot-2012',
+  'dimon-fortress-risk-controls-absolute-pre-whale',
+  'dimon-fully-transparent-with-regulators-whale-period',
+]) {
+  if (!(dimonP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('jamie-dimon missing docket id: ' + id);
+}
+for (const f of (dimonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('dimon dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 62) throw new Error('expected ≥62 compiled dockets, got ' + docketCount);
+if (docketCount < 64) throw new Error('expected ≥64 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
