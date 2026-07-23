@@ -99,7 +99,7 @@ export default function SharePanel({ url, title, description, variant = 'full', 
           <button
             key={p.name}
             onClick={p.action}
-            className={`p-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded-sm text-ink-muted transition-colors ${p.color}`}
+            className={`p-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded-sm text-ink-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 ${p.color}`}
             aria-label={`Share on ${p.name}`}
             title={`Share on ${p.name}`}
           >
@@ -110,7 +110,7 @@ export default function SharePanel({ url, title, description, variant = 'full', 
         ))}
         <button
           onClick={handleCopy}
-          className="p-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded-sm text-ink-muted hover:bg-ink/10 hover:text-ink transition-colors"
+          className="p-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded-sm text-ink-muted hover:bg-ink/10 hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
           aria-label="Copy link"
           title="Copy link"
         >
@@ -127,7 +127,7 @@ export default function SharePanel({ url, title, description, variant = 'full', 
         {'share' in navigator && (
           <button
             onClick={handleNativeShare}
-            className="p-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded-sm text-ink-muted hover:bg-crimson/10 hover:text-crimson transition-colors"
+            className="p-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded-sm text-ink-muted hover:bg-crimson/10 hover:text-crimson transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
             aria-label="Share"
             title="Share"
           >
@@ -157,7 +157,7 @@ export default function SharePanel({ url, title, description, variant = 'full', 
             <button
               key={p.name}
               onClick={p.action}
-              className={`inline-flex items-center gap-2 px-3 py-2 min-h-[44px] rounded-sm text-ink-muted transition-colors ${p.color}`}
+              className={`inline-flex items-center gap-2 px-3 py-2 min-h-[44px] rounded-sm text-ink-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 ${p.color}`}
               aria-label={`Share on ${p.name}`}
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill={p.stroke ? 'none' : 'currentColor'} stroke={p.stroke ? 'currentColor' : 'none'}>
@@ -170,14 +170,14 @@ export default function SharePanel({ url, title, description, variant = 'full', 
         <div className="flex items-center justify-center gap-2">
           <button
             onClick={handleCopy}
-            className="inline-flex min-h-[44px] items-center gap-2 px-4 py-2 border border-border rounded-sm font-sans text-xs text-ink-muted hover:border-crimson hover:text-crimson transition-colors"
+            className="inline-flex min-h-[44px] items-center gap-2 px-4 py-2 border border-border rounded-sm font-sans text-xs text-ink-muted hover:border-crimson hover:text-crimson transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
           >
             {copied ? 'Link Copied' : 'Copy Link'}
           </button>
           {'share' in navigator && (
             <button
               onClick={handleNativeShare}
-              className="inline-flex min-h-[44px] items-center gap-2 px-4 py-2 bg-crimson text-white rounded-sm font-sans text-xs font-semibold hover:bg-crimson-dark transition-colors"
+              className="inline-flex min-h-[44px] items-center gap-2 px-4 py-2 bg-crimson text-white rounded-sm font-sans text-xs font-semibold hover:bg-crimson-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
