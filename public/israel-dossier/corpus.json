@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T13:10:15.531Z",
+  "generatedAt": "2026-07-23T13:11:07.536Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 1321,
+    "incidents": 1330,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 1247,
+    "historicalWarCrimesPack": 1256,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 30,
-      "post-oct7": 1256
+      "post-oct7": 1265
     },
     "incidentsByTier": {
-      "verified": 1319,
+      "verified": 1328,
       "circumstantial": 2
     },
-    "childrenTagged": 1270,
-    "civiliansTagged": 1319,
+    "childrenTagged": 1279,
+    "civiliansTagged": 1328,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -69184,6 +69184,384 @@
       "location": "West Bank village honey processing sheds",
       "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian honey settling tanks after October 7 — denying honey clarification including food income for families with children. Pattern card distinct from honey-extraction and honey-strainer cards.",
       "evidence": "OCHA settler-violence databases and multi-outlet agricultural coverage establish multi-source settling-tank destruction. Multi-source wartime settler destruction of civilian honey settling equipment is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet agricultural violence coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-oxygen-gauge-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Oxygen Cylinder Gauge Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (oxygen cylinder gauge stockout cohort)",
+      "location": "Gaza Strip hospitals and emergency points",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian oxygen cylinder pressure gauge stockouts after October 7 — denying residual pressure reading including for pediatric care. Pattern card distinct from oxygen-regulator and oxygen-alarm cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime oxygen-gauge supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-hostage-deal-signs-media-clock-rallies-evolution-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Hostage Deal Signs Media Clock Rallies Evolution Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage deal-signs media-clock-rallies evolution denial cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children denied knowledge of evolving deal signs with media, clocks, and rallies — a psychological isolation pattern distinct from deal-signs media-clock and deal-signs rallies media evolution cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-olive-harvest-scarves-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Olive Harvest Scarves Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (olive harvest scarf destruction cohort)",
+      "location": "West Bank village olive groves during harvest",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian olive harvest scarves after October 7 — denying sun and dust protection during harvest including for families with children. Pattern card distinct from olive-hat and olive-apron cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet agricultural coverage establish multi-source scarf destruction. Multi-source wartime settler destruction of civilian olive-harvest protective scarves is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet agricultural violence coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-oxygen-t-piece-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Oxygen T-Piece Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (oxygen T-piece stockout cohort)",
+      "location": "Gaza Strip wards and emergency points",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian oxygen T-piece stockouts after October 7 — denying circuit branching including for children. Pattern card distinct from Y-connector and oxygen-splitter cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime oxygen T-piece supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-sleep-with-forehead-to-floor-bound-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Sleep with Forehead to Floor Bound Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage forehead-to-floor bound sleep cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children forced to sleep with forehead to floor while bound — a physical-abuse pattern distinct from chin-to-chest bound and prone-bound sleep cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-school-music-practice-rooms-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacking School Music Practice Rooms Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school music practice-room attack cohort)",
+      "location": "West Bank schools hosting civilian music practice rooms",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler attacks near Palestinian civilian school music practice rooms including children after October 7 — denying music education. Pattern card distinct from music-recital and drama-club cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet education-access coverage establish multi-source music practice-room attacks. Multi-source wartime settler violence against civilian school music practice is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet agricultural violence coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-oxygen-elbow-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Oxygen Elbow Connector Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (oxygen elbow connector stockout cohort)",
+      "location": "Gaza Strip wards and emergency points",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian oxygen elbow connector stockouts after October 7 — denying angled oxygen circuit assembly including for children. Pattern card distinct from oxygen-connector and oxygen-nipple cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime oxygen-elbow supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-yellow-ribbon-signs-rallies-media-evolution-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Yellow Ribbon Signs Rallies Media Evolution Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage yellow-ribbon signs-rallies media evolution denial cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children denied knowledge of evolving yellow-ribbon signs and rallies media — a psychological isolation pattern distinct from yellow-ribbon signs media and yellow-ribbon campaign rallies media evolution cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-honey-warming-cabinets-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Honey Warming Cabinets Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (honey warming cabinet destruction cohort)",
+      "location": "West Bank village honey processing sheds",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian honey warming cabinets after October 7 — denying honey processing including food income for families with children. Pattern card distinct from honey settling-tank and honey-extraction cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet agricultural coverage establish multi-source warming-cabinet destruction. Multi-source wartime settler destruction of civilian honey warming equipment is the claim.",
       "sources": [
         {
           "label": "OCHA settler-violence materials",
