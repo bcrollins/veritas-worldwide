@@ -1,15 +1,16 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:21:23.200Z  
+**Generated:** 2026-07-23T09:24:18.109Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 209  
-**Tier histogram:** `{"circumstantial": 10, "contested": 27, "interpretive": 16, "literary_theological": 3, "speculative": 2, "verified": 72, "well_attested": 79}`
+**Claim count:** 218  
+**Tier histogram:** `{"circumstantial": 11, "contested": 27, "interpretive": 17, "literary_theological": 3, "speculative": 2, "verified": 76, "well_attested": 82}`
 
 Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.json`.
 
 | ID | Tier | Proof vs concept | Claim |
 |----|------|------------------|-------|
 | `ane-amarna-letters` | verified | proof_grade_data | The Amarna letters (14th c. BCE) document Late Bronze Canaanite-Egyptian diplomacy and conflict language used in comparative ANE historical method. |
+| `ane-babylonian-chronicle-jerusalem` | verified | proof_grade_data | Babylonian Chronicle entries record Nebuchadnezzar’s campaigns against Judah, including the 597 BCE deportation horizon. |
 | `ane-babylonian-chronicles` | verified | proof_grade_data | Babylonian Chronicles document Nebuchadnezzar’s campaigns against Jerusalem, providing independent chronological control for the late Iron Age Judah narrative. |
 | `ane-black-obelisk` | verified | proof_grade_data | The Black Obelisk of Shalmaneser III depicts Jehu (or a representative) of Israel paying tribute — an extra-biblical visual control for the Omride/Jehu period. |
 | `ane-cos-corpus` | well_attested | attested_report | The Context of Scripture (COS) and ANET anthologies assemble primary ANE texts used as comparative controls for Hebrew Bible literature and historiography. |
@@ -52,10 +53,12 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `arch-tiberias` | verified | proof_grade_data | Tiberias, founded by Antipas on the Sea of Galilee, is archaeologically and literarily documented as a Herodian urban center. |
 | `arch-titus` | well_attested | attested_report | 1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative. |
 | `arch-yehohanan` | verified | proof_grade_data | The crucified remains of Yehohanan son of Hagkol (Giv‘at ha-Mivtar) provide osteological evidence of Roman crucifixion practice in Judea (nail through heel bone). |
+| `arch-yodefat` | verified | proof_grade_data | Yodefat (Jotapata) siege archaeology correlates with Josephus’s First Revolt narrative and illustrates Galilean war destruction layers. |
 | `cosmo-age` | well_attested | science_model | Under Planck 2018 ΛCDM parameters, the universe age is approximately 13.8 billion years. |
 | `cosmo-bao` | verified | science_model | Baryon acoustic oscillations (BAO) measured in large-scale galaxy surveys provide an independent standard-ruler constraint on the expansion history within ΛCDM. |
 | `cosmo-bbn` | well_attested | science_model | Primordial abundances of light elements (⁴He, D, ³He, ⁷Li) are broadly consistent with Big Bang nucleosynthesis predictions. |
 | `cosmo-cmb` | verified | science_model | The cosmic microwave background (CMB) is a near-isotropic blackbody at T ≈ 2.725 K, consistent with a hot early universe. |
+| `cosmo-cmb-polarization` | verified | science_model | CMB polarization (E-modes; B-mode searches) provides independent cosmological information beyond temperature anisotropies alone. |
 | `cosmo-cmb-power` | verified | science_model | The CMB angular power spectrum exhibits acoustic peaks whose positions and amplitudes constrain baryon density, dark matter density, and curvature in ΛCDM fits. |
 | `cosmo-dark-energy` | verified | science_model | Type Ia supernova surveys (1990s–present) established late-time accelerated expansion, modeled in ΛCDM as a cosmological-constant / dark-energy component. |
 | `cosmo-dark-matter-status` | verified | science_model | Multiple independent lines (galaxy rotation curves, cluster lensing, CMB acoustic peaks) favor a non-baryonic dark matter component within ΛCDM. |
@@ -87,6 +90,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ec-origen-hexapla` | well_attested | attested_report | Origen’s Hexapla (3rd c.) arranged Hebrew and Greek OT columns for comparative textual work — early Christian engagement with pluriform scriptural text. |
 | `ec-papias` | circumstantial | attested_report | Papias of Hierapolis (early 2nd c.), preserved in fragments via Eusebius, offers early traditions about Mark and Matthew’s composition — valuable and debated. |
 | `ec-polycarp` | well_attested | attested_report | Polycarp’s Letter to the Philippians (mid-2nd c.) cites or alludes to multiple NT writings and shows early reception of Pauline and Gospel traditions. |
+| `ec-quadratus` | circumstantial | attested_report | Quadratus’s apology (early 2nd c.), preserved in fragment via Eusebius, claims some healed/raised by Jesus lived into later times — early apologetic tradition, not contemporary medical record. |
 | `ec-shepherd-hermas` | well_attested | attested_report | The Shepherd of Hermas (2nd c.) was widely read and sometimes treated as scripture in some churches, illustrating fluid early canons. |
 | `ec-update-triggers` | interpretive | reconstruction | This Record’s perpetual update triggers include: new major papyri/majuscule publications, INTF Liste changes, peer-reviewed dig reports, and material consensus shifts in historical Jesus research. |
 | `hj-apocalyptic` | contested | debate | Whether Jesus is best reconstructed as primarily apocalyptic prophet (Schweitzer trajectory) or sapiential/ethical teacher remains a major scholarly divide. |
@@ -101,6 +105,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `hj-disciples-twelve` | well_attested | reconstruction | A circle of close followers including a group remembered as “the Twelve” is multiply attested; exact membership lists vary slightly across Gospels. |
 | `hj-empty-tomb` | contested | debate | Empty-tomb narratives appear in the canonical Gospels with differences; whether an empty tomb is historical is debated; early creed in 1 Cor 15 emphasizes appearances more than tomb logistics. |
 | `hj-existence` | well_attested | attested_report | The existence of Jesus of Nazareth as a first-century Jewish man is the near-consensus position of critical historians of antiquity. |
+| `hj-exorcism-reputation` | well_attested | reconstruction | Exorcism / spirit-expulsion is multiply attested as a public activity associated with Jesus in Synoptic tradition and is treated by many historians as a characteristic reputation. |
 | `hj-family-rejection` | circumstantial | reconstruction | Traditions of family misunderstanding or tension (Mark 3; John 7) are often cited under the criterion of embarrassment as unlikely free invention by later church idealization. |
 | `hj-gal2-conflict` | well_attested | attested_report | Galatians 2 records a conflict between Paul and Cephas (Peter) at Antioch over table fellowship with gentiles — primary evidence of diversity and dispute in the earliest movement. |
 | `hj-galilee-context` | well_attested | attested_report | Early Roman Galilee included agricultural villages, fishing economy on the lake, and nearby urban centers such as Sepphoris and Tiberias. |
@@ -128,6 +133,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `hj-temple-action` | well_attested | reconstruction | An action by Jesus in the Temple (disruption of commerce / symbolic demonstration) is multiply attested; interpretation ranges from prophetic sign to failed revolt cue. |
 | `hj-titles` | contested | debate | Titles applied to Jesus (Messiah/Christ, Son of Man, Son of God, Lord) have layered historical and literary-theological histories; none should be treated as a single unproblematic first-century label without analysis. |
 | `hj-women-movement` | well_attested | attested_report | Early Christian sources name women as patrons, witnesses, and coworkers (e.g., Mary Magdalene traditions; Romans 16 co-workers); social roles are historically reconstructable within limits. |
+| `mod-contextual-credibility` | interpretive | reconstruction | Contextual credibility / historical plausibility criteria ask whether a tradition fits first-century Jewish Palestine — necessary but not sufficient for authenticity. |
 | `mod-criteria-critique` | interpretive | reconstruction | Classical criteria of authenticity (embarrassment, dissimilarity, multiple attestation) are historiographical tools with known biases; recent memory and social approaches revise their use. |
 | `mod-criteria-embarrassment` | interpretive | reconstruction | The criterion of embarrassment is a heuristic, not a proof algorithm; it can be misapplied when later communities reframe “embarrassing” material. |
 | `mod-criterion-embarrassment-limits` | interpretive | reconstruction | The criterion of embarrassment is heuristic and circular if “embarrassing” is defined by later Christian theology rather than first-century Jewish context. |
@@ -163,6 +169,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nc-suetonius` | circumstantial | reconstruction | Suetonius, Claudius 25.4, refers to disturbances in Rome impulsore Chresto — often discussed as a possible garbled reference to Christ-related conflict, but identification is uncertain. |
 | `nc-suetonius-chrestus` | circumstantial | attested_report | Suetonius (Claudius 25) mentions disturbances in Rome under Claudius involving “Chrestus” — identification with Christ/Christians is possible but contested. |
 | `nc-tacitus` | well_attested | attested_report | Tacitus, Annals 15.44 reports that “Christus” was executed under Tiberius by the procurator Pontius Pilate and that the movement originated in Judea. |
+| `nc-tacitus-context` | well_attested | attested_report | Tacitus Annals 15.44 places Christus’s execution under Tiberius by procurator Pontius Pilate within a Nero-era persecution narrative. |
 | `nc-tacitus-latin` | well_attested | attested_report | Tacitus Annals 15.44 (Latin) states that Christus suffered the extreme penalty under Tiberius by sentence of procurator Pontius Pilate, and that the superstitio arose in Judea. |
 | `nc-talmud` | circumstantial | reconstruction | Certain Babylonian Talmud passages are sometimes read as hostile allusions to Jesus; dating, redaction, and identification are highly contested and often late. |
 | `nc-talmud-dating` | circumstantial | attested_report | Rabbinic passages sometimes linked to Jesus (e.g., b. Sanhedrin traditions) are late, layered, and methodologically hazardous as first-century biography. |
@@ -175,6 +182,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nt-ecm-method` | verified | proof_grade_data | The Editio Critica Maior (ECM) and the Coherence-Based Genealogical Method (CBGM) model manuscript relationships as a guided stemmatic network rather than a simple bipartite Alexandrian/Byzantine tree. |
 | `nt-ending-mark` | well_attested | proof_grade_data | The longer ending of Mark (16:9–20) is absent from the earliest major Greek witnesses (ℵ B) and is treated in critical editions as secondary, while shorter alternative endings also exist. |
 | `nt-eusebius-ch` | well_attested | attested_report | Eusebius’s Church History is an indispensable but tendentious fourth-century source for earlier Christian literature and martyrdoms; source-critical caution is mandatory. |
+| `nt-family-1-13` | well_attested | proof_grade_data | Medieval Greek manuscript families (e.g., Family 1, Family 13) show structured textual relationships useful for genealogical criticism beyond simple “majority count.” |
 | `nt-gospel-dates` | contested | debate | Critical consensus commonly dates Mark c. 65–75 CE, Matthew and Luke c. 80–90 CE, John c. 90–100 CE — with debate bands around each. |
 | `nt-harmonie-readings` | well_attested | proof_grade_data | Harmonization among Synoptic parallels is a recognized scribal tendency that can produce secondary agreements in later manuscripts. |
 | `nt-homoeoteleuton` | verified | proof_grade_data | Many NT variants arise from ordinary scribal mechanics (homoeoteleuton, dittography, orthography), not theological conspiracy. |
@@ -213,6 +221,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `st-parties` | well_attested | attested_report | Josephus and later rabbinic memory describe Pharisees, Sadducees, and Essenes as major Jewish schools; exact social demographics remain reconstructed. |
 | `st-pharisees-josephus` | well_attested | attested_report | Josephus’s descriptions of Pharisees, Sadducees, and Essenes are primary but tendentious; social realities were more complex than three-school schemes. |
 | `st-philo` | verified | proof_grade_data | Philo of Alexandria provides contemporary diaspora Jewish philosophical and exegetical context for the early first century CE. |
+| `st-pompey-63` | verified | proof_grade_data | Pompey’s intervention in Judea (63 BCE) brought Hasmonean civil conflict under Roman arbitration and began lasting Roman overlordship. |
 | `st-prefecture` | verified | proof_grade_data | Roman Judea after 6 CE was administered by equestrian prefects (later procurators) based primarily at Caesarea, with troops and judicial powers including capital cases in practice. |
 | `st-samaria-papyri` | verified | proof_grade_data | The Wadi Daliyeh (Samaria) papyri document mid-4th-century BCE legal/administrative life under late Persian / early Hellenistic rule in Samaria. |
 | `st-synagogue-origins` | contested | debate | The institutional origins and pre-70 function of “synagogues” remain debated; archaeological assembly buildings and literary references do not form a single simple type. |
