@@ -12,16 +12,50 @@ import {
 } from '../lib/seo'
 
 const a11yFeatures = [
-  { title: 'Evidence Tier Accessibility', desc: 'Evidence classifications (Verified, Circumstantial, Disputed) use color, text labels, AND icons — never color alone. All three tiers are distinguishable by colorblind readers.' },
-  { title: 'Keyboard Navigation', desc: 'Full keyboard navigation with visible focus indicators. Press ? for keyboard shortcuts. All interactive elements meet 44pt minimum touch targets.' },
-  { title: 'Color Contrast', desc: 'All text meets WCAG 2.1 AA minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text, in both light and dark modes.' },
-    { title: 'Product forms', desc: 'Paid research intake at /comprehensive-profile uses 44px minimum controls, explicit label/id pairing, aria-required and aria-invalid on validation, aria-busy during Stripe handoff, focusable form errors, a mobile sticky checkout bar with safe-area padding, and keyboard-focusable FAQ summaries.' },
-{ title: 'Dark Mode', desc: 'Full dark mode with adjusted contrast ratios for all elements including evidence tiers, stat cards, and data tables.' },
-  { title: 'Adjustable Typography', desc: 'Font size controls allow readers to increase or decrease article text size. Body text starts at 18px with 1.8 line-height for optimal readability.' },
-  { title: 'Skip to Content', desc: 'A "Skip to content" link is available for keyboard users to bypass navigation and jump directly to the main content area.' },
-  { title: 'Semantic HTML & ARIA', desc: 'Proper heading hierarchy, landmark regions, ARIA labels on icon buttons, and role attributes for interactive components.' },
-  { title: 'Print Optimization', desc: 'Every chapter prints cleanly with navigation and interactive elements hidden. Evidence boxes remain legible in grayscale.' },
-  { title: 'Reduced Motion', desc: 'Animations and transitions respect the prefers-reduced-motion system preference.' },
+  {
+    title: 'Evidence Tier Accessibility',
+    desc: 'Evidence classifications (Verified, Circumstantial, Disputed) use color, text labels, AND icons — never color alone. All three tiers are distinguishable by colorblind readers.',
+  },
+  {
+    title: 'Keyboard Navigation',
+    desc: 'Full keyboard navigation with visible focus indicators. Press ? for keyboard shortcuts. All interactive elements meet 44pt minimum touch targets.',
+  },
+  {
+    title: 'Color Contrast',
+    desc: 'All text meets WCAG 2.1 AA minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text, in both light and dark modes.',
+  },
+  {
+    title: 'Product forms',
+    desc: 'Paid research intake at /comprehensive-profile uses 44px minimum controls, explicit label/id pairing, aria-required and aria-invalid on validation, aria-busy during Stripe handoff, focusable form errors, a mobile sticky checkout bar with safe-area padding, and keyboard-focusable FAQ summaries.',
+  },
+  {
+    title: 'Machine corpora downloads',
+    desc: 'Offline research pack ZIP and corpus JSON links on Home, Sources, Methodology, About, Media Kit, Content Pack, and Researcher hub use 44px minimum hit areas and plain-language labels (no icon-only download controls).',
+  },
+  {
+    title: 'Dark Mode',
+    desc: 'Full dark mode with adjusted contrast ratios for all elements including evidence tiers, stat cards, and data tables.',
+  },
+  {
+    title: 'Adjustable Typography',
+    desc: 'Font size controls allow readers to increase or decrease article text size. Body text starts at 18px with 1.8 line-height for optimal readability.',
+  },
+  {
+    title: 'Skip to Content',
+    desc: 'A "Skip to content" link is available for keyboard users to bypass navigation and jump directly to the main content area.',
+  },
+  {
+    title: 'Semantic HTML & ARIA',
+    desc: 'Proper heading hierarchy, landmark regions, ARIA labels on icon buttons, and role attributes for interactive components.',
+  },
+  {
+    title: 'Print Optimization',
+    desc: 'Every chapter prints cleanly with navigation and interactive elements hidden. Evidence boxes remain legible in grayscale. Long-form trust pages hide chrome and append absolute http(s) URLs after links.',
+  },
+  {
+    title: 'Reduced Motion',
+    desc: 'Animations and transitions respect the prefers-reduced-motion system preference.',
+  },
 ]
 
 const sections = [
