@@ -557,6 +557,27 @@ assert(fs.readFileSync(path.join(root, 'src/pages/MediaKitPage.tsx'), 'utf8').in
 assert(fs.readFileSync(path.join(root, 'src/pages/ProfilesIndexPage.tsx'), 'utf8').includes('profiles-related-hubs'), 'perpetual v9 IA profiles')
 assert(fs.readFileSync(path.join(root, 'src/pages/ReadTheBookPage.tsx'), 'utf8').includes('read-related-hubs'), 'perpetual v9 IA read')
 
+
+// RelatedHubs perpetual densify lock v10 IA
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('mobile-tab-bar'), 'perpetual v10 IA mobile tab bar')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('primaryLinks'), 'perpetual v10 IA primaryLinks')
+assert(fs.readFileSync(path.join(root, 'server.js'), 'utf8').includes('server-soft-404'), 'perpetual v10 IA server soft-404')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('emphasizeTo'), 'perpetual v10 IA emphasize')
+assert(fs.readFileSync(path.join(root, 'src/components/DossierHubSpokes.tsx'), 'utf8').includes('DOSSIER_SPOKES'), 'perpetual v10 IA spokes')
+assert(fs.readFileSync(path.join(root, 'src/components/ResearchHubChips.tsx'), 'utf8').includes('excludePath'), 'perpetual v10 IA research chips')
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-hub-chips'), 'perpetual v10 IA soft-404')
+assert(fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), 'utf8').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v10 IA search')
+assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'perpetual v10 IA home')
+assert(fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8').includes('/membership'), 'perpetual v10 IA Privacy')
+assert(fs.readFileSync(path.join(root, 'src/pages/TermsPage.tsx'), 'utf8').includes('/membership'), 'perpetual v10 IA Terms')
+assert(fs.readFileSync(path.join(root, 'src/pages/BookmarksPage.tsx'), 'utf8').includes('BOOKMARKS_HUBS'), 'perpetual v10 IA bookmarks')
+assert(fs.readFileSync(path.join(root, 'src/pages/BernieShowPage.tsx'), 'utf8').includes('bernie-related-hubs'), 'perpetual v10 IA bernie')
+assert(fs.readFileSync(path.join(root, 'src/pages/MediaKitPage.tsx'), 'utf8').includes('media-kit-primary-hubs'), 'perpetual v10 IA media-kit')
+assert(fs.readFileSync(path.join(root, 'src/pages/ProfilesIndexPage.tsx'), 'utf8').includes('profiles-related-hubs'), 'perpetual v10 IA profiles')
+assert(fs.readFileSync(path.join(root, 'src/pages/ReadTheBookPage.tsx'), 'utf8').includes('read-related-hubs'), 'perpetual v10 IA read')
+assert(fs.readFileSync(path.join(root, 'src/pages/AccessibilityPage.tsx'), 'utf8').includes('/membership'), 'perpetual v10 IA A11Y')
+assert(fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfilePage.tsx'), 'utf8').includes('/israel-dossier'), 'perpetual v10 IA OSINT')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
