@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:33:12.104Z",
+  "generatedAt": "2026-07-23T07:33:44.356Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 82,
     "timelineEvents": 70,
     "actors": 47,
-    "moneyTrailNodes": 25,
+    "moneyTrailNodes": 26,
     "historicalWarCrimesPack": 68,
     "legalCases": 16,
     "lobbyingRecords": 4,
@@ -35,7 +35,7 @@
       "delivery": 3,
       "weapon": 7,
       "impact": 3,
-      "lobby": 7
+      "lobby": 8
     }
   },
   "publicRecords": [
@@ -529,6 +529,26 @@
         "bob-menendez",
         "cory-booker",
         "chuck-schumer"
+      ]
+    },
+    {
+      "id": "rjc-2024",
+      "label": "Republican Jewish Coalition — Conservative Pro-Israel",
+      "amount": "~$5.6M contributions (OpenSecrets / FEC 2023–24 window)",
+      "type": "lobby",
+      "date": "2023–2024 cycle",
+      "detail": "The Republican Jewish Coalition (RJC) is the primary Republican-aligned pro-Israel political network, directing multi-million cycle contributions predominantly to Republican candidates who lock in unconditional FMF and wartime orthodoxy. Chapter-14 FEC synthesis cites ~$5.6M scale — the GOP-side counterpart to Democratic DMFI/UDP and progressive J Street poles.",
+      "sourceUrl": "https://www.opensecrets.org/orgs/republican-jewish-coalition/summary?id=D000000304",
+      "children": [
+        "pro-israel-lobby-2024",
+        "preserve-america-adelson-2024"
+      ],
+      "relatedProfileIds": [
+        "donald-trump",
+        "miriam-adelson",
+        "mike-johnson",
+        "ted-cruz",
+        "lindsey-graham"
       ]
     }
   ],

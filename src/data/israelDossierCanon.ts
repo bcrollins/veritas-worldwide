@@ -1246,6 +1246,18 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['pro-israel-lobby-2024', 'aipac-pac-hard-money-2024'],
     relatedProfileIds: ['josh-gottheimer', 'bob-menendez', 'cory-booker', 'chuck-schumer'],
   },
+  {
+    id: 'rjc-2024',
+    label: 'Republican Jewish Coalition — Conservative Pro-Israel',
+    amount: '~$5.6M contributions (OpenSecrets / FEC 2023–24 window)',
+    type: 'lobby',
+    date: '2023–2024 cycle',
+    detail:
+      'The Republican Jewish Coalition (RJC) is the primary Republican-aligned pro-Israel political network, directing multi-million cycle contributions predominantly to Republican candidates who lock in unconditional FMF and wartime orthodoxy. Chapter-14 FEC synthesis cites ~$5.6M scale — the GOP-side counterpart to Democratic DMFI/UDP and progressive J Street poles.',
+    sourceUrl: 'https://www.opensecrets.org/orgs/republican-jewish-coalition/summary?id=D000000304',
+    children: ['pro-israel-lobby-2024', 'preserve-america-adelson-2024'],
+    relatedProfileIds: ['donald-trump', 'miriam-adelson', 'mike-johnson', 'ted-cruz', 'lindsey-graham'],
+  },
 
 ]
 
