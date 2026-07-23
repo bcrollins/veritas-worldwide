@@ -4274,8 +4274,8 @@ export const PROFILES: PowerProfile[] = [
     state: 'NY',
     photoUrl: getProfilePhoto('hillary-clinton'),
     summary:
-      'Former Secretary of State (2009–2013) and New York senator. Long-time Democratic pro-Israel institutional voice; major recipient of pro-Israel and Democratic megadonor support including Haim Saban network adjacency. Primary: OpenSecrets, State Department record, CRS RL33222 multi-administration aid continuity.',
-    tags: ['Secretary of State', 'Senator', 'Pro-Israel', 'Democrat', 'New York', 'FMF Continuity'],
+      'Former Secretary of State (2009–2013) and New York senator. Long-time Democratic pro-Israel institutional voice; major recipient of pro-Israel and Democratic megadonor support including Haim Saban network adjacency. Integrity docket: dual-cited PolitiFact Pants on Fire (Bosnia sniper-fire landing), False (email “no classified material”), and False (“never had a subpoena” for emails — Benghazi Committee had issued a March 2015 email subpoena). Primary: OpenSecrets, State Department record, CRS RL33222, PolitiFact.',
+    tags: ['Secretary of State', 'Senator', 'Pro-Israel', 'Democrat', 'New York', 'FMF Continuity', 'Integrity Docket'],
     career: [
       'First Lady (1993–2001)',
       '2001–2009 — U.S. Senate (NY)',
@@ -4389,6 +4389,24 @@ export const PROFILES: PowerProfile[] = [
         debunkSource: 'PolitiFact — False (July 6, 2016); FBI Director Comey July 5, 2016 statement',
         debunkUrl: 'https://www.politifact.com/truth-o-meter/statements/2016/jul/06/hillary-clinton/fbi-findings-tear-holes-hillary-clintons-email-def/',
         severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'hillary-clinton-never-had-subpoena-2015',
+        statement:
+          '“I’ve never had a subpoena.” (defending private email server deletion choices)',
+        saidAt: 'July 7, 2015',
+        context:
+          'CNN interview with Brianna Keilar — first national media interview of the 2016 campaign cycle — on how she chose which emails to turn over and delete.',
+        whyFalse:
+          'PolitiFact and the House Select Committee on Benghazi: the committee issued a subpoena in March 2015 for Clinton emails related to the 2012 Benghazi attack. The absolute “I’ve never had a subpoena” claim was incorrect at the time of the July interview.',
+        correction:
+          'Clinton had been under a House Benghazi Committee subpoena for Benghazi-related emails since March 2015; the denial was false.',
+        statementSource: 'CNN interview with Brianna Keilar, July 7, 2015',
+        statementUrl: 'https://www.cnn.com/2015/07/07/politics/hillary-clinton-email-interview',
+        debunkSource: 'PolitiFact — Hillary Clinton and the House Republicans battle over subpoenas (July 9, 2015); House Benghazi Committee March 2015 subpoena announcement',
+        debunkUrl: 'https://www.politifact.com/article/2015/jul/09/hillary-clinton-and-house-republicans-battle-over/',
+        severity: 'material',
         tier: 'verified',
       },
     ],

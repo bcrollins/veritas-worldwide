@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:44:08.365Z",
+  "generatedAt": "2026-07-23T09:44:42.351Z",
   "count": 96,
   "profiles": [
     {
@@ -633,7 +633,7 @@
       "name": "Hillary Clinton",
       "title": "Former U.S. Secretary of State; U.S. Senator (D-NY)",
       "category": "politician",
-      "summary": "Former Secretary of State (2009–2013) and New York senator. Long-time Democratic pro-Israel institutional voice; major recipient of pro-Israel and Democratic megadonor support including Haim Saban network adjacency. Primary: OpenSecrets, State Department record, CRS RL33222 multi-administration aid continuity.",
+      "summary": "Former Secretary of State (2009–2013) and New York senator. Long-time Democratic pro-Israel institutional voice; major recipient of pro-Israel and Democratic megadonor support including Haim Saban network adjacency. Integrity docket: dual-cited PolitiFact Pants on Fire (Bosnia sniper-fire landing), False (email “no classified material”), and False (“never had a subpoena” for emails — Benghazi Committee had issued a March 2015 email subpoena). Primary: OpenSecrets, State Department record, CRS RL33222, PolitiFact.",
       "photo": "/profiles/hillary-clinton.jpg",
       "url": "https://veritasworldwide.com/profile/hillary-clinton",
       "bioguideId": null,
@@ -643,10 +643,11 @@
         "Pro-Israel",
         "Democrat",
         "New York",
-        "FMF Continuity"
+        "FMF Continuity",
+        "Integrity Docket"
       ],
-      "integrityScore": 60,
-      "integrityFalsehoods": 2,
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {
