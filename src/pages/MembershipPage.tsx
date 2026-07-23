@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import { MEMBERSHIP, TAGLINE } from '../lib/constants'
 import { trackSupportClick } from '../lib/ga4'
 import { trackCheckoutIntent, withCheckoutAttribution } from '../lib/conversionTracking'
@@ -50,32 +58,87 @@ export default function MembershipPage() {
   useEffect(() => {
     setMetaTags({
       title: 'Membership | Veritas Worldwide',
-      description: 'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.',
+      description:
+        'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.',
       url: `${SITE_URL}/membership`,
       type: 'website',
+      imageAlt: 'Veritas Worldwide membership — fund primary-source journalism',
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      name: 'Membership — Veritas Worldwide',
-      description: 'Support independent, non-partisan investigative journalism.',
-      publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
-      mainEntity: {
-        '@type': 'Product',
-        name: 'Veritas Worldwide Membership',
-        description: 'Fund independent investigative journalism. Access exclusive dossiers, weekly briefings, and annotated source libraries.',
-        brand: { '@type': 'Organization', name: SITE_NAME },
-        offers: [
-          { '@type': 'Offer', name: 'Correspondent (Monthly)', price: '5.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/InStock' },
-          { '@type': 'Offer', name: 'Correspondent (Annual)', price: '48.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/InStock' },
-          { '@type': 'Offer', name: 'Investigator (Monthly)', price: '12.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/InStock' },
-          { '@type': 'Offer', name: 'Investigator (Annual)', price: '120.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/InStock' },
-          { '@type': 'Offer', name: 'Founding Circle (Monthly)', price: '25.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/LimitedAvailability' },
-          { '@type': 'Offer', name: 'Founding Circle (Annual)', price: '240.00', priceCurrency: 'USD', url: `${SITE_URL}/membership`, availability: 'https://schema.org/LimitedAvailability' },
-        ],
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Membership — Veritas Worldwide',
+        description: 'Support independent, non-partisan investigative journalism.',
+        url: `${SITE_URL}/membership`,
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        mainEntity: {
+          '@type': 'Product',
+          name: 'Veritas Worldwide Membership',
+          description:
+            'Fund independent investigative journalism. Access exclusive dossiers, weekly briefings, and annotated source libraries.',
+          brand: { '@type': 'Organization', name: SITE_NAME },
+          offers: [
+            {
+              '@type': 'Offer',
+              name: 'Correspondent (Monthly)',
+              price: '5.00',
+              priceCurrency: 'USD',
+              url: `${SITE_URL}/membership`,
+              availability: 'https://schema.org/InStock',
+            },
+            {
+              '@type': 'Offer',
+              name: 'Correspondent (Annual)',
+              price: '48.00',
+              priceCurrency: 'USD',
+              url: `${SITE_URL}/membership`,
+              availability: 'https://schema.org/InStock',
+            },
+            {
+              '@type': 'Offer',
+              name: 'Investigator (Monthly)',
+              price: '12.00',
+              priceCurrency: 'USD',
+              url: `${SITE_URL}/membership`,
+              availability: 'https://schema.org/InStock',
+            },
+            {
+              '@type': 'Offer',
+              name: 'Investigator (Annual)',
+              price: '120.00',
+              priceCurrency: 'USD',
+              url: `${SITE_URL}/membership`,
+              availability: 'https://schema.org/InStock',
+            },
+            {
+              '@type': 'Offer',
+              name: 'Founding Circle (Monthly)',
+              price: '25.00',
+              priceCurrency: 'USD',
+              url: `${SITE_URL}/membership`,
+              availability: 'https://schema.org/LimitedAvailability',
+            },
+            {
+              '@type': 'Offer',
+              name: 'Founding Circle (Annual)',
+              price: '240.00',
+              priceCurrency: 'USD',
+              url: `${SITE_URL}/membership`,
+              availability: 'https://schema.org/LimitedAvailability',
+            },
+          ],
+        },
       },
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Membership', url: `${SITE_URL}/membership` },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   useEffect(() => {

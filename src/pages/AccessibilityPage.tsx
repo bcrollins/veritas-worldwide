@@ -1,6 +1,14 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, SITE_URL, SITE_NAME, setJsonLd, removeJsonLd } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  SITE_URL,
+  SITE_NAME,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+} from '../lib/seo'
 
 const a11yFeatures = [
   { title: 'Evidence Tier Accessibility', desc: 'Evidence classifications (Verified, Circumstantial, Disputed) use color, text labels, AND icons — never color alone. All three tiers are distinguishable by colorblind readers.' },
@@ -24,18 +32,28 @@ export default function AccessibilityPage() {
   useEffect(() => {
     setMetaTags({
       title: 'Accessibility | Veritas Worldwide',
-      description: 'Accessibility statement for Veritas Worldwide. Our commitment to WCAG 2.1 AA compliance and inclusive design.',
+      description:
+        'Accessibility statement for Veritas Worldwide — WCAG 2.1 AA commitment, inclusive design, and how to report barriers.',
       url: `${SITE_URL}/accessibility`,
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      'name': 'Accessibility Statement',
-      'url': `${SITE_URL}/accessibility`,
-      'isPartOf': { '@type': 'WebSite', 'name': SITE_NAME, 'url': SITE_URL },
-      'publisher': { '@type': 'Organization', 'name': SITE_NAME },
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Accessibility Statement',
+        url: `${SITE_URL}/accessibility`,
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Accessibility', url: `${SITE_URL}/accessibility` },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   return (

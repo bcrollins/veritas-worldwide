@@ -1,5 +1,13 @@
 import { useState, useMemo, useEffect } from 'react'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import CommunityForum from '../components/CommunityForum'
 import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
@@ -542,24 +550,41 @@ export default function DeepStatePage() {
   useEffect(() => {
     setMetaTags({
       title: 'The Deep State — The Epstein Network | Veritas Worldwide',
-      description: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.',
+      description:
+        'Interactive Epstein network dossier: court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.',
       url: `${SITE_URL}/deep-state`,
       type: 'article',
       author: 'Veritas Worldwide',
       section: 'Investigation',
       tags: ['Epstein', 'Deep State', 'Investigation', 'Court Documents', 'Network Analysis'],
+      imageAlt: 'The Deep State — Epstein Network investigation, Veritas Worldwide',
+      publishedTime: '2026-03-24',
+      modifiedTime: new Date().toISOString().split('T')[0],
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: 'The Deep State — The Epstein Network',
-      description: 'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, and government reports.',
-      url: `${SITE_URL}/deep-state`,
-      publisher: { '@type': 'Organization', name: 'Veritas Worldwide', url: SITE_URL },
-      datePublished: '2026-03-24',
-      dateModified: new Date().toISOString().split('T')[0],
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: 'The Deep State — The Epstein Network',
+        description:
+          'An interactive investigative dossier documenting the Epstein network through court filings, sworn testimony, and government reports.',
+        url: `${SITE_URL}/deep-state`,
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        datePublished: '2026-03-24',
+        dateModified: new Date().toISOString().split('T')[0],
+        isAccessibleForFree: true,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/deep-state` },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'The Deep State — Epstein Network', url: `${SITE_URL}/deep-state` },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   const handleSelectPerson = (id: string) => {

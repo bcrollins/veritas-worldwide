@@ -1,6 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import {
+  clearMetaTags,
+  removeJsonLd,
+  setJsonLd,
+  setMetaTags,
+  breadcrumbJsonLd,
+  newsMediaOrganizationJsonLd,
+  SITE_NAME,
+  SITE_URL,
+} from '../lib/seo'
 
 const SHORT_BIO = 'Primary Sources. Public Record. Your Conclusions.'
 
@@ -115,6 +124,7 @@ export default function MediaKitPage() {
         'Download Veritas Worldwide Press logos, social banners, letterhead, and brand guidelines. Primary sources. Public record. Your conclusions.',
       url: `${SITE_URL}/media-kit`,
       image: `${SITE_URL}/brand-kit/05-og/og-media-kit.png`,
+      imageAlt: 'Veritas Worldwide Media Kit — official brand assets',
     })
     setJsonLd([
       {
@@ -128,19 +138,13 @@ export default function MediaKitPage() {
           '@type': 'NewsMediaOrganization',
           name: SITE_NAME,
           url: SITE_URL,
-          logo: {
-            '@type': 'ImageObject',
-            url: `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`,
-            width: 512,
-            height: 512,
-          },
-          contactPoint: {
-            '@type': 'ContactPoint',
-            email: 'rights@veritasworldwide.com',
-            contactType: 'media relations',
-          },
         },
       },
+      newsMediaOrganizationJsonLd(),
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Media Kit', url: `${SITE_URL}/media-kit` },
+      ]),
       {
         '@context': 'https://schema.org',
         '@type': 'DataDownload',

@@ -1,6 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import SharePanel from '../components/SharePanel'
 import NewsletterSignup from '../components/NewsletterSignup'
 import ReadingProgress from '../components/ReadingProgress'
@@ -364,21 +372,34 @@ export default function BibleHistoryPage() {
   useEffect(() => {
     setMetaTags({
       title: 'The Bible: History & Factual Record | Veritas Worldwide',
-      description: 'A primary-source examination of the Bible\'s historical claims — archaeological confirmations, manuscript evidence, and scholarly consensus. Every claim classified by evidence tier.',
+      description:
+        "Primary-source examination of the Bible's historical claims — archaeology, manuscripts, and scholarly consensus. Every claim labeled by evidence tier.",
       url: `${SITE_URL}/bible`,
       type: 'article',
+      imageAlt: 'The Bible: History & Factual Record — Veritas Worldwide',
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      'headline': 'The Bible: History & Factual Record',
-      'description': 'A primary-source examination of the Bible\'s historical claims — archaeological confirmations, manuscript evidence, and scholarly consensus.',
-      'url': `${SITE_URL}/bible`,
-      'isPartOf': { '@type': 'WebSite', 'name': `The Record — ${SITE_NAME}`, 'url': SITE_URL },
-      'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
-      'author': { '@type': 'Organization', 'name': SITE_NAME },
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: 'The Bible: History & Factual Record',
+        description:
+          "A primary-source examination of the Bible's historical claims — archaeological confirmations, manuscript evidence, and scholarly consensus.",
+        url: `${SITE_URL}/bible`,
+        isPartOf: { '@type': 'WebSite', name: `The Record — ${SITE_NAME}`, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        isAccessibleForFree: true,
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Bible History', url: `${SITE_URL}/bible` },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [])
 
   return (
