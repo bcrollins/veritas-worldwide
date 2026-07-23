@@ -160,3 +160,11 @@ Live tip lineage verified with:
 - Known content 200 + indexable titles; admin/success/search/bookmarks/bernie **noindex**
 - Pure: `verify:seo-meta`, `verify:soft-404-gates`
 - Live: `verify:live-bot-noindex`, `verify:live-anonymity`
+
+
+### wave29 soft-404 production lock (2026-07-23)
+
+- ROC corpus **363** claims live; soft anonymity floor **363**
+- Googlebot soft-404 matrix still green (junk dynamic prefixes → 404+noindex)
+- Known content 200+index; transactional/admin/search/bookmarks/bernie noindex
+- Pure + live gates: `verify:seo-meta`, `verify:soft-404-gates`, `verify:live-bot-noindex`, `verify:live-anonymity`
