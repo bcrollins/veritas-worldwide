@@ -312,3 +312,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | desal plant · Sa’ad safe room · school-bus attacks |
 | Pure | visual + israel-dossier PASS |
 
+
+## Interval densify — tip post-1842 market / Ofakim safe-room / vineyard arson
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza nasal-cannula/sterile-gloves/oxytocin/MgSO4 · hostage haul-rubble/synagogue-vigils/mud-kneeling/empty-stroller · WB cucumber-mulch/midwife-clinic/herb-seed-trays/parsley |
+| VI | market strikes · Ofakim safe room · vineyard arson |
+| Pure | visual + israel-dossier PASS |
+
