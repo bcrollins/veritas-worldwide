@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:37:54.906Z",
+  "generatedAt": "2026-07-23T09:39:30.644Z",
   "count": 96,
   "profiles": [
     {
@@ -601,8 +601,8 @@
         "AIPAC",
         "Integrity Docket"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {

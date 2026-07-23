@@ -4004,6 +4004,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'harris-middle-class-tax-hike-refund-2019',
+        statement:
+          'Cited a $170 drop in the average tax refund to call the 2017 Tax Cuts and Jobs Act “a middle-class tax hike to line the pockets of already wealthy corporations and the 1%.”',
+        saidAt: 'February 11, 2019',
+        context:
+          'Twitter post during early 2020 presidential primary, reacting to preliminary IRS refund statistics reported by the Washington Post.',
+        whyFalse:
+          'FactCheck.org: refund size is not tax liability. Preliminary early-season refund data covered only ~4% of prior-year refunds. Tax Policy Center analysis projected ~91% of middle-income taxpayers would get a 2018 tax cut (~$930 average) under TCJA — not a middle-class tax hike. Harris’s “middle-class tax hike” framing from refund averages misused IRS data.',
+        correction:
+          'Smaller average refunds (especially early-season incomplete data) do not equal higher tax liability; most middle-income taxpayers were projected to receive a net tax cut in 2018 under TCJA.',
+        statementSource: 'Kamala Harris tweet, Feb. 11, 2019',
+        statementUrl: 'https://twitter.com/KamalaHarris/status/1095052105327484931',
+        debunkSource: 'FactCheck.org — Kamala Harris Mistweet on Tax Hike (Feb. 13, 2019); Tax Policy Center TCJA distribution',
+        debunkUrl: 'https://www.factcheck.org/2019/02/kamala-harris-mistweet-on-tax-hike/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Congress.gov bioguide (H001075)', url: 'https://www.congress.gov/member/kamala-harris/H001075' },

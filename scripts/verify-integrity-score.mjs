@@ -162,13 +162,14 @@ for (const f of (byronP.documentedFalsehoods || []).filter((x) => x.tier === 've
 
 // Kamala Harris dual-cited integrity deep-dive
 const kamala = scores['kamala-harris'];
-if (!kamala || kamala.n < 2) throw new Error('kamala-harris needs ≥2 verified falsehoods, got ' + (kamala?.n ?? 0));
-if (kamala.score > 75) throw new Error('kamala-harris score expected ≤75 after deep dive, got ' + kamala.score);
+if (!kamala || kamala.n < 3) throw new Error('kamala-harris needs ≥3 verified falsehoods, got ' + (kamala?.n ?? 0));
+if (kamala.score > 60) throw new Error('kamala-harris score expected ≤60 after densify, got ' + kamala.score);
 const kamalaP = getProfileBySlug('kamala-harris');
 const kamalaIds = new Set((kamalaP.documentedFalsehoods || []).map((f) => f.id));
 for (const id of [
   'harris-pregnancy-monitoring-project-2025-2024',
   'harris-no-troops-combat-zone-debate-2024',
+  'harris-middle-class-tax-hike-refund-2019',
 ]) {
   if (!kamalaIds.has(id)) throw new Error('kamala-harris missing docket id: ' + id);
 }
