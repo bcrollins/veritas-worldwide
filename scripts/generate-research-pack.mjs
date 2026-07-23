@@ -17,6 +17,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(__dirname, '..')
 const outZip = path.join(root, 'public', 'research-pack.zip')
 const outManifest = path.join(root, 'public', 'research-pack-manifest.json')
+// Production serves express.static(dist). postbuild runs after Vite copies public→dist,
+// so we must also write into dist/ or Railway ships 404 for /research-pack.zip.
+const distDir = path.join(root, 'dist')
 const MAX_ZIP_BYTES = 8 * 1024 * 1024
 
 /** @type {{ disk: string, archive: string, required?: boolean }[]} */
@@ -177,7 +180,6 @@ if (zipBuf.length > MAX_ZIP_BYTES) {
   process.exit(1)
 }
 
-fs.writeFileSync(outZip, zipBuf)
 const sha256 = crypto.createHash('sha256').update(zipBuf).digest('hex')
 const manifest = {
   generatedAt: new Date().toISOString(),
@@ -190,8 +192,22 @@ const manifest = {
   files: manifestFiles,
   note: 'Offline research pack of public machine corpora. Entity-only attribution.',
 }
-fs.writeFileSync(outManifest, `${JSON.stringify(manifest, null, 2)}\n`)
+const manifestJson = `${JSON.stringify(manifest, null, 2)}\n`
+
+function writePair(dir) {
+  fs.mkdirSync(dir, { recursive: true })
+  fs.writeFileSync(path.join(dir, 'research-pack.zip'), zipBuf)
+  fs.writeFileSync(path.join(dir, 'research-pack-manifest.json'), manifestJson)
+}
+
+writePair(path.join(root, 'public'))
+let wroteDist = false
+if (fs.existsSync(distDir)) {
+  writePair(distDir)
+  wroteDist = true
+}
 
 console.log(
-  `[research-pack] PASS zip=${(zipBuf.length / 1024).toFixed(1)}KiB files=${files.length} sha256=${sha256.slice(0, 12)}…`,
+  `[research-pack] PASS zip=${(zipBuf.length / 1024).toFixed(1)}KiB files=${files.length} sha256=${sha256.slice(0, 12)}…` +
+    (wroteDist ? ' + dist/' : ' (dist/ absent — public only)'),
 )

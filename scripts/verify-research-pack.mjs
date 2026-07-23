@@ -24,10 +24,21 @@ function read(rel) {
 const gen = read('scripts/generate-research-pack.mjs')
 assert(gen.includes('research-pack.zip'), 'generator must write research-pack.zip')
 assert(gen.includes('MAX_ZIP_BYTES'), 'size budget required')
+// Must dual-write public + dist so Railway express.static(dist) serves the pack after postbuild.
+assert(
+  gen.includes("path.join(root, 'dist')") || gen.includes('distDir') || gen.includes("writePair(distDir)"),
+  'generator must dual-write dist/ (postbuild runs after Vite public→dist copy)',
+)
+assert(gen.includes('writePair') || gen.includes('dist/research-pack'), 'dist dual-write helper missing')
 assert(!/brollins|brandon|@gmail\.com/i.test(gen), 'identity leak in generator')
 
 const pkg = read('package.json')
 assert(pkg.includes('generate-research-pack.mjs'), 'postbuild/generate script wiring missing')
+assert(
+  /export-evidence-taxonomy\.mjs && node scripts\/generate-research-pack\.mjs/.test(pkg) ||
+    pkg.includes('generate-research-pack.mjs && node scripts/prerender'),
+  'postbuild must run generate-research-pack after corpus exports and before/with prerender',
+)
 
 const hub = read('src/pages/ResearcherHubPage.tsx')
 assert(hub.includes('/research-pack.zip') || hub.includes('research-pack'), 'researcher hub must link pack')
@@ -39,6 +50,11 @@ const server = read('server.js')
 assert(
   server.includes('research-pack') || server.includes("name: 'research-pack'"),
   'server should rate-limit research-pack download',
+)
+// Prefer serving zip with short cache (not immutable year) — optional soft check on setHeaders corpus block
+assert(
+  server.includes("name: 'research-pack'") && server.includes('/research-pack.zip'),
+  'research-pack.zip rateLimit middleware must be registered',
 )
 
 // If pack already generated, validate shape

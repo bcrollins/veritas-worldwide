@@ -2023,6 +2023,17 @@ app.use(express.static(path.join(__dirname, 'dist'), {
     ) {
       res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate')
     }
+    // Research pack zip/manifest rebuild every deploy — never immutable year cache
+    if (
+      filePath.endsWith(`${path.sep}research-pack.zip`) ||
+      filePath.endsWith(`${path.sep}research-pack-manifest.json`)
+    ) {
+      res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate')
+      if (filePath.endsWith('.zip')) {
+        res.setHeader('Content-Type', 'application/zip')
+        res.setHeader('Content-Disposition', 'attachment; filename="veritas-research-pack.zip"')
+      }
+    }
     // Stable-name PDFs are rebuilt in place each deploy — never mark immutable.
     if (filePath.endsWith('.pdf')) {
       res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate')
