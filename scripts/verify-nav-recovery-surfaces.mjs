@@ -1013,4 +1013,9 @@ assert(relatedTouch.includes('min-h-[44px]'), 'RelatedHubs min-h 44 unique final
 const relatedNoPrint = read('src/components/RelatedHubs.tsx')
 assert(relatedNoPrint.includes('no-print'), 'no-print RelatedHubs unique final')
 
+
+// RelatedHubs aria-label unique final
+const relatedAriaFinal = read('src/components/RelatedHubs.tsx')
+assert(relatedAriaFinal.includes('Related hubs'), 'RelatedHubs aria Related hubs unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
