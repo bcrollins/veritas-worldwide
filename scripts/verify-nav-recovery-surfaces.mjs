@@ -38,6 +38,8 @@ const surfaces = [
   ['src/App.tsx', 'mobile-tab-bar'],
   ['src/App.tsx', 'primaryLinks'],
   ['src/App.tsx', 'safe-area-inset-bottom'],
+  ['src/App.tsx', 'drawerBrowseLinks'],
+  ['src/App.tsx', 'drawerResearchLinks'],
   ['src/components/StickyMembershipBar.tsx', 'sticky-membership-bar'],
   ['src/components/StickyMembershipBar.tsx', '3.75rem'],
 ]
