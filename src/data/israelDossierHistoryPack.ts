@@ -5355,6 +5355,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'israel-thai-nepali-foreign-workers-killed-pattern-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'October 7 Thai & Nepali Foreign Workers Killed/Abducted Pattern (2023)',
+    date: 'October 7, 2023 (foreign-worker cohort)',
+    location: 'Israeli agricultural communities and worksites',
+    summary:
+      'Israeli government, Thai and Nepali government statements, and multi-source reporting document large numbers of Thai and Nepali agricultural and care workers killed or abducted during the October 7 multi-site assault — a civilian-harm pattern among non-Israeli foreign workers required for non-selective documentation.',
+    evidence:
+      'Israeli government fatality and hostage lists, multi-source Thai/Nepali government statements, and multi-outlet coverage establish multi-source foreign-worker civilian deaths and abductions. Exact nationality tallies refine over time; multi-source large-scale foreign-worker civilian harm is the claim.',
+    sources: [
+      { label: 'Israeli government fatality / hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet Thai / Nepali worker October 7 coverage', url: 'https://apnews.com' },
+      { label: 'Thai / Nepali government public statements (multi-outlet)', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-orphaned-care-system-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Orphaned Children Care-System Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (orphan-care cohort)',
+    location: 'Gaza Strip shelters, hospitals, and extended-family households',
+    summary:
+      'UNICEF, UNRWA, and multi-source reporting document large numbers of children orphaned or separated from caregivers with collapsed formal care systems — forcing ad-hoc shelter and extended-family arrangements under bombardment. Pattern card for orphan-care system failure distinct from the aggregate orphan-crisis and children-killed cards.',
+    evidence:
+      'UNICEF child-protection materials, UNRWA shelter notes, and multi-outlet orphaned-children coverage establish multi-source care-system collapse for orphaned children. Exact orphan counts evolve; multi-source wartime orphan-care failure is the claim.',
+    sources: [
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'UNRWA shelter / protection materials', url: 'https://www.unrwa.org' },
+      { label: 'Multi-outlet Gaza orphaned children coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-evacuated-northern-business-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['iron-dome'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Northern Evacuated-Community Economic Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (northern-economy cohort)',
+    location: 'Northern Israeli evacuated towns and agricultural communities',
+    summary:
+      'Israeli government and multi-source reporting document multi-month economic collapse in evacuated northern communities — closed schools, shuttered businesses, and abandoned farms under Hezbollah fire — a civilian livelihood harm pattern distinct from the northern-evacuation and border-town rocket cards.',
+    evidence:
+      'Israeli government evacuation and compensation materials, multi-outlet northern-economy coverage, and municipal public statements establish multi-source evacuated-community economic collapse. Exact business-closure counts evolve; multi-source wartime northern livelihood collapse is the claim.',
+    sources: [
+      { label: 'Israeli government northern front materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet northern Israel economy coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet municipal reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -8137,6 +8218,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['aid', 'killings', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-oct7-foreign-workers-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'October 7 Thai & Nepali Foreign Workers Pattern',
+    description: 'Multi-source documentation of Thai and Nepali agricultural workers killed or abducted on October 7.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-thai-nepali-foreign-workers-killed-pattern-2023',
+      'oct7-hamas-attack-2023',
+      'oct7-dual-national-civilians-killed-pattern-2023',
+    ],
+    tags: ['foreign-workers', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-gaza-orphan-care-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Orphaned Children Care-System Collapse Pattern',
+    description: 'UNICEF/UNRWA multi-source documentation of orphaned and separated children under collapsed formal care systems.',
+    source: 'UNICEF / UNRWA / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-orphaned-care-system-pattern-2023-2025',
+      'gaza-orphan-crisis-pattern-2023-2025',
+      'gaza-children-killed-pattern-2023-2025',
+    ],
+    tags: ['orphans', 'children', 'care', 'gaza'],
+  },
+
+  {
+    id: 'tl-israel-northern-economy-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Northern Evacuated-Community Economic Collapse Pattern',
+    description: 'Multi-source documentation of multi-month economic collapse in evacuated northern Israeli communities.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-evacuated-northern-business-collapse-pattern-2023-2025',
+      'israel-northern-evacuation-pattern-2023-2025',
+      'israel-northern-border-town-rocket-pattern-2023-2025',
+    ],
+    tags: ['economy', 'evacuation', 'civilians', 'israel'],
+  },
+
+
 
 
 
