@@ -3411,6 +3411,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'west-bank-home-demolitions-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Home Demolitions & Displacement Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (demolitions cohort)',
+    location: 'West Bank / East Jerusalem',
+    summary:
+      'OCHA, B'Tselem, and multi-source reporting document elevated home demolitions and displacement of Palestinian families in the West Bank after October 7 — including punitive and administrative demolitions affecting children. Pattern card for shelter destruction outside Gaza, distinct from settlement-expansion and settler-violence cards.',
+    evidence:
+      'OCHA demolition databases, B'Tselem field documentation, and multi-outlet coverage establish multi-source elevated demolitions. Exact structure counts evolve; multi-source wartime demolition surge is the claim.',
+    sources: [
+      { label: 'OCHA demolition / displacement materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem home demolitions materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet West Bank demolition coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4968,6 +4995,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['livelihood', 'food', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-wb-demolitions-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Home Demolitions & Displacement Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated home demolitions and family displacement after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-home-demolitions-pattern-2023-2025',
+      'west-bank-settlement-surge-2023-2025',
+      'west-bank-children-killed-pattern-2023-2025',
+    ],
+    tags: ['demolition', 'displacement', 'children', 'west-bank'],
+  },
+
 
 
 
