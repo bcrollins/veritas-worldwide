@@ -2114,6 +2114,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 30 },
   },
 
+  {
+    id: 'west-bank-settlement-surge-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: ['annual-mou', 'pro-israel-lobby-2024'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settlement Expansion Surge (2023–2025)',
+    date: '2023–2025',
+    location: 'West Bank / East Jerusalem',
+    summary:
+      'Multi-source Peace Now, UN, and Israeli government data document accelerated settlement unit approvals, outpost legalization tracks, and settler violence spikes during and after October 7. Distinct from the longer-run settlement-enterprise pattern card — this isolates the post–Oct 7 surge window.',
+    evidence:
+      'Peace Now settlement watch tallies, UN OCHA settler-violence incident counts, and multi-source reporting on cabinet legalization decisions establish the surge. Settlement legality under international law remains governed by UNSC 2334 and ICJ advisory opinions already carded.',
+    sources: [
+      { label: 'Peace Now settlement reports', url: 'https://peacenow.org.il' },
+      { label: 'UN OCHA settler violence updates', url: 'https://www.ochaopt.org' },
+      { label: 'UNSC 2334 / ICJ occupation opinion context', url: 'https://digitallibrary.un.org/record/853516' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UN OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -2961,6 +2989,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['oct7-hostages-held-pattern', 'oct7-hamas-attack-2023', 'nuseirat-rescue-2024'],
     tags: ['civilians', 'children', 'hostages', 'terrorism'],
+  },
+
+  {
+    id: 'tl-settlement-surge-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settlement Surge — Post–Oct 7 Window',
+    description: 'Accelerated settlement approvals and settler violence spike; multi-source Peace Now/OCHA tallies.',
+    source: 'Peace Now / OCHA',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: ['west-bank-settlement-surge-2023-2025', 'settlement-enterprise-pattern', 'settler-violence-pattern-2021-2023'],
+    tags: ['settlements', 'west-bank', 'civilians'],
   },
 
 ]
