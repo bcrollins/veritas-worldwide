@@ -2126,6 +2126,85 @@ app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '
   }
 })
 
+/** Retention: purge OSINT order PII older than N days after delivery (default 90). */
+const OSINT_RETENTION_DAYS = Number(process.env.OSINT_RETENTION_DAYS || 90)
+
+function redactOsintOrder(record) {
+  if (!record || typeof record !== 'object') return null
+  return {
+    orderId: record.orderId || '',
+    createdAt: record.createdAt || '',
+    status: record.status || '',
+    priceUsd: record.priceUsd || 499,
+    lawfulPurpose: record.lawfulPurpose || '',
+    clientEmailDomain:
+      typeof record.clientEmail === 'string' && record.clientEmail.includes('@')
+        ? record.clientEmail.split('@')[1]
+        : '',
+    subjectInitials: typeof record.subjectFullName === 'string'
+      ? record.subjectFullName
+          .split(/\s+/)
+          .filter(Boolean)
+          .map((p) => p[0]?.toUpperCase() || '')
+          .join('')
+          .slice(0, 4)
+      : '',
+    hasNotes: Boolean(record.notes || record.purposeDetail || record.knownLinks),
+  }
+}
+
+function purgeExpiredOsintOrders({ dryRun = false } = {}) {
+  ensureOsintOrdersFile()
+  if (!fs.existsSync(OSINT_ORDERS_PATH)) {
+    return { scanned: 0, kept: 0, purged: 0, retentionDays: OSINT_RETENTION_DAYS }
+  }
+  const raw = fs.readFileSync(OSINT_ORDERS_PATH, 'utf8')
+  const lines = raw.split('\n').filter((line) => line.trim().length > 0)
+  const cutoff = Date.now() - OSINT_RETENTION_DAYS * 24 * 60 * 60 * 1000
+  const kept = []
+  let purged = 0
+  for (const line of lines) {
+    try {
+      const rec = JSON.parse(line)
+      const ts = Date.parse(rec.createdAt || '') || 0
+      const status = String(rec.status || '').toLowerCase()
+      const isTerminal =
+        status.includes('delivered') ||
+        status.includes('complete') ||
+        status.includes('closed') ||
+        status.includes('refund')
+      if (isTerminal && ts > 0 && ts < cutoff) {
+        purged += 1
+        continue
+      }
+      if (status.includes('pending') && ts > 0 && ts < cutoff) {
+        purged += 1
+        continue
+      }
+      kept.push(line)
+    } catch {
+      purged += 1
+    }
+  }
+  if (!dryRun && purged > 0) {
+    fs.writeFileSync(OSINT_ORDERS_PATH, kept.length ? `${kept.join('\n')}\n` : '', 'utf8')
+  }
+  return {
+    scanned: lines.length,
+    kept: kept.length,
+    purged,
+    retentionDays: OSINT_RETENTION_DAYS,
+    dryRun: Boolean(dryRun),
+  }
+}
+
+try {
+  const summary = purgeExpiredOsintOrders({ dryRun: false })
+  if (summary.purged > 0) console.log('[osint] retention purge', summary)
+} catch (err) {
+  console.warn('[osint] retention purge skipped', err?.message || err)
+}
+
 app.get('/api/services/comprehensive-profile/health', (_req, res) => {
   const stripeConfigured = Boolean(process.env.STRIPE_SECRET_KEY)
   const linkConfigured = Boolean(
@@ -2149,7 +2228,62 @@ app.get('/api/services/comprehensive-profile/health', (_req, res) => {
     linkConfigured,
     orderIntakeCount,
     rateLimitPerMinute: 8,
+    retentionDays: OSINT_RETENTION_DAYS,
   })
+})
+
+app.get('/api/admin/osint-orders', (req, res) => {
+  const expected = process.env.OSINT_OPS_TOKEN || process.env.ADMIN_OPS_TOKEN || ''
+  if (!expected) {
+    return res.status(503).json({ error: 'OSINT ops token not configured' })
+  }
+  const auth = String(req.get('authorization') || '')
+  const bearer = auth.toLowerCase().startsWith('bearer ') ? auth.slice(7).trim() : ''
+  const qToken = typeof req.query.token === 'string' ? req.query.token : ''
+  if (bearer !== expected && qToken !== expected) {
+    return res.status(401).json({ error: 'Unauthorized' })
+  }
+  const limit = Math.min(100, Math.max(1, Number(req.query.limit) || 25))
+  ensureOsintOrdersFile()
+  let orders = []
+  try {
+    const raw = fs.readFileSync(OSINT_ORDERS_PATH, 'utf8')
+    const lines = raw.split('\n').filter((line) => line.trim().length > 0)
+    const tail = lines.slice(-limit)
+    orders = tail
+      .map((line) => {
+        try {
+          return redactOsintOrder(JSON.parse(line))
+        } catch {
+          return null
+        }
+      })
+      .filter(Boolean)
+      .reverse()
+  } catch {
+    orders = []
+  }
+  res.setHeader('Cache-Control', 'no-store')
+  res.json({ count: orders.length, retentionDays: OSINT_RETENTION_DAYS, orders })
+})
+
+app.post('/api/admin/osint-orders/purge', express.json({ limit: '4kb' }), (req, res) => {
+  const expected = process.env.OSINT_OPS_TOKEN || process.env.ADMIN_OPS_TOKEN || ''
+  if (!expected) {
+    return res.status(503).json({ error: 'OSINT ops token not configured' })
+  }
+  const auth = String(req.get('authorization') || '')
+  const bearer = auth.toLowerCase().startsWith('bearer ') ? auth.slice(7).trim() : ''
+  if (bearer !== expected) {
+    return res.status(401).json({ error: 'Unauthorized' })
+  }
+  try {
+    const summary = purgeExpiredOsintOrders({ dryRun: Boolean(req.body?.dryRun) })
+    res.setHeader('Cache-Control', 'no-store')
+    return res.json(summary)
+  } catch (err) {
+    return res.status(500).json({ error: err?.message || 'purge failed' })
+  }
 })
 
 
