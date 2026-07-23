@@ -372,6 +372,15 @@ assert(osintIaEnd.includes('RelatedHubs') && osintIaEnd.includes('osint-success-
 assert(osintIaEnd.includes('OSINT_SUCCESS_HUBS'), 'OSINT_SUCCESS_HUBS IA')
 assert(osintIaEnd.includes('osint-success-research-pack'), 'osint pack IA')
 
+
+// Search dual RelatedHubs mounts IA end
+const searchDualIa = fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), 'utf8')
+assert((searchDualIa.match(/<RelatedHubs\b/g) || []).length >= 2, 'Search dual RelatedHubs IA end')
+assert(searchDualIa.includes('SEARCH_RECOVERY_HUBS'), 'SEARCH_RECOVERY_HUBS IA end')
+const bmDualIa = fs.readFileSync(path.join(root, 'src/pages/BookmarksPage.tsx'), 'utf8')
+assert((bmDualIa.match(/<RelatedHubs\b/g) || []).length >= 2, 'Bookmarks dual RelatedHubs IA end')
+assert(bmDualIa.includes('BOOKMARKS_HUBS'), 'BOOKMARKS_HUBS IA end')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
