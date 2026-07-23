@@ -2006,6 +2006,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 10000 },
   },
 
+  {
+    id: 'israel-lebanon-ground-offensive-2024',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['fmf-weapons', 'artillery-use', 'oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israel–Hezbollah Ground Offensive in Southern Lebanon (Sept–Oct 2024)',
+    date: 'September–October 2024',
+    location: 'Southern Lebanon',
+    summary:
+      'Following the pager explosions and Nasrallah strike, Israel launched ground operations into southern Lebanon against Hezbollah infrastructure. Multi-source UN and Lebanese reporting documents large-scale displacement of Lebanese civilians and substantial civilian casualties alongside combatant targets.',
+    evidence:
+      'UNHCR/IOM displacement figures, Lebanese health ministry multi-source casualty reporting, and international press establish mass civilian displacement and harm. Combatant/civilian ratios remain contested; multi-source civilian displacement and casualty floors are the claim.',
+    sources: [
+      { label: 'UNHCR / UN Lebanon materials', url: 'https://www.unhcr.org' },
+      { label: 'OHCHR Lebanon materials', url: 'https://www.ohchr.org' },
+      { label: 'Multi-outlet southern Lebanon offensive coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UN public materials', url: 'https://www.un.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 1000 },
+  },
+
+
 
 
 
@@ -2797,6 +2825,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-ground-invasion-oct-2023', 'oct7-hamas-attack-2023'],
     tags: ['civilians', 'children', 'gaza', 'invasion'],
+  },
+
+  {
+    id: 'tl-lebanon-ground-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Israel Ground Offensive — Southern Lebanon',
+    description: 'Ground operations against Hezbollah; multi-source mass Lebanese civilian displacement and casualties.',
+    source: 'UNHCR / multi-outlet',
+    sourceUrl: 'https://www.unhcr.org',
+    tier: 'verified',
+    relatedIncidentIds: ['israel-lebanon-ground-offensive-2024', 'nasrallah-beirut-strike-2024', 'lebanon-pager-explosions-2024'],
+    tags: ['civilians', 'children', 'lebanon', 'hezbollah'],
   },
 
 ]
