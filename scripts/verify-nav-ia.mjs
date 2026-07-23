@@ -342,6 +342,13 @@ const relatedIaTone = fs.readFileSync(path.join(root, 'src/components/RelatedHub
 assert(relatedIaTone.includes("'dark'") || relatedIaTone.includes('"dark"'), 'RelatedHubs dark tone IA')
 assert(relatedIaTone.includes('excludeTo'), 'RelatedHubs excludeTo IA')
 
+
+// MediaKit primary RelatedHubs IA + Home underfold IA
+assert(fs.readFileSync(path.join(root, 'src/pages/MediaKitPage.tsx'), 'utf8').includes('media-kit-primary-hubs'), 'MediaKit primary RelatedHubs IA')
+assert(fs.readFileSync(path.join(root, 'src/pages/MediaKitPage.tsx'), 'utf8').includes('MEDIA_KIT_PRIMARY_HUBS'), 'MEDIA_KIT_PRIMARY_HUBS IA')
+assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'Home underfold IA')
+assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-hub-cta-row'), 'Home hero CTA IA')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
