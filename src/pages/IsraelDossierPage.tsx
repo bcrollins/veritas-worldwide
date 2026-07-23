@@ -1092,7 +1092,37 @@ export default function IsraelDossierPage() {
           answer:
             'Editorial rules require documented civilian-targeting and war-crimes records for all parties with multi-source evidence, including October 7 attacks and hostage-taking, alongside Gaza wartime civilian-harm patterns. Ethnicity or religion is never treated as evidence.',
         },
+        {
+          question: 'Where is the video and visual investigations evidence?',
+          answer:
+            'The Visual Investigations section packages multi-source video, photo-essay, and forensic links for civilian-harm cases (including Gaza wartime patterns, West Bank settler violence, and October 7 massacres). Machine index: /israel-dossier/visual-investigations.json. Dual-cite floors apply; contested intent stays contested.',
+        },
       ]),
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Dataset',
+        name: 'Israel Dossier — Visual Investigations index',
+        description:
+          'Machine-readable index of multi-source video/photo/investigation packages documenting civilian harm. Dual-cite floors. Multi-party documentation. Publisher: Veritas Worldwide only.',
+        url: `${SITE_URL}/israel-dossier#visual-investigations`,
+        identifier: `${SITE_URL}/israel-dossier/visual-investigations.json`,
+        isAccessibleForFree: true,
+        creator: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        distribution: [
+          {
+            '@type': 'DataDownload',
+            encodingFormat: 'application/json',
+            contentUrl: `${SITE_URL}/israel-dossier/visual-investigations.json`,
+          },
+          {
+            '@type': 'DataDownload',
+            encodingFormat: 'application/json',
+            contentUrl: `${SITE_URL}/israel-dossier/corpus.json`,
+          },
+        ],
+        license: `${SITE_URL}/methodology`,
+      },
     ])
     return () => { clearMetaTags(); removeJsonLd() }
   }, [])
