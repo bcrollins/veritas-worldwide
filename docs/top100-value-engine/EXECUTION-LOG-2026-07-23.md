@@ -400,3 +400,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | school playground · Modi’in safe room · grape packing-house arson |
 | Pure | visual + israel-dossier PASS |
 
+
+## Interval densify — tip post-2026 RSI/airway densify + church shelter / Rishon / almond arson
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza rocuronium/succinylcholine/epinephrine/naloxone · hostage haul-equipment/backpack-marches/silence-only/border-fence · WB asparagus/cold-chain/lemongrass/leek-seedlings |
+| VI | church shelter · Rishon LeZion · almond-orchard arson |
+| Pure | visual + israel-dossier PASS |
+| Live | catching toward tip (1994→2011+) |
+
