@@ -839,6 +839,7 @@ app.use('/veritas-institute-field-manual.pdf', rateLimit({ name: 'field-manual-p
 app.use('/api/user/change-password', rateLimit({ name: 'change-password', windowMs: 60_000, max: 10 }))
 // Authenticated mutation endpoints — generous for UX, hard ceiling against abuse.
 app.use('/api/user/bookmarks', rateLimit({ name: 'bookmarks', windowMs: 60_000, max: 60 }))
+app.use('/api/services/comprehensive-profile', rateLimit({ name: 'osint-checkout', windowMs: 60_000, max: 8 }))
 app.use('/api/user/progress', rateLimit({ name: 'progress', windowMs: 60_000, max: 60 }))
 app.use('/api/user/preferences', rateLimit({ name: 'preferences', windowMs: 60_000, max: 30 }))
 app.use('/api/user/profile', rateLimit({ name: 'profile', windowMs: 60_000, max: 20 }))
