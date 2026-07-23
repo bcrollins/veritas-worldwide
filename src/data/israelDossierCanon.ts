@@ -1311,6 +1311,19 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     relatedProfileIds: ['joe-biden', 'barack-obama', 'chuck-schumer', 'benjamin-netanyahu'],
   },
 
+  {
+    id: 'us-diplomatic-cover-unsc-vetoes',
+    label: 'U.S. UNSC Veto / Diplomatic Cover Pattern',
+    amount: 'decades of vetoes + abstentions (structural cover)',
+    type: 'legislation',
+    date: '1972–ongoing (post-Oct 7 veto cluster)',
+    detail:
+      'The United States has cast dozens of Security Council vetoes shielding Israel from binding censure, plus selective abstentions (e.g., 2334, 2728). Post–October 7 vetoes of ceasefire drafts document continued diplomatic cover concurrent with FMF/weapons enablement. Distinct from cash aid — this is diplomatic-legal enablement of operational freedom.',
+    sourceUrl: 'https://www.un.org/securitycouncil/',
+    children: ['hr815', 'annual-mou', 'oct7-emergency-arms-surge'],
+    relatedProfileIds: ['joe-biden', 'donald-trump', 'barack-obama', 'antony-blinken', 'chuck-schumer'],
+  },
+
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [
@@ -1976,6 +1989,18 @@ export const ISRAEL_DOSSIER_LEGAL_CASES: DossierLegalCase[] = [
     significance:
       'Records a U.S.-backed Security Council ceasefire architecture after months of veto politics — distinct from earlier 2712/2728 humanitarian-pause and Ramadan texts.',
     sourceUrl: 'https://digitallibrary.un.org',
+    status: 'decided',
+  },
+
+  {
+    title: 'U.S. UNSC Veto Cluster — Gaza Ceasefire Drafts (2023–2024)',
+    court: 'UN Security Council',
+    date: 'October 2023 – 2024 (multiple draft vetoes)',
+    ruling:
+      'The United States vetoed multiple Security Council draft resolutions calling for immediate ceasefires or stronger humanitarian language, while allowing limited texts (e.g., 2712, 2728 with abstention, 2735) to pass. Pattern card for the veto architecture of diplomatic cover during the Gaza war.',
+    significance:
+      'Documents structural diplomatic enablement via veto power parallel to FMF/weapons pipelines — the UN voting map of isolation vs cover.',
+    sourceUrl: 'https://www.un.org/securitycouncil/',
     status: 'decided',
   },
 

@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:16:46.936Z",
+  "generatedAt": "2026-07-23T08:17:37.399Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 105,
     "timelineEvents": 93,
     "actors": 47,
-    "moneyTrailNodes": 30,
+    "moneyTrailNodes": 31,
     "historicalWarCrimesPack": 91,
-    "legalCases": 19,
+    "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
       "mandate-1948": 3,
@@ -31,7 +31,7 @@
       "israeli-leadership": 2
     },
     "moneyTrailByType": {
-      "legislation": 8,
+      "legislation": 9,
       "delivery": 4,
       "weapon": 7,
       "impact": 3,
@@ -635,6 +635,27 @@
         "barack-obama",
         "chuck-schumer",
         "benjamin-netanyahu"
+      ]
+    },
+    {
+      "id": "us-diplomatic-cover-unsc-vetoes",
+      "label": "U.S. UNSC Veto / Diplomatic Cover Pattern",
+      "amount": "decades of vetoes + abstentions (structural cover)",
+      "type": "legislation",
+      "date": "1972–ongoing (post-Oct 7 veto cluster)",
+      "detail": "The United States has cast dozens of Security Council vetoes shielding Israel from binding censure, plus selective abstentions (e.g., 2334, 2728). Post–October 7 vetoes of ceasefire drafts document continued diplomatic cover concurrent with FMF/weapons enablement. Distinct from cash aid — this is diplomatic-legal enablement of operational freedom.",
+      "sourceUrl": "https://www.un.org/securitycouncil/",
+      "children": [
+        "hr815",
+        "annual-mou",
+        "oct7-emergency-arms-surge"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
+        "donald-trump",
+        "barack-obama",
+        "antony-blinken",
+        "chuck-schumer"
       ]
     }
   ],
@@ -8489,6 +8510,15 @@
       "ruling": "Welcomed a ceasefire proposal encompassing three phases (temporary ceasefire and hostage/prisoner exchange; permanent cessation and reconstruction; multi-year pathway for a two-state solution) and called on all parties to implement it fully.",
       "significance": "Records a U.S.-backed Security Council ceasefire architecture after months of veto politics — distinct from earlier 2712/2728 humanitarian-pause and Ramadan texts.",
       "sourceUrl": "https://digitallibrary.un.org",
+      "status": "decided"
+    },
+    {
+      "title": "U.S. UNSC Veto Cluster — Gaza Ceasefire Drafts (2023–2024)",
+      "court": "UN Security Council",
+      "date": "October 2023 – 2024 (multiple draft vetoes)",
+      "ruling": "The United States vetoed multiple Security Council draft resolutions calling for immediate ceasefires or stronger humanitarian language, while allowing limited texts (e.g., 2712, 2728 with abstention, 2735) to pass. Pattern card for the veto architecture of diplomatic cover during the Gaza war.",
+      "significance": "Documents structural diplomatic enablement via veto power parallel to FMF/weapons pipelines — the UN voting map of isolation vs cover.",
+      "sourceUrl": "https://www.un.org/securitycouncil/",
       "status": "decided"
     }
   ],
