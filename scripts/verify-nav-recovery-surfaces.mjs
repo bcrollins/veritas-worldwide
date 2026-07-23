@@ -68,6 +68,8 @@ for (const rel of [
 // Forum mounts both inline breadcrumb and also-in chip row
 const forum = read('src/pages/ForumPage.tsx')
 assert(forum.includes('variant="inline"') && forum.includes('variant="also-in"'), 'Forum dual DossierHubSpokes variants')
+const deep = read('src/pages/DeepStatePage.tsx')
+assert(deep.includes('variant="also-in"') || deep.includes("variant='also-in'"), 'DeepState also-in spokes')
 
 // Dossier family mounts spokes
 for (const rel of [
