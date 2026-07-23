@@ -17,7 +17,16 @@ import {
 } from '../data/instituteCatalog'
 import { PROFILES, getProfilePhoto } from '../data/profileData'
 import { trackDownload } from '../lib/ga4'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  websiteJsonLd,
+  organizationJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import { estimateReadingTime } from '../lib/readingTime'
 import SocialProofBanner from '../components/engagement/SocialProofBanner'
 import SharePanel from '../components/SharePanel'
@@ -53,46 +62,8 @@ export default function HomePage() {
       url: SITE_URL,
       imageAlt: 'The Record — Veritas Worldwide documentary archive',
     })
-    setJsonLd([
-      {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        'name': `The Record — ${SITE_NAME}`,
-        'url': SITE_URL,
-        'description': 'A Documentary History of Power, Money, and the Institutions That Shaped the Modern World.',
-        'publisher': { '@type': 'Organization', 'name': SITE_NAME, 'url': SITE_URL },
-        'potentialAction': {
-          '@type': 'SearchAction',
-          'target': { '@type': 'EntryPoint', 'urlTemplate': `${SITE_URL}/search?q={search_term_string}` },
-          'query-input': 'required name=search_term_string',
-        },
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
-        'name': SITE_NAME,
-        'alternateName': 'The Record',
-        'url': SITE_URL,
-        'logo': {
-          '@type': 'ImageObject',
-          'url': `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`,
-          'width': 512,
-          'height': 512,
-        },
-        'description': 'Independent investigative journalism built on primary sources. 32 archive parts documenting 240+ years of institutional power.',
-        'foundingDate': '2025',
-        'sameAs': [
-          'https://x.com/VeritasWorldwide',
-          'https://www.reddit.com/r/VeritasWorldwide',
-          'https://github.com/bcrollins/veritas-worldwide',
-        ],
-        'contactPoint': {
-          '@type': 'ContactPoint',
-          'email': 'rights@veritasworldwide.com',
-          'contactType': 'editorial',
-        },
-      },
-    ])
+    // Shared helpers keep client hydration aligned with index.html static JSON-LD + E-E-A-T sameAs
+    setJsonLd([websiteJsonLd(), organizationJsonLd()])
     return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 

@@ -1,6 +1,15 @@
 import { useEffect, useMemo, useState, useRef, useCallback } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  faqJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import { trackSupportClick } from '../lib/ga4'
 import CommunityForum from '../components/CommunityForum'
 import DisputeStory from '../components/DisputeStory'
@@ -907,21 +916,60 @@ export default function IsraelDossierPage() {
   useEffect(() => {
     setMetaTags({
       title: 'The Israel Dossier | Veritas Worldwide',
-      description: 'A documented record of U.S.-Israel policy, military spending, humanitarian impact, and international law — every figure sourced to government records, UN agencies, and verified reporting. Interactive timeline from 1948, actors enablement graph, and checkable sources.',
+      description:
+        'Sourced U.S.–Israel policy dossier: military spending, humanitarian impact, legal record, and actors — CRS, UN, ICJ primary trails.',
       url: `${SITE_URL}/israel-dossier`,
       type: 'article',
+      publishedTime: '2026-03-24',
+      modifiedTime: new Date().toISOString().split('T')[0],
+      imageAlt: 'The Israel Dossier — Veritas Worldwide sourced investigation',
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'NewsArticle',
-      headline: 'The Israel Dossier — A Documented Record',
-      description: 'Interactive investigation: Follow U.S. taxpayer money from Congress to weapons to civilian impact. Every figure sourced to CRS, UN OCHA, ICJ, CPJ, and official records.',
-      author: { '@type': 'Organization', name: SITE_NAME },
-      publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
-      datePublished: '2026-03-24',
-      dateModified: new Date().toISOString().split('T')[0],
-      isAccessibleForFree: true,
-    })
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'NewsArticle',
+        headline: 'The Israel Dossier — A Documented Record',
+        description:
+          'Interactive investigation: Follow U.S. taxpayer money from Congress to weapons to civilian impact. Every figure sourced to CRS, UN OCHA, ICJ, CPJ, and official records.',
+        author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE_URL,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`,
+            width: 512,
+            height: 512,
+          },
+        },
+        datePublished: '2026-03-24',
+        dateModified: new Date().toISOString().split('T')[0],
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/israel-dossier` },
+        isAccessibleForFree: true,
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Israel Dossier', url: `${SITE_URL}/israel-dossier` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What is the Israel Dossier?',
+          answer:
+            'A public, multi-source investigation of U.S.–Israel policy covering money trail nodes, documented incidents, legal cases, lobbying records, and enablement actors — each claim tied to checkable government, UN, court, or multi-outlet sources.',
+        },
+        {
+          question: 'Where do the figures come from?',
+          answer:
+            'Primary trails include CRS RL33222 and related reports, UN OCHA/WHO/UNICEF humanitarian updates, ICJ and ICC public records, CPJ journalist tallies, OpenSecrets lobby data, and contemporaneous multi-outlet reporting.',
+        },
+        {
+          question: 'Is the dossier one-sided?',
+          answer:
+            'Editorial rules require documented civilian-targeting and war-crimes records for all parties with multi-source evidence, including October 7 attacks and hostage-taking, alongside Gaza wartime civilian-harm patterns. Ethnicity or religion is never treated as evidence.',
+        },
+      ]),
+    ])
     return () => { clearMetaTags(); removeJsonLd() }
   }, [])
 

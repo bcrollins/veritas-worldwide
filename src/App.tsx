@@ -375,7 +375,7 @@ function Header() {
             Est. 2025 · Volume I · Primary Source Journalism
           </p>
 
-          <Link to="/" className="inline-flex flex-col items-center gap-3 group sm:flex-row sm:gap-5" aria-label="Veritas Worldwide — Home">
+          <Link to="/" className="inline-flex min-h-[44px] flex-col items-center gap-3 group sm:flex-row sm:gap-5" aria-label="Veritas Worldwide — Home">
             <VeritasLogo variant="icon" size="md" className="flex-shrink-0 transition-transform group-hover:scale-[1.02]" />
             <div className="flex flex-col items-center sm:items-start">
               <span className="font-display text-2xl font-bold leading-none tracking-tight text-ink transition-colors group-hover:text-crimson sm:text-4xl lg:text-[2.75rem]">
@@ -654,7 +654,7 @@ function Footer() {
       <div className="border-b border-white/10">
         <div className="mx-auto flex w-full max-w-[1920px] flex-col gap-6 px-4 py-8 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8 lg:py-10">
           <div>
-            <Link to="/" className="group inline-flex items-center gap-4">
+            <Link to="/" className="group inline-flex min-h-[44px] items-center gap-4">
               <VeritasLogo variant="icon" size="md" className="flex-shrink-0 opacity-85 transition-all group-hover:opacity-100 group-hover:scale-[1.02]" />
               <div className="flex flex-col">
                 <span className="font-display text-xl font-bold leading-tight text-white transition-colors group-hover:text-crimson-light">

@@ -31,6 +31,11 @@ assert(seo.includes('sameAs'), 'Organization schema must include sameAs for E-E-
 assert(seo.includes('og:image:alt'), 'seo.ts must set og:image:alt for image SEO')
 assert(seo.includes('max-image-preview:large'), 'seo.ts must set Discover-friendly robots max-image-preview')
 assert(seo.includes('imageAlt'), 'SEOConfig must accept imageAlt')
+assert(seo.includes('DEFAULT_TITLE'), 'seo.ts must define DEFAULT_TITLE aligned with index.html')
+assert(seo.includes('DEFAULT_ROBOTS'), 'seo.ts must reset robots to Discover-friendly defaults')
+assert(seo.includes('howToJsonLd'), 'seo.ts must export HowTo helper')
+assert(seo.includes('personJsonLd'), 'seo.ts must export Person helper')
+assert(seo.includes('speakable'), 'chapter NewsArticle must include speakable for voice SEO')
 
 const robots = read('public/robots.txt')
 assert(robots.includes('Sitemap: https://veritasworldwide.com/sitemap.xml'), 'robots must declare sitemap')

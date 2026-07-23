@@ -216,16 +216,6 @@ export default function SourcesPage() {
                   ? 'Every source cited in this publication is organized here for direct verification. The reader is encouraged to inspect the record independently.'
                   : 'Every source cited in this publication is organized here for direct verification. Accounts are optional for saved reader state.'}
               </p>
-              {/* Voice-search / People Also Ask phrasing (Search Central natural-language queries) */}
-              <div className="mt-8 space-y-3 text-left max-w-2xl">
-                <h2 className="font-display text-xl font-bold text-ink">
-                  How do I verify a claim in The Record?
-                </h2>
-                <p className="font-body text-sm text-ink-muted leading-relaxed">
-                  Open the citing chapter, then use this library to reach the primary document or archive pin. Filter by
-                  hierarchy and evidence tier to focus on verified public-record sources first.
-                </p>
-              </div>
               <div className="grid grid-cols-3 gap-4 mt-6">
                 <div className="text-center">
                   <p className="font-display text-xl sm:text-2xl font-bold text-crimson">{totalSources}</p>

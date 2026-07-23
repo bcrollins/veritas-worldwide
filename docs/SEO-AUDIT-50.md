@@ -19,13 +19,14 @@ Implementing all 50 items is estimated to improve crawl efficiency 15–30%, red
 
 ### Shipped in this sprint (HIGH)
 - HTTP **404** + `X-Robots-Tag: noindex` for unknown paths (`server.js`)
-- `NotFoundPage` with noindex meta
+- `NotFoundPage` with noindex meta + hub recovery links
 - Subscribe success noindex
-- Meta description clamp + `og:locale`
-- Methodology **FAQPage** + breadcrumb JSON-LD
-- robots.txt: transactional Disallow + AI crawler Allow + llms
+- Meta description clamp + `og:locale` + `og:image:alt` + Discover robots
+- Methodology / Sources / Israel Dossier **FAQPage** + breadcrumb JSON-LD
+- robots.txt: transactional + `/search` Disallow + AI crawler Allow + llms + ROC
 - Image sitemap extension (chapters / news / profiles)
-- Pure suite `verify-seo-meta.mjs` (pure **20**)
+- Pure suite `verify-seo-meta.mjs`
+- **Sprint 2 (2026-07-23):** index.html first-paint title/description/robots + static WebSite/Organization JSON-LD; non-blocking fonts; HomePage uses `websiteJsonLd()`/`organizationJsonLd()`; `clearMetaTags` resets to `DEFAULT_TITLE`/`DEFAULT_ROBOTS`; chapter `speakable`; HowTo/Person/ItemList helpers; CookieConsent → gtag consent update; SW network-first navigations
 
 ---
 

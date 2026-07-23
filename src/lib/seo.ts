@@ -5,7 +5,11 @@
 
 const SITE_NAME = 'Veritas Worldwide'
 const SITE_URL = 'https://veritasworldwide.com'
-const DEFAULT_DESCRIPTION = 'The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Published by Veritas Worldwide.'
+/** Default shell description — keep ≤160 chars; matches index.html first-paint meta. */
+const DEFAULT_DESCRIPTION =
+  'Primary-source documentary history of power, money, and institutions. 32 archive parts, 500+ citations, free public access. Verify every claim yourself.'
+const DEFAULT_TITLE = 'The Record | Primary Sources — Veritas Worldwide'
+const DEFAULT_ROBOTS = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 const OG_IMAGE = `${SITE_URL}/og-image.png`
 /** Square publisher mark for Organization / NewsMediaOrganization schema (not the wide OG card). */
 const LOGO_IMAGE = `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`
@@ -180,7 +184,7 @@ export function setMetaTags(config: SEOConfig): void {
  * Removes dynamic meta tags added by setMetaTags (OG, Twitter, article).
  */
 export function clearMetaTags(): void {
-  document.title = `The Record | ${SITE_NAME}`
+  document.title = DEFAULT_TITLE
 
   const selectors = [
     'meta[property^="og:"]',
@@ -191,15 +195,26 @@ export function clearMetaTags(): void {
     document.querySelectorAll(sel).forEach(el => {
       // Preserve the base OG tags from index.html
       const prop = el.getAttribute('property') || el.getAttribute('name') || ''
-      if (prop === 'og:title' || prop === 'og:description' || prop === 'og:type' || prop === 'og:url' || prop === 'og:image' || prop === 'og:site_name') {
-        // Reset to defaults
+      if (
+        prop === 'og:title' ||
+        prop === 'og:description' ||
+        prop === 'og:type' ||
+        prop === 'og:url' ||
+        prop === 'og:image' ||
+        prop === 'og:site_name' ||
+        prop === 'og:locale' ||
+        prop === 'og:image:alt'
+      ) {
+        // Reset to defaults aligned with index.html first-paint
         const defaults: Record<string, string> = {
-          'og:title': `The Record | ${SITE_NAME}`,
+          'og:title': DEFAULT_TITLE,
           'og:description': DEFAULT_DESCRIPTION,
           'og:type': 'website',
           'og:url': SITE_URL,
           'og:image': OG_IMAGE,
           'og:site_name': SITE_NAME,
+          'og:locale': 'en_US',
+          'og:image:alt': 'The Record — Veritas Worldwide documentary archive',
         }
         if (defaults[prop]) {
           el.setAttribute('content', defaults[prop])
@@ -210,9 +225,12 @@ export function clearMetaTags(): void {
     })
   })
 
-  // Reset description
+  // Reset description + Discover-friendly robots defaults
   const descEl = document.querySelector('meta[name="description"]') as HTMLMetaElement | null
   if (descEl) descEl.setAttribute('content', DEFAULT_DESCRIPTION)
+
+  const robotsEl = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null
+  if (robotsEl) robotsEl.setAttribute('content', DEFAULT_ROBOTS)
 
   // Reset canonical
   const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
