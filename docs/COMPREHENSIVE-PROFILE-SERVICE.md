@@ -69,3 +69,11 @@ npm run verify:comprehensive-profile
 
 Client errors already reach `/api/client-error` without Sentry. Set optional `SENTRY_DSN` on Railway only if out-of-band paging is required — not mandatory for launch. Entity-only configuration.
 
+## Free alternatives (not the paid product)
+
+- Public Power Profiles: https://veritasworldwide.com/profiles
+- Offline research pack ZIP (machine corpora, not a private dossier): https://veritasworldwide.com/research-pack.zip
+- Methodology: https://veritasworldwide.com/methodology
+
+Never conflate free public corpora with the $499 authenticated private report.
+
