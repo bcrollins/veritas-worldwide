@@ -208,3 +208,10 @@ verified **misses=0** with soft-404 5 hubs and health all-true under densify tip
 
 ## Session end live matrix misses=0
 Verified production bundles (CORE + 13 page needles) repeatedly green while densify tip advances past 2400 incidents. Soft-404 server hubs green. pure 46. Recovery suite 95 needles + dense destination/chrome contracts. Entity-only. Peer densify unthrashed for intentional nav ownership.
+
+
+## Sprint 7b/7c ship
+- Search idle/empty → RelatedHubs SEARCH_RECOVERY_HUBS
+- Bookmarks empty → RelatedHubs BOOKMARKS_HUBS
+- a11y floors credit RelatedHubs mounts
+- Pure recovery 100 needles · RelatedHubs breadth ≥28
