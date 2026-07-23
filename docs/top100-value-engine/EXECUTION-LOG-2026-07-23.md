@@ -539,3 +539,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip past 2157+ |
 
+
+## Interval densify — tip post-2223 peds vaccine densify + sewage plant / Ashkelon junction / olive-net theft
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza rotavirus/pneumococcal/Hib · hostage building-materials/picture-frame-install/ears-plugged · WB endive/reflex-hammer/basil-baskets |
+| VI | sewage plant · Ashkelon junction · olive-net theft |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip past 2181+ |
+
