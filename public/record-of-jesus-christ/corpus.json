@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:08:45.927Z",
-  "claimCount": 363,
+  "generatedAt": "2026-07-23T10:11:57.606Z",
+  "claimCount": 372,
   "tierHistogram": {
-    "well_attested": 138,
-    "verified": 131,
-    "contested": 35,
-    "interpretive": 36,
+    "well_attested": 142,
+    "verified": 133,
+    "contested": 36,
+    "interpretive": 38,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 18
@@ -164,6 +164,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave9.ts"
+    },
+    {
+      "id": "ane-kuntillet-yhwh-asherah",
+      "claim": "Kuntillet ‘Ajrud inscriptions include blessings “by YHWH … and his asherah” — contested evidence for Israelite religion’s diversity of divine associations.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave30.ts"
     },
     {
       "id": "ane-lachish-letters",
@@ -395,6 +402,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave25.ts"
+    },
+    {
+      "id": "arch-jerusalem-city-of-david",
+      "claim": "City of David excavations document Iron Age through Roman strata south of the Temple Mount, including water systems and residential remains.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave30.ts"
     },
     {
       "id": "arch-jerusalem-destruction-layers",
@@ -640,6 +654,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "cosmo-dark-energy-surveys",
+      "claim": "Stage-IV surveys (DESI, Euclid, Rubin-era analyses) are designed to map dark energy’s equation of state with higher precision than Stage-III programs.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave30.ts"
     },
     {
       "id": "cosmo-dark-matter-status",
@@ -1055,6 +1076,13 @@
       "file": "src/data/recordOfJesusChristWave18.ts"
     },
     {
+      "id": "ec-shepherd-mandates",
+      "claim": "The Shepherd of Hermas Mandates section emphasizes repentance ethics in Roman Christian community life of the 2nd century.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave30.ts"
+    },
+    {
       "id": "ec-update-triggers",
       "claim": "This Record’s perpetual update triggers include: new major papyri/majuscule publications, INTF Liste changes, peer-reviewed dig reports, and material consensus shifts in historical Jesus research.",
       "tier": "interpretive",
@@ -1102,6 +1130,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "hj-criteria-not-enough",
+      "claim": "No single authenticity criterion yields laboratory certainty; cumulative case arguments with explicit uncertainty remain the responsible historical approach.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave30.ts"
     },
     {
       "id": "hj-criterion-coherence",
@@ -1454,6 +1489,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "mod-300-plus-not-finished",
+      "claim": "Crossing 300+ claims does not end the task: new editions, finds, and scientific results will require new cards under the update-triggers doctrine.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave30.ts"
+    },
+    {
       "id": "mod-contextual-credibility",
       "claim": "Contextual credibility / historical plausibility criteria ask whether a tradition fits first-century Jewish Palestine — necessary but not sufficient for authenticity.",
       "tier": "interpretive",
@@ -1741,6 +1783,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "nc-celsus-magic",
+      "claim": "Celsus portrays Jesus as a magician who learned Egyptian arts — a hostile interpretive frame for miracle traditions, not independent first-century reportage.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave30.ts"
+    },
+    {
       "id": "nc-celsus-virgin",
       "claim": "Celsus (via Origen) preserves a hostile Jewish/pagan counter-narrative about Jesus’ birth involving panthera traditions — reception of controversy, not primary birth documentation.",
       "tier": "circumstantial",
@@ -2019,6 +2068,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave21.ts"
+    },
+    {
+      "id": "nt-digital-editions",
+      "claim": "Digital critical platforms (NT.VMR, ECM online tools) enable transparent inspection of manuscript images and apparatus data beyond print editions alone.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave30.ts"
     },
     {
       "id": "nt-ecm-catholic-epistles",
@@ -2467,6 +2523,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-philo-allegory",
+      "claim": "Philo of Alexandria develops extensive allegorical exegesis of the Torah for a Hellenistic Jewish audience in the early first century.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave30.ts"
     },
     {
       "id": "st-pompey-63",
