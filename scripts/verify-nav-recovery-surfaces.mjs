@@ -3041,4 +3041,31 @@ assert(read('src/components/AuthModal.tsx').includes('focus-visible:ring-2'), 'p
 assert(read('src/components/PrimarySourceLink.tsx').includes('focus-visible:ring-2'), 'perpetual v32 primary source focus')
 assert(read('src/components/DownloadModal.tsx').includes('focus-visible:ring-2'), 'perpetual v32 download modal focus')
 
+
+
+// RelatedHubs platform perpetual densify lock v33
+assert(surfaces.length >= 115, `perpetual v33 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v33 RelatedHubs focus')
+assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v33 Research chips focus')
+assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-2'), 'perpetual v33 spokes focus')
+assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perpetual v33 footer focus')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v33 mobile tab bar')
+assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v33 cookie focus')
+assert(read('src/components/SharePanel.tsx').includes('focus-visible:ring-2'), 'perpetual v33 share panel focus')
+assert(read('src/components/BookmarkButton.tsx').includes('focus-visible:ring-2'), 'perpetual v33 bookmark focus')
+assert(read('src/components/institute/InstituteLayout.tsx').includes('focus-visible:ring-2'), 'perpetual v33 institute layout focus')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v33 institute hubs')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v33 methodology hubs')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v33 coverage')
+assert(read('scripts/verify-pure.mjs').includes('verify-related-hubs-coverage.mjs'), 'perpetual v33 pure wire')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v33 server soft-404')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v33 emphasize')
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v33 PRIMARY')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v33 soft-404')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'perpetual v33 home')
+assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v33 search')
+assert(read('src/components/AuthModal.tsx').includes('focus-visible:ring-2'), 'perpetual v33 auth modal focus')
+assert(read('src/components/NewsletterSignup.tsx').includes('focus-visible:ring-2'), 'perpetual v33 newsletter focus')
+assert(read('src/components/PrimarySourceLink.tsx').includes('focus-visible:ring-2'), 'perpetual v33 primary source focus')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
