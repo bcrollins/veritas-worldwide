@@ -299,3 +299,13 @@ Peer Israel densify (`public/israel-dossier/*`, history pack, VI) never staged. 
 
 Shell keyboard a11y now covers: skip-link (existing), desktop nav, mobile tabs, drawer, footer, cookie banner, RelatedHubs, ResearchHubChips, DossierHubSpokes.
 
+
+## Sprint 9d — engagement modal + sticky bar keyboard focus
+
+| Commit | Unit |
+|--------|------|
+| `b8c6474e` | sticky membership bar focus-visible |
+| `4402b7ae` | exit-intent modal focus-visible |
+| `2bed2fb7` | AuthModal focus-visible |
+| `f23938bd`–`…` | pure densify locks v25–v27 / IA v19 |
+
