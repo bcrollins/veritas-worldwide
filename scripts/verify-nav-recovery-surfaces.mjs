@@ -1023,4 +1023,11 @@ assert(relatedAriaFinal.includes('Related hubs'), 'RelatedHubs aria Related hubs
 // (surfaces array is the authoritative floor via length assert above)
 assert(typeof surfaces.length === 'number' && surfaces.length >= 90, 'surfaces array healthy')
 
+
+// DOSSIER_SPOKES count reaffirm unique final
+const spokesFinal = read('src/components/DossierHubSpokes.tsx')
+const spokesBlockFinal = spokesFinal.match(/export const DOSSIER_SPOKES[^=]*= \[([\s\S]*?)\] as const/)
+assert(spokesBlockFinal, 'DOSSIER_SPOKES block final')
+assert((spokesBlockFinal[1].match(/id:/g) || []).length === 5, 'DOSSIER_SPOKES count 5 unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
