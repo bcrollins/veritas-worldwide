@@ -33,6 +33,8 @@ const surfaces = [
   ['src/pages/ReadTheBookPage.tsx', 'read-toc-by-part'],
   ['src/pages/MediaKitPage.tsx', 'media-kit-related-hubs'],
   ['src/components/CookieConsent.tsx', 'data-z-above-tab-bar'],
+  ['src/App.tsx', 'mobile-tab-bar'],
+  ['src/App.tsx', 'primaryLinks'],
 ]
 
 for (const [rel, needle] of surfaces) {
