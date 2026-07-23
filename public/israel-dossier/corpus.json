@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:58:20.182Z",
+  "generatedAt": "2026-07-23T08:59:09.783Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 127,
-    "timelineEvents": 115,
+    "incidents": 128,
+    "timelineEvents": 116,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 113,
+    "historicalWarCrimesPack": 114,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 67
+      "post-oct7": 68
     },
     "incidentsByTier": {
-      "verified": 125,
+      "verified": 126,
       "circumstantial": 2
     },
-    "childrenTagged": 103,
-    "civiliansTagged": 125,
+    "childrenTagged": 104,
+    "civiliansTagged": 126,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3787,6 +3787,27 @@
         "children",
         "displacement",
         "gaza"
+      ]
+    },
+    {
+      "id": "tl-israel-north-evac-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Northern Israel Mass Evacuation Pattern",
+      "description": "Multi-source documentation of mass Israeli civilian evacuation from northern border communities under Hezbollah fire.",
+      "source": "Israeli government / multi-outlet",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-northern-evacuation-pattern-2023-2025",
+        "hezbollah-rockets-northern-israel-pattern-2023-2025"
+      ],
+      "tags": [
+        "displacement",
+        "civilians",
+        "children",
+        "israel",
+        "hezbollah"
       ]
     },
     {
@@ -8525,6 +8546,49 @@
           "type": "document",
           "label": "UN sexual violence in conflict materials",
           "url": "https://www.un.org/sexualviolenceinconflict/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-northern-evacuation-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "iron-dome"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Northern Israel Mass Evacuation Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (northern displacement cohort)",
+      "location": "Northern Israel border communities",
+      "summary": "Israeli government, multi-source press, and municipal reporting document mass evacuation of tens of thousands of Israeli civilians from northern border communities under Hezbollah rocket and drone fire — a multi-year displacement pattern concurrent with the Gaza war. Pattern card for Israeli civilian displacement required for non-selective civilian-harm documentation, distinct from the rocket-fire pattern card.",
+      "evidence": "Israeli government displacement tallies, multi-outlet coverage of hotel/evacuee housing, and municipal statements establish multi-source mass evacuation. Exact resident counts evolve with return waves; multi-source prolonged civilian displacement is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government public displacement materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet northern Israel evacuation coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "UNIFIL / UN Lebanon conflict context",
+          "url": "https://unifil.unmissions.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
         }
       ],
       "tier": "verified",

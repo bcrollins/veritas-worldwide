@@ -3033,6 +3033,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'israel-northern-evacuation-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['iron-dome'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Northern Israel Mass Evacuation Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (northern displacement cohort)',
+    location: 'Northern Israel border communities',
+    summary:
+      'Israeli government, multi-source press, and municipal reporting document mass evacuation of tens of thousands of Israeli civilians from northern border communities under Hezbollah rocket and drone fire — a multi-year displacement pattern concurrent with the Gaza war. Pattern card for Israeli civilian displacement required for non-selective civilian-harm documentation, distinct from the rocket-fire pattern card.',
+    evidence:
+      'Israeli government displacement tallies, multi-outlet coverage of hotel/evacuee housing, and municipal statements establish multi-source mass evacuation. Exact resident counts evolve with return waves; multi-source prolonged civilian displacement is the claim.',
+    sources: [
+      { label: 'Israeli government public displacement materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet northern Israel evacuation coverage', url: 'https://apnews.com' },
+      { label: 'UNIFIL / UN Lebanon conflict context', url: 'https://unifil.unmissions.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4353,6 +4380,23 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['sexual-violence', 'civilians', 'terrorism', 'israel'],
   },
+
+  {
+    id: 'tl-israel-north-evac-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Northern Israel Mass Evacuation Pattern',
+    description: 'Multi-source documentation of mass Israeli civilian evacuation from northern border communities under Hezbollah fire.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-northern-evacuation-pattern-2023-2025',
+      'hezbollah-rockets-northern-israel-pattern-2023-2025',
+    ],
+    tags: ['displacement', 'civilians', 'children', 'israel', 'hezbollah'],
+  },
+
 
 
 
