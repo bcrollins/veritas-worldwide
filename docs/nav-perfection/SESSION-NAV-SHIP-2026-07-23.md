@@ -221,3 +221,11 @@ Verified production bundles (CORE + 13 page needles) repeatedly green while dens
 - `not-found-secondary-hubs` via RelatedHubs
 - Pure recovery **102 surface needles**
 - Live CORE+soft-404 green under densify tip
+
+
+## Live proof (session end densify)
+- CORE: mobile-tab-bar · DossierHubSpokes · ResearchHubChips · RelatedHubs
+- SOFT: server-soft-404 + Primary hubs + 5 hrefs
+- Product LIVE: Sprint 7 + Search platform + Home underfold + soft-404 secondary + a11y credit
+- Pure: 102 surface needles · RelatedHubs breadth ≥30 · pure 46 green
+- Peer densify unthrashed (single-file pure commits)
