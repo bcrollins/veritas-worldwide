@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:34:51.853Z",
+  "generatedAt": "2026-07-23T09:37:30.905Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 186,
-    "timelineEvents": 174,
+    "incidents": 189,
+    "timelineEvents": 177,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 172,
+    "historicalWarCrimesPack": 175,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 126
+      "post-oct7": 129
     },
     "incidentsByTier": {
-      "verified": 184,
+      "verified": 187,
       "circumstantial": 2
     },
-    "childrenTagged": 158,
-    "civiliansTagged": 184,
+    "childrenTagged": 161,
+    "civiliansTagged": 187,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -4945,6 +4945,28 @@
       ]
     },
     {
+      "id": "tl-hostages-bodies-held-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "October 7 Hostage Bodies Held Pattern",
+      "description": "Multi-source documentation of prolonged retention of deceased Israeli civilian hostage remains in Gaza.",
+      "source": "Israeli government / ICRC / multi-outlet",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "oct7-hostages-bodies-not-returned-pattern-2023-2025",
+        "oct7-hostages-held-pattern",
+        "oct7-hostages-killed-captivity-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "bodies",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-oct7-hostages-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -5279,6 +5301,28 @@
       ]
     },
     {
+      "id": "tl-gaza-airdrops-2024",
+      "year": "2024",
+      "era": "post-oct7",
+      "title": "Gaza Humanitarian Airdrops Pattern",
+      "description": "U.S./Jordan multi-source documentation of repeated food airdrops under ground-access failure with limited tonnage relative to need.",
+      "source": "U.S. Defense / OCHA / multi-outlet",
+      "sourceUrl": "https://www.defense.gov",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-humanitarian-airdrops-pattern-2023-2025",
+        "gaza-us-aid-pier-2024",
+        "starvation-aid-blockade"
+      ],
+      "tags": [
+        "aid",
+        "airdrops",
+        "civilians",
+        "children",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-reconstruction-cost-2024",
       "year": "2024",
       "era": "post-oct7",
@@ -5427,6 +5471,28 @@
         "children",
         "lebanon",
         "hezbollah"
+      ]
+    },
+    {
+      "id": "tl-lebanon-civilian-harm-2024",
+      "year": "2024",
+      "era": "post-oct7",
+      "title": "Lebanon 2024 War Civilian Harm Pattern",
+      "description": "OCHA multi-source documentation of large-scale civilian death and displacement in Lebanon during the 2024 Israel–Hezbollah war.",
+      "source": "OCHA Lebanon / multi-outlet",
+      "sourceUrl": "https://www.unocha.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "lebanon-civilian-harm-2024-war-pattern",
+        "hezbollah-rockets-northern-israel-pattern-2023-2025",
+        "israel-lebanon-ground-offensive-2024"
+      ],
+      "tags": [
+        "lebanon",
+        "civilians",
+        "children",
+        "displacement",
+        "war"
       ]
     },
     {
@@ -12376,6 +12442,47 @@
       }
     },
     {
+      "id": "oct7-hostages-bodies-not-returned-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "October 7 Hostage Bodies Held / Not Returned Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (bodies-held cohort)",
+      "location": "Gaza Strip captivity and recovery sites",
+      "summary": "Israeli government hostage lists and multi-source reporting document prolonged retention of deceased Israeli civilian hostages' remains in Gaza — denying families burial rights under IHL expectations for handling of the dead. Pattern card for bodies-held as a distinct civilian-harm crime from living hostages-held and deaths-in-captivity cards.",
+      "evidence": "Israeli government public lists of deceased hostages whose remains remain unrecovered, multi-source deal/recovery reporting, and ICRC statements on the dead establish multi-source retention of hostage remains. Exact unrecovered counts change with recoveries; multi-source prolonged non-return of deceased hostages is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government hostage public record",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "ICRC statements on missing / dead",
+          "url": "https://www.icrc.org"
+        },
+        {
+          "label": "Multi-outlet hostage remains coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
       "id": "jabalia-refugee-camp",
       "title": "Jabalia Refugee Camp — Repeated Strikes on Densest Civilian Area",
       "date": "October 31, 2023 — ongoing through 2024",
@@ -13491,6 +13598,96 @@
           "type": "document",
           "label": "OCHA humanitarian access context",
           "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-humanitarian-airdrops-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "joe-biden",
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Humanitarian Airdrops Pattern (2023–2025)",
+      "date": "March 2024 – 2025 (airdrop cohort)",
+      "location": "Gaza Strip coastal and open-drop zones",
+      "summary": "U.S., Jordanian, and multi-source reporting document repeated humanitarian airdrops of food parcels into Gaza after ground-access failure — delivering limited tonnage relative to need, with multi-source reports of parcel drownings and crush injuries at drop sites. Pattern card for airdrop as inadequate substitute for land access, distinct from the U.S. aid-pier card.",
+      "evidence": "U.S. Central Command / State Department public airdrop tallies, Jordanian Armed Forces statements, and multi-outlet coverage of drop-site injuries and limited tonnage establish multi-source airdrop campaigns. Exact tonnage and injury counts evolve; multi-source repeated airdrops under access failure is the claim.",
+      "sources": [
+        {
+          "label": "U.S. CENTCOM / State public airdrop materials",
+          "url": "https://www.defense.gov"
+        },
+        {
+          "label": "OCHA aid-access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza airdrop coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "U.S. Defense Department public updates",
+          "url": "https://www.defense.gov"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "lebanon-civilian-harm-2024-war-pattern",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Lebanon 2024 War Civilian Harm Pattern",
+      "date": "2024 – 2025 (Lebanon escalation cohort)",
+      "location": "Southern Lebanon / Beirut suburbs / northern Israel border zone",
+      "summary": "OCHA Lebanon, Lebanese health authorities, and multi-source reporting document large-scale civilian deaths, injuries, and displacement in Lebanon during the 2024 Israel–Hezbollah war — concurrent with Israeli northern civilian rocket harm. Pattern card for Lebanon-theater civilian harm required for non-selective regional war documentation, distinct from pager-explosions and Nasrallah-strike cards.",
+      "evidence": "OCHA Lebanon situation reports, multi-source Lebanese Ministry of Health tallies, and multi-outlet war coverage establish multi-source civilian death and displacement floors. Exact totals evolve; multi-source large-scale civilian harm in the 2024 Lebanon war is the claim.",
+      "sources": [
+        {
+          "label": "OCHA Lebanon situation materials",
+          "url": "https://www.unocha.org"
+        },
+        {
+          "label": "Multi-outlet Lebanon war civilian-harm coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government northern front materials",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.unocha.org"
         }
       ],
       "tier": "verified",
