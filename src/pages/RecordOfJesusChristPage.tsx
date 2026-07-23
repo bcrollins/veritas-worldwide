@@ -52,6 +52,9 @@ const PROOF_LABELS: Record<RocClaim['proofVsConcept'], string> = {
   science_model: 'Scientific model',
 }
 
+const PROOF_ORDER = Object.keys(PROOF_LABELS) as Array<RocClaim['proofVsConcept']>
+const PROOF_PREF_KEY = 'veritas_roc_proof_filter'
+
 function TierBadge({ tier }: { tier: ScholarlyEvidenceTier }) {
   const cfg = SCHOLARLY_TIERS[tier]
   return (
@@ -129,6 +132,7 @@ function TierFilter({
 function ClaimCard({ claim }: { claim: RocClaim }) {
   const [open, setOpen] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [pinned, setPinned] = useState(false)
   const cfg = SCHOLARLY_TIERS[claim.tier]
   const primaryWithUrl = claim.sources.find(s => Boolean(s.url))
 
@@ -140,6 +144,26 @@ function ClaimCard({ claim }: { claim: RocClaim }) {
       await navigator.clipboard.writeText(text)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
+    } catch {
+      /* ignore */
+    }
+  }
+
+  const addToTimeline = () => {
+    try {
+      // Dynamic import avoided — static for tree-shaking simplicity
+      const { addPersonalTimelineEvent } = require('../lib/personalTimelineStorage') as typeof import('../lib/personalTimelineStorage')
+      addPersonalTimelineEvent({
+        date: new Date().toISOString().slice(0, 10),
+        title: claim.claim.slice(0, 200),
+        notes: claim.detail.slice(0, 500),
+        sourceUrl: primaryWithUrl?.url || `${SITE_URL}${ROC_META.path}#${claim.id}`,
+        evidenceTier: claim.tier,
+        tags: ['roc', claim.proofVsConcept],
+        corpusRef: { kind: 'roc', id: claim.id },
+      })
+      setPinned(true)
+      setTimeout(() => setPinned(false), 2500)
     } catch {
       /* ignore */
     }

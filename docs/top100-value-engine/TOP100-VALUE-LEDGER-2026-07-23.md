@@ -158,11 +158,11 @@ Status: **Implemented** (2026-07-23) — multi-tier `?tier=verified,well_atteste
 
 ## #30 — ROC section jump TOC sticky mobile
 Area: ROC · Anchor: Apple · Score: 8.0→9.0 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — sticky mobile TOC with max-h scroll; desktop static.
 
 ## #31 — ROC PDF index claim count matches corpus
 Area: ROC · Anchor: AP · Score: 8.5→9.5 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Implemented** (2026-07-23) — generate-roc-pdf PASS 660 claims matches corpus after wave62.
+Status: **Implemented** (2026-07-23) — PDF claimCount tracks export through wave64.
 
 ## #32 — ROC Dataset schema distribution URLs absolute HTTPS
 Area: Schema · Anchor: Google · Score: 8.8→9.5 · PRIORITY: 7 · Launch-critical: no  
@@ -174,7 +174,7 @@ WHAT TO IMPLEMENT: Home + nav labels “Volume I” / “Record of Jesus Christ�
 
 ## #34 — Scaffold Volume II placeholder hub (noindex until content)
 Area: Scaffold · Anchor: Staff-plus · Score: 6.5→8.5 · PRIORITY: 7 · Launch-critical: no  
-Status: **Implemented** (2026-07-23) — /volume-ii noindex scaffold hub → ROC/Bible/Volume I; server knownExact + inject noindex.
+Status: **Implemented** (2026-07-23) — /volume-ii VolumeIIHubPage noindex; wired App + isKnownSpaRoute; robots allow discovery with meta noindex.
 
 ## #35 — Bible ↔ ROC bidirectional bot FAQ parity hold
 Area: Schema · Anchor: AP · Score: 8.8→9.3 · PRIORITY: 7 · Launch-critical: no  

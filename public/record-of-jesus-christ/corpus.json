@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:40:33.895Z",
-  "claimCount": 669,
+  "generatedAt": "2026-07-23T11:44:03.947Z",
+  "claimCount": 678,
   "tierHistogram": {
-    "well_attested": 273,
-    "verified": 238,
+    "well_attested": 276,
+    "verified": 242,
     "contested": 51,
-    "interpretive": 75,
+    "interpretive": 76,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 27
+    "circumstantial": 28
   },
   "claims": [
     {
@@ -355,6 +355,13 @@
       "file": "src/data/recordOfJesusChristWave49.ts"
     },
     {
+      "id": "ane-mesha-stele-israel",
+      "claim": "The Mesha Stele (Moabite Stone) is a primary 9th-century BCE inscription of King Mesha mentioning Omri and Israel — a cornerstone external control for early Israelite royal history.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave64.ts"
+    },
+    {
       "id": "ane-mesha-yhwh",
       "claim": "The Mesha Stele mentions YHWH in a Moabite royal context — primary evidence for the divine name outside the Hebrew Bible.",
       "tier": "verified",
@@ -563,6 +570,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave16.ts"
+    },
+    {
+      "id": "arch-caesarea-pilate-context",
+      "claim": "Caesarea Maritima’s Herodian harbor and Roman administrative remains form the urban stage for prefectural rule; the Pilate inscription found there anchors Pilate’s historical office without validating every Gospel trial detail.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave64.ts"
     },
     {
       "id": "arch-caesarea-pilate-praetorium",
@@ -1412,6 +1426,13 @@
       "file": "src/data/recordOfJesusChristWave58.ts"
     },
     {
+      "id": "cosmo-planck-theta-star",
+      "claim": "Planck measures the angular scale of the sound horizon θ_* with high precision; combined with a sound-horizon model it tightly constrains the angular-diameter distance to last scattering in ΛCDM.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave64.ts"
+    },
+    {
       "id": "cosmo-primordial-bmodes-search",
       "claim": "Searches for primordial CMB B-mode polarization aim to constrain the inflationary tensor-to-scalar ratio r; no definitive primordial detection has been confirmed to date.",
       "tier": "well_attested",
@@ -1634,6 +1655,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
+      "id": "ec-didache-eucharist-prayers",
+      "claim": "The Didache’s eucharistic prayers (chs. 9–10) preserve early community meal thanksgivings that differ in form from the canonical Last Supper institution narratives — primary evidence of liturgical diversity.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave64.ts"
     },
     {
       "id": "ec-didache-two-ways",
@@ -2252,6 +2280,13 @@
       "file": "src/data/recordOfJesusChristWave24.ts"
     },
     {
+      "id": "hj-galilee-village-economy",
+      "claim": "Archaeology and agrarian studies place most Galilean villages in a modest agrarian economy under Herodian/Roman taxation; this frames Jesus’ audience without proving any single saying’s authenticity.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave64.ts"
+    },
+    {
       "id": "hj-galilee-village-itinerancy",
       "claim": "Jesus’ activity is widely reconstructed as itinerant village-to-village ministry in Galilee rather than a fixed urban base, matching agrarian social patterns under Antipas.",
       "tier": "well_attested",
@@ -2663,6 +2698,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave54.ts"
+    },
+    {
+      "id": "mod-allison-resurrecting-jesus",
+      "claim": "Dale C. Allison Jr.’s Resurrecting Jesus models careful historical treatment of resurrection traditions while distinguishing historical description from theological claim — a major twenty-first-century reference point.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave64.ts"
     },
     {
       "id": "mod-amy-jill-levine-jewish-jesus",
@@ -3610,6 +3652,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "nc-thallus-africanus-fragment",
+      "claim": "Julius Africanus reports that Thallus explained the darkness at the crucifixion as an eclipse; the fragment is second-hand and cannot independently date or prove Gospel passion chronology.",
+      "tier": "circumstantial",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave64.ts"
+    },
+    {
       "id": "nc-thallus-mediated-only",
       "claim": "All surviving Thallus references to a darkness around the crucifixion period are mediated through later Christian citation chains; no independent Thallus manuscript survives.",
       "tier": "circumstantial",
@@ -4063,6 +4112,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "nt-p75-bodmer-luke-john",
+      "claim": "𝔓⁷⁵ (Bodmer XIV–XV) is a major early witness to Luke and John with strong affinity to Codex Vaticanus (B) in many units — a key pillar of the “Alexandrian” early text discussion.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave64.ts"
     },
     {
       "id": "nt-papyrus-discovery-curve",
@@ -4658,6 +4714,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave20.ts"
+    },
+    {
+      "id": "st-temple-tax-tyrian",
+      "claim": "The Jerusalem Temple tax was commonly paid in Tyrian silver (half-shekel tradition), illustrating how Second Temple economy mixed Judean cult requirements with wider Mediterranean currency networks.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave64.ts"
     },
     {
       "id": "st-temple-warning-inscription",
