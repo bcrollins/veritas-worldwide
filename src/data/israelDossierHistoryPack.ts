@@ -10620,6 +10620,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-pneumonia-surge-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Pneumonia Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (pneumonia-surge cohort)',
+    location: 'Gaza Strip overcrowded shelters and collapsed pediatric wards',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric pneumonia and lower-respiratory infection under overcrowding, cold, smoke, and antibiotic shortage — a multi-source wartime respiratory pattern distinct from heatstroke and scabies cards.',
+    evidence:
+      'WHO respiratory-infection materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric pneumonia surge. Exact case counts evolve; multi-source wartime pneumonia surge among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO respiratory-infection materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza pediatric respiratory coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-watch-oct7-footage-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Watch October 7 Footage Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-atrocity-footage cohort)',
+    location: 'Gaza Strip captivity sites — forced-footage subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages including children to watch October 7 atrocity footage — a multi-source psychological-torture pattern distinct from propaganda photos/videos cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced viewing of Oct 7 footage. Exact cases vary; multi-source forced atrocity-footage exposure of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-beehives-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Beehives Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (beehive-destruction cohort)',
+    location: 'West Bank apiaries, hillside hives, and farm compounds',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian beehives after October 7 — wrecking honey livelihoods including family enterprises supporting children. Pattern card distinct from greenhouse destruction and livestock poisoning.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source beehive destruction. Exact hive counts evolve; multi-source wartime settler destruction of civilian beehives is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet beehive-destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-leishmaniasis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Leishmaniasis Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (leishmaniasis-risk cohort)',
+    location: 'Gaza Strip rubble-adjacent camps and sand-fly exposure zones',
+    summary:
+      'WHO and multi-source public-health reporting document elevated pediatric cutaneous leishmaniasis risk from rubble, displacement, and collapse of vector control — a multi-source wartime vector-borne pattern distinct from pneumonia and scabies cards.',
+    evidence:
+      'WHO neglected-tropical-disease materials and multi-outlet coverage establish multi-source pediatric leishmaniasis risk. Exact case counts evolve; multi-source wartime leishmaniasis risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO NTD materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza vector-borne disease coverage', url: 'https://apnews.com' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-bathing-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Bathing Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (bathing-denial cohort)',
+    location: 'Gaza Strip captivity sites — bathing-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document months-long denial of bathing and personal washing for Israeli civilian hostages — compounding infection and degradation. Pattern card distinct from clean-clothing and hygiene-sanitation cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source bathing denial. Exact cases vary; multi-source denial of bathing for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-graffiti-death-threats-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Death-Threat Graffiti Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (death-threat-graffiti cohort)',
+    location: 'West Bank village homes, mosques, and school walls',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler death-threat graffiti on Palestinian civilian homes, schools, and places of worship after October 7 — terrorizing families including children. Pattern card distinct from mosque vandalism and cemetery desecration.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source death-threat graffiti. Exact incident counts evolve; multi-source wartime settler death-threat graffiti is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet price-tag graffiti coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-oral-cholera-vaccine-gap-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Oral Cholera Vaccine Access Gap Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (OCV-access-gap cohort)',
+    location: 'Gaza Strip WASH-collapse camps and oral-cholera-vaccine campaign points',
+    summary:
+      'WHO, UNICEF, and multi-source public-health reporting document elevated cholera-risk and oral cholera vaccine access gaps for children under WASH collapse and campaign interruption — a multi-source wartime vaccine-access pattern distinct from polio, measles, and diphtheria cards.',
+    evidence:
+      'WHO cholera/OCV materials, UNICEF WASH updates, and multi-outlet coverage establish multi-source OCV-access gap risk for Gaza children. Exact dose shortfalls evolve; multi-source wartime cholera-vaccine access gap is the claim.',
+    sources: [
+      { label: 'WHO cholera materials', url: 'https://www.who.int' },
+      { label: 'UNICEF WASH materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza cholera-risk coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'hezbollah-drone-civilian-harm-northern-israel-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Hezbollah Drone Civilian Harm Pattern in Northern Israel (2023–2025)',
+    date: 'October 2023 – 2025 (Hezbollah-drone cohort)',
+    location: 'Northern Israel border communities and Galilee towns under drone alert',
+    summary:
+      'Israeli government materials, multi-outlet reporting, and multi-source casualty documentation establish elevated Hezbollah drone attacks causing civilian deaths, injuries, and displacement in northern Israel including children — a dual-sided pattern distinct from Hezbollah rocket cards and PIJ/Hamas rocket cards.',
+    evidence:
+      'Israeli government home-front updates, multi-outlet drone-attack coverage, and multi-source incident reporting establish multi-source Hezbollah drone civilian harm. Exact tolls evolve; multi-source wartime civilian harm from Hezbollah drones is the claim.',
+    sources: [
+      { label: 'Israeli government home-front materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet Hezbollah drone coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-shepherds-with-dogs-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Dog Attacks on Shepherds Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (shepherd-dog-attack cohort)',
+    location: 'West Bank grazing hills and shepherd routes',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler use of attack dogs against Palestinian shepherds and herding families after October 7 — injuring civilians including children. Pattern card distinct from herder physical attacks and livestock poisoning.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source dog attacks on shepherds. Exact injury counts evolve; multi-source wartime settler dog attacks on shepherds is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem herding materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet shepherd dog-attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -16721,6 +16965,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['solar', 'water', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-pneumonia-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Pneumonia Surge Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric pneumonia under overcrowding and antibiotic shortage.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-pneumonia-surge-pattern-2023-2025',
+      'gaza-children-leishmaniasis-risk-pattern-2023-2025',
+      'gaza-children-oral-cholera-vaccine-gap-pattern-2023-2025',
+    ],
+    tags: ['pneumonia', 'children', 'respiratory', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-oct7-footage-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Watch October 7 Footage Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to watch October 7 atrocity footage.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-watch-oct7-footage-pattern-2023-2025',
+      'israel-hostages-denied-bathing-pattern-2023-2025',
+      'israel-hostages-chained-restraint-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-beehives-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Beehives Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian beehives after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-beehives-pattern-2023-2025',
+      'west-bank-settler-graffiti-death-threats-pattern-2023-2025',
+      'west-bank-settler-attacking-shepherds-with-dogs-pattern-2023-2025',
+    ],
+    tags: ['beehives', 'settlers', 'agriculture', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-leishmaniasis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Leishmaniasis Risk Pattern',
+    description: 'WHO multi-source documentation of elevated pediatric leishmaniasis risk under rubble and displacement.',
+    source: 'WHO / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-leishmaniasis-risk-pattern-2023-2025',
+      'gaza-children-pneumonia-surge-pattern-2023-2025',
+      'gaza-children-oral-cholera-vaccine-gap-pattern-2023-2025',
+    ],
+    tags: ['leishmaniasis', 'children', 'vector', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-denied-bathing-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Bathing Pattern',
+    description: 'Multi-source documentation of months-long denial of bathing for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-bathing-pattern-2023-2025',
+      'israel-hostages-denied-clean-clothing-pattern-2023-2025',
+      'israel-hostages-forced-to-watch-oct7-footage-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'hygiene', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-death-threat-graffiti-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Death-Threat Graffiti Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler death-threat graffiti after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-graffiti-death-threats-pattern-2023-2025',
+      'west-bank-settler-mosque-vandalism-pattern-2023-2025',
+      'west-bank-settler-destroying-beehives-pattern-2023-2025',
+    ],
+    tags: ['graffiti', 'threats', 'settlers', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-ocv-gap-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Oral Cholera Vaccine Access Gap Pattern',
+    description: 'WHO/UNICEF multi-source documentation of oral cholera vaccine access gaps for children under WASH collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-oral-cholera-vaccine-gap-pattern-2023-2025',
+      'gaza-children-pneumonia-surge-pattern-2023-2025',
+      'gaza-children-hepatitis-a-risk-pattern-2023-2025',
+    ],
+    tags: ['cholera', 'vaccine', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hezbollah-drone-northern-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Hezbollah Drone Civilian Harm Pattern in Northern Israel',
+    description: 'Multi-source documentation of Hezbollah drone attacks causing civilian harm in northern Israel.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'hezbollah-drone-civilian-harm-northern-israel-pattern-2023-2025',
+      'hezbollah-rocket-northern-israel-civilian-harm-pattern-2023-2025',
+      'palestinian-islamic-jihad-rocket-civilian-harm-pattern-2023-2025',
+    ],
+    tags: ['hezbollah', 'drones', 'civilians', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-shepherd-dogs-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Dog Attacks on Shepherds Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler dog attacks on Palestinian shepherds after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-shepherds-with-dogs-pattern-2023-2025',
+      'west-bank-settler-attacking-herders-pattern-2023-2025',
+      'west-bank-settler-destroying-beehives-pattern-2023-2025',
+    ],
+    tags: ['shepherds', 'dogs', 'settlers', 'west-bank'],
+  },
+
 
 
 
