@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:24:10.614Z",
-  "claimCount": 417,
+  "generatedAt": "2026-07-23T10:26:46.074Z",
+  "claimCount": 426,
   "tierHistogram": {
-    "well_attested": 167,
-    "verified": 147,
-    "contested": 36,
-    "interpretive": 42,
+    "well_attested": 172,
+    "verified": 149,
+    "contested": 37,
+    "interpretive": 43,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 20
@@ -206,6 +206,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave21.ts"
+    },
+    {
+      "id": "ane-lmlk-jar-handles",
+      "claim": "lmlk (“belonging to the king”) jar handles from late-8th-century Judah form a large administrative ceramic corpus associated with Hezekiah-era preparation against Assyria.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave36.ts"
     },
     {
       "id": "ane-merneptah",
@@ -628,6 +635,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "arch-wadi-murabbaat",
+      "claim": "Wadi Murabbaʿat caves yielded Bar Kokhba-period documents and biblical fragments — primary Judean Desert controls for early 2nd-century CE Jewish life and text transmission.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave36.ts"
+    },
+    {
       "id": "arch-yehohanan",
       "claim": "The crucified remains of Yehohanan son of Hagkol (Giv‘at ha-Mivtar) provide osteological evidence of Roman crucifixion practice in Judea (nail through heel bone).",
       "tier": "verified",
@@ -724,6 +738,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "cosmo-cosmic-shear-surveys",
+      "claim": "Cosmic shear weak-lensing surveys (e.g., KiDS, DES, HSC, and forthcoming Euclid/LSST analyses) measure large-scale structure growth as an independent probe of dark matter and dark energy.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave36.ts"
     },
     {
       "id": "cosmo-dark-energy",
@@ -934,6 +955,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave23.ts"
+    },
+    {
+      "id": "ec-1-clement-structure",
+      "claim": "1 Clement (Rome to Corinth, commonly c. 96 CE) appeals to OT examples and apostolic memory to urge church order — early Roman Christian leadership rhetoric, not a HJ biography.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave36.ts"
     },
     {
       "id": "ec-1clement",
@@ -1615,6 +1643,13 @@
       "file": "src/data/recordOfJesusChristWave14.ts"
     },
     {
+      "id": "hj-son-of-man-idiom",
+      "claim": "The “Son of Man” idiom in the Gospels is a major historical-Jesus puzzle: Aramaic speech-level meaning, Daniel 7 connection, and authenticity of individual sayings are all actively debated.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave36.ts"
+    },
+    {
       "id": "hj-table-fellowship",
       "claim": "Traditions of Jesus’ open table fellowship with “sinners” and tax collectors are widely treated as historically plausible under embarrassment and multiple attestation.",
       "tier": "well_attested",
@@ -1676,6 +1711,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave35.ts"
+    },
+    {
+      "id": "mod-boyarin-jewish-gospels",
+      "claim": "Daniel Boyarin argues that high christological ideas could emerge from within Jewish binitarian/angelic traditions rather than only from later paganization — a major Jewish-studies intervention in Gospel theology debates.",
+      "tier": "interpretive",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave36.ts"
     },
     {
       "id": "mod-contextual-credibility",
@@ -2110,6 +2152,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave34.ts"
+    },
+    {
+      "id": "nc-no-roman-trial-minutes",
+      "claim": "No authentic Roman judicial minutes of Jesus’ trial before Pilate are known; Gospel passion trial scenes are literary-theological narratives constrained by Roman provincial practice models.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave36.ts"
     },
     {
       "id": "nc-philo-silence-on-jesus",
@@ -2630,6 +2679,13 @@
       "file": "src/data/recordOfJesusChristWave7.ts"
     },
     {
+      "id": "nt-western-text-type",
+      "claim": "The so-called Western text (e.g., Codex Bezae in Acts/Gospels) is a recognized early textual cluster with expansions and paraphrastic tendencies; its relationship to the initial text is evaluated per unit of variation.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave36.ts"
+    },
+    {
       "id": "st-4qinstruction",
       "claim": "4QInstruction (Musar leMevin) is a major Qumran wisdom text combining sapiential and apocalyptic themes — evidence of instructional diversity in late Second Temple Judaism.",
       "tier": "verified",
@@ -2852,6 +2908,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
+      "id": "st-qumran-cemetery",
+      "claim": "The Qumran cemetery and associated settlement archaeology frame debates about who produced/used the Dead Sea Scrolls and the site’s sectarian character.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave36.ts"
     },
     {
       "id": "st-roman-census-practices",
