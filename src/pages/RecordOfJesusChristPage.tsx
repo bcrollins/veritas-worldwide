@@ -906,8 +906,12 @@ export default function RecordOfJesusChristPage() {
           </p>
         </section>
 
-        {/* TOC */}
-        <nav className="mb-10 p-5 border border-border rounded-sm bg-parchment-dark/30" aria-label="Section contents">
+        {/* TOC — sticky on mobile for researcher section jumps */}
+        <nav
+          className="mb-10 p-5 border border-border rounded-sm bg-parchment-dark/30 sticky top-0 z-20 backdrop-blur-sm supports-[backdrop-filter]:bg-parchment-dark/80 max-h-[40vh] overflow-y-auto sm:max-h-none sm:static sm:backdrop-blur-none sm:bg-parchment-dark/30"
+          aria-label="Section contents"
+          data-testid="roc-section-toc"
+        >
           <h2 className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-ink-faint mb-3">
             Chronological sections
           </h2>
