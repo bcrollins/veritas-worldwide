@@ -1759,4 +1759,12 @@ const relatedEntity = read('src/components/RelatedHubs.tsx')
 assert(relatedEntity.includes('Entity-only') || relatedEntity.includes('entity') || relatedEntity.includes('no personal'), 'RelatedHubs entity comment')
 
 
+
+// skip link and main-content ultimate end
+const appA11yEnd = read('src/App.tsx')
+assert(appA11yEnd.includes('Skip to') || appA11yEnd.includes('skip'), 'skip link end')
+assert(appA11yEnd.includes('main-content') || appA11yEnd.includes('id="main'), 'main content end')
+assert(appA11yEnd.includes('site-header') || appA11yEnd.includes('site-footer'), 'site shell landmarks end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
