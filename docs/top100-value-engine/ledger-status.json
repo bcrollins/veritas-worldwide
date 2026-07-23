@@ -8,21 +8,27 @@
       "id": "T100-001",
       "title": "Harden live anonymity gate for Israel corpus + multi-path identity floor",
       "priority": 98,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:36:00Z",
+      "commit": "9d58859"
     },
     {
       "display_rank": 2,
       "id": "T100-002",
       "title": "Scrub residual personal product-link vectors from Bernie quarantine checklist",
       "priority": 96,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:36:00Z",
+      "commit": "9d58859"
     },
     {
       "display_rank": 3,
       "id": "T100-003",
       "title": "Entity-only git author enforcement in pure suite",
       "priority": 95,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:36:00Z",
+      "commit": "9d58859"
     },
     {
       "display_rank": 4,
@@ -36,7 +42,9 @@
       "id": "T100-004",
       "title": "Personal timeline: evidence-tier tags + tags + import + corpus pin",
       "priority": 94,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:36:00Z",
+      "commit": "9d58859"
     },
     {
       "display_rank": 6,
@@ -57,7 +65,9 @@
       "id": "T100-005",
       "title": "One-tap primary-source open with archive-first preference",
       "priority": 93,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:36:00Z",
+      "commit": "9d58859"
     },
     {
       "display_rank": 9,
@@ -71,7 +81,9 @@
       "id": "T100-009",
       "title": "Analytics privacy: forbid PII properties in client track() calls",
       "priority": 92,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:36:00Z",
+      "commit": "9d58859"
     },
     {
       "display_rank": 11,
@@ -225,7 +237,9 @@
       "id": "T100-011",
       "title": "Researcher hub page at /researcher",
       "priority": 84,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:36:00Z",
+      "commit": "9d58859"
     },
     {
       "display_rank": 33,
@@ -239,7 +253,9 @@
       "id": "T100-019",
       "title": "llms.txt: researcher tools + taxonomy + corpus counts live",
       "priority": 83,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:36:00Z",
+      "commit": "9d58859"
     },
     {
       "display_rank": 35,
@@ -267,14 +283,18 @@
       "id": "T100-093",
       "title": "Anonymity audit re-run template after each ship interval",
       "priority": 82,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:36:00Z",
+      "commit": "9d58859"
     },
     {
       "display_rank": 39,
       "id": "T100-018",
       "title": "Methodology: machine-readable evidence taxonomy JSON",
       "priority": 81,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:36:00Z",
+      "commit": "9d58859"
     },
     {
       "display_rank": 40,
@@ -407,7 +427,9 @@
       "id": "T100-055",
       "title": "Privacy page: researcher local tools disclosure",
       "priority": 75,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:36:00Z",
+      "commit": "9d58859"
     },
     {
       "display_rank": 59,
@@ -703,5 +725,11 @@
       "priority": 50,
       "status": "Pending"
     }
-  ]
+  ],
+  "lastShip": {
+    "at": "2026-07-23T11:36:16.465358+00:00",
+    "commit": "9d58859",
+    "interval": 1,
+    "implementedCount": 11
+  }
 }

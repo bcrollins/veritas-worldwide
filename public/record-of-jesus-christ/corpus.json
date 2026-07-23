@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:31:24.492Z",
-  "claimCount": 651,
+  "generatedAt": "2026-07-23T11:37:16.698Z",
+  "claimCount": 660,
   "tierHistogram": {
-    "well_attested": 267,
-    "verified": 232,
+    "well_attested": 270,
+    "verified": 235,
     "contested": 50,
-    "interpretive": 71,
+    "interpretive": 73,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 26
+    "circumstantial": 27
   },
   "claims": [
     {
@@ -94,6 +94,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave52.ts"
+    },
+    {
+      "id": "ane-black-obelisk-jehu-image",
+      "claim": "The Black Obelisk of Shalmaneser III (British Museum) depicts a kneeling figure labeled as Jehu of Israel bringing tribute — the only known contemporary image claimed to represent an Israelite/Judahite king named in the Hebrew Bible.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave62.ts"
     },
     {
       "id": "ane-bulla-baruch",
@@ -824,6 +831,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "arch-masada-roman-camps",
+      "claim": "The Roman F-series camps and circumvallation works at Masada form a primary landscape of the Flavian siege system, independent of every narrative detail in Josephus War 7.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave62.ts"
+    },
+    {
       "id": "arch-masada-scrolls",
       "claim": "Manuscript fragments recovered at Masada (including biblical and sectarian-related texts) provide archaeological context for Jewish literary culture through the First Revolt terminus.",
       "tier": "verified",
@@ -1060,6 +1074,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
+      "id": "cosmo-baryon-acoustic-scale-rs",
+      "claim": "The comoving sound horizon r_s at the drag epoch is the BAO standard ruler; late-time BAO surveys measure D_M(z)/r_d and D_H(z)/r_d rather than absolute distances without an external early-universe calibration or pure geometry assumptions.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave62.ts"
     },
     {
       "id": "cosmo-bbn",
@@ -1860,6 +1881,13 @@
       "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
+      "id": "ec-polycarp-martyrdom-genre",
+      "claim": "The Martyrdom of Polycarp (mid–late 2nd c.) is among the earliest Christian martyr acts; its genre blends historical report and edifying narrative and must be weighed accordingly.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave62.ts"
+    },
+    {
       "id": "ec-polycarp-martyrdom-text",
       "claim": "The Martyrdom of Polycarp is an early Christian martyr narrative (mid-2nd c. core with possible later shaping) describing Polycarp’s death at Smyrna.",
       "tier": "well_attested",
@@ -2357,6 +2385,13 @@
       "file": "src/data/recordOfJesusChristWave25.ts"
     },
     {
+      "id": "hj-multiple-attestation-limits",
+      "claim": "Multiple attestation (independent sources sharing a tradition) raises relative likelihood but can reflect shared earlier sources, oral streams, or later harmonization — it is not automatic proof of discrete historical events.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave62.ts"
+    },
+    {
       "id": "hj-parables",
       "claim": "Parables form a characteristic teaching form in the Synoptic tradition and are widely treated as a historically distinctive feature of Jesus’ public speech.",
       "tier": "well_attested",
@@ -2614,6 +2649,13 @@
       "tier": "interpretive",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave36.ts"
+    },
+    {
+      "id": "mod-brown-death-messiah",
+      "claim": "Raymond E. Brown’s The Death of the Messiah remains a standard multi-volume historical and literary commentary on the passion narratives, modeling exhaustive source-critical engagement without reducing theology to history uncritically.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave62.ts"
     },
     {
       "id": "mod-contextual-credibility",
@@ -3204,6 +3246,13 @@
       "file": "src/data/recordOfJesusChristWave26.ts"
     },
     {
+      "id": "nc-lucian-peregrinus-christians",
+      "claim": "Lucian of Samosata’s Passing of Peregrinus satirizes Christians who revere a crucified sophist in Palestine — a second-century pagan literary notice of Christian devotion, not an independent biography of Jesus.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave62.ts"
+    },
+    {
       "id": "nc-mara",
       "claim": "The Syriac letter of Mara bar Serapion mentions a “wise king” executed by the Jews; identification with Jesus is possible but not certain.",
       "tier": "circumstantial",
@@ -3594,6 +3643,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave61.ts"
+    },
+    {
+      "id": "nt-cbgm-coherence-based",
+      "claim": "The Coherence-Based Genealogical Method (CBGM) used in the Editio Critica Maior models textual flow among witnesses without assuming a simple tree stemma — a major shift from classical Lachmannian genealogy for the Greek NT.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave62.ts"
     },
     {
       "id": "nt-codex-alexandrinus",
@@ -4413,6 +4469,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave59.ts"
+    },
+    {
+      "id": "st-philo-legatio-caligula-crisis",
+      "claim": "Philo’s Embassy to Gaius (Legatio ad Gaium) is a primary Jewish account of the Caligula crisis over the proposed statue in the Jerusalem Temple — critical context for mid-first-century Judean politics under Rome.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave62.ts"
     },
     {
       "id": "st-philo-migration-abraham",

@@ -18,6 +18,8 @@ import {
 import SharePanel from '../components/SharePanel'
 import NewsletterSignup from '../components/NewsletterSignup'
 import ReadingProgress from '../components/ReadingProgress'
+import LicenseCard from '../components/LicenseCard'
+import CorrectionsCTA from '../components/CorrectionsCTA'
 import {
   SCHOLARLY_TIERS,
   SCHOLARLY_TIER_ORDER,
@@ -622,7 +624,8 @@ export default function RecordOfJesusChristPage() {
               title={ROC_META.title}
             />
           </div>
-          <div className="flex flex-wrap gap-2 mt-5" role="group" aria-label="Researcher export">
+          <LicenseCard assetLabel="ROC claim exports and corpus.json" className="mt-5" />
+          <div className="flex flex-wrap gap-2 mt-3" role="group" aria-label="Researcher export">
             <button
               type="button"
               onClick={() => downloadText('record-of-jesus-christ-claims.json', rocExportJson(), 'application/json')}
@@ -1003,12 +1006,9 @@ export default function RecordOfJesusChristPage() {
           <h2 className="font-display text-lg font-bold text-ink mb-2">Attribution</h2>
           <p className="font-body text-sm text-ink-light leading-relaxed mb-4">
             This compilation is published by <strong className="text-ink">Veritas Worldwide</strong>.
-            No personal author byline is attached. Contact for rights and corrections:{' '}
-            <a href="mailto:rights@veritasworldwide.com" className="text-crimson hover:underline">
-              rights@veritasworldwide.com
-            </a>
-            .
+            No personal author byline is attached.
           </p>
+          <CorrectionsCTA pageLabel="Record of Jesus Christ" className="mb-4" />
           <p className="font-body text-xs text-ink-faint leading-relaxed mb-8">
             Update triggers: new major manuscript publications, peer-reviewed archaeological or radiocarbon results,
             material shifts in scholarly consensus, or correction of residual tier/citation errors.

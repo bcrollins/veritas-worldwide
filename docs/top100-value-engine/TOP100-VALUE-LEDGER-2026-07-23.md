@@ -10,6 +10,7 @@
 
 - **Interval 1 (2026-07-23):** #1 #2 #3 #4 #5 #6 #7 #9 #22 #88 Implemented/Absorbed. Pure 29/29 PASS. Peer ROC densify left unstaged.
 - **Interval 2 (2026-07-23):** soft-floor.json auto; wave barrel Wave3–61; wave61 → 651 claims; /bernie+/admin all-UA noindex HTML inject; ROC sticky + ?q/?tier/?domain deep-links; filtered export; one-tap primary source; empty-state CTA. Local export 651. LIVE was 642 pre-deploy.
+- **Interval 3 (2026-07-23):** wave62 → 660; sync-roc-geo-floors (650+/660+); #16 #17 #23 Implemented; LIVE anonymity PASS at 651 then ship 660.
 
 ---
 
@@ -98,11 +99,11 @@ Status: **Implemented** (5a2fb3c)
 
 ## #16 — GEO floors auto-bump script when claimCount crosses decade
 Area: GEO · Anchor: Staff-plus · Score: 7.5→9.0 · PRIORITY: 8 · Launch-critical: no  
-WHAT TO IMPLEMENT: `scripts/sync-roc-geo-floors.mjs` reads corpus, rewrites floors. Status: **Pending**
+WHAT TO IMPLEMENT: `scripts/sync-roc-geo-floors.mjs` reads corpus, rewrites floors. Status: **Implemented** (2026-07-23) — `scripts/sync-roc-geo-floors.mjs` reads corpus, rewrites llms/Home/prerender floors; postbuild wired.
 
 ## #17 — llms.txt always lists current claim floor + corpus URL
 Area: GEO · Anchor: llmstxt · Score: 8.8→9.5 · PRIORITY: 8 · Launch-critical: no  
-Status: **Pending** (partial via 600+)
+Status: **Implemented** (2026-07-23) — llms.txt auto-synced to 660+ via sync-roc-geo-floors; corpus URL present.
 
 ## #18 — Sitemap image:image floor hold ≥400
 Area: SEO · Anchor: Google Images · Score: 8.5→9.0 · PRIORITY: 7 · Launch-critical: no  
@@ -126,7 +127,7 @@ WHAT TO IMPLEMENT: Sync `evidenceTierFilter` to query param; deep-linkable. Stat
 
 ## #23 — Chapter one-tap open primary source (new tab + analytics)
 Area: Researcher · Anchor: NYT · Score: 8.0→9.4 · PRIORITY: 8.5 · Launch-critical: yes  
-WHAT TO IMPLEMENT: Primary source button on evidence cards with `trackPrimarySourceOpen`. Status: **Implemented** (2026-07-23) — PrimarySourceLink + trackSourceClick on chapter sources; min 44px touch; pure floors.
+WHAT TO IMPLEMENT: Primary source button on evidence cards with `trackPrimarySourceOpen`. Status: **Implemented** (2026-07-23) — PrimarySourceLink + trackSourceClick on chapter sources list.
 
 ## #24 — Chapter source tag chips filter
 Area: Researcher · Anchor: ProPublica · Score: 7.5→9.0 · PRIORITY: 8 · Launch-critical: no  
@@ -158,7 +159,7 @@ Status: **Pending**
 
 ## #31 — ROC PDF index claim count matches corpus
 Area: ROC · Anchor: AP · Score: 8.5→9.5 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Implemented** (2026-07-23) — generate-roc-pdf PASS 651 claims matches corpus.json claimCount 651 (wave61).
+Status: **Implemented** (2026-07-23) — generate-roc-pdf PASS 660 claims matches corpus after wave62.
 
 ## #32 — ROC Dataset schema distribution URLs absolute HTTPS
 Area: Schema · Anchor: Google · Score: 8.8→9.5 · PRIORITY: 7 · Launch-critical: no  

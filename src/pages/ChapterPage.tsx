@@ -34,6 +34,8 @@ import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
 import NewsletterSignup from '../components/NewsletterSignup'
 import InterpretationBoundaryNotice from '../components/InterpretationBoundaryNotice'
+import EvidenceTierLegend from '../components/EvidenceTierLegend'
+import CorrectionsCTA from '../components/CorrectionsCTA'
 import { getChapterImages } from '../data/chapterImages'
 import { getTopicHrefForTerm, getTopicHubsForChapter } from '../data/topicHubs'
 import { ImageWithFallback } from '../components/ImageWithFallback'
@@ -1221,7 +1223,9 @@ export default function ChapterPage() {
               )}
             </div>
           )}
+          {hasEvidence && <EvidenceTierLegend mode="compact" className="mt-4" />}
           <InterpretationBoundaryNotice counts={evidenceCounts} sourceCount={sourceCount} />
+          <CorrectionsCTA pageLabel={chapter.title} className="mt-4" />
 
           {(chapter.id === 'chapter-15' || chapter.id === 'chapter-16') && (
             <div className="mt-6 rounded-sm border border-crimson/25 bg-crimson/5 p-4 sm:p-5">

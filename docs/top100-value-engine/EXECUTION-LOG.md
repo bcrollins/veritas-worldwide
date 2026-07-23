@@ -45,7 +45,8 @@
 
 ### Deploy
 
-- Pending push to `main` → Railway  
+- Pushed `9d58859` to `main` → Railway
+- Commit author: Veritas Worldwide <rights@veritasworldwide.com>  
 - Live verify after deploy: `npm run verify:live-anonymity`, curl `/evidence-taxonomy.json`, `/researcher`
 
 ### Remaining

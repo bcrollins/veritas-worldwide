@@ -7,10 +7,10 @@
     "dev": "node scripts/dev-runtime.mjs",
     "dev:vite": "node ./node_modules/vite/bin/vite.js",
     "build": "node ./node_modules/typescript/bin/tsc && node ./node_modules/vite/bin/vite.js build",
-    "postbuild": "node scripts/export-chapter-data.mjs && node scripts/export-israel-dossier-corpus.mjs && node scripts/export-profiles-corpus.mjs && node scripts/generate-roc-waves-barrel.mjs && node scripts/export-roc-corpus.mjs && node scripts/generate-roc-pdf.mjs && node scripts/export-news-meta.mjs && node scripts/export-rss-feed.mjs && node scripts/export-evidence-taxonomy.mjs && node scripts/prerender.mjs && node scripts/run-with-strip-types.mjs scripts/generate-institute-field-manual-pdf.mjs && node scripts/verify-brand-kit.mjs",
+    "postbuild": "node scripts/export-chapter-data.mjs && node scripts/export-israel-dossier-corpus.mjs && node scripts/export-profiles-corpus.mjs && node scripts/generate-roc-waves-barrel.mjs && node scripts/export-roc-corpus.mjs && node scripts/sync-roc-geo-floors.mjs && node scripts/generate-roc-pdf.mjs && node scripts/export-news-meta.mjs && node scripts/export-rss-feed.mjs && node scripts/export-evidence-taxonomy.mjs && node scripts/prerender.mjs && node scripts/run-with-strip-types.mjs scripts/generate-institute-field-manual-pdf.mjs && node scripts/verify-brand-kit.mjs",
     "export:roc-corpus": "node scripts/generate-roc-waves-barrel.mjs && node scripts/export-roc-corpus.mjs",
     "generate:roc-waves": "node scripts/generate-roc-waves-barrel.mjs",
-    "generate:roc-pdf": "node scripts/generate-roc-waves-barrel.mjs && node scripts/export-roc-corpus.mjs && node scripts/generate-roc-pdf.mjs",
+    "generate:roc-pdf": "node scripts/generate-roc-waves-barrel.mjs && node scripts/export-roc-corpus.mjs && node scripts/sync-roc-geo-floors.mjs && node scripts/generate-roc-pdf.mjs",
     "verify:analytics-privacy": "node scripts/verify-analytics-privacy.mjs",
     "verify:git-author-forward": "node scripts/verify-git-author-forward.mjs",
     "strip:public-exif": "node scripts/strip-public-exif.mjs",
@@ -77,7 +77,8 @@
     "verify:comprehensive-profile": "node scripts/verify-comprehensive-profile.mjs",
     "verify:live-bot-noindex": "node scripts/verify-live-bot-noindex.mjs",
     "verify:soft-404-gates": "node scripts/verify-soft-404-gates.mjs",
-    "verify:identity-scrub": "node scripts/verify-identity-scrub.mjs"
+    "verify:identity-scrub": "node scripts/verify-identity-scrub.mjs",
+    "sync:roc-geo-floors": "node scripts/sync-roc-geo-floors.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
