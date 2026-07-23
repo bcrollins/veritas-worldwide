@@ -3384,6 +3384,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-fishing-fleet-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Fishing Fleet & Livelihood Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (fisheries cohort)',
+    location: 'Gaza coastline / ports / fishing zones',
+    summary:
+      'FAO, OCHA, and multi-source reporting document destruction of fishing boats, port infrastructure, and near-total suspension of coastal fishing under wartime naval restrictions — collapsing a primary civilian protein and livelihood source. Pattern card for fisheries destruction distinct from agricultural land and market-price cards.',
+    evidence:
+      'FAO fisheries assessments, multi-source port damage reporting, and OCHA access materials establish multi-source fleet and livelihood collapse. Exact boat counts evolve; multi-source near-total fisheries stoppage is the claim.',
+    sources: [
+      { label: 'FAO fisheries / livelihood materials', url: 'https://www.fao.org' },
+      { label: 'OCHA humanitarian access materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza fishing fleet coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'FAO public materials', url: 'https://www.fao.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4924,6 +4951,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['disability', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-fishing-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Fishing Fleet & Livelihood Destruction Pattern',
+    description: 'FAO/OCHA multi-source documentation of destroyed fishing boats and near-total suspension of coastal fishing under wartime restrictions.',
+    source: 'FAO / OCHA / multi-outlet',
+    sourceUrl: 'https://www.fao.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-fishing-fleet-destruction-pattern-2023-2025',
+      'gaza-agricultural-land-destruction-pattern-2023-2025',
+      'gaza-blockade-2007',
+    ],
+    tags: ['livelihood', 'food', 'civilians', 'children', 'gaza'],
+  },
+
 
 
 
