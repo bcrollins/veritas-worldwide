@@ -46,6 +46,13 @@ interface RelatedHubsProps {
 const darkChip =
   'inline-flex min-h-[44px] items-center rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white/80 transition-colors hover:border-amber-400/60 hover:text-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink'
 
+/** Active hub (matches route) — solid crimson like ResearchHubChips active state. */
+const activeChip =
+  'inline-flex min-h-[44px] items-center rounded-full border border-crimson bg-crimson px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2'
+
+const darkActiveChip =
+  'inline-flex min-h-[44px] items-center rounded-full border border-amber-400/80 bg-amber-400/20 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-amber-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink'
+
 export default function RelatedHubs({
   testId,
   hubs = PRIMARY_RELATED_HUBS,
@@ -65,6 +72,7 @@ export default function RelatedHubs({
     tone === 'dark'
       ? darkChip
       : `${chipBase} ${tone === 'parchment' ? 'bg-parchment' : 'bg-surface'}`
+  const activeClass = tone === 'dark' ? darkActiveChip : activeChip
 
   return (
     <nav
@@ -77,11 +85,17 @@ export default function RelatedHubs({
           hub.to === '/'
             ? pathname === '/' || pathname === ''
             : pathname === hub.to || pathname.startsWith(`${hub.to}/`)
+        const classNameForHub =
+          emphasizeTo && hub.to === emphasizeTo
+            ? emphasizeChip
+            : active
+              ? activeClass
+              : toneClass
         return (
           <Link
             key={hub.to}
             to={hub.to}
-            className={emphasizeTo && hub.to === emphasizeTo ? emphasizeChip : toneClass}
+            className={classNameForHub}
             {...(active ? { 'aria-current': 'page' as const } : {})}
           >
             {hub.label}
