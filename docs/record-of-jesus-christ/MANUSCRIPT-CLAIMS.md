@@ -1,9 +1,9 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:43:38.051Z  
+**Generated:** 2026-07-23T09:46:01.023Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 281  
-**Tier histogram:** `{"circumstantial": 15, "contested": 30, "interpretive": 27, "literary_theological": 3, "speculative": 2, "verified": 96, "well_attested": 108}`
+**Claim count:** 290  
+**Tier histogram:** `{"circumstantial": 15, "contested": 30, "interpretive": 28, "literary_theological": 3, "speculative": 2, "verified": 100, "well_attested": 112}`
 
 Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.json`.
 
@@ -28,6 +28,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ane-ketef-hinnom` | verified | proof_grade_data | Ketef Hinnom silver scrolls contain early Hebrew priestly blessing text (Numbers 6) — among the oldest biblical text witnesses in metal. |
 | `ane-kuntillet-ajrud` | well_attested | proof_grade_data | Inscriptions from Kuntillet ‘Ajrud include blessing formulae pairing Yahweh with other divine names — key data for Israelite religion debates. |
 | `ane-lachish-letters` | verified | proof_grade_data | The Lachish ostraca (letters) are late-Iron-Age Hebrew administrative/military correspondence relevant to Judah’s final decades before the Babylonian destruction. |
+| `ane-lachish-reliefs` | verified | proof_grade_data | Sennacherib’s Lachish reliefs (British Museum) depict the 701 BCE siege visually, complementing annals and biblical narratives. |
 | `ane-merneptah` | verified | proof_grade_data | The Merneptah Stele (c. 1208 BCE) contains the earliest known extra-biblical reference to “Israel” as a people in Canaan. |
 | `ane-mesha` | verified | proof_grade_data | The Mesha Stele (c. 840 BCE) names Omri of Israel, Yahweh, and Moabite campaigns paralleling 2 Kings 3. |
 | `ane-moabite-stone-context` | verified | proof_grade_data | The Mesha Stele (Moabite Stone) remains a primary control for Omride-period geopolitics and Yahwistic onomastics in Transjordan. |
@@ -55,6 +56,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `arch-magdala` | well_attested | attested_report | Magdala excavations reveal a first-century Galilean town with a synagogue and harbor installations, enriching the social map of Jesus’ activity zone. |
 | `arch-magdala-synagogue` | verified | proof_grade_data | A first-century synagogue at Magdala (Migdal) on the Sea of Galilee is excavated and published, expanding evidence for Galilean synagogue architecture. |
 | `arch-masada` | well_attested | attested_report | Masada’s archaeology confirms a First Jewish Revolt–period fortress with Roman siege works; Josephus’s mass-suicide narrative is only partly controllable by material remains. |
+| `arch-masada-siege` | verified | proof_grade_data | Masada siege archaeology and Josephus’s narrative document a major Roman siege at the end of the First Revolt (73/74 CE debates on exact year). |
 | `arch-nazareth` | well_attested | attested_report | Nazareth existed as a small Jewish settlement in the Early Roman period; monumental first-century remains are limited. |
 | `arch-ossuaries-practice` | verified | proof_grade_data | Secondary burial in limestone ossuaries is archaeologically well attested in late Second Temple Jerusalem and environs (roughly late 1st c. BCE–70 CE). |
 | `arch-pool-bethesda` | well_attested | attested_report | Excavations north of the Temple Mount have exposed twin pools matching John’s description of Bethesda with five porticoes (John 5) better than once assumed. |
@@ -85,6 +87,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `cosmo-hubble-tension` | contested | science_model | The Hubble tension denotes a statistically significant discrepancy between early-universe (CMB-inferred) and some late-universe local H₀ measurements. |
 | `cosmo-inflation-status` | well_attested | science_model | Cosmic inflation is the leading early-universe paradigm for flatness and horizon problems; direct detection of primordial B-mode polarization remains an active observational goal. |
 | `cosmo-matter-energy` | well_attested | science_model | Planck baseline ΛCDM reports cold dark matter and dark energy as dominant density components of the present universe. |
+| `cosmo-matter-power` | verified | science_model | The matter power spectrum from galaxy surveys and Lyman-α forests constrains structure growth consistent with cold dark matter frameworks at large scales. |
 | `cosmo-neutrino-bbn` | verified | science_model | Standard BBN and CMB analyses constrain the effective number of neutrino species (N_eff) near the Standard Model expectation. |
 | `cosmo-nucleosynthesis-li` | contested | science_model | The cosmological lithium problem remains an open tension between standard BBN predictions for ⁷Li and many stellar abundance measurements. |
 | `cosmo-recombination` | verified | science_model | CMB photons free-stream from the surface of last scattering at recombination (~z ≈ 1090 in standard ΛCDM). |
@@ -117,6 +120,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ec-origen-hexapla` | well_attested | attested_report | Origen’s Hexapla (3rd c.) arranged Hebrew and Greek OT columns for comparative textual work — early Christian engagement with pluriform scriptural text. |
 | `ec-papias` | circumstantial | attested_report | Papias of Hierapolis (early 2nd c.), preserved in fragments via Eusebius, offers early traditions about Mark and Matthew’s composition — valuable and debated. |
 | `ec-polycarp` | well_attested | attested_report | Polycarp’s Letter to the Philippians (mid-2nd c.) cites or alludes to multiple NT writings and shows early reception of Pauline and Gospel traditions. |
+| `ec-polycarp-philippians` | well_attested | attested_report | Polycarp’s Philippians cites or alludes to multiple NT writings, showing early 2nd-century reception of Pauline and Gospel traditions. |
 | `ec-quadratus` | circumstantial | attested_report | Quadratus’s apology (early 2nd c.), preserved in fragment via Eusebius, claims some healed/raised by Jesus lived into later times — early apologetic tradition, not contemporary medical record. |
 | `ec-shepherd-hermas` | well_attested | attested_report | The Shepherd of Hermas (2nd c.) was widely read and sometimes treated as scripture in some churches, illustrating fluid early canons. |
 | `ec-shepherd-hermas-canon` | well_attested | attested_report | The Shepherd of Hermas appears in some early canon lists and Codex Sinaiticus, illustrating fluid boundaries of authoritative Christian reading. |
@@ -139,6 +143,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `hj-galilee-aramaic` | well_attested | reconstruction | Aramaic is widely reconstructed as a primary spoken language of Jesus and Galilean Jewish communities, with Hebrew and Greek also present. |
 | `hj-galilee-context` | well_attested | attested_report | Early Roman Galilee included agricultural villages, fishing economy on the lake, and nearby urban centers such as Sepphoris and Tiberias. |
 | `hj-galilee-economy` | well_attested | reconstruction | Galilee under Antipas was an agrarian and fishing economy with urbanization at Sepphoris and Tiberias; Jesus traditions sit in that social landscape. |
+| `hj-galilee-jewishness` | well_attested | reconstruction | Archaeology and literary sources support a predominantly Jewish Galilee in the early first century with hellenizing urban pockets (Sepphoris, Tiberias). |
 | `hj-healings-reputation` | well_attested | reconstruction | Healing activity is multiply attested as part of Jesus’ public reputation in Synoptic tradition; historians often accept a healing reputation while bracketing modern medical ontologies. |
 | `hj-herod-death` | contested | debate | The death of Herod the Great is conventionally dated to 4 BCE (with minority arguments for 1 BCE / other), anchoring the latest plausible nativity window in Matthew’s framework. |
 | `hj-james-leadership` | well_attested | attested_report | James the brother of Jesus is attested as a Jerusalem leadership figure (Paul; Acts; Josephus Ant. 20.200) until his death c. 62 CE. |
@@ -192,6 +197,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `mod-open-data-ethics` | interpretive | attested_report | Modern digital manuscript projects raise access, conservation, provenance, and citation-ethics issues distinct from the content of any single reading. |
 | `mod-population-genetics` | well_attested | science_model | Population genetics of the Levant documents deep regional continuity with admixture layers; it does not identify individuals named in ancient texts. |
 | `mod-print-gutenberg` | verified | proof_grade_data | Print culture from Gutenberg onward multiplied biblical text access and stabilized vernacular canons — a reception-historical fact separate from first-century origins. |
+| `mod-quest-historiography` | interpretive | reconstruction | Historiography of the “quests” for the historical Jesus is itself a modern scholarly narrative with periodization that can oversimplify continuous research traditions. |
 | `mod-radiocarbon-dss` | well_attested | science_model | Radiocarbon dating of selected Dead Sea Scrolls supports late Second Temple copy ranges broadly consistent with paleography. |
 | `mod-social-memory` | interpretive | reconstruction | Social memory approaches treat Gospel traditions as communal remembering under social constraints rather than pure invention or pure stenography. |
 | `mod-textus-receptus` | verified | proof_grade_data | The Textus Receptus tradition (Erasmus onward) underlies early modern vernacular Bibles but is not the base text of modern critical editions (NA/UBS). |
@@ -215,6 +221,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nc-pliny-christians` | verified | proof_grade_data | Pliny the Younger’s letter to Trajan (Ep. 10.96) describes early 2nd-century Bithynian Christians worshiping Christ “as a god” and legal policy toward them. |
 | `nc-suetonius` | circumstantial | reconstruction | Suetonius, Claudius 25.4, refers to disturbances in Rome impulsore Chresto — often discussed as a possible garbled reference to Christ-related conflict, but identification is uncertain. |
 | `nc-suetonius-chrestus` | circumstantial | attested_report | Suetonius (Claudius 25) mentions disturbances in Rome under Claudius involving “Chrestus” — identification with Christ/Christians is possible but contested. |
+| `nc-suetonius-nero` | well_attested | attested_report | Suetonius (Nero 16) mentions punishments of Christians under Nero as adherents of a new and mischievous superstition. |
 | `nc-tacitus` | well_attested | attested_report | Tacitus, Annals 15.44 reports that “Christus” was executed under Tiberius by the procurator Pontius Pilate and that the movement originated in Judea. |
 | `nc-tacitus-context` | well_attested | attested_report | Tacitus Annals 15.44 places Christus’s execution under Tiberius by procurator Pontius Pilate within a Nero-era persecution narrative. |
 | `nc-tacitus-latin` | well_attested | attested_report | Tacitus Annals 15.44 (Latin) states that Christus suffered the extreme penalty under Tiberius by sentence of procurator Pontius Pilate, and that the superstitio arose in Judea. |
@@ -229,6 +236,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nt-codex-alexandrinus` | verified | proof_grade_data | Codex Alexandrinus (A 02, 5th c.) is a major early nearly complete Greek Bible witness held by the British Library. |
 | `nt-comma-johanneum` | well_attested | proof_grade_data | The Comma Johanneum (1 John 5:7–8 Trinitarian expansion in some later Latin/Textus Receptus traditions) is absent from the earliest Greek manuscript tradition and is treated as secondary in modern critical editions. |
 | `nt-continuous-text-vs-lectionary` | well_attested | proof_grade_data | Continuous-text manuscripts and lectionaries serve different liturgical and scholarly roles; critical editions weight continuous early witnesses more heavily for initial text. |
+| `nt-correctors-hands` | verified | proof_grade_data | Corrector hands in major codices (ℵ B A) document layered revision of manuscripts over time, crucial for stemmatic and CBGM analyses. |
 | `nt-ecm-method` | verified | proof_grade_data | The Editio Critica Maior (ECM) and the Coherence-Based Genealogical Method (CBGM) model manuscript relationships as a guided stemmatic network rather than a simple bipartite Alexandrian/Byzantine tree. |
 | `nt-ending-mark` | well_attested | proof_grade_data | The longer ending of Mark (16:9–20) is absent from the earliest major Greek witnesses (ℵ B) and is treated in critical editions as secondary, while shorter alternative endings also exist. |
 | `nt-eusebius-ch` | well_attested | attested_report | Eusebius’s Church History is an indispensable but tendentious fourth-century source for earlier Christian literature and martyrdoms; source-critical caution is mandatory. |
@@ -278,6 +286,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `st-mikvaot` | verified | proof_grade_data | Stepped ritual baths (miqva’ot) are archaeologically widespread in late Second Temple Judea and Galilee, evidencing purity practice infrastructure. |
 | `st-mishnah-context` | well_attested | attested_report | The Mishnah (c. 200 CE redaction) and related Tannaitic literature preserve legal memory of Second Temple practice but are post-70 literary products requiring critical use for pre-70 reconstruction. |
 | `st-parties` | well_attested | attested_report | Josephus and later rabbinic memory describe Pharisees, Sadducees, and Essenes as major Jewish schools; exact social demographics remain reconstructed. |
+| `st-pharisee-popularity` | well_attested | attested_report | Josephus claims Pharisees had popular influence; critical historians treat this as tendentious but still evidence of a major school’s social role. |
 | `st-pharisees-josephus` | well_attested | attested_report | Josephus’s descriptions of Pharisees, Sadducees, and Essenes are primary but tendentious; social realities were more complex than three-school schemes. |
 | `st-philo` | verified | proof_grade_data | Philo of Alexandria provides contemporary diaspora Jewish philosophical and exegetical context for the early first century CE. |
 | `st-pompey-63` | verified | proof_grade_data | Pompey’s intervention in Judea (63 BCE) brought Hasmonean civil conflict under Roman arbitration and began lasting Roman overlordship. |
