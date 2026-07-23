@@ -410,3 +410,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | catching toward tip (1994→2011+) |
 
+
+## Interval densify — tip post-2032 cardiac densify + mosque shelter / Petah Tikva / date-palm arson
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza amiodarone/lidocaine/adenosine · hostage water-for-captors/empty-scooter/stress-positions · WB artichoke/lab-fridges/mint-seedlings |
+| VI | mosque shelter · Petah Tikva · date-palm arson |
+| Pure | visual + israel-dossier PASS |
+| Live | **2011+** catching tip **2032+** |
+
