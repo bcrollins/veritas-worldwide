@@ -2161,4 +2161,11 @@ assert(platFinal.includes('Related hubs'), 'aria checkpoint')
 assert(surfaces.length >= 102, `surfaces checkpoint ${surfaces.length}`)
 
 
+
+// recovery suite self-health assert helpers final
+assert(typeof assert === 'function', 'assert helper final')
+assert(typeof read === 'function', 'read helper final')
+assert(Array.isArray(surfaces) && surfaces.length >= 102, `surfaces self-health ${surfaces.length}`)
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
