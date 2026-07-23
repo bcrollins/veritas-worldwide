@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.9.4'
+const KIT_VERSION = '2.9.5'
 
 const C = {
   parchment: '#FAF8F5',
@@ -695,7 +695,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.4 — ${new Date().toISOString().slice(0, 10)}
+## 2.9.5 — ${new Date().toISOString().slice(0, 10)}
+- Reddit banner + Instagram Reels safe-zone template
+
+## 2.9.4
 - TikTok vertical cover template (1080×1920)
 
 ## 2.9.3
@@ -1045,6 +1048,37 @@ function tiktokCoverSvg() {
   <line x1="80" y1="1100" x2="320" y2="1100" stroke="${C.crimson}" stroke-width="2"/>
   <circle cx="900" cy="1600" r="80" fill="none" stroke="${C.crimson}" stroke-width="5"/>
   <text x="900" y="1628" text-anchor="middle" font-family="Georgia, serif" font-size="64" font-weight="700" fill="${C.white}">V</text>
+  <text x="80" y="1760" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
+</svg>`
+}
+
+
+function redditBannerSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="384" viewBox="0 0 1920 384" role="img" aria-label="Reddit banner">
+  <rect width="1920" height="384" fill="${C.black}"/>
+  <rect x="0" y="0" width="1920" height="6" fill="${C.crimson}"/>
+  <rect x="0" y="378" width="1920" height="6" fill="${C.crimson}"/>
+  <circle cx="140" cy="192" r="56" fill="none" stroke="${C.crimson}" stroke-width="4"/>
+  <text x="140" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="48" font-weight="700" fill="${C.white}">V</text>
+  <text x="240" y="170" font-family="Georgia, serif" font-size="40" font-weight="700" fill="${C.white}">The Record</text>
+  <text x="240" y="220" font-family="Georgia, serif" font-size="22" font-style="italic" fill="rgba(255,255,255,0.7)">Primary sources. Public record. Your conclusions.</text>
+  <text x="240" y="290" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" letter-spacing="4" fill="${C.gold}">r/VeritasWorldwide · VERITAS WORLDWIDE PRESS</text>
+</svg>`
+}
+
+function reelsSafeZoneSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-label="Instagram Reels safe-zone template">
+  <rect width="1080" height="1920" fill="${C.black}"/>
+  <rect x="0" y="0" width="1080" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="1912" width="1080" height="8" fill="${C.crimson}"/>
+  <!-- Safe-zone guide (UI chrome) -->
+  <rect x="60" y="160" width="960" height="1400" fill="none" stroke="${C.gold}" stroke-width="1" stroke-dasharray="8 8" opacity="0.35"/>
+  <text x="80" y="140" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="4" fill="${C.gold}">REELS SAFE ZONE</text>
+  <text x="80" y="820" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.white}">Keep titles inside</text>
+  <text x="80" y="900" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.white}">the dashed frame.</text>
+  <text x="80" y="1020" font-family="Georgia, serif" font-size="26" font-style="italic" fill="rgba(255,255,255,0.65)">Primary sources. Public record. Your conclusions.</text>
   <text x="80" y="1760" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
 </svg>`
 }
@@ -1437,6 +1471,8 @@ Editorial and licensing: rights@veritasworldwide.com
   writeSvg('04-social/citation-card.svg', citationCardSvg())
   writeSvg('04-social/pinterest-pin.svg', pinterestPinSvg())
   writeSvg('04-social/tiktok-cover.svg', tiktokCoverSvg())
+  writeSvg('04-social/reddit-banner.svg', redditBannerSvg())
+  writeSvg('04-social/reels-safe-zone.svg', reelsSafeZoneSvg())
   writeFileSync(join(KIT, '07-docs', 'SOCIAL-LAUNCH.md'), socialLaunchMd())
   writeFileSync(join(KIT, '09-templates', 'correction-notice.html'), correctionNoticeHtml())
 
@@ -1490,6 +1526,8 @@ Editorial and licensing: rights@veritasworldwide.com
     ['04-social/citation-card.svg', '04-social/citation-card.png', 1080],
     ['04-social/pinterest-pin.svg', '04-social/pinterest-pin.png', 1000],
     ['04-social/tiktok-cover.svg', '04-social/tiktok-cover.png', 1080],
+    ['04-social/reddit-banner.svg', '04-social/reddit-banner.png', 1920],
+    ['04-social/reels-safe-zone.svg', '04-social/reels-safe-zone.png', 1080],
   ]
   const criticalPng = new Set([
     '01-logos/logo-mark-512.png',
@@ -1627,6 +1665,8 @@ Editorial and licensing: rights@veritasworldwide.com
       discord: { invite: '/brand-kit/04-social/discord-invite.svg' },
       pinterest: { pin: '/brand-kit/04-social/pinterest-pin.svg' },
       tiktok: { cover: '/brand-kit/04-social/tiktok-cover.svg', profile: '/brand-kit/04-social/social-profile-400.png' },
+      reddit: { banner: '/brand-kit/04-social/reddit-banner.svg' },
+      reels: { safeZone: '/brand-kit/04-social/reels-safe-zone.svg' },
       evidenceTiers: {
         verified: '/brand-kit/04-social/evidence-tier-verified.svg',
         circumstantial: '/brand-kit/04-social/evidence-tier-circumstantial.svg',

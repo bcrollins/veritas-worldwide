@@ -38,6 +38,8 @@ const required = [
   '07-docs/SOCIAL-LAUNCH.md',
   '04-social/pinterest-pin.svg',
   '04-social/tiktok-cover.svg',
+  '04-social/reels-safe-zone.svg',
+  '04-social/reddit-banner.svg',
   '05-og/og-media-kit.svg',
   '06-tokens/tokens.json',
   '07-docs/BRAND-GUIDE.md',
@@ -227,6 +229,8 @@ if (base) {
     '/brand-kit/07-docs/SOCIAL-LAUNCH.md',
     '/brand-kit/04-social/pinterest-pin.svg',
     '/brand-kit/04-social/tiktok-cover.svg',
+    '/brand-kit/04-social/reels-safe-zone.svg',
+    '/brand-kit/04-social/reddit-banner.svg',
   ]
   async function headOk(url) {
     try {

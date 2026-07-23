@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="384" viewBox="0 0 1920 384" role="img" aria-label="Reddit banner">
+  <rect width="1920" height="384" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1920" height="6" fill="#8B1A1A"/>
+  <rect x="0" y="378" width="1920" height="6" fill="#8B1A1A"/>
+  <circle cx="140" cy="192" r="56" fill="none" stroke="#8B1A1A" stroke-width="4"/>
+  <text x="140" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="48" font-weight="700" fill="#FFFFFF">V</text>
+  <text x="240" y="170" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#FFFFFF">The Record</text>
+  <text x="240" y="220" font-family="Georgia, serif" font-size="22" font-style="italic" fill="rgba(255,255,255,0.7)">Primary sources. Public record. Your conclusions.</text>
+  <text x="240" y="290" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" letter-spacing="4" fill="#B8860B">r/VeritasWorldwide · VERITAS WORLDWIDE PRESS</text>
+</svg>

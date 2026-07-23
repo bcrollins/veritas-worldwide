@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-label="Instagram Reels safe-zone template">
+  <rect width="1080" height="1920" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1080" height="8" fill="#8B1A1A"/>
+  <rect x="0" y="1912" width="1080" height="8" fill="#8B1A1A"/>
+  <!-- Safe-zone guide (UI chrome) -->
+  <rect x="60" y="160" width="960" height="1400" fill="none" stroke="#B8860B" stroke-width="1" stroke-dasharray="8 8" opacity="0.35"/>
+  <text x="80" y="140" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="4" fill="#B8860B">REELS SAFE ZONE</text>
+  <text x="80" y="820" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#FFFFFF">Keep titles inside</text>
+  <text x="80" y="900" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#FFFFFF">the dashed frame.</text>
+  <text x="80" y="1020" font-family="Georgia, serif" font-size="26" font-style="italic" fill="rgba(255,255,255,0.65)">Primary sources. Public record. Your conclusions.</text>
+  <text x="80" y="1760" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
+</svg>

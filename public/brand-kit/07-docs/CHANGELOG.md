@@ -1,6 +1,9 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 2.9.4 — 2026-07-23
+## 2.9.5 — 2026-07-23
+- Reddit banner + Instagram Reels safe-zone template
+
+## 2.9.4
 - TikTok vertical cover template (1080×1920)
 
 ## 2.9.3
