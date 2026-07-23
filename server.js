@@ -852,6 +852,16 @@ app.use('/api/client-error', rateLimit({ name: 'client-error', windowMs: 60_000,
 app.use('/api/health', rateLimit({ name: 'health', windowMs: 60_000, max: 120 }))
 app.use('/api/health/history', rateLimit({ name: 'health-history', windowMs: 60_000, max: 60 }))
 app.use('/api/build-info', rateLimit({ name: 'build-info', windowMs: 60_000, max: 60 }))
+// Machine corpora — public but large; cap scrape bursts while keeping normal research usable.
+// Shared scope so a scraper rotating across corpora still shares one budget per IP.
+const corpusRateLimit = rateLimit({ name: 'corpus-json', windowMs: 60_000, max: 40 })
+app.use('/profiles/corpus.json', corpusRateLimit)
+app.use('/record-of-jesus-christ/corpus.json', corpusRateLimit)
+app.use('/israel-dossier/corpus.json', corpusRateLimit)
+app.use('/evidence-taxonomy.json', corpusRateLimit)
+app.use('/profiles/soft-floor.json', corpusRateLimit)
+app.use('/record-of-jesus-christ/soft-floor.json', corpusRateLimit)
+app.use('/israel-dossier/soft-floor.json', corpusRateLimit)
 
 // CORS — restrict to known origins
 const ALLOWED_ORIGINS = new Set([

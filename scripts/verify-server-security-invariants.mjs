@@ -229,12 +229,26 @@ for (const scope of [
   'health',
   'field-manual-pdf',
   'analytics-pageview',
+  'corpus-json',
+  'osint-checkout',
 ]) {
   assert(
     server.includes(`name: '${scope}'`) || server.includes(`name: "${scope}"`),
     `named rateLimit scope required: ${scope}`,
   )
 }
+assert(
+  server.includes('/profiles/corpus.json') &&
+    server.includes('/record-of-jesus-christ/corpus.json') &&
+    server.includes('/israel-dossier/corpus.json') &&
+    server.includes('corpusRateLimit'),
+  'machine corpora paths must share corpusRateLimit middleware',
+)
+assert(
+  server.includes("name: 'corpus-json', windowMs: 60_000, max: 40") ||
+    server.includes('name: "corpus-json", windowMs: 60_000, max: 40'),
+  'corpus-json rateLimit must be 40/min (scrape ceiling, research headroom)',
+)
 assert(
   server.includes("name: 'field-manual-pdf', windowMs: 60_000, max: 90") ||
     server.includes('name: "field-manual-pdf", windowMs: 60_000, max: 90'),
