@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:05:53.848Z",
-  "claimCount": 588,
+  "generatedAt": "2026-07-23T11:08:28.006Z",
+  "claimCount": 597,
   "tierHistogram": {
-    "well_attested": 238,
-    "verified": 211,
-    "contested": 47,
-    "interpretive": 62,
+    "well_attested": 242,
+    "verified": 214,
+    "contested": 48,
+    "interpretive": 63,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 25
@@ -418,6 +418,13 @@
       "file": "src/data/recordOfJesusChristWave50.ts"
     },
     {
+      "id": "ane-tel-dan-house-david-genre",
+      "claim": "The Tel Dan stele is Aramaic royal victory propaganda; its “House of David” line functions within enemy-king rhetoric and must be read as genre-constrained historical evidence.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave55.ts"
+    },
+    {
       "id": "ane-tel-dan-house-of-david",
       "claim": "The Tel Dan stele’s “House of David” reading is the strongest extra-biblical epigraphic control for a Davidic dynasty name in the 9th century BCE context.",
       "tier": "verified",
@@ -733,6 +740,13 @@
       "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
+      "id": "arch-magdala-synagogue-plan",
+      "claim": "The Magdala synagogue’s plan (including benches and central features associated with the Magdala stone) documents a late Second Temple Galilean assembly building type.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave55.ts"
+    },
+    {
       "id": "arch-masada",
       "claim": "Masada’s archaeology confirms a First Jewish Revolt–period fortress with Roman siege works; Josephus’s mass-suicide narrative is only partly controllable by material remains.",
       "tier": "well_attested",
@@ -983,6 +997,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "cosmo-cmb-acoustic-peaks-overview",
+      "claim": "The CMB temperature power spectrum’s acoustic peak pattern is a primary observational foundation for flat ΛCDM parameter estimation (geometry, baryons, dark matter, and early expansion).",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave55.ts"
     },
     {
       "id": "cosmo-cmb-e-mode-polarization",
@@ -1734,6 +1755,13 @@
       "file": "src/data/recordOfJesusChristWave48.ts"
     },
     {
+      "id": "ec-shepherd-visions",
+      "claim": "The Shepherd of Hermas Visions section presents revelatory encounters shaping Roman Christian penitential theology in the 2nd century.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave55.ts"
+    },
+    {
       "id": "ec-tatian-diatessaron",
       "claim": "Tatian’s Diatessaron (late 2nd c.) is a gospel harmony that dominated Syriac Christian reading for centuries — major reception evidence for four-Gospel prestige and regional text forms.",
       "tier": "well_attested",
@@ -1886,6 +1914,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-exorcism-language-limits",
+      "claim": "Exorcism language in the Gospels participates in broader Mediterranean spirit-affliction discourse; historical reputation does not license laboratory verification of spirit ontology.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave55.ts"
     },
     {
       "id": "hj-exorcism-reputation",
@@ -2742,6 +2777,13 @@
       "file": "src/data/recordOfJesusChristWave42.ts"
     },
     {
+      "id": "mod-theissen-shadow-galilean",
+      "claim": "Gerd Theissen’s The Shadow of the Galilean popularized narrative historical method for HJ research while embedding sociological analysis of first-century Palestine.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave55.ts"
+    },
+    {
       "id": "mod-third-quest",
       "claim": "The “Third Quest” emphasizes Jesus’ Jewish context (Sanders, Vermes, Meier, Wright, Crossan, et al.) against earlier de-Judaizing portraits.",
       "tier": "interpretive",
@@ -3134,6 +3176,13 @@
       "file": "src/data/recordOfJesusChristWave28.ts"
     },
     {
+      "id": "nc-tacitus-sources-debate",
+      "claim": "Whether Tacitus drew on official archives, common knowledge, or Christian-adjacent rumor for Annals 15.44 remains debated; the notice’s core is still widely treated as independent of the Gospels.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave55.ts"
+    },
+    {
       "id": "nc-talmud",
       "claim": "Certain Babylonian Talmud passages are sometimes read as hostile allusions to Jesus; dating, redaction, and identification are highly contested and often late.",
       "tier": "circumstantial",
@@ -3216,6 +3265,13 @@
       "tier": "well_attested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave40.ts"
+    },
+    {
+      "id": "nt-armenian-version",
+      "claim": "The Armenian version of the NT is an important early versional tradition useful for the apparatus, especially in relation to Greek and Syriac transmission paths.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave55.ts"
     },
     {
       "id": "nt-bohairic-coptic",
@@ -3916,6 +3972,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
+      "id": "st-mikveh-galilee-density",
+      "claim": "Late Second Temple Galilee shows widespread miqva’ot in villages and towns, evidencing purity infrastructure beyond Jerusalem alone.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave55.ts"
     },
     {
       "id": "st-mikveh-jerusalem-density",
