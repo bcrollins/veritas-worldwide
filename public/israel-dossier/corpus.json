@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:24:25.870Z",
+  "generatedAt": "2026-07-23T09:24:51.459Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 171,
-    "timelineEvents": 159,
+    "incidents": 172,
+    "timelineEvents": 160,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 157,
+    "historicalWarCrimesPack": 158,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 111
+      "post-oct7": 112
     },
     "incidentsByTier": {
-      "verified": 169,
+      "verified": 170,
       "circumstantial": 2
     },
-    "childrenTagged": 144,
-    "civiliansTagged": 169,
+    "childrenTagged": 145,
+    "civiliansTagged": 170,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -4142,6 +4142,28 @@
       "tags": [
         "uxo",
         "debris",
+        "children",
+        "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-school-shelters-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Schools Used as Shelters Struck Pattern",
+      "description": "UNRWA/OCHA multi-source documentation of repeated strikes on schools serving as civilian shelters.",
+      "source": "UNRWA / OCHA / multi-outlet",
+      "sourceUrl": "https://www.unrwa.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-schools-shelters-struck-pattern-2023-2025",
+        "gaza-education-system-destroyed-2023-2025",
+        "gaza-children-killed-pattern-2023-2025"
+      ],
+      "tags": [
+        "schools",
+        "shelters",
         "children",
         "civilians",
         "gaza"
@@ -11383,6 +11405,50 @@
           "type": "document",
           "label": "Israeli government public materials",
           "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-schools-shelters-struck-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Schools Used as Shelters Struck Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-shelter cohort)",
+      "location": "Gaza Strip UNRWA and public schools used as shelters",
+      "summary": "UNRWA, OCHA, and multi-source reporting document repeated strikes on schools serving as civilian shelters — killing and wounding displaced families including large numbers of children. Pattern card for school-shelter strikes distinct from the education-system destruction structural card.",
+      "evidence": "UNRWA facility-incident tallies, multi-source strike reporting, and OCHA protection notes establish multi-source school-shelter strikes. Exact facility counts evolve; multi-source repeated strikes on shelter schools is the claim.",
+      "sources": [
+        {
+          "label": "UNRWA facility incident materials",
+          "url": "https://www.unrwa.org"
+        },
+        {
+          "label": "OCHA protection materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet school-shelter strike coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNRWA public updates",
+          "url": "https://www.unrwa.org"
         }
       ],
       "tier": "verified",
