@@ -73,3 +73,8 @@ Wave3 claims (James, Gal 2, Masada, Bar Kokhba, prefecture, Herod death, Pauline
 | Personal GH sameAs | Absent live (X + Reddit entity only) |
 
 **Verdict:** Public ROC package at 200 claims meets “holy shit, that’s done” evidentiary surface bar for Interval 14. Residual operator OPSEC (org transfer, admin hash env) unchanged.
+
+
+## Intervals 15–21 (waves 12–18) — **263 claims live**
+
+Corpus crossed 200 → 250 → 263 with continuous ship-in-intervals. Anonymity live floors held. Residual operator OPSEC unchanged.

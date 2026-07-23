@@ -4045,7 +4045,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'IL',
     photoUrl: getProfilePhoto('barack-obama'),
     summary:
-      '44th U.S. President (2009–2017). Signed the 2016 $38B 10-year MOU that still floors annual FMF + missile-defense transfers to Israel — the structural enablement architecture succeeding administrations inherited. Also negotiated JCPOA (opposed by Netanyahu/AIPAC) and abstained on UNSC 2334 (settlements). Integrity docket covers dual-cited ACA "keep your plan" and steel-production falsehoods. Primary: CRS RL33222, White House archives, UN records, OpenSecrets, PolitiFact.',
+      '44th U.S. President (2009–2017). Signed the 2016 $38B 10-year MOU that still floors annual FMF + missile-defense transfers to Israel — the structural enablement architecture succeeding administrations inherited. Also negotiated JCPOA (opposed by Netanyahu/AIPAC) and abstained on UNSC 2334 (settlements). Integrity docket (n≥3, dual-cited): ACA “keep your plan” Lie of the Year; steel-production overstatement (PolitiFact False); Nov 2013 keep-your-plan caveat rewrite (PolitiFact Pants on Fire). Primary: CRS RL33222, White House archives, UN records, OpenSecrets, PolitiFact.',
     tags: [
       'Former President',
       'Illinois',
