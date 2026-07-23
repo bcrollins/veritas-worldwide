@@ -319,3 +319,11 @@ Shell keyboard a11y now covers: skip-link (existing), desktop nav, mobile tabs, 
 | `9909ce5f` | CorrectionsCTA focus-visible |
 | `a7d194fd` / `e5ba8fbb` | pure densify locks v28–v29 |
 
+
+## Sprint 9f — reader chrome keyboard focus
+
+| Commit | Unit |
+|--------|------|
+| `277d91a3` | Bookmark, FontSize, Breadcrumb, BackToTop, DonationBanner, Language, PrimarySource, FloatingShare, ContentGate, DownloadModal, ContinueReading, ErrorBoundary, RecordTabs, CorpusSearch, TextSelectionShare focus-visible |
+| `f94a2a58` | pure densify lock v31 |
+
