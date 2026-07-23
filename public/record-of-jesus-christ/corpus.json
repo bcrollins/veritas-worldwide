@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:36:49.859Z",
-  "claimCount": 480,
+  "generatedAt": "2026-07-23T10:38:15.894Z",
+  "claimCount": 489,
   "tierHistogram": {
-    "well_attested": 191,
-    "verified": 169,
+    "well_attested": 197,
+    "verified": 171,
     "contested": 43,
-    "interpretive": 50,
+    "interpretive": 51,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 22
@@ -87,6 +87,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave39.ts"
+    },
+    {
+      "id": "ane-city-david-bullae-context",
+      "claim": "Hundreds of clay bullae and seal impressions from controlled City of David / Ophel excavations document late Iron Age Judahite administrative literacy and onomastics.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave43.ts"
     },
     {
       "id": "ane-cos-corpus",
@@ -628,6 +635,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "arch-nazareth-farmstead",
+      "claim": "Excavations and surveys at Nazareth document Early Roman agricultural terraces, quarries, and modest domestic remains consistent with a small Jewish village setting.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave43.ts"
+    },
+    {
       "id": "arch-nazareth-village-debate",
       "claim": "Nazareth’s early Roman occupation is archaeologically attested at modest scale; debates concern density and socioeconomic profile, not total nonexistence.",
       "tier": "well_attested",
@@ -871,6 +885,13 @@
       "tier": "well_attested",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave34.ts"
+    },
+    {
+      "id": "cosmo-deuterium-abundance",
+      "claim": "Primordial deuterium abundance measured in high-redshift quasar absorption systems matches BBN predictions for the baryon density inferred from the CMB.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave43.ts"
     },
     {
       "id": "cosmo-expansion",
@@ -1186,6 +1207,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "ec-eusebius-martyrs-palestine",
+      "claim": "Eusebius’s Martyrs of Palestine records Diocletianic persecution narratives in the early 4th century — primary reception of Christian martyrdom culture, not HJ biography.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave43.ts"
     },
     {
       "id": "ec-gospel-harmony",
@@ -1874,6 +1902,13 @@
       "file": "src/data/recordOfJesusChristWave28.ts"
     },
     {
+      "id": "hj-table-fellowship-limits",
+      "claim": "Open table fellowship with “sinners” is widely treated as a historically distinctive Jesus practice; the precise social boundaries and theological meanings remain reconstructed and debated.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave43.ts"
+    },
+    {
       "id": "hj-tax-collectors",
       "claim": "Association with tax collectors / toll collectors is multiply attested and often treated as historically characteristic of Jesus’ social practice (table fellowship theme).",
       "tier": "well_attested",
@@ -2012,6 +2047,13 @@
       "tier": "interpretive",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave33.ts"
+    },
+    {
+      "id": "mod-crossan-open-commensality",
+      "claim": "Crossan’s “open commensality” thesis treats radical shared meals as the social heart of the historical Jesus movement — influential Jesus Seminar–era reconstruction still widely cited and contested.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave43.ts"
     },
     {
       "id": "mod-digital-dss",
@@ -2420,6 +2462,13 @@
       "file": "src/data/recordOfJesusChristWave34.ts"
     },
     {
+      "id": "nc-no-contemporary-jewish-literary",
+      "claim": "No surviving Jewish literary work from Jesus’ lifetime (outside later Christian texts) names him; Philo is silent and the earliest Jewish controls (Josephus) are post-70.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave43.ts"
+    },
+    {
       "id": "nc-no-pilate-report-survives",
       "claim": "No authentic “Acts of Pilate” or official prefectural report on Jesus is known from the first century; later Acts of Pilate / Gospel of Nicodemus texts are Christian apocrypha.",
       "tier": "well_attested",
@@ -2635,6 +2684,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave8.ts"
+    },
+    {
+      "id": "nt-byzantine-priority-limits",
+      "claim": "Byzantine-priority theories correctly note the medieval majority’s internal coherence, but most modern editors reject equating numerical dominance with initial-text status without early genealogical support.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave43.ts"
     },
     {
       "id": "nt-codex-alexandrinus",
@@ -3160,6 +3216,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-josephus-antiquities-preface",
+      "claim": "Josephus’s preface to Jewish Antiquities presents the work as a full history of the Jewish people for Greco-Roman readers, with apologetic and pedagogical aims.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave43.ts"
     },
     {
       "id": "st-josephus-biases",

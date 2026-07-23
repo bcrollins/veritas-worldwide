@@ -2453,17 +2453,7 @@ const staticPages = [
     ],
     sourceFile: 'src/pages/ContentPackPage.tsx',
   },
-  {
-    route: '/share',
-    title: 'Content Packs & Brand Kit | Veritas Worldwide',
-    heading: 'Content Packs & Brand Kit',
-    description:
-      'Official brand assets, shareable social graphics, pre-written posts, and article cards. Free for press, social media, and advocacy with attribution.',
-    body: [
-      'Content packs are designed to preserve source integrity while making sharing easier across social, newsletter, and press contexts.',
-    ],
-    sourceFile: 'src/pages/ContentPackPage.tsx',
-  },
+  // /share and /content-packs 301 → /content-pack (PATH_ALIASES); do not prerender aliases.
   {
     route: '/forum',
     title: 'Community Forum | Veritas Worldwide',
