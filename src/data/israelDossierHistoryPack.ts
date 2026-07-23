@@ -5922,6 +5922,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-lead-exposure-rubble-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Lead & Toxic Rubble Exposure Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (toxic-rubble cohort)',
+    location: 'Gaza Strip rubble fields and destroyed urban neighborhoods',
+    summary:
+      'UNEP, UNICEF, and multi-source environmental-health reporting document elevated risk of lead and toxic dust exposure for children living and playing in rubble — a long-term pediatric environmental harm pattern distinct from UXO-child casualties and aggregate rubble cards.',
+    evidence:
+      'UNEP environmental assessments, UNICEF child-health notes, and multi-outlet toxic-dust coverage establish multi-source pediatric exposure risk in rubble environments. Exact blood-lead measurements are incomplete; multi-source wartime toxic-rubble child exposure risk is the claim.',
+    sources: [
+      { label: 'UNEP environmental assessments', url: 'https://www.unep.org' },
+      { label: 'UNICEF child health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza toxic rubble coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNEP public updates', url: 'https://www.unep.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-communication-blackout-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Communication Blackout Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (comms-blackout cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Israeli government, released-hostage testimony, and multi-source reporting document near-total communication blackout for Israeli civilian hostages — no Red Cross visits for extended periods and no family contact — a protected-person isolation pattern distinct from ICRC-access-denial and hostages-held cards.',
+    evidence:
+      'ICRC access statements, multi-source released-hostage testimony, and multi-outlet coverage establish multi-source prolonged communication blackout. Exact visit counts evolve; multi-source multi-month isolation without family contact is the claim.',
+    sources: [
+      { label: 'ICRC access statements', url: 'https://www.icrc.org' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet hostage isolation coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'ICRC public updates', url: 'https://www.icrc.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-road-blocks-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Roadblocks & Civilian Route Denial Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (settler-roadblock cohort)',
+    location: 'West Bank rural roads and village access routes',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler-erected roadblocks and route denials after October 7 — stranding civilians including schoolchildren and medical patients. Pattern card for settler roadblocks distinct from military checkpoint and price-tag cards.',
+    evidence:
+      'OCHA access databases, B\'Tselem field files, and multi-outlet coverage establish multi-source settler roadblock surge. Exact barrier counts evolve; multi-source wartime settler route denial is the claim.',
+    sources: [
+      { label: 'OCHA access materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem freedom of movement materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settler roadblock coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -9061,6 +9142,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['rubble', 'reconstruction', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-toxic-rubble-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Toxic Rubble Exposure Pattern',
+    description: 'UNEP/UNICEF multi-source documentation of lead and toxic dust exposure risk for children in rubble environments.',
+    source: 'UNEP / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.unep.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-lead-exposure-rubble-pattern-2023-2025',
+      'gaza-rubble-uxo-waste-pattern-2023-2025',
+      'gaza-uxo-child-casualties-pattern-2023-2025',
+    ],
+    tags: ['toxic', 'rubble', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-comms-blackout-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Communication Blackout Pattern',
+    description: 'Multi-source documentation of prolonged communication blackout and denied family contact for civilian hostages.',
+    source: 'ICRC / Israeli government / multi-outlet',
+    sourceUrl: 'https://www.icrc.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-communication-blackout-pattern-2023-2025',
+      'gaza-icrc-access-denial-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'isolation', 'civilians', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-roadblocks-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Roadblocks Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler roadblocks denying civilian route access.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-road-blocks-pattern-2023-2025',
+      'west-bank-checkpoint-movement-restriction-pattern-2023-2025',
+      'west-bank-price-tag-violence-pattern-2023-2025',
+    ],
+    tags: ['roadblocks', 'settlers', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
