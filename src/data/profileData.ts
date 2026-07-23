@@ -1248,6 +1248,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'mcconnell-obama-nominees-faster-than-bush-2013',
+        statement:
+          'President Obama is “getting them [nominees] faster than President Bush was at the same time in his second term.”',
+        saidAt: 'July 14, 2013',
+        context: 'NBC Meet the Press interview during Senate nominations / filibuster brinkmanship with Harry Reid.',
+        whyFalse:
+          'PolitiFact rated False. Across all nominations (not only judges), Library of Congress confirmation counts through mid-July of the first year of each second term showed Bush with ~129 confirmations vs ~68 for Obama — nearly twice as many under Bush. McConnell’s office later said he meant judicial nominees only, but the Meet the Press claim did not specify judges.',
+        correction:
+          'At the comparable point in Bush’s second term, the Senate had confirmed substantially more total nominees than under Obama in mid-2013.',
+        statementSource: 'Mitch McConnell on NBC Meet the Press (July 14, 2013) — PolitiFact statement capture',
+        statementUrl: 'https://www.nbcnews.com/meet-the-press',
+        debunkSource: 'PolitiFact — False (July 18, 2013) on Obama vs Bush nomination confirmation pace',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2013/jul/18/mitch-mcconnell/barack-obama-getting-his-nominees-confirmed-faster/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.mcconnell.senate.gov' },
