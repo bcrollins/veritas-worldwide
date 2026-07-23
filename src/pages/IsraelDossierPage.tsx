@@ -455,6 +455,7 @@ const SECTIONS = [
   { id: 'social', label: 'Domestic Policy' },
   { id: 'lobbying', label: 'AIPAC & Lobbying' },
   { id: 'infrastructure', label: 'Infrastructure' },
+  { id: 'visual-investigations', label: 'Visual Investigations' },
   { id: 'incidents', label: 'Documented Incidents' },
   { id: 'downloads', label: 'Download & Share' },
   { id: 'methodology', label: 'Methodology' },
