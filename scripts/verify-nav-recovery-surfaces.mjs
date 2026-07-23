@@ -1856,4 +1856,11 @@ assert(relatedExpEnd.includes('export const PRIMARY_RELATED_HUBS'), 'PRIMARY exp
 assert(relatedExpEnd.includes('export interface RelatedHub'), 'RelatedHub interface ultimate end')
 
 
+
+// DossierHubSpokes and ResearchHubChips default export ultimate end
+assert(read('src/components/DossierHubSpokes.tsx').includes('export default function DossierHubSpokes'), 'spokes default export ultimate end')
+assert(read('src/components/DossierHubSpokes.tsx').includes('export const DOSSIER_SPOKES'), 'DOSSIER_SPOKES export ultimate end')
+assert(read('src/components/ResearchHubChips.tsx').includes('export default function ResearchHubChips'), 'RHC default export ultimate end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
