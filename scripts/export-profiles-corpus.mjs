@@ -39,15 +39,30 @@ function loadPhotoMap() {
 /** Rough integrity score from documentedFalsehoods block (verified-only deductions). */
 function parseIntegrityFromWindow(window) {
   if (!window.includes('documentedFalsehoods:')) {
-    return { integrityScore: null, integrityFalsehoods: 0, integrityHasDocket: false }
+    return {
+      integrityScore: null,
+      integrityFalsehoods: 0,
+      integrityDocketCount: 0,
+      integrityHasDocket: false,
+    }
   }
   // Empty array → clean 100
   if (/documentedFalsehoods:\s*\[\s*\]/.test(window)) {
-    return { integrityScore: 100, integrityFalsehoods: 0, integrityHasDocket: true }
+    return {
+      integrityScore: 100,
+      integrityFalsehoods: 0,
+      integrityDocketCount: 0,
+      integrityHasDocket: true,
+    }
   }
   const blockMatch = window.match(/documentedFalsehoods:\s*\[([\s\S]*?)\n\s*\],/)
   if (!blockMatch) {
-    return { integrityScore: null, integrityFalsehoods: 0, integrityHasDocket: false }
+    return {
+      integrityScore: null,
+      integrityFalsehoods: 0,
+      integrityDocketCount: 0,
+      integrityHasDocket: false,
+    }
   }
   const block = blockMatch[1]
   const severities = [...block.matchAll(/severity:\s*'(minor|material|egregious)'/g)].map((m) => m[1])
@@ -63,6 +78,8 @@ function parseIntegrityFromWindow(window) {
   return {
     integrityScore: Math.max(0, 100 - total),
     integrityFalsehoods: verified,
+    /** Alias for machine consumers — docket n (verified falsehoods only). */
+    integrityDocketCount: verified,
     integrityHasDocket: true,
   }
 }

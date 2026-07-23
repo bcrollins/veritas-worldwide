@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:50:09.174Z",
+  "generatedAt": "2026-07-23T11:30:50.783Z",
   "count": 96,
   "profiles": [
     {
@@ -22,6 +22,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -42,6 +43,7 @@
       ],
       "integrityScore": 35,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -62,6 +64,7 @@
       ],
       "integrityScore": 69,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -82,6 +85,7 @@
       ],
       "integrityScore": 69,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -105,6 +109,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -129,6 +134,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -152,6 +158,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -175,6 +182,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -201,6 +209,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -224,6 +233,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -244,6 +254,7 @@
       ],
       "integrityScore": 25,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -264,6 +275,7 @@
       ],
       "integrityScore": 25,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -289,6 +301,7 @@
       ],
       "integrityScore": 52,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -309,6 +322,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -329,6 +343,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -352,6 +367,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -374,6 +390,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -397,6 +414,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -421,6 +439,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -444,6 +463,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -468,6 +488,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -490,6 +511,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -514,6 +536,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -537,6 +560,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -559,6 +583,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -579,6 +604,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -603,6 +629,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -626,6 +653,7 @@
       ],
       "integrityScore": 35,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -648,6 +676,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -667,6 +696,7 @@
       ],
       "integrityScore": 25,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -689,6 +719,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -712,6 +743,7 @@
       ],
       "integrityScore": 25,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -731,6 +763,7 @@
       ],
       "integrityScore": 35,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -751,6 +784,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -774,6 +808,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -797,6 +832,7 @@
       ],
       "integrityScore": 35,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -819,6 +855,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -841,6 +878,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -864,6 +902,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -886,6 +925,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -908,6 +948,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -931,6 +972,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -953,6 +995,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -976,6 +1019,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -998,6 +1042,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1021,6 +1066,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1045,6 +1091,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1066,6 +1113,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1088,6 +1136,7 @@
       ],
       "integrityScore": 35,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1111,6 +1160,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1134,6 +1184,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1156,6 +1207,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1176,6 +1228,7 @@
       ],
       "integrityScore": 35,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1196,6 +1249,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1215,6 +1269,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1235,6 +1290,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1255,6 +1311,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1275,6 +1332,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1295,6 +1353,7 @@
       ],
       "integrityScore": 69,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1315,6 +1374,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1335,6 +1395,7 @@
       ],
       "integrityScore": 69,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1354,6 +1415,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1374,6 +1436,7 @@
       ],
       "integrityScore": 25,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1396,6 +1459,7 @@
       ],
       "integrityScore": 69,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1417,6 +1481,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1437,6 +1502,7 @@
       ],
       "integrityScore": 69,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1457,6 +1523,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1477,6 +1544,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1497,6 +1565,7 @@
       ],
       "integrityScore": 76,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1516,6 +1585,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1535,6 +1605,7 @@
       ],
       "integrityScore": 69,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1555,6 +1626,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1578,6 +1650,7 @@
       ],
       "integrityScore": 76,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1596,6 +1669,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1615,6 +1689,7 @@
       ],
       "integrityScore": 69,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1635,6 +1710,7 @@
       ],
       "integrityScore": 25,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1655,6 +1731,7 @@
       ],
       "integrityScore": 25,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1675,6 +1752,7 @@
       ],
       "integrityScore": 25,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1695,6 +1773,7 @@
       ],
       "integrityScore": 25,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1715,6 +1794,7 @@
       ],
       "integrityScore": 62,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1734,6 +1814,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1754,6 +1835,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1774,6 +1856,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1793,6 +1876,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1813,6 +1897,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1833,6 +1918,7 @@
       ],
       "integrityScore": 35,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1853,6 +1939,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1873,6 +1960,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1893,6 +1981,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1912,6 +2001,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1932,6 +2022,7 @@
       ],
       "integrityScore": 45,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1960,6 +2051,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -1982,6 +2074,7 @@
       ],
       "integrityScore": 25,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -2002,6 +2095,7 @@
       ],
       "integrityScore": 25,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -2024,6 +2118,7 @@
       ],
       "integrityScore": 55,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     },
     {
@@ -2047,6 +2142,7 @@
       ],
       "integrityScore": 35,
       "integrityFalsehoods": 3,
+      "integrityDocketCount": 3,
       "integrityHasDocket": true
     }
   ]

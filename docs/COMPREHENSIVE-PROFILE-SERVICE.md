@@ -41,3 +41,14 @@ npm run verify:comprehensive-profile
 - Keyword refuse-list blocks clear harassment/stalking/hacking language at intake (400).
 - Lawful-purpose attestations required client-side and server-side.
 - Health: `orderIntakeCount` is a non-PII counter only.
+
+## Operations (entity-only)
+
+- **Health:** `GET /api/services/comprehensive-profile/health` → `checkoutReady`, `stripeConfigured`, `orderIntakeCount`, `rateLimitPerMinute` (8), `retentionDays` (default 90).
+- **Rate limit:** 8 requests/minute per IP on `/api/services/comprehensive-profile/*`.
+- **PII store:** `data/osint-orders.ndjson` (gitignored, never public). Hard-denied at `/data/*`.
+- **Redacted tail:** `GET /api/admin/osint-orders` with `Authorization: Bearer $OSINT_OPS_TOKEN` (or `ADMIN_OPS_TOKEN`). Returns email domain + subject initials only.
+- **Purge:** `POST /api/admin/osint-orders/purge` with same bearer; boot-time best-effort purge for aged delivered/pending rows.
+- **Stripe:** set `STRIPE_SECRET_KEY` on Railway for live Checkout sessions.
+- **Contact:** rights@veritasworldwide.com only — no personal operator identity.
+

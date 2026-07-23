@@ -1847,4 +1847,30 @@ console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, 
 
 if (r.status !== 0) fail(`runtime:\n${r.stderr || r.stdout}`)
 console.log(r.stdout.trim())
+
+// Soft hygiene: homepage-only dual-cite URLs (path /) — WARN, do not hard-fail during densify.
+{
+  const docketSrc = fs.readFileSync(path.join(root, 'src/data/profileData.ts'), 'utf8')
+  const urlRe = /(statementUrl|debunkUrl):\s*'(https?:\/\/[^']+)'/g
+  let m
+  let weak = 0
+  let total = 0
+  while ((m = urlRe.exec(docketSrc)) !== null) {
+    total += 1
+    try {
+      const u = new URL(m[2])
+      const pathOnly = (u.pathname || '/').replace(/\/+$/, '') || '/'
+      if (pathOnly === '/') weak += 1
+    } catch {
+      weak += 1
+    }
+  }
+  console.log(`[verify:integrity-score] dual-cite URLs total=${total} weakHomepage=${weak}`)
+  if (weak > 120) {
+    console.warn(
+      `[verify:integrity-score] WARN weakHomepageCount ${weak} > 120 — prioritize article-level dual-cites`,
+    )
+  }
+}
+
 console.log('[verify:integrity-score] PASS')

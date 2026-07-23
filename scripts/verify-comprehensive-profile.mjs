@@ -86,6 +86,8 @@ assert(page.includes('min-h-[44px]'), '44px touch targets expected on OSINT form
 assert(server.includes('purgeExpiredOsintOrders') || server.includes('OSINT_RETENTION_DAYS'), 'OSINT retention purge missing')
 assert(server.includes('/api/admin/osint-orders'), 'admin OSINT orders redacted tail missing')
 assert(server.includes('redactOsintOrder'), 'OSINT order redaction helper missing')
+assert(server.includes('OSINT ops token not configured'), 'admin OSINT API must 503 without token')
+
 
 // Methodology completeness floor
 const methodologyHits = (constants.match(/methodology/gi) || []).length

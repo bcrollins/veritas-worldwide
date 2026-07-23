@@ -1,0 +1,28 @@
+# Top-100 Wave 3 Execution Log
+
+## Phase A Truth Model (2026-07-23)
+- Live commit lag ~5a2fb3c vs tip b9e4f11+
+- publicChapterCount 32, prerender ~683
+- profiles 96, densify n≥3 = 96 live
+- ROC claimCount live ~633 (soft floor lag WARN)
+- OSINT health: checkoutReady true, stripeConfigured true, retentionDays 90
+- Anonymity: verify:live-anonymity PASS entity-only
+
+## Phase B–C
+- Ledger: `.claude-state/top100-value-ledger-2026-07-23-v3.json`
+- Outline: `.claude-state/top100-value-ledger-2026-07-23-v3-OUTLINE.md`
+- 100 items outlined with WHAT-TO-IMPLEMENT
+
+## Phase D ships this session
+1. `b9e4f11` fix(spa): /researcher/timeline knownExact + robots + bot noindex + CTAs
+2. Wave3 interval: integrityDocketCount export, weakHomepage metric, pure gates (GA4 free-text, search OSINT, knownExact freeze, admin 503), prerender noindex shell, bookmarks CTA, a11y OSINT note, dark form complete, service ops docs, Integrity FAQ on profiles index, llms densify language
+
+## Anonymity audits
+- verify:docs-anonymity PASS
+- verify:identity-scrub PASS  
+- verify:live-anonymity PASS
+- package.json no personal GH
+- public/ no /Users paths
+
+## Operator blocked residual
+- VITE_ADMIN_PASSWORD_HASH, password rotate, GH org transfer, git history scrub, OSINT_OPS_TOKEN

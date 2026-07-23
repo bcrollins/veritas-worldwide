@@ -298,6 +298,12 @@ export default function ProfilesIndexPage(): React.ReactNode {
       ]),
       faqJsonLd([
         {
+          question: 'How does the Integrity Score work?',
+          answer:
+            'Each Power Profile may carry a compiled dual-cite falsehood docket. The score starts at 100 and subtracts only for verified public falsehoods (minor −8, material −15, egregious −25). Profiles without a compiled docket are not scored as a fake perfect 100. Every docket row requires distinct statement and debunk source URLs (n≥3 densify floor).',
+        },
+
+        {
           question: 'What are Power Profiles?',
           answer:
             'Source-driven profiles of politicians, financiers, lobbyists, intelligence actors, and other power brokers. Claims cite public filings, congressional records, court documents, and verified journalism — not rumor.',

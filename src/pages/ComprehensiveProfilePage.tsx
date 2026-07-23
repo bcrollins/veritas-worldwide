@@ -409,7 +409,7 @@ export default function ComprehensiveProfilePage() {
                   <span className="font-sans text-xs text-ink-muted">Full legal name (required)</span>
                   <input
                     required
-                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink"
+                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink dark:border-white/20 dark:bg-obsidian dark:text-white"
                     value={form.subjectFullName}
                     onChange={(e) => update('subjectFullName', e.target.value)}
                   />
@@ -417,7 +417,7 @@ export default function ComprehensiveProfilePage() {
                 <label className="block">
                   <span className="font-sans text-xs text-ink-muted">Known aliases / handles</span>
                   <input
-                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink"
+                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink dark:border-white/20 dark:bg-obsidian dark:text-white"
                     value={form.subjectAliases}
                     onChange={(e) => update('subjectAliases', e.target.value)}
                     placeholder="usernames, former names, DBAs"
@@ -426,7 +426,7 @@ export default function ComprehensiveProfilePage() {
                 <label className="block">
                   <span className="font-sans text-xs text-ink-muted">City / region / country</span>
                   <input
-                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink"
+                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink dark:border-white/20 dark:bg-obsidian dark:text-white"
                     value={form.subjectLocation}
                     onChange={(e) => update('subjectLocation', e.target.value)}
                   />
@@ -434,7 +434,7 @@ export default function ComprehensiveProfilePage() {
                 <label className="block">
                   <span className="font-sans text-xs text-ink-muted">Approx. age or DOB (if known)</span>
                   <input
-                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink"
+                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink dark:border-white/20 dark:bg-obsidian dark:text-white"
                     value={form.subjectDobOrAge}
                     onChange={(e) => update('subjectDobOrAge', e.target.value)}
                   />
@@ -444,7 +444,7 @@ export default function ComprehensiveProfilePage() {
                     Identifiers to verify (email, phone, domain, employer)
                   </span>
                   <textarea
-                    className="mt-1 w-full min-h-[88px] border border-border bg-parchment px-3 py-2 font-body text-sm text-ink"
+                    className="mt-1 w-full min-h-[88px] border border-border bg-parchment px-3 py-2 font-body text-sm text-ink dark:border-white/20 dark:bg-obsidian dark:text-white"
                     value={form.subjectIdentifiers}
                     onChange={(e) => update('subjectIdentifiers', e.target.value)}
                   />
@@ -452,7 +452,7 @@ export default function ComprehensiveProfilePage() {
                 <label className="block">
                   <span className="font-sans text-xs text-ink-muted">Known profile / news URLs</span>
                   <textarea
-                    className="mt-1 w-full min-h-[72px] border border-border bg-parchment px-3 py-2 font-body text-sm text-ink"
+                    className="mt-1 w-full min-h-[72px] border border-border bg-parchment px-3 py-2 font-body text-sm text-ink dark:border-white/20 dark:bg-obsidian dark:text-white"
                     value={form.knownLinks}
                     onChange={(e) => update('knownLinks', e.target.value)}
                     placeholder="One URL per line"
@@ -467,7 +467,7 @@ export default function ComprehensiveProfilePage() {
                 <label className="block">
                   <span className="font-sans text-xs text-ink-muted">Purpose category</span>
                   <select
-                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink"
+                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink dark:border-white/20 dark:bg-obsidian dark:text-white"
                     value={form.lawfulPurpose}
                     onChange={(e) => update('lawfulPurpose', e.target.value)}
                   >
@@ -481,7 +481,7 @@ export default function ComprehensiveProfilePage() {
                 <label className="block">
                   <span className="font-sans text-xs text-ink-muted">Purpose detail</span>
                   <textarea
-                    className="mt-1 w-full min-h-[72px] border border-border bg-parchment px-3 py-2 font-body text-sm text-ink"
+                    className="mt-1 w-full min-h-[72px] border border-border bg-parchment px-3 py-2 font-body text-sm text-ink dark:border-white/20 dark:bg-obsidian dark:text-white"
                     value={form.purposeDetail}
                     onChange={(e) => update('purposeDetail', e.target.value)}
                     placeholder="Brief description of lawful need"
@@ -490,7 +490,7 @@ export default function ComprehensiveProfilePage() {
                 <label className="block">
                   <span className="font-sans text-xs text-ink-muted">Additional notes</span>
                   <textarea
-                    className="mt-1 w-full min-h-[64px] border border-border bg-parchment px-3 py-2 font-body text-sm text-ink"
+                    className="mt-1 w-full min-h-[64px] border border-border bg-parchment px-3 py-2 font-body text-sm text-ink dark:border-white/20 dark:bg-obsidian dark:text-white"
                     value={form.notes}
                     onChange={(e) => update('notes', e.target.value)}
                   />

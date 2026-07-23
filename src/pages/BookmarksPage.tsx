@@ -204,6 +204,13 @@ export default function BookmarksPage() {
                 >
                   Export JSON ({bookmarkCards.length})
                 </button>
+                <Link
+                  to="/researcher/timeline"
+                  className="inline-flex min-h-[44px] items-center rounded-sm border border-border bg-surface px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+                  data-testid="bookmarks-personal-timeline-link"
+                >
+                  Personal timeline (local)
+                </Link>
                 <p className="self-center font-sans text-[0.6rem] text-ink-faint">
                   Includes chapter URLs and sources library link for offline verification.
                 </p>

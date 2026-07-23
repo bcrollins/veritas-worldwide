@@ -2500,6 +2500,20 @@ const staticPages = [
     sourceFile: 'src/pages/ComprehensiveProfileSuccessPage.tsx',
   },
   {
+    route: '/researcher/timeline',
+    title: 'Personal Timeline Builder | Veritas Worldwide',
+    heading: 'Personal Timeline Builder',
+    description:
+      'Local-only researcher chronology tool. Events stay in this browser and are never uploaded.',
+    body: [
+      'Build a private timeline for research notes. Data stays in localStorage only.',
+      'Not part of the public archive. Export JSON offline. Entity-only Veritas Worldwide.',
+    ],
+    noindex: true,
+    sourceFile: 'src/pages/PersonalTimelinePage.tsx',
+  },
+
+  {
     route: '/bible',
     title: 'The Bible: History & Factual Record | Veritas Worldwide',
     heading: 'The Bible: History & Factual Record',

@@ -32,8 +32,11 @@ const pure = [
   'verify-comprehensive-profile.mjs',
   'verify-docs-anonymity.mjs',
   'verify-osint-attestation-gate.mjs',
+  'verify-search-osint-boost.mjs',
+  'verify-osint-analytics-privacy.mjs',
   'verify-brand-kit.mjs',
   'verify-integrity-score.mjs',
+  'verify-identity-scrub.mjs',
 ]
 
 let failed = 0

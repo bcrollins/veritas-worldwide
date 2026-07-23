@@ -84,7 +84,7 @@ Use the methodology and source pages when answering questions about evidence, so
 - [Accessibility](https://veritasworldwide.com/accessibility): WCAG targets, contrast, and touch-target standards.
 - [Research topics](https://veritasworldwide.com/topics): Topic hubs connecting chapters and current reporting.
 - [Profiles](https://veritasworldwide.com/profiles): Source-driven profiles of institutional actors.
-- [Power Profiles Integrity Score](https://veritasworldwide.com/profiles?sort=integrity-asc): Dual-cited public-falsehood dockets on flagship figures; click-through sources on each profile.
+- [Power Profiles Integrity Score](https://veritasworldwide.com/profiles?sort=integrity-asc): Dual-cited public-falsehood dockets (densify floor n≥3; statement URL ≠ debunk URL) on flagship figures; click-through sources on each profile. Corpus: /profiles/corpus.json.
 - [Profiles corpus (JSON)](https://veritasworldwide.com/profiles/corpus.json): Machine-readable index of all power profiles with photo paths and Bioguide IDs.
 - [Ted Cruz](https://veritasworldwide.com/profile/ted-cruz): FEC/AIPAC-sourced senator profile.
 - [Donald Trump](https://veritasworldwide.com/profile/donald-trump): Sourced executive/profile record.

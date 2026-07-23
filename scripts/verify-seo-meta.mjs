@@ -43,6 +43,15 @@ assert(seo.includes('personJsonLd'), 'seo.ts must export Person helper')
 assert(seo.includes('itemListJsonLd'), 'seo.ts must export ItemList helper')
 assert(seo.includes('websiteJsonLd'), 'seo.ts must export WebSite helper')
 assert(seo.includes('speakable'), 'chapter NewsArticle must include speakable for voice SEO')
+// #4 — content author is Organization entity only (never Person → operator identity risk).
+assert(
+  /'author':\s*\{\s*'@type':\s*'Organization'/.test(seo),
+  'chapterJsonLd author must be Organization Veritas entity',
+)
+assert(
+  !/['"]author['"]\s*:\s*\{\s*['"]@type['"]\s*:\s*['"]Person['"]/.test(seo),
+  'seo.ts must not set Person as content author',
+)
 const rocPage = read('src/pages/RecordOfJesusChristPage.tsx')
 assert(rocPage.includes('howToJsonLd'), 'ROC page must emit HowTo schema for export/researcher path')
 assert(rocPage.includes('faqJsonLd'), 'ROC page must emit FAQPage schema')
@@ -700,6 +709,15 @@ assert(
 )
 assert(knownExactBlock.includes("'/content-pack'"), 'isKnownSpaRoute knownExact must list canonical /content-pack')
 assert(knownExactBlock.includes("'/media-kit'"), 'isKnownSpaRoute knownExact must list canonical /media-kit')
+assert(knownExactBlock.includes("'/comprehensive-profile'"), 'knownExact must list /comprehensive-profile')
+assert(
+  knownExactBlock.includes("'/comprehensive-profile/success'"),
+  'knownExact must list /comprehensive-profile/success',
+)
+assert(
+  knownExactBlock.includes("'/israel-dossier/briefing'"),
+  'knownExact must list /israel-dossier/briefing',
+)
 
 assert(
   knownExactBlock.includes("'/researcher/timeline'"),
@@ -712,9 +730,42 @@ assert(
 )
 const appTsx = read('src/App.tsx')
 assert(appTsx.includes('PersonalTimelinePage') && appTsx.includes('/researcher/timeline'), 'App route for personal timeline missing')
-const timelinePage = read('src/pages/PersonalTimelinePage.tsx')
-assert(timelinePage.includes('noindex'), 'personal timeline must be noindex')
-assert(timelinePage.includes('localStorage') || timelinePage.includes('local only'), 'personal timeline must stay local-only')
+const personalTimelinePage = read('src/pages/PersonalTimelinePage.tsx')
+assert(personalTimelinePage.includes('noindex'), 'personal timeline must be noindex')
+assert(
+  personalTimelinePage.includes('localStorage') || personalTimelinePage.includes('local only'),
+  'personal timeline must stay local-only',
+)
+// #9 — personal researcher timeline must never enter public sitemap discovery.
+// Prerender may keep a noindex HTML shell for bots; sitemap must still exclude.
+const publicSitemap = read('public/sitemap.xml')
+assert(
+  !publicSitemap.includes('/researcher/') && !publicSitemap.includes('/researcher/timeline'),
+  'public sitemap must exclude /researcher/* personal utility surfaces',
+)
+{
+  const researcherIdx = prerender.indexOf("route: '/researcher/timeline'")
+  assert(researcherIdx !== -1, 'prerender must include noindex shell for /researcher/timeline')
+  const researcherSlice = prerender.slice(researcherIdx, researcherIdx + 900)
+  assert(
+    /noindex:\s*true/.test(researcherSlice),
+    'prerender /researcher/timeline shell must be noindex so it never enters sitemap',
+  )
+}
+
+// #22 — chapter evidence-tier filter is deep-linkable via ?tier=
+const chapterPageTier = read('src/pages/ChapterPage.tsx')
+assert(
+  chapterPageTier.includes("searchParams.get('tier')") &&
+    chapterPageTier.includes("next.set('tier'") &&
+    chapterPageTier.includes('useSearchParams'),
+  'ChapterPage must sync evidenceTierFilter to ?tier= query param for deep links',
+)
+assert(
+  chapterPageTier.includes("parseEvidenceTierParam") ||
+    /verified|circumstantial|disputed/.test(chapterPageTier),
+  'ChapterPage must accept verified|circumstantial|disputed tier query values',
+)
 
 assert(!prerender.includes("route: '/share'"), 'prerender must not emit duplicate /share content-pack page')
 assert(prerender.includes("route: '/content-pack'"), 'prerender must emit canonical /content-pack')
