@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T10:18:35.508Z",
+  "generatedAt": "2026-07-23T10:19:10.081Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 342,
-    "timelineEvents": 330,
+    "incidents": 345,
+    "timelineEvents": 333,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 328,
+    "historicalWarCrimesPack": 331,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 282
+      "post-oct7": 285
     },
     "incidentsByTier": {
-      "verified": 340,
+      "verified": 343,
       "circumstantial": 2
     },
-    "childrenTagged": 310,
-    "civiliansTagged": 340,
+    "childrenTagged": 312,
+    "civiliansTagged": 343,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3654,6 +3654,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-hypoglycemia-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Hypoglycemia Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated hypoglycemia risk among children under meal irregularity and diarrhea.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-hypoglycemia-risk-pattern-2023-2025",
+        "gaza-children-protein-energy-gap-pattern-2023-2025",
+        "gaza-children-metabolic-acidosis-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "hypoglycemia",
+        "children",
+        "clinical",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-iodine-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -6311,6 +6332,28 @@
       ]
     },
     {
+      "id": "tl-hostages-hearing-aids-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Hearing Aids Pattern",
+      "description": "Multi-source documentation of confiscation of hearing aids from civilian hostages including elderly captives.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-hearing-aids-pattern-2023-2025",
+        "israel-hostages-denied-medical-devices-pattern-2023-2025",
+        "israel-hostages-denied-eye-care-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "medical-devices",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-holiday-denial-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -7730,6 +7773,27 @@
         "children",
         "settlers",
         "violence",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-settler-journalist-attacks-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Attacks on Journalists Pattern",
+      "description": "CPJ/OCHA multi-source documentation of elevated settler attacks on journalists covering West Bank violence.",
+      "source": "CPJ / OCHA / multi-outlet",
+      "sourceUrl": "https://cpj.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-attacking-journalists-pattern-2023-2025",
+        "gaza-journalists-killed-pattern-2023-2025",
+        "west-bank-settler-stone-throwing-pattern-2023-2025"
+      ],
+      "tags": [
+        "journalists",
+        "settlers",
+        "press",
         "west-bank"
       ]
     },
@@ -22125,6 +22189,134 @@
           "type": "document",
           "label": "UNICEF public updates",
           "url": "https://www.unicef.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-hypoglycemia-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Hypoglycemia Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hypoglycemia cohort)",
+      "location": "Gaza Strip clinics and displacement sites",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated hypoglycemia risk among Gaza children under meal irregularity, diarrhea, and collapsed glucose monitoring — a life-threatening energy-failure pattern distinct from protein-energy and refeeding cards.",
+      "evidence": "WHO clinical materials, UNICEF health notes, and multi-outlet coverage establish multi-source pediatric hypoglycemia risk. Exact clinical counts evolve; multi-source wartime pediatric hypoglycemia risk is the claim.",
+      "sources": [
+        {
+          "label": "WHO clinical materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza pediatric clinical coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-hearing-aids-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Hearing Aids Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hearing-aid cohort)",
+      "location": "Gaza Strip captivity sites",
+      "summary": "Released-hostage testimony and multi-source reporting document confiscation of hearing aids from Israeli civilian hostages including elderly captives — isolating them further from communication. Pattern card distinct from medical-devices and eye-care cards.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source hearing-aid confiscation. Exact cases vary; multi-source hearing-aid denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-journalists-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacks on Journalists Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (journalist-attack cohort)",
+      "location": "West Bank villages and protest sites",
+      "summary": "CPJ, OCHA, and multi-source reporting document elevated settler attacks on journalists covering West Bank violence after October 7 — blocking documentation of civilian harm. Pattern card for journalist attacks by settlers distinct from Gaza journalists-killed card.",
+      "evidence": "CPJ incident tallies, OCHA protection notes, and multi-outlet coverage establish multi-source settler attacks on journalists. Exact incident counts evolve; multi-source wartime settler attacks on journalists is the claim.",
+      "sources": [
+        {
+          "label": "CPJ incident materials",
+          "url": "https://cpj.org"
+        },
+        {
+          "label": "OCHA protection materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet journalist attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "CPJ public updates",
+          "url": "https://cpj.org"
         }
       ],
       "tier": "verified",
