@@ -4545,6 +4545,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'west-bank-administrative-detention-surge-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Administrative Detention Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (admin-detention cohort)',
+    location: 'West Bank / Ofer and related Israeli detention facilities',
+    summary:
+      'B\'Tselem, Addameer, Israeli Prison Service public figures, and multi-source reporting document a sharp post–October 7 surge in administrative detention of Palestinians without charge or trial — including minors — under renewable military orders. Pattern card for administrative-detention legal regime harm distinct from the mass-arrests operational card.',
+    evidence:
+      'B\'Tselem and Addameer detention tallies, multi-source IPS/military-order reporting, and multi-outlet coverage establish multi-source administrative-detention surge. Exact concurrent detainee counts evolve; multi-source elevated renewable detention-without-trial is the claim.',
+    sources: [
+      { label: "B'Tselem administrative detention materials", url: 'https://www.btselem.org' },
+      { label: 'Addameer detention statistics', url: 'https://www.addameer.org' },
+      { label: 'Multi-outlet West Bank detention coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: "B'Tselem public materials", url: 'https://www.btselem.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-mortuary-identification-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Mortuary & Body-Identification Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (mortuary cohort)',
+    location: 'Gaza Strip hospital morgues and ad-hoc burial sites',
+    summary:
+      'WHO, OCHA, and multi-source reporting document collapsed morgue capacity, refrigerated-container shortages, and mass unidentified burials under bombardment — preventing families from identifying and formally burying dead including children. Pattern card for Palestinian mortuary/ID collapse dual-sided against the October 7 forensic-ID card, distinct from hospital mass-graves and funeral-access cards.',
+    evidence:
+      'WHO hospital situation reports, OCHA protection notes, and multi-outlet morgue/unidentified-burial coverage establish multi-source mortuary system collapse. Exact unidentified counts evolve; multi-source inability to identify and formally process civilian dead is the claim.',
+    sources: [
+      { label: 'WHO Gaza health emergency materials', url: 'https://www.who.int' },
+      { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet morgue / unidentified burial coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-herding-bedouin-dispossession-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Herding & Bedouin Community Dispossession Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (herding/Bedouin cohort)',
+    location: 'West Bank Area C pastoral and Bedouin communities',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document accelerated settler and state-linked pressure on herding and Bedouin communities after October 7 — including water-point denial, livestock attacks, and community displacement that empties grazing land. Pattern card for pastoralist dispossession distinct from home-demolitions and olive-harvest violence cards.',
+    evidence:
+      'OCHA settler-violence and displacement tallies, B\'Tselem community case files, and multi-outlet herding/Bedouin coverage establish multi-source pastoralist dispossession. Exact community counts evolve; multi-source elevated herding-community displacement is the claim.',
+    sources: [
+      { label: 'OCHA West Bank protection materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem community displacement materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet herding / Bedouin displacement coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -6815,6 +6896,57 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
       'oct7-children-killed-pattern-2023',
     ],
     tags: ['forensics', 'civilians', 'children', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-admin-detention-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Administrative Detention Surge Pattern',
+    description: "B'Tselem/Addameer multi-source documentation of elevated renewable detention without charge or trial after October 7.",
+    source: "B'Tselem / Addameer / multi-outlet",
+    sourceUrl: 'https://www.btselem.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-administrative-detention-surge-pattern-2023-2025',
+      'west-bank-mass-arrests-2023-2025',
+      'sde-teiman-detainee-abuse-pattern-2023-2025',
+    ],
+    tags: ['detention', 'administrative', 'children', 'civilians', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-mortuary-id-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Mortuary & Body-Identification Collapse Pattern',
+    description: 'WHO/OCHA multi-source documentation of collapsed morgue capacity and mass unidentified burials under bombardment.',
+    source: 'WHO / OCHA / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-mortuary-identification-collapse-pattern-2023-2025',
+      'gaza-hospital-mass-graves-pattern-2023-2025',
+      'gaza-funeral-burial-access-denial-pattern-2023-2025',
+    ],
+    tags: ['mortuary', 'identification', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-wb-herding-bedouin-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Herding & Bedouin Dispossession Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of accelerated herding and Bedouin community displacement after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-herding-bedouin-dispossession-pattern-2023-2025',
+      'west-bank-home-demolitions-pattern-2023-2025',
+      'settler-violence-pattern-2021-2023',
+    ],
+    tags: ['herding', 'bedouin', 'displacement', 'civilians', 'west-bank'],
   },
 
 
