@@ -823,4 +823,12 @@ assert(searchIdleSrc.includes('search-idle-hubs'), 'search-idle-hubs present')
 assert(searchIdleSrc.includes('/read') && searchIdleSrc.includes('/profiles'), 'Search idle Read+Profiles')
 assert(searchIdleSrc.includes('/israel-dossier') || searchIdleSrc.includes('/content-pack'), 'Search idle Dossiers or pack')
 
+
+// Home hub CTA destinations (unique assert names)
+const homeCtaSrc = read('src/pages/HomePage.tsx')
+assert(homeCtaSrc.includes('home-hub-cta-row'), 'home hub cta row testid')
+assert(homeCtaSrc.includes('to="/read"') || homeCtaSrc.includes("to: '/read'"), 'home CTA Read dest')
+assert(homeCtaSrc.includes('/israel-dossier'), 'home CTA Dossiers dest')
+assert(homeCtaSrc.includes('/search'), 'home CTA Search dest')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
