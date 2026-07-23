@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:11:26.928Z",
+  "generatedAt": "2026-07-23T08:13:27.686Z",
   "count": 96,
   "profiles": [
     {
@@ -891,7 +891,7 @@
       "name": "Rand Paul",
       "title": "U.S. Senator (R-KY)",
       "category": "politician",
-      "summary": "Kentucky Republican and leading Senate non-interventionist. Frequent NO vote or conditionality advocate on large foreign-aid packages including Israel-related supplementals — a documented counterweight to bipartisan unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact False on Jan 2022 campaign ad claiming no one hospitalized for omicron (Houston Methodist + UKHSA studies documented hospitalizations before ad). Primary: Senate roll calls, OpenSecrets, official statements, PolitiFact. Included for full-spectrum enablement analysis (opposition votes are also part of the public record).",
+      "summary": "Kentucky Republican and leading Senate non-interventionist. Frequent NO vote or conditionality advocate on large foreign-aid packages including Israel-related supplementals — a documented counterweight to bipartisan unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact Falses — Jan 2022 ad claiming no omicron hospitalizations and Jan 2017 claim 70% of foreign aid is “stolen off the top.” Primary: Senate roll calls, OpenSecrets, official statements, PolitiFact. Included for full-spectrum enablement analysis (opposition votes are also part of the public record).",
       "photo": "/profiles/rand-paul.jpg",
       "url": "https://veritasworldwide.com/profile/rand-paul",
       "bioguideId": "P000603",
@@ -904,8 +904,8 @@
         "Foreign Aid Skeptic",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -913,7 +913,7 @@
       "name": "Ilhan Omar",
       "title": "U.S. Representative (D-MN)",
       "category": "politician",
-      "summary": "Minnesota Democrat and Squad member; leading progressive for Israel-aid conditionality and Gaza ceasefire. High-profile target of AIPAC/UDP-aligned independent expenditures. Essential opposition pole in the enablement map. Integrity docket: dual-cited PolitiFact False that CAIR was founded after 9/11 (CAIR founded 1994). Primary: OpenSecrets, House record, FEC IE context, PolitiFact, CAIR.",
+      "summary": "Minnesota Democrat and Squad member; leading progressive for Israel-aid conditionality and Gaza ceasefire. High-profile target of AIPAC/UDP-aligned independent expenditures. Essential opposition pole in the enablement map. Integrity docket: dual-cited PolitiFact Falses — CAIR founded after 9/11 (actually 1994) and U.S. spends “57 cents on the dollar” on defense (≈15% of total budget). Primary: OpenSecrets, House record, FEC IE context, PolitiFact, CAIR, CBO.",
       "photo": "/profiles/ilhan-omar.jpg",
       "url": "https://veritasworldwide.com/profile/ilhan-omar",
       "bioguideId": "O000173",
@@ -927,8 +927,8 @@
         "Ceasefire Advocate",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {

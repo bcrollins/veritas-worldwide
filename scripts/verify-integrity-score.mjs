@@ -494,11 +494,14 @@ for (const f of (kushnerP.documentedFalsehoods || []).filter((x) => x.tier === '
 
 // Rand Paul integrity gate
 const randPaul = scores['rand-paul'];
-if (!randPaul || randPaul.n < 1) throw new Error('rand-paul needs ≥1 verified falsehood, got ' + (randPaul?.n ?? 0));
-if (randPaul.score > 90) throw new Error('rand-paul score expected ≤90, got ' + randPaul.score);
+if (!randPaul || randPaul.n < 2) throw new Error('rand-paul needs ≥2 verified falsehoods, got ' + (randPaul?.n ?? 0));
+if (randPaul.score > 75) throw new Error('rand-paul score expected ≤75, got ' + randPaul.score);
 const randPaulP = getProfileBySlug('rand-paul');
 if (!(randPaulP.documentedFalsehoods || []).some((f) => f.id === 'paul-no-omicron-hospitalizations-2022')) {
   throw new Error('rand-paul missing omicron hospitalizations docket id');
+}
+if (!(randPaulP.documentedFalsehoods || []).some((f) => f.id === 'paul-70pct-foreign-aid-stolen-2017')) {
+  throw new Error('rand-paul missing 70% foreign-aid docket id');
 }
 for (const f of (randPaulP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('rand-paul dual-cite collision: ' + f.id);
@@ -506,11 +509,17 @@ for (const f of (randPaulP.documentedFalsehoods || []).filter((x) => x.tier === 
 
 // Ilhan Omar integrity gate
 const omar = scores['ilhan-omar'];
-if (!omar || omar.n < 1) throw new Error('ilhan-omar needs ≥1 verified falsehood, got ' + (omar?.n ?? 0));
-if (omar.score > 90) throw new Error('ilhan-omar score expected ≤90, got ' + omar.score);
+if (!omar || omar.n < 2) throw new Error('ilhan-omar needs ≥2 verified falsehoods, got ' + (omar?.n ?? 0));
+if (omar.score > 75) throw new Error('ilhan-omar score expected ≤75, got ' + omar.score);
 const omarP = getProfileBySlug('ilhan-omar');
 if (!(omarP.documentedFalsehoods || []).some((f) => f.id === 'omar-cair-founded-after-911-2019')) {
   throw new Error('ilhan-omar missing CAIR founding docket id');
+}
+if (!(omarP.documentedFalsehoods || []).some((f) => f.id === 'omar-57-cents-defense-budget-2019')) {
+  throw new Error('ilhan-omar missing 57% defense docket id');
+}
+for (const f of (omarP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('ilhan-omar dual-cite collision: ' + f.id);
 }
 for (const f of (omarP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('omar dual-cite collision: ' + f.id);

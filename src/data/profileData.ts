@@ -4682,8 +4682,9 @@ export const PROFILES: PowerProfile[] = [
           'PolitiFact rated False. There was no public evidence Pompeo defended Yovanovitch; the record shows she was recalled and targeted while State leadership failed to publicly back her. The categorical "every single person" claim is contradicted by the Yovanovitch episode.',
         correction:
           'Pompeo did not publicly defend Yovanovitch; the absolute "every single person" claim was false.',
-        statementSource: 'NPR interview Jan 24, 2020 (PolitiFact statement capture)',
-        statementUrl: 'https://www.npr.org/2020/01/24/799182577/transcript-npr-s-full-interview-with-secretary-of-state-mike-pompeo',
+        statementSource: 'NPR interview Jan 24, 2020 (PolitiFact statement capture / Mediaite contemporaneous report)',
+        statementUrl:
+          'https://www.mediaite.com/news/secretary-of-state-mike-pompeo-claims-he-has-defended-every-single-person-on-this-team-after-marie-yovanovitch-was-recalled/',
         debunkSource: 'PolitiFact — False (Jan 29, 2020)',
         debunkUrl: 'https://www.politifact.com/factchecks/2020/jan/29/mike-pompeo/no-evidence-mike-pompeos-claim-hes-defended-ambass/',
         severity: 'material',
@@ -5452,7 +5453,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'KY',
     photoUrl: getProfilePhoto('rand-paul'),
     summary:
-      'Kentucky Republican and leading Senate non-interventionist. Frequent NO vote or conditionality advocate on large foreign-aid packages including Israel-related supplementals — a documented counterweight to bipartisan unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact False on Jan 2022 campaign ad claiming no one hospitalized for omicron (Houston Methodist + UKHSA studies documented hospitalizations before ad). Primary: Senate roll calls, OpenSecrets, official statements, PolitiFact. Included for full-spectrum enablement analysis (opposition votes are also part of the public record).',
+      'Kentucky Republican and leading Senate non-interventionist. Frequent NO vote or conditionality advocate on large foreign-aid packages including Israel-related supplementals — a documented counterweight to bipartisan unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact Falses — Jan 2022 ad claiming no omicron hospitalizations and Jan 2017 claim 70% of foreign aid is “stolen off the top.” Primary: Senate roll calls, OpenSecrets, official statements, PolitiFact. Included for full-spectrum enablement analysis (opposition votes are also part of the public record).',
     tags: [
       'Senator',
       'Non-Interventionist',
@@ -5525,6 +5526,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2022',
       },
+      {
+        claim:
+          'Integrity docket: Jan 2017 Tillerson hearing claim 70% of foreign aid is “stolen off the top” rated False (no study supports 70%; experts reject the figure).',
+        source: 'PolitiFact False; Senate Tillerson confirmation hearing',
+        url: 'https://www.politifact.com/factchecks/2017/jan/17/rand-paul/no-70-foreign-aid-not-stolen-top/',
+        tier: 'verified',
+        date: '2017',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -5545,6 +5554,22 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'paul-70pct-foreign-aid-stolen-2017',
+        statement: '“We give (foreign aid) to developing countries, and 70 percent of it’s stolen off the top.”',
+        saidAt: 'January 11, 2017',
+        context: 'Senate confirmation hearing for Secretary of State nominee Rex Tillerson, questioning corruption in U.S. foreign aid.',
+        whyFalse:
+          'PolitiFact rated False. Paul’s office and aid experts could not produce any study showing 70% of U.S. foreign aid is stolen. Easterly’s research on aid to corrupt countries does not quantify 70% theft. Documented fraud exists (e.g. wartime contracting estimates of single-digit to low-double-digit percentages in specific theaters) but not on Paul’s claimed scale.',
+        correction:
+          'No credible estimate supports that 70% of U.S. foreign aid is stolen; theft and waste exist but at far lower measured rates in audited cases.',
+        statementSource: 'U.S. Senate — Rex Tillerson Secretary of State confirmation hearing, Jan 11, 2017',
+        statementUrl: 'https://www.congress.gov/event/115th-congress/senate-event/LC64012/text',
+        debunkSource: 'PolitiFact — False (Jan 17, 2017); aid-corruption expert interviews',
+        debunkUrl: 'https://www.politifact.com/factchecks/2017/jan/17/rand-paul/no-70-foreign-aid-not-stolen-top/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.paul.senate.gov' },
@@ -5552,6 +5577,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — omicron hospitalizations (False)',
         url: 'https://www.politifact.com/factchecks/2022/jan/07/rand-paul/sen-rand-pauls-ad-was-wrong-claiming-there-are-no-/',
+      },
+      {
+        label: 'PolitiFact — 70% foreign aid stolen (False)',
+        url: 'https://www.politifact.com/factchecks/2017/jan/17/rand-paul/no-70-foreign-aid-not-stolen-top/',
       },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Rand_Paul' },
     ],
@@ -5566,7 +5595,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'MN',
     photoUrl: getProfilePhoto('ilhan-omar'),
     summary:
-      'Minnesota Democrat and Squad member; leading progressive for Israel-aid conditionality and Gaza ceasefire. High-profile target of AIPAC/UDP-aligned independent expenditures. Essential opposition pole in the enablement map. Integrity docket: dual-cited PolitiFact False that CAIR was founded after 9/11 (CAIR founded 1994). Primary: OpenSecrets, House record, FEC IE context, PolitiFact, CAIR.',
+      'Minnesota Democrat and Squad member; leading progressive for Israel-aid conditionality and Gaza ceasefire. High-profile target of AIPAC/UDP-aligned independent expenditures. Essential opposition pole in the enablement map. Integrity docket: dual-cited PolitiFact Falses — CAIR founded after 9/11 (actually 1994) and U.S. spends “57 cents on the dollar” on defense (≈15% of total budget). Primary: OpenSecrets, House record, FEC IE context, PolitiFact, CAIR, CBO.',
     tags: [
       'Representative',
       'Squad',
@@ -5638,6 +5667,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2019',
       },
+      {
+        claim:
+          'Integrity docket: Dec 2019 claim U.S. spends “57 cents on the dollar on defense” rated False (defense ≈15% of total federal budget; ~half of discretionary only if so labeled).',
+        source: 'PolitiFact False; CBO budget tables',
+        url: 'https://www.politifact.com/factchecks/2019/dec/13/ilhan-omar/rep-ilhan-omars-claim-us-spends-57-federal-budget/',
+        tier: 'verified',
+        date: '2019',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -5657,6 +5694,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'omar-57-cents-defense-budget-2019',
+        statement: 'We have to not spend “57 cents on the dollar on defense.”',
+        saidAt: 'December 1, 2019',
+        context:
+          'Interview published by The Progressive arguing for progressive domestic spending financed by reducing overseas military posture and bases.',
+        whyFalse:
+          'PolitiFact rated False. Defense is about 15% of total federal outlays (CBO/CRFB/CBPP range), not 57%. The ~57% figure tracks discretionary-only defense share in some Trump budget graphics — Omar did not say “discretionary.”',
+        correction:
+          'Defense is roughly 15% of the total federal budget; 57% is approximately the discretionary-defense share only when mandatory spending is excluded.',
+        statementSource: 'The Progressive — “Ilhan Omar and the Politics of Radical Love,” Dec 1, 2019',
+        statementUrl: 'https://progressive.org/magazine/ilhan-omar-politics-of-radical-love-nichols/',
+        debunkSource: 'PolitiFact — False (Dec 13, 2019); CBO federal budget outlays',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/dec/13/ilhan-omar/rep-ilhan-omars-claim-us-spends-57-federal-budget/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://omar.house.gov' },
@@ -5664,6 +5719,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — CAIR founding (False)',
         url: 'https://www.politifact.com/factchecks/2019/apr/15/ilhan-omar/ilhan-omar-misstates-facts-about-cairs-founding/',
+      },
+      {
+        label: 'PolitiFact — 57% defense (False)',
+        url: 'https://www.politifact.com/factchecks/2019/dec/13/ilhan-omar/rep-ilhan-omars-claim-us-spends-57-federal-budget/',
       },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Ilhan_Omar' },
     ],
