@@ -2253,4 +2253,12 @@ assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'session 
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-secondary-hubs'), 'session secondary')
 
 
+
+// RelatedHubs emphasizeChip hover crimson-dark ultimate final end
+const relatedHover = read('src/components/RelatedHubs.tsx')
+assert(relatedHover.includes('hover:bg-crimson-dark'), 'emphasize hover final end')
+assert(relatedHover.includes('bg-crimson'), 'emphasize bg final end')
+assert(relatedHover.includes('text-white'), 'emphasize contrast final end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
