@@ -2877,4 +2877,21 @@ assert(read('src/pages/SourcesPage.tsx').includes('sources-related-hubs'), 'perp
 assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v25 Research chips focus')
 assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-2'), 'perpetual v25 spokes focus')
 
+
+
+// RelatedHubs platform perpetual densify lock v26
+assert(surfaces.length >= 115, `perpetual v26 surfaces ${surfaces.length}`)
+assert(read('src/components/ExitIntentCapture.tsx').includes('focus-visible:ring-2'), 'perpetual v26 exit intent focus')
+assert(read('src/components/AuthModal.tsx').includes('focus-visible:ring-2'), 'perpetual v26 auth modal focus')
+assert(read('src/components/StickyMembershipBar.tsx').includes('focus-visible:ring-2'), 'perpetual v26 sticky membership focus')
+assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perpetual v26 footer focus')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v26 mobile tab bar')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v26 RelatedHubs focus')
+assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v26 cookie focus')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v26 institute')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v26 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v26 server soft-404')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v26 emphasize')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v26 methodology')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
