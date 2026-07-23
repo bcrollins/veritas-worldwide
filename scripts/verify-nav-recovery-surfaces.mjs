@@ -938,4 +938,10 @@ const bookmarksEmpty = read('src/pages/BookmarksPage.tsx')
 assert(bookmarksEmpty.includes('bookmarks-empty-hubs'), 'bookmarks-empty-hubs testid')
 assert(bookmarksEmpty.includes('/read') && bookmarksEmpty.includes('/search'), 'Bookmarks empty Read+Search dest')
 
+
+// Media Kit content-pack destination
+const mediaKitSrc = read('src/pages/MediaKitPage.tsx')
+assert(mediaKitSrc.includes('media-kit-related-hubs'), 'media-kit-related-hubs testid')
+assert(mediaKitSrc.includes('/content-pack') || mediaKitSrc.includes('/about'), 'Media kit content-pack dest unique')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
