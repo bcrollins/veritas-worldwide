@@ -239,15 +239,46 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
       })
     }
 
-    // Transactional post-checkout — never index for crawlers that skip JS.
-    if (
-      req.path === '/comprehensive-profile/success' ||
-      req.path.startsWith('/comprehensive-profile/success/')
-    ) {
-      return sendNoindexShell(html, {
+    // Transactional / utility surfaces — never send indexable homepage shell to bots.
+    const noindexBotPages = {
+      '/comprehensive-profile/success': {
         title: 'Profile Order Received | Veritas Worldwide',
         description: 'Your Comprehensive Online Profile order was received.',
-        url: `${SITE_URL}/comprehensive-profile/success`,
+      },
+      '/subscribe/success': {
+        title: 'Subscription Confirmed | Veritas Worldwide',
+        description: 'Thank you for subscribing. This confirmation page is not part of the public archive.',
+      },
+      '/membership/success': {
+        title: 'Membership Confirmed | Veritas Worldwide',
+        description: 'Thank you for joining. This confirmation page is not part of the public archive.',
+      },
+      '/donation/success': {
+        title: 'Donation Received | Veritas Worldwide',
+        description: 'Thank you for supporting independent research. This confirmation page is not part of the public archive.',
+      },
+      '/thank-you': {
+        title: 'Thank You | Veritas Worldwide',
+        description: 'Thank you for your support. This confirmation page is not part of the public archive.',
+      },
+      '/bookmarks': {
+        title: 'Bookmarks | Veritas Worldwide',
+        description: 'Private reader bookmarks. Not part of the public archive index.',
+      },
+      '/search': {
+        title: 'Search | Veritas Worldwide',
+        description: 'Archive search utility. Results pages are not indexed.',
+      },
+    }
+    const noindexKey = Object.keys(noindexBotPages).find(
+      (p) => req.path === p || req.path.startsWith(`${p}/`),
+    )
+    if (noindexKey) {
+      const entry = noindexBotPages[noindexKey]
+      return sendNoindexShell(html, {
+        title: entry.title,
+        description: entry.description,
+        url: `${SITE_URL}${noindexKey}`,
       })
     }
 

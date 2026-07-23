@@ -267,6 +267,14 @@ assert(
   'bot meta must noindex comprehensive-profile success for JS-skipping crawlers',
 )
 assert(
+  botMeta.includes("'/subscribe/success'") && botMeta.includes("'/membership/success'"),
+  'bot meta must noindex subscribe/membership success shells (not homepage index,follow)',
+)
+assert(
+  botMeta.includes('noindexBotPages') || botMeta.includes('sendNoindexShell'),
+  'bot meta must centralize noindex shell delivery for transactional paths',
+)
+assert(
   server.includes('comprehensive-profile/success') && server.includes("X-Robots-Tag"),
   'server must be able to emit X-Robots-Tag for transactional success paths',
 )
