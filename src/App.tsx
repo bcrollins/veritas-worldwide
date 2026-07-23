@@ -783,7 +783,7 @@ function Footer() {
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/membership"
-                className="inline-flex min-h-[44px] items-center rounded-full bg-white px-5 font-sans text-[0.68rem] font-bold tracking-[0.08em] uppercase text-obsidian transition-colors hover:bg-white/85"
+                className="inline-flex min-h-[44px] items-center rounded-full bg-white px-5 font-sans text-[0.68rem] font-bold tracking-[0.08em] uppercase text-obsidian transition-colors hover:bg-white/85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson-light focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian"
               >
                 {t('nav.membership')}
               </Link>
@@ -791,7 +791,7 @@ function Footer() {
                 href={getAttributedDonateUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center rounded-full border border-white/15 px-5 font-sans text-[0.68rem] font-bold tracking-[0.08em] uppercase text-white transition-colors hover:border-white/35"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-white/15 px-5 font-sans text-[0.68rem] font-bold tracking-[0.08em] uppercase text-white transition-colors hover:border-white/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson-light focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian"
                 onClick={() => trackSupportClick('footer')}
               >
                 {t('action.support')}
@@ -823,7 +823,7 @@ function Footer() {
           </p>
           <div className="mt-4 flex flex-col gap-3">
             {browseLinks.map(link => (
-              <Link key={link.to} to={link.to} className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white">
+              <Link key={link.to} to={link.to} className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson-light focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian">
                 {link.label}
               </Link>
             ))}
@@ -836,7 +836,7 @@ function Footer() {
           </p>
           <div className="mt-4 flex flex-col gap-3">
             {researchLinks.map(link => (
-              <Link key={link.to} to={link.to} className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white">
+              <Link key={link.to} to={link.to} className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson-light focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian">
                 {link.label}
               </Link>
             ))}
@@ -849,11 +849,11 @@ function Footer() {
           </p>
           <div className="mt-4 flex flex-col gap-3">
             {utilityLinks.map(link => (
-              <Link key={link.to} to={link.to} className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white">
+              <Link key={link.to} to={link.to} className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson-light focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian">
                 {link.label}
               </Link>
             ))}
-            <a href="mailto:rights@veritasworldwide.com" className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white">
+            <a href="mailto:rights@veritasworldwide.com" className="inline-flex min-h-[44px] items-center font-sans text-sm text-white/45 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson-light focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian">
               Contact
             </a>
           </div>
