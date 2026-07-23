@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:48:25.012Z",
+  "generatedAt": "2026-07-23T08:50:09.946Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 119,
-    "timelineEvents": 107,
+    "incidents": 120,
+    "timelineEvents": 108,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 105,
+    "historicalWarCrimesPack": 106,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 59
+      "post-oct7": 60
     },
     "incidentsByTier": {
-      "verified": 117,
+      "verified": 118,
       "circumstantial": 2
     },
-    "childrenTagged": 98,
-    "civiliansTagged": 117,
+    "childrenTagged": 99,
+    "civiliansTagged": 118,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3387,6 +3387,28 @@
         "hospitals",
         "civilians",
         "children"
+      ]
+    },
+    {
+      "id": "tl-gaza-mass-graves-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Hospital Grounds Mass Graves Pattern",
+      "description": "OHCHR/WHO multi-source documentation of mass graves and unidentified remains at major hospital compounds after military operations.",
+      "source": "OHCHR / WHO / multi-outlet",
+      "sourceUrl": "https://www.ohchr.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-hospital-mass-graves-pattern-2023-2025",
+        "gaza-health-system-collapse-2023-2025",
+        "al-shifa-hospital"
+      ],
+      "tags": [
+        "hospitals",
+        "mass-graves",
+        "civilians",
+        "children",
+        "gaza"
       ]
     },
     {
@@ -8050,6 +8072,50 @@
           "type": "document",
           "label": "OCHA public updates",
           "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-hospital-mass-graves-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Hospital Grounds Mass Graves & Unidentified Remains Pattern (2023–2025)",
+      "date": "November 2023 – 2025 (hospital grounds cohort)",
+      "location": "Gaza Strip hospital compounds (incl. Nasser / Al-Shifa grounds multi-source windows)",
+      "summary": "UN human-rights offices, WHO, and multi-source forensic/reporting document mass graves and large numbers of unidentified remains recovered on or near major hospital grounds after Israeli military operations — including cases where burial circumstances and identity of the dead remained contested. Pattern card for hospital-compound mass burial / unidentified-remains harm distinct from single-hospital siege cards.",
+      "evidence": "OHCHR public updates, WHO hospital-attack tallies, and multi-outlet forensic and visual investigations establish multi-source mass graves and unidentified remains at hospital compounds. Attribution of who dug which graves and under what conditions is multi-source contested in places; multi-source existence of mass graves/unidentified remains at hospital grounds is the claim.",
+      "sources": [
+        {
+          "label": "OHCHR public materials on Gaza mass graves / hospital grounds",
+          "url": "https://www.ohchr.org"
+        },
+        {
+          "label": "WHO attacks on health care tallies",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "Multi-outlet forensic / visual investigations",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Multi-outlet hospital grounds coverage",
+          "url": "https://apnews.com"
         }
       ],
       "tier": "verified",

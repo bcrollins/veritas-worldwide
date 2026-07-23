@@ -2816,6 +2816,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-hospital-mass-graves-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Hospital Grounds Mass Graves & Unidentified Remains Pattern (2023–2025)',
+    date: 'November 2023 – 2025 (hospital grounds cohort)',
+    location: 'Gaza Strip hospital compounds (incl. Nasser / Al-Shifa grounds multi-source windows)',
+    summary:
+      'UN human-rights offices, WHO, and multi-source forensic/reporting document mass graves and large numbers of unidentified remains recovered on or near major hospital grounds after Israeli military operations — including cases where burial circumstances and identity of the dead remained contested. Pattern card for hospital-compound mass burial / unidentified-remains harm distinct from single-hospital siege cards.',
+    evidence:
+      'OHCHR public updates, WHO hospital-attack tallies, and multi-outlet forensic and visual investigations establish multi-source mass graves and unidentified remains at hospital compounds. Attribution of who dug which graves and under what conditions is multi-source contested in places; multi-source existence of mass graves/unidentified remains at hospital grounds is the claim.',
+    sources: [
+      { label: 'OHCHR public materials on Gaza mass graves / hospital grounds', url: 'https://www.ohchr.org' },
+      { label: 'WHO attacks on health care tallies', url: 'https://www.who.int' },
+      { label: 'Multi-outlet forensic / visual investigations', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'Multi-outlet hospital grounds coverage', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3999,6 +4026,23 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
       'rafah-paramedic-convoy-2025',
     ],
     tags: ['civil-defense', 'rescue', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-mass-graves-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Hospital Grounds Mass Graves Pattern',
+    description: 'OHCHR/WHO multi-source documentation of mass graves and unidentified remains at major hospital compounds after military operations.',
+    source: 'OHCHR / WHO / multi-outlet',
+    sourceUrl: 'https://www.ohchr.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-hospital-mass-graves-pattern-2023-2025',
+      'gaza-health-system-collapse-2023-2025',
+      'al-shifa-hospital',
+    ],
+    tags: ['hospitals', 'mass-graves', 'civilians', 'children', 'gaza'],
   },
 
 ]
