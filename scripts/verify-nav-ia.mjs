@@ -152,6 +152,11 @@ const timeline = fs.readFileSync(path.join(root, 'src/pages/TimelinePage.tsx'), 
 assert(timeline.includes('data-testid="timeline-related-hubs"'), 'Timeline related hubs required')
 assert(timeline.includes('to="/read"'), 'Timeline links Read hub')
 
+// News desk related hubs (Browse secondary)
+const news = fs.readFileSync(path.join(root, 'src/pages/NewsPage.tsx'), 'utf8')
+assert(news.includes('data-testid="news-related-hubs"'), 'News related hubs required')
+assert(news.includes('to="/forum"'), 'News links Forum')
+
 console.log(
-  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, timeline hubs, home/search/404 recovery, cookie z-order`,
+  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, timeline/news hubs, home/search/404 recovery, cookie z-order`,
 )

@@ -385,6 +385,36 @@ export default function NewsPage() {
                 <span className="text-border">|</span>
                 <span>{publicationStats.totalRelatedChapters} linked chapters</span>
               </div>
+              <nav
+                className="mt-5 flex flex-wrap gap-2"
+                aria-label="Related hubs"
+                data-testid="news-related-hubs"
+              >
+                <Link
+                  to="/read"
+                  className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                >
+                  Read
+                </Link>
+                <Link
+                  to="/israel-dossier"
+                  className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                >
+                  Dossiers
+                </Link>
+                <Link
+                  to="/search"
+                  className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                >
+                  Search
+                </Link>
+                <Link
+                  to="/forum"
+                  className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                >
+                  Forum
+                </Link>
+              </nav>
             </div>
 
             <div className="rounded-[28px] border border-border bg-surface p-6">

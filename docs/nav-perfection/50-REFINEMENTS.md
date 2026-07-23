@@ -24,7 +24,7 @@ Grouped sprints. **Shipped this session: Sprint 1 (#1–#12).** Remaining are ba
 17. Home News chip in 1-tap from Record hub — `home-news-chip`  
 18. Profiles hub strip: integrity + pack + OSINT + Search + Dossiers — **SHIPPED**  
 19. Read hub chapter list density (grouping by part) — **SHIPPED** (`read-toc-by-part`)  
-20. Timeline under Browse + Read “Related” — backlog  
+20. Timeline under Browse + Read “Related” — **SHIPPED** (`timeline-related-hubs`)  
 + Briefing page also-in spokes  
 + Search empty-state hubs (`search-empty-hubs`)  
 + Soft-404 primary hub chips (`not-found-hub-chips`) + server HTML hubs  
