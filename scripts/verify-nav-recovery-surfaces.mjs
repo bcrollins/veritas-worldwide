@@ -655,4 +655,11 @@ for (const dest of ['/methodology', '/sources', '/content-pack', '/researcher', 
   assert(rhc.includes(dest), `ResearchHubChips dest ${dest}`)
 }
 
+
+// DOSSIER_SPOKES destination paths
+const dossierSpokes = read('src/components/DossierHubSpokes.tsx')
+for (const dest of ['/israel-dossier', '/israel-dossier/briefing', '/deep-state', '/forum', '/profiles']) {
+  assert(dossierSpokes.includes(dest), `DOSSIER_SPOKES dest ${dest}`)
+}
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
