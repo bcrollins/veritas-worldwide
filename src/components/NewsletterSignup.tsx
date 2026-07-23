@@ -158,7 +158,7 @@ export default function NewsletterSignup({
           type="submit"
           disabled={status === 'submitting'}
           data-testid="newsletter-submit"
-          className="inline-flex min-h-[44px] items-center px-5 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 whitespace-nowrap"
+          className="inline-flex min-h-[44px] items-center px-5 py-2.5 bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         >
           {status === 'submitting' ? 'Joining...' : 'Subscribe'}
         </button>
