@@ -234,11 +234,10 @@ Verified live Googlebot matrix on tip lineage including `f92ff79` + SEO ships th
 | admin / success / search / bookmarks / bernie | **200 + noindex** |
 | Known content | **200 + index,follow** |
 
-- Soft floor tracks latest ROC wave (**570** for wave52; soft floor advances with densify peers); GEO public floors **500+**
+- Soft floor tracks latest ROC wave (**579** for wave53; soft floor advances with densify peers); GEO public floors **500+**
 - `express.static` **redirect:false** (asset dirs like `dist/brand-kit` no longer 301-loop)
 - Prerender default static hubs emit **BreadcrumbList** (membership, content-pack, media-kit, privacy, terms, profiles, news, read, forum, deep-state, analytics, accessibility, israel-dossier, …)
 - Institute hub + Field Manual emit **BreadcrumbList**
-- **FAQPage LIVE (Googlebot):** About, Methodology, Sources, ROC, Membership, Media Kit, Content Pack, Privacy, Terms, Accessibility, Institute Methodology, Israel Dossier
-- **FAQPage shipping:** Bible History, Deep State (client + prerender)
+- **FAQPage LIVE (Googlebot):** About, Methodology, Sources, ROC, Membership, Media Kit, Content Pack, Privacy, Terms, Accessibility, Institute Methodology, Israel Dossier, Bible History, Deep State
 - Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` **PASS** (incl. no `/404` canonical on junk)
 - Railway unblock: `SEOConfig.url` optional for noindex soft-404 shells
