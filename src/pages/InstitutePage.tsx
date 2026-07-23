@@ -9,6 +9,7 @@ import {
   type InstituteTrackId,
 } from '../data/instituteCatalog'
 import InstituteCollectionSignupPanel from '../components/institute/InstituteCollectionSignupPanel'
+import ResearchHubChips from '../components/ResearchHubChips'
 import { trackDownload } from '../lib/ga4'
 import {
   clearMetaTags,
@@ -153,6 +154,9 @@ export default function InstitutePage() {
               <Link to="/institute/methodology" className="institute-button-secondary">
                 See the sourcing method
               </Link>
+            </div>
+            <div className="mt-6">
+              <ResearchHubChips />
             </div>
           </div>
 

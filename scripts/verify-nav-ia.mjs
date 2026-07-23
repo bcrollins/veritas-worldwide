@@ -162,6 +162,10 @@ const topics = fs.readFileSync(path.join(root, 'src/pages/TopicsIndexPage.tsx'),
 assert(topics.includes('data-testid="topics-related-hubs"'), 'Topics related hubs required')
 assert(topics.includes('to="/profiles"'), 'Topics links Profiles')
 
+// Institute mounts research chips
+const institute = fs.readFileSync(path.join(root, 'src/pages/InstitutePage.tsx'), 'utf8')
+assert(institute.includes('ResearchHubChips'), 'Institute mounts research chips')
+
 console.log(
-  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, timeline/news/topics hubs, home/search/404 recovery, cookie z-order`,
+  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, timeline/news/topics hubs, institute chips, home/search/404 recovery, cookie z-order`,
 )
