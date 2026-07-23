@@ -400,4 +400,11 @@ assert(osintSuccess.includes('osint-success-related-hubs'), 'osint-success-relat
 assert(osintSuccess.includes('/profiles') && osintSuccess.includes('/methodology'), 'OSINT success Profiles+Methodology')
 assert(osintSuccess.includes('/search'), 'OSINT success Search')
 
+
+// AIPAC map recovery destinations
+const aipac = read('src/pages/AipacPage.tsx')
+assert(aipac.includes('aipac-related-hubs'), 'aipac-related-hubs')
+assert(aipac.includes('/topics') && aipac.includes('/methodology'), 'AIPAC Topics+Methodology')
+assert(aipac.includes('/israel-dossier') && aipac.includes('/profiles'), 'AIPAC Dossiers+Profiles')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
