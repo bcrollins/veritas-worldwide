@@ -811,4 +811,9 @@ assert(rhcAria.includes('aria-current'), 'ResearchHubChips aria-current')
 const spokesAria = read('src/components/DossierHubSpokes.tsx')
 assert(spokesAria.includes('aria-current'), 'DossierHubSpokes aria-current')
 
+
+// CookieConsent mobile-top desktop-bottom placement
+const cookiePlace = read('src/components/CookieConsent.tsx')
+assert(cookiePlace.includes('mobile-top-desktop-bottom') || (cookiePlace.includes('md:bottom') && cookiePlace.includes('top-')), 'CookieConsent mobile-top-desktop-bottom lock')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
