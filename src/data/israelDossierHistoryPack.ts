@@ -2546,6 +2546,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 10000 },
   },
 
+  {
+    id: 'gaza-pregnant-maternal-harm-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Pregnant Women & Maternal Harm Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (maternal cohort)',
+    location: 'Gaza Strip',
+    summary:
+      'UNFPA, UNICEF, and multi-source medical reporting document catastrophic conditions for pregnant women — C-sections without anesthesia, neonatal deaths, and loss of maternal care capacity under health-system collapse. Pattern card for maternal/neonatal harm as a children+women cohort outcome.',
+    evidence:
+      'UNFPA emergency reproductive-health updates, multi-source hospital reporting, and WHO maternal/newborn materials establish multi-source maternal system collapse. Exact case counts are incomplete; multi-source pattern magnitude is the claim.',
+    sources: [
+      { label: 'UNFPA Gaza reproductive health materials', url: 'https://www.unfpa.org' },
+      { label: 'UNICEF neonatal/maternal materials', url: 'https://www.unicef.org' },
+      { label: 'WHO emergency health updates', url: 'https://www.who.int' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNFPA public materials', url: 'https://www.unfpa.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3591,6 +3618,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-women-killed-pattern-2023-2025', 'gaza-children-killed-pattern-2023-2025'],
     tags: ['women', 'civilians', 'gaza', 'casualties'],
+  },
+
+  {
+    id: 'tl-gaza-maternal-harm-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Maternal & Neonatal Harm Pattern',
+    description: 'UNFPA/UNICEF multi-source documentation of maternal care collapse and neonatal risk.',
+    source: 'UNFPA / UNICEF / WHO',
+    sourceUrl: 'https://www.unfpa.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-pregnant-maternal-harm-pattern-2023-2025', 'gaza-health-system-collapse-2023-2025', 'gaza-women-killed-pattern-2023-2025'],
+    tags: ['women', 'maternal', 'children', 'health', 'gaza'],
   },
 
 ]
