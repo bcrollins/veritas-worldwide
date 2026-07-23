@@ -1859,26 +1859,46 @@ export const PROFILES: PowerProfile[] = [
       {
         id: 'andrew-newsnight-pizza-express-2019',
         statement:
-          'In the November 2019 BBC Newsnight interview, denied spending time with Virginia Giuffre and claimed on the night in question he was at Pizza Express in Woking with his daughters; also claimed a medical condition made him unable to sweat, contradicting a photo of him with Giuffre.',
+          'In the November 2019 BBC Newsnight interview, denied the alleged encounter with Virginia Giuffre and claimed that on the night in question he was at Pizza Express in Woking with his daughter.',
         saidAt: 'November 16, 2019',
         context: 'BBC Newsnight interview with Emily Maitlis, broadcast worldwide.',
         whyFalse:
-          'A widely published photograph shows Prince Andrew with his arm around Giuffre in Ghislaine Maxwell\'s company. In 2022 he settled Giuffre\'s federal civil suit for a substantial sum (reported ~£12M) while Buckingham Palace confirmed a donation to her charity — conduct inconsistent with a categorical public denial that any sexual contact or relevant association occurred. Contemporaneous reporting documented that the "can\'t sweat" claim was contradicted by witnesses who said he had sweated heavily after tennis in the relevant period.',
+          'A widely published photograph shows Prince Andrew with his arm around Giuffre in Ghislaine Maxwell\'s company. In 2022 he settled Giuffre\'s federal civil suit for a substantial sum (reported ~£12M) while Buckingham Palace confirmed a donation to her charity — conduct inconsistent with a categorical public denial that any relevant association/encounter occurred. BBC Newsnight later reported Pizza Express itself found no evidence confirming the Woking visit alibi.',
         correction:
           'Photographic evidence places Andrew with Giuffre; the civil case ended in a costly settlement rather than a trial vindication of his Newsnight denials.',
         statementSource: 'BBC Newsnight interview transcript / broadcast',
         statementUrl: 'https://www.bbc.com/news/uk-50473621',
-        debunkSource: 'BBC / court reporting on Giuffre v. Prince Andrew settlement',
+        debunkSource: 'BBC reporting on Giuffre settlement + Pizza Express inquiry',
         debunkUrl: 'https://www.bbc.com/news/uk-60377038',
         severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'andrew-newsnight-cannot-sweat-2019',
+        statement:
+          'Claimed a medical condition from the Falklands War made him unable to sweat, offered as reason he could not have been the person described sweating in a nightclub.',
+        saidAt: 'November 16, 2019',
+        context: 'Same BBC Newsnight interview; attempt to discredit Giuffre\'s description of the evening.',
+        whyFalse:
+          'Contemporaneous witnesses and reporting (including people who played tennis with him in the relevant period) stated he did sweat normally. The medical claim was widely treated as implausible and unsupported by independent medical public record; it was a key element of the Newsnight credibility collapse.',
+        correction:
+          'No independent public medical record supports lifelong inability to sweat; witness accounts contradicted the claim.',
+        statementSource: 'BBC Newsnight interview (Nov 16, 2019)',
+        statementUrl: 'https://www.bbc.com/news/uk-50473621',
+        debunkSource: 'BBC Newsnight interview analysis / multi-outlet witness reporting of post-tennis sweating',
+        debunkUrl: 'https://www.bbc.com/news/articles/c1my27lyjx9o',
+        severity: 'material',
         tier: 'verified',
       },
     ],
     born: '1960',
     career: ['British Royal', 'Armed Forces officer', 'Charity patron'],
     websites: [
-      { label: 'Royal Family', url: 'https://www.royal.uk' }
-    ]
+      { label: 'Royal Family', url: 'https://www.royal.uk' },
+      { label: 'BBC — Newsnight interview coverage', url: 'https://www.bbc.com/news/uk-50473621' },
+      { label: 'BBC — Giuffre settlement', url: 'https://www.bbc.com/news/uk-60377038' },
+      { label: 'BBC — Pizza Express inquiry', url: 'https://www.bbc.com/news/articles/c1my27lyjx9o' },
+    ],
   },
   {
     id: 'adam-schiff',
@@ -2153,13 +2173,23 @@ export const PROFILES: PowerProfile[] = [
     state: 'FL',
     photoUrl: getProfilePhoto('marco-rubio'),
     summary:
-      'Florida Republican; long-time Senate hawk on Cuba, China, Iran, and Israel. Documented pro-Israel PAC recipient (OpenSecrets). Consistent FMF/Iron Dome votes; elevated to Secretary of State in Trump second term (2025). Structural executive enablement of U.S.–Israel security relationship. Primary: OpenSecrets, Senate/State record, CRS RL33222.',
-    tags: ['Senator', 'Secretary of State', 'Pro-Israel', 'AIPAC', 'Florida', 'Republican', 'Iran Sanctions', 'Iron Dome'],
+      'Florida Republican; long-time Senate hawk on Cuba, China, Iran, and Israel. Documented pro-Israel PAC recipient (OpenSecrets). Consistent FMF/Iron Dome votes; elevated to Secretary of State in Trump second term (2025) — structural executive enablement of the U.S.–Israel security relationship. Integrity docket: PolitiFact False on 20–30M unauthorized immigrants claim. Primary: OpenSecrets, Senate/State record, CRS RL33222, PolitiFact.',
+    tags: [
+      'Senator',
+      'Secretary of State',
+      'Pro-Israel',
+      'AIPAC',
+      'Florida',
+      'Republican',
+      'Iran Sanctions',
+      'Iron Dome',
+      'Integrity Docket',
+    ],
     career: [
       'FL House Speaker (public bio)',
       '2011–2025 — U.S. Senate',
       '2016 presidential candidate',
-      '2025 — U.S. Secretary of State',
+      '2025 — U.S. Secretary of State (Trump second term)',
     ],
     quotes: [
       {
@@ -2168,6 +2198,13 @@ export const PROFILES: PowerProfile[] = [
         date: '2010s–2020s',
         source: 'Official Senate/State remarks',
         url: 'https://www.rubio.senate.gov',
+      },
+      {
+        text: 'We\'re talking upwards of 20, 25, maybe 30 million [people in the U.S. illegally].',
+        context: 'May 19, 2024 interview dismissing ~11M estimates; PolitiFact rated False.',
+        date: 'May 19, 2024',
+        source: 'PolitiFact statement capture',
+        url: 'https://www.politifact.com/factchecks/2024/jun/11/marco-rubio/there-arent-20-million-to-30-million-immigrants-in/',
       },
     ],
     donations: [
@@ -2183,7 +2220,7 @@ export const PROFILES: PowerProfile[] = [
       {
         action: 'Consistent YES on Israel FMF, Iron Dome, and wartime packages as Senator',
         date: '2011–2025',
-        context: 'Senate Republican hawk baseline.',
+        context: 'Senate Republican hawk baseline; multi-cycle OpenSecrets pro-Israel PAC adjacency.',
         source: 'Senate roll calls; CRS RL33222',
         url: 'https://www.congress.gov/crs-product/RL33222',
       },
@@ -2194,11 +2231,18 @@ export const PROFILES: PowerProfile[] = [
         source: 'State Department leadership',
         url: 'https://www.state.gov',
       },
+      {
+        action: 'Leading Senate Iran-sanctions and anti-JCPOA hawk before elevation to State',
+        date: '2015–2025',
+        context: 'Complementary to Israel-security orthodoxy: pressure Iran architecture parallel to FMF enablement.',
+        source: 'Senate foreign-policy record',
+        url: 'https://www.congress.gov/member/marco-rubio/R000595',
+      },
     ],
     connections: [
       {
         name: 'AIPAC',
-        relationship: 'Documented pro-Israel PAC recipient; policy alignment.',
+        relationship: 'Documented pro-Israel PAC recipient; policy alignment on security aid and Iran pressure.',
         evidence: 'OpenSecrets',
         tier: 'verified',
       },
@@ -2215,6 +2259,25 @@ export const PROFILES: PowerProfile[] = [
         tier: 'circumstantial',
       },
     ],
+    documentedFalsehoods: [
+      {
+        id: 'rubio-20-to-30-million-illegal-immigrants-2024',
+        statement:
+          'Claimed the number of people in the U.S. illegally is "upwards of 20, 25, maybe 30 million."',
+        saidAt: 'May 19, 2024',
+        context: 'Interview remarks on immigration scale during 2024 political cycle.',
+        whyFalse:
+          'PolitiFact rated the 20–30 million range False relative to the best available demographic estimates (Pew and DHS residual methods place the unauthorized population far below 20 million, typically in the low-to-mid teens of millions depending on year — not 20–30 million).',
+        correction:
+          'Mainstream residual estimates of the unauthorized population do not support a 20–30 million figure; Rubio\'s range substantially exceeds established estimates.',
+        statementSource: 'Rubio May 19, 2024 interview (PolitiFact statement capture)',
+        statementUrl: 'https://www.politifact.com/personalities/marco-rubio/',
+        debunkSource: 'PolitiFact — False (June 11, 2024) with Pew/DHS estimate synthesis',
+        debunkUrl: 'https://www.politifact.com/factchecks/2024/jun/11/marco-rubio/there-arent-20-million-to-30-million-immigrants-in/',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
     sourcedClaims: [
       {
         claim: 'OpenSecrets documents multi-cycle pro-Israel PAC/industry support for Rubio.',
@@ -2222,6 +2285,14 @@ export const PROFILES: PowerProfile[] = [
         url: 'https://www.opensecrets.org/members-of-congress/marco-rubio/summary?cid=N00030612',
         tier: 'verified',
         date: '2010–2024',
+      },
+      {
+        claim:
+          'May 2024: claimed 20–30 million people in the U.S. illegally. PolitiFact False vs Pew/DHS residual estimates.',
+        source: 'PolitiFact False (June 11, 2024)',
+        url: 'https://www.politifact.com/factchecks/2024/jun/11/marco-rubio/there-arent-20-million-to-30-million-immigrants-in/',
+        tier: 'verified',
+        date: '2024',
       },
       {
         claim: 'Elevated from Senate Israel hawk to Secretary of State — structural upgrade of enablement from vote to diplomatic authority.',
@@ -9372,27 +9443,46 @@ export const PROFILES: PowerProfile[] = [
       {
         id: 'menendez-not-accepting-bribes-denial',
         statement:
-          'Publicly denied accepting bribes / selling official acts after indictment, insisting he was innocent of corruption charges.',
-        saidAt: '2023–2024 (post-indictment public statements)',
+          'Publicly denied accepting bribes / selling official acts after indictment, insisting he was innocent of corruption charges ("I never violated my public oath").',
+        saidAt: '2023–2024 (post-indictment through post-verdict statements)',
         context:
           'Federal indictment and trial for bribery scheme involving gold bars, cash, and foreign governments (Egypt/Qatar context).',
         whyFalse:
-          'A federal jury convicted Menendez on multiple bribery and related counts in 2024. Court findings establish acceptance of bribes in exchange for official acts — contradicting categorical innocence claims.',
+          'A federal jury convicted Menendez on all 16 counts in July 2024, including bribery, acting as a foreign agent, and related offenses. Court findings establish acceptance of bribes in exchange for official acts — contradicting categorical innocence claims.',
         correction:
-          'Menendez was convicted of bribery and related corruption offenses; categorical denials of the charged bribery scheme were false as to the jury\'s findings.',
-        statementSource: 'Contemporaneous press capture of Menendez post-indictment denials',
-        statementUrl: 'https://www.justice.gov',
-        debunkSource: 'DOJ / SDNY conviction announcements and court record',
-        debunkUrl: 'https://www.justice.gov',
+          'Menendez was convicted of bribery and related corruption offenses; categorical denials of the charged bribery scheme were false as to the jury\'s findings (appeals may continue; conviction is the public record baseline).',
+        statementSource: 'Post-verdict statements (BBC / multi-outlet capture of "I never violated my public oath")',
+        statementUrl: 'https://www.bbc.com/news/articles/cqe6m14drgjo',
+        debunkSource: 'DOJ SDNY — conviction and Jan 2025 sentencing announcement',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/former-us-senator-robert-menendez-sentenced-11-years-prison-bribery-foreign-agent-and',
         severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'menendez-innocent-after-conviction-2024',
+        statement:
+          'After the July 2024 guilty verdict, maintained "I am innocent" / continued categorical denial of the bribery scheme while seeking a new trial.',
+        saidAt: 'July–December 2024',
+        context:
+          'Courthouse statements and new-trial motions after the jury convicted on all counts.',
+        whyFalse:
+          'The jury\'s unanimous guilty verdict on 16 counts is the operative public finding of fact at trial. New-trial motions were denied (Dec 2024). Maintaining absolute factual innocence after a full trial conviction is contradicted by the jury verdict and the court\'s denial of post-trial relief (distinct from the right to appeal).',
+        correction:
+          'A federal jury found Menendez guilty on all charged counts; post-verdict absolute innocence claims contradict that record.',
+        statementSource: 'Post-verdict press statements (ABC News sentencing coverage)',
+        statementUrl: 'https://abcnews.go.com/US/bob-menendez-sentencing-corruption-case/story?id=118186976',
+        debunkSource: 'NBC News verdict report + DOJ sentencing press release',
+        debunkUrl: 'https://www.nbcnews.com/politics/congress/democratic-sen-bob-menendez-found-guilty-counts-corruption-charges-rcna159955',
+        severity: 'material',
         tier: 'verified',
       },
     ],
     websites: [
-      { label: 'DOJ', url: 'https://www.justice.gov' },
+      { label: 'DOJ SDNY sentencing press release', url: 'https://www.justice.gov/usao-sdny/pr/former-us-senator-robert-menendez-sentenced-11-years-prison-bribery-foreign-agent-and' },
+      { label: 'BBC — guilty verdict', url: 'https://www.bbc.com/news/articles/cqe6m14drgjo' },
+      { label: 'NBC News — all-counts conviction', url: 'https://www.nbcnews.com/politics/congress/democratic-sen-bob-menendez-found-guilty-counts-corruption-charges-rcna159955' },
       { label: 'OpenSecrets — Bob Menendez', url: 'https://www.opensecrets.org/members-of-congress/robert-menendez/summary?cid=N00000699' },
       { label: 'CRS RL33222', url: 'https://www.congress.gov/crs-product/RL33222' },
-      { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Bob_Menendez' },
     ],
   },
 ];

@@ -106,6 +106,7 @@ const required = [
   'bob-menendez',
   'mike-pence',
   'dick-cheney',
+  'marco-rubio',
 ];
 const scores = {};
 for (const id of required) {
@@ -286,8 +287,39 @@ if (!(cheneyP.documentedFalsehoods || []).some((f) => f.id === 'cheney-iraq-reco
   throw new Error('dick-cheney missing WMD docket id');
 }
 
+// Bob Menendez multi-entry (bribery denials vs conviction)
+const menendez = scores['bob-menendez'];
+if (!menendez || menendez.n < 2) throw new Error('bob-menendez needs ≥2 verified falsehoods, got ' + (menendez?.n ?? 0));
+if (menendez.score > 65) throw new Error('bob-menendez score expected ≤65 after deep dive, got ' + menendez.score);
+const menendezP = getProfileBySlug('bob-menendez');
+for (const id of [
+  'menendez-not-accepting-bribes-denial',
+  'menendez-innocent-after-conviction-2024',
+]) {
+  if (!(menendezP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('bob-menendez missing docket id: ' + id);
+  }
+}
+for (const f of (menendezP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('menendez dual-cite collision: ' + f.id);
+}
+
+// Prince Andrew multi-entry (Pizza Express + sweat claim)
+const andrew = scores['prince-andrew'];
+if (!andrew || andrew.n < 2) throw new Error('prince-andrew needs ≥2 verified falsehoods, got ' + (andrew?.n ?? 0));
+if (andrew.score > 65) throw new Error('prince-andrew score expected ≤65 after deep dive, got ' + andrew.score);
+
+// Marco Rubio integrity gate
+const rubio = scores['marco-rubio'];
+if (!rubio || rubio.n < 1) throw new Error('marco-rubio needs ≥1 verified falsehood, got ' + (rubio?.n ?? 0));
+if (rubio.score > 90) throw new Error('marco-rubio score expected ≤90, got ' + rubio.score);
+const rubioP = getProfileBySlug('marco-rubio');
+if (!(rubioP.documentedFalsehoods || []).some((f) => f.id === 'rubio-20-to-30-million-illegal-immigrants-2024')) {
+  throw new Error('marco-rubio missing 20-30M immigration docket id');
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 19) throw new Error('expected ≥19 compiled dockets, got ' + docketCount);
+if (docketCount < 20) throw new Error('expected ≥20 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

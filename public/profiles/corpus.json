@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:22:06.468Z",
+  "generatedAt": "2026-07-23T07:26:03.812Z",
   "count": 96,
   "profiles": [
     {
@@ -324,8 +324,8 @@
         "Flight Logs",
         "Sex Abuse Allegations"
       ],
-      "integrityScore": 75,
-      "integrityFalsehoods": 1,
+      "integrityScore": 60,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -398,7 +398,7 @@
       "name": "Marco Rubio",
       "title": "U.S. Senator (R-FL); Secretary of State (2025–)",
       "category": "politician",
-      "summary": "Florida Republican; long-time Senate hawk on Cuba, China, Iran, and Israel. Documented pro-Israel PAC recipient (OpenSecrets). Consistent FMF/Iron Dome votes; elevated to Secretary of State in Trump second term (2025). Structural executive enablement of U.S.–Israel security relationship. Primary: OpenSecrets, Senate/State record, CRS RL33222.",
+      "summary": "Florida Republican; long-time Senate hawk on Cuba, China, Iran, and Israel. Documented pro-Israel PAC recipient (OpenSecrets). Consistent FMF/Iron Dome votes; elevated to Secretary of State in Trump second term (2025) — structural executive enablement of the U.S.–Israel security relationship. Integrity docket: PolitiFact False on 20–30M unauthorized immigrants claim. Primary: OpenSecrets, Senate/State record, CRS RL33222, PolitiFact.",
       "photo": "/profiles/marco-rubio.jpg",
       "url": "https://veritasworldwide.com/profile/marco-rubio",
       "bioguideId": "R000595",
@@ -410,11 +410,12 @@
         "Florida",
         "Republican",
         "Iran Sanctions",
-        "Iron Dome"
+        "Iron Dome",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "tom-cotton",
@@ -2019,8 +2020,8 @@
         "Corruption Conviction",
         "FMF"
       ],
-      "integrityScore": 75,
-      "integrityFalsehoods": 1,
+      "integrityScore": 60,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     }
   ]
