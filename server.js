@@ -1726,7 +1726,6 @@ const STATIC_CANONICAL_PATHS = new Set([
   '/analytics',
   '/bible',
   '/bookmarks',
-  '/brand-kit',
   '/comprehensive-profile',
   '/content-pack',
   '/deep-state',
@@ -1753,12 +1752,13 @@ const STATIC_CANONICAL_PATHS = new Set([
 
 /**
  * Legacy aliases → single canonical content surface.
- * /content-packs (plural) and /share both historically rendered ContentPackPage;
- * consolidating prevents dual-canonical index bloat and homepage soft-404 shells.
+ * - /content-packs + /share → /content-pack (dual-index kill)
+ * - /brand-kit → /media-kit (public brand surface; /admin/brand-kit stays operator-only)
  */
 const PATH_ALIASES = new Map([
   ['/content-packs', '/content-pack'],
   ['/share', '/content-pack'],
+  ['/brand-kit', '/media-kit'],
 ])
 
 app.use((req, res, next) => {
@@ -2119,8 +2119,7 @@ function isKnownSpaRoute(pathname) {
   // Client-only / dynamic public routes (may not all be prerendered yet).
   const knownExact = new Set([
     '/bookmarks',
-    // /share and /content-packs are PATH_ALIASES → /content-pack (never SPA shell)
-    '/brand-kit',
+    // /share, /content-packs, /brand-kit are PATH_ALIASES (never SPA shell here)
     '/media-kit',
     '/content-pack',
     '/subscribe/success',

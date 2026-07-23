@@ -489,16 +489,21 @@ assert(
   server.includes('PATH_ALIASES') &&
     server.includes("'/content-packs'") &&
     server.includes("'/share'") &&
-    server.includes("'/content-pack'"),
-  'server must 301 /content-packs and /share → /content-pack',
+    server.includes("'/content-pack'") &&
+    server.includes("'/brand-kit'") &&
+    server.includes("'/media-kit'"),
+  'server must 301 /content-packs+/share → /content-pack and /brand-kit → /media-kit',
 )
 assert(server.includes("'/about'") && server.includes("'/read'") && server.includes("'/methodology'"), 'STATIC_CANONICAL_PATHS must include core hubs')
 const knownExactBlock = server.match(/const knownExact = new Set\(\[([\s\S]*?)\]\)/)?.[1] || ''
 assert(
-  !knownExactBlock.includes("'/content-packs'") && !knownExactBlock.includes("'/share'"),
-  'isKnownSpaRoute knownExact must not list /content-packs or /share (alias 301 only)',
+  !knownExactBlock.includes("'/content-packs'") &&
+    !knownExactBlock.includes("'/share'") &&
+    !knownExactBlock.includes("'/brand-kit'"),
+  'isKnownSpaRoute knownExact must not list alias-only paths (content-packs/share/brand-kit)',
 )
 assert(knownExactBlock.includes("'/content-pack'"), 'isKnownSpaRoute knownExact must list canonical /content-pack')
+assert(knownExactBlock.includes("'/media-kit'"), 'isKnownSpaRoute knownExact must list canonical /media-kit')
 assert(!prerender.includes("route: '/share'"), 'prerender must not emit duplicate /share content-pack page')
 assert(prerender.includes("route: '/content-pack'"), 'prerender must emit canonical /content-pack')
 // Soft-404 shells: no invented /404 canonical (noindex only).

@@ -223,7 +223,7 @@ ROC corpus **417** claims; soft floor **417**. Pure + live gates green.
 - Soft floor tracks latest ROC wave; GEO public floors track wave public copy
 - **301 lock expanded:** mixed-case exact hubs (`/About` → `/about`, `/Read` → `/read`)
 - **301 lock expanded:** trailing-slash exact hubs (`/methodology/` → `/methodology`)
-- **Alias lock:** `/content-packs` + `/share` → `/content-pack` (single canonical; kills dual-index + homepage shell)
+- **Alias lock:** `/content-packs` + `/share` → `/content-pack`; `/brand-kit` → `/media-kit` (kills dual-index + redirect loop)
 - **404 hygiene:** soft-404 shells omit `rel=canonical` (no invented `/404` URL); noindex + X-Robots only
 - Slug-prefix 301s unchanged (profile/chapter/news/topics/institute)
-- Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` (About/Read/content-packs/share 301s)
+- Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` (About/Read/content-packs/share/brand-kit 301s)
