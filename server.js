@@ -2081,6 +2081,17 @@ app.use((req, res) => {
   if (req.path === '/bernie' || req.path.startsWith('/bernie/')) {
     res.setHeader('X-Robots-Tag', 'noindex, nofollow')
   }
+  // Transactional post-checkout landings — never index (client + robots.txt also noindex).
+  if (
+    req.path === '/comprehensive-profile/success' ||
+    req.path.startsWith('/comprehensive-profile/success/') ||
+    req.path === '/subscribe/success' ||
+    req.path === '/membership/success' ||
+    req.path === '/donation/success' ||
+    req.path === '/thank-you'
+  ) {
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+  }
 
   // Soft-404 kill: unknown URLs must not return 200 with the homepage shell.
   if ((req.method === 'GET' || req.method === 'HEAD') && !path.extname(req.path) && !isKnownSpaRoute(req.path)) {

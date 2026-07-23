@@ -213,27 +213,42 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
       },
     }
 
-    // Podcast landing: product surface with residual surname OPSEC risk — bots must see noindex.
-    if (req.path === '/bernie' || req.path.startsWith('/bernie/')) {
-      html = applyBotPageMeta(html, {
-        title: 'The Bernie Rollins Show — Freedom Lies in Being Bold',
-        description:
-          "Unfiltered. Unapologetic. Unstoppable. The podcast that says what everyone's thinking and nobody's saying.",
-        url: `${SITE_URL}/bernie`,
-        type: 'website',
-      })
-      html = html.replace(
+    function sendNoindexShell(htmlIn, { title, description, url }) {
+      let out = applyBotPageMeta(htmlIn, { title, description, url, type: 'website' })
+      out = out.replace(
         /<meta name="robots" content="[^"]*"/,
         '<meta name="robots" content="noindex, nofollow"',
       )
-      if (!html.includes('name="robots"')) {
-        html = html.replace(
+      if (!/name="robots"/.test(out)) {
+        out = out.replace(
           '</head>',
           '    <meta name="robots" content="noindex, nofollow" />\n  </head>',
         )
       }
       res.setHeader('X-Robots-Tag', 'noindex, nofollow')
-      return res.send(html)
+      return res.send(out)
+    }
+
+    // Podcast landing: product surface with residual surname OPSEC risk — bots must see noindex.
+    if (req.path === '/bernie' || req.path.startsWith('/bernie/')) {
+      return sendNoindexShell(html, {
+        title: 'The Bernie Rollins Show — Freedom Lies in Being Bold',
+        description:
+          "Unfiltered. Unapologetic. Unstoppable. The podcast that says what everyone's thinking and nobody's saying.",
+        url: `${SITE_URL}/bernie`,
+      })
+    }
+
+    // Transactional post-checkout — never index for crawlers that skip JS.
+    if (
+      req.path === '/comprehensive-profile/success' ||
+      req.path.startsWith('/comprehensive-profile/success/')
+    ) {
+      return sendNoindexShell(html, {
+        title: 'Profile Order Received | Veritas Worldwide',
+        description: 'Your Comprehensive Online Profile order was received.',
+        url: `${SITE_URL}/comprehensive-profile/success`,
+      })
     }
 
     const staticMeta = staticPages[req.path]

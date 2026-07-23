@@ -262,6 +262,14 @@ assert(
   prerender.includes("route: '/comprehensive-profile/success'") && prerender.includes('noindex: true'),
   'prerender must mark comprehensive-profile success noindex',
 )
+assert(
+  botMeta.includes('comprehensive-profile/success') || botMeta.includes("'/comprehensive-profile/success'"),
+  'bot meta must noindex comprehensive-profile success for JS-skipping crawlers',
+)
+assert(
+  server.includes('comprehensive-profile/success') && server.includes("X-Robots-Tag"),
+  'server must be able to emit X-Robots-Tag for transactional success paths',
+)
 
 assert(botMeta.includes('applyBotPageMeta'), 'bot meta must use applyBotPageMeta helper for shell rewrite')
 assert(
