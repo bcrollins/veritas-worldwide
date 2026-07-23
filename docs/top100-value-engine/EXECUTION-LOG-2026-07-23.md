@@ -519,3 +519,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip past 2129+ |
 
+
+## Interval densify — tip post-2193 immunization densify + cold-chain / Hadera / pruning-tool theft
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza tetanus-Ig/HepA/MMR · hostage trenches-under-fire/toy-install/blindfolds · WB mustard-greens/otoscope/lemongrass-seedlings |
+| VI | vaccine cold-chain · Hadera · grape pruning-tool theft |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip past 2146+ |
+
