@@ -5,7 +5,7 @@ import fs from 'fs'
 import { fileURLToPath } from 'url'
 import { registerDatabaseAndAuthRoutes } from './server-auth.js'
 import { createChapterDataTools } from './server-chapter-data.js'
-import { registerBotMetaInjection, isKnownChapterSlug, isKnownProfileSlug } from './server-social-meta.js'
+import { registerBotMetaInjection, isKnownChapterSlug, isKnownProfileSlug, isKnownNewsSlug, isKnownTopicSlug } from './server-social-meta.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
