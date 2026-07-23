@@ -303,3 +303,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | bakery strikes · Kfar Aza dining · solar-battery theft |
 | Pure | visual + israel-dossier PASS |
 
+
+## Interval densify — tip post-1827 CPAP-interface / desal plant / school-bus attacks
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza CPAP-interface/preterm-vitamins/ECG-leads/midwife-kit · hostage sandbags/empty-backpack/sandbags-chest/bus-wraps · WB garlic/soccer-goals/beet/oregano |
+| VI | desal plant · Sa’ad safe room · school-bus attacks |
+| Pure | visual + israel-dossier PASS |
+

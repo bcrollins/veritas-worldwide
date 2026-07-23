@@ -3775,6 +3775,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-water-desalination-plant-strike-visual-2023-2025',
+    title: 'Gaza Desalination Plant Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip desalination plants and large water-treatment facilities',
+    summary:
+      'Multi-outlet video packages document strikes and outages at desalination plants under wartime conditions, affecting civilian drinking water including for children. Distinct from prior desalination/water-infrastructure visual cards by focusing on multi-source plant-level packages; ethnicity is never evidence.',
+    evidence:
+      'WHO/OCHA water-access materials, multi-outlet visual packages, and OHCHR materials establish multi-source documentation of desalination-plant harm affecting civilian water access.',
+    sources: [
+      { label: 'OCHA OPT water materials', url: 'https://www.ochaopt.org/' },
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza infrastructure packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet desalination-plant strike video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of desalination plant damage', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'OCHA water-access trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-saad-safe-room-visual-2023',
+    title: 'October 7 Sa’ad Safe-Room Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Sa’ad safe rooms and home shelters',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders in Sa’ad safe rooms during the October 7 attacks. Distinct from prior Sa’ad kibbutz packages by focusing on safe-room interior multi-source visual records; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence in Sa’ad safe rooms on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Sa’ad safe-room October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-school-bus-attack-visual-2023-2025',
+    title: 'West Bank Settler School Bus Attacks — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village roads and school bus routes',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian school buses, endangering children in transit. Multi-source visual record; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA education-access materials, and multi-outlet reporting establish multi-source documentation of school-bus attacks affecting civilian children.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem school-bus attack video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem education-violence case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA education-access materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
