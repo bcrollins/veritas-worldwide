@@ -4788,6 +4788,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'israel-hostages-families-advocacy-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostage Families Advocacy & Civil Pressure Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (families-advocacy cohort)',
+    location: 'Israel (Hostages Square / Knesset / public square)',
+    summary:
+      'Israeli multi-outlet and international press document continuous civilian advocacy by families of hostages held in Gaza — weekly protests, Hostages Square vigils, and political pressure for deals — a civilian civil-society pattern under wartime trauma required for non-selective documentation.',
+    evidence:
+      'Multi-outlet coverage of Hostages Square, family-forum statements, and Knesset advocacy establish multi-source sustained family-led civilian pressure. Exact protest counts evolve; multi-source continuous hostage-family advocacy is the claim.',
+    sources: [
+      { label: 'Israeli multi-outlet Hostages Square coverage', url: 'https://www.haaretz.com' },
+      { label: 'Multi-outlet hostage family advocacy coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage public materials', url: 'https://www.gov.il' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-red-crescent-ems-harm-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Red Crescent EMS & Ambulance Harm Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (PRCS/EMS cohort)',
+    location: 'Gaza Strip PRCS ambulances and emergency medical services',
+    summary:
+      'Palestine Red Crescent Society statements, OCHA, and multi-source reporting document repeated attacks on, obstruction of, and personnel losses among PRCS ambulance and EMS teams — a protected-emblem civilian-harm pattern distinct from the aggregate ambulance-access-denial card and the Rafah paramedic convoy incident card.',
+    evidence:
+      'PRCS public incident tallies, OCHA protection notes, and multi-outlet EMS coverage establish multi-source harm to Red Crescent emergency services. Exact vehicle/personnel counts evolve; multi-source repeated EMS/PRCS harm is the claim.',
+    sources: [
+      { label: 'Palestine Red Crescent Society public materials', url: 'https://www.palestinercs.org' },
+      { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet PRCS / ambulance coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-checkpoint-movement-restriction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Checkpoint & Movement Restriction Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (checkpoint cohort)',
+    location: 'West Bank checkpoints, road gates, and flying barriers',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document a post–October 7 surge in fixed and flying checkpoints, road gates, and prolonged civilian movement delays affecting access to work, schools, and medical care — including for children. Pattern card for movement-restriction infrastructure distinct from mass-arrests and home-demolitions cards.',
+    evidence:
+      'OCHA access-and-movement databases, B\'Tselem checkpoint documentation, and multi-outlet coverage establish multi-source elevated movement restriction. Exact barrier counts evolve; multi-source wartime checkpoint surge is the claim.',
+    sources: [
+      { label: 'OCHA access and movement materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem freedom of movement materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet West Bank checkpoint coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -7213,6 +7294,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['heat', 'tents', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-hostages-families-advocacy-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostage Families Advocacy Pattern',
+    description: 'Multi-source documentation of continuous civilian advocacy by families of hostages held in Gaza.',
+    source: 'Israeli multi-outlet / multi-outlet',
+    sourceUrl: 'https://www.haaretz.com',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-families-advocacy-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+      'oct7-hostages-bodies-not-returned-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'families', 'civilians', 'israel'],
+  },
+
+  {
+    id: 'tl-gaza-red-crescent-ems-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Red Crescent EMS Harm Pattern',
+    description: 'PRCS/OCHA multi-source documentation of repeated harm to Red Crescent ambulance and EMS teams.',
+    source: 'PRCS / OCHA / multi-outlet',
+    sourceUrl: 'https://www.palestinercs.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-red-crescent-ems-harm-pattern-2023-2025',
+      'gaza-ambulance-access-denial-pattern-2023-2025',
+      'rafah-paramedic-convoy-2025',
+    ],
+    tags: ['ems', 'red-crescent', 'civilians', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-wb-checkpoints-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Checkpoint Movement Restriction Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated checkpoints and civilian movement delays after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-checkpoint-movement-restriction-pattern-2023-2025',
+      'west-bank-mass-arrests-2023-2025',
+      'west-bank-children-killed-pattern-2023-2025',
+    ],
+    tags: ['checkpoints', 'movement', 'civilians', 'children', 'west-bank'],
+  },
+
+
 
 
 
