@@ -1632,4 +1632,19 @@ assert(tonesUlt.includes("'parchment'") || tonesUlt.includes('"parchment"'), 'to
 assert(tonesUlt.includes("'dark'") || tonesUlt.includes('"dark"'), 'tone dark ultimate')
 
 
+
+// cookiePending membership hide reaffirm ultimate
+const stickyCookieUlt = read('src/components/StickyMembershipBar.tsx')
+assert(stickyCookieUlt.includes('cookiePending') || stickyCookieUlt.includes('veritas-cookie-consent'), 'membership cookiePending ultimate')
+assert(stickyCookieUlt.includes('sticky-membership-bar'), 'sticky-membership-bar ultimate')
+assert(stickyCookieUlt.includes('min-w-[44px]') || stickyCookieUlt.includes('min-h-[44px]'), 'membership touch ultimate')
+
+// MobileTabBar primary five destinations ultimate
+const tabUlt = read('src/App.tsx')
+const tabBodyUlt = tabUlt.split('function MobileTabBar')[1]?.split('function Footer')[0] || ''
+assert(tabBodyUlt.includes('/read') && tabBodyUlt.includes('/search'), 'tab Read+Search ultimate')
+assert(tabBodyUlt.includes('/israel-dossier') && tabBodyUlt.includes('/profiles'), 'tab Dossiers+Profiles ultimate')
+assert(tabBodyUlt.includes('mobile-tab-bar'), 'mobile-tab-bar ultimate')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
