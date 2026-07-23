@@ -737,4 +737,10 @@ for (const rel of [
 const personalTlPage = read('src/pages/PersonalTimelinePage.tsx')
 assert(personalTlPage.includes('ResearchHubChips') && personalTlPage.includes('excludePath='), 'PersonalTimeline excludePath')
 
+
+// NotFound SPA remains noindex/nofollow without inventing /404 canonical URL
+const nfPageSrc = read('src/pages/NotFoundPage.tsx')
+assert(nfPageSrc.includes('noindex') && nfPageSrc.includes('nofollow'), 'NotFound noindex nofollow')
+assert(!/url:\s*[`'"][^`'"]*\/404/.test(nfPageSrc), 'NotFound does not invent /404 canonical url')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
