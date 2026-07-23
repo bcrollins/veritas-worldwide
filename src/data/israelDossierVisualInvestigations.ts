@@ -939,6 +939,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsCivilians: true,
     targetsChildren: true,
   },
+  {
+    id: 'vi-al-ahli-hospital-blast-visual-2023',
+    title: 'Al-Ahli Hospital Blast — Multi-Outlet Visual Forensics (Contested Attribution)',
+    date: 'October 17, 2023',
+    location: 'Al-Ahli Arab Hospital, Gaza City',
+    summary:
+      'A blast at Al-Ahli hospital killed large numbers of civilians sheltering there. Multi-outlet visual forensics analyzed crater geometry, audio, and munition signatures. Attribution remains contested between Israeli and Palestinian rocket explanations; civilian mass-casualty fact is multi-source verified while perpetrator remains circumstantial/disputed in open sources.',
+    evidence:
+      'Human Rights Watch, NYT Visual Investigations, and multi-outlet crater/audio analyses establish multi-source documentation of a mass-casualty blast at a hospital shelter. Because attribution is contested, this card keeps civilian harm as verified visual fact and does not elevate a single perpetrator claim to verified.',
+    sources: [
+      { label: 'HRW — Al-Ahli hospital explosion analysis', url: 'https://www.hrw.org/news/2023/11/26/gaza-findings-october-17-al-ahli-hospital-explosion' },
+      { label: 'NYT Visual Investigations — hospital blast packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'AP / Reuters multi-outlet hospital blast reporting', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'HRW forensic analysis of Al-Ahli explosion', url: 'https://www.hrw.org/news/2023/11/26/gaza-findings-october-17-al-ahli-hospital-explosion' },
+      { type: 'investigation', label: 'NYT Visual Investigations blast packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'video', label: 'Multi-outlet scene video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    tier: 'circumstantial',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-israeli-police-west-bank-live-fire-protests-visual-2021-2025',
+    title: 'West Bank Protest Live Fire — Multi-Year Video Bank of Civilian Casualties',
+    date: '2021–2025',
+    location: 'West Bank protest sites (Beita, Kafr Qaddum, and others)',
+    summary:
+      'Multi-year B’Tselem and press video banks document live fire wounding and killing Palestinian civilians—including medics and bystanders—during weekly protests against settlement expansion and land seizure.',
+    evidence:
+      'B’Tselem video case files, medical records cited by rights monitors, and multi-outlet reporting establish multi-source live-fire civilian harm. Rules-of-engagement defenses do not erase the footage record.',
+    sources: [
+      { label: 'B’Tselem video / firearms documentation', url: 'https://www.btselem.org/firearms' },
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'HRW Israel/Palestine use-of-force materials', url: 'https://www.hrw.org/middle-east/n-africa/israel/palestine' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem protest live-fire video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem firearms policy documentation', url: 'https://www.btselem.org/firearms' },
+      { type: 'photo-essay', label: 'Press stills of weekly protests', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-flotilla-mavi-marmara-visual-legacy-2010',
+    title: 'Mavi Marmara Flotilla Raid (2010) — Video Legacy of Deadly Boarding',
+    date: 'May 31, 2010',
+    location: 'International waters / Gaza flotilla',
+    summary:
+      'Israeli commandos boarded the Mavi Marmara; nine activists were killed (a tenth later). Extensive ship video and multi-outlet investigations document the deadly raid. UN and national inquiries produced contested legal characterizations; civilian activist deaths are multi-source verified.',
+    evidence:
+      'Shipboard video, UN inquiry materials, and multi-outlet investigations establish multi-source documentation of deaths during the boarding. Self-defense claims remain contested in open literature.',
+    sources: [
+      { label: 'UN materials on flotilla raid (historical)', url: 'https://www.un.org/' },
+      { label: 'HRW / multi-outlet flotilla investigations', url: 'https://www.hrw.org/' },
+      { label: 'AP / Reuters historical flotilla packages', url: 'https://apnews.com/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Shipboard / press video packages of boarding', url: 'https://www.aljazeera.com/tag/gaza/' },
+      { type: 'investigation', label: 'Multi-outlet flotilla investigation packages', url: 'https://www.hrw.org/' },
+      { type: 'document', label: 'UN inquiry trail materials', url: 'https://www.un.org/' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 10 },
+    targetsCivilians: true,
+    targetsChildren: false,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
