@@ -4869,6 +4869,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-icrc-access-denial-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza ICRC Access Denial & Constraint Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (ICRC-access cohort)',
+    location: 'Gaza Strip detention, hospital, and civilian sites',
+    summary:
+      'ICRC public statements and multi-source reporting document repeated denials and severe constraints on International Committee of the Red Cross access to hostages, detainees, and civilian sites in Gaza — a protected-humanitarian access pattern dual-sided for both Israeli hostages and Palestinian detainees/civilians.',
+    evidence:
+      'ICRC public communications on access, multi-source government responses, and multi-outlet coverage establish multi-source constrained ICRC access. Exact visit counts evolve; multi-source repeated access denial/constraint is the claim.',
+    sources: [
+      { label: 'ICRC public statements', url: 'https://www.icrc.org' },
+      { label: 'Multi-outlet ICRC access coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government public materials', url: 'https://www.gov.il' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'ICRC public updates', url: 'https://www.icrc.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-msf-facility-harm-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza MSF Facility & Medical NGO Harm Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (MSF/medical-NGO cohort)',
+    location: 'Gaza Strip MSF clinics, hospitals, and medical points',
+    summary:
+      'MSF, WHO, and multi-source reporting document strikes, forced evacuations, and operational collapses at MSF and peer medical-NGO facilities treating civilians including children. Pattern card for medical-NGO facility harm distinct from field-hospital proliferation and hospital-evacuation cards.',
+    evidence:
+      'MSF public incident statements, WHO health-cluster notes, and multi-outlet coverage establish multi-source medical-NGO facility harm. Exact facility counts evolve; multi-source repeated MSF/peer facility harm is the claim.',
+    sources: [
+      { label: 'MSF public facility statements', url: 'https://www.msf.org' },
+      { label: 'WHO health emergency materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet MSF Gaza coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'MSF public updates', url: 'https://www.msf.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-northern-border-town-rocket-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['iron-dome'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Northern Border Town Rocket Harm Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (northern towns cohort)',
+    location: 'Kiryat Shmona / Metula / northern Israeli border communities',
+    summary:
+      'Israeli government and multi-source reporting document sustained Hezbollah rocket and drone fire on northern Israeli border towns — killing and wounding civilians, destroying homes, and forcing multi-month community evacuations distinct from the aggregate Hezbollah-rockets and northern-evacuation cards by focusing on border-town residential harm.',
+    evidence:
+      'Israeli government community casualty and damage tallies plus multi-outlet northern-front coverage establish multi-source border-town civilian harm under Hezbollah fire. Exact town-level counts evolve; multi-source sustained residential harm in northern border towns is the claim.',
+    sources: [
+      { label: 'Israeli government northern front materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet northern Israel rocket coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet border-town reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -7345,6 +7426,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['checkpoints', 'movement', 'civilians', 'children', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-icrc-access-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza ICRC Access Denial Pattern',
+    description: 'ICRC multi-source documentation of repeated denials and constraints on access to hostages, detainees, and civilian sites.',
+    source: 'ICRC / multi-outlet',
+    sourceUrl: 'https://www.icrc.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-icrc-access-denial-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+      'sde-teiman-detainee-abuse-pattern-2023-2025',
+    ],
+    tags: ['icrc', 'access', 'hostages', 'civilians'],
+  },
+
+  {
+    id: 'tl-gaza-msf-facilities-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza MSF Facility Harm Pattern',
+    description: 'MSF/WHO multi-source documentation of strikes and forced evacuations at medical-NGO facilities.',
+    source: 'MSF / WHO / multi-outlet',
+    sourceUrl: 'https://www.msf.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-msf-facility-harm-pattern-2023-2025',
+      'gaza-field-hospitals-pattern-2023-2025',
+      'gaza-health-system-collapse-2023-2025',
+    ],
+    tags: ['msf', 'hospitals', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-israel-northern-towns-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Northern Border Town Rocket Harm Pattern',
+    description: 'Multi-source documentation of sustained rocket and drone fire on northern Israeli border towns including Kiryat Shmona.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-northern-border-town-rocket-pattern-2023-2025',
+      'hezbollah-rockets-northern-israel-pattern-2023-2025',
+      'israel-northern-evacuation-pattern-2023-2025',
+    ],
+    tags: ['rockets', 'northern-israel', 'civilians', 'children', 'israel'],
+  },
+
+
 
 
 
