@@ -3199,6 +3199,24 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'booker-trump-cut-doj-domestic-terror-funding-2019',
+        statement:
+          'Said President Trump “cut funding from the Justice Department to investigate these domestic terrorist groups, these white supremacist groups.”',
+        saidAt: 'March 27, 2019',
+        context:
+          'CNN town hall in Orangeburg, S.C., during the 2020 Democratic presidential primary, on domestic terrorism and white supremacist violence.',
+        whyFalse:
+          'PolitiFact rated Mostly False. Booker’s campaign pointed to DHS Countering Violent Extremism grant freezes and prevention programs — not Justice Department investigative funding. Experts (RAND, former CVE officials) said those grants fund community prevention, not DOJ/FBI investigations, and no public evidence showed Trump cut FBI domestic-terror investigative funds as stated.',
+        correction:
+          'The cited cuts were primarily DHS prevention grants, not Justice Department investigative budgets for domestic terrorism; the categorical DOJ-investigation framing was inaccurate.',
+        statementSource: 'CNN town hall, March 27, 2019 (Booker campaign primary)',
+        statementUrl: 'https://www.cnn.com/politics/live-news/cory-booker-town-hall-south-carolina/index.html',
+        debunkSource: 'PolitiFact — Mostly False (April 11, 2019); DHS CVE grant history',
+        debunkUrl: 'https://www.politifact.com/factchecks/2019/apr/11/cory-booker/donald-trump-cut-funding-investigate-domestic-terr/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.booker.senate.gov' },

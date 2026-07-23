@@ -507,16 +507,19 @@ for (const f of (schiffP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('schiff dual-cite collision: ' + f.id);
 }
 
-// Cory Booker integrity gate
+// Cory Booker integrity gate (n≥3 densify)
 const booker = scores['cory-booker'];
-if (!booker || booker.n < 2) throw new Error('cory-booker needs ≥2 verified falsehoods, got ' + (booker?.n ?? 0));
-if (booker.score > 75) throw new Error('cory-booker score expected ≤75 after dual-cite densify, got ' + booker.score);
+if (!booker || booker.n < 3) throw new Error('cory-booker needs ≥3 verified falsehoods, got ' + (booker?.n ?? 0));
+if (booker.score > 60) throw new Error('cory-booker score expected ≤60 after densify, got ' + booker.score);
 const bookerP = getProfileBySlug('cory-booker');
-if (!(bookerP.documentedFalsehoods || []).some((f) => f.id === 'booker-nonexistent-cbo-medicare-50-2019')) {
-  throw new Error('cory-booker missing CBO Medicare docket id');
-}
-if (!(bookerP.documentedFalsehoods || []).some((f) => f.id === 'booker-farmer-suicides-great-depression-2019')) {
-  throw new Error('cory-booker missing farmer-suicides Great Depression docket id');
+for (const id of [
+  'booker-nonexistent-cbo-medicare-50-2019',
+  'booker-farmer-suicides-great-depression-2019',
+  'booker-trump-cut-doj-domestic-terror-funding-2019',
+]) {
+  if (!(bookerP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('cory-booker missing docket id: ' + id);
+  }
 }
 for (const f of (bookerP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('booker dual-cite collision: ' + f.id);
