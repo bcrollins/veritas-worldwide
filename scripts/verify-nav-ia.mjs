@@ -158,21 +158,31 @@ const profiles = fs.readFileSync(path.join(root, 'src/pages/ProfilesIndexPage.ts
 assert(profiles.includes('to="/search"') || profiles.includes("to: '/search'"), 'Profiles strip links Search')
 assert(profiles.includes('to="/israel-dossier"'), 'Profiles strip links Dossiers')
 
+/** RelatedHubs may use data-testid= (inline) or testId= (shared component prop). */
+function hasHubTestId(src, id) {
+  return src.includes(`data-testid="${id}"`) || src.includes(`testId="${id}"`)
+}
+function hasTo(src, pathStr) {
+  return src.includes(`to="${pathStr}"`) || src.includes(`to: '${pathStr}'`) || src.includes(`to: "${pathStr}"`)
+}
+
 // Timeline related hubs (Browse ↔ Read scent)
 const timeline = fs.readFileSync(path.join(root, 'src/pages/TimelinePage.tsx'), 'utf8')
-assert(timeline.includes('data-testid="timeline-related-hubs"'), 'Timeline related hubs required')
-assert(timeline.includes('to="/read"'), 'Timeline links Read hub')
+assert(hasHubTestId(timeline, 'timeline-related-hubs'), 'Timeline related hubs required')
+assert(hasTo(timeline, '/read'), 'Timeline links Read hub')
+assert(timeline.includes('RelatedHubs'), 'Timeline mounts RelatedHubs')
 
 // News desk related hubs (Browse secondary)
 const news = fs.readFileSync(path.join(root, 'src/pages/NewsPage.tsx'), 'utf8')
-assert(news.includes('data-testid="news-related-hubs"') || news.includes('testId="news-related-hubs"'), 'News related hubs required')
-assert(news.includes('to="/forum"') || news.includes("to: '/forum'"), 'News links Forum')
+assert(hasHubTestId(news, 'news-related-hubs'), 'News related hubs required')
+assert(hasTo(news, '/forum'), 'News links Forum')
 assert(news.includes('RelatedHubs'), 'News mounts RelatedHubs')
 
 // Topics related hubs
 const topics = fs.readFileSync(path.join(root, 'src/pages/TopicsIndexPage.tsx'), 'utf8')
-assert(topics.includes('data-testid="topics-related-hubs"'), 'Topics related hubs required')
-assert(topics.includes('to="/profiles"'), 'Topics links Profiles')
+assert(hasHubTestId(topics, 'topics-related-hubs'), 'Topics related hubs required')
+assert(hasTo(topics, '/profiles'), 'Topics links Profiles')
+assert(topics.includes('RelatedHubs'), 'Topics mounts RelatedHubs')
 
 // Institute mounts research chips
 const institute = fs.readFileSync(path.join(root, 'src/pages/InstitutePage.tsx'), 'utf8')
@@ -181,20 +191,21 @@ assert(institute.includes('ResearchHubChips'), 'Institute mounts research chips'
 // About + Media Kit recovery
 const about = fs.readFileSync(path.join(root, 'src/pages/AboutPage.tsx'), 'utf8')
 const mediaKit = fs.readFileSync(path.join(root, 'src/pages/MediaKitPage.tsx'), 'utf8')
-assert(about.includes('data-testid="about-related-hubs"'), 'About related hubs required')
+assert(hasHubTestId(about, 'about-related-hubs'), 'About related hubs required')
+assert(about.includes('RelatedHubs'), 'About mounts RelatedHubs')
 assert(mediaKit.includes('data-testid="media-kit-related-hubs"') || mediaKit.includes('to="/content-pack"'), 'Media Kit links content packs')
 const a11yPage = fs.readFileSync(path.join(root, 'src/pages/AccessibilityPage.tsx'), 'utf8')
 const membershipPage = fs.readFileSync(path.join(root, 'src/pages/MembershipPage.tsx'), 'utf8')
-assert(a11yPage.includes('data-testid="accessibility-related-hubs"'), 'Accessibility related hubs')
-assert(membershipPage.includes('data-testid="membership-related-hubs"'), 'Membership related hubs')
+assert(hasHubTestId(a11yPage, 'accessibility-related-hubs'), 'Accessibility related hubs')
+assert(hasHubTestId(membershipPage, 'membership-related-hubs'), 'Membership related hubs')
 const privacy = fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8')
 const terms = fs.readFileSync(path.join(root, 'src/pages/TermsPage.tsx'), 'utf8')
-assert(privacy.includes('data-testid="privacy-related-hubs"'), 'Privacy related hubs')
-assert(terms.includes('data-testid="terms-related-hubs"'), 'Terms related hubs')
+assert(hasHubTestId(privacy, 'privacy-related-hubs'), 'Privacy related hubs')
+assert(hasHubTestId(terms, 'terms-related-hubs'), 'Terms related hubs')
 const analytics = fs.readFileSync(path.join(root, 'src/pages/AnalyticsPage.tsx'), 'utf8')
-assert(analytics.includes('data-testid="analytics-related-hubs"'), 'Analytics related hubs')
+assert(hasHubTestId(analytics, 'analytics-related-hubs'), 'Analytics related hubs')
 const osint = fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfilePage.tsx'), 'utf8')
-assert(osint.includes('data-testid="osint-related-hubs"'), 'OSINT product related hubs')
+assert(hasHubTestId(osint, 'osint-related-hubs'), 'OSINT product related hubs')
 const volumeIi = fs.readFileSync(path.join(root, 'src/pages/VolumeIIHubPage.tsx'), 'utf8')
 assert(volumeIi.includes('ResearchHubChips'), 'Volume II mounts research chips')
 const bible = fs.readFileSync(path.join(root, 'src/pages/BibleHistoryPage.tsx'), 'utf8')

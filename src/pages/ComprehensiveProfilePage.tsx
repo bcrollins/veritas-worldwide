@@ -1,5 +1,9 @@
 import { FormEvent, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
+
+const OSINT_HUBS: readonly RelatedHub[] = [{ to: '/profiles', label: 'Profiles' }, { to: '/methodology', label: 'Methodology' }, { to: '/search', label: 'Search' }, { to: '/read', label: 'Read' }]
+
 import {
   setMetaTags,
   clearMetaTags,
@@ -354,36 +358,11 @@ export default function ComprehensiveProfilePage() {
             {TAGLINE} This is a private research deliverable, separate from free Power Profiles and
             the public archive.
           </p>
-          <nav
-            className="mb-8 flex flex-wrap gap-2"
-            aria-label="Free archive destinations"
-            data-testid="osint-related-hubs"
-          >
-            <Link
-              to="/profiles"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-white/20 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white/75 transition-colors hover:border-white/50 hover:text-white"
-            >
-              Free Power Profiles
-            </Link>
-            <Link
-              to="/methodology"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-white/20 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white/75 transition-colors hover:border-white/50 hover:text-white"
-            >
-              Methodology
-            </Link>
-            <Link
-              to="/content-pack"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-white/20 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white/75 transition-colors hover:border-white/50 hover:text-white"
-            >
-              Free research pack
-            </Link>
-            <Link
-              to="/privacy"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-white/20 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white/75 transition-colors hover:border-white/50 hover:text-white"
-            >
-              Privacy
-            </Link>
-          </nav>
+          <RelatedHubs
+            testId="osint-related-hubs"
+            hubs={OSINT_HUBS}
+            className="mt-5"
+          />
           <div className="flex flex-wrap gap-4 text-sm font-sans text-white/50">
             <span>{priceLabel} USD one-time</span>
             <span className="text-white/20">·</span>

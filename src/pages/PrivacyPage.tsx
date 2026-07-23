@@ -1,5 +1,9 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
+
+const PRIVACY_HUBS: readonly RelatedHub[] = [{ to: '/terms', label: 'Terms' }, { to: '/about', label: 'About' }, { to: '/read', label: 'Read' }, { to: '/search', label: 'Search' }]
+
 import {
   setMetaTags,
   clearMetaTags,
@@ -98,16 +102,11 @@ export default function PrivacyPage() {
             <p className="text-sm text-ink-muted mb-6">
               Last updated: March 2026. This policy explains how Veritas Worldwide collects, uses, and protects your information.
             </p>
-            <nav
-              className="mb-10 flex flex-wrap gap-2 border-b border-border pb-6"
-              aria-label="Related trust surfaces"
-              data-testid="privacy-related-hubs"
-            >
-              <Link to="/terms" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">Terms</Link>
-              <Link to="/accessibility" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">Accessibility</Link>
-              <Link to="/about" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">About</Link>
-              <Link to="/membership" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson">Membership</Link>
-            </nav>
+            <RelatedHubs
+            testId="privacy-related-hubs"
+            hubs={PRIVACY_HUBS}
+            className="mt-5"
+          />
 
             <section id="collection" className="mb-10">
               <h2 className="text-xl font-serif font-semibold text-ink mb-3">Information We Collect</h2>

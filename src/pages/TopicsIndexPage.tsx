@@ -1,5 +1,9 @@
 import { useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
+
+const TOPICS_INDEX_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/israel-dossier', label: 'Dossiers' }, { to: '/profiles', label: 'Profiles' }, { to: '/search', label: 'Search' }]
+
 import NewsletterSignup from '../components/NewsletterSignup'
 import { topicHubs, getTopicArticles, getTopicChapters } from '../data/topicHubs'
 import { buildSubscriptionSuccessPath } from '../lib/subscriptionSuccess'
@@ -163,36 +167,11 @@ export default function TopicsIndexPage() {
             current reporting, and the people most associated with that beat so a reader can move from
             a single query into a structured body of evidence.
           </p>
-          <nav
-            className="mt-6 flex flex-wrap gap-2"
-            aria-label="Related hubs"
-            data-testid="topics-related-hubs"
-          >
-            <Link
-              to="/search"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Search
-            </Link>
-            <Link
-              to="/profiles"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Profiles
-            </Link>
-            <Link
-              to="/news"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              News
-            </Link>
-            <Link
-              to="/read"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Read
-            </Link>
-          </nav>
+          <RelatedHubs
+            testId="topics-related-hubs"
+            hubs={TOPICS_INDEX_HUBS}
+            className="mt-5"
+          />
 
           <div className="grid gap-4 mt-10 sm:grid-cols-2 xl:grid-cols-4">
             <TopicMetric label="Topic corridors" value={String(topicSnapshots.length)} />

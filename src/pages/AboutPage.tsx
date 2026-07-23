@@ -1,5 +1,9 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
+
+const ABOUT_HUBS: readonly RelatedHub[] = [{ to: '/read', label: 'Read' }, { to: '/methodology', label: 'Methodology' }, { to: '/sources', label: 'Sources' }, { to: '/search', label: 'Search' }]
+
 import { TAGLINE } from '../lib/constants'
 import {
   clearMetaTags,
@@ -132,42 +136,11 @@ export default function AboutPage() {
               dossiers, profiles, topic explainers, and public methodology designed so a skeptical reader can
               inspect the record instead of trusting a vibe.
             </p>
-            <nav
-              className="mt-6 mb-8 flex flex-wrap gap-2 border-b border-border pb-8"
-              aria-label="Primary destinations"
-              data-testid="about-related-hubs"
-            >
-              <Link
-                to="/read"
-                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-              >
-                Read
-              </Link>
-              <Link
-                to="/methodology"
-                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-              >
-                Methodology
-              </Link>
-              <Link
-                to="/sources"
-                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-              >
-                Sources
-              </Link>
-              <Link
-                to="/israel-dossier"
-                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-              >
-                Dossiers
-              </Link>
-              <Link
-                to="/media-kit"
-                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-              >
-                Media Kit
-              </Link>
-            </nav>
+            <RelatedHubs
+            testId="about-related-hubs"
+            hubs={ABOUT_HUBS}
+            className="mt-6 mb-8"
+          />
 
             <section id="what-we-publish" className="mt-10">
               <h2 className="font-display text-2xl font-semibold text-ink">What Veritas Publishes</h2>
