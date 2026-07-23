@@ -266,3 +266,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | humanitarian-zone strikes · Kfar Aza safe room · water-tank destruction |
 | Pure | visual + israel-dossier + research-pack PASS |
 
+
+## Interval densify — tip post-1749 suction-bulb / refugee-camp / Be’eri safe-room
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza suction-bulb/umbilical-clamp/stethoscope/glucometer · hostage radio-translate/candle-marches/bare-metal/bridge-banners · WB bean-sacks/drama-props/cabbage/sage |
+| VI | refugee-camp strikes · Be’eri safe room · generator theft |
+| Pure | visual + israel-dossier + research-pack PASS |
+
