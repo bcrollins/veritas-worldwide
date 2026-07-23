@@ -5497,8 +5497,17 @@ export const PROFILES: PowerProfile[] = [
     state: 'MN',
     photoUrl: getProfilePhoto('ilhan-omar'),
     summary:
-      'Minnesota Democrat and Squad member; leading progressive for Israel-aid conditionality and Gaza ceasefire. High-profile target of AIPAC/UDP-aligned independent expenditures. Essential opposition pole in the enablement map. Primary: OpenSecrets, House record, FEC IE context.',
-    tags: ['Representative', 'Squad', 'Minnesota', 'Democrat', 'Aid Conditionality', 'UDP Target', 'Ceasefire Advocate'],
+      'Minnesota Democrat and Squad member; leading progressive for Israel-aid conditionality and Gaza ceasefire. High-profile target of AIPAC/UDP-aligned independent expenditures. Essential opposition pole in the enablement map. Integrity docket: dual-cited PolitiFact False that CAIR was founded after 9/11 (CAIR founded 1994). Primary: OpenSecrets, House record, FEC IE context, PolitiFact, CAIR.',
+    tags: [
+      'Representative',
+      'Squad',
+      'Minnesota',
+      'Democrat',
+      'Aid Conditionality',
+      'UDP Target',
+      'Ceasefire Advocate',
+      'Integrity Docket',
+    ],
     career: [
       'Minnesota House (public bio)',
       '2019– — U.S. House MN-5',
@@ -5552,10 +5561,41 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023–2024',
       },
+      {
+        claim:
+          'Integrity docket: March 2019 claim CAIR was founded after 9/11 rated False (CAIR founded 1994; office called it a misstatement).',
+        source: 'PolitiFact False; CAIR About Us',
+        url: 'https://www.politifact.com/factchecks/2019/apr/15/ilhan-omar/ilhan-omar-misstates-facts-about-cairs-founding/',
+        tier: 'verified',
+        date: '2019',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'omar-cair-founded-after-911-2019',
+        statement: 'CAIR was founded after 9/11 because they recognized that some people did something…',
+        saidAt: 'March 23, 2019',
+        context: 'Remarks at a Council on American-Islamic Relations event later amplified in national political attacks.',
+        whyFalse:
+          'PolitiFact rated False. The Council on American-Islamic Relations was founded in 1994 (pre-9/11), with civil-rights reports dating to the mid-1990s. Omar’s office later said it was a misstatement and that she knows CAIR was founded earlier.',
+        correction:
+          'CAIR was founded in 1994, not after the Sept. 11, 2001 attacks.',
+        statementSource: 'Ilhan Omar CAIR event remarks (YouTube), March 23, 2019',
+        statementUrl: 'https://www.youtube.com/watch?v=NSTNnKNFS0o',
+        debunkSource: 'PolitiFact — False (April 15, 2019); CAIR founding record / About Us',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/apr/15/ilhan-omar/ilhan-omar-misstates-facts-about-cairs-founding/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://omar.house.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/ilhan-omar/summary?cid=N00041925' },
+      {
+        label: 'PolitiFact — CAIR founding (False)',
+        url: 'https://www.politifact.com/factchecks/2019/apr/15/ilhan-omar/ilhan-omar-misstates-facts-about-cairs-founding/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Ilhan_Omar' },
     ],
   },
@@ -5641,8 +5681,17 @@ export const PROFILES: PowerProfile[] = [
     state: 'NY',
     photoUrl: getProfilePhoto('aoc'),
     summary:
-      'New York Democrat and Squad standard-bearer. High-visibility progressive for Gaza ceasefire and Israel-aid conditionality; frequent target of pro-Israel Super PAC politics. Maps the progressive opposition pole to bipartisan unconditional-aid orthodoxy. Primary: OpenSecrets, House record.',
-    tags: ['Representative', 'Squad', 'New York', 'Democrat', 'Aid Conditionality', 'Ceasefire Advocate', 'UDP Target'],
+      'New York Democrat and Squad standard-bearer. High-visibility progressive for Gaza ceasefire and Israel-aid conditionality; frequent target of pro-Israel Super PAC politics. Maps the progressive opposition pole to bipartisan unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact Falses on $21T Pentagon “accounting errors” funding M4A and on representing as many people as Sen. Manchin. Primary: OpenSecrets, House record, PolitiFact.',
+    tags: [
+      'Representative',
+      'Squad',
+      'New York',
+      'Democrat',
+      'Aid Conditionality',
+      'Ceasefire Advocate',
+      'UDP Target',
+      'Integrity Docket',
+    ],
     career: [
       'Community organizer / bartender (public bio)',
       '2019– — U.S. House NY-14',
@@ -5696,10 +5745,71 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2023–2024',
       },
+      {
+        claim:
+          'Integrity docket: Dec 2018 claim $21T Pentagon accounting errors equal ~66% of Medicare for All costs rated False (misreads DoD audit unsupported balances).',
+        source: 'PolitiFact False',
+        url: 'https://www.politifact.com/factchecks/2018/dec/03/alexandria-ocasio-cortez/alexandria-ocasio-cortez-wrong-scale-pentagon-acco/',
+        tier: 'verified',
+        date: '2018',
+      },
+      {
+        claim:
+          'Integrity docket: Dec 2021 claim she represents as many or more people than Sen. Manchin rated False (WV ~1.8M vs NY-14 ~700k).',
+        source: 'PolitiFact False; Census apportionment',
+        url: 'https://www.politifact.com/factchecks/2021/dec/22/alexandria-ocasio-cortez/alexandria-ocasio-cortez-wrong-about-representing/',
+        tier: 'verified',
+        date: '2021',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'aoc-pentagon-21t-accounting-m4a-2018',
+        statement:
+          '“$21T in Pentagon accounting errors. Medicare for All costs ~$32T. That means 66% of Medicare for All could have been funded already by the Pentagon.”',
+        saidAt: 'December 2018',
+        context: 'Tweet / public messaging comparing DoD audit unsupported balances to Medicare-for-All cost estimates while entering Congress.',
+        whyFalse:
+          'PolitiFact rated False. The ~$21 trillion figure referred to cumulative unsupported journal voucher balances and accounting adjustments across decades of DoD bookkeeping — not a stash of recoverable cash that could fund health care. Converting that ledger noise into “already funded” Medicare-for-All dollars is a category error.',
+        correction:
+          'DoD audit unsupported balances are not equivalent to free money available to fund Medicare for All; the $21T framing does not describe spendable savings.',
+        statementSource: 'AOC public statement / tweet on Pentagon accounting vs M4A (PolitiFact statement capture)',
+        statementUrl: 'https://www.politifact.com/personalities/alexandria-ocasio-cortez/',
+        debunkSource: 'PolitiFact — False (Dec 3, 2018) on scale of Pentagon accounting errors',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2018/dec/03/alexandria-ocasio-cortez/alexandria-ocasio-cortez-wrong-scale-pentagon-acco/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'aoc-represents-more-than-manchin-2021',
+        statement: '“I represent more, or just as many or more, people than Joe Manchin does.”',
+        saidAt: 'December 2021',
+        context: 'Public remarks comparing House district representation to a full U.S. senator’s state population.',
+        whyFalse:
+          'PolitiFact rated False. West Virginia’s population (~1.8 million) far exceeds NY-14’s district population (~700,000 under equal House apportionment). A House member does not represent as many people as a senator from a mid-size state.',
+        correction:
+          'Sen. Manchin represents the entire state of West Virginia; AOC represents one House district with substantially fewer residents.',
+        statementSource: 'AOC public remarks (PolitiFact quotation), Dec 2021',
+        statementUrl: 'https://www.politifact.com/personalities/alexandria-ocasio-cortez/',
+        debunkSource: 'PolitiFact — False (Dec 22, 2021); Census population comparisons',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2021/dec/22/alexandria-ocasio-cortez/alexandria-ocasio-cortez-wrong-about-representing/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://ocasio-cortez.house.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/alexandria-ocasio-cortez/summary?cid=N00041162' },
+      {
+        label: 'PolitiFact — Pentagon $21T (False)',
+        url: 'https://www.politifact.com/factchecks/2018/dec/03/alexandria-ocasio-cortez/alexandria-ocasio-cortez-wrong-scale-pentagon-acco/',
+      },
+      {
+        label: 'PolitiFact — Manchin population (False)',
+        url: 'https://www.politifact.com/factchecks/2021/dec/22/alexandria-ocasio-cortez/alexandria-ocasio-cortez-wrong-about-representing/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Alexandria_Ocasio-Cortez' },
     ],
   },

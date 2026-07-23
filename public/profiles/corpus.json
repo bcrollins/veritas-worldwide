@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:45:48.364Z",
+  "generatedAt": "2026-07-23T07:52:28.176Z",
   "count": 96,
   "profiles": [
     {
@@ -912,7 +912,7 @@
       "name": "Ilhan Omar",
       "title": "U.S. Representative (D-MN)",
       "category": "politician",
-      "summary": "Minnesota Democrat and Squad member; leading progressive for Israel-aid conditionality and Gaza ceasefire. High-profile target of AIPAC/UDP-aligned independent expenditures. Essential opposition pole in the enablement map. Primary: OpenSecrets, House record, FEC IE context.",
+      "summary": "Minnesota Democrat and Squad member; leading progressive for Israel-aid conditionality and Gaza ceasefire. High-profile target of AIPAC/UDP-aligned independent expenditures. Essential opposition pole in the enablement map. Integrity docket: dual-cited PolitiFact False that CAIR was founded after 9/11 (CAIR founded 1994). Primary: OpenSecrets, House record, FEC IE context, PolitiFact, CAIR.",
       "photo": "/profiles/ilhan-omar.jpg",
       "url": "https://veritasworldwide.com/profile/ilhan-omar",
       "bioguideId": "O000173",
@@ -923,11 +923,12 @@
         "Democrat",
         "Aid Conditionality",
         "UDP Target",
-        "Ceasefire Advocate"
+        "Ceasefire Advocate",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "rashida-tlaib",
@@ -956,7 +957,7 @@
       "name": "Alexandria Ocasio-Cortez",
       "title": "U.S. Representative (D-NY)",
       "category": "politician",
-      "summary": "New York Democrat and Squad standard-bearer. High-visibility progressive for Gaza ceasefire and Israel-aid conditionality; frequent target of pro-Israel Super PAC politics. Maps the progressive opposition pole to bipartisan unconditional-aid orthodoxy. Primary: OpenSecrets, House record.",
+      "summary": "New York Democrat and Squad standard-bearer. High-visibility progressive for Gaza ceasefire and Israel-aid conditionality; frequent target of pro-Israel Super PAC politics. Maps the progressive opposition pole to bipartisan unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact Falses on $21T Pentagon “accounting errors” funding M4A and on representing as many people as Sen. Manchin. Primary: OpenSecrets, House record, PolitiFact.",
       "photo": "/profiles/aoc.jpg",
       "url": "https://veritasworldwide.com/profile/aoc",
       "bioguideId": "O000172",
@@ -967,11 +968,12 @@
         "Democrat",
         "Aid Conditionality",
         "Ceasefire Advocate",
-        "UDP Target"
+        "UDP Target",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
+      "integrityHasDocket": true
     },
     {
       "id": "matt-gaetz",
