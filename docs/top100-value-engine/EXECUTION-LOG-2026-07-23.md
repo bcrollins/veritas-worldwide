@@ -120,3 +120,8 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Anonymity | entity-only; densify surfaces identity CLEAN |
 | Multi-agent | densify-only paths; no ROC/brand/profile clobber |
 
+
+## Interval VI-wave7 (2026-07-23)
+- 919 incidents / 67 video local ship path
+- school double-tap, Nablus corridor, EMS bodycam, Oct 7 public-site attacks
+- pure ≥910/≥65/≥55
