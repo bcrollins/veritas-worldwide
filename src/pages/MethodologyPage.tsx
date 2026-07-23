@@ -42,7 +42,7 @@ export default function MethodologyPage() {
     setMetaTags({
       title: 'Methodology & Evidence Standards | The Record — Veritas Worldwide',
       description:
-        'How The Record classifies evidence: Verified, Circumstantial, and Disputed. Source hierarchy, editorial standards, and independent verification guidance.',
+        'How The Record classifies evidence: Volume I Verified/Circumstantial/Disputed, plus the seven-tier scholarly scale on The Record of Jesus Christ. Source hierarchy and verification guidance.',
       url: `${SITE_URL}/methodology`,
       imageAlt: 'Methodology & evidence standards — The Record, Veritas Worldwide',
     })
@@ -51,7 +51,8 @@ export default function MethodologyPage() {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
         name: 'Methodology & Evidence Standards',
-        description: 'How The Record classifies evidence: Verified, Circumstantial, and Disputed.',
+        description:
+          'Volume I three-tier labels and the seven-tier scholarly scale for The Record of Jesus Christ — source hierarchy and independent verification.',
         url: `${SITE_URL}/methodology`,
         isPartOf: { '@type': 'WebSite', name: `The Record — ${SITE_NAME}`, url: SITE_URL },
         publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
@@ -64,7 +65,12 @@ export default function MethodologyPage() {
         {
           question: 'What evidence tiers does The Record use?',
           answer:
-            'The Record classifies claims as Verified (primary-source documentation), Circumstantial (documented facts with interpretive conclusion), or Disputed (reported but not independently confirmed).',
+            'Volume I archive chapters use Verified, Circumstantial, and Disputed. The Record of Jesus Christ and Bible history surfaces use a seven-tier scholarly scale (Verified through Literary/Theological) mapped to the Volume I system for cross-reading.',
+        },
+        {
+          question: 'Where is The Record of Jesus Christ methodology applied?',
+          answer:
+            'At /record-of-jesus-christ — 170+ claims with proofVsConcept hygiene, primary/peer sources, JSON/CSV/PDF export, and entity-only attribution (Veritas Worldwide).',
         },
         {
           question: 'How does the five-tier source hierarchy work?',
