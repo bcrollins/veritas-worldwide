@@ -460,6 +460,9 @@ export default function ContentPackPage() {
             <a href="/brand-kit/04-social/bluesky-banner.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Bluesky banner →</a>
             <a href="/brand-kit/04-social/pinterest-pin.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Pinterest pin →</a>
             <a href="/brand-kit/07-docs/SOCIAL-LAUNCH.md" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Social launch →</a>
+            <a href="/brand-kit/04-social/tiktok-cover.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">TikTok cover →</a>
+            <a href="/brand-kit/04-social/reddit-banner.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Reddit banner →</a>
+            <a href="/brand-kit/04-social/reels-safe-zone.svg" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] text-ink-muted hover:text-crimson">Reels safe zone →</a>
           </div>
         </div>
       </section>
