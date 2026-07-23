@@ -969,4 +969,10 @@ const deepExcl = read('src/pages/DeepStatePage.tsx')
 assert(deepExcl.includes('exclude="deep-state"') || deepExcl.includes("exclude='deep-state'"), 'DeepState also-in exclude unique')
 assert(deepExcl.includes('deep-state-related-hubs'), 'DeepState RelatedHubs present with exclude')
 
+
+// Briefing also-in exclude self unique
+const briefingExcl = read('src/pages/IsraelDossierBriefingPage.tsx')
+assert(briefingExcl.includes('exclude="briefing"') || briefingExcl.includes("exclude='briefing'"), 'Briefing also-in exclude unique')
+assert(briefingExcl.includes('briefing-related-hubs'), 'Briefing RelatedHubs present with exclude')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
