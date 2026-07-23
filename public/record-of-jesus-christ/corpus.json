@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:06:05.575Z",
-  "claimCount": 182,
+  "generatedAt": "2026-07-23T09:10:48.596Z",
+  "claimCount": 191,
   "tierHistogram": {
-    "verified": 61,
-    "well_attested": 69,
+    "verified": 66,
+    "well_attested": 72,
     "contested": 26,
-    "interpretive": 13,
+    "interpretive": 14,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 8
@@ -73,6 +73,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "ane-ketef-hinnom",
+      "claim": "Ketef Hinnom silver scrolls contain early Hebrew priestly blessing text (Numbers 6) — among the oldest biblical text witnesses in metal.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave10.ts"
     },
     {
       "id": "ane-kuntillet-ajrud",
@@ -192,6 +199,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-jerusalem-destruction-layers",
+      "claim": "Destruction layers and burn evidence in Jerusalem’s Upper City and related loci align with the 70 CE Roman destruction horizon.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave10.ts"
     },
     {
       "id": "arch-magdala",
@@ -355,6 +369,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "cosmo-neutrino-bbn",
+      "claim": "Standard BBN and CMB analyses constrain the effective number of neutrino species (N_eff) near the Standard Model expectation.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave10.ts"
+    },
+    {
       "id": "cosmo-nucleosynthesis-li",
       "claim": "The cosmological lithium problem remains an open tension between standard BBN predictions for ⁷Li and many stellar abundance measurements.",
       "tier": "contested",
@@ -488,6 +509,13 @@
       "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
+      "id": "ec-shepherd-hermas",
+      "claim": "The Shepherd of Hermas (2nd c.) was widely read and sometimes treated as scripture in some churches, illustrating fluid early canons.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave10.ts"
+    },
+    {
       "id": "ec-update-triggers",
       "claim": "This Record’s perpetual update triggers include: new major papyri/majuscule publications, INTF Liste changes, peer-reviewed dig reports, and material consensus shifts in historical Jesus research.",
       "tier": "interpretive",
@@ -612,6 +640,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "hj-jewishness-consensus",
+      "claim": "Mainstream historical Jesus research treats Jesus as a first-century Jew operating within Second Temple Judaism, not as a later Gentile construct.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave10.ts"
     },
     {
       "id": "hj-john-baptist-movement",
@@ -796,6 +831,13 @@
       "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
+      "id": "mod-living-text",
+      "claim": "“Living text” models (e.g., Parker) emphasize early Christian textual fluidity and community use rather than a single frozen original always recoverable.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave10.ts"
+    },
+    {
       "id": "mod-memory-approach",
       "claim": "Social/collective memory approaches reconstruct how groups remembered Jesus rather than claiming verbatim ipsissima verba recovery.",
       "tier": "interpretive",
@@ -934,6 +976,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nc-pliny-christians",
+      "claim": "Pliny the Younger’s letter to Trajan (Ep. 10.96) describes early 2nd-century Bithynian Christians worshiping Christ “as a god” and legal policy toward them.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave10.ts"
     },
     {
       "id": "nc-suetonius",
@@ -1139,6 +1188,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "nt-scribal-habits",
+      "claim": "Codicology and singular-reading studies document mechanical scribal habits (leaps, dittography, harmonization) that explain many variants without theological motive.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave10.ts"
+    },
+    {
       "id": "nt-synoptic-problem",
       "claim": "The Synoptic Problem (literary relationship of Matthew, Mark, Luke) remains an active field; Markan priority is majority, Q hypothesis is majority but contested by Farrer and other models.",
       "tier": "contested",
@@ -1291,6 +1347,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "st-war-scroll",
+      "claim": "The War Scroll (1QM) and related DSS texts depict eschatological battle ideology within a Second Temple Jewish sectarian milieu.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave10.ts"
     }
   ]
 }
