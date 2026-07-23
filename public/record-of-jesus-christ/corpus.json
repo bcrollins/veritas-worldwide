@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:53:56.215Z",
-  "claimCount": 552,
+  "generatedAt": "2026-07-23T10:56:22.558Z",
+  "claimCount": 561,
   "tierHistogram": {
-    "well_attested": 219,
-    "verified": 199,
+    "well_attested": 224,
+    "verified": 201,
     "contested": 47,
-    "interpretive": 58,
+    "interpretive": 59,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 24
+    "circumstantial": 25
   },
   "claims": [
     {
@@ -122,6 +122,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave24.ts"
+    },
+    {
+      "id": "ane-cyrus-cylinder-policy-limits",
+      "claim": "The Cyrus Cylinder’s temple-restoration and return language is Achaemenid royal ideology; it is not a verbatim decree matching Ezra’s wording line-for-line.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave51.ts"
     },
     {
       "id": "ane-deir-alla",
@@ -768,6 +775,13 @@
       "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
+      "id": "arch-qumran-settlement-phases",
+      "claim": "Qumran settlement archaeology is periodized into occupation phases (commonly Ib/II schemes with revisions) that frame when the site could have hosted a manuscript-using community.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave51.ts"
+    },
+    {
       "id": "arch-quran-not-control",
       "claim": "The Qur’an (7th c. CE) is a late secondary witness for first-century Palestinian history and is not used here as a primary control for the historical Jesus.",
       "tier": "interpretive",
@@ -864,6 +878,13 @@
       "tier": "well_attested",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "cosmo-age-of-universe",
+      "claim": "Standard ΛCDM fits to CMB data yield a universe age of approximately 13.8 billion years, with model-dependent uncertainties at the percent level.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave51.ts"
     },
     {
       "id": "cosmo-age-universe",
@@ -1312,6 +1333,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave34.ts"
+    },
+    {
+      "id": "ec-barnabas-two-ways",
+      "claim": "The Epistle of Barnabas includes a Two Ways ethical section related to the Didache’s Two Ways tradition — evidence of shared early Christian moral catechesis forms.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave51.ts"
     },
     {
       "id": "ec-didache",
@@ -2112,6 +2140,13 @@
       "file": "src/data/recordOfJesusChristWave14.ts"
     },
     {
+      "id": "hj-sabbath-controversies",
+      "claim": "Sabbath controversy stories (healings, grain-plucking debates) are multiply present in the Synoptics and are widely used in reconstructions of Jesus’ Torah practice disputes.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave51.ts"
+    },
+    {
       "id": "hj-sinners-table-core",
       "claim": "Jesus’ association with “tax collectors and sinners” at meals is multiply attested and widely treated as a historically distinctive social practice of his movement.",
       "tier": "well_attested",
@@ -2411,6 +2446,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave10.ts"
+    },
+    {
+      "id": "mod-meier-criteria-catalogue",
+      "claim": "John P. Meier’s multi-volume A Marginal Jew catalogues and applies a suite of authenticity criteria with graded judgments — a reference standard even for scholars who reject criteria-based method.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave51.ts"
     },
     {
       "id": "mod-meier-marginal-method",
@@ -2740,6 +2782,13 @@
       "tier": "circumstantial",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave9.ts"
+    },
+    {
+      "id": "nc-mara-serapion-genre",
+      "claim": "The Mara bar Serapion letter is a Syriac consolatory/philosophical letter whose “wise king” line is genre-constrained and chronologically uncertain — weak HJ control at best.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave51.ts"
     },
     {
       "id": "nc-mara-serapion-limits",
@@ -3097,6 +3146,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave46.ts"
+    },
+    {
+      "id": "nt-ecm-acts-status",
+      "claim": "The Editio Critica Maior for Acts provides the fullest modern apparatus and CBGM-informed initial text for Acts, refining older NA readings in selected units.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave51.ts"
     },
     {
       "id": "nt-ecm-catholic-epistles",
@@ -3741,6 +3797,13 @@
       "tier": "verified",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave40.ts"
+    },
+    {
+      "id": "st-philo-migration-abraham",
+      "claim": "Philo’s treatises on Abraham (e.g., On the Migration of Abraham) exemplify allegorical Torah exegesis for a Hellenistic Jewish audience in the early first century.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave51.ts"
     },
     {
       "id": "st-pompey-63",
