@@ -103,3 +103,9 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 **Local tip:** incidents=867, withVideo=54  
 **Pure:** verify:visual-investigations-floor PASS; verify:israel-dossier PASS; verify:research-pack PASS
 
+
+## Interval VI-wave6+ (2026-07-23)
+- corpus 874 / video 61 / VI cards 52
+- dual-sided densify + VI wave6 multi-party visual packages
+- pure floors ≥870/≥54/≥50
+- anonymity PASS path
