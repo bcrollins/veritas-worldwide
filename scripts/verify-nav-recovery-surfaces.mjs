@@ -816,4 +816,11 @@ assert(spokesAria.includes('aria-current'), 'DossierHubSpokes aria-current')
 const cookiePlace = read('src/components/CookieConsent.tsx')
 assert(cookiePlace.includes('mobile-top-desktop-bottom') || (cookiePlace.includes('md:bottom') && cookiePlace.includes('top-')), 'CookieConsent mobile-top-desktop-bottom lock')
 
+
+// Search idle hubs include core destinations  
+const searchIdleSrc = read('src/pages/SearchPage.tsx')
+assert(searchIdleSrc.includes('search-idle-hubs'), 'search-idle-hubs present')
+assert(searchIdleSrc.includes('/read') && searchIdleSrc.includes('/profiles'), 'Search idle Read+Profiles')
+assert(searchIdleSrc.includes('/israel-dossier') || searchIdleSrc.includes('/content-pack'), 'Search idle Dossiers or pack')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
