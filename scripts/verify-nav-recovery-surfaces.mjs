@@ -2149,4 +2149,16 @@ for (const [name, constName, extra] of [
 }
 
 
+
+// RelatedHubs platform integrity final checkpoint
+const platFinal = read('src/components/RelatedHubs.tsx')
+assert(platFinal.includes('PRIMARY_RELATED_HUBS'), 'PRIMARY checkpoint')
+assert(platFinal.includes('emphasizeTo'), 'emphasize checkpoint')
+assert(platFinal.includes('excludeTo'), 'exclude checkpoint')
+assert(platFinal.includes('min-h-[44px]'), 'touch checkpoint')
+assert(platFinal.includes('no-print'), 'no-print checkpoint')
+assert(platFinal.includes('Related hubs'), 'aria checkpoint')
+assert(surfaces.length >= 102, `surfaces checkpoint ${surfaces.length}`)
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
