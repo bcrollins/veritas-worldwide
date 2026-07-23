@@ -1189,6 +1189,10 @@ export default function ForumPage() {
 
       <ForumTruthNotice />
 
+      <div className="mb-4">
+        <DossierHubSpokes variant="also-in" exclude="forum" />
+      </div>
+
       {/* ── Three-column Layout ──────────────────────────────────── */}
       <div className="flex gap-6 w-full">
 
