@@ -422,4 +422,13 @@ const topic = read('src/pages/TopicPage.tsx')
 assert(topic.includes('topic-related-hubs'), 'topic-related-hubs')
 assert(topic.includes('/news') && topic.includes('/israel-dossier'), 'Topic News+Dossiers')
 
+
+// Subscribe/Support success recovery destinations
+const subOk = read('src/pages/SubscribeSuccessPage.tsx')
+assert(subOk.includes('subscribe-success-related-hubs'), 'subscribe-success-related-hubs')
+assert(subOk.includes('/news') && subOk.includes('/read'), 'Subscribe success News+Read')
+const supOk = read('src/pages/SupportSuccessPage.tsx')
+assert(supOk.includes('support-success-related-hubs'), 'support-success-related-hubs')
+assert(supOk.includes('/israel-dossier') && supOk.includes('/profiles'), 'Support success Dossiers+Profiles')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
