@@ -74,6 +74,12 @@ assert(app.includes('/record-of-jesus-christ'), 'route not wired in App')
 assert(app.includes('RecordOfJesusChristPage'), 'lazy page import missing')
 assert(home.includes('/record-of-jesus-christ'), 'home discoverability card missing')
 assert(llms.includes('/record-of-jesus-christ'), 'llms.txt missing ROC path')
+assert(llms.includes('record-of-jesus-christ/corpus.json'), 'llms.txt missing corpus.json')
+const corpusPath = path.join(root, 'public/record-of-jesus-christ/corpus.json')
+assert(fs.existsSync(corpusPath), 'public ROC corpus.json missing — run npm run export:roc-corpus')
+const corpus = JSON.parse(fs.readFileSync(corpusPath, 'utf8'))
+assert(corpus.claimCount >= 50, `corpus claimCount too low: ${corpus.claimCount}`)
+assert(corpus.meta?.publisher === 'Veritas Worldwide', 'corpus publisher must be entity-only')
 
 // Anonymity hygiene on touched surfaces
 const identityRe = /brollins565|brandoncrollins@|bcrollins\/veritas|@incollection\{rollins|\*Rosie2010/i

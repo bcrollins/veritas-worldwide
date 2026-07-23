@@ -1,0 +1,617 @@
+{
+  "meta": {
+    "title": "The Record of Jesus Christ",
+    "publisher": "Veritas Worldwide",
+    "path": "/record-of-jesus-christ",
+    "page": "https://veritasworldwide.com/record-of-jesus-christ",
+    "attribution": "Veritas Worldwide only"
+  },
+  "generatedAt": "2026-07-23T08:07:24.257Z",
+  "claimCount": 85,
+  "tierHistogram": {
+    "verified": 33,
+    "contested": 14,
+    "well_attested": 26,
+    "speculative": 2,
+    "interpretive": 5,
+    "literary_theological": 3,
+    "circumstantial": 2
+  },
+  "claims": [
+    {
+      "id": "ane-babylonian-chronicles",
+      "claim": "Babylonian Chronicles document Nebuchadnezzar’s campaigns against Jerusalem, providing independent chronological control for the late Iron Age Judah narrative.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ane-cyrus-cylinder",
+      "claim": "The Cyrus Cylinder (c. 539 BCE) records Achaemenid policy of restoring temples and returning displaced populations after the conquest of Babylon.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ane-exodus-historicity",
+      "claim": "The historicity and scale of an Israelite exodus from Egypt remain contested in critical scholarship.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ane-flood-literature",
+      "claim": "Mesopotamian flood traditions (Atrahasis, Gilgamesh XI) are independent literary parallels to Genesis flood narrative forms.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ane-hezekiah-lmlk",
+      "claim": "lmlk jar handles and related Judahite administrative seals concentrate in late eighth-century contexts associated with Hezekiah’s reign and Assyrian threat.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ane-merneptah",
+      "claim": "The Merneptah Stele (c. 1208 BCE) contains the earliest known extra-biblical reference to “Israel” as a people in Canaan.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ane-mesha",
+      "claim": "The Mesha Stele (c. 840 BCE) names Omri of Israel, Yahweh, and Moabite campaigns paralleling 2 Kings 3.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ane-tel-dan",
+      "claim": "The Tel Dan Stele (9th century BCE) attests the phrase “House of David” (bytdwd) outside the Bible.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-capernaum",
+      "claim": "Capernaum (Kefar Nahum) was a fishing village on the Sea of Galilee with Early Roman occupation; a later synagogue stands over earlier remains.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-james-ossuary",
+      "claim": "The so-called James ossuary inscription (“James son of Joseph brother of Jesus”) remains contested regarding authenticity of the brother phrase and provenance.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "arch-jericho",
+      "claim": "Jericho’s Late Bronze destruction layers and relation to a conquest narrative remain a classic contested case in biblical archaeology.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-nazareth",
+      "claim": "Nazareth existed as a small Jewish settlement in the Early Roman period; monumental first-century remains are limited.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-pool-bethesda",
+      "claim": "Excavations north of the Temple Mount have exposed twin pools matching John’s description of Bethesda with five porticoes (John 5) better than once assumed.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "arch-sepphoris",
+      "claim": "Sepphoris (Zippori), ~6 km from Nazareth, was a significant urban center in Early Roman Galilee under Antipas.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "arch-siloam",
+      "claim": "The Siloam Tunnel inscription (discovered 1880) describes construction of Hezekiah’s tunnel, matching 2 Kings 20:20 / 2 Chr 32:30 as royal hydraulic works.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-talpiot",
+      "claim": "Talpiot “Jesus family tomb” statistical and onomastic claims are speculative and rejected by most specialists as identification of the New Testament Jesus.",
+      "tier": "speculative",
+      "proofVsConcept": "tradition",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "arch-yehohanan",
+      "claim": "The crucified remains of Yehohanan son of Hagkol (Giv‘at ha-Mivtar) provide osteological evidence of Roman crucifixion practice in Judea (nail through heel bone).",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "cosmo-age",
+      "claim": "Under Planck 2018 ΛCDM parameters, the universe age is approximately 13.8 billion years.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "cosmo-bbn",
+      "claim": "Primordial abundances of light elements (⁴He, D, ³He, ⁷Li) are broadly consistent with Big Bang nucleosynthesis predictions.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "cosmo-cmb",
+      "claim": "The cosmic microwave background (CMB) is a near-isotropic blackbody at T ≈ 2.725 K, consistent with a hot early universe.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "cosmo-expansion",
+      "claim": "Spectroscopic redshift of galaxies correlates with distance (Hubble–Lemaître law), indicating metric expansion of space.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "cosmo-fine-tuning-params",
+      "claim": "Several dimensionless physical parameters appear finely constrained for complex chemistry; teleological interpretation is philosophical, not a scientific conclusion of this Record.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "cosmo-matter-energy",
+      "claim": "Planck baseline ΛCDM reports cold dark matter and dark energy as dominant density components of the present universe.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ec-apostolic-fathers",
+      "claim": "The Apostolic Fathers (1 Clement, Didache, Ignatius, Polycarp, etc.) provide early non-NT Christian primary sources.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ec-athanasius",
+      "claim": "Athanasius, 39th Festal Letter (367 CE), lists the exact 27-book New Testament canon later ratified in the West.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ec-gospel-thomas",
+      "claim": "The Gospel of Thomas (Nag Hammadi) is a sayings gospel whose dating and dependence on canonical Gospels are contested.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ec-irenaeus",
+      "claim": "Irenaeus (c. 180 CE) argues for a fourfold Gospel (Matthew, Mark, Luke, John) against alternative gospel usages.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ec-marcion",
+      "claim": "Marcion of Sinope (mid-2nd century) promulgated a reduced Gospel+Paul collection, prompting proto-orthodox canon and theological responses.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ec-muratorian",
+      "claim": "The Muratorian Fragment is an early (often 2nd-century, date contested) Latin canon list showing a nearly formed but not identical NT collection.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ec-nicaea",
+      "claim": "The Council of Nicaea (325 CE) addressed Christological doctrine (homoousios) under Constantine; it did not create the NT canon list.",
+      "tier": "literary_theological",
+      "proofVsConcept": "tradition",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-appearances",
+      "claim": "Early Christian proclamation included claims of post-crucifixion appearances to individuals and groups (1 Cor 15:3–8); the nature of those experiences is not scientifically settled.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-baptism",
+      "claim": "Baptism of Jesus by John the Baptist is widely judged historical under the criterion of embarrassment and multiple attestation.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-bethlehem",
+      "claim": "Bethlehem birth is narrated in Matthew and Luke with divergent infancy stories; historical verification is contested, while Nazareth association is stronger.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-caiaphas",
+      "claim": "An ossuary inscribed “Yehosef bar Qayafa” (discovered 1990) is widely identified with the high-priestly family of Caiaphas.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-crucifixion",
+      "claim": "Crucifixion of Jesus under Pontius Pilate (prefect of Judea c. 26–36 CE) is multiply attested and coheres with Roman practice.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-crucifixion-year",
+      "claim": "Crucifixion year is commonly constrained to c. 30–33 CE by Pilate’s tenure (26–36), Passover weekday arguments, and astronomical full-moon tables — exact year remains debated.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-empty-tomb",
+      "claim": "Empty-tomb narratives appear in the canonical Gospels with differences; whether an empty tomb is historical is debated; early creed in 1 Cor 15 emphasizes appearances more than tomb logistics.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-existence",
+      "claim": "The existence of Jesus of Nazareth as a first-century Jewish man is the near-consensus position of critical historians of antiquity.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-galilee-context",
+      "claim": "Early Roman Galilee included agricultural villages, fishing economy on the lake, and nearby urban centers such as Sepphoris and Tiberias.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-language",
+      "claim": "Jesus likely spoke Aramaic as a primary vernacular; Greek exposure in Galilee is plausible; Hebrew literacy/use is debated for the population stratum.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-magi-star",
+      "claim": "Magi and star narratives in Matthew 2 are literary-theological traditions; astronomical “explanations” are speculative correlations, not historical proof.",
+      "tier": "literary_theological",
+      "proofVsConcept": "tradition",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-miracles-method",
+      "claim": "Miracle narratives are not historically “verified” under naturalistic historical method; historians can study reports, meanings, and social effects of wonder-traditions.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-pilate-stone",
+      "claim": "The Pilate Stone (Caesarea Maritima, 1961) independently attests Pontius Pilate as prefect of Judea.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-quirinius",
+      "claim": "Luke’s census notice linking Jesus’ birth to a registration under Quirinius (6 CE) is a classic chronological problem relative to a Herodian birth before 4 BCE.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-resurrection-hist",
+      "claim": "Claims of bodily resurrection are theological assertions; historians can document early belief and proclamation, not laboratory verification of the event.",
+      "tier": "literary_theological",
+      "proofVsConcept": "tradition",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "mod-criteria-critique",
+      "claim": "Classical criteria of authenticity (embarrassment, dissimilarity, multiple attestation) are historiographical tools with known biases; recent memory and social approaches revise their use.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "mod-critical-editions",
+      "claim": "NA28/UBS5 (and ongoing ECM/INTF work) are the standard working critical texts of the Greek NT for academic use.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "mod-historical-jesus-quests",
+      "claim": "“Quests” for the historical Jesus are historiographical programs with shifting criteria; no single reconstruction commands universal assent.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "mod-memory-approach",
+      "claim": "Social/collective memory approaches reconstruct how groups remembered Jesus rather than claiming verbatim ipsissima verba recovery.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "mod-population-genetics",
+      "claim": "Population genetics of the Levant documents deep regional continuity with admixture layers; it does not identify individuals named in ancient texts.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "mod-radiocarbon-dss",
+      "claim": "Radiocarbon dating of selected Dead Sea Scrolls supports late Second Temple copy ranges broadly consistent with paleography.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "mod-textus-receptus",
+      "claim": "The Textus Receptus tradition (Erasmus onward) underlies early modern vernacular Bibles but is not the base text of modern critical editions (NA/UBS).",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "mod-turin-shroud",
+      "claim": "The Shroud of Turin is a medieval relic by mainstream radiocarbon dating (1988); authenticity as first-century burial cloth remains speculative/unverified for historical Jesus studies.",
+      "tier": "speculative",
+      "proofVsConcept": "tradition",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "mod-war-70",
+      "claim": "The Jewish-Roman War culminating in the 70 CE destruction of the Temple is a primary historical horizon for dating and interpreting the Synoptic Gospels.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nc-james",
+      "claim": "Josephus, Antiquities 20.200 refers to “the brother of Jesus who is called Christ, James” in the account of Ananus’s execution of James — generally judged authentic.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nc-lucian",
+      "claim": "Lucian of Samosata (2nd c.) satirizes Christians and refers to their crucified sophist in Passing of Peregrinus — evidence of known Christian devotion, not independent biography.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nc-mara",
+      "claim": "The Syriac letter of Mara bar Serapion mentions a “wise king” executed by the Jews; identification with Jesus is possible but not certain.",
+      "tier": "circumstantial",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nc-pliny",
+      "claim": "Pliny the Younger, Epistles 10.96–97, describes early second-century Christian worship practices in Bithynia-Pontus and imperial policy under Trajan.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nc-suetonius",
+      "claim": "Suetonius, Claudius 25.4, refers to disturbances in Rome impulsore Chresto — often discussed as a possible garbled reference to Christ-related conflict, but identification is uncertain.",
+      "tier": "circumstantial",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nc-tacitus",
+      "claim": "Tacitus, Annals 15.44 reports that “Christus” was executed under Tiberius by the procurator Pontius Pilate and that the movement originated in Judea.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nc-tacitus-latin",
+      "claim": "Tacitus Annals 15.44 (Latin) states that Christus suffered the extreme penalty under Tiberius by sentence of procurator Pontius Pilate, and that the superstitio arose in Judea.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nc-tf",
+      "claim": "Josephus, Antiquities 18.63–64 (Testimonium Flavianum) is widely judged partly authentic with Christian interpolations; fully authentic and fully forged positions are minorities.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nc-tf-reconstructions",
+      "claim": "Major scholarly reconstructions of the Testimonium Flavianum range from a short neutral core to more expansive partial authenticity; wholesale authenticity and wholesale forgery are minority poles.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-comma-johanneum",
+      "claim": "The Comma Johanneum (1 John 5:7–8 Trinitarian formula in some later Latin/TR traditions) lacks early Greek support and is omitted in modern critical editions.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-gospel-dates",
+      "claim": "Critical consensus commonly dates Mark c. 65–75 CE, Matthew and Luke c. 80–90 CE, John c. 90–100 CE — with debate bands around each.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nt-john-historicity",
+      "claim": "John’s Gospel is generally dated later than the Synoptics; its independent historical value for Jesus research is debated (high Christology vs. early tradition cores).",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-majuscules",
+      "claim": "Fourth–fifth century majuscules (ℵ 01 Sinaiticus, A 02 Alexandrinus, B 03 Vaticanus, C 04 Ephraemi, D 05 Bezae) are foundational for the critical text.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nt-mark-ending",
+      "claim": "The longer ending of Mark (16:9–20) is absent from the earliest major witnesses (ℵ B) and is marked as secondary in NA28/UBS apparatuses.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-ms-count",
+      "claim": "Greek New Testament continuous-text manuscripts number on the order of several thousand, with additional lectionaries and versions.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nt-p45-p46-p47",
+      "claim": "Chester Beatty papyri (P45, P46, P47) are major third-century witnesses to Gospels/Acts, Paul, and Revelation respectively.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-p52",
+      "claim": "Papyrus P52 (Rylands Greek P 457) is among the earliest surviving NT fragments (John 18), paleographically dated roughly to the second century CE.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nt-p66-p75",
+      "claim": "Bodmer papyri P66 and P75 are early substantial witnesses to John (and Luke/John for P75), foundational for Alexandrian text studies.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-paul-dates",
+      "claim": "Undisputed Pauline letters are typically dated c. 49–58 CE and are the earliest surviving Christian literary corpus.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nt-pericope-adulterae",
+      "claim": "John 7:53–8:11 (pericope adulterae) is widely judged a later insertion into John; early Greek continuous-text support is weak.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-synoptic-problem",
+      "claim": "The Synoptic Problem (literary relationship of Matthew, Mark, Luke) remains an active field; Markan priority is majority, Q hypothesis is majority but contested by Farrer and other models.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-textual-criticism",
+      "claim": "Greek New Testament continuous-text manuscripts number on the order of several thousand, with additional lectionaries and versions.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nt-variants",
+      "claim": "Hundreds of thousands of variant readings exist across the tradition; the vast majority are orthographic or trivial, while a minority affect meaning.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-community-rule",
+      "claim": "Qumran sectarian texts (e.g., Community Rule 1QS, War Scroll 1QM, Pesharim) document a Jewish movement with distinctive purity, calendar, and eschatology in the late Second Temple period.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "st-dss",
+      "claim": "Dead Sea Scrolls (discovered 1946–1956) preserve Hebrew Bible books and sectarian texts from roughly the third century BCE to first century CE.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-dss-books",
+      "claim": "Among biblical DSS copies, Psalms, Deuteronomy, Isaiah, Exodus, and Genesis are among the most frequently attested books; Esther is not securely attested at Qumran.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "st-herod-temple",
+      "claim": "Herod’s expansion of the Jerusalem Temple platform is archaeologically and literarily well documented for the late first century BCE – first century CE.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "st-isaiah-stability",
+      "claim": "Comparison of 1QIsaᵃ (c. 2nd–1st century BCE) with the medieval Masoretic Text shows high overall agreement with mostly orthographic and minor variants.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-josephus-corpus",
+      "claim": "Flavius Josephus (late first century CE) is a principal non-Christian Jewish historian for Herodian and early Roman Judea.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-parties",
+      "claim": "Josephus and later rabbinic memory describe Pharisees, Sadducees, and Essenes as major Jewish schools; exact social demographics remain reconstructed.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "st-philo",
+      "claim": "Philo of Alexandria provides contemporary diaspora Jewish philosophical and exegetical context for the early first century CE.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChrist.ts"
+    }
+  ]
+}
