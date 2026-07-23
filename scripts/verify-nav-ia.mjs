@@ -416,6 +416,13 @@ const termsBIa = termsIa.match(/const TERMS_HUBS[^=]*= \[([\s\S]*?)\]/)
 assert(termsBIa && (termsBIa[1].match(/to:/g) || []).length === 5, 'TERMS_HUBS count 5 IA')
 assert(termsBIa[1].includes('/membership'), 'TERMS Membership IA')
 
+
+// RelatedHubs platform complete IA sentinel
+const relatedPlatIa = fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
+assert(relatedPlatIa.includes('PRIMARY_RELATED_HUBS') && relatedPlatIa.includes('emphasizeTo'), 'RelatedHubs platform complete IA')
+assert(relatedPlatIa.includes("'dark'") || relatedPlatIa.includes('"dark"'), 'RelatedHubs dark IA complete')
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-hub-chips'), 'soft-404 primary RelatedHubs IA complete')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
