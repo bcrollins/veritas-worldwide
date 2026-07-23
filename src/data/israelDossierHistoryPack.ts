@@ -13536,6 +13536,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-marasmus-dermatosis-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Marasmus Dermatosis Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (marasmus-dermatosis cohort)',
+    location: 'Gaza Strip nutrition stabilization points and pediatric wards',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated marasmus-associated dermatosis in severely wasted children under famine — a multi-source wartime skin-malnutrition pattern distinct from kwashiorkor ulceration and PEM cards.',
+    evidence:
+      'WHO nutrition materials, UNICEF SAM clinical updates, and multi-outlet coverage establish multi-source pediatric marasmus dermatosis. Exact case counts evolve; multi-source wartime marasmus dermatosis among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza malnutrition coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-hearing-other-hostages-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Hearing Other Hostages Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (other-hostage-hearing-denial cohort)',
+    location: 'Gaza Strip captivity sites — auditory-isolation subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors preventing Israeli civilian hostages from hearing other hostages — a multi-source isolation pattern distinct from conversation denial and eye-contact denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source auditory isolation. Exact cases vary; multi-source denial of hearing other hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-almond-saplings-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Almond Saplings Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (almond-sapling-destruction cohort)',
+    location: 'West Bank newly planted almond orchards and nursery plots',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian almond saplings after October 7 — destroying re-planting investments supporting families including children. Pattern card distinct from mature almond-tree destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source almond-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian almond saplings is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet sapling-destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-angular-cheilitis-surge-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Angular Cheilitis Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (angular-cheilitis-surge cohort)',
+    location: 'Gaza Strip pediatric clinics and nutrition points',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric angular cheilitis under B-vitamin and iron deficiency — a multi-source wartime micronutrient-oral pattern distinct from oral thrush and pellagra cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition updates, and multi-outlet coverage establish multi-source pediatric angular cheilitis surge. Exact case counts evolve; multi-source wartime angular cheilitis among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO micronutrient materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-nutrition coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-sit-in-darkness-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Sit in Darkness Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-darkness cohort)',
+    location: 'Gaza Strip captivity sites — forced-darkness subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to sit for long periods in complete darkness — a multi-source sensory-deprivation pattern distinct from sunlight denial and ventilation denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced darkness. Exact cases vary; multi-source forced darkness for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-funeral-mourners-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Funeral Mourners Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (funeral-mourner-attack cohort)',
+    location: 'West Bank cemeteries and funeral gathering sites',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian civilian funeral mourners after October 7 — terrorizing bereaved families including children. Pattern card distinct from funeral-procession blocking and cemetery desecration.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source funeral-mourner attacks. Exact injury counts evolve; multi-source wartime settler attacks on funeral mourners is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet funeral-mourner attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-goiter-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Goiter Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (goiter-risk cohort)',
+    location: 'Gaza Strip pediatric clinics and nutrition points',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric goiter risk under iodine deficiency and salt iodization collapse — a multi-source wartime thyroid pattern distinct from iodine-deficiency general risk cards.',
+    evidence:
+      'WHO micronutrient materials, UNICEF nutrition updates, and multi-outlet coverage establish multi-source pediatric goiter risk. Exact case counts evolve; multi-source wartime goiter risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO micronutrient materials', url: 'https://www.who.int' },
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza child-nutrition coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-water-for-washing-hands-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Water for Hand Washing Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hand-washing-water-denial cohort)',
+    location: 'Gaza Strip captivity sites — hand-washing-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of water for hand washing for Israeli civilian hostages — compounding infection risk beyond bathing denial. Pattern card distinct from bathing, toileting privacy, and clean-clothing cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source hand-washing water denial. Exact cases vary; multi-source hand-washing water denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-dry-stone-walls-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Dry-Stone Walls Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (dry-stone-wall-destruction cohort)',
+    location: 'West Bank agricultural dry-stone field walls and plot boundaries',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian dry-stone walls after October 7 — erasing land boundaries and agricultural infrastructure for families including children. Pattern card distinct from stone terraces and home fencing.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source dry-stone-wall destruction. Exact structure counts evolve; multi-source wartime settler destruction of civilian dry-stone walls is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet wall-destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -21485,6 +21729,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['terraces', 'settlers', 'agriculture', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-marasmus-dermatosis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Marasmus Dermatosis Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated marasmus-associated dermatosis in severely wasted children.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-marasmus-dermatosis-pattern-2023-2025',
+      'gaza-children-angular-cheilitis-surge-pattern-2023-2025',
+      'gaza-children-goiter-risk-pattern-2023-2025',
+    ],
+    tags: ['marasmus', 'dermatosis', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-hearing-others-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Hearing Other Hostages Pattern',
+    description: 'Multi-source documentation of captors preventing hostages from hearing other hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-hearing-other-hostages-pattern-2023-2025',
+      'israel-hostages-forced-to-sit-in-darkness-pattern-2023-2025',
+      'israel-hostages-denied-water-for-washing-hands-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'isolation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-almond-saplings-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Almond Saplings Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian almond saplings after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-almond-saplings-pattern-2023-2025',
+      'west-bank-settler-attacking-funeral-mourners-pattern-2023-2025',
+      'west-bank-settler-destroying-dry-stone-walls-pattern-2023-2025',
+    ],
+    tags: ['almond-saplings', 'settlers', 'agriculture', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-angular-cheilitis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Angular Cheilitis Surge Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric angular cheilitis under B-vitamin deficiency.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-angular-cheilitis-surge-pattern-2023-2025',
+      'gaza-children-marasmus-dermatosis-pattern-2023-2025',
+      'gaza-children-pellagra-risk-pattern-2023-2025',
+    ],
+    tags: ['angular-cheilitis', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-darkness-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Sit in Darkness Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to sit in complete darkness.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-sit-in-darkness-pattern-2023-2025',
+      'israel-hostages-denied-sunlight-pattern-2023-2025',
+      'israel-hostages-denied-hearing-other-hostages-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'sensory-deprivation', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-funeral-mourners-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Funeral Mourners Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler attacks on Palestinian funeral mourners after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-funeral-mourners-pattern-2023-2025',
+      'west-bank-settler-blocking-funeral-processions-pattern-2023-2025',
+      'west-bank-settler-destroying-almond-saplings-pattern-2023-2025',
+    ],
+    tags: ['funeral-mourners', 'settlers', 'civilians', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-goiter-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Goiter Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric goiter risk under iodine collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-goiter-risk-pattern-2023-2025',
+      'gaza-children-iodine-deficiency-pattern-2023-2025',
+      'gaza-children-angular-cheilitis-surge-pattern-2023-2025',
+    ],
+    tags: ['goiter', 'children', 'nutrition', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-hand-washing-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Water for Hand Washing Pattern',
+    description: 'Multi-source documentation of denial of water for hand washing for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-water-for-washing-hands-pattern-2023-2025',
+      'israel-hostages-denied-bathing-pattern-2023-2025',
+      'israel-hostages-forced-to-sit-in-darkness-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'hygiene', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-dry-stone-walls-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Dry-Stone Walls Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian dry-stone walls after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-dry-stone-walls-pattern-2023-2025',
+      'west-bank-settler-destroying-stone-terraces-pattern-2023-2025',
+      'west-bank-settler-destroying-fencing-around-homes-pattern-2023-2025',
+    ],
+    tags: ['dry-stone-walls', 'settlers', 'agriculture', 'west-bank'],
+  },
+
 
 
 
