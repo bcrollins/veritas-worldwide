@@ -13,6 +13,7 @@ import {
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
 import CorrectionsCTA from '../components/CorrectionsCTA'
 import EvidenceTierLegend from '../components/EvidenceTierLegend'
+import ResearchHubChips from '../components/ResearchHubChips'
 
 const methodologySections = [
   { id: 'five-tier-source-hierarchy', label: 'Five-Tier Source Hierarchy' },
@@ -120,6 +121,9 @@ export default function MethodologyPage() {
 
       {/* Main Content Area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+        <div className="mb-6">
+          <ResearchHubChips />
+        </div>
         {/* Two-Column Grid */}
         <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12">
           {/* Left Column — Main Article */}

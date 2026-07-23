@@ -626,7 +626,7 @@ export default function SearchPage() {
               </svg>
               <input
                 type="text"
-                placeholder="Search by name, topic, institution, date..."
+                placeholder="Search chapters, profiles, sources, dossiers…"
                 value={query}
                 onChange={(e) => handleSearch(e.target.value)}
                 className="search-input"

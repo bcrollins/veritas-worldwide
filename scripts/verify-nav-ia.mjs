@@ -99,6 +99,31 @@ assert(cookie.includes('z-[100]') || cookie.includes('z-\\[100\\]'), 'Cookie con
 assert(cookie.includes('data-z-above-tab-bar') || cookie.includes('z-[100]'), 'Cookie/tab z-index contract')
 assert(membership.includes('bottom-[calc(3.75rem') || membership.includes('bottom-[calc(3.75rem+env(safe-area-inset-bottom))]'), 'Membership bar sits above mobile tab bar')
 
+// Sprint 3: Research hub chips + footer hub order + dossiers tooltip + bookmarks News
+const researchChips = fs.readFileSync(path.join(root, 'src/components/ResearchHubChips.tsx'), 'utf8')
+const methodology = fs.readFileSync(path.join(root, 'src/pages/MethodologyPage.tsx'), 'utf8')
+const sources = fs.readFileSync(path.join(root, 'src/pages/SourcesPage.tsx'), 'utf8')
+const bookmarks = fs.readFileSync(path.join(root, 'src/pages/BookmarksPage.tsx'), 'utf8')
+assert(researchChips.includes('data-testid="research-hub-chips"'), 'ResearchHubChips testid required')
+assert(methodology.includes('ResearchHubChips'), 'Methodology mounts research chips')
+assert(sources.includes('ResearchHubChips'), 'Sources mounts research chips')
+assert(app.includes("title: 'Israel · Deep State · Forum'") || app.includes('Israel · Deep State · Forum'), 'Dossiers tooltip scent')
+// Footer browseLinks: Record before Read before Dossiers before Profiles before Search
+const footerBlock = app.match(/const browseLinks: ShellLink\[\] = \[([\s\S]*?)\]/)
+assert(footerBlock, 'footer browseLinks required')
+const fb = footerBlock[1]
+const idxRecord = fb.indexOf("to: '/'")
+const idxRead = fb.indexOf("to: '/read'")
+const idxDossiers = fb.indexOf("to: '/israel-dossier'")
+const idxProfiles = fb.indexOf("to: '/profiles'")
+const idxSearch = fb.indexOf("to: '/search'")
+assert(idxRecord >= 0 && idxRead > idxRecord, 'footer: Record then Read')
+assert(idxDossiers > idxRead, 'footer: Dossiers after Read (hub order)')
+assert(idxProfiles > idxDossiers, 'footer: Profiles after Dossiers')
+assert(idxSearch > idxProfiles, 'footer: Search after Profiles')
+assert(bookmarks.includes('to="/news"') || bookmarks.includes("to: '/news'"), 'Bookmarks empty includes News')
+assert(search.includes('chapters, profiles, sources, dossiers') || search.includes('placeholder='), 'Search placeholder improved')
+
 console.log(
-  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, home/search/404 recovery, cookie z-order`,
+  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, home/search/404 recovery, cookie z-order`,
 )

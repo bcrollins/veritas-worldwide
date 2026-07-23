@@ -86,6 +86,8 @@ const ComprehensiveProfileSuccessPage = lazy(() => import('./pages/Comprehensive
 type ShellLink = {
   to: string
   label: string
+  /** Optional native tooltip (e.g. Dossiers → Israel · Deep State · Forum) */
+  title?: string
   match?: (pathname: string) => boolean
 }
 
@@ -190,6 +192,7 @@ function Header() {
     {
       to: '/israel-dossier',
       label: 'Dossiers',
+      title: 'Israel · Deep State · Forum',
       match: pathname =>
         matchesPrefix(pathname, '/israel-dossier') ||
         normalizePath(pathname) === '/deep-state' ||
@@ -431,6 +434,7 @@ function Header() {
                   key={link.to}
                   to={link.to}
                   className={desktopPrimaryLinkClass(link)}
+                  title={link.title}
                   {...(isLinkActive(location.pathname, link) ? { 'aria-current': 'page' as const } : {})}
                 >
                   {link.label}
@@ -500,6 +504,7 @@ function Header() {
                   key={link.to}
                   to={link.to}
                   className={drawerLinkClass(link)}
+                  title={link.title}
                   onClick={() => setMenuOpen(false)}
                   {...(isLinkActive(location.pathname, link) ? { 'aria-current': 'page' as const } : {})}
                 >
@@ -650,6 +655,7 @@ function MobileTabBar() {
     {
       to: '/israel-dossier',
       label: 'Dossiers',
+      title: 'Israel · Deep State · Forum',
       match: pathname =>
         matchesPrefix(pathname, '/israel-dossier') ||
         normalizePath(pathname) === '/deep-state' ||
@@ -676,6 +682,7 @@ function MobileTabBar() {
             <Link
               key={tab.to}
               to={tab.to}
+              title={tab.title}
               className={`flex min-h-[52px] min-w-[44px] flex-1 flex-col items-center justify-center gap-0.5 rounded-lg px-1 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.06em] transition-colors ${
                 active ? 'text-crimson' : 'text-ink-muted hover:text-ink'
               }`}
@@ -697,12 +704,14 @@ function MobileTabBar() {
 function Footer() {
   const { t } = useI18n()
 
+  // Mirror primary hub order (Record · Read · Dossiers · Profiles · Search) then secondary browse
   const browseLinks: ShellLink[] = [
     { to: '/', label: 'The Record' },
     { to: '/read', label: 'Read' },
-    { to: '/news', label: 'News' },
-    { to: '/profiles', label: 'Profiles' },
     { to: '/israel-dossier', label: 'Dossiers' },
+    { to: '/profiles', label: 'Profiles' },
+    { to: '/search', label: t('nav.search') },
+    { to: '/news', label: 'News' },
     { to: '/forum', label: 'Forum' },
   ]
 
