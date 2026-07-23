@@ -75,3 +75,15 @@ News, Forum, Deep State, Timeline, all research surfaces, OSINT, membership, leg
 
 ## Live proof (2026-07-23)
 `mobile-tab-bar`, `DossierHubSpokes`, `ResearchHubChips`, `home-hub-cta-row`, `home-news-chip`, `dossier-hub-spokes`, `research-hub-chips`, `news-related-hubs`, `server-soft-404` + Primary hubs, research pack health true.
+
+
+## Sprint 6 — RelatedHubs platformization (SHIPPED 2026-07-23)
+51. Shared `RelatedHubs` + `PRIMARY_RELATED_HUBS` ≤5  
+52. Detail surfaces: chapter/article/profile/topic/AIPAC/institute course+guide  
+53. Success surfaces: subscribe/support/OSINT  
+54. Browse/Account: news/timeline/topics/about/membership/legal/a11y/analytics/OSINT  
+55. ResearchHubChips `excludePath` filters self-links  
+56. NotFound soft-404 reuses PRIMARY_RELATED_HUBS  
+57. Pure recovery suite 90 needles · pure 46 suites  
+58. Multi-agent densify lane unthrashed; tsc-clean import hygiene  
+
