@@ -1749,6 +1749,8 @@ const STATIC_CANONICAL_PATHS = new Set([
   '/sources',
   '/terms',
   '/timeline',
+  // Researcher hub (indexable tool index) + local-only timeline (noindex)
+  '/researcher',
   '/researcher/timeline',
   '/topics',
 ])
@@ -2381,7 +2383,8 @@ function isKnownSpaRoute(pathname) {
     '/news',
     '/profiles',
     '/timeline',
-    // Local-only researcher chronology tool (noindex SPA; must not soft-404)
+    // Researcher hub (public tool index) + local-only timeline (noindex SPA)
+    '/researcher',
     '/researcher/timeline',
     '/topics',
     '/search',

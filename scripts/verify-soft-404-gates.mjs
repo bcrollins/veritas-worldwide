@@ -2,6 +2,7 @@
 /**
  * Pure soft-404 allowlist gates (no network).
  */
+import fs from 'node:fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import {
@@ -40,6 +41,19 @@ assert(isKnownChapterSlug(null) === false, 'null chapter slug unknown')
 assert(isKnownNewsSlug('', root) === false, 'empty news slug unknown')
 assert(isKnownTopicSlug('', root) === false, 'empty topic slug unknown')
 assert(isKnownInstituteSlug('', root) === false, 'empty institute slug unknown')
+
+// SPA soft-404 allowlist must include researcher hub (not only /researcher/timeline).
+{
+  const serverJs = fs.readFileSync(path.join(root, 'server.js'), 'utf8')
+  assert(
+    serverJs.includes("'/researcher'") || serverJs.includes('"/researcher"'),
+    'server.js isKnownSpaRoute must allow /researcher hub',
+  )
+  assert(
+    serverJs.includes("'/researcher/timeline'") || serverJs.includes('"/researcher/timeline"'),
+    'server.js isKnownSpaRoute must allow /researcher/timeline',
+  )
+}
 
 if (failures.length) {
   console.error('[verify:soft-404-gates] FAIL')

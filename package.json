@@ -13,6 +13,8 @@
     "generate:roc-pdf": "node scripts/generate-roc-waves-barrel.mjs && node scripts/export-roc-corpus.mjs && node scripts/sync-roc-geo-floors.mjs && node scripts/generate-roc-pdf.mjs",
     "verify:analytics-privacy": "node scripts/verify-analytics-privacy.mjs",
     "verify:git-author-forward": "node scripts/verify-git-author-forward.mjs",
+    "verify:package-entity": "node scripts/verify-package-entity.mjs",
+    "verify:sitemap-exclusions": "node scripts/verify-sitemap-exclusions.mjs",
     "strip:public-exif": "node scripts/strip-public-exif.mjs",
     "generate:institute-pdf": "node scripts/run-with-strip-types.mjs scripts/generate-institute-field-manual-pdf.mjs && node scripts/verify-brand-kit.mjs",
     "export:israel-dossier-corpus": "node scripts/export-israel-dossier-corpus.mjs",
