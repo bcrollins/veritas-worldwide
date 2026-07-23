@@ -582,4 +582,16 @@ assert(news.includes('news-related-hubs') && news.includes('RelatedHubs'), 'News
 assert(news.includes('/forum') || news.includes("to: '/forum'"), 'News Forum recovery')
 assert(news.includes('/read') || news.includes("to: '/read'"), 'News Read recovery')
 
+
+// Detail pages mount shared RelatedHubs component (not only testids)
+for (const rel of [
+  'src/pages/ChapterPage.tsx',
+  'src/pages/ArticlePage.tsx',
+  'src/pages/ProfilePage.tsx',
+  'src/pages/TopicPage.tsx',
+  'src/pages/NewsPage.tsx',
+]) {
+  assert(read(rel).includes('RelatedHubs'), `${rel} mounts RelatedHubs component`)
+}
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
