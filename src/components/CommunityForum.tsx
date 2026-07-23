@@ -137,7 +137,7 @@ function CommentComposer({ pageId, parentId, onPost, onCancel, placeholder }: {
             {onCancel && (
               <button
                 onClick={onCancel}
-                className="inline-flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-ink px-3 py-1.5"
+                className="inline-flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-ink px-3 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
               >
                 Cancel
               </button>
@@ -145,7 +145,7 @@ function CommentComposer({ pageId, parentId, onPost, onCancel, placeholder }: {
             <button
               onClick={handleSubmit}
               disabled={!text.trim()}
-              className="inline-flex min-h-[44px] items-center font-sans text-xs font-bold tracking-[0.08em] uppercase px-4 py-1.5 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              className="inline-flex min-h-[44px] items-center font-sans text-xs font-bold tracking-[0.08em] uppercase px-4 py-1.5 bg-crimson text-white rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
             >
               {parentId ? 'Reply' : 'Post'}
             </button>
@@ -194,11 +194,11 @@ function CommentThread({ comment, allComments, pageId, depth, onUpdate }: {
       <div className="flex gap-2 py-3">
         {/* Vote Column */}
         <div className="flex flex-col items-center gap-0.5 pt-0.5">
-          <button onClick={() => handleVote('up')} className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded hover:bg-crimson/10 transition-colors ${!user ? 'opacity-30 cursor-not-allowed' : ''}`} disabled={!user} aria-label="Upvote">
+          <button onClick={() => handleVote('up')} className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded hover:bg-crimson/10 transition-colors ${!user ? 'opacity-30 cursor-not-allowed' : ''} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`} disabled={!user} aria-label="Upvote">
             <UpIcon active={hasUpvoted} />
           </button>
           <span className={`font-mono text-[0.65rem] font-bold min-w-[1.5rem] text-center ${score > 0 ? 'text-crimson' : score < 0 ? 'text-blue-600' : 'text-ink-faint'}`}>{score}</span>
-          <button onClick={() => handleVote('down')} className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded hover:bg-blue-600/10 transition-colors ${!user ? 'opacity-30 cursor-not-allowed' : ''}`} disabled={!user} aria-label="Downvote">
+          <button onClick={() => handleVote('down')} className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded hover:bg-blue-600/10 transition-colors ${!user ? 'opacity-30 cursor-not-allowed' : ''} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`} disabled={!user} aria-label="Downvote">
             <DownIcon active={hasDownvoted} />
           </button>
         </div>
@@ -215,7 +215,7 @@ function CommentThread({ comment, allComments, pageId, depth, onUpdate }: {
           </div>
 
           {collapsed ? (
-            <button onClick={() => setCollapsed(false)} className="inline-flex min-h-[44px] items-center font-sans text-xs text-ink-faint hover:text-ink mt-1">
+            <button onClick={() => setCollapsed(false)} className="inline-flex min-h-[44px] items-center font-sans text-xs text-ink-faint hover:text-ink mt-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">
               [{replies.length} repl{replies.length === 1 ? 'y' : 'ies'} hidden — click to expand]
             </button>
           ) : (
@@ -223,12 +223,12 @@ function CommentThread({ comment, allComments, pageId, depth, onUpdate }: {
               <p className="font-body text-sm text-ink leading-relaxed mt-1.5 whitespace-pre-wrap break-words">{comment.content}</p>
               <div className="flex items-center gap-3 mt-2">
                 {user && depth < maxDepth && (
-                  <button onClick={() => setShowReply(!showReply)} className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.6rem] font-semibold text-ink-muted hover:text-crimson uppercase tracking-wider transition-colors">
+                  <button onClick={() => setShowReply(!showReply)} className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.6rem] font-semibold text-ink-muted hover:text-crimson uppercase tracking-wider transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">
                     <ReplyIcon /> Reply
                   </button>
                 )}
                 {replies.length > 0 && (
-                  <button onClick={() => setCollapsed(true)} className="inline-flex min-h-[44px] items-center font-sans text-[0.6rem] text-ink-faint hover:text-ink uppercase tracking-wider">
+                  <button onClick={() => setCollapsed(true)} className="inline-flex min-h-[44px] items-center font-sans text-[0.6rem] text-ink-faint hover:text-ink uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">
                     Collapse
                   </button>
                 )}
@@ -290,7 +290,7 @@ export default function CommunityForum({ pageId, pageTitle }: { pageId: string; 
             <button
               key={mode}
               onClick={() => setSortMode(mode)}
-              className={`inline-flex min-h-[44px] items-center font-sans text-[0.6rem] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-sm transition-colors ${sortMode === mode ? 'bg-parchment text-crimson shadow-sm' : 'text-ink-muted hover:text-ink'}`}
+              className={`inline-flex min-h-[44px] items-center font-sans text-[0.6rem] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-sm transition-colors ${sortMode === mode ? 'bg-parchment text-crimson shadow-sm' : 'text-ink-muted hover:text-ink'} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
             >
               {mode}
             </button>
@@ -306,7 +306,7 @@ export default function CommunityForum({ pageId, pageTitle }: { pageId: string; 
       ) : (
         <button
           onClick={() => setShowAuthModal(true)}
-          className="w-full min-h-[44px] mb-8 py-4 border-2 border-dashed border-border rounded-sm text-center font-sans text-sm text-ink-muted hover:border-crimson/40 hover:text-crimson transition-colors"
+          className="w-full min-h-[44px] mb-8 py-4 border-2 border-dashed border-border rounded-sm text-center font-sans text-sm text-ink-muted hover:border-crimson/40 hover:text-crimson transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         >
           Sign in to add a local beta comment
         </button>

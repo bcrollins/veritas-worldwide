@@ -317,7 +317,7 @@ export default function ChapterPDF({ chapter }: Props) {
     <button
       onClick={handleExport}
       disabled={generating}
-      className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] font-sans text-xs font-semibold tracking-[0.1em] uppercase border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors disabled:opacity-50 disabled:cursor-wait"
+      className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] font-sans text-xs font-semibold tracking-[0.1em] uppercase border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors disabled:opacity-50 disabled:cursor-wait focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
       aria-label={generating ? 'Generating PDF...' : `Download ${chapter.title} as PDF`}
     >
       {generating ? (

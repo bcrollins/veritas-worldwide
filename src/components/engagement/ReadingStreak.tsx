@@ -32,7 +32,7 @@ export default function ReadingStreak() {
 
   return (
     <>
-      <span className="inline-flex min-h-[44px] items-center gap-1.5 px-2.5 rounded-full font-sans text-[0.6rem] font-semibold bg-gold/10 text-gold"
+      <span className="inline-flex min-h-[44px] items-center gap-1.5 px-2.5 rounded-full font-sans text-[0.6rem] font-semibold bg-gold/10 text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         title={`${streak}-day reading streak`} aria-label={`${streak} day reading streak`}>
         <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M12 23c-3.866 0-7-3.134-7-7 0-3.5 2.5-6 4-7.5 1.5 1 2 2.5 2 2.5s1.5-2.5 1-5c3 1.5 5 4.5 5 7.5a4.978 4.978 0 01-2 4"/></svg>
         {streak}
@@ -44,7 +44,7 @@ export default function ReadingStreak() {
           {showMembershipNudge && (
             <p className="text-xs text-white/60 mt-1">
               Dedicated reader?{' '}
-              <Link to="/membership" className="inline-flex min-h-[44px] items-center text-crimson-light hover:text-white underline">
+              <Link to="/membership" className="inline-flex min-h-[44px] items-center text-crimson-light hover:text-white underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">
                 Get early access to new chapters →
               </Link>
             </p>

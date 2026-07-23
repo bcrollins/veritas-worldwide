@@ -14,7 +14,7 @@ export default function MarketingConsentField({ checked, onChange, tone = 'light
     : 'border-border bg-surface'
 
   return (
-    <label className="flex items-start gap-2.5 mt-3 min-h-[44px] cursor-pointer">
+    <label className="flex items-start gap-2.5 mt-3 min-h-[44px] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">
       <input
         type="checkbox"
         checked={checked}

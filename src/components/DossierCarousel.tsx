@@ -374,7 +374,7 @@ export function CarouselDownloader({ slides, title, filenamePrefix }: {
           <button
             onClick={handleDownloadAll}
             disabled={generating}
-            className="inline-flex min-h-[44px] items-center gap-2 px-5 py-2.5 bg-crimson text-white font-sans text-xs font-bold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50"
+            className="inline-flex min-h-[44px] items-center gap-2 px-5 py-2.5 bg-crimson text-white font-sans text-xs font-bold tracking-[0.08em] uppercase rounded-sm hover:bg-crimson-dark transition-colors disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
           >
             {generating ? (
               <>Downloading {progress}/{slides.length}...</>
@@ -410,7 +410,7 @@ export function CarouselDownloader({ slides, title, filenamePrefix }: {
               <button
                 key={i}
                 onClick={() => handleDownloadSingle(i)}
-                className="group relative min-h-[44px] aspect-square rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-all hover:shadow-md"
+                className="group relative min-h-[44px] aspect-square rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-all hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
                 style={{ backgroundColor: bgColors[slide.bgStyle] }}
               >
                 <div className="absolute inset-0 p-3 flex flex-col justify-between">
@@ -485,7 +485,7 @@ export function PinnedPostDownloader({ posts }: { posts: PinnedPostData[] }) {
           <button
             onClick={handleDownloadAll}
             disabled={generating !== null}
-            className="inline-flex min-h-[44px] items-center gap-2 px-5 py-2.5 bg-white text-crimson font-sans text-xs font-bold tracking-[0.08em] uppercase rounded-sm hover:bg-white/90 transition-colors disabled:opacity-50"
+            className="inline-flex min-h-[44px] items-center gap-2 px-5 py-2.5 bg-white text-crimson font-sans text-xs font-bold tracking-[0.08em] uppercase rounded-sm hover:bg-white/90 transition-colors disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
           >
             {generating === 'all' ? 'Downloading...' : (
               <>
@@ -517,7 +517,7 @@ export function PinnedPostDownloader({ posts }: { posts: PinnedPostData[] }) {
                 key={post.id}
                 onClick={() => handleDownload(post)}
                 disabled={generating !== null}
-                className="group relative min-h-[44px] aspect-square rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-all hover:shadow-lg text-left"
+                className="group relative min-h-[44px] aspect-square rounded-sm overflow-hidden border border-border hover:border-crimson/40 transition-all hover:shadow-lg text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
                 style={{ backgroundColor: bgMap[post.bgStyle] }}
               >
                 <div className="absolute inset-0 p-6 flex flex-col justify-between">

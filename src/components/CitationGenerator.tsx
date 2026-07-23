@@ -79,7 +79,7 @@ export default function CitationGenerator({ chapter }: { chapter: Chapter }) {
     <div ref={panelRef} className="relative inline-block">
       <button
         onClick={() => setOpen(!open)}
-        className="inline-flex min-h-[44px] min-w-[44px] items-center gap-1.5 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors px-2"
+        className="inline-flex min-h-[44px] min-w-[44px] items-center gap-1.5 font-sans text-xs tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors px-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         aria-expanded={open}
         aria-haspopup="true"
         aria-label="Cite this chapter"
@@ -106,7 +106,7 @@ export default function CitationGenerator({ chapter }: { chapter: Chapter }) {
                   format === f
                     ? 'bg-crimson text-white'
                     : 'bg-parchment-dark text-ink-muted hover:text-ink'
-                }`}
+                } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
                 role="radio"
                 aria-checked={format === f}
               >
@@ -131,7 +131,7 @@ export default function CitationGenerator({ chapter }: { chapter: Chapter }) {
               copied
                 ? 'bg-verified text-white'
                 : 'bg-crimson text-white hover:bg-crimson-dark'
-            }`}
+            } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
           >
             {copied ? '✓ Copied to Clipboard' : 'Copy Citation'}
           </button>

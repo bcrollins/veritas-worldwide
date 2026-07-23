@@ -35,7 +35,7 @@ export default function InstituteLayout() {
     <div className="institute-shell">
       <a
         href="#institute-main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[200] focus:inline-flex focus:min-h-[44px] focus:min-w-[44px] focus:items-center focus:rounded-sm focus:bg-[color:var(--institute-accent)] focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-semibold focus:text-white"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[200] focus:inline-flex focus:min-h-[44px] focus:min-w-[44px] focus:items-center focus:rounded-sm focus:bg-[color:var(--institute-accent)] focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-semibold focus:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
       >
         Skip to content
       </a>
@@ -110,9 +110,9 @@ export default function InstituteLayout() {
               Institute
             </p>
             <div className="mt-4 flex flex-col gap-3 text-sm text-[color:var(--institute-muted)]">
-              <Link to="/institute" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Trade course catalog</Link>
-              <Link to="/institute/book" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Field manual</Link>
-              <Link to="/institute/methodology" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Demand methodology</Link>
+              <Link to="/institute" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">Trade course catalog</Link>
+              <Link to="/institute/book" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">Field manual</Link>
+              <Link to="/institute/methodology" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">Demand methodology</Link>
             </div>
           </nav>
 
@@ -121,10 +121,10 @@ export default function InstituteLayout() {
               Core tracks
             </p>
             <div className="mt-4 flex flex-col gap-3 text-sm text-[color:var(--institute-muted)]">
-              <a href="/institute#track-trades" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Trades</a>
-              <a href="/institute#track-home-repair" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Repair</a>
-              <a href="/institute#track-preparedness" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Preparedness</a>
-              <a href="/institute#track-food-self-reliance" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Food & Garden</a>
+              <a href="/institute#track-trades" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">Trades</a>
+              <a href="/institute#track-home-repair" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">Repair</a>
+              <a href="/institute#track-preparedness" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">Preparedness</a>
+              <a href="/institute#track-food-self-reliance" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">Food & Garden</a>
             </div>
           </nav>
 
@@ -133,9 +133,9 @@ export default function InstituteLayout() {
               Veritas
             </p>
             <div className="mt-4 flex flex-col gap-3 text-sm text-[color:var(--institute-muted)]">
-              <Link to="/methodology" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Publication methodology</Link>
-              <Link to="/sources" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Source library</Link>
-              <Link to="/membership" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors">Support Veritas</Link>
+              <Link to="/methodology" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">Publication methodology</Link>
+              <Link to="/sources" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">Source library</Link>
+              <Link to="/membership" className="inline-flex min-h-[44px] items-center hover:text-[color:var(--institute-ink)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2">Support Veritas</Link>
             </div>
           </nav>
         </div>

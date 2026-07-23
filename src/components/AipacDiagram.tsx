@@ -149,7 +149,7 @@ function MemberPopup({ member, onClose }: { member: CongressMember; onClose: () 
                 </span>
               )}
             </div>
-            <button onClick={onClose} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-faint hover:text-ink transition-colors shrink-0" aria-label="Close">
+            <button onClick={onClose} className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-ink-faint hover:text-ink transition-colors shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2" aria-label="Close">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
@@ -511,12 +511,12 @@ export default function AipacDiagram() {
           value={search}
           onChange={e => setSearch(e.target.value)}
           placeholder="Search by name or state..."
-          className="flex-1 min-h-[44px] min-w-[200px] px-3 py-2 bg-surface border border-border rounded-sm font-sans text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-1 focus:ring-crimson"
+          className="flex-1 min-h-[44px] min-w-[200px] px-3 py-2 bg-surface border border-border rounded-sm font-sans text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-1 focus:ring-crimson focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         />
         <select
           value={chamberFilter}
           onChange={e => setChamberFilter(e.target.value as 'all' | Chamber)}
-          className="min-h-[44px] px-3 py-2 bg-surface border border-border rounded-sm font-sans text-xs text-ink"
+          className="min-h-[44px] px-3 py-2 bg-surface border border-border rounded-sm font-sans text-xs text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         >
           <option value="all">All Chambers</option>
           <option value="senate">Senate</option>
@@ -525,7 +525,7 @@ export default function AipacDiagram() {
         <select
           value={partyFilter}
           onChange={e => setPartyFilter(e.target.value as 'all' | Party)}
-          className="min-h-[44px] px-3 py-2 bg-surface border border-border rounded-sm font-sans text-xs text-ink"
+          className="min-h-[44px] px-3 py-2 bg-surface border border-border rounded-sm font-sans text-xs text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         >
           <option value="all">All Parties</option>
           <option value="D">Democrat</option>
@@ -632,7 +632,7 @@ export default function AipacDiagram() {
       <section className="mb-12">
         <button
           onClick={() => setShowVotes(!showVotes)}
-          className="flex min-h-[44px] items-center gap-4 w-full mb-4"
+          className="flex min-h-[44px] items-center gap-4 w-full mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         >
           <h3 className="font-display text-xl md:text-2xl font-bold text-ink">Key Israel-Related Votes</h3>
           <div className="flex-1 h-[1px] bg-border" />
@@ -671,7 +671,7 @@ export default function AipacDiagram() {
       <section className="mb-12">
         <button
           onClick={() => setShowLobbyists(!showLobbyists)}
-          className="flex min-h-[44px] items-center gap-4 w-full mb-4"
+          className="flex min-h-[44px] items-center gap-4 w-full mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         >
           <h3 className="font-display text-xl md:text-2xl font-bold text-ink">AIPAC Registered Lobbyists</h3>
           <div className="flex-1 h-[1px] bg-border" />
@@ -710,7 +710,7 @@ export default function AipacDiagram() {
       <section className="mb-12">
         <button
           onClick={() => setShowAllMembers(!showAllMembers)}
-          className="flex min-h-[44px] items-center gap-4 w-full mb-4"
+          className="flex min-h-[44px] items-center gap-4 w-full mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2"
         >
           <h3 className="font-display text-xl md:text-2xl font-bold text-ink">All Tracked Members ({filtered.length})</h3>
           <div className="flex-1 h-[1px] bg-border" />
@@ -726,7 +726,7 @@ export default function AipacDiagram() {
                   onClick={() => setSortBy(s)}
                   className={`inline-flex min-h-[44px] items-center font-sans text-[0.6rem] px-2.5 py-1 rounded-sm border transition-colors ${
                     sortBy === s ? 'bg-crimson text-white border-crimson' : 'border-border text-ink-muted hover:border-ink'
-                  }`}
+                  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2`}
                 >
                   {s === 'total' ? 'Total' : s === 'pac' ? 'PAC Direct' : 'Name'}
                 </button>
