@@ -5,7 +5,7 @@ import fs from 'fs'
 import { fileURLToPath } from 'url'
 import { registerDatabaseAndAuthRoutes } from './server-auth.js'
 import { createChapterDataTools } from './server-chapter-data.js'
-import { registerBotMetaInjection } from './server-social-meta.js'
+import { registerBotMetaInjection, isKnownChapterSlug } from './server-social-meta.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
@@ -2068,8 +2068,11 @@ function isKnownSpaRoute(pathname) {
   ])
   if (knownExact.has(route)) return true
 
+  // Unknown /chapter/* must soft-404 — never match loose slug regex alone.
+  const chapterMatch = route.match(/^\/chapter\/([a-z0-9-]+)$/i)
+  if (chapterMatch) return isKnownChapterSlug(chapterMatch[1])
+
   const patterns = [
-    /^\/chapter\/[a-z0-9-]+$/i,
     /^\/profile\/[a-z0-9-]+$/i,
     /^\/news\/[a-z0-9-]+$/i,
     /^\/topics\/[a-z0-9-]+$/i,
