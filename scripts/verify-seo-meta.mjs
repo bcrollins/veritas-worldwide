@@ -421,3 +421,13 @@ const forumPage = read('src/pages/ForumPage.tsx')
 assert(!forumPage.includes('Local beta forum'), 'Forum SERP copy must not advertise Local beta forum')
 assert(forumPage.includes('Community Forum |') || forumPage.includes('Community Forum ${'), 'Forum title should drop Beta for SERP cleanliness')
 assert(prerender.includes("route: '/forum'") && prerender.includes('Source-first conversation'), 'prerender /forum must match client high-intent description')
+
+// server.js must import every soft-404 gate used by isKnownSpaRoute
+assert(
+  server.includes('isKnownChapterSlug') &&
+    server.includes('isKnownProfileSlug') &&
+    server.includes('isKnownNewsSlug') &&
+    server.includes('isKnownTopicSlug') &&
+    server.includes('isKnownInstituteSlug'),
+  'server.js isKnownSpaRoute must import all soft-404 gates',
+)
