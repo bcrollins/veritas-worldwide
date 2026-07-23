@@ -267,6 +267,17 @@ assert(
   dossierPage.includes('What is the Israel Dossier?'),
   'Israel Dossier FAQ must define the investigation surface for SERP/PAA',
 )
+assert(
+  prerender.includes("route === '/bible'") &&
+    prerender.includes('How does this Bible page relate to The Record of Jesus Christ?'),
+  'prerender must emit Bible History FAQPage linking to ROC companion surface',
+)
+const bibleHistoryPage = read('src/pages/BibleHistoryPage.tsx')
+assert(bibleHistoryPage.includes('faqJsonLd'), 'BibleHistoryPage must emit FAQPage schema')
+assert(
+  bibleHistoryPage.includes('How does this Bible page relate to The Record of Jesus Christ?'),
+  'Bible FAQ must route readers to ROC companion surface',
+)
 assert(existsSync(join(root, 'docs/SEO-OPS-SCORECARD.md')), 'SEO ops scorecard + GSC runbook must exist')
 assert(existsSync(join(root, 'docs/SEO-AUDIT-50.md')), 'SEO 50-item audit must exist')
 

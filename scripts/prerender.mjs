@@ -2959,6 +2959,50 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  if (route === '/bible') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Bible History', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'How does this Bible page relate to The Record of Jesus Christ?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'This is the companion evidence surface for biblical manuscript and archaeological claims. The deeper chronological compilation with 500+ tier-labeled claims lives at /record-of-jesus-christ.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What evidence tiers are used?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'The same seven scholarly tiers as The Record of Jesus Christ: Verified through Literary/Theological. Proof-grade data is never mixed with tradition-as-fact.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Who publishes this material?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas Worldwide only. No personal author byline. Contact rights@veritasworldwide.com for corrections.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {
