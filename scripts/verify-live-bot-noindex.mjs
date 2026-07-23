@@ -26,6 +26,8 @@ const SURFACES = [
   { path: '/bookmarks', titleIncludes: 'Bookmarks' },
   { path: '/search', titleIncludes: 'Search' },
   { path: '/bernie', titleIncludes: 'Bernie' },
+  // Admin is a known SPA route; bot-meta must noindex (SPA X-Robots never runs for bots).
+  { path: '/admin', titleIncludes: 'Admin' },
 ]
 
 const failures = []

@@ -275,6 +275,14 @@ assert(
   'bot meta must centralize noindex shell delivery for transactional paths',
 )
 assert(
+  botMeta.includes("'/admin'") || botMeta.includes('/admin'),
+  'bot meta must noindex /admin (known SPA; SPA X-Robots never runs for bots)',
+)
+assert(
+  botMeta.includes('Operator console') || botMeta.includes("path === '/admin'"),
+  'bot meta must special-case admin operator console noindex shell',
+)
+assert(
   botMeta.includes('rel="canonical" href=') || botMeta.includes("rel=\"canonical\" href="),
   'bot meta applyBotPageMeta must rewrite link rel=canonical (not only og:url content=)',
 )

@@ -244,6 +244,17 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
       })
     }
 
+    // Operator console: known SPA route so soft-404 does not 404 it, but bots must never
+    // receive the homepage index,follow shell. SPA catch-all X-Robots never runs for bots
+    // because bot-meta short-circuits first — handle here.
+    if (req.path === '/admin' || req.path.startsWith('/admin/')) {
+      return sendNoindexShell(html, {
+        title: 'Admin | Veritas Worldwide',
+        description: 'Operator console. Not part of the public archive.',
+        url: `${SITE_URL}/admin`,
+      })
+    }
+
     // Transactional / utility surfaces — never send indexable homepage shell to bots.
     const noindexBotPages = {
       '/comprehensive-profile/success': {

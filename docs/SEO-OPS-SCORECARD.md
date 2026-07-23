@@ -38,6 +38,7 @@ curl -s "https://www.google.com/ping?sitemap=https://veritasworldwide.com/sitema
 ```bash
 cd ~/Code/veritas-worldwide
 npm run verify:seo-meta
+npm run verify:live-bot-noindex  # post-deploy Googlebot transactional/admin noindex
 # Prefer full pure suite when time allows:
 npm run verify:pure
 ```
@@ -96,7 +97,8 @@ Store quarterly snapshots under:
 | `/admin/*` | robots + X-Robots-Tag |
 | `/subscribe/success`, `/membership/success`, `/donation/success`, `/thank-you` | robots + meta |
 | `/bookmarks` | robots + meta |
-| `/search` | robots Disallow + meta `noindex,follow` |
+| `/search` | robots Disallow + meta `noindex` (prerender + bot-meta) |
+| `/admin` | robots Disallow + bot-meta `sendNoindexShell` + SPA X-Robots |
 | Unknown SPA paths | HTTP 404 + X-Robots-Tag |
 
 ---
