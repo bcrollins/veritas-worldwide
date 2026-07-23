@@ -1,6 +1,9 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 3.0.1 — 2026-07-23
+## 3.0.2 — 2026-07-23
+- Add LinkedIn/Facebook post images to manifest downloads inventory
+
+## 3.0.1
 - LinkedIn post image (1200×627) + Facebook post image (1200×630)
 
 ## 3.0.0

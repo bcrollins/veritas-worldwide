@@ -1,6 +1,6 @@
 # Social Launch Checklist — Veritas Worldwide Press
 
-Brand kit v3.0.1
+Brand kit v3.0.2
 
 ## Before go-live
 1. Download Ultimate Brand Kit ZIP + verify SHA-256

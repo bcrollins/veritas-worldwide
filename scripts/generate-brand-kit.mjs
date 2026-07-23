@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '3.0.1'
+const KIT_VERSION = '3.0.2'
 
 const C = {
   parchment: '#FAF8F5',
@@ -700,7 +700,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 3.0.1 — ${new Date().toISOString().slice(0, 10)}
+## 3.0.2 — ${new Date().toISOString().slice(0, 10)}
+- Add LinkedIn/Facebook post images to manifest downloads inventory
+
+## 3.0.1
 - LinkedIn post image (1200×627) + Facebook post image (1200×630)
 
 ## 3.0.0
@@ -1833,6 +1836,8 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'Media kit OG (PNG)', href: '/brand-kit/05-og/og-media-kit.png' },
       { label: 'Social launch checklist', href: '/brand-kit/07-docs/SOCIAL-LAUNCH.md' },
       { label: 'Bios JSON', href: '/brand-kit/07-docs/bios.json' },
+      { label: 'LinkedIn post image', href: '/brand-kit/04-social/linkedin-post.svg' },
+      { label: 'Facebook post image', href: '/brand-kit/04-social/facebook-post.svg' },
       { label: 'Correction notice template', href: '/brand-kit/09-templates/correction-notice.html' },
       { label: 'Changelog (MD)', href: '/brand-kit/07-docs/CHANGELOG.md' },
       { label: 'Hashtags (MD)', href: '/brand-kit/07-docs/HASHTAGS.md' },
