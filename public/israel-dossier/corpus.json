@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T12:21:19.016Z",
+  "generatedAt": "2026-07-23T12:21:35.520Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -50011,7 +50011,7 @@
       }
     },
     {
-      "id": "west-bank-settler-destroying-irrigation-pumps-pattern-2023-2025",
+      "id": "west-bank-settler-destroying-solar-irrigation-controllers-pattern-2023-2025",
       "era": "post-oct7",
       "targetsCivilians": true,
       "targetsChildren": true,
@@ -50022,11 +50022,11 @@
         "annual-mou"
       ],
       "legalStatus": "multi-source-investigation",
-      "title": "West Bank Settler Destroying Irrigation Pumps Pattern (2023–2025)",
-      "date": "October 2023 – 2025 (irrigation pump destruction cohort)",
+      "title": "West Bank Settler Destroying Solar Irrigation Controllers Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (solar irrigation-controller destruction cohort)",
       "location": "West Bank village farms and greenhouse irrigation systems",
-      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian irrigation pumps after October 7 — denying crop water including food for families with children. Pattern card distinct from cistern destruction, drip-line, and greenhouse plastic cards.",
-      "evidence": "OCHA settler-violence and agricultural-harm materials plus multi-outlet coverage establish multi-source irrigation-pump destruction. Multi-source wartime settler attacks on civilian irrigation equipment is the claim.",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian solar irrigation controllers after October 7 — denying crop water including food for families with children. Pattern card distinct from cistern destruction, drip-line, pump, and greenhouse plastic cards.",
+      "evidence": "OCHA settler-violence and agricultural-harm materials plus multi-outlet coverage establish multi-source solar irrigation-controller destruction. Multi-source wartime settler attacks on civilian irrigation control equipment is the claim.",
       "sources": [
         {
           "label": "OCHA settler-violence materials",
