@@ -40,7 +40,7 @@ const withVideo = (corpus.incidents || []).filter((i) =>
   (i.multimedia || []).some((m) => m.type === 'video'),
 ).length
 assert(withVideo >= 615, `corpus video-linked incidents \${withVideo} < 76`)
-assert(soft.incidentCount >= 2926, `soft-floor \${soft.incidentCount} < 1141`)
+assert(soft.incidentCount >= 3040, `soft-floor \${soft.incidentCount} < 1141`)
 assert(
   soft.visualInvestigations && soft.visualInvestigations.withVideo >= 615,
   `soft-floor withVideo \${soft.visualInvestigations?.withVideo} < 76`,
