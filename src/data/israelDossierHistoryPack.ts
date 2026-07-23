@@ -6651,6 +6651,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-eye-infections-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Eye Infection & Dust Exposure Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (eye-infection cohort)',
+    location: 'Gaza Strip clinics and rubble environments',
+    summary:
+      'UNICEF, WHO, and multi-source health reporting document surges in pediatric eye infections and dust-related ocular harm under collapsed WASH and rubble exposure — a child-specific harm pattern distinct from toxic-rubble and respiratory cards.',
+    evidence:
+      'UNICEF child-health materials, WHO primary-care notes, and multi-outlet coverage establish multi-source pediatric eye-infection and dust-exposure harm. Exact case counts evolve; multi-source wartime pediatric ocular harm is the claim.',
+    sources: [
+      { label: 'UNICEF child health materials', url: 'https://www.unicef.org' },
+      { label: 'WHO primary care materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza child eye infection coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-religious-coercion-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Religious Coercion Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (religious-coercion cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document forced religious humiliation and coercion of Israeli civilian hostages — a protected-person dignity violation pattern distinct from propaganda-videos and physical-abuse cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet investigative coverage establish multi-source religious coercion in captivity. Exact case counts remain incomplete; multi-source religious coercion of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-school-attacks-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Schools Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-attack cohort)',
+    location: 'West Bank Palestinian schools and school routes',
+    summary:
+      'UNICEF, OCHA, and multi-source reporting document elevated settler attacks on Palestinian schools and school routes after October 7 — intimidation, stone-throwing, and property damage targeting children. Pattern card for settler school attacks distinct from military school-raids and price-tag cards.',
+    evidence:
+      'UNICEF education-protection materials, OCHA settler-violence databases, and multi-outlet coverage establish multi-source school-route and school-site attacks. Exact incident counts evolve; multi-source wartime settler school attacks is the claim.',
+    sources: [
+      { label: 'UNICEF education protection materials', url: 'https://www.unicef.org' },
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet settler school attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -10249,6 +10330,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['water', 'settlers', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-eye-infections-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Eye Infection Pattern',
+    description: 'UNICEF/WHO multi-source documentation of pediatric eye-infection and dust-exposure harm under collapsed care.',
+    source: 'UNICEF / WHO / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-eye-infections-pattern-2023-2025',
+      'gaza-children-lead-exposure-rubble-pattern-2023-2025',
+      'gaza-children-ear-infections-pattern-2023-2025',
+    ],
+    tags: ['eye', 'children', 'health', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-religious-coercion-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Religious Coercion Pattern',
+    description: 'Multi-source documentation of forced religious humiliation and coercion of civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-religious-coercion-pattern-2023-2025',
+      'israel-hostages-forced-propaganda-videos-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'coercion', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-school-attacks-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler School Attacks Pattern',
+    description: 'UNICEF/OCHA multi-source documentation of elevated settler attacks on Palestinian schools and school routes.',
+    source: 'UNICEF / OCHA / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-school-attacks-pattern-2023-2025',
+      'west-bank-school-raids-closure-pattern-2023-2025',
+      'west-bank-price-tag-violence-pattern-2023-2025',
+    ],
+    tags: ['schools', 'settlers', 'children', 'west-bank'],
+  },
+
+
 
 
 
