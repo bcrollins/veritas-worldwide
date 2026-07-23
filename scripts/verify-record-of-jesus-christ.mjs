@@ -126,6 +126,7 @@ assert(data.includes('ROC_WAVE12_CLAIMS'), 'wave12 merge missing')
 assert(data.includes('ROC_WAVE13_CLAIMS'), 'wave13 merge missing')
 assert(data.includes('ROC_WAVE14_CLAIMS'), 'wave14 merge missing')
 assert(data.includes('ROC_WAVE15_CLAIMS'), 'wave15 merge missing')
+assert(data.includes('ROC_WAVE16_CLAIMS'), 'wave16 merge missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave4.ts')), 'wave4 file missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave5.ts')), 'wave5 file missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave6.ts')), 'wave6 file missing')
@@ -138,6 +139,7 @@ assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave12.ts')), 
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave13.ts')), 'wave13 file missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave14.ts')), 'wave14 file missing')
 assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave15.ts')), 'wave15 file missing')
+assert(fs.existsSync(path.join(root, 'src/data/recordOfJesusChristWave16.ts')), 'wave16 file missing')
 assert(!/brollins|bcrollins|brandoncrollins/i.test(wave6src), 'wave6 must not contain operator identity')
 assert((wave6src.match(/tier: '/g) || []).length >= 18, 'wave6 should add a substantial claim batch')
 const wave7src = fs.readFileSync(path.join(root, 'src/data/recordOfJesusChristWave7.ts'), 'utf8')
@@ -183,7 +185,8 @@ assert(llms.includes('record-of-jesus-christ/corpus.json'), 'llms.txt missing co
 assert(llms.includes('record-of-jesus-christ.pdf'), 'llms.txt missing ROC PDF')
 assert(llms.includes('historical-jesus-evidence'), 'llms.txt missing historical-jesus topic hub')
 assert(
-  llms.includes('200+') ||
+  llms.includes('240+') ||
+    llms.includes('200+') ||
     llms.includes('190+') ||
     llms.includes('180+') ||
     llms.includes('170+') ||
@@ -194,7 +197,7 @@ assert(
 const corpusPath = path.join(root, 'public/record-of-jesus-christ/corpus.json')
 assert(fs.existsSync(corpusPath), 'public ROC corpus.json missing — run npm run export:roc-corpus')
 const corpus = JSON.parse(fs.readFileSync(corpusPath, 'utf8'))
-assert(corpus.claimCount >= 234, `corpus claimCount should include wave13 (≥216), got ${corpus.claimCount}`)
+assert(corpus.claimCount >= 243, `corpus claimCount should include wave13 (≥216), got ${corpus.claimCount}`)
 assert(corpus.meta?.publisher === 'Veritas Worldwide', 'corpus publisher must be entity-only')
 assert(fs.existsSync(path.join(root, 'public/og/record-of-jesus-christ.png')), 'ROC OG PNG missing')
 assert(fs.existsSync(path.join(root, 'public/record-of-jesus-christ/figures/cmb-power-spectrum-schematic.svg')), 'CMB figure missing')

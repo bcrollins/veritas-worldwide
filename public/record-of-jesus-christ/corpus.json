@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:30:47.506Z",
-  "claimCount": 236,
+  "generatedAt": "2026-07-23T09:33:06.364Z",
+  "claimCount": 245,
   "tierHistogram": {
-    "verified": 81,
-    "well_attested": 90,
-    "contested": 28,
-    "interpretive": 20,
+    "verified": 84,
+    "well_attested": 93,
+    "contested": 29,
+    "interpretive": 21,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 12
+    "circumstantial": 13
   },
   "claims": [
     {
@@ -66,6 +66,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ane-deir-alla",
+      "claim": "The Deir Alla inscription mentions Balaam son of Beor — a rare extra-biblical onomastic parallel to Numbers 22–24 traditions.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave16.ts"
     },
     {
       "id": "ane-ekron-inscription",
@@ -192,6 +199,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "arch-caesarea-philippi",
+      "claim": "Paneas / Caesarea Philippi (Banias) is archaeologically documented as a Herodian/Philip city at the Jordan headwaters with a Paneion cult site.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave16.ts"
     },
     {
       "id": "arch-capernaum",
@@ -502,6 +516,13 @@
       "file": "src/data/recordOfJesusChristWave9.ts"
     },
     {
+      "id": "cosmo-weak-lensing",
+      "claim": "Weak gravitational lensing maps the projected mass distribution of the universe and constrains S8/σ8 amplitude parameters in ΛCDM fits.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave16.ts"
+    },
+    {
       "id": "ec-1clement",
       "claim": "1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative.",
       "tier": "well_attested",
@@ -542,6 +563,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "ec-diognetus",
+      "claim": "The Epistle to Diognetus (2nd/3rd c.?) is an early Christian apology describing Christian life as a civic “soul of the world.”",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave16.ts"
     },
     {
       "id": "ec-eusebius-he",
@@ -780,6 +808,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave9.ts"
+    },
+    {
+      "id": "hj-healings-reputation",
+      "claim": "Healing activity is multiply attested as part of Jesus’ public reputation in Synoptic tradition; historians often accept a healing reputation while bracketing modern medical ontologies.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave16.ts"
     },
     {
       "id": "hj-herod-death",
@@ -1048,6 +1083,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "mod-memory-distortion",
+      "claim": "Social memory research emphasizes both conservation and distortion in group remembering — neither pure invention nor pure stenography.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave16.ts"
+    },
+    {
       "id": "mod-multiple-attestation-limits",
       "claim": "Multiple attestation increases historical confidence when sources are independent; Synoptic dependence and shared traditions limit independence assumptions.",
       "tier": "interpretive",
@@ -1186,6 +1228,13 @@
       "tier": "circumstantial",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave9.ts"
+    },
+    {
+      "id": "nc-marcus-aurelius-christians",
+      "claim": "Marcus Aurelius (Meditations) and second-century elite literature occasionally notice Christians as a social type; such notices are thin and polemical.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave16.ts"
     },
     {
       "id": "nc-martial-juvenes",
@@ -1468,6 +1517,13 @@
       "file": "src/data/recordOfJesusChristWave10.ts"
     },
     {
+      "id": "nt-singular-readings",
+      "claim": "Singular readings (unique to one MS) are used in scribal-habits studies to profile individual copyists without treating them as initial text.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave16.ts"
+    },
+    {
       "id": "nt-synoptic-problem",
       "claim": "The Synoptic Problem (literary relationship of Matthew, Mark, Luke) remains an active field; Markan priority is majority, Q hypothesis is majority but contested by Farrer and other models.",
       "tier": "contested",
@@ -1641,6 +1697,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "st-roman-census-practices",
+      "claim": "Roman provincial censuses and tax registrations are documented empire-wide; Luke’s census of Quirinius is a specific chronological crux relative to Herod’s death.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave16.ts"
     },
     {
       "id": "st-samaria-papyri",
