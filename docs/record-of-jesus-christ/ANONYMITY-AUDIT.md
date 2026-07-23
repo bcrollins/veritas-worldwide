@@ -23,7 +23,7 @@ Sophisticated OSINT on public Veritas surfaces finds **zero recoverable path** t
 | Vector | Notes | Recommended next action |
 |--------|-------|-------------------------|
 | GitHub remote org/user namespace | Hosting under a personal GH account remains an infrastructure OPSEC concern | Transfer repo to org-only identity; scrub git author history offline |
-| Git commit author emails in history | Local git config may still use personal identity | `git filter-repo` / org bot identity for future commits |
+| Git commit author emails in history | Pre-2026-07-23 commits may still use personal author identity in history | Future commits: local `user.name=Veritas Worldwide` / `user.email=rights@veritasworldwide.com`. Offline `git filter-repo` for full history rewrite is a deliberate OPSEC project |
 | WHOIS / Railway billing KYC | Outside this codebase | Confirm privacy registration + entity billing |
 | Bernie Show page family branding | Product surface with shared surname | Policy decision: retain as named public figure page vs isolate |
 | Password previously committed in git history | Rotate admin password; set `VITE_ADMIN_PASSWORD_HASH` | Required before relying on client admin |
