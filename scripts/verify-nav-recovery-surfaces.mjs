@@ -963,4 +963,10 @@ const forumDual = read('src/pages/ForumPage.tsx')
 assert(forumDual.includes('variant="inline"') && forumDual.includes('variant="also-in"'), 'Forum dual variants locked unique')
 assert(forumDual.includes('forum-related-hubs') && forumDual.includes('RelatedHubs'), 'Forum RelatedHubs + spokes')
 
+
+// DeepState also-in exclude self unique
+const deepExcl = read('src/pages/DeepStatePage.tsx')
+assert(deepExcl.includes('exclude="deep-state"') || deepExcl.includes("exclude='deep-state'"), 'DeepState also-in exclude unique')
+assert(deepExcl.includes('deep-state-related-hubs'), 'DeepState RelatedHubs present with exclude')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
