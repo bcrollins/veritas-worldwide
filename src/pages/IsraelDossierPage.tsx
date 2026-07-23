@@ -1929,7 +1929,7 @@ export default function IsraelDossierPage() {
                       </div>
                       <ul className="mt-3 space-y-1">
                         {incident.multimedia.slice(0, 3).map((m, idx) => (
-                          <li key={idx}>
+                          <li key={idx} className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
                             <a
                               href={m.url}
                               target="_blank"
@@ -1937,6 +1937,15 @@ export default function IsraelDossierPage() {
                               className="font-sans text-[0.7rem] text-ink-muted hover:text-crimson underline-offset-2 hover:underline"
                             >
                               [{m.type}] {m.label}
+                            </a>
+                            <a
+                              href={`https://web.archive.org/web/*/${m.url}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-sans text-[0.6rem] text-ink-faint hover:text-crimson underline-offset-2 hover:underline"
+                              title="Open Wayback search for this URL (durability pin)"
+                            >
+                              archive
                             </a>
                           </li>
                         ))}
@@ -2181,8 +2190,11 @@ export default function IsraelDossierPage() {
           <div className="w-3 h-3 rounded-full flex-shrink-0 bg-crimson" />
           <h2 className="font-display text-2xl font-bold text-ink">Evidence Media Gallery</h2>
         </div>
-        <p className="font-body text-sm text-ink-muted leading-relaxed mb-8 max-w-3xl">
+        <p className="font-body text-sm text-ink-muted leading-relaxed mb-4 max-w-3xl">
           Primary source video evidence, investigative journalism, and forensic analysis. Watch the documented record — every video below comes from established news organizations, UN agencies, or verified open-source investigators.
+          For the full multi-source visual ledger (civilian-harm video packages, one-tap primary open, dual-cite rows), use{' '}
+          <a href="#visual-investigations" className="text-crimson hover:underline font-semibold">Visual Investigations</a>
+          {' '}or export the video+civilians CSV from Documented Incidents.
         </p>
 
         {/* Embedded Videos */}
