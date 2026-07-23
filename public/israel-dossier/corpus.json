@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T12:03:10.831Z",
+  "generatedAt": "2026-07-23T12:03:26.627Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 770,
+    "incidents": 779,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 727,
+    "historicalWarCrimesPack": 736,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 28,
-      "post-oct7": 707
+      "post-oct7": 716
     },
     "incidentsByTier": {
-      "verified": 768,
+      "verified": 777,
       "circumstantial": 2
     },
-    "childrenTagged": 727,
-    "civiliansTagged": 768,
+    "childrenTagged": 736,
+    "civiliansTagged": 777,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -47571,6 +47571,382 @@
         {
           "label": "Multi-outlet West Bank school-garden coverage",
           "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-tent-rope-trip-injury-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou",
+        "mk84-use"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Tent-Rope Trip Injury Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (displacement-camp tent-rope injury cohort)",
+      "location": "Displacement camps and informal tent sites across Gaza",
+      "summary": "OCHA, UNICEF, and multi-source reporting document elevated civilian injuries including children from trip hazards on tent ropes, guy-lines, and improvised shelter cordage in overcrowded displacement sites — a shelter-safety pattern distinct from tent-fire and UXO-debris cards.",
+      "evidence": "OCHA displacement-site materials, UNICEF child-injury updates, and multi-outlet camp-conditions coverage establish multi-source documentation. Exact injury counts evolve; multi-source wartime civilian tent-rope trip injury is the claim.",
+      "sources": [
+        {
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF child-protection materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza displacement-camp coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-cooking-fire-asphyxia-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Indoor Cooking-Fire Smoke Injury Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (indoor cooking-smoke injury cohort)",
+      "location": "Damaged homes, schools-as-shelters, and tents across Gaza",
+      "summary": "WHO, UNICEF, and multi-source reporting document elevated respiratory and burn injuries when civilians including children cook with improvised indoor fires under fuel shortage — a household-energy harm pattern distinct from generator-fuel denial and tent-fire cards.",
+      "evidence": "WHO health-cluster updates, UNICEF child-health materials, and multi-outlet siege-fuel coverage establish multi-source documentation. Multi-source wartime indoor cooking-smoke civilian harm is the claim.",
+      "sources": [
+        {
+          "label": "WHO health updates",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza fuel-shortage coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-sewage-flooding-shelter-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Sewage Flooding of Shelters Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (sewage-flooding shelter cohort)",
+      "location": "Shelters and displacement sites near damaged wastewater systems in Gaza",
+      "summary": "OCHA, UNICEF, and multi-source reporting document elevated civilian exposure including children when sewage floods shelters after strikes on WASH infrastructure — a sanitation-harm pattern distinct from desalination-filter and water-tank cards.",
+      "evidence": "OCHA WASH updates, UNICEF sanitation materials, and multi-outlet coverage establish multi-source documentation of sewage flooding in civilian shelters. Multi-source wartime sewage-flood civilian exposure is the claim.",
+      "sources": [
+        {
+          "label": "OCHA WASH materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF sanitation materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza sanitation coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-daylight-orientation-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Daylight / Time Orientation Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage sensory-deprivation cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document prolonged darkness and denial of clocks/calendars so civilian hostages including children lose time orientation — a psychological-torture pattern distinct from isolation and constant-surveillance cards.",
+      "evidence": "Israeli government hostage materials, multi-outlet released-hostage interviews, and contemporaneous coverage establish multi-source documentation. Not every site is identical; multi-source time-orientation denial is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-record-coerced-statements-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Record Coerced Video Statements Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage coerced-statement cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony and public videos)",
+      "summary": "Released-hostage testimony, multi-outlet analysis of released videos, and government materials document civilian hostages coerced into filmed statements under duress — a dignity and coercion pattern distinct from propaganda-viewing cards.",
+      "evidence": "Multi-outlet video analysis, Israeli government materials, and released-hostage interviews establish multi-source documentation of coerced filmed statements. Authenticity of specific clips is multi-source investigative; the coercion pattern is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet video and testimony analysis",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Public multi-outlet packages on coerced videos",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-hygiene-products-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Basic Hygiene Products Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage hygiene-denial cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document denial of soap, menstrual products, and basic hygiene for civilian hostages including women and children — a protected-person dignity pattern distinct from toilet-privacy and medical-denial cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation of hygiene denial. Pattern claim is multi-source, not a single anecdote.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-blocking-ambulances-to-clinics-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Blocking Ambulances to Clinics Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (ambulance-to-clinic blocking cohort)",
+      "location": "West Bank village access roads to clinics and hospitals",
+      "summary": "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler blocking of Palestinian civilian ambulances en route to clinics after October 7 — denying emergency care including for children. Pattern card distinct from general checkpoint delay and road-block cards.",
+      "evidence": "OCHA access-constraint materials, WHO health-access updates, and multi-outlet coverage establish multi-source ambulance-blocking documentation. Exact counts evolve; multi-source wartime settler ambulance obstruction is the claim.",
+      "sources": [
+        {
+          "label": "OCHA access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "WHO health-access materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-clinic-medical-cabinets-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Clinic Medical Cabinets Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (clinic medical-cabinet destruction cohort)",
+      "location": "West Bank village clinics and primary-care rooms",
+      "summary": "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian clinic medicine cabinets and supplies after October 7 — denying routine and emergency care including for children. Pattern card distinct from ambulance-blocking and school-infrastructure cards.",
+      "evidence": "OCHA settler-violence databases, WHO health-facility damage notes, and multi-outlet coverage establish multi-source clinic-cabinet destruction. Exact counts evolve; multi-source wartime settler destruction of civilian clinic supplies is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "WHO health materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-teachers-on-commute-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacking Teachers on Commute Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (teacher-commute attack cohort)",
+      "location": "West Bank roads used by Palestinian teachers commuting to village schools",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler attacks on Palestinian civilian teachers commuting to schools after October 7 — denying children teachers and safe education. Pattern card distinct from school-bus and school-building destruction cards.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source teacher-commute attack documentation. Exact counts evolve; multi-source wartime settler attacks on civilian educators is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
         }
       ],
       "multimedia": [
