@@ -1376,4 +1376,25 @@ assert(osintFinal.includes('osint-success-research-pack'), 'osint pack final')
 assert(osintFinal.includes('RelatedHubs'), 'osint RelatedHubs final')
 
 
+
+// surfaces length floor 102 reaffirm
+assert(surfaces.length >= 102, `surfaces length floor 102 reaffirm (got ${surfaces.length})`)
+
+// RelatedHubs mount breadth reaffirm final (public pages list)
+const relatedBreadthPages = [
+  'AboutPage','AccessibilityPage','AipacPage','AnalyticsPage','ArticlePage','BernieShowPage',
+  'BookmarksPage','ChapterPage','ComprehensiveProfilePage','ComprehensiveProfileSuccessPage',
+  'DeepStatePage','ForumPage','HomePage','IsraelDossierBriefingPage','IsraelDossierPage','MediaKitPage',
+  'MembershipPage','NewsPage','NotFoundPage','PrivacyPage','ProfilePage','ProfilesIndexPage','ReadTheBookPage',
+  'SearchPage','SubscribeSuccessPage','SupportSuccessPage','TermsPage','TimelinePage','TopicPage',
+  'TopicsIndexPage',
+]
+let relatedBreadthFinal = 0
+for (const name of relatedBreadthPages) {
+  const src = read(`src/pages/${name}.tsx`)
+  if (src.includes('RelatedHubs') || src.includes('PRIMARY_RELATED')) relatedBreadthFinal++
+}
+assert(relatedBreadthFinal >= 30, `RelatedHubs breadth final ${relatedBreadthFinal} < 30`)
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
