@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:18:26.930Z",
+  "generatedAt": "2026-07-23T08:19:31.381Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 106,
-    "timelineEvents": 94,
+    "incidents": 107,
+    "timelineEvents": 95,
     "actors": 47,
     "moneyTrailNodes": 31,
-    "historicalWarCrimesPack": 92,
+    "historicalWarCrimesPack": 93,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 46
+      "post-oct7": 47
     },
     "incidentsByTier": {
-      "verified": 104,
+      "verified": 105,
       "circumstantial": 2
     },
-    "childrenTagged": 87,
-    "civiliansTagged": 104,
+    "childrenTagged": 88,
+    "civiliansTagged": 105,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3259,6 +3259,27 @@
         "hospitals",
         "civilians",
         "children"
+      ]
+    },
+    {
+      "id": "tl-gaza-housing-destruction-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Housing Stock Destruction Pattern",
+      "description": "UNOSAT/World Bank multi-source majority residential damage across Gaza war.",
+      "source": "UNOSAT / World Bank / OCHA",
+      "sourceUrl": "https://unosat.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-housing-destruction-pattern-2023-2025",
+        "gaza-evacuation-orders-pattern-2023-2024"
+      ],
+      "tags": [
+        "housing",
+        "displacement",
+        "civilians",
+        "children",
+        "gaza"
       ]
     },
     {
@@ -7304,6 +7325,54 @@
           "type": "document",
           "label": "UNICEF public materials",
           "url": "https://www.unicef.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-housing-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "artillery-use",
+        "jdam-use",
+        "fmf-weapons"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Housing Stock Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (housing cohort)",
+      "location": "Gaza Strip residential areas",
+      "summary": "UN satellite assessments, World Bank, and multi-source damage analyses document destruction or severe damage to a large majority of Gaza housing units — a structural civilian-harm outcome producing mass homelessness concurrent with displacement orders. Pattern card for residential housing destruction at scale.",
+      "evidence": "UNOSAT/UN satellite damage assessments, World Bank/EU rapid damage estimates, and multi-source field reporting establish multi-source majority-housing damage. Exact unit percentages evolve; multi-source mass residential destruction is the claim.",
+      "sources": [
+        {
+          "label": "UNOSAT / UN satellite damage materials",
+          "url": "https://unosat.org"
+        },
+        {
+          "label": "World Bank / multi-partner damage assessments",
+          "url": "https://www.worldbank.org"
+        },
+        {
+          "label": "OCHA shelter/displacement updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNOSAT public materials",
+          "url": "https://unosat.org"
         }
       ],
       "tier": "verified",

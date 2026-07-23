@@ -2465,6 +2465,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-housing-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['mk84-use', 'artillery-use', 'jdam-use', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Housing Stock Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (housing cohort)',
+    location: 'Gaza Strip residential areas',
+    summary:
+      'UN satellite assessments, World Bank, and multi-source damage analyses document destruction or severe damage to a large majority of Gaza housing units — a structural civilian-harm outcome producing mass homelessness concurrent with displacement orders. Pattern card for residential housing destruction at scale.',
+    evidence:
+      'UNOSAT/UN satellite damage assessments, World Bank/EU rapid damage estimates, and multi-source field reporting establish multi-source majority-housing damage. Exact unit percentages evolve; multi-source mass residential destruction is the claim.',
+    sources: [
+      { label: 'UNOSAT / UN satellite damage materials', url: 'https://unosat.org' },
+      { label: 'World Bank / multi-partner damage assessments', url: 'https://www.worldbank.org' },
+      { label: 'OCHA shelter/displacement updates', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNOSAT public materials', url: 'https://unosat.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3471,6 +3498,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-water-sanitation-collapse-2023-2025', 'gaza-health-system-collapse-2023-2025'],
     tags: ['water', 'sanitation', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-housing-destruction-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Housing Stock Destruction Pattern',
+    description: 'UNOSAT/World Bank multi-source majority residential damage across Gaza war.',
+    source: 'UNOSAT / World Bank / OCHA',
+    sourceUrl: 'https://unosat.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-housing-destruction-pattern-2023-2025', 'gaza-evacuation-orders-pattern-2023-2024'],
+    tags: ['housing', 'displacement', 'civilians', 'children', 'gaza'],
   },
 
 ]
