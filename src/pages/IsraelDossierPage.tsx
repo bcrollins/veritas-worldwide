@@ -1892,6 +1892,13 @@ export default function IsraelDossierPage() {
                 >
                   Filter full ledger → video + civilians
                 </button>
+                <a
+                  href="/israel-dossier/visual-investigations.json"
+                  className="inline-flex min-h-[44px] items-center px-4 rounded-sm border border-border font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase text-ink hover:border-crimson hover:text-crimson transition-colors"
+                  data-testid="vi-json-download"
+                >
+                  Download VI machine index (JSON)
+                </a>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
                 {ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS.map((incident) => {

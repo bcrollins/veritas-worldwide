@@ -402,6 +402,10 @@ assert(canon.includes('relatedProfileIds'), 'canon missing relatedProfileIds wir
   assert(expanded.includes('ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS'), 'expanded must merge VI pack')
   assert(page.includes('visual-investigations'), 'dossier page missing Visual Investigations section')
   assert(page.includes('export-video-civilian-csv') || page.includes('Export video + civilians CSV'), 'dossier missing video+civilian CSV export')
+  assert(page.includes('Open primary video') || page.includes('Video evidence'), 'dossier incident cards missing video evidence UX')
+  assert(page.includes('web.archive.org/web/*'), 'VI media missing Wayback archive pins')
+  assert(fs.existsSync(path.join(root, 'public/israel-dossier/visual-investigations.json')), 'missing visual-investigations.json export')
+  assert(page.includes('visual-investigations.json'), 'page missing VI JSON download')
 }
 
 if (errors.length) {

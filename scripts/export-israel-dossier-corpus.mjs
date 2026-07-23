@@ -220,8 +220,45 @@ async function main() {
     fs.writeFileSync(path.join(distDir, 'soft-floor.json'), `${JSON.stringify(softFloor, null, 2)}\n`, 'utf8')
   }
 
+  // Machine-readable visual investigations index (civilian + video) for researchers / GEO
+  const videoCivilian = incidents.filter(
+    (i) => i.targetsCivilians && (i.multimedia || []).some((m) => m.type === 'video'),
+  )
+  const viIndex = {
+    meta: {
+      title: 'Israel Dossier — Visual Investigations index',
+      publisher: 'Veritas Worldwide',
+      path: '/israel-dossier#visual-investigations',
+      method:
+        'Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.',
+      generatedAt: corpus.generatedAt,
+    },
+    counts: {
+      incidentsWithVideoAndCivilians: videoCivilian.length,
+      viPackCards: incidents.filter((i) => String(i.id || '').startsWith('vi-')).length,
+      totalIncidents: corpus.counts.incidents,
+    },
+    incidents: videoCivilian.map((i) => ({
+      id: i.id,
+      title: i.title,
+      date: i.date,
+      location: i.location,
+      tier: i.tier,
+      targetsCivilians: i.targetsCivilians,
+      targetsChildren: i.targetsChildren,
+      casualties: i.casualties,
+      sources: i.sources,
+      multimedia: i.multimedia,
+    })),
+  }
+  const viPath = path.join(outDir, 'visual-investigations.json')
+  fs.writeFileSync(viPath, `${JSON.stringify(viIndex, null, 2)}\n`, 'utf8')
+  if (fs.existsSync(path.join(repoRoot, 'dist'))) {
+    fs.writeFileSync(path.join(distDir, 'visual-investigations.json'), `${JSON.stringify(viIndex, null, 2)}\n`, 'utf8')
+  }
+
   console.log(
-    `[export-israel-dossier-corpus] wrote ${outPath} · incidents=${corpus.counts.incidents} timeline=${corpus.counts.timelineEvents} actors=${corpus.counts.actors} video=${withVideo}`,
+    `[export-israel-dossier-corpus] wrote ${outPath} · incidents=${corpus.counts.incidents} timeline=${corpus.counts.timelineEvents} actors=${corpus.counts.actors} video=${withVideo} videoCivilian=${videoCivilian.length}`,
   )
 }
 
