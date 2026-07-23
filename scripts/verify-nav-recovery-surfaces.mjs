@@ -2168,4 +2168,13 @@ assert(typeof read === 'function', 'read helper final')
 assert(Array.isArray(surfaces) && surfaces.length >= 102, `surfaces self-health ${surfaces.length}`)
 
 
+
+// NotFound RelatedHubs-only import surface ultimate end final
+const nfImportFinal = read('src/pages/NotFoundPage.tsx')
+assert(nfImportFinal.includes("from '../components/RelatedHubs'"), 'NotFound imports RelatedHubs final')
+assert(!nfImportFinal.includes('react-router-dom'), 'NotFound no react-router-dom final')
+assert(nfImportFinal.includes('emphasizeTo="/"') || nfImportFinal.includes("emphasizeTo='/'"), 'emphasize Record final')
+assert((nfImportFinal.match(/<RelatedHubs\b/g) || []).length >= 2, 'dual RelatedHubs final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
