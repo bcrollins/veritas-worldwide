@@ -13,6 +13,11 @@ function read(rel) { return fs.readFileSync(path.join(root, rel), 'utf8') }
 
 const surfaces = [
   ['src/components/DossierHubSpokes.tsx', 'dossier-hub-spokes'],
+  ['src/pages/MediaKitPage.tsx', 'media-kit-primary-hubs'],
+  ['src/pages/BookmarksPage.tsx', 'bookmarks-related-hubs'],
+  ['src/pages/ProfilesIndexPage.tsx', 'profiles-related-hubs'],
+  ['src/pages/ReadTheBookPage.tsx', 'read-related-hubs'],
+  ['src/pages/BernieShowPage.tsx', 'bernie-related-hubs'],
   ['src/components/ResearchHubChips.tsx', 'research-hub-chips'],
   ['src/pages/HomePage.tsx', 'home-hub-cta-row'],
   ['src/pages/HomePage.tsx', 'home-news-chip'],
@@ -989,7 +994,7 @@ assert(israelSticky.includes('israel-dossier-related-hubs'), 'Israel RelatedHubs
 
 
 // Recovery suite surface needle floor
-assert(surfaces.length >= 90, `surfaces length floor 90 (got ${surfaces.length})`)
+assert(surfaces.length >= 100, `surfaces length floor 90 (got ${surfaces.length})`)
 
 
 // Cookie z-100 above tab z-50 unique final
@@ -1021,7 +1026,7 @@ assert(relatedAriaFinal.includes('Related hubs'), 'RelatedHubs aria Related hubs
 
 // Recovery suite reports needle count in PASS line format
 // (surfaces array is the authoritative floor via length assert above)
-assert(typeof surfaces.length === 'number' && surfaces.length >= 90, 'surfaces array healthy')
+assert(typeof surfaces.length === 'number' && surfaces.length >= 100, 'surfaces array healthy')
 
 
 // DOSSIER_SPOKES count reaffirm unique final
@@ -1063,5 +1068,57 @@ assert(relatedExportFinal.includes('export const PRIMARY_RELATED_HUBS') || relat
 const spokesExportFinal = read('src/components/DossierHubSpokes.tsx')
 assert(spokesExportFinal.includes('export default function DossierHubSpokes'), 'DossierHubSpokes export default unique final')
 assert(spokesExportFinal.includes('export const DOSSIER_SPOKES'), 'DOSSIER_SPOKES export unique final')
+
+
+
+// Sprint 7 — remaining surface primary recovery (RelatedHubs platform)
+const mediaKitS7 = read('src/pages/MediaKitPage.tsx')
+assert(mediaKitS7.includes('media-kit-primary-hubs'), 'media-kit-primary-hubs')
+assert(mediaKitS7.includes('RelatedHubs'), 'MediaKit mounts RelatedHubs')
+assert(mediaKitS7.includes('MEDIA_KIT_PRIMARY_HUBS') || mediaKitS7.includes('media-kit-primary-hubs'), 'MediaKit primary hubs const or testid')
+
+const bookmarksS7 = read('src/pages/BookmarksPage.tsx')
+assert(bookmarksS7.includes('bookmarks-related-hubs'), 'bookmarks-related-hubs')
+assert(bookmarksS7.includes('RelatedHubs'), 'Bookmarks mounts RelatedHubs')
+assert(bookmarksS7.includes('BOOKMARKS_HUBS') || bookmarksS7.includes('/read'), 'Bookmarks hub destinations')
+
+const profilesS7 = read('src/pages/ProfilesIndexPage.tsx')
+assert(profilesS7.includes('profiles-related-hubs'), 'profiles-related-hubs')
+assert(profilesS7.includes('RelatedHubs'), 'Profiles mounts RelatedHubs')
+assert(profilesS7.includes("excludeTo=\"/profiles\"") || profilesS7.includes("excludeTo='/profiles'"), 'Profiles excludes self')
+
+const readS7 = read('src/pages/ReadTheBookPage.tsx')
+assert(readS7.includes('read-related-hubs'), 'read-related-hubs')
+assert(readS7.includes('RelatedHubs'), 'Read mounts RelatedHubs')
+assert(readS7.includes("excludeTo=\"/read\"") || readS7.includes("excludeTo='/read'"), 'Read excludes self')
+
+const osintS7 = read('src/pages/ComprehensiveProfileSuccessPage.tsx')
+assert(osintS7.includes('RelatedHubs'), 'OSINT success mounts RelatedHubs')
+assert(osintS7.includes('osint-success-related-hubs'), 'osint-success-related-hubs retained')
+assert(osintS7.includes('OSINT_SUCCESS_HUBS') || osintS7.includes('/methodology'), 'OSINT success hubs destinations')
+assert(osintS7.includes('osint-success-research-pack'), 'osint-success-research-pack retained')
+
+const berieS7 = read('src/pages/BernieShowPage.tsx')
+assert(berieS7.includes('bernie-related-hubs'), 'bernie-related-hubs')
+assert(berieS7.includes('RelatedHubs'), 'Bernie mounts RelatedHubs')
+assert(berieS7.includes("tone=\"dark\"") || berieS7.includes("tone='dark'"), 'Bernie dark tone recovery')
+
+// RelatedHubs dark tone platform lock
+const relatedDark = read('src/components/RelatedHubs.tsx')
+assert(relatedDark.includes("'dark'") || relatedDark.includes('"dark"'), 'RelatedHubs tone includes dark')
+assert(relatedDark.includes('border-white/20') || relatedDark.includes('bg-white/5'), 'RelatedHubs dark chip styles')
+
+// Surface needle floor raised for Sprint 7
+const surfacesS7 = [
+  'media-kit-primary-hubs',
+  'bookmarks-related-hubs',
+  'profiles-related-hubs',
+  'read-related-hubs',
+  'bernie-related-hubs',
+]
+for (const id of surfacesS7) {
+  assert(typeof id === 'string' && id.length > 0, `surface id ${id}`)
+}
+
 
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)

@@ -292,6 +292,17 @@ const relatedPrimary = fs.readFileSync(path.join(root, 'src/components/RelatedHu
 for (const dest of ["'/'", "'/read'", "'/israel-dossier'", "'/profiles'", "'/search'"]) {
   assert(relatedPrimary.includes(`to: ${dest}`) && block.includes(`to: ${dest}`), `RelatedHubs+primaryLinks share ${dest}`)
 }
+
+// Sprint 7 remaining recovery mounts
+assert(fs.readFileSync(path.join(root, 'src/pages/MediaKitPage.tsx'), 'utf8').includes('media-kit-primary-hubs'), 'MediaKit primary RelatedHubs')
+assert(fs.readFileSync(path.join(root, 'src/pages/BookmarksPage.tsx'), 'utf8').includes('bookmarks-related-hubs'), 'Bookmarks RelatedHubs')
+assert(fs.readFileSync(path.join(root, 'src/pages/ProfilesIndexPage.tsx'), 'utf8').includes('profiles-related-hubs'), 'Profiles RelatedHubs')
+assert(fs.readFileSync(path.join(root, 'src/pages/ReadTheBookPage.tsx'), 'utf8').includes('read-related-hubs'), 'Read RelatedHubs')
+assert(fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfileSuccessPage.tsx'), 'utf8').includes('RelatedHubs'), 'OSINT success RelatedHubs')
+assert(fs.readFileSync(path.join(root, 'src/pages/BernieShowPage.tsx'), 'utf8').includes('bernie-related-hubs'), 'Bernie RelatedHubs dark recovery')
+const relatedTone = fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
+assert(relatedTone.includes("'dark'") || relatedTone.includes('"dark"'), 'RelatedHubs dark tone')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
