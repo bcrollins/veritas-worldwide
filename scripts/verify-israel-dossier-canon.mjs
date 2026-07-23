@@ -417,9 +417,9 @@ assert(canon.includes('relatedProfileIds'), 'canon missing relatedProfileIds wir
   const sfPath = path.join(root, 'public/israel-dossier/soft-floor.json')
   assert(fs.existsSync(sfPath), 'israel soft-floor.json missing')
   const sf = JSON.parse(fs.readFileSync(sfPath, 'utf8'))
-  assert(typeof sf.incidentCount === 'number' && sf.incidentCount >= 3999, `soft-floor incidentCount too low: ${sf.incidentCount}`)
+  assert(typeof sf.incidentCount === 'number' && sf.incidentCount >= 4029, `soft-floor incidentCount too low: ${sf.incidentCount}`)
   assert(sf.visualInvestigations && typeof sf.visualInvestigations.withVideo === 'number', 'soft-floor missing visualInvestigations.withVideo')
-  assert(sf.visualInvestigations.withVideo >= 872, `soft-floor withVideo floor ≥54, got ${sf.visualInvestigations.withVideo}`)
+  assert(sf.visualInvestigations.withVideo >= 878, `soft-floor withVideo floor ≥54, got ${sf.visualInvestigations.withVideo}`)
 }
 
 if (errors.length) {
