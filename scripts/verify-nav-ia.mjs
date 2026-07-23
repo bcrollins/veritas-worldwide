@@ -365,6 +365,13 @@ const relatedTonesIa = fs.readFileSync(path.join(root, 'src/components/RelatedHu
 assert(relatedTonesIa.includes('surface') && relatedTonesIa.includes('parchment') && (relatedTonesIa.includes("'dark'") || relatedTonesIa.includes('"dark"')), 'RelatedHubs three tones IA')
 assert(relatedTonesIa.includes('min-h-[44px]') && relatedTonesIa.includes('no-print'), 'RelatedHubs a11y chrome IA')
 
+
+// OSINT success RelatedHubs IA end
+const osintIaEnd = fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfileSuccessPage.tsx'), 'utf8')
+assert(osintIaEnd.includes('RelatedHubs') && osintIaEnd.includes('osint-success-related-hubs'), 'OSINT success RelatedHubs IA')
+assert(osintIaEnd.includes('OSINT_SUCCESS_HUBS'), 'OSINT_SUCCESS_HUBS IA')
+assert(osintIaEnd.includes('osint-success-research-pack'), 'osint pack IA')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
