@@ -2384,6 +2384,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-disabled-elderly-killed-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['mk84-use', 'artillery-use', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Disabled & Elderly Civilian Harm Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (vulnerable-cohort window)',
+    location: 'Gaza Strip',
+    summary:
+      'Human Rights Watch, Amnesty, UN disability rapporteurs, and multi-source reporting document disproportionate barriers and lethal risk for persons with disabilities and elderly civilians during mass displacement and bombardment — including inability to evacuate and loss of assistive devices/care. Pattern card for vulnerable-cohort civilian harm.',
+    evidence:
+      'HRW/Amnesty disability-in-conflict reports, UN special procedures statements, and multi-source field reporting establish elevated vulnerability and documented deaths among disabled and elderly. Exact cohort tallies are incomplete; multi-source pattern evidence is the claim.',
+    sources: [
+      { label: 'HRW disability/conflict materials — Gaza', url: 'https://www.hrw.org' },
+      { label: 'OHCHR special procedures / OPT materials', url: 'https://www.ohchr.org' },
+      { label: 'Multi-outlet vulnerable-civilian coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'HRW public materials', url: 'https://www.hrw.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3351,6 +3378,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-starvation-ipc-phases-2024-2025', 'world-food-programme-gaza-starvation-2024', 'starvation-aid-blockade'],
     tags: ['starvation', 'famine', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-disabled-elderly-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Disabled & Elderly Civilian Harm Pattern',
+    description: 'HRW/UN multi-source documentation of elevated risk and harm to disabled and elderly civilians.',
+    source: 'HRW / OHCHR',
+    sourceUrl: 'https://www.hrw.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-disabled-elderly-killed-pattern-2023-2025', 'gaza-evacuation-orders-pattern-2023-2024'],
+    tags: ['disabled', 'elderly', 'civilians', 'gaza'],
   },
 
 ]

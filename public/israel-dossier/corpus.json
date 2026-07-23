@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:15:24.251Z",
+  "generatedAt": "2026-07-23T08:16:03.700Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 103,
-    "timelineEvents": 91,
+    "incidents": 104,
+    "timelineEvents": 92,
     "actors": 47,
     "moneyTrailNodes": 30,
-    "historicalWarCrimesPack": 89,
+    "historicalWarCrimesPack": 90,
     "legalCases": 19,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 43
+      "post-oct7": 44
     },
     "incidentsByTier": {
-      "verified": 101,
+      "verified": 102,
       "circumstantial": 2
     },
     "childrenTagged": 85,
-    "civiliansTagged": 101,
+    "civiliansTagged": 102,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3136,6 +3136,26 @@
       "tags": [
         "heritage",
         "culture",
+        "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-disabled-elderly-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Disabled & Elderly Civilian Harm Pattern",
+      "description": "HRW/UN multi-source documentation of elevated risk and harm to disabled and elderly civilians.",
+      "source": "HRW / OHCHR",
+      "sourceUrl": "https://www.hrw.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-disabled-elderly-killed-pattern-2023-2025",
+        "gaza-evacuation-orders-pattern-2023-2024"
+      ],
+      "tags": [
+        "disabled",
+        "elderly",
         "civilians",
         "gaza"
       ]
@@ -7090,6 +7110,52 @@
       "casualties": {
         "killed": 0,
         "injured": 1000
+      }
+    },
+    {
+      "id": "gaza-disabled-elderly-killed-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "artillery-use",
+        "fmf-weapons"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Disabled & Elderly Civilian Harm Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (vulnerable-cohort window)",
+      "location": "Gaza Strip",
+      "summary": "Human Rights Watch, Amnesty, UN disability rapporteurs, and multi-source reporting document disproportionate barriers and lethal risk for persons with disabilities and elderly civilians during mass displacement and bombardment — including inability to evacuate and loss of assistive devices/care. Pattern card for vulnerable-cohort civilian harm.",
+      "evidence": "HRW/Amnesty disability-in-conflict reports, UN special procedures statements, and multi-source field reporting establish elevated vulnerability and documented deaths among disabled and elderly. Exact cohort tallies are incomplete; multi-source pattern evidence is the claim.",
+      "sources": [
+        {
+          "label": "HRW disability/conflict materials — Gaza",
+          "url": "https://www.hrw.org"
+        },
+        {
+          "label": "OHCHR special procedures / OPT materials",
+          "url": "https://www.ohchr.org"
+        },
+        {
+          "label": "Multi-outlet vulnerable-civilian coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "HRW public materials",
+          "url": "https://www.hrw.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
       }
     },
     {
