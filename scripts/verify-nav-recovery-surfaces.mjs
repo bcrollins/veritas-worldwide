@@ -444,4 +444,12 @@ assert(cookie.includes('z-[100]'), 'cookie z-100')
 assert(appZ.includes('MobileTabBar') && appZ.includes('z-50'), 'tab bar z-50')
 assert(read('src/components/StickyMembershipBar.tsx').includes('z-40'), 'membership z-40')
 
+
+// Safe-area padding for mobile chrome (tab bar + membership offset)
+const tabApp = read('src/App.tsx')
+assert(tabApp.includes('safe-area-inset-bottom'), 'App safe-area-inset-bottom')
+const sticky = read('src/components/StickyMembershipBar.tsx')
+assert(sticky.includes('3.75rem') && sticky.includes('env(safe-area-inset-bottom)'), 'membership above tab safe-area')
+assert(sticky.includes('md:bottom-0'), 'membership desktop bottom-0')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
