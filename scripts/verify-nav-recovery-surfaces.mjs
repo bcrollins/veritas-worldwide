@@ -1546,4 +1546,12 @@ assert(plEnd, 'primaryLinks block end')
 assert((plEnd[1].match(/to:\s*['"]/g) || []).length === 5, 'primaryLinks count 5 end')
 
 
+
+// a11y RelatedHubs mount credit reaffirm
+const a11yCredit = read('scripts/verify-a11y-public-targets.mjs')
+assert(a11yCredit.includes('countTouchTargets') || a11yCredit.includes('RelatedHubs'), 'a11y credits RelatedHubs mounts')
+assert(a11yCredit.includes('RelatedHubs.tsx'), 'a11y floors RelatedHubs component')
+assert(a11yCredit.includes('min-h-[44px]'), 'a11y TARGET_RE 44px')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
