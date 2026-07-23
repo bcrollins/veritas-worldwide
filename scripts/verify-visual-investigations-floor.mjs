@@ -29,7 +29,7 @@ assert(vi.includes('vi-al-ahli-hospital-blast-visual-2023'), 'visual pack missin
 assert(!/brollins|brandoncrollins|aerolink/i.test(vi), 'VI pack identity leak')
 
 const cards = (vi.match(/id: 'vi-/g) || []).length
-assert(cards >= 40, `VI pack should have ≥40 cards, got ${cards}`)
+assert(cards >= 50, `VI pack should have ≥50 cards, got ${cards}`)
 const urls = (vi.match(/url: 'https?:\/\//g) || []).length
 assert(urls >= cards * 2, `VI dual-cite floor: cards=${cards} urls=${urls}`)
 

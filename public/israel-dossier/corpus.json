@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T12:23:31.467Z",
+  "generatedAt": "2026-07-23T12:25:15.125Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 855,
+    "incidents": 859,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 30,
-      "post-oct7": 790
+      "post-oct7": 794
     },
     "incidentsByTier": {
-      "verified": 853,
+      "verified": 857,
       "circumstantial": 2
     },
-    "childrenTagged": 807,
-    "civiliansTagged": 853,
+    "childrenTagged": 812,
+    "civiliansTagged": 857,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -51354,6 +51354,14 @@
         {
           "label": "AP / Haaretz contemporaneous reporting",
           "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "Haaretz / AP packages on settler violence",
+          "url": "https://www.haaretz.com/israel-news/"
         }
       ],
       "multimedia": [
@@ -51371,11 +51379,21 @@
           "type": "document",
           "label": "PRCS incident logs",
           "url": "https://www.palestinercs.org/"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Press stills of arson and assault aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "tier": "verified",
       "targetsCivilians": true,
-      "targetsChildren": false
+      "targetsChildren": true
     },
     {
       "id": "vi-gaza-journalists-targeted-visual-2023-2025",
@@ -52053,6 +52071,188 @@
         "oct7-emergency-arms-surge",
         "fmf-weapons",
         "mk84-use"
+      ]
+    },
+    {
+      "id": "vi-gaza-ammunition-dump-vs-civilian-blocks-visual-2023-2025",
+      "title": "Ammunition Dump Claims vs. Civilian Blocks — Visual Forensics of Secondary Explosions",
+      "date": "2023–2025",
+      "location": "Gaza Strip (multiple strike sites)",
+      "summary": "Multi-outlet visual forensics examine secondary explosions after airstrikes, sometimes cited as proof of militant munitions. Independent packages map blast signatures against civilian density. Presence of secondary explosions is multi-source filmed; interpretation as munitions stores remains contested case-by-case.",
+      "evidence": "Wire video, satellite damage products, and multi-outlet OSINT establish multi-source documentation of large secondary blasts in dense areas. Legal meaning (munitions vs. fuel vs. other) is not auto-verified from video alone.",
+      "sources": [
+        {
+          "label": "Airwars Gaza Patterns of Harm",
+          "url": "https://gaza-patterns-harm.airwars.org/"
+        },
+        {
+          "label": "UNOSAT damage assessments",
+          "url": "https://unosat.org/"
+        },
+        {
+          "label": "AP / Reuters multi-outlet strike packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Wire video of secondary explosions in dense areas",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Airwars geospatial civilian-harm patterns",
+          "url": "https://gaza-patterns-harm.airwars.org/"
+        },
+        {
+          "type": "document",
+          "label": "UNOSAT satellite damage products",
+          "url": "https://unosat.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ]
+    },
+    {
+      "id": "vi-gaza-icu-and-nicu-evacuations-visual-2023-2024",
+      "title": "ICU/NICU Evacuations Under Fire — Visual Record of Patient Transfers",
+      "date": "2023–2024",
+      "location": "Gaza hospitals (Al-Shifa, Nasser, and others)",
+      "summary": "Multi-outlet video documents evacuations of ICU and NICU patients—including incubators moved by hand—during sieges and evacuation orders. Visual packages establish civilian patient status independent of facility combat claims.",
+      "evidence": "WHO hospital updates, multi-outlet hospital embeds, and medical NGO materials establish multi-source documentation of critical-patient transfers under combat conditions.",
+      "sources": [
+        {
+          "label": "WHO OPT emergency health",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        },
+        {
+          "label": "MSF Palestine updates",
+          "url": "https://www.msf.org/palestine"
+        },
+        {
+          "label": "AP / Reuters hospital embed packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Wire/NGO video of ICU/NICU evacuations",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "document",
+          "label": "WHO hospital functionality updates",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Press photos of incubator and critical transfers",
+          "url": "https://www.aljazeera.com/tag/gaza/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ]
+    },
+    {
+      "id": "vi-oct7-dashboard-camera-civilian-murders-visual-2023",
+      "title": "October 7 Dashboard & Traffic Cameras — Civilian Killings on Roadways",
+      "date": "October 7, 2023",
+      "location": "Southern Israel road network",
+      "summary": "Dashboard cameras and traffic cameras captured militants killing civilians in cars and at roadside stops on October 7. Multi-outlet authentication of these videos is a primary visual record of civilian mass murder—included for multi-party documentation balance.",
+      "evidence": "Authenticated dashcam packages, multi-outlet investigations, and official compilations establish multi-source documentation of roadway civilian killings. Specific unit attribution continues in open investigations.",
+      "sources": [
+        {
+          "label": "AP / Reuters October 7 multi-outlet packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations October 7 packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated dashcam/roadway packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations October 7 packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-gaza-tunnel-shaft-claims-vs-residential-visual-2023-2025",
+      "title": "Tunnel Shaft Claims Under Residences — Visual Forensics of Home Destruction",
+      "date": "2023–2025",
+      "location": "Gaza Strip residential neighborhoods",
+      "summary": "Israeli forces frequently cite tunnel shafts under homes when explaining residential destruction. Multi-outlet visual packages document demolished apartment blocks and civilian casualties; independent confirmation of shaft claims is uneven. Civilian residential destruction is multi-source filmed; each shaft claim is case-level.",
+      "evidence": "Wire video of residential demolitions, UNOSAT damage products, and multi-outlet OSINT establish multi-source documentation of home destruction at scale. Tunnel claims require separate unit-level proof.",
+      "sources": [
+        {
+          "label": "UNOSAT damage assessments",
+          "url": "https://unosat.org/"
+        },
+        {
+          "label": "Airwars Gaza Patterns of Harm",
+          "url": "https://gaza-patterns-harm.airwars.org/"
+        },
+        {
+          "label": "AP / Reuters residential destruction packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Wire video of residential block destruction",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Airwars geospatial patterns",
+          "url": "https://gaza-patterns-harm.airwars.org/"
+        },
+        {
+          "type": "document",
+          "label": "UNOSAT satellite damage products",
+          "url": "https://unosat.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
       ]
     },
     {
