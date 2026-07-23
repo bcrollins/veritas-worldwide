@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T12:34:35.363Z",
+  "generatedAt": "2026-07-23T12:34:41.027Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 915,
+    "incidents": 919,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 30,
-      "post-oct7": 850
+      "post-oct7": 854
     },
     "incidentsByTier": {
-      "verified": 913,
+      "verified": 917,
       "circumstantial": 2
     },
-    "childrenTagged": 866,
-    "civiliansTagged": 913,
+    "childrenTagged": 869,
+    "civiliansTagged": 917,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -54676,6 +54676,183 @@
         "oct7-emergency-arms-surge",
         "fmf-weapons"
       ]
+    },
+    {
+      "id": "vi-gaza-school-double-tap-visual-2023-2025",
+      "title": "School Shelter Double-Tap Strikes — Visual Pattern File",
+      "date": "2023–2025",
+      "location": "Gaza Strip schools used as shelters",
+      "summary": "Multi-outlet video documents successive strikes on schools sheltering displaced families—first blast, then follow-on fire as rescuers and survivors gather. Pattern multi-source filmed; each site is unit-level.",
+      "evidence": "UNRWA flash updates, multi-outlet school-strike video, and OHCHR education-site materials establish multi-source documentation of strikes affecting school shelters.",
+      "sources": [
+        {
+          "label": "UNRWA emergency updates",
+          "url": "https://www.unrwa.org/"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "Al Jazeera Gaza school packages",
+          "url": "https://www.aljazeera.com/tag/gaza/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Wire/AJ video of school-shelter strikes",
+          "url": "https://www.aljazeera.com/tag/gaza/"
+        },
+        {
+          "type": "document",
+          "label": "UNRWA flash updates",
+          "url": "https://www.unrwa.org/"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Press photos of damaged school shelters",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons",
+        "mk84-use"
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-pogrom-hawara-nablus-corridor-visual-2023-2024",
+      "title": "Nablus Corridor Settler Pogroms — Expanded Video Bank Beyond Huwara",
+      "date": "2023–2024",
+      "location": "Nablus corridor / Huwara-area villages",
+      "summary": "B’Tselem and multi-outlet video document repeated mass settler attacks along the Nablus corridor after October 7—arson, assaults, and road blockades filmed as primary visual evidence of civilian-targeted violence.",
+      "evidence": "B’Tselem video banks, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of corridor-scale settler violence.",
+      "sources": [
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem corridor pogrom video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of arson aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-gaza-paramedic-bodycam-and-ambulance-cam-2023-2025",
+      "title": "Paramedic Bodycam & Ambulance Cam — EMS Under Fire Visual Record",
+      "date": "2023–2025",
+      "location": "Gaza Strip EMS routes",
+      "summary": "PRCS and multi-outlet packages include paramedic bodycam and ambulance-camera footage of crews under fire and treating mass casualties. Marked EMS status is multi-source visual evidence of attacks affecting medical transport.",
+      "evidence": "PRCS operational updates, multi-outlet EMS video packages, and OHCHR medical-protection materials establish multi-source documentation of harm to ambulance crews.",
+      "sources": [
+        {
+          "label": "Palestine Red Crescent updates",
+          "url": "https://www.palestinercs.org/"
+        },
+        {
+          "label": "OHCHR medical personnel protection materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "AP / Reuters EMS packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "PRCS/press EMS under-fire packages",
+          "url": "https://www.palestinercs.org/"
+        },
+        {
+          "type": "investigation",
+          "label": "OHCHR medical-protection documentation",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "type": "document",
+          "label": "PRCS operational updates",
+          "url": "https://www.palestinercs.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ]
+    },
+    {
+      "id": "vi-oct7-police-station-and-civilian-shelter-attacks-visual-2023",
+      "title": "October 7 Civilian Shelter & Public Site Attacks — Multi-Outlet Visual Record",
+      "date": "October 7, 2023",
+      "location": "Southern Israel (Sderot, Ofakim, and other sites)",
+      "summary": "Multi-outlet video documents militant attacks on civilian public sites and shelters on October 7, including police stations used as civilian refuge. Multi-party documentation of civilian mass murder visual evidence.",
+      "evidence": "Authenticated bodycam/dashcam, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-site attacks on October 7.",
+      "sources": [
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated October 7 public-site attack packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
     },
     {
       "id": "hind-rajab-2024",
