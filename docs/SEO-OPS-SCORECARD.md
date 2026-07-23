@@ -216,3 +216,13 @@ ROC corpus **417** claims; soft floor **417**. Pure + live gates green.
 - Soft-404 matrix + slug 301s still **live green** (junk 404; Ted-Cruz/CHAPTER/trailing-slash 301)
 - Soft floor tracks latest ROC wave (435 for wave37); GEO public floors 440+
 - Live regression: `verify:live-bot-noindex` includes soft-404 matrix **and** 301 canonical checks
+
+
+### wave38–41 crawl canonicalization (2026-07-23)
+
+- Soft floor tracks latest ROC wave (**471** for wave41); GEO public floors **470+**
+- **301 lock expanded:** mixed-case exact hubs (`/About` → `/about`, `/Read` → `/read`)
+- **301 lock expanded:** trailing-slash exact hubs (`/methodology/` → `/methodology`)
+- **Alias lock:** `/content-packs` → `/content-pack` (kills homepage soft-404 shell on plural path)
+- Slug-prefix 301s unchanged (profile/chapter/news/topics/institute)
+- Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` (About/Read/content-packs 301s)

@@ -164,6 +164,11 @@ const CANONICAL_301 = [
   { path: '/profile/Ted-Cruz', expectLocation: '/profile/ted-cruz' },
   { path: '/profile/ted-cruz/', expectLocation: '/profile/ted-cruz' },
   { path: '/CHAPTER/CHAPTER-1', expectLocation: '/chapter/chapter-1' },
+  // Exact hub mixed-case + legacy alias (soft-404 + homepage-shell killers).
+  { path: '/About', expectLocation: '/about' },
+  { path: '/Read', expectLocation: '/read' },
+  { path: '/content-packs', expectLocation: '/content-pack' },
+  { path: '/methodology/', expectLocation: '/methodology' },
 ]
 async function check301({ path, expectLocation }) {
   const res = await fetch(`${base}${path}`, {

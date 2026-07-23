@@ -482,3 +482,14 @@ for (const [rel, label] of [
 assert(/SLUG_CONTENT_PATH[\s\S]{0,80}\/i/.test(server) || server.includes('/?$/i'), 'SLUG_CONTENT_PATH must be case-insensitive (/i flag)')
 
 assert(server.includes('rawPath') || server.includes("split('?')[0]"), 'slug canonical middleware must inspect raw URL for trailing slashes')
+
+// Exact hub case + content-packs alias — never soft-404 /About or serve homepage on /content-packs.
+assert(server.includes('STATIC_CANONICAL_PATHS'), 'server must 301 mixed-case exact hubs (/About → /about)')
+assert(server.includes('PATH_ALIASES') && server.includes("['/content-packs', '/content-pack']"), 'server must 301 /content-packs → /content-pack')
+assert(server.includes("'/about'") && server.includes("'/read'") && server.includes("'/methodology'"), 'STATIC_CANONICAL_PATHS must include core hubs')
+const knownExactBlock = server.match(/const knownExact = new Set\(\[([\s\S]*?)\]\)/)?.[1] || ''
+assert(
+  !knownExactBlock.includes("'/content-packs'"),
+  'isKnownSpaRoute knownExact must not list /content-packs (alias 301 only)',
+)
+assert(knownExactBlock.includes("'/content-pack'"), 'isKnownSpaRoute knownExact must list canonical /content-pack')

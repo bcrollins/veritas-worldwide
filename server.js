@@ -1715,18 +1715,80 @@ function normalizePrerenderRoute(routePath) {
 const SLUG_CONTENT_PATH =
   /^\/(chapter|profile|news|topics|institute\/(?:courses|guides))\/[A-Za-z0-9-]+\/?$/i
 
+/**
+ * Exact public hubs stored lowercase. Mixed-case crawls (/About, /Read) must
+ * 301 to the canonical path — otherwise soft-404 treats them as unknown junk.
+ * Keep in lockstep with isKnownSpaRoute knownExact + React Router paths.
+ */
+const STATIC_CANONICAL_PATHS = new Set([
+  '/about',
+  '/accessibility',
+  '/analytics',
+  '/bible',
+  '/bookmarks',
+  '/brand-kit',
+  '/comprehensive-profile',
+  '/content-pack',
+  '/deep-state',
+  '/forum',
+  '/institute',
+  '/institute/book',
+  '/institute/methodology',
+  '/israel-dossier',
+  '/israel-dossier/briefing',
+  '/media-kit',
+  '/membership',
+  '/methodology',
+  '/news',
+  '/privacy',
+  '/profiles',
+  '/read',
+  '/record-of-jesus-christ',
+  '/search',
+  '/share',
+  '/sources',
+  '/terms',
+  '/timeline',
+  '/topics',
+])
+
+/** Legacy plural alias → singular content-pack (client Navigate + crawl lock). */
+const PATH_ALIASES = new Map([['/content-packs', '/content-pack']])
+
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next()
   // Use raw pathname from req.url — Express may already strip trailing slash from req.path.
   const rawPath = (req.url || req.path || '/').split('?')[0] || '/'
   if (rawPath.startsWith('/api/') || path.extname(rawPath)) return next()
-  if (!SLUG_CONTENT_PATH.test(rawPath) && !SLUG_CONTENT_PATH.test(req.path)) return next()
-  const source = SLUG_CONTENT_PATH.test(rawPath) ? rawPath : req.path
-  const lower = source.toLowerCase()
-  const withoutSlash = lower.endsWith('/') ? lower.slice(0, -1) : lower
-  if (source === withoutSlash) return next()
+
   const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''
-  return res.redirect(301, `${withoutSlash}${query}`)
+  const source = rawPath || req.path || '/'
+  const lower = source.toLowerCase()
+  const withoutSlash = lower.length > 1 && lower.endsWith('/') ? lower.slice(0, -1) : lower
+
+  // Alias redirects first (content-packs → content-pack) so bots never see homepage shells.
+  const aliasTarget = PATH_ALIASES.get(withoutSlash)
+  if (aliasTarget) {
+    return res.redirect(301, `${aliasTarget}${query}`)
+  }
+
+  // Slug-prefix content: /Profile/Ted-Cruz, /chapter/chapter-1/, etc.
+  if (SLUG_CONTENT_PATH.test(source) || SLUG_CONTENT_PATH.test(req.path)) {
+    const slugSource = SLUG_CONTENT_PATH.test(source) ? source : req.path
+    const slugLower = slugSource.toLowerCase()
+    const slugCanon = slugLower.endsWith('/') ? slugLower.slice(0, -1) : slugLower
+    if (slugSource !== slugCanon) {
+      return res.redirect(301, `${slugCanon}${query}`)
+    }
+    return next()
+  }
+
+  // Exact hub mixed-case / trailing-slash: /About → /about, /read/ → /read.
+  if (STATIC_CANONICAL_PATHS.has(withoutSlash) && source !== withoutSlash) {
+    return res.redirect(301, `${withoutSlash}${query}`)
+  }
+
+  return next()
 })
 
 /** Paths that must never be indexed even when served as prerendered static HTML. */
@@ -2054,7 +2116,7 @@ function isKnownSpaRoute(pathname) {
     '/share',
     '/brand-kit',
     '/media-kit',
-    '/content-packs',
+    // /content-packs is PATH_ALIASES → /content-pack (never serve SPA shell here)
     '/content-pack',
     '/subscribe/success',
     '/membership/success',

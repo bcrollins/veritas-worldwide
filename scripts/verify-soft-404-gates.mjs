@@ -37,6 +37,9 @@ assert(isKnownInstituteSlug('not-a-real-course-xyz', root) === false, 'junk inst
 assert(isKnownChapterSlug('') === false, 'empty chapter slug unknown')
 assert(isKnownProfileSlug('', root) === false, 'empty profile slug unknown')
 assert(isKnownChapterSlug(null) === false, 'null chapter slug unknown')
+assert(isKnownNewsSlug('', root) === false, 'empty news slug unknown')
+assert(isKnownTopicSlug('', root) === false, 'empty topic slug unknown')
+assert(isKnownInstituteSlug('', root) === false, 'empty institute slug unknown')
 
 if (failures.length) {
   console.error('[verify:soft-404-gates] FAIL')
