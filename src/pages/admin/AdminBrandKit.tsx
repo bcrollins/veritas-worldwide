@@ -471,6 +471,33 @@ export default function AdminBrandKit() {
         </div>
       </section>
 
+      {/* Bios copy */}
+      <section className="rounded-lg border border-white/5 bg-white/5 p-5">
+        <h2 className="mb-3 font-sans text-xs font-bold uppercase tracking-widest text-white/50">
+          Official bios (bios.json)
+        </h2>
+        <p className="mb-3 font-sans text-[11px] text-white/40">
+          Machine-readable handles and bios for platform onboarding.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <a
+            href="/brand-kit/07-docs/bios.json"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center rounded bg-crimson px-4 py-2 font-sans text-xs font-semibold text-white hover:bg-crimson-light"
+          >
+            Open bios.json
+          </a>
+          <button
+            type="button"
+            onClick={() => copyText('Primary Sources. Public Record. Your Conclusions.', 'short bio')}
+            className="inline-flex min-h-[44px] items-center rounded border border-white/10 px-4 py-2 font-sans text-xs text-white/70 hover:border-crimson/40 hover:text-white"
+          >
+            {copied === 'short bio' ? 'Copied short bio' : 'Copy short bio'}
+          </button>
+        </div>
+      </section>
+
       {/* Platform matrix */}
       <section className="rounded-lg border border-white/5 bg-white/5 p-5">
         <h2 className="mb-3 font-sans text-xs font-bold uppercase tracking-widest text-white/50">
