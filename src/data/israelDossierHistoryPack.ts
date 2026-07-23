@@ -4086,6 +4086,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-road-network-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Road Network & Corridor Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (roads cohort)',
+    location: 'Gaza Strip main roads / north-south corridors',
+    summary:
+      'UNOSAT, OCHA, and multi-source satellite reporting document widespread cratering and destruction of Gaza’s road network and humanitarian corridors — blocking civilian evacuation, ambulance movement, and aid distribution. Pattern card for transport-network destruction as a civilian-harm multiplier distinct from housing and telecom cards.',
+    evidence:
+      'UNOSAT road-damage analyses, multi-source corridor access reporting, and OCHA logistics notes establish multi-source road-network collapse. Exact km damaged evolve; multi-source system-scale road destruction is the claim.',
+    sources: [
+      { label: 'UNOSAT satellite damage analyses', url: 'https://unosat.org' },
+      { label: 'OCHA logistics / access materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza road/corridor coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNOSAT public materials', url: 'https://unosat.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -6068,6 +6095,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['burial', 'dignity', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-roads-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Road Network & Corridor Destruction Pattern',
+    description: 'UNOSAT/OCHA multi-source documentation of cratered roads and destroyed corridors blocking civilian and aid movement.',
+    source: 'UNOSAT / OCHA / multi-outlet',
+    sourceUrl: 'https://unosat.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-road-network-destruction-pattern-2023-2025',
+      'gaza-ambulance-access-denial-pattern-2023-2025',
+      'gaza-evacuation-orders-pattern-2023-2024',
+    ],
+    tags: ['roads', 'access', 'civilians', 'children', 'gaza'],
+  },
+
 
 
 
