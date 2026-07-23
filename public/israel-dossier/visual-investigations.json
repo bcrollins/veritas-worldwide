@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T12:21:35.520Z"
+    "generatedAt": "2026-07-23T12:22:26.622Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 46,
-    "viPackCards": 38,
-    "totalIncidents": 842
+    "incidentsWithVideoAndCivilians": 50,
+    "viPackCards": 42,
+    "totalIncidents": 846
   },
   "incidents": [
     {
@@ -1249,6 +1249,126 @@
       ]
     },
     {
+      "id": "vi-israel-ground-forces-bodycam-civilian-harm-2023-2025",
+      "title": "Ground Forces Bodycam & Helmet Cam — Civilian Encounters Visual Record",
+      "date": "2023–2025",
+      "location": "Gaza Strip (multiple unit releases and leaks)",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "sources": [
+        {
+          "label": "B’Tselem video archives",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "Reuters Middle East packages",
+          "url": "https://www.reuters.com/world/middle-east/"
+        },
+        {
+          "label": "Breaking the Silence",
+          "url": "https://www.breakingthesilence.org.il/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated bodycam/helmet-cam packages",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "Wire authentication of unit footage",
+          "url": "https://www.reuters.com/world/middle-east/"
+        },
+        {
+          "type": "document",
+          "label": "Breaking the Silence testimony materials",
+          "url": "https://www.breakingthesilence.org.il/"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-pogrom-huwara-follow-on-visual-2023-2024",
+      "title": "Huwara and Follow-On Settler Riots — Expanded Video Bank",
+      "date": "2023–2024",
+      "location": "Huwara and nearby West Bank villages",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "OCHA settler violence reporting",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem Huwara corridor video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of arson aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-church-and-mosque-strikes-visual-2023-2025",
+      "title": "Churches and Mosques Hit — Visual Record of Civilian Shelter Sites Damaged",
+      "date": "2023–2025",
+      "location": "Gaza Strip (multiple places of worship used as shelters)",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "AP / Reuters packages on religious-site damage",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "Al Jazeera Gaza packages",
+          "url": "https://www.aljazeera.com/tag/gaza/"
+        },
+        {
+          "label": "OCHA humanitarian site damage updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Wire video of damaged churches/mosques used as shelters",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Press photos of worship-site damage",
+          "url": "https://www.aljazeera.com/tag/gaza/"
+        },
+        {
+          "type": "document",
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
       "id": "flour-massacre-2024",
       "title": "The Flour Massacre — Aid Seekers Shot While Waiting for Food",
       "date": "February 29, 2024",
@@ -1848,6 +1968,46 @@
           "type": "photo-essay",
           "label": "Multi-outlet medical malnutrition photo packages",
           "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-aid-pier-and-maritime-corridor-visual-2024",
+      "title": "Maritime Aid Corridor & Pier — Visual Record of Aid Flow Under Fire Conditions",
+      "date": "2024",
+      "location": "Gaza coast / temporary pier operations",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "WFP Palestine emergency",
+          "url": "https://www.wfp.org/emergencies/palestine-emergency"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters pier and maritime aid packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Wire video of pier/maritime aid operations",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "document",
+          "label": "WFP emergency updates",
+          "url": "https://www.wfp.org/emergencies/palestine-emergency"
+        },
+        {
+          "type": "document",
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org/"
         }
       ]
     },

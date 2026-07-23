@@ -1010,6 +1010,124 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: false,
   },
 
+  {
+    id: 'vi-gaza-press-vest-killings-visual-2023-2025',
+    title: 'Press Vests Under Fire — Visual Record of Journalists Killed While Clearly Marked',
+    date: '2023–2025',
+    location: 'Gaza Strip',
+    summary:
+      'CPJ tallies and multi-outlet visual packages document journalists killed while wearing press markings, carrying cameras, or livestreaming. Includes cases CPJ assesses as direct targeting and cases still under investigation.',
+    evidence:
+      'CPJ methodology, UNESCO condemnations, and multi-outlet visual packages establish multi-source documentation of press deaths. Targeting is case-level; marked-press status of many victims is multi-source verified.',
+    sources: [
+      { label: 'CPJ — Israel-Gaza war journalist casualties', url: 'https://cpj.org/special-reports/' },
+      { label: 'UNESCO Director-General statements on journalist killings', url: 'https://www.unesco.org/' },
+      { label: 'Al Jazeera Gaza journalism packages', url: 'https://www.aljazeera.com/tag/gaza/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Press-marked final streams / aftermath packages', url: 'https://www.aljazeera.com/tag/gaza/' },
+      { type: 'investigation', label: 'CPJ case tallies and methodology', url: 'https://cpj.org/special-reports/' },
+      { type: 'photo-essay', label: 'Wire photos — press vests and memorials', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-israel-ground-forces-bodycam-civilian-harm-2023-2025',
+    title: 'Ground Forces Bodycam & Helmet Cam — Civilian Encounters Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip (multiple unit releases and leaks)',
+    summary:
+      'Authenticated bodycam and helmet-cam footage from ground operations shows civilian detentions, home entries, and property destruction. Multi-outlet authentication treats large volumes as genuine unit footage—primary visual evidence of ground-force conduct toward civilians.',
+    evidence:
+      'B’Tselem compilations, Israeli media recirculation, and international wire authentication establish multi-source circulation of genuine bodycam content. Legal character of each engagement is case-level; civilian presence in footage is multi-source.',
+    sources: [
+      { label: 'B’Tselem video archives', url: 'https://www.btselem.org/video' },
+      { label: 'Reuters Middle East packages', url: 'https://www.reuters.com/world/middle-east/' },
+      { label: 'Breaking the Silence', url: 'https://www.breakingthesilence.org.il/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated bodycam/helmet-cam packages', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'Wire authentication of unit footage', url: 'https://www.reuters.com/world/middle-east/' },
+      { type: 'document', label: 'Breaking the Silence testimony materials', url: 'https://www.breakingthesilence.org.il/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: false,
+  },
+  {
+    id: 'vi-gaza-aid-pier-and-maritime-corridor-visual-2024',
+    title: 'Maritime Aid Corridor & Pier — Visual Record of Aid Flow Under Fire Conditions',
+    date: '2024',
+    location: 'Gaza coast / temporary pier operations',
+    summary:
+      'U.S. and partner maritime aid efforts produced multi-outlet video of aid offload under security constraints, alongside documentation of limited throughput relative to need. Visual packages sit beside official capacity claims for independent verification.',
+    evidence:
+      'DoD/partner public briefings, multi-outlet pier video, and WFP/OCHA throughput reporting establish multi-source documentation of maritime aid attempts and constraints. Not a claim that maritime aid replaced land access; visual scale is multi-source.',
+    sources: [
+      { label: 'WFP Palestine emergency', url: 'https://www.wfp.org/emergencies/palestine-emergency' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'AP / Reuters pier and maritime aid packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Wire video of pier/maritime aid operations', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'WFP emergency updates', url: 'https://www.wfp.org/emergencies/palestine-emergency' },
+      { type: 'document', label: 'OCHA humanitarian updates', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-pogrom-huwara-follow-on-visual-2023-2024',
+    title: 'Huwara and Follow-On Settler Riots — Expanded Video Bank',
+    date: '2023–2024',
+    location: 'Huwara and nearby West Bank villages',
+    summary:
+      'Beyond the February 2023 Huwara rampage, multi-outlet and B’Tselem video banks document repeated settler arson, assaults, and property destruction in the same corridor—often with soldiers present and non-intervening.',
+    evidence:
+      'B’Tselem video case files, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source visual documentation of repeated civilian-targeted settler violence.',
+    sources: [
+      { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'OCHA settler violence reporting', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem Huwara corridor video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem settler violence case files', url: 'https://www.btselem.org/settler_violence' },
+      { type: 'photo-essay', label: 'Wire photos of arson aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-church-and-mosque-strikes-visual-2023-2025',
+    title: 'Churches and Mosques Hit — Visual Record of Civilian Shelter Sites Damaged',
+    date: '2023–2025',
+    location: 'Gaza Strip (multiple places of worship used as shelters)',
+    summary:
+      'Multi-outlet video documents damage to churches and mosques sheltering civilians, including the Greek Orthodox Church of Saint Porphyrius complex and numerous mosques used as displacement sites. Cultural-property and civilian-shelter status are multi-source.',
+    evidence:
+      'Wire video, church/mosque authority statements, and multi-outlet investigations establish multi-source documentation of strikes affecting worship sites used as shelters. Militant-presence claims are case-level; civilian shelter use is multi-source filmed.',
+    sources: [
+      { label: 'AP / Reuters packages on religious-site damage', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'Al Jazeera Gaza packages', url: 'https://www.aljazeera.com/tag/gaza/' },
+      { label: 'OCHA humanitarian site damage updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Wire video of damaged churches/mosques used as shelters', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Press photos of worship-site damage', url: 'https://www.aljazeera.com/tag/gaza/' },
+      { type: 'document', label: 'OCHA humanitarian updates', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons', 'mk84-use'],
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
