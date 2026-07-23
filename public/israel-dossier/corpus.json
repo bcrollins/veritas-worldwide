@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:21:09.356Z",
+  "generatedAt": "2026-07-23T09:21:29.912Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 164,
-    "timelineEvents": 152,
+    "incidents": 165,
+    "timelineEvents": 153,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 150,
+    "historicalWarCrimesPack": 151,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 104
+      "post-oct7": 105
     },
     "incidentsByTier": {
-      "verified": 162,
+      "verified": 163,
       "circumstantial": 2
     },
-    "childrenTagged": 137,
-    "civiliansTagged": 162,
+    "childrenTagged": 138,
+    "civiliansTagged": 163,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3206,6 +3206,28 @@
         "starvation",
         "civilians",
         "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-banks-atms-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Banks & ATM Infrastructure Destruction Pattern",
+      "description": "World Bank multi-source documentation of destroyed/disabled bank branches and ATMs collapsing formal cash access.",
+      "source": "World Bank / OCHA / multi-outlet",
+      "sourceUrl": "https://www.worldbank.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-banks-atms-destroyed-pattern-2023-2025",
+        "gaza-cash-liquidity-banking-collapse-2023-2025",
+        "gaza-market-price-inflation-pattern-2023-2025"
+      ],
+      "tags": [
+        "banking",
+        "cash",
+        "civilians",
+        "economy",
         "gaza"
       ]
     },
@@ -10925,6 +10947,50 @@
           "type": "document",
           "label": "Israeli government public materials",
           "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-banks-atms-destroyed-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Banks & ATM Infrastructure Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (banking-infrastructure cohort)",
+      "location": "Gaza Strip bank branches / ATMs",
+      "summary": "World Bank, multi-source banking reporting, and field coverage document destruction and disablement of bank branches and ATMs across Gaza — collapsing formal cash access under siege. Pattern card for physical banking infrastructure destruction distinct from the cash-liquidity/system-paralysis card.",
+      "evidence": "World Bank economic monitoring, multi-source bank branch damage reporting, and OCHA cash-assistance notes establish multi-source banking infrastructure collapse. Exact branch counts evolve; multi-source formal banking access collapse is the claim.",
+      "sources": [
+        {
+          "label": "World Bank economic monitoring materials",
+          "url": "https://www.worldbank.org"
+        },
+        {
+          "label": "OCHA cash/access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza banking infrastructure coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "World Bank public materials",
+          "url": "https://www.worldbank.org"
         }
       ],
       "tier": "verified",
