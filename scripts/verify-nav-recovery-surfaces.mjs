@@ -136,6 +136,9 @@ const primaryBlock = app.match(/const primaryLinks: ShellLink\[\] = \[([\s\S]*?)
 assert(primaryBlock, 'primaryLinks block')
 const primaryCount = (primaryBlock[1].match(/to:\s*['"]/g) || []).length
 assert(primaryCount === 5, `primaryLinks count ${primaryCount} !== 5`)
+const footerBrowse = app.split('const browseLinks')[1]?.split('const researchLinks')[0] || ''
+assert(footerBrowse.includes('/search'), 'footer browseLinks includes Search')
+assert(footerBrowse.includes('/israel-dossier'), 'footer browseLinks includes Dossiers')
 assert(primaryBlock[1].includes('/search'), 'Search is primary hub')
 assert(primaryBlock[1].includes('/israel-dossier'), 'Dossiers is primary hub')
 assert(primaryBlock[1].includes('/profiles'), 'Profiles is primary hub')
