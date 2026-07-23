@@ -2017,4 +2017,21 @@ assert(relatedEmphSafe.includes('emphasizeTo'), 'emphasizeTo present')
 assert(relatedEmphSafe.includes('hub.to === emphasizeTo'), 'emphasize path match')
 
 
+
+// multi-line HUBS format Account pages ultimate
+for (const [name, constName] of [
+  ['AboutPage', 'ABOUT_HUBS'],
+  ['MembershipPage', 'MEMBERSHIP_HUBS'],
+  ['PrivacyPage', 'PRIVACY_HUBS'],
+  ['TermsPage', 'TERMS_HUBS'],
+  ['AccessibilityPage', 'A11Y_HUBS'],
+  ['TimelinePage', 'TIMELINE_HUBS'],
+  ['TopicsIndexPage', 'TOPICS_INDEX_HUBS'],
+]) {
+  const src = read(`src/pages/${name}.tsx`)
+  assert(src.includes(`const ${constName}`), `${constName} present`)
+  assert(!new RegExp(`const ${constName}[^=]*= \\[\\{ to:`).test(src), `${constName} multi-line format`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
