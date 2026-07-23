@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:00:01.586Z",
+  "generatedAt": "2026-07-23T07:04:37.070Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -9,7 +9,7 @@
     "actors": 45,
     "moneyTrailNodes": 19,
     "historicalWarCrimesPack": 58,
-    "legalCases": 10,
+    "legalCases": 12,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 3,
@@ -6046,6 +6046,24 @@
       "ruling": "Found evidence of war crimes and possible crimes against humanity by Israeli forces and Palestinian armed groups during Operation Cast Lead; recommended accountability processes in national and international forums.",
       "significance": "The most cited UN fact-finding product on the 2008–09 Gaza war. Later public statements by the chair about reassessing some conclusions do not erase the mission's underlying multi-source field documentation still used by courts and scholars.",
       "sourceUrl": "https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission",
+      "status": "decided"
+    },
+    {
+      "title": "UN Security Council Resolution 2712 — Gaza Humanitarian Pause Framework (2023)",
+      "court": "UN Security Council",
+      "date": "November 15, 2023",
+      "ruling": "Called for urgent and extended humanitarian pauses and corridors throughout Gaza to enable full, rapid, safe, and unhindered humanitarian access; demanded compliance by all parties with international humanitarian law.",
+      "significance": "Documents the Security Council floor on humanitarian access early in the Gaza war; implementation and pause duration remained contested.",
+      "sourceUrl": "https://digitallibrary.un.org/record/4027136",
+      "status": "decided"
+    },
+    {
+      "title": "UN General Assembly ES-10/L.31 — Immediate Ceasefire Demand (Dec 2023)",
+      "court": "UN General Assembly (Emergency Special Session)",
+      "date": "December 12, 2023",
+      "ruling": "Demanded an immediate humanitarian ceasefire, the immediate and unconditional release of all hostages, and ensuring humanitarian access; adopted by large majority with U.S. voting no.",
+      "significance": "Records the GA majority posture versus U.S. veto politics in the Security Council — structural diplomatic map of isolation vs cover.",
+      "sourceUrl": "https://digitallibrary.un.org/record/4031076",
       "status": "decided"
     }
   ],

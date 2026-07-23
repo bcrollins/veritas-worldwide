@@ -1717,6 +1717,24 @@ export const ISRAEL_DOSSIER_LEGAL_CASES: DossierLegalCase[] = [
     sourceUrl: 'https://www.ohchr.org/en/hr-bodies/hrc/special-sessions/session9/fact-finding-mission',
     status: 'decided',
   },
+  {
+    title: 'UN Security Council Resolution 2712 — Gaza Humanitarian Pause Framework (2023)',
+    court: 'UN Security Council',
+    date: 'November 15, 2023',
+    ruling: 'Called for urgent and extended humanitarian pauses and corridors throughout Gaza to enable full, rapid, safe, and unhindered humanitarian access; demanded compliance by all parties with international humanitarian law.',
+    significance: 'Documents the Security Council floor on humanitarian access early in the Gaza war; implementation and pause duration remained contested.',
+    sourceUrl: 'https://digitallibrary.un.org/record/4027136',
+    status: 'decided',
+  },
+  {
+    title: 'UN General Assembly ES-10/L.31 — Immediate Ceasefire Demand (Dec 2023)',
+    court: 'UN General Assembly (Emergency Special Session)',
+    date: 'December 12, 2023',
+    ruling: 'Demanded an immediate humanitarian ceasefire, the immediate and unconditional release of all hostages, and ensuring humanitarian access; adopted by large majority with U.S. voting no.',
+    significance: 'Records the GA majority posture versus U.S. veto politics in the Security Council — structural diplomatic map of isolation vs cover.',
+    sourceUrl: 'https://digitallibrary.un.org/record/4031076',
+    status: 'decided',
+  },
 ]
 
 export const ISRAEL_DOSSIER_EXPANDED_STATS: DossierStatCard[] = [
