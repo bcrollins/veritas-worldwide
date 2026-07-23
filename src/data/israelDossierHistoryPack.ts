@@ -4059,6 +4059,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-funeral-burial-access-denial-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Funeral & Burial Access Denial Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (burial-access cohort)',
+    location: 'Gaza Strip cemeteries / temporary burial sites',
+    summary:
+      'OCHA, multi-source municipal reporting, and field coverage document repeated denial or impossibility of dignified funerals and formal burials under bombardment and cemetery damage — forcing temporary roadside or courtyard graves. Pattern card for burial-access denial as a civilian dignity harm multiplier, distinct from cemetery physical destruction card.',
+    evidence:
+      'OCHA protection materials, multi-source municipal burial reports, and multi-outlet visual coverage establish multi-source burial access failures. Exact temporary-grave counts evolve; multi-source systemic burial disruption is the claim.',
+    sources: [
+      { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza burial/funeral coverage', url: 'https://apnews.com' },
+      { label: 'OHCHR public materials', url: 'https://www.ohchr.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -6024,6 +6051,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['banking', 'cash', 'civilians', 'economy', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-burial-access-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Funeral & Burial Access Denial Pattern',
+    description: 'OCHA multi-source documentation of disrupted funerals and formal burials under bombardment and cemetery damage.',
+    source: 'OCHA / multi-outlet / OHCHR',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-funeral-burial-access-denial-pattern-2023-2025',
+      'gaza-cemetery-destruction-pattern-2023-2025',
+      'gaza-hospital-mass-graves-pattern-2023-2025',
+    ],
+    tags: ['burial', 'dignity', 'civilians', 'children', 'gaza'],
+  },
+
 
 
 
