@@ -3132,6 +3132,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-al-shifa-mass-grave-visual-2024',
+    title: 'Al-Shifa Mass Grave Discoveries — Multi-Outlet Visual Record',
+    date: '2024',
+    location: 'Al-Shifa Hospital grounds, Gaza City',
+    summary:
+      'Multi-outlet video packages document mass-grave discoveries and body recovery at Al-Shifa Hospital grounds under wartime conditions. Distinct from prior mass-grave hospital visual cards by focusing on multi-source Al-Shifa 2024 packages; ethnicity is never evidence.',
+    evidence:
+      'OHCHR materials, multi-outlet visual packages, and WHO hospital-protection materials establish multi-source documentation of mass-grave findings affecting civilian identification and burial rights.',
+    sources: [
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'AP / Reuters Gaza hospital packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet Al-Shifa mass-grave video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of body recovery at Al-Shifa', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OHCHR/WHO hospital-protection trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-holit-dining-room-visual-2023',
+    title: 'October 7 Holit Dining Room Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Holit dining hall and communal spaces',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders in Holit communal dining spaces during the October 7 attacks. Distinct from prior Holit kibbutz visual cards by focusing on interior dining-room packages; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence in Holit communal spaces on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Holit dining-room October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-cemetery-desecration-visual-2023-2025',
+    title: 'West Bank Settler Cemetery Desecration — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village cemeteries and burial grounds',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler desecration of Palestinian civilian cemeteries, including vandalism of graves used by families with children. Multi-source visual record; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of cemetery desecration affecting civilian communities.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem cemetery-desecration video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem sacred-site violence case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */

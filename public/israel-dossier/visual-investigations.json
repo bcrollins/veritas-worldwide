@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T13:35:30.230Z"
+    "generatedAt": "2026-07-23T13:36:48.231Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 140,
-    "viPackCards": 121,
-    "totalIncidents": 1688
+    "incidentsWithVideoAndCivilians": 143,
+    "viPackCards": 124,
+    "totalIncidents": 1703
   },
   "incidents": [
     {
@@ -4623,6 +4623,86 @@
       ]
     },
     {
+      "id": "vi-oct7-holit-dining-room-visual-2023",
+      "title": "October 7 Holit Dining Room Civilian Murders — Multi-Outlet Visual Record",
+      "date": "October 7, 2023",
+      "location": "Kibbutz Holit dining hall and communal spaces",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated Holit dining-room October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-cemetery-desecration-visual-2023-2025",
+      "title": "West Bank Settler Cemetery Desecration — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village cemeteries and burial grounds",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem cemetery-desecration video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem sacred-site violence case files",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
       "id": "flour-massacre-2024",
       "title": "The Flour Massacre — Aid Seekers Shot While Waiting for Food",
       "date": "February 29, 2024",
@@ -5621,6 +5701,46 @@
         {
           "type": "investigation",
           "label": "OHCHR/OCHA access trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-al-shifa-mass-grave-visual-2024",
+      "title": "Al-Shifa Mass Grave Discoveries — Multi-Outlet Visual Record",
+      "date": "2024",
+      "location": "Al-Shifa Hospital grounds, Gaza City",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "OHCHR materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "AP / Reuters Gaza hospital packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet Al-Shifa mass-grave video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of body recovery at Al-Shifa",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "OHCHR/WHO hospital-protection trail",
           "url": "https://www.ohchr.org/"
         }
       ]

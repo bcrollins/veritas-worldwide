@@ -239,3 +239,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | flour massacre · Be’eri dining room · church attacks |
 | Pure | visual + israel-dossier + research-pack PASS |
 
+
+## Interval densify — tip post-1688 bubble-CPAP / Al-Shifa mass grave / cemetery desecration
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza bubble-CPAP/surfactant/umbilical-tape/radiant-warmer · hostage memorize-faces/silent-dinners/mouth-gagged/stadium-rallies · WB tomato-poles/music-instruments/cucumber-nets/herb-stones |
+| VI | Al-Shifa mass grave · Holit dining · cemetery desecration |
+| Pure | visual + israel-dossier + research-pack PASS |
+
