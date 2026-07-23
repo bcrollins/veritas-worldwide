@@ -37,6 +37,21 @@ const tools = [
     external: true,
   },
   {
+    to: '/research-pack.zip',
+    title: 'Offline research pack (ZIP)',
+    blurb:
+      'Single download of public machine corpora (profiles, ROC, Israel, taxonomy, soft floors, manifests) plus README. Entity publisher only.',
+    privacy: 'public · rate-limited · entity publisher',
+    external: true,
+  },
+  {
+    to: '/research-pack-manifest.json',
+    title: 'Research pack manifest',
+    blurb: 'SHA-256 and per-file inventory for the offline research pack.',
+    privacy: 'public · entity publisher',
+    external: true,
+  },
+  {
     to: '/record-of-jesus-christ',
     title: 'Record of Jesus Christ',
     blurb: 'Tier-labeled claim corpus with proofVsConcept filters, JSON/CSV/PDF export. Attribution: Veritas Worldwide only.',

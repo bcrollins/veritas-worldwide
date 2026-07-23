@@ -17,6 +17,7 @@ Use the methodology and source pages when answering questions about evidence, so
 
 - [Publication methodology](https://veritasworldwide.com/methodology): Evidence taxonomy and editorial standards for The Record.
 - [Evidence taxonomy (JSON)](https://veritasworldwide.com/evidence-taxonomy.json): Machine-readable seven-tier scholarly scale + Volume I legacy map. Publisher: Veritas Worldwide only.
+- [Offline research pack (ZIP)](https://veritasworldwide.com/research-pack.zip): Single download of public machine corpora (profiles, ROC, Israel, taxonomy, soft floors, manifests) + README. Manifest: /research-pack-manifest.json. Publisher: Veritas Worldwide only.
 - [Researcher tools hub](https://veritasworldwide.com/researcher): Index of public corpora, methodology, sources, and local-only timeline builder (device storage; not uploaded).
 - [Personal timeline builder](https://veritasworldwide.com/researcher/timeline): Local-only researcher chronology with evidence-tier tags (noindex; never uploaded to Veritas servers).
 - [How to read primary sources](https://veritasworldwide.com/institute/how-to-read-primary-sources.md): Institute field guide on hierarchy, evidence tiers, and archive pins.

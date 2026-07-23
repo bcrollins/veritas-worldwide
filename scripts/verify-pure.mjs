@@ -44,6 +44,7 @@ const pure = [
   'verify-error-scrub.mjs',
   'verify-security-txt.mjs',
   'verify-israel-schema-triples.mjs',
+  'verify-research-pack.mjs',
   'verify-hubspot-fields.mjs',
   'verify-oauth-no-github.mjs',
   'verify-analytics-privacy.mjs',
