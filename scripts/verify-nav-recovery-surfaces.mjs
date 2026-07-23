@@ -74,6 +74,7 @@ const surfaces = [
   ['src/components/StickyMembershipBar.tsx', 'text-white'],
   ['src/components/StickyMembershipBar.tsx', 'bg-crimson'],
   ['src/components/StickyMembershipBar.tsx', 'hover:bg-crimson-dark'],
+  ['src/components/StickyMembershipBar.tsx', 'shrink-0'],
   ['src/components/StickyMembershipBar.tsx', 'veritas_cookie_consent'],
 ]
 
