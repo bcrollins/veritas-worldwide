@@ -2761,4 +2761,29 @@ assert(read('src/pages/SourcesPage.tsx').includes('sources-related-hubs'), 'perp
 assert(read('src/pages/ResearcherHubPage.tsx').includes('researcher-related-hubs'), 'perpetual v19 researcher')
 assert(read('src/pages/RecordOfJesusChristPage.tsx').includes('roc-related-hubs'), 'perpetual v19 roc')
 
+
+
+// RelatedHubs platform perpetual densify lock v20
+assert(surfaces.length >= 115, `perpetual v20 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v20 RelatedHubs focus')
+assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v20 ResearchHubChips focus')
+assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-2'), 'perpetual v20 DossierHubSpokes focus')
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v20 PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v20 emphasize')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v20 mobile tab bar')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v20 server soft-404')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v20 soft-404')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v20 institute')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v20 methodology')
+assert(read('src/pages/SourcesPage.tsx').includes('sources-related-hubs'), 'perpetual v20 sources')
+assert(read('src/pages/ResearcherHubPage.tsx').includes('researcher-related-hubs'), 'perpetual v20 researcher')
+assert(read('src/pages/VolumeIIHubPage.tsx').includes('volume-ii-related-hubs'), 'perpetual v20 volume-ii')
+assert(read('src/pages/ContentPackPage.tsx').includes('content-pack-related-hubs'), 'perpetual v20 content-pack')
+assert(read('src/pages/BibleHistoryPage.tsx').includes('bible-history-related-hubs'), 'perpetual v20 bible')
+assert(read('src/pages/RecordOfJesusChristPage.tsx').includes('roc-related-hubs'), 'perpetual v20 roc')
+assert(read('src/pages/PersonalTimelinePage.tsx').includes('personal-timeline-related-hubs'), 'perpetual v20 timeline')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v20 coverage')
+assert(read('scripts/verify-pure.mjs').includes('verify-related-hubs-coverage.mjs'), 'perpetual v20 pure wire')
+assert(read('package.json').includes('verify:related-hubs-coverage'), 'perpetual v20 package script')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
