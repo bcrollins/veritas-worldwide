@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:28:08.075Z",
-  "claimCount": 227,
+  "generatedAt": "2026-07-23T09:30:47.506Z",
+  "claimCount": 236,
   "tierHistogram": {
-    "verified": 78,
-    "well_attested": 86,
+    "verified": 81,
+    "well_attested": 90,
     "contested": 28,
-    "interpretive": 18,
+    "interpretive": 20,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 12
@@ -66,6 +66,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ane-ekron-inscription",
+      "claim": "The Ekron royal dedicatory inscription names Philistine rulers and a temple of Ptgyh — primary control for Iron Age Philistine urban religion and politics.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave15.ts"
     },
     {
       "id": "ane-exodus-historicity",
@@ -248,6 +255,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave10.ts"
+    },
+    {
+      "id": "arch-kursi",
+      "claim": "Kursi (traditional Gergesa/Gadara region) has a Byzantine monastery commemorating the swine miracle tradition — reception archaeology, not first-century proof of the miracle.",
+      "tier": "interpretive",
+      "proofVsConcept": "tradition",
+      "file": "src/data/recordOfJesusChristWave15.ts"
     },
     {
       "id": "arch-magdala",
@@ -467,6 +481,13 @@
       "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
+      "id": "cosmo-reionization",
+      "claim": "CMB optical depth and high-z galaxy surveys constrain the epoch of reionization when the first stars ionized the intergalactic medium.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave15.ts"
+    },
+    {
       "id": "cosmo-sound-horizon",
       "claim": "The sound horizon at recombination sets the BAO standard-ruler scale used in late-universe distance measurements.",
       "tier": "verified",
@@ -570,6 +591,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "ec-martyrdom-polycarp",
+      "claim": "The Martyrdom of Polycarp (mid-2nd c. traditions) is an early Christian martyr narrative shaping later hagiography.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave15.ts"
     },
     {
       "id": "ec-melito-passover",
@@ -901,6 +929,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "hj-tax-collectors",
+      "claim": "Association with tax collectors / toll collectors is multiply attested and often treated as historically characteristic of Jesus’ social practice (table fellowship theme).",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave15.ts"
+    },
+    {
       "id": "hj-temple-action",
       "claim": "An action by Jesus in the Temple (disruption of commerce / symbolic demonstration) is multiply attested; interpretation ranges from prophetic sign to failed revolt cue.",
       "tier": "well_attested",
@@ -927,6 +962,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave13.ts"
+    },
+    {
+      "id": "mod-criteria-coherence-limits",
+      "claim": "Coherence criteria risk circularity: they test sayings against a reconstructed “core Jesus” that itself depends on prior authentications.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave15.ts"
     },
     {
       "id": "mod-criteria-critique",
@@ -1102,6 +1144,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave6.ts"
+    },
+    {
+      "id": "nc-galen-christians",
+      "claim": "Galen (2nd c.) makes brief remarks on Christians as a philosophical school/sect — hostile/neutral medical-philosopher notice of a known group.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave15.ts"
     },
     {
       "id": "nc-james",
@@ -1307,6 +1356,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "nt-itacism",
+      "claim": "Itacism and vowel interchange are common Greek scribal phenomena that generate many orthographic variants without semantic change.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave15.ts"
+    },
+    {
       "id": "nt-john-historicity",
       "claim": "John’s Gospel is generally dated later than the Synoptics; its independent historical value for Jesus research is debated (high Christology vs. early tradition cores).",
       "tier": "contested",
@@ -1445,6 +1501,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "st-alexander-jannaeus",
+      "claim": "Alexander Jannaeus (Hasmonean king-priest) is documented in Josephus and coins; his reign illustrates internal Judean conflict before Roman dominance.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave15.ts"
     },
     {
       "id": "st-coinage-revolt",
