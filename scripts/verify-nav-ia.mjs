@@ -263,6 +263,13 @@ assert(app.includes('/content-pack') || app.includes('/researcher'), 'shell reta
 // Browse drawer re-homes News + Forum (no More junk)
 assert(app.includes('/news') && app.includes('/forum'), 'Browse drawer News+Forum')
 assert(!/label:\s*['"]More['"]/.test(app), 'No More junk drawer label')
+
+// Dossiers hub-and-spoke: deep-state + forum mark dossiers active
+assert(app.includes('/deep-state') && app.includes('/forum'), 'shell deep-state+forum')
+// spokes component variants used on family pages
+assert(fs.readFileSync(path.join(root, 'src/pages/IsraelDossierPage.tsx'), 'utf8').includes('DossierHubSpokes'), 'Israel mounts spokes')
+assert(fs.readFileSync(path.join(root, 'src/pages/DeepStatePage.tsx'), 'utf8').includes('DossierHubSpokes'), 'DeepState mounts spokes')
+assert(fs.readFileSync(path.join(root, 'src/pages/ForumPage.tsx'), 'utf8').includes('DossierHubSpokes'), 'Forum mounts spokes')
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
