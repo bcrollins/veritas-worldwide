@@ -345,3 +345,11 @@ Shell keyboard a11y now covers: skip-link (existing), desktop nav, mobile tabs, 
 | `231bcc81` | RelatedHubs useLocation + aria-current=page on active primary hub |
 | `3cca1418` | pure densify lock v34 + coverage suite aria-current assert |
 
+
+## Sprint 9i — RelatedHubs activeChip visual current hub
+
+| Commit | Unit |
+|--------|------|
+| `b94ceadd` | activeChip (crimson) + darkActiveChip (amber) for route-matching hub |
+| `9848c02d` | pure densify lock v35 + coverage asserts |
+
