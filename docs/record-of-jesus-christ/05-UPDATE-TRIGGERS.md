@@ -7,6 +7,10 @@
 | Trigger | Action |
 |---------|--------|
 | New INTF Liste entry / major papyrus publication | Add claim or update MS catalogue card; re-export corpus.json |
+| ECM fascicle / NA29 release | Update `mod-na28-ubs5`, `nt-ecm-method`; bump wave file; re-export PDF |
+| Major cosmological parameter paper (Planck successor / DESI BAO) | Update cosmo-* claims; keep science_model hygiene |
+| Authenticated new Levantine inscription relevant to Israel/Judah | Add ane-* or arch-* card with museum/primary citation |
+| Operator identity reappearance in sameAs / footer | P0: scrub + invert verify-seo-meta (forbid personal GH) |
 | Peer-reviewed dig report (IAA, BASOR, IEJ, etc.) | Stratigraphy claim with ¹⁴C ranges if published |
 | Radiocarbon program results (DSS, relics) | Update science_model claims; never inflate to VERIFIED without data |
 | Material consensus shift (e.g., TF reconstructions) | Contested card rewrite with both poles |

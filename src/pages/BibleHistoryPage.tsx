@@ -6,6 +6,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
@@ -394,6 +395,23 @@ export default function BibleHistoryPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Bible History', url: `${SITE_URL}/bible` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'How does this Bible page relate to The Record of Jesus Christ?',
+          answer:
+            'This is the companion evidence surface for biblical manuscript and archaeological claims. The deeper chronological compilation with 160+ tier-labeled claims lives at /record-of-jesus-christ.',
+        },
+        {
+          question: 'What evidence tiers are used?',
+          answer:
+            'The same seven scholarly tiers as The Record of Jesus Christ: Verified through Literary/Theological. Proof-grade data is never mixed with tradition-as-fact.',
+        },
+        {
+          question: 'Who publishes this material?',
+          answer:
+            'Veritas Worldwide only. No personal author byline. Contact rights@veritasworldwide.com for corrections.',
+        },
       ]),
     ])
     return () => {
