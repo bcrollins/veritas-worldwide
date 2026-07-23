@@ -509,3 +509,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip past 2118+ |
 
+
+## Interval densify — tip post-2175 vaccine densify + oxygen plant / Rehovot / oil-tank destruction
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza anti-D-emergency/rabies/snake-antivenom · hostage rooftop-sandbags/backpack-install/guard-watch · WB kale/stethoscope/savory-seedlings |
+| VI | oxygen plant · Rehovot · olive-oil tank destruction |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip past 2129+ |
+

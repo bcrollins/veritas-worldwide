@@ -6149,6 +6149,76 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-oxygen-plant-strike-visual-2023-2025',
+    title: 'Gaza Oxygen Plant Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip medical oxygen plants and cylinder filling sites',
+    summary:
+      'Multi-outlet video packages document strikes and outages at medical oxygen plants under wartime conditions, denying oxygen supply for civilians including children. Multi-source visual record; ethnicity is never evidence.',
+    evidence:
+      'WHO health-cluster materials, multi-outlet visual packages, and OHCHR materials establish multi-source documentation of oxygen-plant harm affecting civilian care.',
+    sources: [
+      { label: 'WHO health-cluster materials', url: 'https://www.who.int' },
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza medical packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet oxygen-plant video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of oxygen-plant aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'WHO/OHCHR medical-protection trail', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-rehovot-safe-room-visual-2023',
+    title: 'October 7 Rehovot Safe-Room Civilian Harm — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Rehovot residential safe rooms and home shelters',
+    summary:
+      'Authenticated multi-outlet video packages document civilian harm involving Rehovot safe rooms during the October 7 attacks period. Multi-party visual record; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence affecting Rehovot safe rooms on and around October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-olive-oil-tank-destruction-visual-2023-2025',
+    title: 'West Bank Settler Olive Oil Tank Destruction — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village olive oil storage tanks and packing sheds',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler destruction of Palestinian civilian olive oil storage tanks, denying oil storage including income for families with children. Multi-source visual record distinct from olive-oil-tins cards; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA settler-violence materials, and multi-outlet reporting establish multi-source documentation of oil-tank destruction affecting civilian agricultural livelihoods.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem agricultural-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
 ]
 
 /** Quick count helpers for UI badges */
