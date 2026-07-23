@@ -5450,6 +5450,26 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'haley-july4-cookout-67pct-inflation-2022',
+        statement:
+          'The cost of a Fourth of July cookout increased by 67.2% because of inflation (summing six percentage price jumps into one total).',
+        saidAt: 'July 4, 2022',
+        context:
+          'Tweet + Stand for America graphic attacking Biden-era inflation using six cookout staples; staff deleted the tweet after math criticism.',
+        whyFalse:
+          'PolitiFact rated False. Percentage increases for separate items cannot be added into a single “total increase.” Averaging the six listed increases yields ~11%, not 67.2%. Item-level figures were closer to USDA ranges, but the headline total was arithmetic nonsense.',
+        correction:
+          'You cannot sum independent percentage price changes into one total percentage increase; the graphic’s 67.2% total is invalid.',
+        statementSource: 'Nikki Haley tweet / Stand for America graphic (July 4, 2022) — PolitiFact capture',
+        statementUrl: 'https://www.politifact.com/personalities/nikki-haley/',
+        debunkSource: 'PolitiFact — False (July 5, 2022); USDA ERS food price indexes; Farm Bureau cookout cost series',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2022/jul/05/nikki-haley/fact-checking-nikki-haley-july-4-cookout-costs/',
+        severity: 'material',
+        tier: 'verified',
+      },
+
     ],
     websites: [
       { label: 'Campaign / public site', url: 'https://www.nikki.org' },
@@ -6068,6 +6088,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'omar-500-gun-deaths-per-day-2019',
+        statement: '“Every day on average 500 people die from gun violence.”',
+        saidAt: 'June 5, 2019',
+        context:
+          'Tweet supporting House-passed background-check bills (H.R. 8 and related measures) and urging Senate action — framed as a U.S. gun-violence epidemic.',
+        whyFalse:
+          'PolitiFact rated False. CDC fatal-injury data for 2017 showed ~39,773 firearm deaths (~109/day). A 2013–2017 average is ~100/day. The ~500/day figure matches global estimates or nonfatal+fatal U.S. injuries, not U.S. deaths in the domestic-legislation context of Omar’s tweet.',
+        correction:
+          'U.S. gun deaths average roughly 100 per day on recent CDC tallies, not 500.',
+        statementSource: 'Rep. Ilhan Omar tweet (June 5, 2019) — PolitiFact statement capture',
+        statementUrl: 'https://www.politifact.com/personalities/ilhan-omar/',
+        debunkSource: 'PolitiFact — False (June 12, 2019); CDC fatal injury reports',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2019/jun/12/ilhan-omar/rep-ilhan-omars-claim-high-there-arent-500-gun-dea/',
+        severity: 'material',
+        tier: 'verified',
+      },
+
     ],
     websites: [
       { label: 'Official House site', url: 'https://omar.house.gov' },

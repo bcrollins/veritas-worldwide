@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:22:56.029Z",
+  "generatedAt": "2026-07-23T09:24:47.710Z",
   "count": 96,
   "profiles": [
     {
@@ -838,8 +838,8 @@
         "AIPAC",
         "2024 Primary"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {
@@ -928,8 +928,8 @@
         "Ceasefire Advocate",
         "Integrity Docket"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {
