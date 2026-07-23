@@ -28,7 +28,7 @@ const operatingPrinciples = [
   },
   {
     title: 'Fund without distorting',
-    body: 'Membership and donations fund the work, but they do not change the sourcing rules The optional Comprehensive Online Profile ($499) is a separate private OSINT research service — not part of the free public archive., evidence language, or what remains publicly inspectable.',
+    body: 'Membership and donations fund the work, but they do not change the sourcing rules, evidence language, or what remains publicly inspectable. The optional Comprehensive Online Profile ($499) is a separate private OSINT research service — not part of the free public archive.',
   },
 ]
 
