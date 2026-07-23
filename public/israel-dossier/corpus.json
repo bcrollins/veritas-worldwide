@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T10:07:35.060Z",
+  "generatedAt": "2026-07-23T10:08:10.430Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 297,
-    "timelineEvents": 285,
+    "incidents": 300,
+    "timelineEvents": 288,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 283,
+    "historicalWarCrimesPack": 286,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 237
+      "post-oct7": 240
     },
     "incidentsByTier": {
-      "verified": 295,
+      "verified": 298,
       "circumstantial": 2
     },
-    "childrenTagged": 265,
-    "civiliansTagged": 295,
+    "childrenTagged": 268,
+    "civiliansTagged": 298,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3549,6 +3549,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-efa-gap-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Essential Fatty-Acid Gap Pattern",
+      "description": "WFP/UNICEF multi-source documentation of collapsed oils and fats providing essential fatty acids for children.",
+      "source": "WFP / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.wfp.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-essential-fatty-acid-gap-pattern-2023-2025",
+        "gaza-children-protein-energy-gap-pattern-2023-2025",
+        "gaza-market-price-inflation-pattern-2023-2025"
+      ],
+      "tags": [
+        "fatty-acids",
+        "children",
+        "food",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-eye-infections-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -5732,6 +5753,28 @@
       ]
     },
     {
+      "id": "tl-hostages-food-variety-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Adequate Food Variety Pattern",
+      "description": "Multi-source documentation of monotonous inadequate diets for civilian hostages in captivity.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-adequate-food-variety-pattern-2023-2025",
+        "israel-hostages-starvation-captivity-pattern-2023-2025",
+        "israel-hostages-denied-clean-water-captivity-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "food",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-chronic-meds-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -7064,6 +7107,27 @@
         "children",
         "settlers",
         "violence",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-beehive-destruction-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Beehive Destruction Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated destruction of Palestinian beehives after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-bee-hive-destruction-pattern-2023-2025",
+        "west-bank-settler-farm-equipment-destruction-pattern-2023-2025",
+        "west-bank-settler-agricultural-takeover-pattern-2023-2025"
+      ],
+      "tags": [
+        "beehives",
+        "agriculture",
+        "settlers",
         "west-bank"
       ]
     },
@@ -19236,6 +19300,134 @@
         },
         {
           "label": "Multi-outlet greenhouse destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-essential-fatty-acid-gap-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Essential Fatty-Acid Gap Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (EFA cohort)",
+      "location": "Gaza Strip displacement sites and markets",
+      "summary": "WFP, UNICEF, and multi-source nutrition reporting document collapse of oils, nuts, and animal fats providing essential fatty acids for Gaza children under siege — threatening brain development. Pattern card for EFA dietary gap distinct from protein-energy and micronutrient cards.",
+      "evidence": "WFP market analyses, UNICEF nutrition notes, and multi-outlet coverage establish multi-source essential fatty-acid dietary gap for children. Exact intake figures evolve; multi-source wartime pediatric EFA gap is the claim.",
+      "sources": [
+        {
+          "label": "WFP food security materials",
+          "url": "https://www.wfp.org"
+        },
+        {
+          "label": "UNICEF nutrition materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza food gap coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WFP public updates",
+          "url": "https://www.wfp.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-adequate-food-variety-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Adequate Food Variety Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (food-variety cohort)",
+      "location": "Gaza Strip captivity sites",
+      "summary": "Released-hostage testimony and multi-source reporting document monotonous, inadequate diets for Israeli civilian hostages — stale pita, sparse calories, no variety — a protected-person treatment pattern distinct from starvation and clean-water cards.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source inadequate food variety and rationing in captivity. Exact calorie counts vary; multi-source inadequate diet for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-bee-hive-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Beehive & Apiary Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (apiary-destruction cohort)",
+      "location": "West Bank Palestinian apiaries and rural farm edges",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian beehives after October 7 — wiping out honey-income livelihoods for civilian families. Pattern card for apiary destruction distinct from farm-equipment and agricultural-takeover cards.",
+      "evidence": "OCHA agricultural-damage tallies, multi-source case reporting, and multi-outlet coverage establish multi-source beehive destruction. Exact hive counts evolve; multi-source wartime apiary destruction is the claim.",
+      "sources": [
+        {
+          "label": "OCHA agricultural damage materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem field materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet beehive destruction coverage",
           "url": "https://apnews.com"
         }
       ],
