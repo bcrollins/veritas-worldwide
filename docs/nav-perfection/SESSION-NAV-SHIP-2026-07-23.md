@@ -309,3 +309,13 @@ Shell keyboard a11y now covers: skip-link (existing), desktop nav, mobile tabs, 
 | `2bed2fb7` | AuthModal focus-visible |
 | `f23938bd`–`…` | pure densify locks v25–v27 / IA v19 |
 
+
+## Sprint 9e — content engagement keyboard focus
+
+| Commit | Unit |
+|--------|------|
+| `9e577ebe` | NewsletterSignup focus-visible |
+| `1fd73775` | SharePanel focus-visible |
+| `9909ce5f` | CorrectionsCTA focus-visible |
+| `a7d194fd` / `e5ba8fbb` | pure densify locks v28–v29 |
+
