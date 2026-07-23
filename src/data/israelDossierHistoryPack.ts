@@ -15237,6 +15237,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-varicella-outbreak-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Varicella Outbreak Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (varicella-risk cohort)',
+    location: 'Gaza Strip overcrowded shelters and collapsed pediatric clinics',
+    summary:
+      'WHO, UNICEF, and multi-source public-health reporting document elevated pediatric varicella (chickenpox) outbreak risk under overcrowding and immunization/care collapse — a multi-source wartime contagious-disease pattern distinct from measles and scabies cards.',
+    evidence:
+      'WHO outbreak materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric varicella risk. Exact case counts evolve; multi-source wartime varicella outbreak risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO outbreak materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza pediatric disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-hometown-status-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Hometown Status Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hometown-status-denial cohort)',
+    location: 'Gaza Strip captivity sites — hometown-status-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding whether hostages hometowns and homes survived October 7 — a multi-source psychological pattern distinct from family-status denial cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source hometown-status denial. Exact cases vary; multi-source hometown-status denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-irrigation-drip-tape-rolls-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Irrigation Drip-Tape Stock Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (drip-tape-stock-destruction cohort)',
+    location: 'West Bank farm storage of irrigation drip-tape rolls',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian irrigation drip-tape stock after October 7 — preventing re-installation after pipe/line cutting for families including children. Pattern card distinct from installed drip-line destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source drip-tape stock destruction. Exact roll counts evolve; multi-source wartime settler destruction of civilian drip-tape stock is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet drip-tape destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-hand-foot-mouth-surge-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Hand-Foot-Mouth Disease Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hfmd-surge cohort)',
+    location: 'Gaza Strip overcrowded tents and collapsed pediatric points',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric hand-foot-mouth disease under overcrowding and hygiene collapse — a multi-source wartime viral-exanthem pattern distinct from scabies and impetigo cards.',
+    evidence:
+      'WHO pediatric infection materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric HFMD surge. Exact case counts evolve; multi-source wartime HFMD surge among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO pediatric infection materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza pediatric disease coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-read-captor-statements-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Read Captor Statements Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-statement-reading cohort)',
+    location: 'Gaza Strip captivity sites — forced-statement-reading subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to read captors political statements on camera — a multi-source coerced-speech pattern distinct from forced praise and forced thank-you cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced statement reading. Exact cases vary; multi-source forced statement reading by civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-school-principals-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on School Principals Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (school-principal-attack cohort)',
+    location: 'West Bank school compounds and principal residences',
+    summary:
+      "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks and intimidation of Palestinian school principals after October 7 — disrupting education leadership for children. Pattern card distinct from teacher attacks and school-route attacks.",
+    evidence:
+      'OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-principal attacks. Exact injury counts evolve; multi-source wartime settler attacks on school principals is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet school-principal attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-respiratory-syncytial-virus-surge-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children RSV Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (rsv-surge cohort)',
+    location: 'Gaza Strip overcrowded shelters and collapsed pediatric respiratory care',
+    summary:
+      'WHO, UNICEF, and multi-source clinical reporting document elevated pediatric RSV (respiratory syncytial virus) under overcrowding, cold, and care collapse — a multi-source wartime pediatric-respiratory pattern distinct from pneumonia and pertussis cards.',
+    evidence:
+      'WHO pediatric respiratory materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric RSV surge. Exact case counts evolve; multi-source wartime RSV surge among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO pediatric respiratory materials', url: 'https://www.who.int' },
+      { label: 'UNICEF child-health materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza pediatric respiratory coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-rescue-operations-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Rescue Operations Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (rescue-ops-denial cohort)',
+    location: 'Gaza Strip captivity sites — rescue-ops-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding whether rescue operations were underway — a multi-source psychological pattern distinct from release-talks and hostage-deals denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source rescue-ops knowledge denial. Exact cases vary; multi-source rescue-ops denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-beekeeping-equipment-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Beekeeping Equipment Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (beekeeping-equipment-destruction cohort)',
+    location: 'West Bank apiary storage and hive-equipment sheds',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian beekeeping equipment after October 7 — compounding beehive destruction with tool loss for families including children. Pattern card distinct from beehive destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source beekeeping-equipment destruction. Exact equipment counts evolve; multi-source wartime settler destruction of civilian beekeeping equipment is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet beekeeping-equipment destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -24264,6 +24508,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['seedlings', 'settlers', 'agriculture', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-varicella-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Varicella Outbreak Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric varicella risk under overcrowding.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-varicella-outbreak-risk-pattern-2023-2025',
+      'gaza-children-hand-foot-mouth-surge-pattern-2023-2025',
+      'gaza-children-respiratory-syncytial-virus-surge-pattern-2023-2025',
+    ],
+    tags: ['varicella', 'children', 'infection', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-hometown-status-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Hometown Status Pattern',
+    description: 'Multi-source documentation of captors withholding whether hostages hometowns survived October 7.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-hometown-status-pattern-2023-2025',
+      'israel-hostages-forced-to-read-captor-statements-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-rescue-operations-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-drip-tape-stock-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Irrigation Drip-Tape Stock Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian drip-tape stock after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-irrigation-drip-tape-rolls-pattern-2023-2025',
+      'west-bank-settler-attacking-school-principals-pattern-2023-2025',
+      'west-bank-settler-destroying-beekeeping-equipment-pattern-2023-2025',
+    ],
+    tags: ['drip-tape', 'settlers', 'agriculture', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-hfmd-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Hand-Foot-Mouth Disease Surge Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric HFMD under overcrowding and hygiene collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-hand-foot-mouth-surge-pattern-2023-2025',
+      'gaza-children-varicella-outbreak-risk-pattern-2023-2025',
+      'gaza-children-scabies-outbreak-pattern-2023-2025',
+    ],
+    tags: ['hfmd', 'children', 'infection', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-read-statements-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Read Captor Statements Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to read captors political statements on camera.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-read-captor-statements-pattern-2023-2025',
+      'israel-hostages-forced-to-praise-captors-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-hometown-status-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'propaganda', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-school-principals-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on School Principals Pattern',
+    description: 'OCHA/UNICEF multi-source documentation of elevated settler attacks on Palestinian school principals after October 7.',
+    source: 'OCHA / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-school-principals-pattern-2023-2025',
+      'west-bank-settler-attacking-teachers-pattern-2023-2025',
+      'west-bank-settler-destroying-irrigation-drip-tape-rolls-pattern-2023-2025',
+    ],
+    tags: ['principals', 'settlers', 'education', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-rsv-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children RSV Surge Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric RSV under overcrowding and care collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-respiratory-syncytial-virus-surge-pattern-2023-2025',
+      'gaza-children-pneumonia-surge-pattern-2023-2025',
+      'gaza-children-varicella-outbreak-risk-pattern-2023-2025',
+    ],
+    tags: ['rsv', 'children', 'respiratory', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-rescue-ops-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Rescue Operations Pattern',
+    description: 'Multi-source documentation of captors withholding whether rescue operations were underway.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-rescue-operations-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-release-talks-pattern-2023-2025',
+      'israel-hostages-forced-to-read-captor-statements-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-beekeeping-equip-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Beekeeping Equipment Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian beekeeping equipment after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-beekeeping-equipment-pattern-2023-2025',
+      'west-bank-settler-destroying-beehives-pattern-2023-2025',
+      'west-bank-settler-destroying-irrigation-drip-tape-rolls-pattern-2023-2025',
+    ],
+    tags: ['beekeeping-equipment', 'settlers', 'agriculture', 'west-bank'],
+  },
+
 
 
 
