@@ -764,4 +764,10 @@ assert(stickyPassive.includes('passive: true') || stickyPassive.includes('passiv
 const stickyGa = read('src/components/StickyMembershipBar.tsx')
 assert(stickyGa.includes("trackSupportClick('sticky-bar')") || stickyGa.includes('sticky-bar'), 'sticky-bar GA source')
 
+
+// Sticky membership session dismiss key
+const stickyDismiss = read('src/components/StickyMembershipBar.tsx')
+assert(stickyDismiss.includes('veritas_sticky_dismissed'), 'session dismiss key lock')
+assert(stickyDismiss.includes('sessionStorage'), 'sessionStorage dismiss storage')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
