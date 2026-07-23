@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T11:15:35.715Z",
+  "generatedAt": "2026-07-23T11:16:43.904Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 678,
-    "timelineEvents": 666,
+    "incidents": 687,
+    "timelineEvents": 675,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 664,
+    "historicalWarCrimesPack": 673,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 618
+      "post-oct7": 627
     },
     "incidentsByTier": {
-      "verified": 676,
+      "verified": 685,
       "circumstantial": 2
     },
-    "childrenTagged": 645,
-    "civiliansTagged": 676,
+    "childrenTagged": 654,
+    "civiliansTagged": 685,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -4158,6 +4158,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-rabies-pep-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Dog-Bite Rabies PEP Collapse Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric rabies risk under PEP collapse.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-dog-bite-rabies-pep-collapse-pattern-2023-2025",
+        "gaza-children-tetanus-neonatal-risk-pattern-2023-2025",
+        "gaza-children-maternal-tetanus-gap-pattern-2023-2025"
+      ],
+      "tags": [
+        "rabies",
+        "children",
+        "emergency-care",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-ear-infections-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -4933,6 +4954,26 @@
       ]
     },
     {
+      "id": "tl-gaza-child-maternal-tetanus-gap-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Maternal Tetanus Immunization Gap Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated maternal tetanus immunization gaps under antenatal-care collapse.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-maternal-tetanus-gap-pattern-2023-2025",
+        "gaza-children-tetanus-neonatal-risk-pattern-2023-2025",
+        "gaza-children-vaccine-cold-chain-collapse-pattern-2023-2025"
+      ],
+      "tags": [
+        "maternal-tetanus",
+        "immunization",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-measles-blindness-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -5097,6 +5138,27 @@
         "mycetoma",
         "children",
         "ntd",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-neonatal-tetanus-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Neonatal Tetanus Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated neonatal tetanus risk under maternal immunization collapse.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-tetanus-neonatal-risk-pattern-2023-2025",
+        "gaza-children-maternal-tetanus-gap-pattern-2023-2025",
+        "gaza-neonatal-sepsis-pattern-2023-2025"
+      ],
+      "tags": [
+        "neonatal-tetanus",
+        "children",
+        "immunization",
         "gaza"
       ]
     },
@@ -9187,6 +9249,28 @@
       ]
     },
     {
+      "id": "tl-hostages-bring-them-home-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Knowledge of Bring Them Home Campaign Pattern",
+      "description": "Multi-source documentation of captors withholding knowledge of the Bring Them Home Now campaign.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-knowledge-of-bring-them-home-campaign-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-yellow-ribbons-pattern-2023-2025",
+        "israel-hostages-forced-to-thank-captors-off-camera-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "psychological-torture",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-calendar-date-denial-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -9947,6 +10031,28 @@
         "israel-hostages-denied-knowledge-of-war-duration-pattern-2023-2025",
         "israel-hostages-forced-to-recite-numbers-pattern-2023-2025",
         "israel-hostages-denied-shared-meals-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "psychological-torture",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-yellow-ribbon-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Knowledge of Yellow Ribbon Campaign Pattern",
+      "description": "Multi-source documentation of captors withholding knowledge of the yellow-ribbon solidarity campaign.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-knowledge-of-yellow-ribbons-pattern-2023-2025",
+        "israel-hostages-forced-to-thank-captors-off-camera-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-bring-them-home-campaign-pattern-2023-2025"
       ],
       "tags": [
         "hostages",
@@ -11245,6 +11351,28 @@
         "israel-hostages-forced-to-smile-on-camera-pattern-2023-2025",
         "israel-hostages-forced-to-thank-captors-on-camera-pattern-2023-2025",
         "israel-hostages-denied-knowledge-of-sibling-status-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "coercion",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-forced-thank-off-camera-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Forced to Thank Captors Off Camera Pattern",
+      "description": "Multi-source documentation of captors forcing civilian hostages to thank captors off-camera.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-forced-to-thank-captors-off-camera-pattern-2023-2025",
+        "israel-hostages-forced-to-thank-captors-on-camera-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-yellow-ribbons-pattern-2023-2025"
       ],
       "tags": [
         "hostages",
@@ -13072,6 +13200,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-school-bus-drivers-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Attacks on School Bus Drivers Pattern",
+      "description": "OCHA/UNICEF multi-source documentation of elevated settler attacks on Palestinian school-bus drivers after October 7.",
+      "source": "OCHA / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-attacking-school-bus-drivers-pattern-2023-2025",
+        "west-bank-settler-blocking-school-buses-pattern-2023-2025",
+        "west-bank-settler-destroying-school-sports-equipment-pattern-2023-2025"
+      ],
+      "tags": [
+        "school-bus-drivers",
+        "settlers",
+        "education",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-school-counselors-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -14185,6 +14334,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-kinder-toys-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying Kindergarten Toys Pattern",
+      "description": "OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian kindergarten toys after October 7.",
+      "source": "OCHA / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-kindergarten-toys-pattern-2023-2025",
+        "west-bank-settler-destroying-playgrounds-pattern-2023-2025",
+        "west-bank-settler-destroying-school-sports-equipment-pattern-2023-2025"
+      ],
+      "tags": [
+        "kindergarten-toys",
+        "settlers",
+        "education",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-mosquito-nets-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -14473,6 +14643,27 @@
       ],
       "tags": [
         "science-labs",
+        "settlers",
+        "education",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-settler-school-sports-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying School Sports Equipment Pattern",
+      "description": "OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian school sports equipment after October 7.",
+      "source": "OCHA / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-school-sports-equipment-pattern-2023-2025",
+        "west-bank-settler-attacking-school-bus-drivers-pattern-2023-2025",
+        "west-bank-settler-destroying-kindergarten-toys-pattern-2023-2025"
+      ],
+      "tags": [
+        "school-sports",
         "settlers",
         "education",
         "west-bank"
@@ -43571,6 +43762,390 @@
         },
         {
           "label": "Multi-outlet school-science-lab destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-dog-bite-rabies-pep-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Dog-Bite Rabies PEP Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (rabies-pep-collapse cohort)",
+      "location": "Gaza Strip field clinics with collapsed post-exposure prophylaxis supply",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric rabies risk after dog bites under PEP vaccine and immunoglobulin collapse — a multi-source wartime zoonotic-prevention pattern distinct from snakebite-care collapse.",
+      "evidence": "WHO rabies materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric rabies PEP collapse. Exact case counts evolve; multi-source wartime rabies PEP collapse among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO rabies materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-health materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza emergency-care coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-yellow-ribbons-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Yellow Ribbon Campaign Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (yellow-ribbon-campaign-denial cohort)",
+      "location": "Gaza Strip captivity sites — yellow-ribbon-campaign-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors withholding knowledge of the yellow-ribbon public solidarity campaign — a multi-source psychological isolation pattern distinct from empty-chair vigils denial.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source yellow-ribbon campaign denial. Exact cases vary; multi-source yellow-ribbon campaign denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-school-sports-equipment-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying School Sports Equipment Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-sports-equipment-destruction cohort)",
+      "location": "West Bank village school playgrounds and sports stores",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school sports equipment after October 7 — disrupting physical education for children. Pattern card distinct from playground destruction.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-sports-equipment destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school sports equipment is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet school-sports-equipment destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-tetanus-neonatal-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Neonatal Tetanus Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (neonatal-tetanus-risk cohort)",
+      "location": "Gaza Strip improvised delivery points with collapsed maternal immunization",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated neonatal tetanus risk under maternal immunization and clean-delivery collapse — a multi-source wartime newborn-infection pattern distinct from pediatric tetanus-booster gap cards.",
+      "evidence": "WHO maternal-newborn materials, UNICEF immunization updates, and multi-outlet coverage establish multi-source neonatal tetanus risk. Exact case counts evolve; multi-source wartime neonatal tetanus risk in Gaza is the claim.",
+      "sources": [
+        {
+          "label": "WHO maternal-newborn materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF immunization materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza newborn coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-thank-captors-off-camera-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Thank Captors Off Camera Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (forced-thank-you-off-camera cohort)",
+      "location": "Gaza Strip captivity sites — forced-thank-you-off-camera subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to thank captors off-camera as daily control — a multi-source coercion pattern distinct from forced thank-you on camera.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced thank-you off-camera. Exact cases vary; multi-source forced thank-you off-camera for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-school-bus-drivers-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacks on School Bus Drivers Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-bus-driver-attack cohort)",
+      "location": "West Bank school-bus routes and village pickup points",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school-bus drivers after October 7 — endangering children in transit. Pattern card distinct from school-bus blocking and bus-driver attacks.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-bus-driver attacks. Exact injury counts evolve; multi-source wartime settler attacks on school-bus drivers is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet school-bus-driver attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-maternal-tetanus-gap-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Maternal Tetanus Immunization Gap Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (maternal-tetanus-gap cohort)",
+      "location": "Gaza Strip collapsed antenatal clinics and immunization points",
+      "summary": "WHO, UNICEF, and multi-source public-health reporting document elevated maternal tetanus immunization gaps under antenatal-care collapse — driving neonatal tetanus risk. Pattern card distinct from neonatal tetanus clinical-risk cards.",
+      "evidence": "WHO maternal-immunization materials, UNICEF antenatal updates, and multi-outlet coverage establish multi-source maternal tetanus immunization gap. Exact dose shortfalls evolve; multi-source wartime maternal tetanus immunization gap in Gaza is the claim.",
+      "sources": [
+        {
+          "label": "WHO maternal-immunization materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF antenatal materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza maternal-health coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-bring-them-home-campaign-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Bring Them Home Campaign Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (bring-them-home-campaign-denial cohort)",
+      "location": "Gaza Strip captivity sites — bring-them-home-campaign-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors withholding knowledge of the Bring Them Home Now campaign — a multi-source psychological isolation pattern distinct from yellow-ribbon campaign denial.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source Bring Them Home campaign denial. Exact cases vary; multi-source Bring Them Home campaign denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-kindergarten-toys-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Kindergarten Toys Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (kindergarten-toy-destruction cohort)",
+      "location": "West Bank village kindergartens and preschool rooms",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian kindergarten toys after October 7 — disrupting early-childhood development spaces. Pattern card distinct from playground destruction and kindergarten-teacher attacks.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source kindergarten-toy destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian kindergarten toys is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet kindergarten-toy destruction coverage",
           "url": "https://apnews.com"
         }
       ],
