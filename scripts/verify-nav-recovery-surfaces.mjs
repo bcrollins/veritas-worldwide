@@ -2053,4 +2053,12 @@ assert(osintPageUlt.includes('/israel-dossier'), 'OSINT Dossiers ultimate')
 assert(osintPageUlt.includes('OSINT_HUBS'), 'OSINT_HUBS ultimate')
 
 
+
+// RelatedHubs emphasizeTo type optional string ultimate end final
+const relatedEmphType = read('src/components/RelatedHubs.tsx')
+assert(relatedEmphType.includes('emphasizeTo?: string') || relatedEmphType.includes('emphasizeTo?:'), 'emphasizeTo optional type')
+assert(relatedEmphType.includes('PRIMARY_RELATED_HUBS'), 'PRIMARY still default with emphasize')
+assert((relatedEmphType.match(/to:/g) || []).length >= 5, 'PRIMARY destinations with emphasize platform')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
