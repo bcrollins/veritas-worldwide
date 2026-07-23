@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T11:17:17.303Z",
-  "claimCount": 624,
+  "generatedAt": "2026-07-23T11:19:53.169Z",
+  "claimCount": 633,
   "tierHistogram": {
-    "well_attested": 257,
-    "verified": 223,
+    "well_attested": 262,
+    "verified": 226,
     "contested": 48,
-    "interpretive": 66,
+    "interpretive": 67,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 25
@@ -383,6 +383,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "ane-sennacherib-lachish-reliefs",
+      "claim": "Assyrian palace reliefs depict the siege of Lachish with detailed military engineering — primary visual propaganda for Sennacherib’s 701 BCE campaign.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave59.ts"
+    },
+    {
       "id": "ane-sennacherib-prism-tribute",
       "claim": "Sennacherib prisms claim Hezekiah was shut up “like a bird in a cage” and paid tribute — Assyrian framing of 701 BCE without claiming Jerusalem’s capture.",
       "tier": "verified",
@@ -500,6 +507,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
+      "id": "arch-caesarea-aqueduct",
+      "claim": "The high-level aqueduct system supplying Caesarea Maritima is a major Herodian/Roman hydraulic work documented by archaeology along the coastal plain.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave59.ts"
     },
     {
       "id": "arch-caesarea-harbor-herod",
@@ -1265,6 +1279,13 @@
       "file": "src/data/recordOfJesusChristWave10.ts"
     },
     {
+      "id": "cosmo-neutrino-hierarchy-limits",
+      "claim": "Oscillation data establish mass-squared differences among neutrino mass states, while cosmology bounds the absolute mass sum — hierarchy (normal vs inverted) remains under active experimental test.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave59.ts"
+    },
+    {
       "id": "cosmo-neutrino-mass-sum",
       "claim": "Cosmological data constrain the sum of neutrino masses from above, complementing oscillation experiments that measure mass-squared differences.",
       "tier": "well_attested",
@@ -1634,6 +1655,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave49.ts"
+    },
+    {
+      "id": "ec-ignatius-trallians",
+      "claim": "Ignatius’s Letter to the Trallians warns against docetic denial of Jesus’ flesh and urges submission to the bishop — early 2nd-c. anti-docetic and monepiscopal rhetoric.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave59.ts"
     },
     {
       "id": "ec-irenaeus",
@@ -2173,6 +2201,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
+      "id": "hj-kingdom-of-god-nearness",
+      "claim": "Jesus’ kingdom proclamation includes nearness/urgency language in early tradition; historians debate present vs future emphasis without denying the kingdom theme’s centrality.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave59.ts"
     },
     {
       "id": "hj-kingdom-present-future",
@@ -2952,6 +2987,13 @@
       "file": "src/data/recordOfJesusChristWave49.ts"
     },
     {
+      "id": "mod-wright-ntpg",
+      "claim": "N.T. Wright’s The New Testament and the People of God sets a critical-realist worldview framework for reading early Judaism and Christianity as story-shaped communities.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave59.ts"
+    },
+    {
       "id": "nc-celsus",
       "claim": "Celsus (2nd c.), preserved mainly via Origen’s Contra Celsum, is an early pagan critic who treats Jesus as a historical magician/charlatan figure rather than a mythic non-entity.",
       "tier": "well_attested",
@@ -3293,6 +3335,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave45.ts"
+    },
+    {
+      "id": "nc-tacitus-annals-genre",
+      "claim": "Tacitus’s Annals is senatorial historiography with moral and political aims; notices about Christians must be read within that elite Roman genre, not as neutral police reports.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave59.ts"
     },
     {
       "id": "nc-tacitus-christus-title",
@@ -3706,6 +3755,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave17.ts"
+    },
+    {
+      "id": "nt-old-syriac-gospels",
+      "claim": "The Old Syriac Gospel witnesses (Curetonian and Sinaitic) preserve an early Syriac translation layer distinct from the later Peshitta standardization.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave59.ts"
     },
     {
       "id": "nt-origen-hexapla",
@@ -4224,6 +4280,13 @@
       "tier": "verified",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave40.ts"
+    },
+    {
+      "id": "st-philo-every-good-man",
+      "claim": "Philo’s Every Good Man is Free includes an idealized portrait of Essenes as virtuous philosophers — literary ethnography requiring critical reading against other sources.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave59.ts"
     },
     {
       "id": "st-philo-migration-abraham",
