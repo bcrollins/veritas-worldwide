@@ -16,6 +16,7 @@ const surfaces = [
   ['src/components/ResearchHubChips.tsx', 'research-hub-chips'],
   ['src/pages/HomePage.tsx', 'home-hub-cta-row'],
   ['src/pages/HomePage.tsx', 'home-news-chip'],
+  ['src/pages/HomePage.tsx', 'home-research-pack-zip'],
   ['src/pages/SearchPage.tsx', 'search-idle-hubs'],
   ['src/pages/SearchPage.tsx', 'search-empty-hubs'],
   ['src/pages/NotFoundPage.tsx', 'not-found-hub-chips'],
@@ -611,5 +612,13 @@ for (const [rel, tid] of [
   assert(read(rel).includes('RelatedHubs'), `${rel} mounts RelatedHubs`)
   assert(read(rel).includes('DossierHubSpokes'), `${rel} keeps DossierHubSpokes`)
 }
+
+// Home research pack discovery
+const homePack = read('src/pages/HomePage.tsx')
+assert(homePack.includes('home-research-pack-zip') || homePack.includes('research-pack.zip'), 'Home research pack discovery')
+// Account drawer language + theme
+const appAcct = read('src/App.tsx')
+assert(appAcct.includes('LanguageSelector'), 'Account LanguageSelector')
+assert(appAcct.includes('toggleTheme') || appAcct.includes('useTheme'), 'Account theme toggle')
 
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
