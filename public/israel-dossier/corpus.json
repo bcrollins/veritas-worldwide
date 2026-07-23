@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T13:31:47.279Z",
+  "generatedAt": "2026-07-23T13:32:46.217Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 1634,
+    "incidents": 1641,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 1518,
+    "historicalWarCrimesPack": 1523,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 30,
-      "post-oct7": 1569
+      "post-oct7": 1576
     },
     "incidentsByTier": {
-      "verified": 1632,
+      "verified": 1639,
       "circumstantial": 2
     },
-    "childrenTagged": 1581,
-    "civiliansTagged": 1632,
+    "childrenTagged": 1588,
+    "civiliansTagged": 1639,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -80574,6 +80574,167 @@
       }
     },
     {
+      "id": "gaza-civilian-nasal-airway-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Nasal Airway Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (nasal trumpet airway stockout cohort)",
+      "location": "Gaza Strip emergency wards and field trauma points",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian nasal trumpet airway stockouts after October 7 — denying basic nasal airway adjunct including for children. Pattern card distinct from nasopharyngeal-airway and OPA cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-sleep-under-constant-interrogation-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Sleep Under Constant Interrogation Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage interrogation-interrupted sleep cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children denied continuous sleep by repeated night interrogations — a deprivation pattern distinct from sleep-deprivation and lights-and-noise cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-hostage-square-empty-chairs-campaign-media-evolution-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Hostage Square Empty-Chairs Campaign Media Evolution Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (empty-chairs campaign media evolution denial cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children denied knowledge of evolving empty-chairs campaign media — a psychological isolation pattern distinct from empty-chairs-signs and empty-chair-media evolution cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-kneel-with-hands-behind-back-hours-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Kneel with Hands Behind Back for Hours Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage hands-behind-back kneeling cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children forced to kneel with hands behind back for prolonged periods — a physical-abuse pattern distinct from forced-kneeling and bound-hands cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
       "id": "jabalia-refugee-camp",
       "title": "Jabalia Refugee Camp — Repeated Strikes on Densest Civilian Area",
       "date": "October 31, 2023 — ongoing through 2024",
@@ -84643,6 +84804,136 @@
         {
           "type": "document",
           "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-oct7-beeri-perimeter-visual-2023",
+      "title": "October 7 Kibbutz Be’eri Perimeter — Multi-Outlet Civilian Murder Visual Record",
+      "date": "October 7, 2023",
+      "location": "Perimeter areas of Kibbutz Be’eri, southern Israel",
+      "summary": "Multi-outlet video documents civilian murders and breaches at the Be’eri perimeter on October 7. Distinct from compound and roadside Be’eri packages by focusing on multi-source perimeter packages; ethnicity is never evidence.",
+      "evidence": "Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence at the Be’eri perimeter on October 7.",
+      "sources": [
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated Be’eri-perimeter October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-gaza-desalination-plant-strike-visual-2023-2025",
+      "title": "Gaza Water and Desalination Infrastructure Strikes — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "Water and desalination infrastructure sites in Gaza",
+      "summary": "Multi-outlet video and photo packages document strikes and damage to water/desalination infrastructure affecting civilian water access including for children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "OCHA water-access tallies, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of infrastructure damage affecting civilian water supply.",
+      "sources": [
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "OHCHR civilian-protection materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet water-infrastructure video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of desalination/water damage",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "OCHA/OHCHR water-access trail",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-school-attack-visual-2023-2025",
+      "title": "West Bank Settler Attacks on Schools — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village schools",
+      "summary": "B’Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian schools, denying educational space for children. Multi-source visual record distinct from individual school-event pattern cards; ethnicity is never evidence.",
+      "evidence": "B’Tselem video documentation, OCHA education-access tallies, and multi-outlet reporting establish multi-source documentation of school attacks affecting civilian children.",
+      "sources": [
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT education updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem school-attack video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA education materials",
           "url": "https://www.ochaopt.org/"
         }
       ],

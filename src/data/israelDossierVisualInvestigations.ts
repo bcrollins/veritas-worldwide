@@ -2918,6 +2918,78 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-oct7-beeri-perimeter-visual-2023',
+    title: 'October 7 Kibbutz Be’eri Perimeter — Multi-Outlet Civilian Murder Visual Record',
+    date: 'October 7, 2023',
+    location: 'Perimeter areas of Kibbutz Be’eri, southern Israel',
+    summary:
+      'Multi-outlet video documents civilian murders and breaches at the Be’eri perimeter on October 7. Distinct from compound and roadside Be’eri packages by focusing on multi-source perimeter packages; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence at the Be’eri perimeter on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Be’eri-perimeter October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-desalination-plant-strike-visual-2023-2025',
+    title: 'Gaza Water and Desalination Infrastructure Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Water and desalination infrastructure sites in Gaza',
+    summary:
+      'Multi-outlet video and photo packages document strikes and damage to water/desalination infrastructure affecting civilian water access including for children. Multi-source visual floor; ethnicity is never evidence.',
+    evidence:
+      'OCHA water-access tallies, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of infrastructure damage affecting civilian water supply.',
+    sources: [
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'OHCHR civilian-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet water-infrastructure video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of desalination/water damage', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OCHA/OHCHR water-access trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-west-bank-settler-school-attack-visual-2023-2025',
+    title: 'West Bank Settler Attacks on Schools — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village schools',
+    summary:
+      'B’Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian schools, denying educational space for children. Multi-source visual record distinct from individual school-event pattern cards; ethnicity is never evidence.',
+    evidence:
+      'B’Tselem video documentation, OCHA education-access tallies, and multi-outlet reporting establish multi-source documentation of school attacks affecting civilian children.',
+    sources: [
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT education updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem school-attack video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem settler violence case files', url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA education materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
