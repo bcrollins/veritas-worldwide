@@ -508,4 +508,11 @@ assert(read('src/components/ResearchHubChips.tsx').includes('min-h-[44px]'), 'Re
 assert(read('src/components/DossierHubSpokes.tsx').includes('min-h-[44px]'), 'DossierHubSpokes 44px')
 assert(read('src/components/StickyMembershipBar.tsx').includes('min-h-[44px]'), 'StickyMembership 44px')
 
+
+// no-print on recovery chrome so printouts stay content-first
+assert(read('src/components/RelatedHubs.tsx').includes('no-print'), 'RelatedHubs no-print')
+assert(read('src/components/ResearchHubChips.tsx').includes('no-print'), 'ResearchHubChips no-print')
+assert(read('src/components/DossierHubSpokes.tsx').includes('no-print'), 'DossierHubSpokes no-print')
+assert(read('src/components/StickyMembershipBar.tsx').includes('no-print'), 'StickyMembership no-print')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
