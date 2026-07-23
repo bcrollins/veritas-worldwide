@@ -315,6 +315,12 @@ const searchS7b = fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), '
 assert(searchS7b.includes('RelatedHubs') && searchS7b.includes('SEARCH_RECOVERY_HUBS'), 'Search RelatedHubs platform')
 assert(searchS7b.includes('search-idle-hubs') && searchS7b.includes('search-empty-hubs'), 'Search idle+empty testids')
 
+
+// Sprint 7d Home underfold + soft-404 secondary
+assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'Home RelatedHubs underfold')
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-secondary-hubs'), 'NotFound secondary RelatedHubs')
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('NOT_FOUND_SECONDARY_HUBS'), 'NOT_FOUND_SECONDARY_HUBS')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
