@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:40:03.255Z",
-  "claimCount": 507,
+  "generatedAt": "2026-07-23T10:42:06.227Z",
+  "claimCount": 516,
   "tierHistogram": {
-    "well_attested": 204,
-    "verified": 179,
-    "contested": 44,
-    "interpretive": 53,
+    "well_attested": 207,
+    "verified": 182,
+    "contested": 45,
+    "interpretive": 54,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 22
+    "circumstantial": 23
   },
   "claims": [
     {
@@ -87,6 +87,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave39.ts"
+    },
+    {
+      "id": "ane-bullae-gedalyahu",
+      "claim": "Bullae naming Gedaliah and related officials are discussed as possible epigraphic controls for late Judahite administration around the Babylonian crisis (with authenticity depending on provenance).",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave46.ts"
     },
     {
       "id": "ane-city-david-bullae-context",
@@ -614,6 +621,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "arch-magdala-harbor",
+      "claim": "Magdala’s harbor and industrial installations document a commercial fishing town on the Sea of Galilee in the Early Roman period.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave46.ts"
+    },
+    {
       "id": "arch-magdala-miqvaot",
       "claim": "Magdala excavations include miqva’ot and industrial installations alongside the synagogue complex — material purity and economic infrastructure on the Galilee shore.",
       "tier": "verified",
@@ -1048,6 +1062,13 @@
       "file": "src/data/recordOfJesusChristWave4.ts"
     },
     {
+      "id": "cosmo-omega-b-h2",
+      "claim": "CMB acoustic peaks tightly constrain the physical baryon density Ω_b h², matching independent BBN deuterium constraints within uncertainties.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave46.ts"
+    },
+    {
       "id": "cosmo-omega-matter",
       "claim": "Large-scale structure and CMB fits constrain the total matter density parameter Ω_m near ~0.3 in flat ΛCDM baselines.",
       "tier": "verified",
@@ -1298,6 +1319,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave19.ts"
+    },
+    {
+      "id": "ec-ignatius-recensions-method",
+      "claim": "Ignatius’s letters survive in multiple recensions (middle, long, short); modern critical work privileges the middle recension as the earliest recoverable form.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave46.ts"
     },
     {
       "id": "ec-irenaeus",
@@ -1951,6 +1979,13 @@
       "file": "src/data/recordOfJesusChristWave14.ts"
     },
     {
+      "id": "hj-sinners-table-core",
+      "claim": "Jesus’ association with “tax collectors and sinners” at meals is multiply attested and widely treated as a historically distinctive social practice of his movement.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave46.ts"
+    },
+    {
       "id": "hj-son-of-man-idiom",
       "claim": "The “Son of Man” idiom in the Gospels is a major historical-Jesus puzzle: Aramaic speech-level meaning, Daniel 7 connection, and authenticity of individual sayings are all actively debated.",
       "tier": "contested",
@@ -2026,6 +2061,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave35.ts"
+    },
+    {
+      "id": "mod-bauckham-eyewitness-limits",
+      "claim": "Richard Bauckham’s eyewitness thesis argues Gospel traditions retain named eyewitness control; critics dispute the reach of onomastic and inclusio arguments.",
+      "tier": "interpretive",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave46.ts"
     },
     {
       "id": "mod-boyarin-jewish-gospels",
@@ -2651,6 +2693,13 @@
       "file": "src/data/recordOfJesusChristWave29.ts"
     },
     {
+      "id": "nc-suetonius-claudius-frame",
+      "claim": "Suetonius places the Chrestus disturbance in a Claudian expulsion notice about Jews in Rome — administrative anecdote, not a secure Jesus biography.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave46.ts"
+    },
+    {
       "id": "nc-suetonius-nero",
       "claim": "Suetonius (Nero 16) mentions punishments of Christians under Nero as adherents of a new and mischievous superstition.",
       "tier": "well_attested",
@@ -2838,6 +2887,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave30.ts"
+    },
+    {
+      "id": "nt-early-versions-evidence",
+      "claim": "Early versions (Latin, Syriac, Coptic) are independent witnesses that can preserve ancient readings and must be weighed with knowledge of translation technique.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave46.ts"
     },
     {
       "id": "nt-ecm-catholic-epistles",
@@ -3398,6 +3454,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "st-pharisee-josephus-portrait",
+      "claim": "Josephus’s portrait of Pharisees (popular influence, legal expertise, belief in fate/resurrection per his schemes) is primary but tendentious and must be read against his elite agenda.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave46.ts"
     },
     {
       "id": "st-pharisee-popularity",
