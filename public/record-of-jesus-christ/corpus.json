@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:48:52.299Z",
-  "claimCount": 300,
+  "generatedAt": "2026-07-23T09:51:35.151Z",
+  "claimCount": 309,
   "tierHistogram": {
-    "well_attested": 116,
-    "verified": 105,
-    "contested": 30,
-    "interpretive": 29,
+    "well_attested": 120,
+    "verified": 108,
+    "contested": 31,
+    "interpretive": 30,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 15
@@ -215,6 +215,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "ane-tel-dan-house-of-david",
+      "claim": "The Tel Dan stele’s “House of David” reading is the strongest extra-biblical epigraphic control for a Davidic dynasty name in the 9th century BCE context.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave23.ts"
+    },
+    {
       "id": "ane-ugarit",
       "claim": "Ugaritic texts (Ras Shamra) supply Northwest Semitic mythic and ritual parallels used in comparative study of Hebrew Bible poetry and divine council language.",
       "tier": "well_attested",
@@ -374,6 +381,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-nazareth-village-debate",
+      "claim": "Nazareth’s early Roman occupation is archaeologically attested at modest scale; debates concern density and socioeconomic profile, not total nonexistence.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave23.ts"
     },
     {
       "id": "arch-ossuaries-practice",
@@ -600,6 +614,13 @@
       "file": "src/data/recordOfJesusChristWave10.ts"
     },
     {
+      "id": "cosmo-neutrino-mass-sum",
+      "claim": "Cosmological data constrain the sum of neutrino masses from above, complementing oscillation experiments that measure mass-squared differences.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave23.ts"
+    },
+    {
       "id": "cosmo-nucleosynthesis-li",
       "claim": "The cosmological lithium problem remains an open tension between standard BBN predictions for ⁷Li and many stellar abundance measurements.",
       "tier": "contested",
@@ -654,6 +675,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave16.ts"
+    },
+    {
+      "id": "ec-1-clement-rome",
+      "claim": "1 Clement (usually late 1st c.) shows Roman Christian correspondence appealing to unity and citing Jesus traditions and Pauline letters.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave23.ts"
     },
     {
       "id": "ec-1clement",
@@ -920,6 +948,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "hj-crucifixion-roman",
+      "claim": "Crucifixion as Roman punishment and Jesus’ death by crucifixion under Pilate are among the most widely accepted historical judgments about Jesus.",
+      "tier": "verified",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave23.ts"
     },
     {
       "id": "hj-crucifixion-year",
@@ -1356,6 +1391,13 @@
       "file": "src/data/recordOfJesusChristWave6.ts"
     },
     {
+      "id": "mod-no-neutral-jesus",
+      "claim": "There is no value-free historical Jesus reconstruction: every reconstruction reflects criteria choices, source theories, and contextual models that must be stated.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave23.ts"
+    },
+    {
       "id": "mod-open-access-trend",
       "claim": "Open digital libraries (INTF NT.VMR, IAA DSS, British Library codices) have lowered barriers to primary manuscript inspection since the 2010s.",
       "tier": "well_attested",
@@ -1473,6 +1515,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nc-josephus-james-minimal",
+      "claim": "Josephus Ant. 20.200 on James “the brother of Jesus who was called Christ” is widely treated as authentic and a key non-Christian control for Jesus’ historical existence.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave23.ts"
     },
     {
       "id": "nc-lucian",
@@ -1776,6 +1825,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "nt-na28-ubsgnt-alignment",
+      "claim": "NA28 and UBS5 share essentially the same base text for continuous reading while differing in apparatus design and intended audiences.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave23.ts"
+    },
+    {
       "id": "nt-nomina-sacra",
       "claim": "Nomina sacra abbreviations for divine names and titles are a distinctive early Christian scribal practice visible across Greek NT manuscripts.",
       "tier": "verified",
@@ -1949,6 +2005,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave9.ts"
+    },
+    {
+      "id": "st-essene-hypothesis",
+      "claim": "The Essene hypothesis linking Qumran/DSS to Josephus’s Essenes remains a leading but contested model among alternatives (Jerusalem library, multi-group deposits).",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave23.ts"
     },
     {
       "id": "st-hasmonean-period",
