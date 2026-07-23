@@ -465,14 +465,17 @@ for (const f of (sandersP.documentedFalsehoods || []).filter((x) => x.tier === '
 
 // Hakeem Jeffries integrity gate
 const jeffries = scores['hakeem-jeffries'];
-if (!jeffries || jeffries.n < 1) throw new Error('hakeem-jeffries needs ≥1 verified falsehood, got ' + (jeffries?.n ?? 0));
-if (jeffries.score > 90) throw new Error('hakeem-jeffries score expected ≤90, got ' + jeffries.score);
+if (!jeffries || jeffries.n < 2) throw new Error('hakeem-jeffries needs ≥2 verified falsehoods, got ' + (jeffries?.n ?? 0));
+if (jeffries.score > 75) throw new Error('hakeem-jeffries score expected ≤75, got ' + jeffries.score);
 const jeffriesP = getProfileBySlug('hakeem-jeffries');
 if (!(jeffriesP.documentedFalsehoods || []).some((f) => f.id === 'jeffries-trump-budget-2-trillion-entitlements-2018')) {
   throw new Error('hakeem-jeffries missing $2T budget docket id');
 }
+if (!(jeffriesP.documentedFalsehoods || []).some((f) => f.id === 'jeffries-ballroom-presidents-main-priority-2025')) {
+  throw new Error('hakeem-jeffries missing ballroom main-priority docket id');
+}
 for (const f of (jeffriesP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
-  if (f.statementUrl === f.debunkUrl) throw new Error('jeffries dual-cite collision: ' + f.id);
+  if (f.statementUrl === f.debunkUrl) throw new Error('hakeem-jeffries dual-cite collision: ' + f.id);
 }
 
 // Elizabeth Warren multi-entry integrity deep-dive

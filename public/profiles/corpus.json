@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:18:11.104Z",
+  "generatedAt": "2026-07-23T08:19:04.230Z",
   "count": 96,
   "profiles": [
     {
@@ -359,7 +359,7 @@
       "name": "Hakeem Jeffries",
       "title": "U.S. Representative (D-NY); House Democratic Leader",
       "category": "politician",
-      "summary": "House Democratic Leader (Minority/Majority by cycle) representing NY-8. Institutional Democratic steward of bipartisan Israel security packages on the House floor after Pelosi. Documented pro-Israel PAC recipient (OpenSecrets). Balances progressive caucus pressure with unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact False on $2T Trump budget cut to Social Security/Medicare/Medicaid claim. Primary: OpenSecrets, House leadership record, CRS RL33222, PolitiFact.",
+      "summary": "House Democratic Leader (Minority/Majority by cycle) representing NY-8. Institutional Democratic steward of bipartisan Israel security packages on the House floor after Pelosi. Documented pro-Israel PAC recipient (OpenSecrets). Balances progressive caucus pressure with unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact Falses — $2T Trump budget cut to Social Security/Medicare/Medicaid (gross vs net) and “ballroom is the president’s main priority” (Leavitt answered about White House renovations, not all policy). Primary: OpenSecrets, House leadership record, CRS RL33222, PolitiFact, CNN, X.",
       "photo": "/profiles/hakeem-jeffries.jpg",
       "url": "https://veritasworldwide.com/profile/hakeem-jeffries",
       "bioguideId": "J000294",
@@ -372,8 +372,8 @@
         "Institutional Enablement",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {

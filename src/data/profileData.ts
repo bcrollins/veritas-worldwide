@@ -2197,7 +2197,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'NY',
     photoUrl: getProfilePhoto('hakeem-jeffries'),
     summary:
-      'House Democratic Leader (Minority/Majority by cycle) representing NY-8. Institutional Democratic steward of bipartisan Israel security packages on the House floor after Pelosi. Documented pro-Israel PAC recipient (OpenSecrets). Balances progressive caucus pressure with unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact False on $2T Trump budget cut to Social Security/Medicare/Medicaid claim. Primary: OpenSecrets, House leadership record, CRS RL33222, PolitiFact.',
+      'House Democratic Leader (Minority/Majority by cycle) representing NY-8. Institutional Democratic steward of bipartisan Israel security packages on the House floor after Pelosi. Documented pro-Israel PAC recipient (OpenSecrets). Balances progressive caucus pressure with unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact Falses — $2T Trump budget cut to Social Security/Medicare/Medicaid (gross vs net) and “ballroom is the president’s main priority” (Leavitt answered about White House renovations, not all policy). Primary: OpenSecrets, House leadership record, CRS RL33222, PolitiFact, CNN, X.',
     tags: [
       'House Democratic Leader',
       'Pro-Israel',
@@ -2290,6 +2290,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2018',
       },
+      {
+        claim:
+          'Integrity docket: Oct 2025 X claim that the Trump administration declared erecting a ballroom is the president’s main priority (vs cost of living/health care) rated False — Leavitt answered about White House renovation priorities, not all policy.',
+        source: 'PolitiFact False; Jeffries X; Leavitt briefing transcript',
+        url: 'https://www.politifact.com/factchecks/2025/oct/24/hakeem-jeffries/democrats-leavitt-priority-ballroom-white-house/',
+        tier: 'verified',
+        date: '2025',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -2310,6 +2318,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'jeffries-ballroom-presidents-main-priority-2025',
+        statement:
+          '“The Trump administration just declared that erecting a ballroom is the President’s main priority,” rather than cost of living and health care.',
+        saidAt: 'October 23, 2025',
+        context:
+          'X post sharing a clipped Karoline Leavitt White House briefing quote amid East Wing ballroom construction controversy and government shutdown politics.',
+        whyFalse:
+          'PolitiFact rated False. Leavitt was asked whether, in addition to the ballroom and Rose Garden patio, the president was looking at other White House renovations. She answered that at that moment the ballroom was the president’s main priority in that construction context — not that the ballroom outranked inflation, health care, or reopening the government among all presidential priorities. Jeffries’ framing strips that context.',
+        correction:
+          'Leavitt’s “main priority” answer referred to White House campus renovation projects, not a declaration that the ballroom is Trump’s top priority over cost of living and health care.',
+        statementSource: 'Rep. Hakeem Jeffries X post, Oct. 23, 2025',
+        statementUrl: 'https://x.com/RepJeffries/status/1981444373565804592',
+        debunkSource: 'PolitiFact — False (Oct. 24, 2025); Roll Call/Factba.se Leavitt briefing transcript',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2025/oct/24/hakeem-jeffries/democrats-leavitt-priority-ballroom-white-house/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official House site', url: 'https://jeffries.house.gov' },
@@ -2317,6 +2344,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — $2T entitlement cuts (False)',
         url: 'https://www.politifact.com/factchecks/2018/may/04/hakeem-jeffries/did-trumps-budget-include-2-trillion-cut-medicare/',
+      },
+      {
+        label: 'PolitiFact — ballroom main priority (False)',
+        url: 'https://www.politifact.com/factchecks/2025/oct/24/hakeem-jeffries/democrats-leavitt-priority-ballroom-white-house/',
       },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Hakeem_Jeffries' },
     ],
