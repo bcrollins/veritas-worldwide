@@ -213,6 +213,15 @@ export default function MediaKitPage() {
             >
               WCAG contrast notes
             </a>
+            . Evidence labels:{' '}
+            <a
+              href="/brand-kit/07-docs/EVIDENCE-TIERS.md"
+              className="font-semibold text-crimson hover:text-crimson-dark"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              EVIDENCE-TIERS.md
+            </a>
             .
           </p>
           <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-5">
