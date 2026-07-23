@@ -2202,4 +2202,12 @@ assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'Privacy Membe
 assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'Terms Membership live lock')
 
 
+
+// surfaces 102 platform integrity with Account five ultimate end
+assert(surfaces.length >= 102, `surfaces account five end ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'emphasize still present end')
+assert(read('src/pages/AccessibilityPage.tsx').includes('A11Y_HUBS'), 'A11Y_HUBS still present end')
+assert(read('src/pages/PrivacyPage.tsx').includes('PRIVACY_HUBS'), 'PRIVACY_HUBS still present end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
