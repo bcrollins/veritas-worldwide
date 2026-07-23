@@ -2261,4 +2261,13 @@ assert(relatedHover.includes('bg-crimson'), 'emphasize bg final end')
 assert(relatedHover.includes('text-white'), 'emphasize contrast final end')
 
 
+
+// suite densify complete RelatedHubs platform final green
+assert(surfaces.length >= 102, `densify complete surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'densify complete PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'densify complete emphasize')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'densify complete Privacy Membership')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'densify complete Terms Membership')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
