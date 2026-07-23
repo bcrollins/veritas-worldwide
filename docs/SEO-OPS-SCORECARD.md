@@ -141,3 +141,12 @@ Prefer citations to **pinned primary sources** and methodology, not homepage alo
 | 2026-07-23 ~09:52 | soft-404 matrix | junk chapter/profile/news/topic/institute → 404; known paths 200; admin+subscribe noindex; live-bot-noindex 9/9 |
 | --- | --- | --- |
 | 2026-07-23 ~09:41 | `78b8656` | Unknown chapter soft-404 LIVE; admin noindex; bot-noindex 9/9 |
+
+### Production soft-404 matrix (verified live)
+
+All Googlebot checks PASS on tip lineage including soft-404 gates:
+
+- Junk: `/chapter/*` `/profile/*` `/news/*` `/topics/*` `/institute/courses|guides/*` → **404 + noindex**
+- Known content: chapter-1, ted-cruz, historical-jesus-evidence → **200 + indexable titles**
+- Noindex surfaces: admin, subscribe/success, search, bookmarks, bernie → **200 + noindex**
+- Regression: `npm run verify:live-bot-noindex` + `npm run verify:soft-404-gates`
