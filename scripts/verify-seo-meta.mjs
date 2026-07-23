@@ -469,3 +469,5 @@ for (const [rel, label] of [
   const h1Count = (src.match(/<h1[\s>]/g) || []).length
   assert(h1Count === 1, label + ' must expose exactly one H1 (found ' + h1Count + ')')
 }
+
+assert(/SLUG_CONTENT_PATH[\s\S]{0,80}\/i/.test(server) || server.includes('/?$/i'), 'SLUG_CONTENT_PATH must be case-insensitive (/i flag)')
