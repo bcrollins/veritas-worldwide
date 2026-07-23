@@ -1569,4 +1569,13 @@ assert(homeEnd.includes('home-hub-cta-row') && homeEnd.includes('home-news-chip'
 assert(homeEnd.includes('home-related-hubs') && homeEnd.includes('RelatedHubs'), 'Home underfold RelatedHubs end')
 
 
+
+// MULTI-AGENT densify path never staged by nav pure suite (self-check)
+const suiteSelf = read('scripts/verify-nav-recovery-surfaces.mjs')
+assert(!suiteSelf.includes('public/israel-dossier/corpus.json'), 'suite does not thrash densify corpus path')
+assert(suiteSelf.includes('RelatedHubs'), 'suite owns RelatedHubs')
+assert(suiteSelf.includes('DossierHubSpokes') || suiteSelf.includes('dossier-hub-spokes'), 'suite owns spokes')
+assert(suiteSelf.includes('ResearchHubChips') || suiteSelf.includes('research-hub-chips'), 'suite owns research chips')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
