@@ -33,3 +33,13 @@ Entity-only. Researcher surfaces: robots Disallow + meta noindex + X-Robots-Tag 
 | W2-10 | `verify:live-visual-investigations` identity + soft 404 lag | Implemented |
 | W2-11 | Pure floors for VI rate-limit + pack inclusion | Implemented |
 
+
+## Interval W2-4 (live-verified)
+
+| ID | Title | Live proof |
+|----|-------|------------|
+| W2-12 | VI JSON short cache max-age=300 | curl headers live |
+| W2-13 | VI JSON rate-limit 40/min | ratelimit-limit: 40 live |
+| W2-14 | Soft-floor pure companions | pure PASS |
+| W2-15 | Research-pack identity pure | pure PASS |
+
