@@ -975,4 +975,10 @@ const briefingExcl = read('src/pages/IsraelDossierBriefingPage.tsx')
 assert(briefingExcl.includes('exclude="briefing"') || briefingExcl.includes("exclude='briefing'"), 'Briefing also-in exclude unique')
 assert(briefingExcl.includes('briefing-related-hubs'), 'Briefing RelatedHubs present with exclude')
 
+
+// Forum also-in exclude self unique
+const forumExcl = read('src/pages/ForumPage.tsx')
+assert(forumExcl.includes('exclude="forum"') || forumExcl.includes("exclude='forum'"), 'Forum also-in exclude unique')
+assert(forumExcl.includes('forum-related-hubs'), 'Forum RelatedHubs present with exclude')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
