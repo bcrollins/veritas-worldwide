@@ -111,3 +111,12 @@ Live proof (pre-b408 deploy): health 9d58859, evidence-taxonomy.json 200, publis
 - Israel money/legal/lobby schema triples pure
 - corpus.json Cache-Control public max-age=300
 - Ledger terminal ~100/100
+
+## Interval — research pack productization (2026-07-23)
+
+- Dual-write pack to dist/ (Railway static) + short cache + Content-Disposition
+- Discovery: Home, Sources, Methodology, About, Media Kit, Content Pack, Membership FAQ, OSINT product page
+- Platform health HEAD probes for pack/manifest
+- Pure + live research-pack gates; VI index in ZIP
+- Entity-only; coordinated with Israel densify peers (no thrash)
+
