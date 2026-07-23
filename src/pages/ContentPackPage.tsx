@@ -11,6 +11,7 @@ import {
   breadcrumbJsonLd,
   faqJsonLd,
 } from '../lib/seo'
+import ResearchHubChips from '../components/ResearchHubChips'
 
 interface ShareCard {
   id: string
@@ -376,6 +377,9 @@ export default function ContentPackPage() {
             Download, share, and help primary-source journalism reach more people. Every editorial asset
             links back to a fully sourced article.
           </p>
+          <div className="mt-5">
+            <ResearchHubChips />
+          </div>
         </div>
       </div>
 

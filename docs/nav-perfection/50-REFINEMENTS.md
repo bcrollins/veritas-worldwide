@@ -30,17 +30,19 @@ Grouped sprints. **Shipped this session: Sprint 1 (#1–#12).** Remaining are ba
 + Soft-404 primary hub chips (`not-found-hub-chips`)  
 + Cookie z-[100] above tab bar (z-50) / membership (z-40) documented  
 
-## Sprint 3 — Research hub (next)
-21. /researcher as Learn hub landing polish (section cards only)  
-22. Methodology ↔ Sources bidirectional hub chips  
+## Sprint 3 — Research hub (SHIPPED)
+21. /researcher mounts ResearchHubChips — **SHIPPED**  
+22. Methodology ↔ Sources bidirectional hub chips — **SHIPPED** (`ResearchHubChips`)  
 23. Institute entry from Research drawer only (already)  
-24. Content pack in Research (already)  
-25. Search empty-state: top destinations — **SHIPPED in Sprint 2**  
-26. Command-palette style? No new feature — improve Search placeholder labels  
-27. Bookmarks quick routes already pack — add News  
+24. Content pack mounts ResearchHubChips — **SHIPPED**  
+25. Search empty-state: top destinations — **SHIPPED Sprint 2**  
+26. Search placeholder improved — **SHIPPED**  
+27. Bookmarks empty + News + Pack — **SHIPPED**  
 28. Analytics under Account (already)  
 29. Media kit under Account (already)  
 30. Comprehensive profile under Account (already)  
++ Footer mirrors ≤5 hub order — **SHIPPED**  
++ Dossiers tooltip “Israel · Deep State · Forum” — **SHIPPED** 
 
 ## Sprint 4 — Information scent & labels
 31. Label “The Record” tab short “Record” mobile only (done tab)  
