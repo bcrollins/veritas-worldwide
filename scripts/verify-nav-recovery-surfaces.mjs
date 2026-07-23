@@ -1839,4 +1839,13 @@ assert(read('src/pages/ReadTheBookPage.tsx').includes('excludeTo="/read"') || re
 assert(read('src/pages/HomePage.tsx').includes('excludeTo="/"') || read('src/pages/HomePage.tsx').includes("excludeTo='/'"), 'home exclude end final')
 
 
+
+// surfaces length 102 PASS line coherence ultimate
+assert(surfaces.length >= 102, `PASS coherence surfaces ${surfaces.length}`)
+// every surface file exists
+for (const [rel] of surfaces) {
+  assert(typeof rel === 'string' && rel.startsWith('src/'), `surface path ${rel}`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
