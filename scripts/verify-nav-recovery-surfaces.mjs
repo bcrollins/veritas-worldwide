@@ -19,6 +19,7 @@ const surfaces = [
   ['src/pages/SearchPage.tsx', 'search-idle-hubs'],
   ['src/pages/SearchPage.tsx', 'search-empty-hubs'],
   ['src/pages/NotFoundPage.tsx', 'not-found-hub-chips'],
+  ['src/pages/NotFoundPage.tsx', 'not-found-page'],
   ['src/pages/TimelinePage.tsx', 'timeline-related-hubs'],
   ['src/pages/NewsPage.tsx', 'news-related-hubs'],
   ['src/pages/TopicsIndexPage.tsx', 'topics-related-hubs'],
