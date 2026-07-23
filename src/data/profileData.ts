@@ -575,9 +575,9 @@ export const PROFILES: PowerProfile[] = [
         correction:
           'Gates Foundation financing confers substantial agenda-setting power in global health — not pure powerless charity.',
         statementSource: 'Gates public pure-philanthropy framing of foundation power',
-        statementUrl: 'https://www.gatesfoundation.org',
-        debunkSource: 'WHO funding reports; multi-outlet analysis of foundation agenda power',
-        debunkUrl: 'https://www.who.int',
+        statementUrl: 'https://www.gatesfoundation.org/about/financials',
+        debunkSource: 'WHO contributors / financing transparency pages documenting large non-state funding roles',
+        debunkUrl: 'https://www.who.int/about/funding',
         severity: 'minor',
         tier: 'verified',
       },

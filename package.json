@@ -73,7 +73,8 @@
     "verify:live-anonymity": "node scripts/verify-live-anonymity.mjs",
     "verify:comprehensive-profile": "node scripts/verify-comprehensive-profile.mjs",
     "verify:live-bot-noindex": "node scripts/verify-live-bot-noindex.mjs",
-    "verify:soft-404-gates": "node scripts/verify-soft-404-gates.mjs"
+    "verify:soft-404-gates": "node scripts/verify-soft-404-gates.mjs",
+    "verify:identity-scrub": "node scripts/verify-identity-scrub.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

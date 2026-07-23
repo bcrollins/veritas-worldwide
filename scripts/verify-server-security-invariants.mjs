@@ -522,6 +522,12 @@ assert(verifyPure.includes('verify-byron-donalds-profile.mjs'), 'verify:pure mus
 assert(verifyPure.includes('verify-seo-meta.mjs'), 'verify:pure must include seo-meta floors')
 assert(verifyPure.includes('verify-brand-kit.mjs'), 'verify:pure must include brand-kit')
 assert(verifyPure.includes('verify-integrity-score.mjs'), 'verify:pure must include integrity-score floors')
+assert(verifyPure.includes('verify-identity-scrub.mjs'), 'verify:pure must include identity-scrub OPSEC gate')
+assert(
+  typeof packageJson.scripts?.['verify:identity-scrub'] === 'string' &&
+    packageJson.scripts['verify:identity-scrub'].includes('verify-identity-scrub.mjs'),
+  'package.json must expose verify:identity-scrub',
+)
 assert(
   typeof packageJson.dependencies?.react === 'string' &&
     /19\.2\.[7-9]|19\.[3-9]|[2-9]\d/.test(packageJson.dependencies.react.replace(/^\^/, '')),

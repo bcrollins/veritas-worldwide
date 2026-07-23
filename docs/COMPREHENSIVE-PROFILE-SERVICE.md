@@ -52,3 +52,8 @@ npm run verify:comprehensive-profile
 - **Stripe:** set `STRIPE_SECRET_KEY` on Railway for live Checkout sessions.
 - **Contact:** rights@veritasworldwide.com only — no personal operator identity.
 
+
+## Optional external paging
+
+Client errors already reach `/api/client-error` without Sentry. Set optional `SENTRY_DSN` on Railway only if out-of-band paging is required — not mandatory for launch. Entity-only configuration.
+

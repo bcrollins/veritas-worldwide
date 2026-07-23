@@ -44,8 +44,8 @@
   },
   "summary": "Wave 3: densify 96/96 live, OSINT $499 checkoutReady, soft-404 researcher timeline fix tip b9e4f11. Pending: operator OPSEC + dual-cite homepage hygiene + pure gates + prerender utility.",
   "statusCounts": {
-    "Implemented": 85,
-    "Pending": 15
+    "Implemented": 90,
+    "Pending": 10
   },
   "items": [
     {
@@ -1014,7 +1014,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Pending",
+      "progress": "weakHomepage metric live WARN; sample article-path replacements started (164 remain)"
     },
     {
       "rank": 52,
@@ -1051,7 +1052,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave3-interval-2"
     },
     {
       "rank": 54,
@@ -1145,7 +1147,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave3-interval-2"
     },
     {
       "rank": 59,
@@ -1239,7 +1242,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave3-interval-2"
     },
     {
       "rank": 64,
@@ -1295,7 +1299,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave3-interval-2"
     },
     {
       "rank": 67,
@@ -1444,7 +1449,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave3-interval-2"
     },
     {
       "rank": 75,
@@ -1939,5 +1945,6 @@
       "status": "Implemented",
       "shippedIn": "wave3 prior ship"
     }
-  ]
+  ],
+  "lastShip": "2026-07-23T11:33:32.371240+00:00"
 }

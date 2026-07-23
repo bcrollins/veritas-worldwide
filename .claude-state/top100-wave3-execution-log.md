@@ -26,3 +26,11 @@
 
 ## Operator blocked residual
 - VITE_ADMIN_PASSWORD_HASH, password rotate, GH org transfer, git history scrub, OSINT_OPS_TOKEN
+
+## Interval 2
+- ChapterPDF evidence tier legend
+- Dual-cite sample path harden (Gates WHO funding)
+- weakHomepage 166→164
+- Sentry optional DSN docs
+- ROC soft-floor files from peers absorbed as Implemented ranks 53/74
+

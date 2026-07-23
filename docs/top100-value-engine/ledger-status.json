@@ -1,0 +1,707 @@
+{
+  "generatedAt": "2026-07-23T11:26:35Z",
+  "tip": "b9e4f11",
+  "liveHealth": "5a2fb3c",
+  "items": [
+    {
+      "display_rank": 1,
+      "id": "T100-001",
+      "title": "Harden live anonymity gate for Israel corpus + multi-path identity floor",
+      "priority": 98,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 2,
+      "id": "T100-002",
+      "title": "Scrub residual personal product-link vectors from Bernie quarantine checklist",
+      "priority": 96,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 3,
+      "id": "T100-003",
+      "title": "Entity-only git author enforcement in pure suite",
+      "priority": 95,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 4,
+      "id": "T100-074",
+      "title": "Admin auth: password hash env-only fail-closed",
+      "priority": 95,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 5,
+      "id": "T100-004",
+      "title": "Personal timeline: evidence-tier tags + tags + import + corpus pin",
+      "priority": 94,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 6,
+      "id": "T100-057",
+      "title": "About page: no founder bio personal details",
+      "priority": 94,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 7,
+      "id": "T100-094",
+      "title": "Block any sameAs expansion without entity review",
+      "priority": 94,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 8,
+      "id": "T100-005",
+      "title": "One-tap primary-source open with archive-first preference",
+      "priority": 93,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 9,
+      "id": "T100-048",
+      "title": "OG images: no personal likeness ever",
+      "priority": 93,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 10,
+      "id": "T100-009",
+      "title": "Analytics privacy: forbid PII properties in client track() calls",
+      "priority": 92,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 11,
+      "id": "T100-064",
+      "title": "Citation BibTeX export entity key only",
+      "priority": 92,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 12,
+      "id": "T100-027",
+      "title": "Admin surface: zero personal email display regression",
+      "priority": 91,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 13,
+      "id": "T100-053",
+      "title": "humans.txt entity-only pure floor",
+      "priority": 91,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 14,
+      "id": "T100-006",
+      "title": "Cross-corpus researcher search (Vol I + Israel + ROC) scaffold",
+      "priority": 90,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 15,
+      "id": "T100-046",
+      "title": "Comprehensive profile product: methodology teaser entity-only gate",
+      "priority": 90,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 16,
+      "id": "T100-052",
+      "title": "robots.txt: keep /admin and success and bernie Disallow forever",
+      "priority": 90,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 17,
+      "id": "T100-097",
+      "title": "Railway/env example files: no personal tokens",
+      "priority": 90,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 18,
+      "id": "T100-007",
+      "title": "Volume I chapter UI: scholarly tier legend + legacy map always visible",
+      "priority": 89,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 19,
+      "id": "T100-050",
+      "title": "Health endpoint: no internal usernames/emails",
+      "priority": 89,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 20,
+      "id": "T100-008",
+      "title": "Source-link health report for Vol I + dossiers (offline CI)",
+      "priority": 88,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 21,
+      "id": "T100-020",
+      "title": "Prerender soft-404 gate regression pack for researcher routes",
+      "priority": 88,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 22,
+      "id": "T100-049",
+      "title": "Strip EXIF on all public images continuous",
+      "priority": 88,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 23,
+      "id": "T100-072",
+      "title": "Auth: no third-party login that links personal GH",
+      "priority": 88,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 24,
+      "id": "T100-015",
+      "title": "Israel incident: multi-source badge when \u22652 independent sources",
+      "priority": 87,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 25,
+      "id": "T100-086",
+      "title": "ROC: every claim has \u22651 source or explicit note",
+      "priority": 87,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 26,
+      "id": "T100-014",
+      "title": "Israel dual-sided balance scorecard public widget",
+      "priority": 86,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 27,
+      "id": "T100-051",
+      "title": "Client error intake: scrub stack paths with home directories",
+      "priority": 86,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 28,
+      "id": "T100-095",
+      "title": "Public packages: no package.json author personal field",
+      "priority": 86,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 29,
+      "id": "T100-010",
+      "title": "Deploy lag detector: health commit vs origin/main tip",
+      "priority": 85,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 30,
+      "id": "T100-036",
+      "title": "Wayback pin coverage % for Israel briefing sources",
+      "priority": 85,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 31,
+      "id": "T100-067",
+      "title": "HubSpot forms: no hidden operator identity fields",
+      "priority": 85,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 32,
+      "id": "T100-011",
+      "title": "Researcher hub page at /researcher",
+      "priority": 84,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 33,
+      "id": "T100-035",
+      "title": "Sitemap: ensure researcher noindex routes excluded",
+      "priority": 84,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 34,
+      "id": "T100-019",
+      "title": "llms.txt: researcher tools + taxonomy + corpus counts live",
+      "priority": 83,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 35,
+      "id": "T100-075",
+      "title": "Content security: no inline operator notes in HTML comments",
+      "priority": 83,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 36,
+      "id": "T100-013",
+      "title": "ROC claim deep-link share cards (entity OG)",
+      "priority": 82,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 37,
+      "id": "T100-033",
+      "title": "Dataset schema floor sync with live claimCount",
+      "priority": 82,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 38,
+      "id": "T100-093",
+      "title": "Anonymity audit re-run template after each ship interval",
+      "priority": 82,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 39,
+      "id": "T100-018",
+      "title": "Methodology: machine-readable evidence taxonomy JSON",
+      "priority": 81,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 40,
+      "id": "T100-042",
+      "title": "ROC: proofVsConcept filter chips",
+      "priority": 81,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 41,
+      "id": "T100-012",
+      "title": "Bookmark evidence-tier filter on BookmarksPage",
+      "priority": 80,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 42,
+      "id": "T100-026",
+      "title": "CSP + security headers continuous pure assert",
+      "priority": 80,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 43,
+      "id": "T100-037",
+      "title": "Personal timeline: add-from-Israel-incident button",
+      "priority": 80,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 44,
+      "id": "T100-038",
+      "title": "Personal timeline: add-from-ROC-claim button",
+      "priority": 80,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 45,
+      "id": "T100-043",
+      "title": "Israel: era + tier + children multi-filter URL state",
+      "priority": 80,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 46,
+      "id": "T100-096",
+      "title": "README and CONTRIBUTING entity-only",
+      "priority": 80,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 47,
+      "id": "T100-025",
+      "title": "News desk: primary-source first paragraph enforcement",
+      "priority": 79,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 48,
+      "id": "T100-089",
+      "title": "Public briefing: open questions list always visible",
+      "priority": 79,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 49,
+      "id": "T100-016",
+      "title": "Corrections workflow public microcopy + mailto template",
+      "priority": 78,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 50,
+      "id": "T100-066",
+      "title": "Cookie consent: analytics denied by default until accept",
+      "priority": 78,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 51,
+      "id": "T100-017",
+      "title": "Rights packaging: CC BY-NC-SA summary card on download surfaces",
+      "priority": 77,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 52,
+      "id": "T100-071",
+      "title": "Service worker: never cache admin or auth responses",
+      "priority": 77,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 53,
+      "id": "T100-021",
+      "title": "Chapter citation copy-as-APA/Chicago one-tap",
+      "priority": 76,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 54,
+      "id": "T100-040",
+      "title": "Evidence tier color contrast AA in dark mode",
+      "priority": 76,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 55,
+      "id": "T100-073",
+      "title": "Reader accounts: minimal PII \u2014 email only",
+      "priority": 76,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 56,
+      "id": "T100-083",
+      "title": "Money trail nodes: amount+date+source triple required",
+      "priority": 76,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 57,
+      "id": "T100-023",
+      "title": "Integrity score transparency: public formula explainer",
+      "priority": 75,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 58,
+      "id": "T100-055",
+      "title": "Privacy page: researcher local tools disclosure",
+      "priority": 75,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 59,
+      "id": "T100-081",
+      "title": "Israel legal cases: court document primary links",
+      "priority": 75,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 60,
+      "id": "T100-082",
+      "title": "Lobbying records: FEC/LDA primary URLs",
+      "priority": 75,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 61,
+      "id": "T100-024",
+      "title": "Profile pages: evidence tier on claims list consistency",
+      "priority": 74,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 62,
+      "id": "T100-031",
+      "title": "Keyboard-only researcher path through Sources filters",
+      "priority": 74,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 63,
+      "id": "T100-061",
+      "title": "Bible history surface: tier filter parity with ROC",
+      "priority": 74,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 64,
+      "id": "T100-080",
+      "title": "Dispute story component: evidence both sides pattern",
+      "priority": 74,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 65,
+      "id": "T100-028",
+      "title": "Sentry forward optional without PII breadcrumbs of operator",
+      "priority": 73,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 66,
+      "id": "T100-058",
+      "title": "Home TOC: dual Record entries (Vol I + ROC) clarity",
+      "priority": 73,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 67,
+      "id": "T100-079",
+      "title": "Deep state / AIPAC pages: methodology banner mandatory",
+      "priority": 73,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 68,
+      "id": "T100-022",
+      "title": "Offline corpus pack download (zip of JSON)",
+      "priority": 72,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 69,
+      "id": "T100-039",
+      "title": "Chapter sources: open-in-new + copy-link dual control",
+      "priority": 72,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 70,
+      "id": "T100-056",
+      "title": "Terms: researcher export license clarity",
+      "priority": 72,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 71,
+      "id": "T100-077",
+      "title": "Accessibility statement: entity contact only",
+      "priority": 72,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 72,
+      "id": "T100-087",
+      "title": "ROC PDF claim index regenerates on export",
+      "priority": 72,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 73,
+      "id": "T100-030",
+      "title": "Mobile long-form reading: max measure + progressive image",
+      "priority": 71,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 74,
+      "id": "T100-078",
+      "title": "Timeline page public: source chips open primary",
+      "priority": 71,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 75,
+      "id": "T100-029",
+      "title": "Reader font/theme prefs persist without identity cookie",
+      "priority": 70,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 76,
+      "id": "T100-045",
+      "title": "Membership: privacy-preserving attribution params",
+      "priority": 70,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 77,
+      "id": "T100-054",
+      "title": "Security.txt contact entity-only + expiry monitor",
+      "priority": 70,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 78,
+      "id": "T100-070",
+      "title": "ETag / cache headers for corpora",
+      "priority": 70,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 79,
+      "id": "T100-084",
+      "title": "Actors roster: category completeness + profile link integrity",
+      "priority": 70,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 80,
+      "id": "T100-088",
+      "title": "Israel PDF expanded regenerates on densify",
+      "priority": 70,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 81,
+      "id": "T100-098",
+      "title": "AdSense disabled until entity publisher ID \u2014 keep comment lock",
+      "priority": 70,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 82,
+      "id": "T100-034",
+      "title": "RSS: dual corpus update items when major densify ships",
+      "priority": 69,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 83,
+      "id": "T100-032",
+      "title": "Reduced-motion: disable non-essential dossier animations",
+      "priority": 68,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 84,
+      "id": "T100-047",
+      "title": "Media kit: evidence taxonomy download + brand entity",
+      "priority": 68,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 85,
+      "id": "T100-059",
+      "title": "Search ranking: boost primary-source titles",
+      "priority": 68,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 86,
+      "id": "T100-085",
+      "title": "Incident multimedia: caption + source + license fields",
+      "priority": 68,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 87,
+      "id": "T100-065",
+      "title": "Social share panel: entity UTMs only",
+      "priority": 67,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 88,
+      "id": "T100-060",
+      "title": "Topic hubs: evidence-first intro paragraphs",
+      "priority": 66,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 89,
+      "id": "T100-068",
+      "title": "Stripe customer portal: entity branding only",
+      "priority": 66,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 90,
+      "id": "T100-041",
+      "title": "Multi-volume scaffolding: Volume II placeholder IA",
+      "priority": 65,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 91,
+      "id": "T100-091",
+      "title": "Pure suite: wall-clock budget + flake isolation",
+      "priority": 65,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 92,
+      "id": "T100-062",
+      "title": "Institute: keep practical content out of investigative claim contamination",
+      "priority": 64,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 93,
+      "id": "T100-092",
+      "title": "Live verify pack scheduled docs (operator runbook)",
+      "priority": 64,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 94,
+      "id": "T100-069",
+      "title": "Rate limit public corpus endpoints against scrape abuse",
+      "priority": 62,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 95,
+      "id": "T100-044",
+      "title": "Forum beta: identity-safe moderation copy",
+      "priority": 60,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 96,
+      "id": "T100-090",
+      "title": "Workbook CSV templates: schema version header",
+      "priority": 60,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 97,
+      "id": "T100-100",
+      "title": "Final path-to-10.0 scorecard for all surfaces",
+      "priority": 60,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 98,
+      "id": "T100-063",
+      "title": "Print stylesheet for methodology + sources",
+      "priority": 58,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 99,
+      "id": "T100-099",
+      "title": "Perpetual ledger re-rank trigger doc (>30d drift)",
+      "priority": 55,
+      "status": "Pending"
+    },
+    {
+      "display_rank": 100,
+      "id": "T100-076",
+      "title": "Dual language readiness: i18n without identity leakage",
+      "priority": 50,
+      "status": "Pending"
+    }
+  ]
+}

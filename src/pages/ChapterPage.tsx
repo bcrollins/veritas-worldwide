@@ -1,5 +1,5 @@
-import { type ReactNode, useEffect, useMemo, useState, useRef } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { type ReactNode, useCallback, useEffect, useMemo, useState, useRef } from 'react'
+import { useParams, Link, useSearchParams } from 'react-router-dom'
 import { chapterMeta, type ChapterMetadata } from '../data/chapterMeta'
 import type { ContentBlock, Chapter, ImageData, LoadedChapter } from '../data/chapterTypes'
 import { loadChapterContent, preloadChapters } from '../data/chapterLoaderHybrid'
@@ -803,23 +803,46 @@ function SocialShareBar({ chapter }: { chapter: Chapter }) {
 
 type EvidenceTierFilter = 'all' | 'verified' | 'circumstantial' | 'disputed'
 
+const EVIDENCE_TIER_VALUES = new Set<EvidenceTierFilter>(['all', 'verified', 'circumstantial', 'disputed'])
+
+function parseEvidenceTierParam(raw: string | null): EvidenceTierFilter {
+  if (raw && EVIDENCE_TIER_VALUES.has(raw as EvidenceTierFilter) && raw !== 'all') {
+    return raw as EvidenceTierFilter
+  }
+  return 'all'
+}
+
 export default function ChapterPage() {
   const { id } = useParams<{ id: string }>()
+  const [searchParams, setSearchParams] = useSearchParams()
   const { isLoggedIn, saveReadingProgress } = useAuth()
   const staticMetadata = chapterMeta.find(ch => ch.id === id)
   const [chapter, setChapter] = useState<LoadedChapter | null>(null)
   const [isLoading, setIsLoading] = useState(!staticMetadata)
-  const [evidenceTierFilter, setEvidenceTierFilter] = useState<EvidenceTierFilter>('all')
+  const [evidenceTierFilter, setEvidenceTierFilter] = useState<EvidenceTierFilter>(() =>
+    parseEvidenceTierParam(searchParams.get('tier')),
+  )
   const chapterScope = 'full'
   
   const readingTime = useMemo(() => chapter ? estimateReadingTime(chapter) : 0, [chapter])
   const evidenceCounts = useMemo(() => chapter ? getEvidenceCounts(chapter) : { verified: 0, circumstantial: 0, disputed: 0 }, [chapter])
   const hasEvidence = evidenceCounts.verified + evidenceCounts.circumstantial + evidenceCounts.disputed > 0
 
-  // Reset tier filter when navigating between chapters
+  // Deep-link + browser back/forward: keep filter in sync with ?tier=
   useEffect(() => {
-    setEvidenceTierFilter('all')
-  }, [id])
+    setEvidenceTierFilter(parseEvidenceTierParam(searchParams.get('tier')))
+  }, [id, searchParams])
+
+  const setEvidenceTier = useCallback(
+    (tier: EvidenceTierFilter) => {
+      setEvidenceTierFilter(tier)
+      const next = new URLSearchParams(searchParams)
+      if (tier === 'all') next.delete('tier')
+      else next.set('tier', tier)
+      setSearchParams(next, { replace: true })
+    },
+    [searchParams, setSearchParams],
+  )
 
   useScrollRestore(id)
   useReadingHistory(id)
@@ -1120,7 +1143,7 @@ export default function ChapterPage() {
               </span>
               <button
                 type="button"
-                onClick={() => setEvidenceTierFilter('all')}
+                onClick={() => setEvidenceTier('all')}
                 aria-pressed={evidenceTierFilter === 'all'}
                 className={`inline-flex min-h-[44px] items-center gap-1.5 rounded-sm border px-3 py-1.5 font-sans text-[0.65rem] font-semibold transition-colors ${
                   evidenceTierFilter === 'all'
@@ -1134,7 +1157,7 @@ export default function ChapterPage() {
                 <button
                   type="button"
                   onClick={() =>
-                    setEvidenceTierFilter((prev) => (prev === 'verified' ? 'all' : 'verified'))
+                    setEvidenceTier(evidenceTierFilter === 'verified' ? 'all' : 'verified')
                   }
                   aria-pressed={evidenceTierFilter === 'verified'}
                   title="Supported by primary source documents — court filings, congressional records, executive orders, peer-reviewed studies."
@@ -1151,8 +1174,8 @@ export default function ChapterPage() {
                 <button
                   type="button"
                   onClick={() =>
-                    setEvidenceTierFilter((prev) =>
-                      prev === 'circumstantial' ? 'all' : 'circumstantial',
+                    setEvidenceTier(
+                      evidenceTierFilter === 'circumstantial' ? 'all' : 'circumstantial',
                     )
                   }
                   aria-pressed={evidenceTierFilter === 'circumstantial'}
@@ -1170,7 +1193,7 @@ export default function ChapterPage() {
                 <button
                   type="button"
                   onClick={() =>
-                    setEvidenceTierFilter((prev) => (prev === 'disputed' ? 'all' : 'disputed'))
+                    setEvidenceTier(evidenceTierFilter === 'disputed' ? 'all' : 'disputed')
                   }
                   aria-pressed={evidenceTierFilter === 'disputed'}
                   title="Claimed by a named source or in sworn testimony but not independently confirmed."

@@ -99,7 +99,28 @@ Store quarterly snapshots under:
 | `/bookmarks` | robots + meta |
 | `/search` | robots Disallow + meta `noindex` (prerender + bot-meta) |
 | `/admin` | robots Disallow + bot-meta `sendNoindexShell` + SPA X-Robots |
+| `/researcher/*` | robots Disallow + client `noindex` (local-only timeline; never sitemap) |
+| `/bernie` | robots Disallow + X-Robots-Tag + client `noindex` (OPSEC quarantine) |
 | Unknown SPA paths | HTTP 404 + X-Robots-Tag |
+
+---
+
+## 5b. Soft-floor WARN ≠ identity FAIL (operator clarity)
+
+`verify:live-anonymity` uses two claim floors on `/record-of-jesus-christ/corpus.json`:
+
+| Floor | Meaning | Suite result |
+|-------|---------|--------------|
+| **Hard** (default 160) | Catastrophic empty/rollback package | **FAIL** — investigate deploy immediately |
+| **Soft** (env → `public/record-of-jesus-christ/soft-floor.json` → code fallback) | Latest densify wave lagging Railway | **WARN only** — not an identity failure |
+
+**Identity path is separate:** high-signal personal operator strings (never on public HTML). Soft corpus lag does **not** equal OPSEC failure.
+
+Gates:
+```bash
+npm run verify:identity-scrub   # pure product-surface scan (no network)
+npm run verify:live-anonymity   # live HTML + corpus + /bernie noindex
+```
 
 ---
 

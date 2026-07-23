@@ -45,4 +45,25 @@ assert(
   'server 400 message for missing attestations',
 )
 
+// #6 — OSINT order PII never in git or public dist (fail-closed).
+const gitignore = read('.gitignore')
+assert(
+  gitignore.includes('/data') || gitignore.includes('data/osint-orders'),
+  '.gitignore must ignore data/ OSINT order storage',
+)
+assert(
+  gitignore.includes('osint-orders'),
+  '.gitignore must mention osint-orders ndjson',
+)
+assert(
+  server.includes("pth === '/data'") &&
+    server.includes("pth.startsWith('/data/')") &&
+    server.includes('osint-orders'),
+  'server must 404 /data and osint-orders paths (fail-closed PII)',
+)
+assert(
+  !fs.existsSync(path.join(root, 'dist', 'data', 'osint-orders.ndjson')),
+  'dist must not ship osint-orders.ndjson',
+)
+
 console.log('[verify:osint-attestation-gate] PASS')

@@ -108,7 +108,19 @@ export default function ChapterPDF({ chapter }: Props) {
       doc.setFont('helvetica', 'normal')
       doc.setTextColor(100, 100, 100)
       doc.text(`${chapter.author || 'Veritas Worldwide'} · Published March 2026 · veritasworldwide.com`, ML, y)
-      y += 12
+      y += 10
+
+      // Evidence tier legend (Volume I taxonomy — permanent researcher affordance)
+      doc.setFontSize(7)
+      doc.setFont('helvetica', 'bold')
+      doc.setTextColor(80, 80, 80)
+      const legend =
+        'Evidence tiers: VERIFIED = primary/multi-source documentation; CIRCUMSTANTIAL = documented facts with interpretive link; DISPUTED = reported, not independently confirmed.'
+      for (const line of doc.splitTextToSize(legend, CW)) {
+        doc.text(line, ML, y)
+        y += 4
+      }
+      y += 8
 
       // ── Content blocks ──
       for (const block of chapter.content) {
