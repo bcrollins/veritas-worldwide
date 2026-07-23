@@ -5841,6 +5841,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-psychotropic-meds-shortage-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Psychotropic & Chronic Mental-Health Meds Shortage Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (psych-meds cohort)',
+    location: 'Gaza Strip pharmacies, clinics, and field mental-health points',
+    summary:
+      'WHO, UNICEF, and multi-source health reporting document shortages of psychotropic and chronic mental-health medications under siege — collapsing continuity of care for civilians including children with pre-existing and war-induced conditions. Pattern card for psych-meds shortage distinct from MHPSS system collapse and pharmacy-medicine shortage cards.',
+    evidence:
+      'WHO mental-health cluster materials, UNICEF MHPSS notes, and multi-outlet meds-shortage coverage establish multi-source psychotropic supply failure. Exact stock-out rates evolve; multi-source wartime psych-meds shortage is the claim.',
+    sources: [
+      { label: 'WHO mental health materials', url: 'https://www.who.int' },
+      { label: 'UNICEF MHPSS materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza mental-health meds coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-family-notification-delays-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostage Family Notification & Uncertainty Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (notification cohort)',
+    location: 'Israel hostage-family households / government liaison channels',
+    summary:
+      'Israeli multi-outlet and government liaison reporting document prolonged uncertainty for hostage families — delayed status confirmation, contested alive/dead classifications, and multi-month information blackouts — a civilian psychological-harm pattern distinct from hostages-held and forensic-ID cards.',
+    evidence:
+      'Israeli government hostage-status updates, multi-source family-forum reporting, and multi-outlet coverage establish multi-source prolonged family uncertainty. Exact case timelines vary; multi-source multi-month notification/status uncertainty is the claim.',
+    sources: [
+      { label: 'Israeli government hostage public materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet hostage family uncertainty coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet family-forum reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-reconstruction-debris-removal-block-pattern-2024-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Reconstruction Debris-Removal Block Pattern (2024–2025)',
+    date: '2024 – 2025 (debris-removal cohort)',
+    location: 'Gaza Strip destroyed urban neighborhoods',
+    summary:
+      'World Bank, UNEP, and multi-source reporting document tens of millions of tons of rubble blocking return and reconstruction — with multi-source analysis of decades-scale clearance timelines under continued access constraints. Pattern card for debris-removal as reconstruction bottleneck distinct from rubble-UXO and reconstruction-cost cards.',
+    evidence:
+      'World Bank/UNEP debris assessments and multi-outlet coverage establish multi-source rubble volumes and clearance timelines. Exact tonnage estimates evolve; multi-source wartime debris-removal bottleneck is the claim.',
+    sources: [
+      { label: 'World Bank Gaza assessments', url: 'https://www.worldbank.org' },
+      { label: 'UNEP environmental assessments', url: 'https://www.unep.org' },
+      { label: 'Multi-outlet Gaza rubble clearance coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'World Bank public updates', url: 'https://www.worldbank.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -8929,6 +9010,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['blood', 'surgery', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-psych-meds-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Psychotropic Meds Shortage Pattern',
+    description: 'WHO/UNICEF multi-source documentation of psychotropic and chronic mental-health medication shortages under siege.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-psychotropic-meds-shortage-pattern-2023-2025',
+      'gaza-mhpss-system-collapse-pattern-2023-2025',
+      'gaza-pharmacy-medicine-shortage-pattern-2023-2025',
+    ],
+    tags: ['mental-health', 'meds', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-family-uncertainty-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostage Family Notification Uncertainty Pattern',
+    description: 'Multi-source documentation of prolonged status uncertainty and notification delays for hostage families.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-family-notification-delays-pattern-2023-2025',
+      'israel-hostages-families-advocacy-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'families', 'civilians', 'israel'],
+  },
+
+  {
+    id: 'tl-gaza-debris-removal-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Gaza Reconstruction Debris-Removal Block Pattern',
+    description: 'World Bank/UNEP multi-source documentation of rubble volumes blocking return and reconstruction.',
+    source: 'World Bank / UNEP / multi-outlet',
+    sourceUrl: 'https://www.worldbank.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-reconstruction-debris-removal-block-pattern-2024-2025',
+      'gaza-rubble-uxo-waste-pattern-2023-2025',
+      'gaza-reconstruction-cost-pattern-2024-2025',
+    ],
+    tags: ['rubble', 'reconstruction', 'civilians', 'gaza'],
+  },
+
+
 
 
 
