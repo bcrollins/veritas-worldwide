@@ -72,6 +72,8 @@ const BRAND_ASSETS = {
   videoEndCard: '/brand-kit/04-social/video-end-card.svg',
   videoWatermark: '/brand-kit/04-social/video-watermark.svg',
   biosJson: '/brand-kit/07-docs/bios.json',
+  linkedinPost: '/brand-kit/04-social/linkedin-post.svg',
+  facebookPost: '/brand-kit/04-social/facebook-post.svg',
   correctionNotice: '/brand-kit/09-templates/correction-notice.html',
   pressContact: '/brand-kit/07-docs/PRESS-CONTACT.md',
   pressVcard: '/brand-kit/09-templates/press-contact.vcf',
@@ -119,12 +121,14 @@ const PLATFORM_SETUP: Record<string, string[]> = {
     `Upload banner 1584×396: ${BRAND_ASSETS.bannerLinkedIn}`,
     `Article header 1128×191: ${BRAND_ASSETS.linkedInArticle}`,
     'Set description (long bio) + website URL',
+    `Feed post image 1200×627: ${BRAND_ASSETS.linkedinPost}`,
     'Publish 3+ articles; invite connections',
   ],
   'Facebook Page': [
     'Create Page (News/Media category)',
     `Profile: ${BRAND_ASSETS.profile} · Cover: ${BRAND_ASSETS.bannerFacebook}`,
     'Set About (long bio) + website + social links',
+    `Feed post image 1200×630: ${BRAND_ASSETS.facebookPost}`,
     'Create pinned post with The Record link',
   ],
   'YouTube': [

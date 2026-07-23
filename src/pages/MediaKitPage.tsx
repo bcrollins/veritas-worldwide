@@ -68,6 +68,8 @@ const ASSETS = [
       { href: '/brand-kit/04-social/video-watermark.svg', label: 'Video watermark' },
       { href: '/brand-kit/09-templates/presentation-body.svg', label: 'Presentation body' },
       { href: '/brand-kit/07-docs/bios.json', label: 'Bios JSON' },
+      { href: '/brand-kit/04-social/linkedin-post.svg', label: 'LinkedIn post' },
+      { href: '/brand-kit/04-social/facebook-post.svg', label: 'Facebook post' },
       { href: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md', label: 'Asset matrix' },
       { href: '/brand-kit/07-docs/SOCIAL-LAUNCH.md', label: 'Launch checklist' },
     ],

@@ -1,7 +1,7 @@
 {
-  "version": "3.0.0",
+  "version": "3.0.1",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-23T08:13:22.144Z",
+  "generatedAt": "2026-07-23T08:26:01.590Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "publicMediaKit": "/media-kit",
   "staticMediaKit": "/brand-kit/09-templates/media-kit.html",
@@ -317,11 +317,13 @@
     "linkedin": {
       "logo": "/brand-kit/01-logos/logo-mark-512.png",
       "banner": "/brand-kit/04-social/social-banner-linkedin.svg",
-      "articleHeader": "/brand-kit/04-social/linkedin-article-header.svg"
+      "articleHeader": "/brand-kit/04-social/linkedin-article-header.svg",
+      "postImage": "/brand-kit/04-social/linkedin-post.svg"
     },
     "facebook": {
       "profile": "/brand-kit/04-social/social-profile-400.png",
-      "cover": "/brand-kit/04-social/social-banner-facebook.svg"
+      "cover": "/brand-kit/04-social/social-banner-facebook.svg",
+      "postImage": "/brand-kit/04-social/facebook-post.svg"
     },
     "youtube": {
       "profile": "/brand-kit/02-icons/app-icon-512.png",
@@ -374,6 +376,6 @@
       "unverified": "/brand-kit/04-social/evidence-tier-unverified.svg"
     }
   },
-  "zipBytes": 2068347,
-  "zipSha256": "b19a87c8e1c4b6e3b9f9dd59d64aee345ef8a324af621a4e11c88931f3c382b7"
+  "zipBytes": 2127432,
+  "zipSha256": "fcfd83b15afd10ac940ca1d9f4e882db01dfe6fa87047c9196bd8d0a47fd5ff7"
 }

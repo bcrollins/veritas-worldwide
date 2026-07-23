@@ -51,6 +51,8 @@ const PREVIEW_ASSETS = [
   { label: 'Video End Card', href: '/brand-kit/04-social/video-end-card.svg', bg: 'bg-black' },
   { label: 'Video Watermark', href: '/brand-kit/04-social/video-watermark.svg', bg: 'bg-black' },
   { label: 'Deck Body', href: '/brand-kit/09-templates/presentation-body.svg', bg: 'bg-parchment' },
+  { label: 'LinkedIn Post', href: '/brand-kit/04-social/linkedin-post.svg', bg: 'bg-black' },
+  { label: 'Facebook Post', href: '/brand-kit/04-social/facebook-post.svg', bg: 'bg-parchment' },
 ]
 
 const TOKEN_SWATCHES = [

@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '3.0.0'
+const KIT_VERSION = '3.0.1'
 
 const C = {
   parchment: '#FAF8F5',
@@ -700,7 +700,10 @@ function brandDoDontSvg() {
 function changelogMd() {
   return `# Brand Kit Changelog — Veritas Worldwide Press
 
-## 3.0.0 — ${new Date().toISOString().slice(0, 10)}
+## 3.0.1 — ${new Date().toISOString().slice(0, 10)}
+- LinkedIn post image (1200×627) + Facebook post image (1200×630)
+
+## 3.0.0
 - Mastodon banner, WhatsApp cover, presentation body slide
 - Video end card + corner watermark
 - bios.json (handles, bios, hashtags, contacts)
@@ -1212,6 +1215,39 @@ function biosJson() {
   }, null, 2)
 }
 
+
+function linkedInPostSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627" role="img" aria-label="LinkedIn post image">
+  <rect width="1200" height="627" fill="${C.black}"/>
+  <rect x="0" y="0" width="1200" height="6" fill="${C.crimson}"/>
+  <rect x="0" y="621" width="1200" height="6" fill="${C.crimson}"/>
+  <text x="72" y="120" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5" fill="${C.gold}">VERITAS WORLDWIDE PRESS</text>
+  <text x="72" y="280" font-family="Georgia, serif" font-size="48" font-weight="700" fill="${C.white}">Open the source.</text>
+  <text x="72" y="350" font-family="Georgia, serif" font-size="48" font-weight="700" fill="${C.white}">Label the evidence.</text>
+  <text x="72" y="440" font-family="Georgia, serif" font-size="24" font-style="italic" fill="rgba(255,255,255,0.7)">Primary sources. Public record. Your conclusions.</text>
+  <text x="72" y="560" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.45)">veritasworldwide.com</text>
+  <circle cx="1080" cy="480" r="56" fill="none" stroke="${C.crimson}" stroke-width="4"/>
+  <text x="1080" y="498" text-anchor="middle" font-family="Georgia, serif" font-size="48" font-weight="700" fill="${C.white}">V</text>
+</svg>`
+}
+
+function facebookPostSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Facebook post image">
+  <rect width="1200" height="630" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="1200" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="622" width="1200" height="8" fill="${C.crimson}"/>
+  <circle cx="120" cy="200" r="52" fill="none" stroke="${C.crimson}" stroke-width="4"/>
+  <text x="120" y="218" text-anchor="middle" font-family="Georgia, serif" font-size="44" font-weight="700" fill="${C.ink}">V</text>
+  <text x="200" y="180" font-family="Georgia, serif" font-size="36" font-weight="700" fill="${C.ink}">The Record</text>
+  <text x="200" y="230" font-family="Georgia, serif" font-size="20" font-style="italic" fill="${C.inkMuted}">Documentary archive of power and institutions</text>
+  <text x="80" y="380" font-family="Georgia, serif" font-size="32" fill="${C.ink}">Primary sources. Public record.</text>
+  <text x="80" y="430" font-family="Georgia, serif" font-size="32" fill="${C.ink}">Your conclusions.</text>
+  <text x="80" y="540" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" letter-spacing="3" fill="${C.crimson}">VERITAS WORLDWIDE PRESS · veritasworldwide.com</text>
+</svg>`
+}
+
 function brandVoiceMd() {
   return `# Brand Voice — Veritas Worldwide Press
 
@@ -1622,6 +1658,8 @@ Editorial and licensing: rights@veritasworldwide.com
   writeSvg('09-templates/presentation-body.svg', presentationBodySvg())
   writeSvg('04-social/video-end-card.svg', videoEndCardSvg())
   writeSvg('04-social/video-watermark.svg', videoWatermarkSvg())
+  writeSvg('04-social/linkedin-post.svg', linkedInPostSvg())
+  writeSvg('04-social/facebook-post.svg', facebookPostSvg())
   writeFileSync(join(KIT, '07-docs', 'bios.json'), biosJson() + '\n')
   writeFileSync(join(KIT, '07-docs', 'SOCIAL-LAUNCH.md'), socialLaunchMd())
   writeFileSync(join(KIT, '09-templates', 'correction-notice.html'), correctionNoticeHtml())
@@ -1683,6 +1721,8 @@ Editorial and licensing: rights@veritasworldwide.com
     ['09-templates/presentation-body.svg', '09-templates/presentation-body.png', 1920],
     ['04-social/video-end-card.svg', '04-social/video-end-card.png', 1920],
     ['04-social/video-watermark.svg', '04-social/video-watermark.png', 400],
+    ['04-social/linkedin-post.svg', '04-social/linkedin-post.png', 1200],
+    ['04-social/facebook-post.svg', '04-social/facebook-post.png', 1200],
   ]
   const criticalPng = new Set([
     '01-logos/logo-mark-512.png',
@@ -1819,8 +1859,9 @@ Editorial and licensing: rights@veritasworldwide.com
         logo: '/brand-kit/01-logos/logo-mark-512.png',
         banner: '/brand-kit/04-social/social-banner-linkedin.svg',
         articleHeader: '/brand-kit/04-social/linkedin-article-header.svg',
+        postImage: '/brand-kit/04-social/linkedin-post.svg',
       },
-      facebook: { profile: '/brand-kit/04-social/social-profile-400.png', cover: '/brand-kit/04-social/social-banner-facebook.svg' },
+      facebook: { profile: '/brand-kit/04-social/social-profile-400.png', cover: '/brand-kit/04-social/social-banner-facebook.svg', postImage: '/brand-kit/04-social/facebook-post.svg' },
       youtube: {
         profile: '/brand-kit/02-icons/app-icon-512.png',
         banner: '/brand-kit/04-social/social-banner-youtube.svg',

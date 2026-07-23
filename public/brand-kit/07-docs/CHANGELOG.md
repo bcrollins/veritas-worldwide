@@ -1,6 +1,9 @@
 # Brand Kit Changelog — Veritas Worldwide Press
 
-## 3.0.0 — 2026-07-23
+## 3.0.1 — 2026-07-23
+- LinkedIn post image (1200×627) + Facebook post image (1200×630)
+
+## 3.0.0
 - Mastodon banner, WhatsApp cover, presentation body slide
 - Video end card + corner watermark
 - bios.json (handles, bios, hashtags, contacts)
