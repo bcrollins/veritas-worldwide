@@ -1892,4 +1892,9 @@ assert(a11yUlt.includes('<RelatedHubs') || a11yUlt.includes('RelatedHubs'), 'a11
 assert(a11yUlt.includes('ResearchHubChips') && a11yUlt.includes('DossierHubSpokes'), 'a11y sibling credit ultimate')
 
 
+
+// suite length self-report ultimate
+assert(surfaces.length >= 102 && surfaces.length < 500, `suite length sane ${surfaces.length}`)
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
