@@ -504,12 +504,13 @@ for (const f of (jeffriesP.documentedFalsehoods || []).filter((x) => x.tier === 
 
 // Elizabeth Warren multi-entry integrity deep-dive
 const warren = scores['elizabeth-warren'];
-if (!warren || warren.n < 2) throw new Error('elizabeth-warren needs ≥2 verified falsehoods, got ' + (warren?.n ?? 0));
-if (warren.score > 75) throw new Error('elizabeth-warren score expected ≤75 after deep dive, got ' + warren.score);
+if (!warren || warren.n < 3) throw new Error('elizabeth-warren needs ≥3 verified falsehoods, got ' + (warren?.n ?? 0));
+if (warren.score > 60) throw new Error('elizabeth-warren score expected ≤60 after densify, got ' + warren.score);
 const warrenP = getProfileBySlug('elizabeth-warren');
 for (const id of [
   'warren-flat-wages-2020',
   'warren-klobuchar-health-plan-two-paragraphs-2020',
+  'warren-student-debt-5-percent-whites-after-20-years-2021',
 ]) {
   if (!(warrenP.documentedFalsehoods || []).some((f) => f.id === id)) {
     throw new Error('elizabeth-warren missing docket id: ' + id);

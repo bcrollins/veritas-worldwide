@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:01:37.239Z",
+  "generatedAt": "2026-07-23T09:03:27.329Z",
   "count": 96,
   "profiles": [
     {
@@ -883,8 +883,8 @@
         "Conditionality Rhetoric",
         "Integrity Docket"
       ],
-      "integrityScore": 70,
-      "integrityFalsehoods": 2,
+      "integrityScore": 55,
+      "integrityFalsehoods": 3,
       "integrityHasDocket": true
     },
     {

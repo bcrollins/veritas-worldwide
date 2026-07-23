@@ -5729,6 +5729,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'warren-student-debt-5-percent-whites-after-20-years-2021',
+        statement:
+          'After 20 years, “only 5%” of white student-debt holders still have debt (prompting Schumer’s absolute 5%/95% Black–white split).',
+        saidAt: 'February 4, 2021',
+        context:
+          'Joint press conference with Sen. Chuck Schumer and House Democrats urging President Biden to cancel up to $50,000 in federal student debt; Warren supplied the “only 5%” figure Schumer then expanded into a racial-disparity claim.',
+        whyFalse:
+          'FactCheck.org: Brandeis IASP found 51% of white borrowers and 74% of Black borrowers still held student debt 20 years after starting college. The study’s 94%/5% figures describe median remaining balances among borrowers, not the share of people still in debt. Warren’s “only 5%” correction to Schumer was itself the wrong statistic from the paper she was citing.',
+        correction:
+          'About half of white borrowers still had student debt after 20 years — not 5%; the Brandeis paper’s 5% figure is about median balance remaining, not headcount.',
+        statementSource: 'Rev transcript — Schumer/Warren student-debt press conference, Feb. 4, 2021',
+        statementUrl:
+          'https://www.rev.com/blog/transcripts/chuck-schumer-elizabeth-warren-press-conference-transcript-plan-to-cancel-50k-in-student-loan-debt',
+        debunkSource: 'FactCheck.org — Schumer, Warren Misstate Student Loan Debt Disparity (Feb. 9, 2021); Brandeis IASP Stalling Dreams (2019)',
+        debunkUrl: 'https://www.factcheck.org/2021/02/schumer-warren-misstate-student-loan-debt-disparity/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.warren.senate.gov' },
