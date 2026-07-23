@@ -378,7 +378,7 @@ export default function ContentPackPage() {
             links back to a fully sourced article.
           </p>
           <div className="mt-5">
-            <ResearchHubChips />
+            <ResearchHubChips excludePath="/content-pack" />
           </div>
         </div>
       </div>

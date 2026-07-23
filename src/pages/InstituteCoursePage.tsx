@@ -110,7 +110,7 @@ export default function InstituteCoursePage() {
         </Link>
 
         <div className="mt-4" data-testid="institute-course-research-chips">
-          <ResearchHubChips />
+          <ResearchHubChips excludePath="/institute" />
         </div>
 
         <div className="mt-6 flex flex-wrap gap-2">

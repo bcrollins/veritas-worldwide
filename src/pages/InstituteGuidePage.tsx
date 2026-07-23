@@ -117,7 +117,7 @@ export default function InstituteGuidePage() {
         </Link>
 
         <div className="mt-4" data-testid="institute-guide-research-chips">
-          <ResearchHubChips />
+          <ResearchHubChips excludePath="/institute" />
         </div>
 
         <div className="mt-6 flex flex-wrap gap-2">

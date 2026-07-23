@@ -23,7 +23,7 @@ export default function VolumeIIHubPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-12 sm:py-16">
       <div className="mb-6">
-        <ResearchHubChips />
+        <ResearchHubChips excludePath="/volume-ii" />
       </div>
       <p className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.14em] text-crimson mb-3">
         Multi-volume scaffold · noindex

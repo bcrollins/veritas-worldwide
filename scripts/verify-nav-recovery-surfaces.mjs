@@ -154,6 +154,27 @@ assert(relatedHubsSrc.includes('/read') && relatedHubsSrc.includes('/search'), '
 const researchChipsSrc = read('src/components/ResearchHubChips.tsx')
 assert(researchChipsSrc.includes('if (c.to === excludePath) return false'), 'ResearchHubChips excludePath filters')
 
+// Research surfaces pass excludePath so chips do not self-link
+let excludePathUses = 0
+for (const rel of [
+  'src/pages/MethodologyPage.tsx',
+  'src/pages/SourcesPage.tsx',
+  'src/pages/ContentPackPage.tsx',
+  'src/pages/ResearcherHubPage.tsx',
+  'src/pages/InstitutePage.tsx',
+  'src/pages/BibleHistoryPage.tsx',
+  'src/pages/RecordOfJesusChristPage.tsx',
+  'src/pages/VolumeIIHubPage.tsx',
+  'src/pages/InstituteBookPage.tsx',
+  'src/pages/InstituteMethodologyPage.tsx',
+  'src/pages/PersonalTimelinePage.tsx',
+  'src/pages/InstituteCoursePage.tsx',
+  'src/pages/InstituteGuidePage.tsx',
+]) {
+  if (read(rel).includes('excludePath=')) excludePathUses += 1
+}
+assert(excludePathUses >= 10, `ResearchHubChips excludePath uses ${excludePathUses} < 10`)
+
 // RelatedHubs adoption wave: every migrated public recovery surface mounts it
 for (const rel of [
   'src/pages/NewsPage.tsx',

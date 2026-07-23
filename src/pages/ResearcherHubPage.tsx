@@ -191,7 +191,7 @@ export default function ResearcherHubPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6">
       <div className="mb-5">
-        <ResearchHubChips />
+        <ResearchHubChips excludePath="/researcher" />
       </div>
       <p className="font-sans text-[0.6rem] font-bold uppercase tracking-[0.18em] text-crimson">
         Veritas Worldwide · researcher tools

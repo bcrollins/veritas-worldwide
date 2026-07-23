@@ -450,7 +450,7 @@ export default function BibleHistoryPage() {
       {/* Hero Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <div className="mb-6">
-          <ResearchHubChips />
+          <ResearchHubChips excludePath="/bible" />
         </div>
         <header className="max-w-3xl mb-14 border-b border-border pb-10">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-4">

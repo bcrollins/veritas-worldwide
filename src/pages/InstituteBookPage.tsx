@@ -88,7 +88,7 @@ export default function InstituteBookPage() {
   return (
     <div className="space-y-8">
       <div className="px-1">
-        <ResearchHubChips />
+        <ResearchHubChips excludePath="/institute" />
       </div>
       <section className="institute-panel-strong px-6 py-8 sm:px-8 lg:px-10">
         <p className="institute-eyebrow">Field Manual</p>

@@ -680,7 +680,7 @@ export default function RecordOfJesusChristPage() {
 
       <div id="roc-main" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16" tabIndex={-1}>
         <div className="mb-6">
-          <ResearchHubChips />
+          <ResearchHubChips excludePath="/record-of-jesus-christ" />
         </div>
         <header className="max-w-3xl mb-12 border-b border-border pb-10">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-4">

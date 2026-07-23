@@ -156,7 +156,7 @@ export default function InstitutePage() {
               </Link>
             </div>
             <div className="mt-6">
-              <ResearchHubChips />
+              <ResearchHubChips excludePath="/institute" />
             </div>
           </div>
 
