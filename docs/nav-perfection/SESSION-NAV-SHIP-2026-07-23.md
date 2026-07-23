@@ -18,6 +18,8 @@
 | `fb35ab5` | Timeline related hubs |
 | `27633bf` | News desk related hubs |
 | `54be9f8` | Topics related hubs |
+| `a00e50f` | Institute research chips + a11y floors |
+| `cdf9182` | About + Media Kit related hubs |
 
 ## Floors
 - `npm run verify:nav-ia` — expanded pure suite
