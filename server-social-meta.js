@@ -195,6 +195,14 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
         title: 'Veritas Institute Field Manual | Veritas Worldwide',
         desc: 'Veritas Institute pairs a printable field manual for ordinary emergencies with source-backed trade, repair, preparedness, food, and healthcare-support courses.',
       },
+      '/institute/methodology': {
+        title: 'Veritas Institute Methodology | Veritas Worldwide',
+        desc: 'How Veritas Institute builds a practical field manual and trade-course library from public safety guidance, licensing pathways, extension systems, and source-first editing.',
+      },
+      '/institute/book': {
+        title: 'Field Manual | Veritas Institute | Veritas Worldwide',
+        desc: 'The Veritas Institute Field Manual combines urgent household and roadside answers with source-backed trade, repair, preparedness, food, and healthcare-support course paths.',
+      },
       '/bible': {
         title: 'The Bible: History & Factual Record | Veritas Worldwide',
         desc: "Primary-source examination of the Bible's historical claims — archaeology, manuscripts, and scholarly consensus. Every claim labeled by evidence tier.",

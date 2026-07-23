@@ -2147,9 +2147,10 @@ const staticPages = [
   },
   {
     route: '/institute/methodology',
-    title: 'Institute Methodology | Veritas Institute',
+    title: 'Veritas Institute Methodology | Veritas Worldwide',
     heading: 'Institute Methodology',
-    description: 'How Veritas Institute builds a practical field manual and course library from public safety guidance, licensing pathways, extension systems, and source-first editing.',
+    description:
+      'How Veritas Institute builds a practical field manual and trade-course library from public safety guidance, licensing pathways, extension systems, and source-first editing.',
     body: [
       'The institute uses public labor, preparedness, extension, and safety sources to build a defensible field manual and practical learning surface.',
     ],
@@ -2302,7 +2303,8 @@ const staticPages = [
     route: '/membership',
     title: 'Membership | Veritas Worldwide',
     heading: 'Support The Record',
-    description: 'Membership and recurring support options that keep the documentary record free, open, and independent.',
+    description:
+      'Fund independent investigative journalism. No party. No agenda. Just the record. Join as a Correspondent, Investigator, or Founding Circle member.',
     body: [
       'Support language remains humble by design. Readers fund the archive, document acquisition, and ongoing reporting without paywalling the core publication.',
     ],
@@ -2379,9 +2381,10 @@ const staticPages = [
   },
   {
     route: '/deep-state',
-    title: 'The Deep State - The Epstein Network | Veritas Worldwide',
-    heading: 'The Deep State - The Epstein Network',
-    description: 'An investigative dossier documenting the Epstein network through court records, testimony, and verified reporting.',
+    title: 'The Deep State — The Epstein Network | Veritas Worldwide',
+    heading: 'The Deep State — The Epstein Network',
+    description:
+      'Interactive Epstein network dossier: court filings, sworn testimony, government reports, and verified journalism. Every claim sourced to the public record.',
     body: [
       'This dossier is structured as a source-first investigation, linking individuals, institutions, and documented events without blurring the distinction between evidence tiers.',
     ],
@@ -2426,7 +2429,8 @@ const staticPages = [
     route: '/share',
     title: 'Content Packs & Brand Kit | Veritas Worldwide',
     heading: 'Content Packs & Brand Kit',
-    description: 'Official Veritas Worldwide assets for press, advocacy, and social distribution.',
+    description:
+      'Official brand assets, shareable social graphics, pre-written posts, and article cards. Free for press, social media, and advocacy with attribution.',
     body: [
       'Content packs are designed to preserve source integrity while making sharing easier across social, newsletter, and press contexts.',
     ],
@@ -2447,7 +2451,8 @@ const staticPages = [
     route: '/profiles',
     title: 'Power Profiles | Veritas Worldwide',
     heading: 'Power Profiles',
-    description: 'Sourced profiles of politicians, donors, billionaires, lobbyists, and institutional actors.',
+    description:
+      'Browse comprehensive profiles of influential figures, politicians, financiers, lobbyists, intelligence actors, and other power brokers.',
     body: [
       'Profiles aggregate claims, donations, quotes, and documented connections so readers can understand networks of influence without losing the underlying citations.',
       'Machine-readable index: https://veritasworldwide.com/profiles/corpus.json — 94 profiles with first-party portrait paths and Bioguide IDs where available.',

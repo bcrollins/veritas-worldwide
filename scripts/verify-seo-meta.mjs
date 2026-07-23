@@ -260,6 +260,22 @@ assert(
   prerender.includes('Current Events — Primary Source Journalism'),
   'prerender /news title must target primary-source journalism intent',
 )
+assert(
+  prerender.includes('Fund independent investigative journalism'),
+  'prerender /membership description must match client membership pitch',
+)
+assert(
+  prerender.includes('Interactive Epstein network dossier') ||
+    prerender.includes('Interactive Epstein network'),
+  'prerender /deep-state description must match client investigation pitch',
+)
+
+const instituteMethod = read('src/pages/InstituteMethodologyPage.tsx')
+assert(instituteMethod.includes('breadcrumbJsonLd'), 'Institute methodology must emit breadcrumbs')
+assert(instituteMethod.includes('faqJsonLd'), 'Institute methodology must emit FAQPage for voice/PAA')
+const searchPageSeo = read('src/pages/SearchPage.tsx')
+assert(searchPageSeo.includes('breadcrumbJsonLd'), 'Search page must emit breadcrumbs even when noindex')
+assert(searchPageSeo.includes("robots: 'noindex, follow'"), 'Search page must remain noindex')
 
 console.log(
   '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, image sitemap floors green',
