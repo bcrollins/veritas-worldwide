@@ -443,6 +443,14 @@ assert(fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfilePage.tsx')
 assert(fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8').includes('/membership'), 'Privacy Membership IA live lock')
 assert(fs.readFileSync(path.join(root, 'src/pages/TermsPage.tsx'), 'utf8').includes('/membership'), 'Terms Membership IA live lock')
 
+
+// full RelatedHubs platform final IA sentinel
+const platFinalIa = fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
+assert(platFinalIa.includes('emphasizeTo') && platFinalIa.includes('PRIMARY_RELATED_HUBS'), 'platform final IA')
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('emphasizeTo="/"') || fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes("emphasizeTo='/'"), 'soft-404 emphasize final IA')
+assert(fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8').includes('/membership'), 'Privacy Membership final IA')
+assert(fs.readFileSync(path.join(root, 'src/pages/TermsPage.tsx'), 'utf8').includes('/membership'), 'Terms Membership final IA')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
