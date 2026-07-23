@@ -1044,4 +1044,12 @@ const primaryBlockFinal = primaryFinal.match(/PRIMARY_RELATED_HUBS[^=]*= \[([\s\
 assert(primaryBlockFinal, 'PRIMARY_RELATED_HUBS block final')
 assert((primaryBlockFinal[1].match(/to:/g) || []).length === 5, 'PRIMARY_RELATED count 5 unique final')
 
+
+// Server soft-404 hub count reaffirm unique final
+const serverFinal = read('server.js')
+const nfFinal = serverFinal.match(/function buildNotFoundHtml\(\) \{([\s\S]*?)\n\}/)
+assert(nfFinal, 'buildNotFoundHtml final')
+const hrefsFinal = [...nfFinal[1].matchAll(/href="(\/[^"]*)"/g)].map((x) => x[1])
+assert(hrefsFinal.length === 5, 'server soft-404 hub count 5 unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
