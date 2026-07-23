@@ -1799,4 +1799,18 @@ assert(relatedAriaEnd.includes('min-h-[44px]'), 'RelatedHubs touch end')
 assert(relatedAriaEnd.includes('no-print'), 'RelatedHubs no-print end')
 
 
+
+// cookie z-100 tab z-50 membership z-40 ultimate stack end
+assert(read('src/components/CookieConsent.tsx').includes('z-[100]'), 'cookie z-100 stack end')
+assert(read('src/App.tsx').includes('z-50'), 'tab z-50 stack end')
+assert(read('src/components/StickyMembershipBar.tsx').includes('z-40'), 'membership z-40 stack end')
+
+// soft-404 SPA + server both five hubs ultimate end
+const nfSpaEnd = read('src/pages/NotFoundPage.tsx')
+assert(nfSpaEnd.includes('PRIMARY_RELATED_HUBS') || nfSpaEnd.includes('PRIMARY_HUBS'), 'SPA soft-404 PRIMARY end')
+const serverSpaEnd = read('server.js')
+assert(serverSpaEnd.includes('server-soft-404'), 'server soft-404 end')
+assert(serverSpaEnd.includes('href="/read"') && serverSpaEnd.includes('href="/search"'), 'server soft-404 Read+Search end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
