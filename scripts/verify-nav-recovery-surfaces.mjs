@@ -37,6 +37,7 @@ const surfaces = [
   ['src/components/CookieConsent.tsx', 'data-z-above-tab-bar'],
   ['src/components/CookieConsent.tsx', 'z-[100]'],
   ['src/components/CookieConsent.tsx', 'cookie-consent-banner'],
+  ['src/components/CookieConsent.tsx', 'mobile-top-desktop-bottom'],
   ['src/App.tsx', 'mobile-tab-bar'],
   ['src/App.tsx', 'function MobileTabBar'],
   ['src/App.tsx', '<MobileTabBar'],
