@@ -43,6 +43,7 @@ const surfaces = [
   ['src/App.tsx', 'safe-area-inset-bottom'],
   ['src/App.tsx', 'Skip to'],
   ['src/App.tsx', 'main-content'],
+  ['src/App.tsx', 'site-footer'],
   ['src/App.tsx', 'drawerBrowseLinks'],
   ['src/App.tsx', 'drawerResearchLinks'],
   ['src/components/StickyMembershipBar.tsx', 'sticky-membership-bar'],
