@@ -443,3 +443,7 @@ assert(homePage.includes('340+ tier-labeled') || homePage.includes('330+ tier-la
 const sourcesPage = read('src/pages/SourcesPage.tsx')
 assert(!sourcesPage.includes('200+ tier-labeled'), 'Sources must not advertise stale 200+ ROC claim floor')
 assert(sourcesPage.includes('340+ tier-labeled') || sourcesPage.includes('330+ tier-labeled'), 'Sources must advertise current ROC claim floor')
+
+const methodPage = read('src/pages/MethodologyPage.tsx')
+assert(!methodPage.includes('200+ claims with proofVsConcept'), 'Methodology must not advertise stale 200+ ROC claim floor')
+assert(methodPage.includes('340+ claims') || methodPage.includes('330+ claims'), 'Methodology must advertise current ROC claim floor')
