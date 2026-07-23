@@ -1898,6 +1898,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 100 },
   },
 
+  {
+    id: 'iran-missile-barrage-april-2024',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu', 'joe-biden'],
+    relatedMoneyNodeIds: ['iron-dome', 'iron-beam-laser-2024', 'annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Iran Missile/Drone Barrage on Israel (April 13–14, 2024)',
+    date: 'April 13–14, 2024',
+    location: 'Israel (multi-site air defense intercepts)',
+    summary:
+      'Iran launched a large-scale drone and missile barrage toward Israel in response to the Damascus consulate strike, with the overwhelming majority of projectiles intercepted by Israeli and allied defenses including U.S. assets. Multi-source reporting documents limited ground impacts and casualties; included for regional war chronology and Iron Dome / U.S. defense enablement context.',
+    evidence:
+      'IDF/US CENTCOM public intercept tallies, multi-source international press, and satellite/OSINT tracking establish the scale of the barrage and high intercept rates. Civilian casualty floor is low relative to launch volume due to interception.',
+    sources: [
+      { label: 'IDF / Israeli government public statements', url: 'https://www.gov.il' },
+      { label: 'U.S. DoD / CENTCOM statements on intercept support', url: 'https://www.defense.gov' },
+      { label: 'Multi-outlet April 2024 barrage coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'DoD public materials', url: 'https://www.defense.gov' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 1 },
+  },
+
+
 
 
 ]
@@ -2633,6 +2661,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['nasrallah-beirut-strike-2024', 'lebanon-pager-explosions-2024', 'dahiya-doctrine-2006'],
     tags: ['civilians', 'lebanon', 'hezbollah', 'leadership'],
+  },
+
+  {
+    id: 'tl-iran-barrage-april-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Iran Missile/Drone Barrage — Mass Intercepts',
+    description: 'Large Iranian barrage largely intercepted by Israeli and U.S. defenses; multi-source scale established.',
+    source: 'IDF / DoD / multi-outlet',
+    sourceUrl: 'https://www.defense.gov',
+    tier: 'verified',
+    relatedIncidentIds: ['iran-missile-barrage-april-2024'],
+    tags: ['iran', 'air-defense', 'iron-dome'],
   },
 
 ]

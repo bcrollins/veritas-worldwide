@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:49:26.110Z",
+  "generatedAt": "2026-07-23T07:53:09.986Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 85,
-    "timelineEvents": 73,
+    "incidents": 86,
+    "timelineEvents": 74,
     "actors": 47,
     "moneyTrailNodes": 27,
-    "historicalWarCrimesPack": 71,
+    "historicalWarCrimesPack": 72,
     "legalCases": 18,
     "lobbyingRecords": 4,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 25
+      "post-oct7": 26
     },
     "incidentsByTier": {
-      "verified": 83,
+      "verified": 84,
       "circumstantial": 2
     },
     "childrenTagged": 73,
-    "civiliansTagged": 83,
+    "civiliansTagged": 84,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3197,6 +3197,24 @@
         "children",
         "starvation",
         "un-finding"
+      ]
+    },
+    {
+      "id": "tl-iran-barrage-april-2024",
+      "year": "2024",
+      "era": "post-oct7",
+      "title": "Iran Missile/Drone Barrage — Mass Intercepts",
+      "description": "Large Iranian barrage largely intercepted by Israeli and U.S. defenses; multi-source scale established.",
+      "source": "IDF / DoD / multi-outlet",
+      "sourceUrl": "https://www.defense.gov",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "iran-missile-barrage-april-2024"
+      ],
+      "tags": [
+        "iran",
+        "air-defense",
+        "iron-dome"
       ]
     },
     {
@@ -6791,6 +6809,52 @@
       "tier": "verified",
       "casualties": {
         "killed": 100
+      }
+    },
+    {
+      "id": "iran-missile-barrage-april-2024",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "iron-dome",
+        "iron-beam-laser-2024",
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Iran Missile/Drone Barrage on Israel (April 13–14, 2024)",
+      "date": "April 13–14, 2024",
+      "location": "Israel (multi-site air defense intercepts)",
+      "summary": "Iran launched a large-scale drone and missile barrage toward Israel in response to the Damascus consulate strike, with the overwhelming majority of projectiles intercepted by Israeli and allied defenses including U.S. assets. Multi-source reporting documents limited ground impacts and casualties; included for regional war chronology and Iron Dome / U.S. defense enablement context.",
+      "evidence": "IDF/US CENTCOM public intercept tallies, multi-source international press, and satellite/OSINT tracking establish the scale of the barrage and high intercept rates. Civilian casualty floor is low relative to launch volume due to interception.",
+      "sources": [
+        {
+          "label": "IDF / Israeli government public statements",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "U.S. DoD / CENTCOM statements on intercept support",
+          "url": "https://www.defense.gov"
+        },
+        {
+          "label": "Multi-outlet April 2024 barrage coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "DoD public materials",
+          "url": "https://www.defense.gov"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 1
       }
     },
     {
