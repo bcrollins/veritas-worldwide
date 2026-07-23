@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T13:01:07.678Z"
+    "generatedAt": "2026-07-23T13:01:36.405Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 79,
-    "viPackCards": 60,
-    "totalIncidents": 1189
+    "incidentsWithVideoAndCivilians": 82,
+    "viPackCards": 63,
+    "totalIncidents": 1201
   },
   "incidents": [
     {
@@ -2459,6 +2459,126 @@
           "type": "photo-essay",
           "label": "Wire photos of arson aftermath",
           "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ]
+    },
+    {
+      "id": "vi-oct7-netiv-haasara-visual-2023",
+      "title": "October 7 Netiv HaAsara — Multi-Outlet Civilian Murder Visual Record",
+      "date": "October 7, 2023",
+      "location": "Netiv HaAsara, southern Israel",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated Netiv HaAsara October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-ambulance-convoy-strike-visual-2023-2025",
+      "title": "Gaza Marked Ambulance Convoy Strikes — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "Gaza Strip EMS corridors",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "sources": [
+        {
+          "label": "Palestine Red Crescent updates",
+          "url": "https://www.palestinercs.org/"
+        },
+        {
+          "label": "OHCHR medical personnel protection materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "AP / Reuters EMS packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "PRCS/press ambulance-convoy packages",
+          "url": "https://www.palestinercs.org/"
+        },
+        {
+          "type": "investigation",
+          "label": "OHCHR medical-protection documentation",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "type": "document",
+          "label": "PRCS operational updates",
+          "url": "https://www.palestinercs.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-roadblock-visual-2023-2025",
+      "title": "West Bank Settler Roadblocks & Civilian Confinement — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village access roads",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT access updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem roadblock video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA access materials",
+          "url": "https://www.ochaopt.org/"
         }
       ]
     },
