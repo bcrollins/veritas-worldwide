@@ -144,6 +144,9 @@ const required = [
   'erik-prince',
   'james-clapper',
   'mark-zuckerberg',
+  'karl-rove',
+  'rahm-emanuel',
+  'yoav-gallant',
 ];
 const scores = {};
 for (const id of required) {
@@ -1126,8 +1129,63 @@ for (const f of (zuckP.documentedFalsehoods || []).filter((x) => x.tier === 'ver
   if (f.statementUrl === f.debunkUrl) throw new Error('zuckerberg dual-cite collision: ' + f.id);
 }
 
+
+// Karl Rove densify gate (n≥3)
+const rove = scores['karl-rove'];
+if (!rove || rove.n < 3) throw new Error('karl-rove needs ≥3 verified falsehoods, got ' + (rove?.n ?? 0));
+if (rove.score > 70) throw new Error('karl-rove score expected ≤70 after densify, got ' + rove.score);
+const roveP = getProfileBySlug('karl-rove');
+for (const id of [
+  'rove-us-attorneys-performance-only-2007',
+  'rove-plame-not-involved-absolute-framing',
+  'rove-2000-florida-absolute-victory-framing',
+]) {
+  if (!(roveP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('karl-rove missing docket id: ' + id);
+  }
+}
+for (const f of (roveP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('rove dual-cite collision: ' + f.id);
+}
+
+// Rahm Emanuel densify gate (n≥3)
+const rahm = scores['rahm-emanuel'];
+if (!rahm || rahm.n < 3) throw new Error('rahm-emanuel needs ≥3 verified falsehoods, got ' + (rahm?.n ?? 0));
+if (rahm.score > 50) throw new Error('rahm-emanuel score expected ≤50 after densify, got ' + rahm.score);
+const rahmP = getProfileBySlug('rahm-emanuel');
+for (const id of [
+  'emanuel-chicago-crime-down-absolute-framing',
+  'emanuel-laquan-mcdonald-video-withholding-necessity',
+  'emanuel-cps-closures-purely-educational-necessity',
+]) {
+  if (!(rahmP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('rahm-emanuel missing docket id: ' + id);
+  }
+}
+for (const f of (rahmP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('rahm dual-cite collision: ' + f.id);
+}
+
+// Yoav Gallant densify gate (n≥3)
+const gallant = scores['yoav-gallant'];
+if (!gallant || gallant.n < 3) throw new Error('yoav-gallant needs ≥3 verified falsehoods, got ' + (gallant?.n ?? 0));
+if (gallant.score > 30) throw new Error('yoav-gallant score expected ≤30 after densify, got ' + gallant.score);
+const gallantP = getProfileBySlug('yoav-gallant');
+for (const id of [
+  'gallant-complete-siege-no-electricity-water-fuel-2023',
+  'gallant-human-animals-dehumanization-policy-framing-2023',
+  'gallant-adequate-aid-facilitation-vs-siege-record-2023-2024',
+]) {
+  if (!(gallantP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('yoav-gallant missing docket id: ' + id);
+  }
+}
+for (const f of (gallantP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('gallant dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 57) throw new Error('expected ≥57 compiled dockets, got ' + docketCount);
+if (docketCount < 60) throw new Error('expected ≥60 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

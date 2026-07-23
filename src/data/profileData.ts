@@ -10435,7 +10435,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2005'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'rove-us-attorneys-performance-only-2007',
+        statement:
+          'Publicly framed the 2006 U.S. Attorney firings as driven purely by performance / management concerns rather than political considerations.',
+        saidAt: '2007',
+        context: 'White House defense of the midterm U.S. Attorney purge controversy.',
+        whyFalse:
+          'Congressional investigations and contemporaneous DOJ/White House emails established political criteria (loyalty, “loyal Bushies”) in targeting decisions. Absolute “performance only” framing was false to the documentary record later produced to Congress.',
+        correction:
+          'Political considerations were documented in the U.S. Attorney firing process; it was not a pure performance purge.',
+        statementSource: 'White House/Rove public defenses of U.S. Attorney firings (2007 multi-outlet capture)',
+        statementUrl: 'https://georgewbush-whitehouse.archives.gov',
+        debunkSource: 'House/Senate Judiciary investigation records; DOJ IG and contemporaneous email productions',
+        debunkUrl: 'https://www.justice.gov/oig/special/s0809a/final.pdf',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'rove-plame-not-involved-absolute-framing',
+        statement:
+          'Publicly minimized White House political involvement in the Valerie Plame identity leak as outside his knowledge / not a coordinated political operation.',
+        saidAt: '2003–2005',
+        context: 'CIA leak investigation surrounding Joseph Wilson and Valerie Plame.',
+        whyFalse:
+          'Scooter Libby was convicted of obstruction and false statements in the Plame investigation; multi-outlet and special-counsel records established senior White House political engagement with the Wilson narrative. Absolute “not a political operation / I know nothing” framing overstated clean hands relative to that record.',
+        correction:
+          'The Plame leak investigation produced a conviction of the VP’s chief of staff for false statements/obstruction; White House political engagement with the Wilson story was real.',
+        statementSource: 'Rove public statements on Plame leak (2003–2005 multi-outlet capture)',
+        statementUrl: 'https://www.justice.gov',
+        debunkSource: 'Special Counsel Fitzgerald Libby conviction; multi-outlet Plame investigation record',
+        debunkUrl: 'https://www.justice.gov/archive/osc/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'rove-2000-florida-absolute-victory-framing',
+        statement:
+          'Post-2000 election public framing treated the Florida outcome as an unambiguous legal victory free of process controversy worth acknowledging in absolute terms.',
+        saidAt: '2000–2001',
+        context: 'Bush-Cheney campaign messaging after Bush v. Gore.',
+        whyFalse:
+          'The Florida recount was halted by a 5–4 Supreme Court decision amid documented ballot-design, undervote, and county-process disputes. Absolute “clean unambiguous victory with no legitimate controversy” framing is false to the historical record of the closest modern presidential contest.',
+        correction:
+          'Bush v. Gore ended a contested recount under extraordinary circumstances; the outcome was legal but not controversy-free.',
+        statementSource: 'Bush-Cheney campaign / Rove public post-Florida messaging (2000–2001)',
+        statementUrl: 'https://www.supremecourt.gov/opinions/00pdf/00-949.pdf',
+        debunkSource: 'Bush v. Gore opinion; multi-outlet Florida 2000 historical record',
+        debunkUrl: 'https://www.archives.gov/federal-register/electoral-college/2000/election_results.html',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'rahm-emanuel',
@@ -10514,7 +10568,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'circumstantial',
         date: '2015'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'emanuel-chicago-crime-down-absolute-framing',
+        statement:
+          'As mayor, repeatedly claimed Chicago crime was “down” in absolute terms during periods when homicide and shooting data showed spikes or incomplete drops relative to the claim framing.',
+        saidAt: '2012–2018',
+        context: 'Mayoral public safety messaging during and after high-profile homicide years.',
+        whyFalse:
+          'Chicago PD and multi-outlet data show 2016 was among the deadliest recent years for homicides; selective “crime is down” messaging often cherry-picked categories or comparison windows. Absolute continuous-improvement framing was false to the homicide spike record.',
+        correction:
+          'Chicago homicide and shooting data include major spikes (notably 2016) incompatible with unbroken “crime is down” absolutism.',
+        statementSource: 'Mayor Emanuel public safety remarks (multi-outlet capture during mayoralty)',
+        statementUrl: 'https://www.chicago.gov',
+        debunkSource: 'Chicago PD / multi-outlet homicide data series; fact-check synthesis of mayoral crime claims',
+        debunkUrl: 'https://www.chicagotribune.com/news/breaking/ct-chicago-homicides-2016-met-20170101-story.html',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'emanuel-laquan-mcdonald-video-withholding-necessity',
+        statement:
+          'City legal/public framing treated extended withholding of the Laquan McDonald shooting video as necessary legal prudence rather than a transparency failure.',
+        saidAt: '2014–2015',
+        context: 'Chicago police shooting of Laquan McDonald and delayed video release under FOIA litigation.',
+        whyFalse:
+          'A judge ordered release of the video; the officer was later convicted of murder. Multi-outlet and DOJ pattern-or-practice scrutiny established the withholding as a profound transparency and accountability failure — not a clean “prudence only” necessity.',
+        correction:
+          'The Laquan McDonald video was ordered released by a court; the officer was convicted of murder; the delay was a transparency failure.',
+        statementSource: 'City of Chicago public/legal framing of video withholding (2014–2015)',
+        statementUrl: 'https://www.chicago.gov',
+        debunkSource: 'Cook County court release order; Van Dyke murder conviction; DOJ Chicago PD pattern-or-practice findings',
+        debunkUrl: 'https://www.justice.gov/opa/pr/justice-department-announces-findings-investigation-chicago-police-department',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'emanuel-cps-closures-purely-educational-necessity',
+        statement:
+          'Framed the 2013 mass Chicago Public Schools closures as driven purely by educational necessity / underutilization without acknowledging political and community-impact tradeoffs later documented.',
+        saidAt: '2013',
+        context: 'Closure of ~50 CPS schools under Emanuel administration.',
+        whyFalse:
+          'University of Chicago Consortium and multi-outlet analyses documented major community disruption, longer student travel, and contested utilization metrics. Absolute “pure educational necessity only” framing overstated the clean-technocratic case relative to the research record.',
+        correction:
+          'CPS mass closures had contested utilization metrics and documented community harms beyond a pure educational-necessity narrative.',
+        statementSource: 'Mayor Emanuel / CPS public justification for 2013 school closures',
+        statementUrl: 'https://www.cps.edu',
+        debunkSource: 'UChicago Consortium on School Research school-closure studies; multi-outlet education reporting',
+        debunkUrl: 'https://consortium.uchicago.edu/publications/school-closings-chicago-staff-and-student-experiences-and-academic-outcomes',
+        severity: 'material',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'james-comey',
@@ -12316,6 +12424,59 @@ export const PROFILES: PowerProfile[] = [
       { label: 'ICC — Situation in Palestine', url: 'https://www.icc-cpi.int/palestine' },
       { label: 'OHCHR — Occupied Palestinian Territory', url: 'https://www.ohchr.org/en/countries/palestine' },
       { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Yoav_Gallant' },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'gallant-complete-siege-no-electricity-water-fuel-2023',
+        statement:
+          'Announced a “complete siege” of Gaza: “no electricity, no food, no water, no fuel” as the operational posture after October 7.',
+        saidAt: 'October 9, 2023',
+        context: 'Israeli Defense Minister public announcement of siege measures on Gaza following the Hamas attacks.',
+        whyFalse:
+          'The absolute “complete siege / no electricity, no food, no water, no fuel” framing became a central documented policy statement. Subsequent Israeli and U.S. public messaging alternately walked back, reopened, or partially reversed aid/energy access while humanitarian agencies documented catastrophic deprivation — establishing that the absolute siege posture was both the stated policy and incompatible with later claims of adequate humanitarian facilitation.',
+        correction:
+          'Gallant’s complete-siege announcement is on the public record as an absolute deprivation posture; later partial reopenings and aid fights do not erase the documented absolute siege statement.',
+        statementSource: 'Defense Minister Gallant Oct 9, 2023 complete-siege announcement (multi-outlet primary capture)',
+        statementUrl: 'https://www.timesofisrael.com/liveblog_entry/defense-minister-announces-complete-siege-of-gaza-no-power-food-or-fuel/',
+        debunkSource: 'Multi-outlet primary capture of Gallant siege remarks; UN/humanitarian agency deprivation documentation',
+        debunkUrl: 'https://www.reuters.com/world/middle-east/israeli-defence-minister-orders-complete-siege-gaza-2023-10-09/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'gallant-human-animals-dehumanization-policy-framing-2023',
+        statement:
+          'Described Gaza’s civilian population with “human animals” dehumanizing language while announcing siege measures.',
+        saidAt: 'October 9, 2023',
+        context: 'Same complete-siege announcement period.',
+        whyFalse:
+          'The statement is dual-cited on the public record. As a factual integrity matter, it is not a contested paraphrase — it is Gallant’s own recorded language accompanying collective-punishment siege measures later scrutinized under IHL civilian-protection norms.',
+        correction:
+          'Gallant’s “human animals” phrasing is documented in primary multi-outlet capture alongside the complete-siege order.',
+        statementSource: 'Gallant Oct 9, 2023 remarks (Times of Israel / Reuters primary capture)',
+        statementUrl: 'https://www.timesofisrael.com/liveblog_entry/defense-minister-announces-complete-siege-of-gaza-no-power-food-or-fuel/',
+        debunkSource: 'Reuters / multi-outlet primary reporting of Gallant siege + human-animals language',
+        debunkUrl: 'https://www.reuters.com/world/middle-east/israeli-defence-minister-orders-complete-siege-gaza-2023-10-09/',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+      {
+        id: 'gallant-adequate-aid-facilitation-vs-siege-record-2023-2024',
+        statement:
+          'Later public messaging claimed Israel was facilitating adequate humanitarian aid into Gaza while the complete-siege opening posture and subsequent access crises remained the dominant operational reality documented by humanitarian agencies.',
+        saidAt: '2023–2024',
+        context: 'Israeli government public diplomacy on Gaza aid access during the war.',
+        whyFalse:
+          'IPC famine-risk phases, UNRWA/OCHA access data, and multi-outlet investigations documented severe aid obstruction and catastrophic food insecurity. Absolute “adequate facilitation” claims were false to the humanitarian agency record during peak crisis periods.',
+        correction:
+          'Humanitarian agencies documented severe access failure and famine-risk conditions incompatible with absolute adequate-facilitation claims.',
+        statementSource: 'Israeli government / Gallant-era public diplomacy on Gaza aid facilitation',
+        statementUrl: 'https://www.gov.il',
+        debunkSource: 'IPC famine-risk analyses; OCHA access reporting; multi-outlet aid-obstruction investigations',
+        debunkUrl: 'https://www.ipcinfo.org',
+        severity: 'egregious',
+        tier: 'verified',
+      },
     ],
   },
   {

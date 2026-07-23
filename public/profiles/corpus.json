@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:31:28.790Z",
+  "generatedAt": "2026-07-23T10:32:59.000Z",
   "count": 96,
   "profiles": [
     {
@@ -1713,9 +1713,9 @@
         "Bush Era",
         "Super PAC"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "rahm-emanuel",
@@ -1732,9 +1732,9 @@
         "Democratic Operative",
         "Political Strategist"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 45,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "james-comey",
@@ -2000,9 +2000,9 @@
         "Gaza Siege",
         "IDF"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 25,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "ben-cardin",
