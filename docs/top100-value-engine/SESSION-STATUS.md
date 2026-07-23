@@ -1,41 +1,29 @@
-# Top-100 Value Engine — Final Session Status
+# Top-100 Value Engine — Session Status (Wave 4)
 
-**Updated:** 2026-07-23T11:53:33.860769+00:00  
-**VERDICT:** Ship  
-**Ledger:** **100 / 100 terminal** (47 Implemented · 50 Absorbed · 3 Blocked · 0 Pending)
+**Prompt:** v1.0 Veritas + Anonymity  
+**Date:** 2026-07-23  
+**Verdict:** Ship
 
-## Live proof (this check)
+## Deliverables
+1. Truth Model: `.claude-state/top100-truth-model-2026-07-23-v4.md` + `docs/top100-value-engine/TRUTH-MODEL.md`
+2. Full 100-item ledger: `.claude-state/top100-value-ledger-2026-07-23-v4.json` + OUTLINE
+3. Execution log: `.claude-state/top100-wave4-execution-log.md`
+4. Scorecard: `docs/top100-value-engine/SCORECARD.md`
 
-| Check | Result |
-|-------|--------|
-| Health | ok (Railway deploying tip lag normal) |
-| `/researcher` | 200 |
-| `/evidence-taxonomy.json` | 200 |
-| `/researcher/timeline` | 200 noindex |
-| `/israel-dossier` · `/briefing` · ROC | 200 |
-| `verify:live-anonymity` | PASS |
-| Pure key OPSEC gates | PASS |
-| `verify:pure` | 41 pure suites (peer + this engine) |
+## Status counts
+- Implemented: 91
+- Absorbed: 5 (multi-agent densify continuous)
+- Pending: 2 (operator — GH org transfer, git history scrub)
+- Blocked: 2 (Stripe portal branding, optional Sentry DSN)
 
-## Session ship intervals (this agent)
+## Live proof (Phase A / E)
+- researchPackZip + researchPackManifest health checks true
+- densify 96/96, weakHomepage 0
+- pure 44 PASS, live anonymity PASS, bot-noindex PASS
+- OSINT checkoutReady true
 
-| Commit | Pack |
-|--------|------|
-| `8706742` | ROC proof filter, timeline pins, cross-corpus search, balance strip, deploy-lag/oauth/robots gates |
-| `c3babcb` | Share UTMs, Terms corpora license, SW admin deny, briefing open questions, source-url shapes |
-| `aab7f66` | Error path scrub, reduced-motion, dispute primary URL, AIPAC methodology banner |
-| `083a3fc` | Bookmarks keyword filter, print CSS, Israel schema triples, corpus cache headers |
+## Anonymity posture
+Entity-only public. package.json author Veritas Worldwide. Residual operator OPSEC only.
 
-## Blocked (external, intentional)
-
-1. Offline research zip pack (corpora already separate downloads)  
-2. Aggressive corpus rate limits (researcher bulk export risk)  
-3. Stripe dashboard entity branding (operator Stripe console)
-
-## Anonymity
-
-Public package PASS. Entity git author. Zero new identity vectors. Residual infra: GH org transfer, history rewrite, WHOIS/KYC — operator-owned.
-
-## Path to surface 10.0
-
-Complete operator infra OPSEC list above; continuous densify of dual-sided Israel + ROC waves; keep pure floors advancing with every corpus growth.
+## Coordinate
+Do not stage peer Israel densify WIP. Ship entity-authored intervals only.
