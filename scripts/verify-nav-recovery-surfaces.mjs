@@ -575,4 +575,11 @@ assert(osint.includes('osint-related-hubs') && osint.includes('RelatedHubs'), 'O
 assert(osint.includes('/profiles') || osint.includes("to: '/profiles'"), 'OSINT Profiles recovery')
 assert(osint.includes('/methodology') || osint.includes("to: '/methodology'"), 'OSINT Methodology recovery')
 
+
+// News desk recovery destinations
+const news = read('src/pages/NewsPage.tsx')
+assert(news.includes('news-related-hubs') && news.includes('RelatedHubs'), 'News RelatedHubs')
+assert(news.includes('/forum') || news.includes("to: '/forum'"), 'News Forum recovery')
+assert(news.includes('/read') || news.includes("to: '/read'"), 'News Read recovery')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
