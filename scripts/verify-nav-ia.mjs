@@ -530,6 +530,17 @@ assert(fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8').inc
 assert(fs.readFileSync(path.join(root, 'src/pages/ProfilesIndexPage.tsx'), 'utf8').includes('profiles-related-hubs'), 'perpetual v7 IA profiles')
 assert(fs.readFileSync(path.join(root, 'src/pages/ReadTheBookPage.tsx'), 'utf8').includes('read-related-hubs'), 'perpetual v7 IA read')
 
+
+// RelatedHubs perpetual densify lock v8 IA
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('mobile-tab-bar'), 'perpetual v8 IA mobile tab bar')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('primaryLinks'), 'perpetual v8 IA primaryLinks')
+assert(fs.readFileSync(path.join(root, 'server.js'), 'utf8').includes('server-soft-404'), 'perpetual v8 IA server soft-404')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('emphasizeTo'), 'perpetual v8 IA emphasize')
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-hub-chips'), 'perpetual v8 IA soft-404')
+assert(fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), 'utf8').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v8 IA search')
+assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'perpetual v8 IA home')
+assert(fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8').includes('/membership'), 'perpetual v8 IA Privacy')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
