@@ -153,6 +153,38 @@ assert(relatedHubsSrc.includes('/read') && relatedHubsSrc.includes('/search'), '
 // ResearchHubChips excludePath actually filters (not dead-true)
 const researchChipsSrc = read('src/components/ResearchHubChips.tsx')
 assert(researchChipsSrc.includes('if (c.to === excludePath) return false'), 'ResearchHubChips excludePath filters')
+
+// RelatedHubs adoption wave: every migrated public recovery surface mounts it
+for (const rel of [
+  'src/pages/NewsPage.tsx',
+  'src/pages/TimelinePage.tsx',
+  'src/pages/TopicsIndexPage.tsx',
+  'src/pages/AboutPage.tsx',
+  'src/pages/MembershipPage.tsx',
+  'src/pages/PrivacyPage.tsx',
+  'src/pages/TermsPage.tsx',
+  'src/pages/AccessibilityPage.tsx',
+  'src/pages/AnalyticsPage.tsx',
+  'src/pages/ComprehensiveProfilePage.tsx',
+  'src/pages/AipacPage.tsx',
+  'src/pages/ArticlePage.tsx',
+  'src/pages/ChapterPage.tsx',
+  'src/pages/TopicPage.tsx',
+  'src/pages/ProfilePage.tsx',
+  'src/pages/SupportSuccessPage.tsx',
+  'src/pages/SubscribeSuccessPage.tsx',
+]) {
+  assert(read(rel).includes('RelatedHubs'), `${rel} mounts RelatedHubs`)
+}
+// PRIMARY order matches shell: Record → Read → Dossiers → Profiles → Search
+const primaryOrder = relatedPrimaryBlock[1]
+const orderNeedles = ["to: '/'", "to: '/read'", "to: '/israel-dossier'", "to: '/profiles'", "to: '/search'"]
+let last = -1
+for (const n of orderNeedles) {
+  const i = primaryOrder.indexOf(n)
+  assert(i > last, `PRIMARY order missing/out-of-order: ${n}`)
+  last = i
+}
 assert(read('src/pages/NewsPage.tsx').includes('RelatedHubs'), 'NewsPage mounts RelatedHubs')
 
 // Soft-404 SPA stays noindex (must not set a /404 page URL in meta)
