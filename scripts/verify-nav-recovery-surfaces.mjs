@@ -1982,4 +1982,19 @@ assert((nfEmph.match(/<RelatedHubs\b/g) || []).length >= 2, 'NotFound dual Relat
 assert(!nfEmph.includes('PRIMARY_HUBS.map'), 'NotFound no hand-rolled primary map')
 
 
+
+// A11Y_HUBS + OSINT_HUBS count densify
+const a11yHubsEnd = read('src/pages/AccessibilityPage.tsx')
+const a11yBlock = a11yHubsEnd.match(/const A11Y_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(a11yBlock, 'A11Y_HUBS block')
+assert((a11yBlock[1].match(/to:/g) || []).length === 5, 'A11Y_HUBS count 5')
+assert(a11yBlock[1].includes('/membership') && a11yBlock[1].includes('/profiles'), 'A11Y hubs Membership+Profiles')
+
+const osintHubsEnd = read('src/pages/ComprehensiveProfilePage.tsx')
+const osintBlock = osintHubsEnd.match(/const OSINT_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(osintBlock, 'OSINT_HUBS block')
+assert((osintBlock[1].match(/to:/g) || []).length === 5, 'OSINT_HUBS count 5')
+assert(osintBlock[1].includes('/israel-dossier'), 'OSINT hubs Dossiers')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
