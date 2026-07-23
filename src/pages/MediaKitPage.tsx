@@ -282,6 +282,38 @@ export default function MediaKitPage() {
         </section>
 
         <section className="mt-12">
+          <h2 className="font-display text-2xl font-semibold text-ink">Featured assets</h2>
+          <p className="mt-2 max-w-2xl font-body text-sm text-ink-muted">
+            Preview production vectors used most often by press and social.
+          </p>
+          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {[
+              { label: 'Seal', href: '/brand-kit/01-logos/logo-mark.svg', bg: 'bg-parchment' },
+              { label: 'Verified', href: '/brand-kit/04-social/evidence-tier-verified.svg', bg: 'bg-obsidian' },
+              { label: 'Citation', href: '/brand-kit/04-social/citation-card.svg', bg: 'bg-parchment' },
+              { label: 'Threads', href: '/brand-kit/04-social/threads-post.svg', bg: 'bg-parchment' },
+              { label: 'Bluesky', href: '/brand-kit/04-social/bluesky-banner.svg', bg: 'bg-obsidian' },
+              { label: 'Media OG', href: '/brand-kit/05-og/og-media-kit.svg', bg: 'bg-parchment' },
+            ].map(a => (
+              <a
+                key={a.href}
+                href={a.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group overflow-hidden rounded-xl border border-border hover:border-crimson/40"
+              >
+                <div className={`flex h-24 items-center justify-center p-3 ${a.bg}`}>
+                  <img src={a.href} alt="" className="max-h-full max-w-full object-contain" loading="lazy" />
+                </div>
+                <p className="bg-surface px-3 py-2 font-sans text-xs font-medium text-ink group-hover:text-crimson">
+                  {a.label}
+                </p>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-12">
           <h2 className="font-display text-2xl font-semibold text-ink">Asset groups</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {ASSETS.map(group => (
