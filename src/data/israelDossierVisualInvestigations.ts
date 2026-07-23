@@ -3559,6 +3559,77 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-gaza-unrwa-school-shelter-strike-visual-2023-2025',
+    title: 'Gaza UNRWA School Shelter Strikes — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip UNRWA schools used as civilian shelters',
+    summary:
+      'Multi-outlet video packages document strikes affecting UNRWA schools used as civilian shelters under wartime conditions, including children. Distinct from school-shelter morning-strike visual cards by focusing on multi-source UNRWA shelter packages; ethnicity is never evidence.',
+    evidence:
+      'OHCHR materials, multi-outlet visual packages, and UNRWA/OCHA materials establish multi-source documentation of civilian harm at school shelters.',
+    sources: [
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'UNRWA updates', url: 'https://www.unrwa.org/' },
+      { label: 'AP / Reuters Gaza school-shelter packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet UNRWA school-shelter strike video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of school-shelter aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'UNRWA/OHCHR trail', url: 'https://www.unrwa.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-oct7-nirim-safe-room-visual-2023',
+    title: 'October 7 Nirim Safe-Room Civilian Murders — Multi-Outlet Visual Record',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Nirim safe rooms and home shelters',
+    summary:
+      'Authenticated multi-outlet video packages document civilian murders in Nirim safe rooms during the October 7 attacks. Distinct from prior Nirim kibbutz packages by focusing on safe-room interior multi-source visual records; ethnicity is never evidence.',
+    evidence:
+      'Multi-outlet October 7 visual investigations, Israeli government materials, and forensic open-source packages establish multi-source documentation of civilian-targeted violence in Nirim safe rooms on October 7.',
+    sources: [
+      { label: 'Israeli government October 7 materials', url: 'https://www.gov.il' },
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Nirim safe-room October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-west-bank-settler-clinic-attack-visual-2023-2025',
+    title: 'West Bank Settler Clinic Attacks — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village clinics and primary-care facilities',
+    summary:
+      "B'Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian clinics, denying primary care including for families with children. Multi-source visual record; ethnicity is never evidence.",
+    evidence:
+      "B'Tselem video documentation, OCHA health-access materials, and multi-outlet reporting establish multi-source documentation of clinic attacks affecting civilian healthcare access.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler-violence materials", url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem clinic-attack video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem health-access case files", url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA health-access materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */

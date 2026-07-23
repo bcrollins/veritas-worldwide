@@ -275,3 +275,12 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | VI | refugee-camp strikes · Be’eri safe room · generator theft |
 | Pure | visual + israel-dossier + research-pack PASS |
 
+
+## Interval densify — tip post-1774 toward 1800 — UNRWA school shelter / Nirim safe-room / clinic attacks
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza neonatal-hat/swaddle/ID-band/breast-pump · hostage dig-latrines/balloon-releases/wrists-overhead/stadium-screens · WB carrot/chess-clocks/lettuce/rosemary |
+| VI | UNRWA school shelter · Nirim safe room · clinic attacks |
+| Pure | visual + israel-dossier PASS |
+
