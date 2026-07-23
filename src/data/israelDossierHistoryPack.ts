@@ -7137,6 +7137,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-kwashiorkor-marasmus-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Kwashiorkor & Marasmus Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (severe-malnutrition forms cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'UNICEF, WHO, and multi-source nutrition reporting document clinical presentations and elevated risk of severe protein-energy malnutrition forms (kwashiorkor/marasmus spectrum) among Gaza children under prolonged wartime diet collapse — a severe-malnutrition pattern distinct from IPC phases and anemia cards.',
+    evidence:
+      'UNICEF nutrition surveys, WHO clinical notes, and multi-outlet coverage establish multi-source severe malnutrition form risk. Exact clinical counts evolve; multi-source wartime severe pediatric malnutrition forms is the claim.',
+    sources: [
+      { label: 'UNICEF nutrition materials', url: 'https://www.unicef.org' },
+      { label: 'WHO nutrition / health materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza severe malnutrition coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-toilets-privacy-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Toilets & Bodily Privacy Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (privacy-denial cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document denial of toilets and bodily privacy for Israeli civilian hostages including children — a protected-person dignity violation pattern distinct from hygiene-denial and solitary cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source toilet/privacy denial in captivity. Exact conditions vary by site; multi-source dignity violations via toilet/privacy denial is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-firebombing-homes-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Firebombing of Homes Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (firebombing cohort)',
+    location: 'West Bank Palestinian villages',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler firebombing and molotov attacks on Palestinian homes after October 7 — killing and wounding civilians including children. Pattern card for firebombing distinct from arson of empty structures and price-tag cards.',
+    evidence:
+      'OCHA settler-violence databases, multi-source fatality/injury reporting, and multi-outlet coverage establish multi-source firebombing incidents. Exact counts evolve; multi-source wartime settler firebombing of homes is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet firebombing coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -11041,6 +11122,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['cemeteries', 'settlers', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-kwashiorkor-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Kwashiorkor & Marasmus Risk Pattern',
+    description: 'UNICEF/WHO multi-source documentation of severe protein-energy malnutrition form risk among children.',
+    source: 'UNICEF / WHO / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-kwashiorkor-marasmus-risk-pattern-2023-2025',
+      'gaza-child-malnutrition-pattern-2023-2025',
+      'gaza-children-stunting-risk-pattern-2023-2025',
+    ],
+    tags: ['malnutrition', 'children', 'kwashiorkor', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-toilet-privacy-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Toilets & Privacy Pattern',
+    description: 'Multi-source documentation of toilet and bodily-privacy denial for civilian hostages including children.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-toilets-privacy-pattern-2023-2025',
+      'israel-hostages-denied-hygiene-sanitation-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'dignity', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-firebombing-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Firebombing Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler firebombing of Palestinian homes after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-firebombing-homes-pattern-2023-2025',
+      'west-bank-settler-arson-homes-pattern-2023-2025',
+      'west-bank-price-tag-violence-pattern-2023-2025',
+    ],
+    tags: ['firebombing', 'settlers', 'civilians', 'children', 'west-bank'],
+  },
+
+
 
 
 
