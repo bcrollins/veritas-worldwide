@@ -2215,4 +2215,16 @@ assert(read('src/pages/PrivacyPage.tsx').includes('PRIVACY_HUBS'), 'PRIVACY_HUBS
 assert(Number.isFinite(surfaces.length) && surfaces.length >= 102, `PASS report surfaces ${surfaces.length}`)
 
 
+
+// legal five Membership live lock pure ultimate
+const privacyLive = read('src/pages/PrivacyPage.tsx')
+const privacyLiveB = privacyLive.match(/const PRIVACY_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(privacyLiveB && (privacyLiveB[1].match(/to:/g) || []).length === 5, 'PRIVACY live 5')
+assert(privacyLiveB[1].includes('/membership'), 'PRIVACY Membership live')
+const termsLive = read('src/pages/TermsPage.tsx')
+const termsLiveB = termsLive.match(/const TERMS_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(termsLiveB && (termsLiveB[1].match(/to:/g) || []).length === 5, 'TERMS live 5')
+assert(termsLiveB[1].includes('/membership'), 'TERMS Membership live')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
