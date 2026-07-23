@@ -72,6 +72,7 @@ const spokesBody = read('src/components/DossierHubSpokes.tsx').match(/export con
 assert(spokesBody, 'DOSSIER_SPOKES export')
 const spokeCount = (spokesBody[1].match(/id:/g) || []).length
 assert(spokeCount === 5, `DOSSIER_SPOKES count ${spokeCount} !== 5`)
+assert(read('src/components/DossierHubSpokes.tsx').includes('Also in Dossiers') || read('src/components/DossierHubSpokes.tsx').includes('Dossier hub'), 'DossierHubSpokes aria labels')
 
 // Soft-404 SPA stays noindex (must not set a /404 page URL in meta)
 const notFoundSrc = read('src/pages/NotFoundPage.tsx')
