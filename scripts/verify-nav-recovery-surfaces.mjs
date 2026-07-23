@@ -2094,4 +2094,12 @@ assert(relatedIface.includes('export default function RelatedHubs'), 'RelatedHub
 assert(relatedIface.includes('export const PRIMARY_RELATED_HUBS'), 'PRIMARY export final')
 
 
+
+// NotFound dual RelatedHubs aria labels ultimate final
+const nfAriaUlt = read('src/pages/NotFoundPage.tsx')
+assert(nfAriaUlt.includes('Primary hubs') || nfAriaUlt.includes('ariaLabel="Primary hubs"'), 'NotFound primary aria final')
+assert(nfAriaUlt.includes('Also useful destinations') || nfAriaUlt.includes('Also useful'), 'NotFound secondary aria final')
+assert(nfAriaUlt.includes('emphasizeTo="/"') || nfAriaUlt.includes("emphasizeTo='/'"), 'NotFound emphasize final')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
