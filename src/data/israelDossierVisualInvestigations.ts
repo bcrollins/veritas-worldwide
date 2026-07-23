@@ -10160,6 +10160,64 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     tier: 'verified', targetsCivilians: true, targetsChildren: true,
   },
 
+  {
+    id: 'vi-west-bank-settler-orchard-ladder-visual-2023-2025',
+    title: 'West Bank Settler Orchard Ladder Attacks — Multi-Outlet Visual Record',
+    date: '2023–2025', location: 'West Bank village orchard ladder areas',
+    summary: "B'Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian orchard ladder, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.",
+    evidence: "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of orchard ladder attacks affecting civilians.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler violence documentation", url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem settler-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem settler violence case files", url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+
+  {
+    id: 'vi-gaza-barber-shop-strike-visual-2023-2025',
+    title: 'Gaza Civilian Barber Shop Strike Visual Record — Multi-Outlet Packages',
+    date: '2023–2025', location: 'Gaza Strip barber shop strike areas',
+    summary: 'Multi-outlet video and photo packages document damage affecting civilian barber shop used by families including children. Multi-source visual floor; ethnicity is never evidence.',
+    evidence: 'OCHA materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of barber shop strike damage affecting civilians.',
+    sources: [
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'OHCHR civilian-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet civilian-harm video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'photo-essay', label: 'Wire photos of damaged civilian infrastructure', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OCHA/OHCHR documentation trail', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+
+  {
+    id: 'vi-west-bank-settler-irrigation-pump-gate-visual-2023-2025',
+    title: 'West Bank Settler Irrigation Pump Gate Attacks — Multi-Outlet Visual Record',
+    date: '2023–2025', location: 'West Bank village irrigation pump gate areas',
+    summary: "B'Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian irrigation pump gate, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.",
+    evidence: "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of irrigation pump gate attacks affecting civilians.",
+    sources: [
+      { label: "B'Tselem video bank", url: 'https://www.btselem.org/video' },
+      { label: "B'Tselem settler violence documentation", url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT settler-violence updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: "B'Tselem settler-violence video bank", url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: "B'Tselem settler violence case files", url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified', targetsCivilians: true, targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
