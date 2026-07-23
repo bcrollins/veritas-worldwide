@@ -2386,4 +2386,23 @@ assert(read('src/pages/BernieShowPage.tsx').includes('bernie-related-hubs'), 'pe
 assert(read('src/pages/MediaKitPage.tsx').includes('media-kit-primary-hubs'), 'perpetual v3 media-kit')
 
 
+
+// RelatedHubs platform perpetual densify lock v4
+assert(surfaces.length >= 102, `perpetual v4 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v4 PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v4 emphasize')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v4 soft-404')
+assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v4 search')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'perpetual v4 home')
+assert(read('src/pages/BookmarksPage.tsx').includes('BOOKMARKS_HUBS'), 'perpetual v4 bookmarks')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'perpetual v4 Privacy')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'perpetual v4 Terms')
+assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'perpetual v4 A11Y')
+assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'perpetual v4 OSINT')
+assert(read('src/pages/BernieShowPage.tsx').includes('bernie-related-hubs'), 'perpetual v4 bernie')
+assert(read('src/pages/MediaKitPage.tsx').includes('media-kit-primary-hubs'), 'perpetual v4 media-kit')
+assert(read('src/pages/ProfilesIndexPage.tsx').includes('profiles-related-hubs'), 'perpetual v4 profiles')
+assert(read('src/pages/ReadTheBookPage.tsx').includes('read-related-hubs'), 'perpetual v4 read')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
