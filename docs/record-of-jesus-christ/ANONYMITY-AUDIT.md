@@ -1,21 +1,22 @@
-# Anonymity Audit — Record of Jesus Christ Interval 1
+# Anonymity Audit — Record of Jesus Christ
 
-**Date:** 2026-07-23  
-**Scope:** New ROC artifacts + related P0 identity vectors on public surfaces  
+**Date:** 2026-07-23 (Intervals 1 + 9 re-audit)  
+**Scope:** ROC artifacts + public identity vectors (entity-only)  
 
 ## Pass criteria
 
 Sophisticated OSINT on public Veritas surfaces finds **zero recoverable path** to the real identity of the operator.
 
-## Actions completed this interval
+## Actions completed
 
 | Vector | Severity | Action |
 |--------|----------|--------|
 | Client admin auth comments with personal email + plaintext password | P0 | Scrubbed; entity email only; password via env hash; fail-closed in prod |
-| Public GitHub `sameAs` / footer link to personal namespace | P0 | Removed from SEO Organization sameAs, HomePage JSON-LD, footer |
+| Public GitHub `sameAs` / footer link to personal namespace | P0 | Removed from `index.html`, `seo.ts` Organization + NewsMediaOrganization, `prerender.mjs`; live sameAs = X + Reddit only |
+| verify-seo-meta regression | P0 | Inverted: **forbids** `bcrollins` / personal GH; requires entity social profiles |
 | BibTeX citation key containing personal surname | P0 | Renamed `rollins…` → `veritas…` |
 | Admin brand kit UI showing personal email | P0 | Entity-only display |
-| ROC manuscript + platform content | — | Entity attribution only; no personal byline |
+| ROC manuscript + platform content + wave6 | — | Entity attribution only; no personal byline |
 
 ## Residual risks (not fully closable in-repo alone)
 

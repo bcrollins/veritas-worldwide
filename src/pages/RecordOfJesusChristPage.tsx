@@ -13,6 +13,7 @@ import {
   SITE_NAME,
   faqJsonLd,
   breadcrumbJsonLd,
+  howToJsonLd,
 } from '../lib/seo'
 import SharePanel from '../components/SharePanel'
 import NewsletterSignup from '../components/NewsletterSignup'
@@ -342,9 +343,8 @@ export default function RecordOfJesusChristPage() {
             'No. Theological conclusions are out of scope as historical or scientific fact. Early proclamation of resurrection appearances is documented as attestation of belief; ontology is not labeled VERIFIED.',
         },
         {
-          question: 'Where can researchers export the claim set?',
-          answer:
-            'JSON and CSV export on the page, machine corpus at /record-of-jesus-christ/corpus.json, and a portable PDF claim index.',
+          question: 'How many claims are in the corpus and where can researchers export them?',
+          answer: `The live index contains ${claimCount} tier-labeled claims. Export JSON/CSV on the page, fetch the machine corpus at /record-of-jesus-christ/corpus.json, or download the portable PDF claim index.`,
         },
         {
           question: 'Who publishes this Record?',
@@ -364,6 +364,39 @@ export default function RecordOfJesusChristPage() {
           url: `${SITE_URL}${ROC_META.path}#${s.id}`,
         })),
       },
+      howToJsonLd({
+        name: 'How to use The Record of Jesus Christ evidence corpus',
+        description:
+          'Export and cite tier-labeled historical Jesus, manuscript, and archaeology claims from Veritas Worldwide without conflating proof and tradition.',
+        url: `${SITE_URL}${ROC_META.path}`,
+        image: `${SITE_URL}/og/record-of-jesus-christ.png`,
+        totalTime: 'PT10M',
+        supplies: ['Web browser', 'Optional spreadsheet or JSON tools'],
+        steps: [
+          {
+            name: 'Open the evidence surface',
+            text: 'Go to /record-of-jesus-christ and scan the nine chronological sections from cosmology (as science) through modern scholarship.',
+            url: `${SITE_URL}${ROC_META.path}`,
+          },
+          {
+            name: 'Filter by evidence tier or search claims',
+            text: 'Toggle the seven scholarly tiers and use claim search for manuscripts, archaeology sites, or non-Christian sources.',
+          },
+          {
+            name: 'Read the tier label and sources',
+            text: 'Every claim shows proofVsConcept hygiene (proof-grade data vs reconstruction vs tradition) plus primary or peer citations.',
+          },
+          {
+            name: 'Export for research databases',
+            text: 'Download JSON or CSV on-page, or fetch corpus.json / the PDF claim index for offline work.',
+            url: `${SITE_URL}/record-of-jesus-christ/corpus.json`,
+          },
+          {
+            name: 'Cite Veritas Worldwide only',
+            text: 'Attribute the compilation to Veritas Worldwide. Contact rights@veritasworldwide.com for corrections—no personal author byline.',
+          },
+        ],
+      }),
     ])
     return () => {
       clearMetaTags()

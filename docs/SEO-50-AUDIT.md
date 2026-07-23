@@ -17,7 +17,7 @@
 
 **Estimated impact of full 50-item program:** +15–35% qualified organic discovery over 3–6 months for documentary/archive queries (Jesus evidence, primary-source history, institute guides) if content quality holds—driven by index hygiene, rich results eligibility, and Discover-safe previews—not by keyword stuffing.
 
-**Implemented this sprint (HIGH + key MEDIUM):** Suggestions #1–8, #11–14, #18–20, #24–26, #33, #40 (partial), plus ROC wave4 corpus growth to **124 claims**.
+**Implemented this sprint (HIGH + key MEDIUM):** Suggestions #1–8, #11–14, #18–20, #24–26, #33, #40 (partial), ROC waves 4–6 to **152 claims**, HowTo schema on ROC export path, topic-hub FAQ expansion, personal-GH sameAs scrub (P0 anonymity), verify-seo-meta forbid floors.
 
 ---
 
