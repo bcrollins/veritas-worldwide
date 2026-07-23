@@ -1405,14 +1405,28 @@ Editorial and licensing: rights@veritasworldwide.com
     ['04-social/discord-invite.svg', '04-social/discord-invite.png', 1920],
     ['04-social/citation-card.svg', '04-social/citation-card.png', 1080],
   ]
+  const criticalPng = new Set([
+    '01-logos/logo-mark-512.png',
+    '02-icons/apple-touch-icon.png',
+    '05-og/og-image.png',
+    '05-og/og-media-kit.png',
+    '04-social/evidence-tier-verified.png',
+  ])
+  let pngFailures = 0
   for (const [src, dest, w] of rasters) {
     try {
       svgToPng(join(KIT, src), join(KIT, dest), w)
       console.log(`PNG ${dest}`)
     } catch (e) {
       console.warn(`PNG failed ${dest}:`, e.message)
+      pngFailures++
+      if (criticalPng.has(dest)) {
+        console.error(`Critical PNG failed: ${dest}`)
+        process.exit(1)
+      }
     }
   }
+  if (pngFailures) console.warn(`PNG failures (non-critical): ${pngFailures}`)
 
   // Site root deployables
   try {
