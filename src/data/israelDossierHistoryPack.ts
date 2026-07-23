@@ -3357,6 +3357,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-assistive-devices-destroyed-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Assistive Devices & Disability Mobility Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (assistive-devices cohort)',
+    location: 'Gaza Strip (displacement routes / destroyed homes / clinics)',
+    summary:
+      'WHO, disability NGOs, and multi-source reporting document mass loss and destruction of wheelchairs, crutches, hearing aids, and other assistive devices amid bombardment and displacement — stranding disabled civilians including children. Pattern card for assistive-device collapse distinct from the disabled/elderly killed card.',
+    evidence:
+      'WHO disability/health materials, multi-source NGO field reporting, and OCHA protection notes establish multi-source assistive-device loss. Exact device counts evolve; multi-source system-scale mobility-aid collapse is the claim.',
+    sources: [
+      { label: 'WHO disability / emergency health materials', url: 'https://www.who.int' },
+      { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet disability access coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public materials', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4880,6 +4907,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['sewage', 'water', 'children', 'disease', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-assistive-devices-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Assistive Devices & Mobility Collapse Pattern',
+    description: 'WHO multi-source documentation of mass loss/destruction of wheelchairs and other assistive devices under bombardment and displacement.',
+    source: 'WHO / OCHA / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-assistive-devices-destroyed-pattern-2023-2025',
+      'gaza-disabled-elderly-killed-pattern-2023-2025',
+      'gaza-amputations-children-pattern-2023-2025',
+    ],
+    tags: ['disability', 'children', 'civilians', 'gaza'],
+  },
+
 
 
 
