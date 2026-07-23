@@ -22,7 +22,7 @@ function generateCitation(chapter: Chapter, format: Format): string {
     case 'chicago':
       return `Veritas Worldwide. "${title}." In ${pubTitle}. ${publisher}, ${year}. ${url}.`
     case 'bibtex':
-      return `@incollection{rollins${year}${chapter.id.replace(/[^a-z0-9]/g, '')},
+      return `@incollection{veritas${year}${chapter.id.replace(/[^a-z0-9]/g, '')},
   author    = {${authorFull}},
   title     = {${title}},
   booktitle = {${pubTitle}},

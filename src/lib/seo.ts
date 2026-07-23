@@ -355,7 +355,6 @@ export function organizationJsonLd(): Record<string, unknown> {
     'foundingDate': '2025',
     'sameAs': [
       'https://x.com/VeritasWorldwide',
-      'https://github.com/bcrollins/veritas-worldwide',
       'https://www.reddit.com/r/VeritasWorldwide',
     ],
     'contactPoint': [

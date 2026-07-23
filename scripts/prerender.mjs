@@ -2429,6 +2429,30 @@ const staticPages = [
     ],
     sourceFile: 'src/pages/ProfilesIndexPage.tsx',
   },
+  {
+    route: '/bible',
+    title: 'The Bible: History & Factual Record | Veritas Worldwide',
+    heading: 'The Bible: History & Factual Record',
+    description:
+      'A primary-source examination of the Bible’s historical claims — archaeological confirmations, manuscript evidence, and scholarly consensus. Every claim classified by evidence tier.',
+    body: [
+      'What the archaeological record, manuscript evidence, and independent historical sources confirm, contextualize, or contest about the most published book in human history.',
+      'Companion volume track: The Record of Jesus Christ at /record-of-jesus-christ — pure evidentiary compilation from cosmological science through 2026 scholarship.',
+    ],
+    sourceFile: 'src/pages/BibleHistoryPage.tsx',
+  },
+  {
+    route: '/record-of-jesus-christ',
+    title: 'The Record of Jesus Christ | Veritas Worldwide',
+    heading: 'The Record of Jesus Christ',
+    description:
+      'Pure evidentiary compilation of historical, textual, archaeological, and scientific data related to the biblical textual tradition and Jesus of Nazareth. Every claim tier-labeled. Attribution: Veritas Worldwide only.',
+    body: [
+      'Chronological sections cover cosmological origins (as science), Ancient Near Eastern context, Second Temple Judaism, the historical Jesus, New Testament textual criticism, non-Christian attestations, Levantine archaeology, early Christian literature, and modern scholarship to 2026.',
+      'Evidence tiers: Verified, Well-Attested, Circumstantial, Contested, Interpretive, Speculative, Literary/Theological. Proof is never conflated with tradition.',
+    ],
+    sourceFile: 'src/pages/RecordOfJesusChristPage.tsx',
+  },
 ]
 
 function buildStaticPageJsonLd(page, route, modifiedTime) {

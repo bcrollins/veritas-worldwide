@@ -186,6 +186,7 @@ const STATIC_ANALYTICS_TITLES = {
   '/privacy': `Privacy Policy | ${ANALYTICS_SITE_NAME}`,
   '/terms': `Terms of Use | ${ANALYTICS_SITE_NAME}`,
   '/bible': `The Bible: History & Factual Record | ${ANALYTICS_SITE_NAME}`,
+  '/record-of-jesus-christ': `The Record of Jesus Christ | ${ANALYTICS_SITE_NAME}`,
 }
 
 const ANALYTICS_ACRONYM_WORDS = {
@@ -1831,6 +1832,7 @@ function isKnownSpaRoute(pathname) {
     '/admin/login',
     '/bernie',
     '/bible',
+    '/record-of-jesus-christ',
     '/forum',
   ])
   if (knownExact.has(route)) return true
