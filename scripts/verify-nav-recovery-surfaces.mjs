@@ -34,6 +34,16 @@ const surfaces = [
   ['src/pages/ProfilesIndexPage.tsx', 'profiles-research-pack-banner'],
   ['src/pages/ReadTheBookPage.tsx', 'read-toc-by-part'],
   ['src/pages/MediaKitPage.tsx', 'media-kit-related-hubs'],
+  ['src/pages/AipacPage.tsx', 'aipac-related-hubs'],
+  ['src/pages/TopicPage.tsx', 'topic-related-hubs'],
+  ['src/pages/ArticlePage.tsx', 'article-related-hubs'],
+  ['src/pages/ProfilePage.tsx', 'profile-related-hubs'],
+  ['src/pages/ChapterPage.tsx', 'chapter-related-hubs'],
+  ['src/pages/InstituteCoursePage.tsx', 'institute-course-research-chips'],
+  ['src/pages/InstituteGuidePage.tsx', 'institute-guide-research-chips'],
+  ['src/pages/SupportSuccessPage.tsx', 'support-success-related-hubs'],
+  ['src/pages/SubscribeSuccessPage.tsx', 'subscribe-success-related-hubs'],
+  ['src/pages/ComprehensiveProfileSuccessPage.tsx', 'osint-success-related-hubs'],
   ['src/components/CookieConsent.tsx', 'data-z-above-tab-bar'],
   ['src/components/CookieConsent.tsx', 'z-[100]'],
   ['src/components/CookieConsent.tsx', 'cookie-consent-banner'],
@@ -96,6 +106,24 @@ assert(spokesBody, 'DOSSIER_SPOKES export')
 const spokeCount = (spokesBody[1].match(/id:/g) || []).length
 assert(spokeCount === 5, `DOSSIER_SPOKES count ${spokeCount} !== 5`)
 assert(read('src/components/DossierHubSpokes.tsx').includes('Also in Dossiers') || read('src/components/DossierHubSpokes.tsx').includes('Dossier hub'), 'DossierHubSpokes aria labels')
+
+// Detail-surface recovery mounts ResearchHubChips or related-hub navs
+for (const rel of [
+  'src/pages/InstituteCoursePage.tsx',
+  'src/pages/InstituteGuidePage.tsx',
+]) {
+  assert(read(rel).includes('ResearchHubChips'), `${rel} mounts ResearchHubChips`)
+}
+for (const [rel, testid] of [
+  ['src/pages/AipacPage.tsx', 'aipac-related-hubs'],
+  ['src/pages/TopicPage.tsx', 'topic-related-hubs'],
+  ['src/pages/ArticlePage.tsx', 'article-related-hubs'],
+  ['src/pages/ProfilePage.tsx', 'profile-related-hubs'],
+  ['src/pages/ChapterPage.tsx', 'chapter-related-hubs'],
+]) {
+  assert(read(rel).includes(testid), `${rel} recovery testid ${testid}`)
+  assert(read(rel).includes('aria-label="Related hubs"'), `${rel} Related hubs aria-label`)
+}
 
 // Soft-404 SPA stays noindex (must not set a /404 page URL in meta)
 const notFoundSrc = read('src/pages/NotFoundPage.tsx')

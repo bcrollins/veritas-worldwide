@@ -58,6 +58,42 @@ export default function AipacPage() {
           </Link>{' '}
           for source hierarchy and evidence tiers. Ethnicity or religion is never treated as evidence.
         </p>
+        <nav
+          className="mx-auto mt-3 flex max-w-5xl flex-wrap gap-2"
+          aria-label="Related hubs"
+          data-testid="aipac-related-hubs"
+        >
+          <Link
+            to="/topics"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-parchment px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+          >
+            Topics
+          </Link>
+          <Link
+            to="/israel-dossier"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-parchment px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+          >
+            Dossiers
+          </Link>
+          <Link
+            to="/profiles"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-parchment px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+          >
+            Profiles
+          </Link>
+          <Link
+            to="/methodology"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-parchment px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+          >
+            Methodology
+          </Link>
+          <Link
+            to="/search"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-parchment px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+          >
+            Search
+          </Link>
+        </nav>
       </div>
       <AipacDiagram />
     </>

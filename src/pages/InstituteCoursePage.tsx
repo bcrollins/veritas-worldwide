@@ -7,6 +7,7 @@ import {
 } from '../data/instituteCatalog'
 import { ISRAEL_DOSSIER_COURSE_PATH } from '../data/israelDossierCanon'
 import InstituteSignupPanel from '../components/institute/InstituteSignupPanel'
+import ResearchHubChips from '../components/ResearchHubChips'
 import {
   clearMetaTags,
   removeJsonLd,
@@ -107,6 +108,10 @@ export default function InstituteCoursePage() {
         <Link to="/institute" className="inline-flex min-h-[44px] items-center text-sm font-medium text-[color:var(--institute-accent)] transition-colors hover:text-[color:var(--institute-ink)]">
           ← Back to the practical course catalog
         </Link>
+
+        <div className="mt-4" data-testid="institute-course-research-chips">
+          <ResearchHubChips />
+        </div>
 
         <div className="mt-6 flex flex-wrap gap-2">
           <span className="institute-pill">{topic.trackMeta.shortLabel}</span>

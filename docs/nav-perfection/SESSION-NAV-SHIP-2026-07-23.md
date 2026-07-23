@@ -82,6 +82,12 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 - `verify-nav-recovery-surfaces`: **64 surface needles** + family mounts + Hick/soft-404 exactness
 - Live continuously green under densify tip ≥1500 incidents
 
+## Detail-surface recovery wave (Sprint 6)
+- Chapter / Article / Profile / Topic / AIPAC related-hub chips
+- Institute course + guide ResearchHubChips
+- Subscribe / Support / OSINT success related hubs
+- Pure floors lock all new testids; peer densify unthrashed
+
 | `75ff335` | recovery suite 40 needles (not-found-page) |
 
 | `c18116b` | membership↔cookie consent event contract |

@@ -85,7 +85,10 @@ export default function ComprehensiveProfileSuccessPage() {
             Attribution retained for internal analytics only.
           </p>
         )}
-        <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
+        <div
+          className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center"
+          data-testid="osint-success-related-hubs"
+        >
           <Link
             to="/comprehensive-profile"
             className="inline-flex min-h-[44px] items-center justify-center px-5 border border-border font-sans text-xs font-semibold uppercase tracking-wide text-ink hover:border-ink"
@@ -103,6 +106,12 @@ export default function ComprehensiveProfileSuccessPage() {
             className="inline-flex min-h-[44px] items-center justify-center px-5 border border-border font-sans text-xs font-semibold uppercase tracking-wide text-ink hover:border-ink"
           >
             Free Power Profiles
+          </Link>
+          <Link
+            to="/search"
+            className="inline-flex min-h-[44px] items-center justify-center px-5 border border-border font-sans text-xs font-semibold uppercase tracking-wide text-ink hover:border-ink"
+          >
+            Search
           </Link>
           <a
             href="/research-pack.zip"
