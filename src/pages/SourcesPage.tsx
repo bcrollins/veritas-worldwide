@@ -569,14 +569,28 @@ export default function SourcesPage() {
                                   {source.url && (
                                     <>
                                       {' '}
-                                      <PrimarySourceLink
-                                        href={source.url}
-                                        archiveHref={(source as { archiveUrl?: string }).archiveUrl}
-                                        title={source.text}
-                                        className="text-crimson hover:text-crimson-dark underline underline-offset-2 inline-flex min-h-[44px] items-center"
-                                      >
-                                        View →
-                                      </PrimarySourceLink>
+                                      <span className="inline-flex flex-wrap items-center gap-2">
+                                        <PrimarySourceLink
+                                          href={source.url}
+                                          archiveHref={(source as { archiveUrl?: string }).archiveUrl}
+                                          title={source.text}
+                                          className="text-crimson hover:text-crimson-dark underline underline-offset-2 inline-flex min-h-[44px] items-center"
+                                        >
+                                          View →
+                                        </PrimarySourceLink>
+                                        <button
+                                          type="button"
+                                          className="inline-flex min-h-[44px] items-center font-sans text-[0.65rem] uppercase tracking-wider text-ink-muted hover:text-crimson"
+                                          onClick={async () => {
+                                            try {
+                                              await navigator.clipboard.writeText(source.url || '')
+                                            } catch { /* ignore */ }
+                                          }}
+                                          aria-label={`Copy source URL for ${source.text}`}
+                                        >
+                                          Copy link
+                                        </button>
+                                      </span>
                                     </>
                                   )}
                                 </span>
@@ -704,8 +718,12 @@ export default function SourcesPage() {
                   Related Pages
                 </h3>
                 <div className="space-y-2">
-                  <Link to="/researcher/timeline" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
-                    Personal timeline builder →
+                  <Link
+                    to="/researcher/timeline"
+                    className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors"
+                    data-testid="sources-personal-timeline-local-only"
+                  >
+                    Personal timeline builder (local-only · never uploaded) →
                   </Link>
                   <Link to="/methodology" className="flex min-h-[44px] items-center font-sans text-xs text-ink-muted hover:text-crimson transition-colors">
                     Methodology &amp; Standards

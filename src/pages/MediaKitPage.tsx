@@ -86,11 +86,13 @@ const ASSETS = [
   },
   {
     title: 'Evidence tier cards',
-    description: 'Product taxonomy cards: Verified, Circumstantial, Disputed — matching The Record labels.',
+    description: 'Product taxonomy cards: Verified, Circumstantial, Disputed — matching The Record labels. Full seven-tier scholarly map available as machine JSON.',
     links: [
       { href: '/brand-kit/04-social/evidence-tier-verified.svg', label: 'Verified' },
       { href: '/brand-kit/04-social/evidence-tier-circumstantial.svg', label: 'Circumstantial' },
       { href: '/brand-kit/04-social/evidence-tier-disputed.svg', label: 'Disputed' },
+      { href: '/evidence-taxonomy.json', label: 'Evidence taxonomy JSON' },
+      { href: '/methodology', label: 'Methodology page' },
     ],
   },
   {

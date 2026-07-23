@@ -104,6 +104,9 @@ export default function TermsPage() {
               <div className="space-y-3 text-sm text-ink-muted leading-relaxed">
                 <p>All editorial content on Veritas Worldwide is published under the <strong className="text-ink">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</strong> license unless otherwise noted.</p>
                 <p>You are free to share and adapt our content for non-commercial purposes, provided you give appropriate credit, link back to the original, and distribute your contributions under the same license. Commercial use requires explicit written permission.</p>
+                <p>
+                  Machine-readable research corpora (including Israel Dossier and Record of Jesus Christ <code className="text-ink">corpus.json</code> exports and the public evidence taxonomy) are published by <strong className="text-ink">Veritas Worldwide</strong> under the same CC BY-NC-SA 4.0 terms unless a specific file states otherwise. Attribute the publisher entity — not a personal author. Contact rights@veritasworldwide.com for commercial licensing.
+                </p>
               </div>
             </section>
 

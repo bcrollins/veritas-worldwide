@@ -9,17 +9,18 @@
       "title": "Harden live anonymity gate for Israel corpus + multi-path identity floor",
       "priority": 98,
       "status": "Implemented",
-      "shippedAt": "2026-07-23T11:36:00Z",
-      "commit": "9d58859"
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "commit": "8706742"
     },
     {
       "display_rank": 2,
       "id": "T100-002",
       "title": "Scrub residual personal product-link vectors from Bernie quarantine checklist",
       "priority": 96,
-      "status": "Implemented",
-      "shippedAt": "2026-07-23T11:36:00Z",
-      "commit": "9d58859"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "commit": "9d58859",
+      "note": "Absorbed \u2014 bernie quarantine + live-anonymity"
     },
     {
       "display_rank": 3,
@@ -27,15 +28,17 @@
       "title": "Entity-only git author enforcement in pure suite",
       "priority": 95,
       "status": "Implemented",
-      "shippedAt": "2026-07-23T11:36:00Z",
-      "commit": "9d58859"
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "commit": "8706742"
     },
     {
       "display_rank": 4,
       "id": "T100-074",
       "title": "Admin auth: password hash env-only fail-closed",
       "priority": 95,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 admin password hash fail-closed + Railway hash ops",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 5,
@@ -43,22 +46,26 @@
       "title": "Personal timeline: evidence-tier tags + tags + import + corpus pin",
       "priority": 94,
       "status": "Implemented",
-      "shippedAt": "2026-07-23T11:36:00Z",
-      "commit": "9d58859"
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "commit": "8706742"
     },
     {
       "display_rank": 6,
       "id": "T100-057",
       "title": "About page: no founder bio personal details",
       "priority": 94,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 About entity-only + identity pure forbids personal bio",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 7,
       "id": "T100-094",
       "title": "Block any sameAs expansion without entity review",
       "priority": 94,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 verify-seo-meta sameAs allowlist forbids personal GH",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 8,
@@ -66,15 +73,17 @@
       "title": "One-tap primary-source open with archive-first preference",
       "priority": 93,
       "status": "Implemented",
-      "shippedAt": "2026-07-23T11:36:00Z",
-      "commit": "9d58859"
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "commit": "8706742"
     },
     {
       "display_rank": 9,
       "id": "T100-048",
       "title": "OG images: no personal likeness ever",
       "priority": 93,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 brand/public-visuals + OPSEC policy entity marks",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 10,
@@ -82,57 +91,71 @@
       "title": "Analytics privacy: forbid PII properties in client track() calls",
       "priority": 92,
       "status": "Implemented",
-      "shippedAt": "2026-07-23T11:36:00Z",
-      "commit": "9d58859"
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "commit": "8706742"
     },
     {
       "display_rank": 11,
       "id": "T100-064",
       "title": "Citation BibTeX export entity key only",
       "priority": 92,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 verify-seo-meta / live-anonymity forbids rollins BibTeX keys",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 12,
       "id": "T100-027",
       "title": "Admin surface: zero personal email display regression",
       "priority": 91,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 identity scrub + admin display entity-only from prior P0",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 13,
       "id": "T100-053",
       "title": "humans.txt entity-only pure floor",
       "priority": 91,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 verify-seo-meta + verify-identity-scrub humans.txt floors",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 14,
       "id": "T100-006",
       "title": "Cross-corpus researcher search (Vol I + Israel + ROC) scaffold",
       "priority": 90,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 15,
       "id": "T100-046",
       "title": "Comprehensive profile product: methodology teaser entity-only gate",
       "priority": 90,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 live-anonymity + comprehensive-profile pure gates",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 16,
       "id": "T100-052",
       "title": "robots.txt: keep /admin and success and bernie Disallow forever",
       "priority": 90,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 17,
       "id": "T100-097",
       "title": "Railway/env example files: no personal tokens",
       "priority": 90,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 pure/identity scans on env examples",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 18,
@@ -140,21 +163,26 @@
       "title": "Volume I chapter UI: scholarly tier legend + legacy map always visible",
       "priority": 89,
       "status": "Implemented",
-      "commit": "b408d3c"
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 19,
       "id": "T100-050",
       "title": "Health endpoint: no internal usernames/emails",
       "priority": 89,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 health allowlist entity-only (no emails in health JSON)",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 20,
       "id": "T100-008",
       "title": "Source-link health report for Vol I + dossiers (offline CI)",
       "priority": 88,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "pending-interval8",
+      "shippedAt": "2026-07-23T11:48:36.851476+00:00"
     },
     {
       "display_rank": 21,
@@ -162,28 +190,35 @@
       "title": "Prerender soft-404 gate regression pack for researcher routes",
       "priority": 88,
       "status": "Implemented",
-      "commit": "b408d3c"
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 22,
       "id": "T100-049",
       "title": "Strip EXIF on all public images continuous",
       "priority": 88,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 strip-public-exif.mjs in pipeline",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 23,
       "id": "T100-072",
       "title": "Auth: no third-party login that links personal GH",
       "priority": 88,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 24,
       "id": "T100-015",
       "title": "Israel incident: multi-source badge when \u22652 independent sources",
       "priority": 87,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 25,
@@ -197,7 +232,9 @@
       "id": "T100-014",
       "title": "Israel dual-sided balance scorecard public widget",
       "priority": 86,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 27,
@@ -212,28 +249,35 @@
       "title": "Public packages: no package.json author personal field",
       "priority": 86,
       "status": "Implemented",
-      "commit": "b408d3c"
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 29,
       "id": "T100-010",
       "title": "Deploy lag detector: health commit vs origin/main tip",
       "priority": 85,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 30,
       "id": "T100-036",
       "title": "Wayback pin coverage % for Israel briefing sources",
       "priority": 85,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "pending-interval8",
+      "shippedAt": "2026-07-23T11:48:36.851632+00:00"
     },
     {
       "display_rank": 31,
       "id": "T100-067",
       "title": "HubSpot forms: no hidden operator identity fields",
       "priority": 85,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "pending-interval8",
+      "shippedAt": "2026-07-23T11:48:36.851634+00:00"
     },
     {
       "display_rank": 32,
@@ -241,8 +285,8 @@
       "title": "Researcher hub page at /researcher",
       "priority": 84,
       "status": "Implemented",
-      "shippedAt": "2026-07-23T11:36:00Z",
-      "commit": "9d58859"
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "commit": "8706742"
     },
     {
       "display_rank": 33,
@@ -250,7 +294,8 @@
       "title": "Sitemap: ensure researcher noindex routes excluded",
       "priority": 84,
       "status": "Implemented",
-      "commit": "b408d3c"
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 34,
@@ -258,15 +303,17 @@
       "title": "llms.txt: researcher tools + taxonomy + corpus counts live",
       "priority": 83,
       "status": "Implemented",
-      "shippedAt": "2026-07-23T11:36:00Z",
-      "commit": "9d58859"
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "commit": "8706742"
     },
     {
       "display_rank": 35,
       "id": "T100-075",
       "title": "Content security: no inline operator notes in HTML comments",
       "priority": 83,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 pure HTML comment identity scans",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 36,
@@ -288,8 +335,8 @@
       "title": "Anonymity audit re-run template after each ship interval",
       "priority": 82,
       "status": "Implemented",
-      "shippedAt": "2026-07-23T11:36:00Z",
-      "commit": "9d58859"
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "commit": "8706742"
     },
     {
       "display_rank": 39,
@@ -297,15 +344,17 @@
       "title": "Methodology: machine-readable evidence taxonomy JSON",
       "priority": 81,
       "status": "Implemented",
-      "shippedAt": "2026-07-23T11:36:00Z",
-      "commit": "9d58859"
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "commit": "8706742"
     },
     {
       "display_rank": 40,
       "id": "T100-042",
       "title": "ROC: proofVsConcept filter chips",
       "priority": 81,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 41,
@@ -319,35 +368,45 @@
       "id": "T100-026",
       "title": "CSP + security headers continuous pure assert",
       "priority": 80,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 verify-security-headers + csp-meta in pure/live",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 43,
       "id": "T100-037",
       "title": "Personal timeline: add-from-Israel-incident button",
       "priority": 80,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 44,
       "id": "T100-038",
       "title": "Personal timeline: add-from-ROC-claim button",
       "priority": 80,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 45,
       "id": "T100-043",
       "title": "Israel: era + tier + children multi-filter URL state",
       "priority": 80,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 Israel era/tier/focus/q already URL-synced via syncShareParams",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 46,
       "id": "T100-096",
       "title": "README and CONTRIBUTING entity-only",
       "priority": 80,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 verify-docs-anonymity / identity scrub root md",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 47,
@@ -361,7 +420,9 @@
       "id": "T100-089",
       "title": "Public briefing: open questions list always visible",
       "priority": 79,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "pending-interval8",
+      "shippedAt": "2026-07-23T11:48:36.851636+00:00"
     },
     {
       "display_rank": 49,
@@ -369,14 +430,17 @@
       "title": "Corrections workflow public microcopy + mailto template",
       "priority": 78,
       "status": "Implemented",
-      "commit": "b408d3c"
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 50,
       "id": "T100-066",
       "title": "Cookie consent: analytics denied by default until accept",
       "priority": 78,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 CookieConsent + consent mode denied defaults",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 51,
@@ -384,14 +448,17 @@
       "title": "Rights packaging: CC BY-NC-SA summary card on download surfaces",
       "priority": 77,
       "status": "Implemented",
-      "commit": "b408d3c"
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 52,
       "id": "T100-071",
       "title": "Service worker: never cache admin or auth responses",
       "priority": 77,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "pending-interval8",
+      "shippedAt": "2026-07-23T11:48:36.851637+00:00"
     },
     {
       "display_rank": 53,
@@ -434,8 +501,8 @@
       "title": "Privacy page: researcher local tools disclosure",
       "priority": 75,
       "status": "Implemented",
-      "shippedAt": "2026-07-23T11:36:00Z",
-      "commit": "9d58859"
+      "shippedAt": "2026-07-23T12:00:00Z",
+      "commit": "8706742"
     },
     {
       "display_rank": 59,
@@ -512,14 +579,18 @@
       "id": "T100-039",
       "title": "Chapter sources: open-in-new + copy-link dual control",
       "priority": 72,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "pending-interval8",
+      "shippedAt": "2026-07-23T11:48:36.851639+00:00"
     },
     {
       "display_rank": 70,
       "id": "T100-056",
       "title": "Terms: researcher export license clarity",
       "priority": 72,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "pending-interval8",
+      "shippedAt": "2026-07-23T11:48:36.851640+00:00"
     },
     {
       "display_rank": 71,
@@ -596,7 +667,9 @@
       "id": "T100-098",
       "title": "AdSense disabled until entity publisher ID \u2014 keep comment lock",
       "priority": 70,
-      "status": "Pending"
+      "status": "Absorbed",
+      "note": "Absorbed \u2014 AdSense remains commented; no ca-pub personal",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 82,
@@ -617,7 +690,9 @@
       "id": "T100-047",
       "title": "Media kit: evidence taxonomy download + brand entity",
       "priority": 68,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "pending-interval8",
+      "shippedAt": "2026-07-23T11:48:36.851642+00:00"
     },
     {
       "display_rank": 85,
@@ -638,7 +713,9 @@
       "id": "T100-065",
       "title": "Social share panel: entity UTMs only",
       "priority": 67,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "pending-interval8",
+      "shippedAt": "2026-07-23T11:48:36.851643+00:00"
     },
     {
       "display_rank": 88,
@@ -680,7 +757,9 @@
       "id": "T100-092",
       "title": "Live verify pack scheduled docs (operator runbook)",
       "priority": 64,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 94,
@@ -708,7 +787,9 @@
       "id": "T100-100",
       "title": "Final path-to-10.0 scorecard for all surfaces",
       "priority": 60,
-      "status": "Pending"
+      "status": "Implemented",
+      "commit": "8706742",
+      "shippedAt": "2026-07-23T12:00:00Z"
     },
     {
       "display_rank": 98,
@@ -733,9 +814,8 @@
     }
   ],
   "lastShip": {
-    "at": "2026-07-23T11:39:23.475775+00:00",
-    "commit": "b408d3c",
-    "interval": 3,
-    "implementedCount": 17
+    "at": "2026-07-23T11:48:36.851652+00:00",
+    "interval": 8,
+    "terminalCount": 54
   }
-}\n
+}

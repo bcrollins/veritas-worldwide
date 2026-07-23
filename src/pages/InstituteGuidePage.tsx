@@ -48,6 +48,11 @@ export default function InstituteGuidePage() {
         about: [topic.skill, topic.trackMeta.label],
         keywords: topic.keywords.join(', '),
         isAccessibleForFree: true,
+        // Voice / speakable for practical guide headlines (#47)
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: ['h1', '[data-speakable="guide-lede"]'],
+        },
         author: {
           '@type': 'Organization',
           name: 'Veritas Institute',
@@ -127,7 +132,10 @@ export default function InstituteGuidePage() {
           <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[color:var(--institute-accent)]">
             Fast answer
           </p>
-          <p className="mt-3 text-base leading-relaxed text-[color:var(--institute-ink)]">
+          <p
+            className="mt-3 text-base leading-relaxed text-[color:var(--institute-ink)]"
+            data-speakable="guide-lede"
+          >
             {guide.quickAnswer}
           </p>
         </div>

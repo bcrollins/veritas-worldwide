@@ -1,22 +1,22 @@
 # Top-100 Value Engine — Surface Scorecard
 
-**Updated:** 2026-07-23 (after intervals 1–3)
+**Updated:** 2026-07-23 (intervals 1–8)
 
 | Surface | Score now | Target | Notes |
 |---------|----------:|-------:|-------|
-| Operator anonymity (public) | 8.8 | 10.0 | Live identity suite strong; residual GH org / git history / WHOIS |
-| Evidence integrity (Vol I) | 7.8 | 10.0 | Dual taxonomy legend shipped; primary-source link component |
-| Evidence integrity (Israel) | 8.2 | 10.0 | 732 dual-sided; multi-source badge still pending polish |
-| Evidence integrity (ROC) | 8.4 | 10.0 | 640+ claims; license + corrections CTA; source floor ongoing |
-| Researcher tools | 7.5 | 9.5 | Hub + timeline tiers/import/filter live after b408 |
-| Methodology / taxonomy | 8.5 | 9.5 | Machine taxonomy JSON live |
-| Rights packaging | 7.5 | 9.0 | LicenseCard on ROC/Israel |
-| Analytics privacy | 8.5 | 10.0 | PII strip + pure gate |
-| Distribution / GEO | 8.0 | 9.5 | llms researcher section; deploy lag residual |
-| SEO soft-404 hygiene | 8.5 | 9.5 | /researcher allowlisted |
+| Operator anonymity (public) | 9.0 | 10.0 | Live identity PASS; residual GH org / history / WHOIS |
+| Evidence integrity (Vol I) | 8.2 | 10.0 | Legend, PrimarySourceLink, copy-link |
+| Evidence integrity (Israel) | 8.6 | 10.0 | Multi-source badge, balance strip, open questions banner |
+| Evidence integrity (ROC) | 8.8 | 10.0 | Proof filter + timeline pin + license/corrections |
+| Researcher tools | 8.5 | 9.5 | Hub, timeline, cross-corpus search, pins |
+| Methodology / taxonomy | 8.8 | 9.5 | taxonomy JSON live |
+| Rights packaging | 8.5 | 9.0 | LicenseCard + Terms corpora clause |
+| Analytics privacy | 8.8 | 10.0 | PII strip + pure |
+| Distribution / GEO | 8.2 | 9.5 | llms + entity UTMs |
+| Soft-404 hygiene | 9.0 | 9.5 | /researcher allowlisted |
 
-## Terminal count
+## Terminal status
 
-- Implemented this session (approx): 18
-- Pending: ~80
-- Blocked external: GH org transfer, full history rewrite, WHOIS/KYC, Stripe portal branding
+- **54 / 100** terminal (Implemented + Absorbed + Blocked)
+- Pending: **46**
+- Latest ship pack: interval 8 (rights/SW/share/briefing/source-shape)

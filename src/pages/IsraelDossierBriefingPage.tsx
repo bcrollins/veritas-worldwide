@@ -401,6 +401,35 @@ export default function IsraelDossierBriefingPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-5 pt-8 sm:px-8 lg:px-10" aria-label="Open questions and confidence limits">
+        <div className="rounded-sm border border-crimson/30 bg-crimson/5 p-5 sm:p-6" data-testid="briefing-open-questions">
+          <p className="font-sans text-[0.62rem] font-bold uppercase tracking-[0.16em] text-crimson">
+            Open questions & confidence limits
+          </p>
+          <p className="mt-2 font-body text-sm text-ink leading-relaxed max-w-4xl">
+            This briefing is a source-boundary product: high confidence requires multi-source primary records;
+            medium marks documented claims with methodological limits; low or open questions remain incomplete
+            attribution or contested figures. Researchers should treat open questions as work remaining — not
+            as silent proof. Full source rows and workbook artifacts remain the audit trail.
+          </p>
+          <ul className="mt-3 list-disc pl-5 font-body text-sm text-ink-muted space-y-1 max-w-4xl">
+            <li>Where casualty or aid figures conflict across agencies, both values and date stamps stay visible.</li>
+            <li>Legal posture rows prefer court or official filings; secondary commentary is labeled as such.</li>
+            <li>Host-blocked primary URLs should use the archive pin when present — never drop the live citation.</li>
+            <li>
+              Archive pin coverage: see{' '}
+              <a
+                href="/israel-dossier/workbooks/briefing-source-archive-manifest.json"
+                className="text-crimson hover:underline"
+              >
+                briefing-source-archive-manifest.json
+              </a>{' '}
+              (70+ pinned Wayback snapshots for durability).
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-10 lg:py-14">
         <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
           <aside className="lg:sticky lg:top-8 lg:self-start">

@@ -44,6 +44,13 @@ import { MediaOwnershipDiagram, FederalReserveStructureDiagram, AssetManagerDiag
 import { scoreContentGateHit } from '../lib/leadScoring'
 import { getEvidenceCounts } from '../lib/evidenceSummary'
 import { getAttributedDonateUrl } from '../lib/conversionTracking'
+import {
+  SOURCE_HIERARCHY_ORDER,
+  type SourceHierarchy,
+  normalizeSourceHierarchy,
+  getSourceHierarchyLabel,
+} from '../data/sourceHierarchy'
+import LicenseCard from '../components/LicenseCard'
 
 const diagramComponents: Record<string, React.ComponentType> = {
   'media-ownership': MediaOwnershipDiagram,
@@ -831,6 +838,8 @@ export default function ChapterPage() {
   const [evidenceTierFilter, setEvidenceTierFilter] = useState<EvidenceTierFilter>(() =>
     parseEvidenceTierParam(searchParams.get('tier')),
   )
+  const [sourceHierarchyFilter, setSourceHierarchyFilter] = useState<SourceHierarchy | 'all'>('all')
+  const [showKeyboardHelp, setShowKeyboardHelp] = useState(false)
   const chapterScope = 'full'
   
   const readingTime = useMemo(() => chapter ? estimateReadingTime(chapter) : 0, [chapter])
@@ -856,6 +865,21 @@ export default function ChapterPage() {
   useScrollRestore(id)
   useReadingHistory(id)
   useKeyboardNav()
+
+  // ? shows keyboard help; Escape closes (does not steal from inputs — handler checks tag).
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement)?.tagName
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return
+      if (e.key === '?' || (e.shiftKey && e.key === '/')) {
+        e.preventDefault()
+        setShowKeyboardHelp((v) => !v)
+      }
+      if (e.key === 'Escape') setShowKeyboardHelp(false)
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [])
 
   useEffect(() => {
     if (!id || !staticMetadata) return
@@ -982,6 +1006,24 @@ export default function ChapterPage() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [chapter])
 
+  // Hooks must run before any early return (source hierarchy filters).
+  const visibleSources = useMemo(() => {
+    if (!chapter) return []
+    if (sourceHierarchyFilter === 'all') return chapter.sources
+    return chapter.sources.filter((s) => normalizeSourceHierarchy(s) === sourceHierarchyFilter)
+  }, [chapter, sourceHierarchyFilter])
+  const sourceHierarchyCounts = useMemo(() => {
+    const counts = Object.fromEntries(SOURCE_HIERARCHY_ORDER.map((h) => [h, 0])) as Record<
+      SourceHierarchy,
+      number
+    >
+    if (!chapter) return counts
+    for (const s of chapter.sources) {
+      counts[normalizeSourceHierarchy(s)] += 1
+    }
+    return counts
+  }, [chapter])
+
   /* ── Loading State ─────────────────────────────────── */
 
   if (isLoading && !chapter) {
@@ -1037,11 +1079,55 @@ export default function ChapterPage() {
 
   return (
     <>
-      <ReadingProgress />
-      <FloatingShareBar title={chapter.title} description={chapter.subtitle} contentId={chapter.id} />
-      <BackToTop />
-      <TimeRemaining totalMinutes={readingTime} />
+      {/* TTS / speakable: mark chrome so voice agents prefer article body */}
+      <div aria-hidden="true" data-tts-skip="chrome">
+        <ReadingProgress />
+        <FloatingShareBar title={chapter.title} description={chapter.subtitle} contentId={chapter.id} />
+        <BackToTop />
+        <TimeRemaining totalMinutes={readingTime} />
+      </div>
       <TextSelectionShare />
+      {showKeyboardHelp && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="chapter-keyboard-help-title"
+          data-testid="chapter-keyboard-help"
+          className="fixed inset-0 z-[80] flex items-center justify-center bg-black/40 p-4"
+          onClick={() => setShowKeyboardHelp(false)}
+        >
+          <div
+            className="max-w-md w-full rounded-sm border border-border bg-surface p-6 shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 id="chapter-keyboard-help-title" className="font-display text-lg font-bold text-ink mb-3">
+              Keyboard shortcuts
+            </h2>
+            <ul className="space-y-2 font-sans text-sm text-ink-muted">
+              <li>
+                <kbd className="font-mono text-ink">j</kbd> / <kbd className="font-mono text-ink">k</kbd> — next /
+                previous chapter
+              </li>
+              <li>
+                <kbd className="font-mono text-ink">/</kbd> — archive search
+              </li>
+              <li>
+                <kbd className="font-mono text-ink">?</kbd> — toggle this help
+              </li>
+              <li>
+                <kbd className="font-mono text-ink">Esc</kbd> — close help
+              </li>
+            </ul>
+            <button
+              type="button"
+              className="mt-5 inline-flex min-h-[44px] items-center rounded-sm border border-border px-4 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson"
+              onClick={() => setShowKeyboardHelp(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* ── Chapter Position Navigation Bar ─────────── */}
       <ChapterPositionBar current={chapter} />
@@ -1355,13 +1441,66 @@ export default function ChapterPage() {
                     Sources &amp; References
                   </h3>
                   <div className="flex-1 h-[1px] bg-border" />
-                  <span className="font-sans text-xs text-ink-faint">{sourceCount}</span>
+                  <span className="font-sans text-xs text-ink-faint">
+                    {sourceHierarchyFilter === 'all'
+                      ? sourceCount
+                      : `${visibleSources.length}/${sourceCount}`}
+                  </span>
+                </div>
+                {/* #24 — source hierarchy filter chips */}
+                <div
+                  className="flex flex-wrap items-center gap-2 mb-5"
+                  role="group"
+                  aria-label="Filter sources by hierarchy"
+                  data-testid="chapter-source-hierarchy-filters"
+                >
+                  <button
+                    type="button"
+                    aria-pressed={sourceHierarchyFilter === 'all'}
+                    onClick={() => setSourceHierarchyFilter('all')}
+                    className={`inline-flex min-h-[44px] items-center rounded-sm border px-3 py-1.5 font-sans text-[0.65rem] font-semibold ${
+                      sourceHierarchyFilter === 'all'
+                        ? 'border-crimson bg-crimson/5 text-crimson'
+                        : 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+                    }`}
+                  >
+                    All ({sourceCount})
+                  </button>
+                  {SOURCE_HIERARCHY_ORDER.filter((h) => sourceHierarchyCounts[h] > 0).map((h) => (
+                    <button
+                      key={h}
+                      type="button"
+                      aria-pressed={sourceHierarchyFilter === h}
+                      onClick={() =>
+                        setSourceHierarchyFilter((prev) => (prev === h ? 'all' : h))
+                      }
+                      className={`inline-flex min-h-[44px] items-center rounded-sm border px-3 py-1.5 font-sans text-[0.65rem] font-semibold ${
+                        sourceHierarchyFilter === h
+                          ? 'border-crimson bg-crimson/5 text-crimson'
+                          : 'border-border text-ink-muted hover:border-crimson hover:text-crimson'
+                      }`}
+                    >
+                      {getSourceHierarchyLabel(h)} ({sourceHierarchyCounts[h]})
+                    </button>
+                  ))}
+                  <button
+                    type="button"
+                    className="inline-flex min-h-[44px] items-center rounded-sm border border-border px-3 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted hover:border-crimson hover:text-crimson"
+                    title="Keyboard shortcuts (?)"
+                    data-testid="chapter-keyboard-help-open"
+                    onClick={() => setShowKeyboardHelp(true)}
+                  >
+                    ?
+                  </button>
                 </div>
                 <ol className="space-y-3">
-                  {chapter.sources.map(source => (
+                  {visibleSources.map((source) => (
                     <li key={source.id} className="font-sans text-sm text-ink-muted leading-relaxed flex gap-3">
                       <span className="font-bold text-crimson shrink-0">[{source.id}]</span>
                       <span>
+                        <span className="mr-2 font-sans text-[0.55rem] uppercase tracking-wider text-ink-faint">
+                          {getSourceHierarchyLabel(normalizeSourceHierarchy(source))}
+                        </span>
                         {source.text}
                         {source.url && (
                           <>
@@ -1384,6 +1523,7 @@ export default function ChapterPage() {
                     </li>
                   ))}
                 </ol>
+                <LicenseCard assetLabel="Chapter source list" className="mt-8" />
               </section>
             )}
 

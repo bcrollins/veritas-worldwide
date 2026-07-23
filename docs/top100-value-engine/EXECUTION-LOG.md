@@ -79,3 +79,25 @@ Anonymity audit: entity-only mailto corrections@ / rights@ — PASS
 Live proof (pre-b408 deploy): health 9d58859, evidence-taxonomy.json 200, publisher Veritas Worldwide.
 /researcher soft-404 fixed in b408d3c (pending Railway).
 
+
+
+## Interval 5–7 — 2026-07-23 researcher pack (`8706742`)
+
+| IDs | Status |
+|-----|--------|
+| T100-006,042,037,038,014,010,052,072,092 | Implemented |
+| T100-043 + many OPSEC pure items | Absorbed / Implemented |
+
+## Interval 8 — rights, SW, share UTMs, briefing open questions
+
+| IDs | Work |
+|-----|------|
+| T100-065 | Entity share UTMs |
+| T100-056 | Terms machine corpora license |
+| T100-047 | Media kit taxonomy JSON |
+| T100-039 | Sources copy-link |
+| T100-071 | SW never cache /admin |
+| T100-067 | HubSpot field pure gate |
+| T100-008 | Source URL shape pure gate |
+| T100-089 | Briefing open questions top banner |
+

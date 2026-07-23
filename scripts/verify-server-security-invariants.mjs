@@ -524,6 +524,7 @@ assert(verifyPure.includes('verify-seo-meta.mjs'), 'verify:pure must include seo
 assert(verifyPure.includes('verify-brand-kit.mjs'), 'verify:pure must include brand-kit')
 assert(verifyPure.includes('verify-integrity-score.mjs'), 'verify:pure must include integrity-score floors')
 assert(verifyPure.includes('verify-identity-scrub.mjs'), 'verify:pure must include identity-scrub OPSEC gate')
+assert(verifyPure.includes('verify-top100-floors.mjs'), 'verify:pure must include top100-floors')
 assert(
   typeof packageJson.scripts?.['verify:identity-scrub'] === 'string' &&
     packageJson.scripts['verify:identity-scrub'].includes('verify-identity-scrub.mjs'),

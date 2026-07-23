@@ -56,8 +56,22 @@ self.addEventListener('fetch', (event) => {
   // Skip API requests — never cache server responses
   if (url.pathname.startsWith('/api/')) return
 
+  // Never cache operator console or auth-sensitive paths
+  if (
+    url.pathname.startsWith('/admin') ||
+    url.pathname.startsWith('/api/auth') ||
+    url.pathname.includes('/login')
+  ) {
+    return
+  }
+
   // Navigation requests: network-first with offline fallback
   if (request.mode === 'navigate') {
+    // Admin / auth navigations: network only, no cache put
+    if (url.pathname.startsWith('/admin') || url.pathname.includes('/login')) {
+      event.respondWith(fetch(request))
+      return
+    }
     event.respondWith(
       fetch(request)
         .then((response) => {

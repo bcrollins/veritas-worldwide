@@ -1193,8 +1193,8 @@ export default function ProfilePage(): React.ReactNode {
             {profile.sourcedClaims.length > 0 && (
               <>
                 <SectionHeader id="claims" title="Sourced Claims" count={profile.sourcedClaims.length}>
-                  {/* Tier filter toggles */}
-                  <div className="flex items-center gap-1.5">
+                  {/* Tier filter toggles + one-tap CSV export (#39) */}
+                  <div className="flex flex-wrap items-center gap-1.5">
                     {(['all', 'verified', 'circumstantial', 'disputed'] as const).map(t => (
                       <button
                         key={t}
@@ -1209,6 +1209,34 @@ export default function ProfilePage(): React.ReactNode {
                         {t === 'all' ? 'All' : t.charAt(0).toUpperCase() + t.slice(1)}
                       </button>
                     ))}
+                    <button
+                      type="button"
+                      data-testid="profile-export-claims-csv"
+                      className="inline-flex min-h-[44px] items-center rounded-sm border border-border px-2.5 py-1 text-xs font-sans font-semibold text-ink-muted hover:border-crimson hover:text-crimson"
+                      title="Download filtered sourced claims as CSV"
+                      onClick={() => {
+                        const rows = [
+                          ['profile_id', 'tier', 'claim', 'source', 'source_url'],
+                          ...filteredClaims.map((c) => [
+                            profile.id,
+                            c.tier || '',
+                            String(c.claim || '').replace(/"/g, '""'),
+                            String(c.source || '').replace(/"/g, '""'),
+                            String(c.url || '').replace(/"/g, '""'),
+                          ]),
+                        ]
+                        const csv = rows.map((r) => r.map((c) => `"${c}"`).join(',')).join('\n')
+                        const blob = new Blob([`${csv}\n`], { type: 'text/csv;charset=utf-8' })
+                        const url = URL.createObjectURL(blob)
+                        const a = document.createElement('a')
+                        a.href = url
+                        a.download = `${profile.id}-claims${tierFilter === 'all' ? '' : `-${tierFilter}`}.csv`
+                        a.click()
+                        URL.revokeObjectURL(url)
+                      }}
+                    >
+                      Export CSV
+                    </button>
                   </div>
                 </SectionHeader>
                 <div className="space-y-4 mb-10">

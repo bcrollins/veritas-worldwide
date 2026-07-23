@@ -7,7 +7,6 @@ import {
   type ScholarlyEvidenceTier,
 } from '../data/evidenceTiers'
 import {
-  PERSONAL_TIMELINE_SCHEMA_VERSION as SCHEMA_VERSION,
   loadPersonalTimelineEvents,
   savePersonalTimelineEvents,
   buildPersonalTimelineExport,

@@ -17,6 +17,8 @@
     "verify:sitemap-exclusions": "node scripts/verify-sitemap-exclusions.mjs",
     "verify:deploy-lag": "node scripts/verify-deploy-lag.mjs",
     "verify:robots-disallow": "node scripts/verify-robots-disallow.mjs",
+    "verify:share-utms": "node scripts/verify-share-utms.mjs",
+    "verify:hubspot-fields": "node scripts/verify-hubspot-fields.mjs",
     "verify:oauth-no-github": "node scripts/verify-oauth-no-github.mjs",
     "strip:public-exif": "node scripts/strip-public-exif.mjs",
     "generate:institute-pdf": "node scripts/run-with-strip-types.mjs scripts/generate-institute-field-manual-pdf.mjs && node scripts/verify-brand-kit.mjs",
@@ -83,7 +85,8 @@
     "verify:live-bot-noindex": "node scripts/verify-live-bot-noindex.mjs",
     "verify:soft-404-gates": "node scripts/verify-soft-404-gates.mjs",
     "verify:identity-scrub": "node scripts/verify-identity-scrub.mjs",
-    "sync:roc-geo-floors": "node scripts/sync-roc-geo-floors.mjs"
+    "sync:roc-geo-floors": "node scripts/sync-roc-geo-floors.mjs",
+    "verify:top100-floors": "node scripts/verify-top100-floors.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

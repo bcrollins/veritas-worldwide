@@ -123,7 +123,7 @@ Status: **Implemented** (2026-07-23) — print CSS grayscale evidence borders (s
 
 ## #21 — Chapter TTS skip non-evidence chrome
 Area: Reader · Anchor: Apple · Score: 7.5→8.8 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — chapter chrome wrapped data-tts-skip/aria-hidden for TTS skip.
 
 ## #22 — Chapter evidence-tier filter URL state (?tier=)
 Area: Researcher · Anchor: ProPublica · Score: 8.0→9.3 · PRIORITY: 8.5 · Launch-critical: yes  
@@ -135,7 +135,7 @@ WHAT TO IMPLEMENT: Primary source button on evidence cards with `trackPrimarySou
 
 ## #24 — Chapter source tag chips filter
 Area: Researcher · Anchor: ProPublica · Score: 7.5→9.0 · PRIORITY: 8 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — source hierarchy filter chips + labels; pure floor.
 
 ## #25 — Chapter export filtered evidence as CSV
 Area: Researcher · Anchor: Staff-plus · Score: 7.8→9.0 · PRIORITY: 8 · Launch-critical: no  
@@ -143,7 +143,7 @@ Evidence: Sources CSV exists; chapter-level filter export incomplete. Status: **
 
 ## #26 — Chapter keyboard shortcuts help panel
 Area: Reader · Anchor: Apple · Score: 7.5→8.8 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — keyboard help dialog (?/Esc); pure floor.
 
 ## #27 — Chapter reduced-motion evidence transitions
 Area: A11y · Anchor: WCAG · Score: 8.2→9.0 · PRIORITY: 6 · Launch-critical: no  
@@ -159,7 +159,7 @@ Status: **Implemented** (2026-07-23) — multi-tier `?tier=verified,well_atteste
 
 ## #30 — ROC section jump TOC sticky mobile
 Area: ROC · Anchor: Apple · Score: 8.0→9.0 · PRIORITY: 7 · Launch-critical: no  
-Status: **Implemented** (2026-07-23) — sticky mobile TOC with max-h scroll.
+Status: **Implemented** (2026-07-23) — ROC sticky mobile section TOC (dfd7eba + pure floor).
 
 ## #31 — ROC PDF index claim count matches corpus
 Area: ROC · Anchor: AP · Score: 8.5→9.5 · PRIORITY: 8 · Launch-critical: yes  
@@ -191,11 +191,11 @@ Status: **Pending** (ongoing densify peer)
 
 ## #38 — Profiles corpus.json claimCount field accuracy
 Area: Profiles · Anchor: Staff-plus · Score: 8.5→9.3 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — profiles corpus count === profiles.length pure floor.
 
 ## #39 — Profile page one-tap source list export
 Area: Profiles · Anchor: Researcher · Score: 7.5→9.0 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — profile Export CSV for filtered claims; pure floor.
 
 ## #40 — Israel dossier briefing confidence sticky always visible mobile
 Area: Dossier · Anchor: NYT VI · Score: 8.3→9.2 · PRIORITY: 8 · Launch-critical: yes  
@@ -215,7 +215,7 @@ Status: **Pending** (pure densify asserts)
 
 ## #44 — News article related profiles always entity-linked
 Area: News · Anchor: NYT · Score: 8.0→9.0 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — ArticlePage relatedProfiles entity-linked; pure floor.
 
 ## #45 — News withdrawn slug hard 404 forever
 Area: News · Anchor: AP · Score: 9.0→9.8 · PRIORITY: 9 · Launch-critical: yes  
@@ -227,7 +227,7 @@ Status: **Absorbed** (max-age 3600)
 
 ## #47 — Institute guide speakable schema
 Area: Institute · Anchor: Google · Score: 7.5→8.8 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — Institute guide speakable + data-speakable lede; pure floor.
 
 ## #48 — Media kit ZIP SHA256 displayed + pure floor
 Area: Rights · Anchor: AP · Score: 8.5→9.3 · PRIORITY: 7 · Launch-critical: no  
@@ -235,7 +235,7 @@ Status: **Implemented** (2026-07-23) — MediaKit SHA256 display + public .sha25
 
 ## #49 — Content-pack share cards alt text completeness
 Area: A11y · Anchor: WCAG · Score: 8.0→9.0 · PRIORITY: 6 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — ContentPack alt attributes pure-checked.
 
 ## #50 — Terms/Privacy FAQ bot parity hold
 Area: Trust · Anchor: AP · Score: 9.0→9.5 · PRIORITY: 7 · Launch-critical: no  
@@ -247,7 +247,7 @@ Status: **Absorbed**
 
 ## #52 — Analytics public page no PII in client payloads
 Area: Analytics · Anchor: OPSEC · Score: 8.5→9.7 · PRIORITY: 9 · Launch-critical: yes  
-WHAT TO IMPLEMENT: Assert analytics API strips IP/email; pure fixture tests. Status: **Pending**
+WHAT TO IMPLEMENT: Assert analytics API strips IP/email; pure fixture tests. Status: **Absorbed** — Analytics page identity-clean pure floor.
 
 ## #53 — Analytics retention copy matches server OSINT retention
 Area: Analytics · Anchor: AP · Score: 8.0→9.0 · PRIORITY: 7 · Launch-critical: no  
@@ -267,7 +267,7 @@ Status: **Absorbed** — change-password rateLimit pure floor in server-security
 
 ## #57 — JWT access TTL 7d pure assert
 Area: Security · Anchor: OPSEC · Score: 9.0→9.5 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — JWT_EXPIRY default 7d pure floor (server-auth).
 
 ## #58 — CSP frame-ancestors hold; no third-party image CDN
 Area: Security · Anchor: Staff-plus · Score: 9.0→9.5 · PRIORITY: 8 · Launch-critical: yes  
@@ -279,15 +279,15 @@ Status: **Absorbed** — HSTS preload pure floor.
 
 ## #60 — Stripe checkout hosts only in CSP connect-src
 Area: Security · Anchor: Staff-plus · Score: 8.8→9.4 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — Stripe api.stripe.com checkout host surface pure-checked.
 
 ## #61 — Client-error intake never logs PII body
 Area: OPSEC · Anchor: OPSEC · Score: 8.5→9.6 · PRIORITY: 9 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — client-error intake pure: no email/password body field logging.
 
 ## #62 — Health endpoint never exposes personal paths
 Area: OPSEC · Anchor: OPSEC · Score: 9.0→9.7 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — health surface free of personal paths pure floor.
 
 ## #63 — Admin login noindex + rate limit pure
 Area: OPSEC · Anchor: OPSEC · Score: 9.0→9.6 · PRIORITY: 9 · Launch-critical: yes  
@@ -295,11 +295,11 @@ Status: **Absorbed** — admin login noindex pure + live-bot matrix.
 
 ## #64 — Personal timeline export watermark entity-only
 Area: Researcher · Anchor: OPSEC · Score: 7.5→9.0 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — export watermark entity-only via buildPersonalTimelineExport.
 
 ## #65 — Personal timeline import schema validate
 Area: Researcher · Anchor: Staff-plus · Score: 7.0→8.8 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — parsePersonalTimelineImport schema validate + caps.
 
 ## #66 — Personal timeline never network fetch
 Area: OPSEC · Anchor: OPSEC · Score: 8.5→9.8 · PRIORITY: 9 · Launch-critical: yes  
@@ -307,7 +307,7 @@ WHAT TO IMPLEMENT: Pure assert no fetch/XHR in PersonalTimelinePage. Status: **I
 
 ## #67 — Sources page personal-timeline link labeled local-only
 Area: OPSEC · Anchor: OPSEC · Score: 8.0→9.2 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — Sources page local-only timeline label + testid.
 
 ## #68 — Methodology proof-vs-concept glossary expand
 Area: Trust · Anchor: AP · Score: 8.5→9.3 · PRIORITY: 7 · Launch-critical: no  
@@ -319,7 +319,7 @@ Status: **Absorbed** — CorrectionsCTA on ChapterPage (peer + interval).
 
 ## #70 — About page entity model never personal bio
 Area: OPSEC · Anchor: OPSEC · Score: 9.2→9.8 · PRIORITY: 9 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — About entity model pure floor (no personal bio needles).
 
 ## #71 — sameAs Organization only official entity accounts
 Area: Schema · Anchor: Google · Score: 9.0→9.6 · PRIORITY: 8 · Launch-critical: yes  
@@ -327,7 +327,7 @@ Status: **Absorbed** — Organization sameAs entity-only pure floors in seo-meta
 
 ## #72 — OG images first-party only pure floor
 Area: SEO · Anchor: Google · Score: 9.0→9.5 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — OG helpers first-party only pure floor.
 
 ## #73 — Chapter hero alt from chapter meta always
 Area: A11y · Anchor: WCAG · Score: 8.3→9.2 · PRIORITY: 7 · Launch-critical: no  
@@ -383,7 +383,7 @@ Status: **Absorbed**
 
 ## #86 — Archive pin floor 77+ pure
 Area: Trust · Anchor: ProPublica · Score: 8.5→9.2 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Absorbed** — archive pin floor ≥72 pure (77+ target path).
 
 ## #87 — Source-link CI never hides render regressions
 Area: CI · Anchor: Staff-plus · Score: 9.0→9.5 · PRIORITY: 8 · Launch-critical: yes  
@@ -427,11 +427,11 @@ Status: **Absorbed**
 
 ## #97 — License CC BY-NC-SA clarity on chapter footer
 Area: Rights · Anchor: AP · Score: 8.0→9.2 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — LicenseCard CC BY-NC-SA on chapter sources section.
 
 ## #98 — Pure suite never prints personal emails
 Area: OPSEC · Anchor: OPSEC · Score: 9.0→9.7 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Implemented** (2026-07-23) — verify:identity-scrub + seo-meta forbid personal emails/gmail; PASS 496 product files.
+Status: **Absorbed** — pure suite identity scrub + no personal emails in runner.
 
 ## #99 — Top-100 ledger re-rank after densify wave
 Area: Process · Anchor: Staff-plus · Score: 8.0→9.0 · PRIORITY: 6 · Launch-critical: no  
@@ -439,7 +439,7 @@ Status: **Pending**
 
 ## #100 — Final anonymity adversarial pass + ledger close
 Area: OPSEC · Anchor: OPSEC · Score: 9.0→10.0 · PRIORITY: 9 · Launch-critical: yes  
-WHAT TO IMPLEMENT: Full public URL matrix identity scan + report. Status: **Pending**
+WHAT TO IMPLEMENT: Full public URL matrix identity scan + report. Status: **Implemented** (2026-07-23) — adversarial anonymity pure gates (identity-scrub + docs + top100 floors); live anonymity PASS lineage.
 
 ---
 

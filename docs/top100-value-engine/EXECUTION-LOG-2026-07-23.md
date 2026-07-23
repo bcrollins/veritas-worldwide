@@ -55,3 +55,15 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 ## Interval 4
 - wave63 +9 → 669 claims unique IDs
 - soft-floor.json 669; PDF 669; verify ROC PASS
+
+## Interval 7 — researcher hierarchy/keyboard + timeline OPSEC + pure floors batch
+
+| Item | Proof |
+|------|-------|
+| #21 #24 #26 | ChapterPage TTS chrome skip, hierarchy chips, keyboard help |
+| #39 | Profile claims CSV export |
+| #47 | Institute guide speakable |
+| #64 #65 | personalTimelineStorage export/import |
+| #67 #97 | Sources local-only; LicenseCard on chapters |
+| Pure | verify-top100-floors + pure 38 suites PASS |
+

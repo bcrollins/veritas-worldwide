@@ -38,10 +38,14 @@ const pure = [
   'verify-integrity-score.mjs',
   'verify-identity-scrub.mjs',
   'verify-robots-disallow.mjs',
+  'verify-share-utms.mjs',
+  'verify-source-url-shapes.mjs',
+  'verify-hubspot-fields.mjs',
   'verify-oauth-no-github.mjs',
   'verify-analytics-privacy.mjs',
   'verify-package-entity.mjs',
   'verify-sitemap-exclusions.mjs',
+  'verify-top100-floors.mjs',
 ]
 
 let failed = 0

@@ -13,9 +13,22 @@ interface SharePanelProps {
 
 const SITE_URL = 'https://veritasworldwide.com'
 
+/** Entity UTMs only — never personal campaign/ref codes. */
+function withEntityShareUtms(raw: string): string {
+  try {
+    const u = new URL(raw, SITE_URL)
+    if (!u.searchParams.has('utm_source')) u.searchParams.set('utm_source', 'veritas')
+    if (!u.searchParams.has('utm_medium')) u.searchParams.set('utm_medium', 'share')
+    if (!u.searchParams.has('utm_campaign')) u.searchParams.set('utm_campaign', 'veritas_worldwide')
+    return u.toString()
+  } catch {
+    return raw
+  }
+}
+
 export default function SharePanel({ url, title, description, variant = 'full', contentId }: SharePanelProps) {
   const [copied, setCopied] = useState(false)
-  const shareUrl = url || (typeof window !== 'undefined' ? window.location.href : SITE_URL)
+  const shareUrl = withEntityShareUtms(url || (typeof window !== 'undefined' ? window.location.href : SITE_URL))
   const shareText = description || title
 
   const handleShare = (platform: string, shareLink: string) => {
