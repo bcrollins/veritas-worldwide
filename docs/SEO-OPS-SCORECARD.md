@@ -150,3 +150,13 @@ All Googlebot checks PASS on tip lineage including soft-404 gates:
 - Known content: chapter-1, ted-cruz, historical-jesus-evidence → **200 + indexable titles**
 - Noindex surfaces: admin, subscribe/success, search, bookmarks, bernie → **200 + noindex**
 - Regression: `npm run verify:live-bot-noindex` + `npm run verify:soft-404-gates`
+
+
+### wave28 soft-404 production lock (2026-07-23)
+
+Live tip lineage verified with:
+- ROC corpus **354** claims (soft anonymity floor 354)
+- Googlebot soft-404 matrix: junk chapter/profile/news/topic/institute → **404 noindex**
+- Known content 200 + indexable titles; admin/success/search/bookmarks/bernie **noindex**
+- Pure: `verify:seo-meta`, `verify:soft-404-gates`
+- Live: `verify:live-bot-noindex`, `verify:live-anonymity`
