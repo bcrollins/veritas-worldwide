@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:17:27.734Z",
+  "generatedAt": "2026-07-23T09:17:48.290Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 157,
-    "timelineEvents": 145,
+    "incidents": 158,
+    "timelineEvents": 146,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 143,
+    "historicalWarCrimesPack": 144,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 97
+      "post-oct7": 98
     },
     "incidentsByTier": {
-      "verified": 155,
+      "verified": 156,
       "circumstantial": 2
     },
-    "childrenTagged": 133,
-    "civiliansTagged": 155,
+    "childrenTagged": 134,
+    "civiliansTagged": 156,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -4013,6 +4013,28 @@
         "solar",
         "civilians",
         "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-solid-waste-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Solid Waste Collection Collapse Pattern",
+      "description": "UNEP multi-source documentation of municipal solid-waste collection collapse driving disease risk in streets and camps.",
+      "source": "UNEP / UNDP / OCHA",
+      "sourceUrl": "https://www.unep.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-waste-collection-collapse-pattern-2023-2025",
+        "gaza-sewage-flooding-disease-pattern-2023-2025",
+        "gaza-infectious-disease-surge-pattern-2023-2025"
+      ],
+      "tags": [
+        "waste",
+        "disease",
+        "children",
+        "civilians",
         "gaza"
       ]
     },
@@ -10473,6 +10495,49 @@
           "type": "document",
           "label": "ICRC public statements",
           "url": "https://www.icrc.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-waste-collection-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Solid Waste Collection Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (solid-waste cohort)",
+      "location": "Gaza Strip streets / camps / dump sites",
+      "summary": "UNEP, UNDP, and multi-source municipal reporting document collapse of solid-waste collection under fuel shortages and bombardment — leaving mountains of garbage in streets and camps that drive disease risk for children. Pattern card for solid-waste system failure distinct from sewage flooding and rubble/UXO cards.",
+      "evidence": "UNEP/UNDP waste assessments and multi-outlet visual coverage establish multi-source waste-collection collapse. Exact tonnage uncollected evolves; multi-source municipal waste system failure is the claim.",
+      "sources": [
+        {
+          "label": "UNEP solid waste / environmental materials",
+          "url": "https://www.unep.org"
+        },
+        {
+          "label": "UNDP municipal recovery materials",
+          "url": "https://www.undp.org"
+        },
+        {
+          "label": "OCHA humanitarian situation materials",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNEP public materials",
+          "url": "https://www.unep.org"
         }
       ],
       "tier": "verified",
