@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:43:38.051Z",
-  "claimCount": 281,
+  "generatedAt": "2026-07-23T09:46:01.023Z",
+  "claimCount": 290,
   "tierHistogram": {
-    "well_attested": 108,
-    "verified": 96,
+    "well_attested": 112,
+    "verified": 100,
     "contested": 30,
-    "interpretive": 27,
+    "interpretive": 28,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 15
@@ -150,6 +150,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "ane-lachish-reliefs",
+      "claim": "Sennacherib’s Lachish reliefs (British Museum) depict the 701 BCE siege visually, complementing annals and biblical narratives.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave21.ts"
     },
     {
       "id": "ane-merneptah",
@@ -339,6 +346,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "arch-masada-siege",
+      "claim": "Masada siege archaeology and Josephus’s narrative document a major Roman siege at the end of the First Revolt (73/74 CE debates on exact year).",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave21.ts"
     },
     {
       "id": "arch-nazareth",
@@ -549,6 +563,13 @@
       "tier": "well_attested",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "cosmo-matter-power",
+      "claim": "The matter power spectrum from galaxy surveys and Lyman-α forests constrains structure growth consistent with cold dark matter frameworks at large scales.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave21.ts"
     },
     {
       "id": "cosmo-neutrino-bbn",
@@ -775,6 +796,13 @@
       "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
+      "id": "ec-polycarp-philippians",
+      "claim": "Polycarp’s Philippians cites or alludes to multiple NT writings, showing early 2nd-century reception of Pauline and Gospel traditions.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave21.ts"
+    },
+    {
       "id": "ec-quadratus",
       "claim": "Quadratus’s apology (early 2nd c.), preserved in fragment via Eusebius, claims some healed/raised by Jesus lived into later times — early apologetic tradition, not contemporary medical record.",
       "tier": "circumstantial",
@@ -927,6 +955,13 @@
       "tier": "well_attested",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristWave9.ts"
+    },
+    {
+      "id": "hj-galilee-jewishness",
+      "claim": "Archaeology and literary sources support a predominantly Jewish Galilee in the early first century with hellenizing urban pockets (Sepphoris, Tiberias).",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave21.ts"
     },
     {
       "id": "hj-healings-reputation",
@@ -1300,6 +1335,13 @@
       "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
+      "id": "mod-quest-historiography",
+      "claim": "Historiography of the “quests” for the historical Jesus is itself a modern scholarly narrative with periodization that can oversimplify continuous research traditions.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave21.ts"
+    },
+    {
       "id": "mod-radiocarbon-dss",
       "claim": "Radiocarbon dating of selected Dead Sea Scrolls supports late Second Temple copy ranges broadly consistent with paleography.",
       "tier": "well_attested",
@@ -1461,6 +1503,13 @@
       "file": "src/data/recordOfJesusChristWave11.ts"
     },
     {
+      "id": "nc-suetonius-nero",
+      "claim": "Suetonius (Nero 16) mentions punishments of Christians under Nero as adherents of a new and mischievous superstition.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave21.ts"
+    },
+    {
       "id": "nc-tacitus",
       "claim": "Tacitus, Annals 15.44 reports that “Christus” was executed under Tiberius by the procurator Pontius Pilate and that the movement originated in Judea.",
       "tier": "well_attested",
@@ -1557,6 +1606,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave18.ts"
+    },
+    {
+      "id": "nt-correctors-hands",
+      "claim": "Corrector hands in major codices (ℵ B A) document layered revision of manuscripts over time, crucial for stemmatic and CBGM analyses.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave21.ts"
     },
     {
       "id": "nt-ecm-method",
@@ -1900,6 +1956,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "st-pharisee-popularity",
+      "claim": "Josephus claims Pharisees had popular influence; critical historians treat this as tendentious but still evidence of a major school’s social role.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave21.ts"
     },
     {
       "id": "st-pharisees-josephus",
