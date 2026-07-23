@@ -2924,6 +2924,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-cemetery-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Cemetery & Burial Ground Damage Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (cemetery cohort)',
+    location: 'Gaza Strip cemeteries / burial grounds',
+    summary:
+      'Multi-source satellite analysis and field reporting document damage to cemeteries and burial grounds across Gaza during the war — including leveled graves and disrupted burial capacity for civilian dead. Pattern card for cemetery destruction as a civilian dignity / cultural-harm multiplier adjacent to housing and cultural-heritage cards.',
+    evidence:
+      'Satellite analysis, multi-outlet visual investigations, and municipal/civil-defense burial reporting establish multi-source cemetery damage. Exact site counts evolve; multi-source pattern of burial-ground destruction is the claim.',
+    sources: [
+      { label: 'Multi-outlet satellite / visual cemetery damage coverage', url: 'https://apnews.com' },
+      { label: 'OCHA humanitarian situation materials', url: 'https://www.ochaopt.org' },
+      { label: 'OHCHR public human-rights materials', url: 'https://www.ohchr.org' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'Multi-outlet visual coverage', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4176,6 +4203,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['uxo', 'debris', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-cemetery-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Cemetery & Burial Ground Damage Pattern',
+    description: 'Multi-source satellite and field reporting of cemetery damage and disrupted burial capacity during the war.',
+    source: 'Multi-outlet / OCHA / OHCHR',
+    sourceUrl: 'https://apnews.com',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-cemetery-destruction-pattern-2023-2025',
+      'gaza-cultural-heritage-destruction-2023-2025',
+      'gaza-housing-destruction-pattern-2023-2025',
+    ],
+    tags: ['cemetery', 'dignity', 'civilians', 'gaza'],
+  },
+
 
 
 

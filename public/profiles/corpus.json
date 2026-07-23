@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:51:52.114Z",
+  "generatedAt": "2026-07-23T08:54:09.731Z",
   "count": 96,
   "profiles": [
     {
@@ -451,7 +451,7 @@
       "name": "Cory Booker",
       "title": "U.S. Senator (D-NJ)",
       "category": "politician",
-      "summary": "New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7 — Democratic enablement pole adjacent to NORPAC/NJ network. Integrity docket: dual-cited PolitiFact False for citing a nonexistent CBO study on Medicare-at-50 savings. Primary: OpenSecrets, Senate record, CRS RL33222, PolitiFact.",
+      "summary": "New Jersey Democrat and 2020 presidential candidate. Strong public pro-Israel voice within the progressive-branded Democratic coalition; documented pro-Israel PAC recipient (OpenSecrets). Supports FMF/Iron Dome continuity and opposed progressive conditionality frames after October 7 — Democratic enablement pole adjacent to NORPAC/NJ network. Integrity docket: dual-cited PolitiFact Falses — nonexistent CBO Medicare-at-50 study + farmer-suicide rates “as high as Great Depression” (no supporting data). Primary: OpenSecrets, Senate record, CRS RL33222, PolitiFact.",
       "photo": "/profiles/cory-booker.jpg",
       "url": "https://veritasworldwide.com/profile/cory-booker",
       "bioguideId": "B001288",
@@ -466,8 +466,8 @@
         "FMF Continuity",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
