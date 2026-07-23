@@ -1174,6 +1174,30 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['iron-dome'],
     relatedProfileIds: ['joe-biden', 'benjamin-netanyahu', 'chuck-schumer', 'mike-johnson'],
   },
+  {
+    id: 'aipac-pac-hard-money-2024',
+    label: 'AIPAC PAC — Hard-Money Contributions (2024 Cycle)',
+    amount: 'multi-million PAC hard money (OpenSecrets cycle window)',
+    type: 'lobby',
+    date: '2023–2024 cycle',
+    detail:
+      'AIPAC\'s traditional PAC hard-money contributions to federal candidates (distinct from United Democracy Project Super PAC independent expenditures). OpenSecrets tracks AIPAC PAC receipts and disbursements as the membership-PAC layer of electoral enablement alongside Super PAC IEs.',
+    sourceUrl: 'https://www.opensecrets.org/political-action-committees-pacs/american-israel-public-affairs-cmte/C00797662/summary/2024',
+    children: ['pro-israel-lobby-2024', 'udp-superpac-2024'],
+    relatedProfileIds: ['howard-kohr', 'chuck-schumer', 'hakeem-jeffries', 'mike-johnson', 'josh-gottheimer'],
+  },
+  {
+    id: 'oct7-emergency-arms-surge',
+    label: 'Post–Oct 7 Emergency Arms Transfer Surge',
+    amount: 'tens of thousands of munitions + multi-billion wartime packages',
+    type: 'delivery',
+    date: 'October 2023 – 2025',
+    detail:
+      'After October 7, 2023, the United States accelerated emergency munitions transfers (including 155mm, precision bombs, interceptors) via FMF, presidential drawdown authority, and WRSA-I stockpile releases — a delivery surge layered on top of the annual MOU, later consolidated partly through H.R.815 and related packages. DSCA notices and CRS reporting document the wartime pipeline expansion.',
+    sourceUrl: 'https://www.dsca.mil/press-media/major-arms-sales',
+    children: ['fmf-weapons', 'munitions', 'mk84-use', 'war-reserve-stockpile', 'hr815'],
+    relatedProfileIds: ['joe-biden', 'antony-blinken', 'donald-trump', 'benjamin-netanyahu', 'chuck-schumer'],
+  },
 
 ]
 
@@ -1734,6 +1758,28 @@ export const ISRAEL_DOSSIER_LEGAL_CASES: DossierLegalCase[] = [
     significance: 'Records the GA majority posture versus U.S. veto politics in the Security Council — structural diplomatic map of isolation vs cover.',
     sourceUrl: 'https://digitallibrary.un.org/record/4031076',
     status: 'decided',
+  },
+  {
+    title: 'UN Security Council Resolution 2728 — Ramadan Ceasefire Demand (2024)',
+    court: 'UN Security Council',
+    date: 'March 25, 2024',
+    ruling:
+      'Demanded an immediate ceasefire for the month of Ramadan leading to a lasting sustainable ceasefire, the immediate and unconditional release of all hostages, and ensuring humanitarian access; adopted 14-0 with one abstention (United States).',
+    significance:
+      'Documents a rare post-Oct-7 Security Council ceasefire demand that passed with U.S. abstention rather than veto — a diplomatic floor often contrasted with later U.S. vetoes of stronger texts.',
+    sourceUrl: 'https://digitallibrary.un.org/record/4041605',
+    status: 'decided',
+  },
+  {
+    title: 'ICJ Order — South Africa v. Israel Additional Measures (May 24, 2024 Rafah)',
+    court: 'International Court of Justice (ICJ)',
+    date: 'May 24, 2024',
+    ruling:
+      'In the ongoing Genocide Convention case, the Court ordered Israel to immediately halt its military offensive, and any other action in the Rafah Governorate, which may inflict on the Palestinian group in Gaza conditions of life that could bring about its physical destruction in whole or in part; reaffirmed prior provisional measures and aid access obligations.',
+    significance:
+      'Tightens ICJ provisional architecture around the Rafah offensive specifically — separate from the January/March 2024 orders. Implementation and interpretation remain contested; the order itself is the primary record.',
+    sourceUrl: 'https://www.icj-cij.org/case/192',
+    status: 'ongoing',
   },
 ]
 

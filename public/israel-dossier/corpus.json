@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:10:10.592Z",
+  "generatedAt": "2026-07-23T07:15:06.002Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 75,
-    "timelineEvents": 62,
+    "incidents": 77,
+    "timelineEvents": 64,
     "actors": 45,
-    "moneyTrailNodes": 19,
-    "historicalWarCrimesPack": 60,
-    "legalCases": 12,
+    "moneyTrailNodes": 21,
+    "historicalWarCrimesPack": 62,
+    "legalCases": 14,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 3,
       "1948-1967": 6,
-      "occupation-1967-2005": 24,
-      "blockade-2007-2023": 24,
+      "occupation-1967-2005": 25,
+      "blockade-2007-2023": 25,
       "post-oct7": 18
     },
     "incidentsByTier": {
-      "verified": 73,
+      "verified": 75,
       "circumstantial": 2
     },
-    "childrenTagged": 64,
-    "civiliansTagged": 73,
+    "childrenTagged": 66,
+    "civiliansTagged": 75,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 26,
@@ -32,10 +32,10 @@
     },
     "moneyTrailByType": {
       "legislation": 5,
-      "delivery": 2,
+      "delivery": 3,
       "weapon": 7,
       "impact": 3,
-      "lobby": 2
+      "lobby": 3
     }
   },
   "publicRecords": [
@@ -408,6 +408,49 @@
         "benjamin-netanyahu",
         "chuck-schumer",
         "mike-johnson"
+      ]
+    },
+    {
+      "id": "aipac-pac-hard-money-2024",
+      "label": "AIPAC PAC — Hard-Money Contributions (2024 Cycle)",
+      "amount": "multi-million PAC hard money (OpenSecrets cycle window)",
+      "type": "lobby",
+      "date": "2023–2024 cycle",
+      "detail": "AIPAC's traditional PAC hard-money contributions to federal candidates (distinct from United Democracy Project Super PAC independent expenditures). OpenSecrets tracks AIPAC PAC receipts and disbursements as the membership-PAC layer of electoral enablement alongside Super PAC IEs.",
+      "sourceUrl": "https://www.opensecrets.org/political-action-committees-pacs/american-israel-public-affairs-cmte/C00797662/summary/2024",
+      "children": [
+        "pro-israel-lobby-2024",
+        "udp-superpac-2024"
+      ],
+      "relatedProfileIds": [
+        "howard-kohr",
+        "chuck-schumer",
+        "hakeem-jeffries",
+        "mike-johnson",
+        "josh-gottheimer"
+      ]
+    },
+    {
+      "id": "oct7-emergency-arms-surge",
+      "label": "Post–Oct 7 Emergency Arms Transfer Surge",
+      "amount": "tens of thousands of munitions + multi-billion wartime packages",
+      "type": "delivery",
+      "date": "October 2023 – 2025",
+      "detail": "After October 7, 2023, the United States accelerated emergency munitions transfers (including 155mm, precision bombs, interceptors) via FMF, presidential drawdown authority, and WRSA-I stockpile releases — a delivery surge layered on top of the annual MOU, later consolidated partly through H.R.815 and related packages. DSCA notices and CRS reporting document the wartime pipeline expansion.",
+      "sourceUrl": "https://www.dsca.mil/press-media/major-arms-sales",
+      "children": [
+        "fmf-weapons",
+        "munitions",
+        "mk84-use",
+        "war-reserve-stockpile",
+        "hr815"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
+        "antony-blinken",
+        "donald-trump",
+        "benjamin-netanyahu",
+        "chuck-schumer"
       ]
     }
   ],
@@ -2242,6 +2285,26 @@
       ]
     },
     {
+      "id": "tl-sbarro-2001",
+      "year": "2001",
+      "era": "occupation-1967-2005",
+      "title": "Sbarro Pizzeria Bombing — 15 Killed (7 Children)",
+      "description": "Hamas suicide attack on Jerusalem restaurant during Second Intifada; multi-source death toll established.",
+      "source": "MFA / Britannica",
+      "sourceUrl": "https://www.britannica.com/topic/second-intifada",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "sbarro-restaurant-bombing-2001",
+        "second-intifada-civilian-toll",
+        "dolphinarium-disco-2001"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "terrorism"
+      ]
+    },
+    {
       "id": "tl-jenin-2002",
       "year": "2002",
       "era": "occupation-1967-2005",
@@ -2358,6 +2421,26 @@
         "civilians",
         "children",
         "artillery"
+      ]
+    },
+    {
+      "id": "tl-dahiya-doctrine-2006",
+      "year": "2006",
+      "era": "blockade-2007-2023",
+      "title": "Dahiya Doctrine — Disproportionate Force Concept",
+      "description": "IDF officers articulate disproportionate-force doctrine after Beirut Dahiya destruction; cited in later campaign analysis.",
+      "source": "HRW / UNISPAL",
+      "sourceUrl": "https://www.hrw.org/report/2007/09/05/why-they-died/civilian-casualties-lebanon-during-2006-war",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "dahiya-doctrine-2006",
+        "second-lebanon-war-2006-pattern",
+        "qana-2006"
+      ],
+      "tags": [
+        "civilians",
+        "infrastructure",
+        "doctrine"
       ]
     },
     {
@@ -3830,6 +3913,46 @@
       }
     },
     {
+      "id": "sbarro-restaurant-bombing-2001",
+      "era": "occupation-1967-2005",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Sbarro Restaurant Suicide Bombing (Jerusalem, 2001)",
+      "date": "August 9, 2001",
+      "location": "Downtown Jerusalem",
+      "summary": "Hamas suicide bomber detonated inside a crowded Sbarro pizzeria in central Jerusalem during lunch hour, killing 15 people (including 7 children) and wounding about 130. Included for Second Intifada chronology balance alongside Israeli military operations entries.",
+      "evidence": "Israeli government records, contemporaneous international press, and multi-source Second Intifada historiography establish the attack, death toll, and perpetrator attribution to Hamas.",
+      "sources": [
+        {
+          "label": "Israeli MFA historical materials / public record",
+          "url": "https://www.gov.il/en/departments/ministry_of_foreign_affairs"
+        },
+        {
+          "label": "Britannica — Second Intifada context",
+          "url": "https://www.britannica.com/topic/second-intifada"
+        },
+        {
+          "label": "UNISPAL period index",
+          "url": "https://www.un.org/unispal/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Britannica Second Intifada",
+          "url": "https://www.britannica.com/topic/second-intifada"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 15,
+        "injured": 130
+      }
+    },
+    {
       "id": "jenin-2002",
       "era": "occupation-1967-2005",
       "targetsCivilians": true,
@@ -4357,6 +4480,48 @@
       "tier": "verified",
       "casualties": {
         "killed": 1100
+      }
+    },
+    {
+      "id": "dahiya-doctrine-2006",
+      "era": "blockade-2007-2023",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "fmf-weapons",
+        "artillery-use"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Dahiya Doctrine — Disproportionate Force Against Civilian Infrastructure (2006+)",
+      "date": "2006 (articulated) — applied in subsequent campaigns",
+      "location": "Dahiya suburb, Beirut / subsequent Gaza applications",
+      "summary": "After the 2006 Lebanon war destruction of Beirut's Dahiya suburb, senior IDF officers publicly described a doctrine of disproportionate force against civilian infrastructure supporting hostile non-state actors. Human-rights organizations and UN reporting treat the doctrine as a documented operational concept relevant to later Gaza campaigns.",
+      "evidence": "Public statements by IDF leadership (including Gadi Eisenkot contemporaneous remarks), HRW/Amnesty documentation of infrastructure destruction patterns, and UN fact-finding products on Lebanon 2006 and later Gaza wars. The claim is the public doctrine + multi-source civilian infrastructure harm pattern — not a single strike ID.",
+      "sources": [
+        {
+          "label": "HRW — Why They Died (Lebanon 2006)",
+          "url": "https://www.hrw.org/report/2007/09/05/why-they-died/civilian-casualties-lebanon-during-2006-war"
+        },
+        {
+          "label": "UNISPAL — Lebanon 2006 documentation",
+          "url": "https://www.un.org/unispal/"
+        },
+        {
+          "label": "Secondary analysis of Dahiya doctrine (institute/academic index)",
+          "url": "https://www.un.org/unispal/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "HRW Lebanon 2006 civilian casualties report",
+          "url": "https://www.hrw.org/report/2007/09/05/why-they-died/civilian-casualties-lebanon-during-2006-war"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 1000
       }
     },
     {
@@ -6184,6 +6349,24 @@
       "significance": "Records the GA majority posture versus U.S. veto politics in the Security Council — structural diplomatic map of isolation vs cover.",
       "sourceUrl": "https://digitallibrary.un.org/record/4031076",
       "status": "decided"
+    },
+    {
+      "title": "UN Security Council Resolution 2728 — Ramadan Ceasefire Demand (2024)",
+      "court": "UN Security Council",
+      "date": "March 25, 2024",
+      "ruling": "Demanded an immediate ceasefire for the month of Ramadan leading to a lasting sustainable ceasefire, the immediate and unconditional release of all hostages, and ensuring humanitarian access; adopted 14-0 with one abstention (United States).",
+      "significance": "Documents a rare post-Oct-7 Security Council ceasefire demand that passed with U.S. abstention rather than veto — a diplomatic floor often contrasted with later U.S. vetoes of stronger texts.",
+      "sourceUrl": "https://digitallibrary.un.org/record/4041605",
+      "status": "decided"
+    },
+    {
+      "title": "ICJ Order — South Africa v. Israel Additional Measures (May 24, 2024 Rafah)",
+      "court": "International Court of Justice (ICJ)",
+      "date": "May 24, 2024",
+      "ruling": "In the ongoing Genocide Convention case, the Court ordered Israel to immediately halt its military offensive, and any other action in the Rafah Governorate, which may inflict on the Palestinian group in Gaza conditions of life that could bring about its physical destruction in whole or in part; reaffirmed prior provisional measures and aid access obligations.",
+      "significance": "Tightens ICJ provisional architecture around the Rafah offensive specifically — separate from the January/March 2024 orders. Implementation and interpretation remain contested; the order itself is the primary record.",
+      "sourceUrl": "https://www.icj-cij.org/case/192",
+      "status": "ongoing"
     }
   ],
   "lobbying": [

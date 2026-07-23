@@ -1608,6 +1608,58 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     tier: 'verified',
     casualties: { killed: 10000 },
   },
+  {
+    id: 'dahiya-doctrine-2006',
+    era: 'blockade-2007-2023',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['fmf-weapons', 'artillery-use'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Dahiya Doctrine — Disproportionate Force Against Civilian Infrastructure (2006+)',
+    date: '2006 (articulated) — applied in subsequent campaigns',
+    location: 'Dahiya suburb, Beirut / subsequent Gaza applications',
+    summary:
+      'After the 2006 Lebanon war destruction of Beirut\'s Dahiya suburb, senior IDF officers publicly described a doctrine of disproportionate force against civilian infrastructure supporting hostile non-state actors. Human-rights organizations and UN reporting treat the doctrine as a documented operational concept relevant to later Gaza campaigns.',
+    evidence:
+      'Public statements by IDF leadership (including Gadi Eisenkot contemporaneous remarks), HRW/Amnesty documentation of infrastructure destruction patterns, and UN fact-finding products on Lebanon 2006 and later Gaza wars. The claim is the public doctrine + multi-source civilian infrastructure harm pattern — not a single strike ID.',
+    sources: [
+      { label: 'HRW — Why They Died (Lebanon 2006)', url: 'https://www.hrw.org/report/2007/09/05/why-they-died/civilian-casualties-lebanon-during-2006-war' },
+      { label: 'UNISPAL — Lebanon 2006 documentation', url: 'https://www.un.org/unispal/' },
+      { label: 'Secondary analysis of Dahiya doctrine (institute/academic index)', url: 'https://www.un.org/unispal/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'HRW Lebanon 2006 civilian casualties report', url: 'https://www.hrw.org/report/2007/09/05/why-they-died/civilian-casualties-lebanon-during-2006-war' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 1000 },
+  },
+  {
+    id: 'sbarro-restaurant-bombing-2001',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Sbarro Restaurant Suicide Bombing (Jerusalem, 2001)',
+    date: 'August 9, 2001',
+    location: 'Downtown Jerusalem',
+    summary:
+      'Hamas suicide bomber detonated inside a crowded Sbarro pizzeria in central Jerusalem during lunch hour, killing 15 people (including 7 children) and wounding about 130. Included for Second Intifada chronology balance alongside Israeli military operations entries.',
+    evidence:
+      'Israeli government records, contemporaneous international press, and multi-source Second Intifada historiography establish the attack, death toll, and perpetrator attribution to Hamas.',
+    sources: [
+      { label: 'Israeli MFA historical materials / public record', url: 'https://www.gov.il/en/departments/ministry_of_foreign_affairs' },
+      { label: 'Britannica — Second Intifada context', url: 'https://www.britannica.com/topic/second-intifada' },
+      { label: 'UNISPAL period index', url: 'https://www.un.org/unispal/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Britannica Second Intifada', url: 'https://www.britannica.com/topic/second-intifada' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 15, injured: 130 },
+  },
 
 ]
 
@@ -2207,6 +2259,30 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['operation-peace-for-galilee-1982-invasion', 'sabra-shatila-1982', 'beirut-siege-1982'],
     tags: ['civilians', 'children', 'lebanon'],
+  },
+  {
+    id: 'tl-dahiya-doctrine-2006',
+    year: '2006',
+    era: 'blockade-2007-2023',
+    title: 'Dahiya Doctrine — Disproportionate Force Concept',
+    description: 'IDF officers articulate disproportionate-force doctrine after Beirut Dahiya destruction; cited in later campaign analysis.',
+    source: 'HRW / UNISPAL',
+    sourceUrl: 'https://www.hrw.org/report/2007/09/05/why-they-died/civilian-casualties-lebanon-during-2006-war',
+    tier: 'verified',
+    relatedIncidentIds: ['dahiya-doctrine-2006', 'second-lebanon-war-2006-pattern', 'qana-2006'],
+    tags: ['civilians', 'infrastructure', 'doctrine'],
+  },
+  {
+    id: 'tl-sbarro-2001',
+    year: '2001',
+    era: 'occupation-1967-2005',
+    title: 'Sbarro Pizzeria Bombing — 15 Killed (7 Children)',
+    description: 'Hamas suicide attack on Jerusalem restaurant during Second Intifada; multi-source death toll established.',
+    source: 'MFA / Britannica',
+    sourceUrl: 'https://www.britannica.com/topic/second-intifada',
+    tier: 'verified',
+    relatedIncidentIds: ['sbarro-restaurant-bombing-2001', 'second-intifada-civilian-toll', 'dolphinarium-disco-2001'],
+    tags: ['civilians', 'children', 'terrorism'],
   },
 
 ]
