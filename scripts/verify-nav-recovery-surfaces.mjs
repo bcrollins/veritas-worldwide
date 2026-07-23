@@ -957,4 +957,10 @@ assert(osintProdSrc.includes('osint-related-hubs'), 'osint-related-hubs testid')
 assert(osintProdSrc.includes('/profiles'), 'OSINT product Profiles dest unique')
 assert(osintProdSrc.includes('/methodology'), 'OSINT product Methodology dest unique')
 
+
+// Forum dual DossierHubSpokes variants unique lock
+const forumDual = read('src/pages/ForumPage.tsx')
+assert(forumDual.includes('variant="inline"') && forumDual.includes('variant="also-in"'), 'Forum dual variants locked unique')
+assert(forumDual.includes('forum-related-hubs') && forumDual.includes('RelatedHubs'), 'Forum RelatedHubs + spokes')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
