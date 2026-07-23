@@ -382,4 +382,15 @@ const mediaKit = read('src/pages/MediaKitPage.tsx')
 assert(mediaKit.includes('media-kit-related-hubs'), 'media-kit-related-hubs')
 assert(mediaKit.includes('/content-pack') || mediaKit.includes('/about'), 'Media Kit pack or about recovery')
 
+
+// Institute family recovery chips
+for (const [rel, tid] of [
+  ['src/pages/InstituteCoursePage.tsx', 'institute-course-research-chips'],
+  ['src/pages/InstituteGuidePage.tsx', 'institute-guide-research-chips'],
+]) {
+  assert(read(rel).includes(tid), `${rel} ${tid}`)
+  assert(read(rel).includes('ResearchHubChips'), `${rel} ResearchHubChips`)
+  assert(read(rel).includes('excludePath='), `${rel} excludePath`)
+}
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
