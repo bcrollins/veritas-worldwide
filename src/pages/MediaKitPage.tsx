@@ -226,7 +226,7 @@ export default function MediaKitPage() {
               Official assets for Veritas Worldwide Press and <em>The Record</em>. Use vectors when possible.
               Do not recolor the seal outside brand tokens. Full package available as a single ZIP.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3" data-testid="media-kit-related-hubs">
               <a
                 href="/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip"
                 download
@@ -235,6 +235,18 @@ export default function MediaKitPage() {
                 Download Ultimate Brand Kit
                 {kitZipBytes != null ? ` · ${(kitZipBytes / 1024).toFixed(0)} KB` : ''}
               </a>
+              <Link
+                to="/content-pack"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Content Packs
+              </Link>
+              <Link
+                to="/about"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border px-5 font-sans text-[0.72rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+              >
+                About
+              </Link>
               <a
                 href="/brand-kit/07-docs/BRAND-GUIDE.md"
                 target="_blank"

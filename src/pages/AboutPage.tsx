@@ -127,11 +127,47 @@ export default function AboutPage() {
             <h1 className="mt-3 font-display text-3xl font-bold text-ink md:text-5xl">
               About Veritas Worldwide
             </h1>
-            <p className="mt-4 max-w-3xl border-b border-border pb-8 font-body text-lg leading-relaxed text-ink-muted">
+            <p className="mt-4 max-w-3xl font-body text-lg leading-relaxed text-ink-muted">
               {TAGLINE} Veritas is built as a documentary publication: longform chapters, current reporting,
               dossiers, profiles, topic explainers, and public methodology designed so a skeptical reader can
               inspect the record instead of trusting a vibe.
             </p>
+            <nav
+              className="mt-6 mb-8 flex flex-wrap gap-2 border-b border-border pb-8"
+              aria-label="Primary destinations"
+              data-testid="about-related-hubs"
+            >
+              <Link
+                to="/read"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Read
+              </Link>
+              <Link
+                to="/methodology"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Methodology
+              </Link>
+              <Link
+                to="/sources"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Sources
+              </Link>
+              <Link
+                to="/israel-dossier"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Dossiers
+              </Link>
+              <Link
+                to="/media-kit"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Media Kit
+              </Link>
+            </nav>
 
             <section id="what-we-publish" className="mt-10">
               <h2 className="font-display text-2xl font-semibold text-ink">What Veritas Publishes</h2>

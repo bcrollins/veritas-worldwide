@@ -166,6 +166,12 @@ assert(topics.includes('to="/profiles"'), 'Topics links Profiles')
 const institute = fs.readFileSync(path.join(root, 'src/pages/InstitutePage.tsx'), 'utf8')
 assert(institute.includes('ResearchHubChips'), 'Institute mounts research chips')
 
+// About + Media Kit recovery
+const about = fs.readFileSync(path.join(root, 'src/pages/AboutPage.tsx'), 'utf8')
+const mediaKit = fs.readFileSync(path.join(root, 'src/pages/MediaKitPage.tsx'), 'utf8')
+assert(about.includes('data-testid="about-related-hubs"'), 'About related hubs required')
+assert(mediaKit.includes('data-testid="media-kit-related-hubs"') || mediaKit.includes('to="/content-pack"'), 'Media Kit links content packs')
+
 console.log(
-  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, timeline/news/topics hubs, institute chips, home/search/404 recovery, cookie z-order`,
+  `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, timeline/news/topics hubs, institute/about/media recovery, home/search/404 recovery, cookie z-order`,
 )
