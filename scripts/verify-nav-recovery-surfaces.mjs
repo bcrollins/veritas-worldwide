@@ -1228,4 +1228,17 @@ assert(notFoundSec.includes('RelatedHubs'), 'NotFound mounts RelatedHubs seconda
 assert(notFoundSec.includes('/news') && notFoundSec.includes('/methodology') && notFoundSec.includes('/content-pack'), 'NotFound secondary destinations')
 
 
+
+// NOT_FOUND_SECONDARY_HUBS count lock
+const nfSecBlockSrc = read('src/pages/NotFoundPage.tsx')
+const nfSecBlock = nfSecBlockSrc.match(/const NOT_FOUND_SECONDARY_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(nfSecBlock, 'NOT_FOUND_SECONDARY_HUBS block')
+assert((nfSecBlock[1].match(/to:/g) || []).length === 3, 'NOT_FOUND_SECONDARY_HUBS count 3')
+
+// RelatedHubs component still defaults hubs to PRIMARY (≤5)
+const rhDefault = read('src/components/RelatedHubs.tsx')
+assert(rhDefault.includes('hubs = PRIMARY_RELATED_HUBS'), 'RelatedHubs default PRIMARY')
+assert(rhDefault.includes("tone = 'surface'") || rhDefault.includes('tone = "surface"'), 'RelatedHubs default surface tone')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
