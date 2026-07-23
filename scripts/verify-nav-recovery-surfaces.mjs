@@ -2476,4 +2476,21 @@ assert(read('src/components/ResearchHubChips.tsx').includes('excludePath'), 'per
 assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v7 mobile tab bar')
 
 
+
+// RelatedHubs platform perpetual densify lock v8
+assert(surfaces.length >= 102, `perpetual v8 surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual v8 PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v8 emphasize')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v8 mobile tab bar')
+assert(read('src/App.tsx').includes('primaryLinks'), 'perpetual v8 primaryLinks')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual v8 soft-404')
+assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v8 search')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'perpetual v8 home')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'perpetual v8 Privacy')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'perpetual v8 Terms')
+assert(read('src/components/DossierHubSpokes.tsx').includes('DOSSIER_SPOKES'), 'perpetual v8 spokes')
+assert(read('src/components/ResearchHubChips.tsx').includes('excludePath'), 'perpetual v8 research chips')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v8 server soft-404')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
