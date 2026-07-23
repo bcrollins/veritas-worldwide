@@ -253,3 +253,24 @@ Verified production bundles (CORE + 13 page needles) repeatedly green while dens
 - Account five-hub densify (A11Y/OSINT/Privacy/Terms)
 - Import thrash hygiene + multi-line HUBS
 - pure 46 green · recovery 102 needles · densify lane unthrashed
+
+## Sprint 9 — RelatedHubs on research & institute (2026-07-23 continuation)
+
+| Commit | Unit |
+|--------|------|
+| `dcd84eb6` | feat(nav): RelatedHubs primary recovery on Institute (+book/methodology/course/guide), Methodology, Sources, Volume II, Researcher, Content Pack, Bible History, ROC, Personal Timeline |
+| `3732f86f` | test(nav): pure recovery floors 115 surface needles (was 102) |
+| `4c1e5ea1` / `c2ec98b5` | perpetual densify locks recovery v17 + IA v16 including Sprint 9 |
+
+### Pattern
+Dual recovery: existing `ResearchHubChips` (research drawer family) + `RelatedHubs` PRIMARY ≤5 (shell hubs) on parchment tone, 44px min touch, no-print. Does not expand global shell hub budget (Hick).
+
+### Pure floors
+- `verify:nav-recovery` — 115 needles PASS
+- `verify:nav-ia` — 5 primary hubs PASS  
+- `verify:a11y-public-targets` — RelatedHubs mount credit PASS
+- `verify:pure` — 46 suites PASS
+
+### Multi-agent
+Peer Israel densify (`public/israel-dossier/*`, history pack, VI) never staged. Entity author only. Ship intervals: product → pure → densify locks.
+
