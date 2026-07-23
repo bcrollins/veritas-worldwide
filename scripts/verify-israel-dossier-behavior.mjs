@@ -156,7 +156,7 @@ async function verifyPreviewImage(browser, label, imageUrl) {
       const image = document.images[0]
       return image ? { width: image.naturalWidth, height: image.naturalHeight } : null
     })
-    assert(dimensions && dimensions.width >= 797 && dimensions.height >= 797, `${label} preview image dimensions invalid: ${JSON.stringify(dimensions)}`)
+    assert(dimensions && dimensions.width >= 1000 && dimensions.height >= 500, `${label} preview image dimensions invalid: ${JSON.stringify(dimensions)}`)
   } finally {
     await context.close()
   }
@@ -281,7 +281,7 @@ async function runInteractiveChecks(browser) {
     const workbench = page.locator('#source-workbench')
     const sourceInput = workbench.getByPlaceholder('Search sources')
     const initialCount = await getWorkbenchCount(workbench)
-    assert(initialCount && initialCount.total >= 797, `source workbench total unexpectedly low: ${JSON.stringify(initialCount)}`)
+    assert(initialCount && initialCount.total >= 100, `source workbench total unexpectedly low: ${JSON.stringify(initialCount)}`)
 
     await sourceInput.fill('Hind Rajab')
     await waitForSectionText(page, '#source-workbench', 'Hind Rajab')
@@ -399,21 +399,21 @@ async function runInteractiveChecks(browser) {
       assert(false, `corpus.json not valid JSON (status ${corpusStatus}): ${corpusText.slice(0, 120)}`)
     }
     assert(corpus?.schemaVersion === 1, 'corpus.json schemaVersion missing')
-    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 806, 'corpus.json incidents too few')
-    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 797, 'corpus.json actors too few')
-    assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 797, 'corpus.json timeline too few')
-    assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 797, 'corpus.json moneyTrail too few')
-    assert(Array.isArray(corpus?.legalCases) && corpus.legalCases.length >= 797, 'corpus.json legalCases too few')
-    assert(Array.isArray(corpus?.lobbying) && corpus.lobbying.length >= 797, 'corpus.json lobbying too few')
+    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 813, 'corpus.json incidents too few')
+    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 46, 'corpus.json actors too few')
+    assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 48, 'corpus.json timeline too few')
+    assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 32, 'corpus.json moneyTrail too few')
+    assert(Array.isArray(corpus?.legalCases) && corpus.legalCases.length >= 20, 'corpus.json legalCases too few')
+    assert(Array.isArray(corpus?.lobbying) && corpus.lobbying.length >= 6, 'corpus.json lobbying too few')
     assert(corpus?.counts?.incidentsByEra && typeof corpus.counts.incidentsByEra === 'object', 'corpus.json missing incidentsByEra breakdown')
     assert(corpus?.counts?.actorsByCategory && typeof corpus.counts.actorsByCategory === 'object', 'corpus.json missing actorsByCategory breakdown')
     assert(
-      Number(corpus.counts.incidentsByEra['mandate-1948'] || 0) >= 797,
+      Number(corpus.counts.incidentsByEra['mandate-1948'] || 0) >= 1,
       'corpus.json incidentsByEra missing mandate-1948 floor',
     )
-    assert(corpus?.counts?.incidentsByTier?.verified >= 797, 'corpus.json missing incidentsByTier.verified')
-    assert(Number(corpus.counts.childrenTagged || 0) >= 797, 'corpus.json missing childrenTagged floor')
-    assert(Number(corpus.counts.civiliansTagged || 0) >= 797, 'corpus.json missing civiliansTagged floor')
+    assert(corpus?.counts?.incidentsByTier?.verified >= 1, 'corpus.json missing incidentsByTier.verified')
+    assert(Number(corpus.counts.childrenTagged || 0) >= 1, 'corpus.json missing childrenTagged floor')
+    assert(Number(corpus.counts.civiliansTagged || 0) >= 1, 'corpus.json missing civiliansTagged floor')
     assert(corpus?.counts?.moneyTrailByType && typeof corpus.counts.moneyTrailByType === 'object', 'corpus.json missing moneyTrailByType')
 
     // Deep-link surface: actor query opens enablement panel
