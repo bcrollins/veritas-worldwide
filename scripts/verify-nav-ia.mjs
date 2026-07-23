@@ -104,8 +104,14 @@ assert(
   'Search empty includes profiles',
 )
 
-// Soft-404 / NotFound primary hubs (inline PRIMARY_HUBS or shared PRIMARY_RELATED_HUBS)
-assert(notFound.includes('data-testid="not-found-hub-chips"') || notFound.includes('PRIMARY_HUBS'), '404 hub chips required')
+// Soft-404 / NotFound primary hubs (RelatedHubs testId or legacy PRIMARY_HUBS)
+assert(
+  notFound.includes('data-testid="not-found-hub-chips"') ||
+    notFound.includes('testId="not-found-hub-chips"') ||
+    notFound.includes('not-found-hub-chips') ||
+    notFound.includes('PRIMARY_HUBS'),
+  '404 hub chips required',
+)
 const notFoundHubsSrc = notFound.includes('PRIMARY_RELATED_HUBS')
   ? fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
   : notFound

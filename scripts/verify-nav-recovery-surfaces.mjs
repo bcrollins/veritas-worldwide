@@ -1288,10 +1288,16 @@ assert(serverSoftFinal.includes('Primary hubs') || serverSoftFinal.includes('pri
 assert(serverSoftFinal.includes('server-soft-404'), 'server-soft-404 marker')
 assert(serverSoftFinal.includes('buildNotFoundHtml'), 'buildNotFoundHtml present')
 
-// NotFound primary chips keep custom Record crimson CTA
+// NotFound primary chips use RelatedHubs emphasizeTo Record CTA
 const nfPrimaryCustom = read('src/pages/NotFoundPage.tsx')
 assert(nfPrimaryCustom.includes('not-found-hub-chips'), 'not-found primary chips custom')
-assert(nfPrimaryCustom.includes('bg-crimson') || nfPrimaryCustom.includes('PRIMARY_HUBS'), 'NotFound Record CTA chrome')
+assert(
+  nfPrimaryCustom.includes('emphasizeTo="/"') ||
+    nfPrimaryCustom.includes("emphasizeTo='/'") ||
+    nfPrimaryCustom.includes('bg-crimson') ||
+    nfPrimaryCustom.includes('PRIMARY_HUBS'),
+  'NotFound Record CTA chrome',
+)
 
 
 
@@ -1945,6 +1951,35 @@ for (const name of hubConstPages) {
     assert(n >= 1 && n <= 5, `${name} hub const count ${n} not in 1..5`)
   }
 }
+
+
+
+// ABOUT_HUBS multi-line format reaffirm
+const aboutHubsFmt = read('src/pages/AboutPage.tsx')
+assert(aboutHubsFmt.includes('const ABOUT_HUBS'), 'ABOUT_HUBS present')
+assert(!/const ABOUT_HUBS[^=]*= \[\{ to:/.test(aboutHubsFmt), 'ABOUT_HUBS not one-line thrash form')
+assert(aboutHubsFmt.includes("to: '/read'") && aboutHubsFmt.includes("to: '/search'"), 'ABOUT destinations')
+
+// MEMBERSHIP_HUBS multi-line format reaffirm
+const memHubsFmt = read('src/pages/MembershipPage.tsx')
+assert(!/const MEMBERSHIP_HUBS[^=]*= \[\{ to:/.test(memHubsFmt), 'MEMBERSHIP_HUBS not one-line thrash form')
+
+
+
+// RelatedHubs emphasizeTo platform (soft-404 Record CTA)
+const relatedEmph = read('src/components/RelatedHubs.tsx')
+assert(relatedEmph.includes('emphasizeTo'), 'RelatedHubs emphasizeTo prop')
+assert(relatedEmph.includes('emphasizeChip') || relatedEmph.includes('bg-crimson'), 'RelatedHubs emphasize crimson chip')
+assert(relatedEmph.includes('hover:bg-crimson-dark'), 'emphasize hover crimson-dark')
+
+// NotFound primary via RelatedHubs emphasizeTo=/
+const nfEmph = read('src/pages/NotFoundPage.tsx')
+assert(nfEmph.includes('testId="not-found-hub-chips"'), 'not-found-hub-chips RelatedHubs testId')
+assert(nfEmph.includes('emphasizeTo="/"') || nfEmph.includes("emphasizeTo='/'"), 'NotFound emphasize Record')
+assert(nfEmph.includes('PRIMARY_RELATED_HUBS'), 'NotFound PRIMARY hubs')
+assert(nfEmph.includes('not-found-secondary-hubs'), 'NotFound secondary retained')
+assert((nfEmph.match(/<RelatedHubs\b/g) || []).length >= 2, 'NotFound dual RelatedHubs mounts')
+assert(!nfEmph.includes('PRIMARY_HUBS.map'), 'NotFound no hand-rolled primary map')
 
 
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
