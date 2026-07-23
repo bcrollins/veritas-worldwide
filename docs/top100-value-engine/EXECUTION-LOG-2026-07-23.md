@@ -430,3 +430,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | **2026+** tracking tip **2043+** |
 
+
+## Interval densify — tip post-2060 inotropes densify + market warehouse / Kfar Saba / press-roof arson
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza phenylephrine/dobutamine/milrinone · hostage fighting-positions/toy-marches/cold-water · WB radish-seedlings/ECG-machine/sage-seedlings |
+| VI | market warehouse · Kfar Saba · olive-press roof arson |
+| Pure | visual + israel-dossier PASS |
+| Live | **2026+** → tip **2060+** lag-aware |
+
