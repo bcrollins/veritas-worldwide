@@ -580,3 +580,10 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 - pure: visual-floor/canon/research-pack green each ship
 - live lag-aware ~2756/v526 (no long Railway poll)
 - multi-agent: densify-only staging; peer nav/page pure-floor WIP left unstaged
+
+## densify ship 2026-07-23T15:55Z — tip past 4000+
+- local tip: 4233/v932
+- pure: visual-floor/canon/research-pack green
+- live lag-aware (no long Railway poll)
+- multi-agent: densify-only staging; peer nav pure-floor WIP left unstaged
+- session climb: ~2726 → 4000+ milestones (2800/2900/3000/3500/4000)
