@@ -2131,6 +2131,78 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-oct7-beeri-road-visual-2023',
+    title: 'October 7 Roads Near Kibbutz Be’eri — Multi-Outlet Civilian Murder Visual Record',
+    date: 'October 7, 2023',
+    location: 'Roads and approach routes near Kibbutz Be’eri, southern Israel',
+    summary:
+      'Multi-outlet video documents civilian vehicle attacks and murders on roads near Kibbutz Be’eri on October 7. Distinct from the kibbutz-Be’eri compound package by focusing on multi-source roadside packages; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence on Be’eri-area roads on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Be’eri-road October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-journalists-press-vest-visual-2023-2025',
+    title: 'Gaza Journalists in Press Vests — Multi-Outlet Targeting Visual Record',
+    date: '2023–2025',
+    location: 'Gaza Strip reporting sites and press convoys',
+    summary:
+      'Multi-outlet video and photo packages document killings and injuries of journalists wearing press identification in Gaza. Distinct from prior journalists-targeted visual card by focusing on multi-source press-vest packages; ethnicity is never evidence.',
+    evidence:
+      'CPJ/RSF tallies, multi-outlet visual packages, and OHCHR materials establish multi-source documentation of harm to journalists operating under press identification.',
+    sources: [
+      { label: 'Committee to Protect Journalists', url: 'https://cpj.org/' },
+      { label: 'OHCHR materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza press packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet press-vest incident video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'CPJ/OHCHR journalist-protection trail', url: 'https://cpj.org/' },
+      { type: 'photo-essay', label: 'Wire photos of press identification aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-west-bank-settler-tent-outpost-visual-2023-2025',
+    title: 'West Bank Settler Tent Outposts on Civilian Land — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank hilltops and village agricultural land',
+    summary:
+      'B’Tselem video banks and multi-outlet packages document settler tent outposts established on Palestinian civilian land, displacing agricultural use including food production for families with children. Multi-source visual record; ethnicity is never evidence.',
+    evidence:
+      'B’Tselem video documentation, OCHA settlement and land-access materials, and multi-outlet reporting establish multi-source documentation of outpost expansion affecting civilian land use.',
+    sources: [
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'B’Tselem settlements documentation', url: 'https://www.btselem.org/' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem outpost video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem settlement case files', url: 'https://www.btselem.org/' },
+      { type: 'document', label: 'OCHA land-access materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */

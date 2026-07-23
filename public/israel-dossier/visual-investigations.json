@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T13:18:15.211Z"
+    "generatedAt": "2026-07-23T13:19:17.341Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 99,
-    "viPackCards": 80,
-    "totalIncidents": 1455
+    "incidentsWithVideoAndCivilians": 102,
+    "viPackCards": 83,
+    "totalIncidents": 1467
   },
   "incidents": [
     {
@@ -3098,6 +3098,126 @@
         {
           "type": "document",
           "label": "OCHA access materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-oct7-beeri-road-visual-2023",
+      "title": "October 7 Roads Near Kibbutz Be’eri — Multi-Outlet Civilian Murder Visual Record",
+      "date": "October 7, 2023",
+      "location": "Roads and approach routes near Kibbutz Be’eri, southern Israel",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated Be’eri-road October 7 video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "NYT Visual Investigations packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation trail",
+          "url": "https://www.ohchr.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-gaza-journalists-press-vest-visual-2023-2025",
+      "title": "Gaza Journalists in Press Vests — Multi-Outlet Targeting Visual Record",
+      "date": "2023–2025",
+      "location": "Gaza Strip reporting sites and press convoys",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "sources": [
+        {
+          "label": "Committee to Protect Journalists",
+          "url": "https://cpj.org/"
+        },
+        {
+          "label": "OHCHR materials",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza press packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet press-vest incident video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "CPJ/OHCHR journalist-protection trail",
+          "url": "https://cpj.org/"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of press identification aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-settler-tent-outpost-visual-2023-2025",
+      "title": "West Bank Settler Tent Outposts on Civilian Land — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank hilltops and village agricultural land",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B’Tselem settlements documentation",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "label": "OCHA OPT updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem outpost video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem settlement case files",
+          "url": "https://www.btselem.org/"
+        },
+        {
+          "type": "document",
+          "label": "OCHA land-access materials",
           "url": "https://www.ochaopt.org/"
         }
       ]
