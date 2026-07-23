@@ -125,3 +125,14 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 - 919 incidents / 67 video local ship path
 - school double-tap, Nablus corridor, EMS bodycam, Oct 7 public-site attacks
 - pure ≥910/≥65/≥55
+
+## Interval densify (Grok) — dual-sided 901→945
+
+| Ship | Proof |
+|------|-------|
+| `0db46ee`→`c0cdd89`→`8e2ef48` | 901→908→915 |
+| `33f3d49`→`78b7b0b`→`a1c79bd` | 927→936→**945** / withVideo ≥67 |
+| Pure | visual-investigations-floor, israel-dossier, research-pack PASS each interval |
+| Multi-agent | densify-only; left peer App.tsx / StickyMembershipBar WIP unstaged |
+| Live | soft-floor lag-aware (deploy behind tip); HTTP 200 on corpus/VI/pack |
+
