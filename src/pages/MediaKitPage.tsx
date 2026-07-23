@@ -296,6 +296,7 @@ export default function MediaKitPage() {
               { label: 'Threads', href: '/brand-kit/04-social/threads-post.svg', bg: 'bg-parchment' },
               { label: 'Bluesky', href: '/brand-kit/04-social/bluesky-banner.svg', bg: 'bg-obsidian' },
               { label: 'Media OG', href: '/brand-kit/05-og/og-media-kit.svg', bg: 'bg-parchment' },
+              { label: 'Pinterest', href: '/brand-kit/04-social/pinterest-pin.svg', bg: 'bg-obsidian' },
             ].map(a => (
               <a
                 key={a.href}
