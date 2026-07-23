@@ -411,3 +411,6 @@ assert(botMeta.includes('isKnownChapterSlug') || server.includes('isKnownChapter
 assert(botMeta.includes('chapter-29') || botMeta.includes("'chapter-29'"), 'bot meta must include chapter-29 archive part')
 assert(server.includes('isKnownChapterSlug'), 'isKnownSpaRoute must gate /chapter/* via isKnownChapterSlug')
 assert(botMeta.includes('Unknown chapter slug') || botMeta.includes('not part of The Record public archive'), 'bot meta must 404 unknown chapter slugs for Googlebot')
+
+assert(botMeta.includes('isKnownProfileSlug') || server.includes('isKnownProfileSlug'), 'must validate known profile slugs for soft-404')
+assert(server.includes('isKnownProfileSlug'), 'isKnownSpaRoute must gate /profile/* via isKnownProfileSlug')

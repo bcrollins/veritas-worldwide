@@ -52,6 +52,37 @@ export function isKnownChapterSlug(slug) {
   return Boolean(getChapterMeta(slug))
 }
 
+/** Load power-profile ids from export corpus (dist preferred, public fallback). */
+let _knownProfileIds = undefined
+function loadKnownProfileIds(rootDir) {
+  if (_knownProfileIds !== undefined) return _knownProfileIds
+  const candidates = [
+    path.join(rootDir, 'dist', 'profiles', 'corpus.json'),
+    path.join(rootDir, 'public', 'profiles', 'corpus.json'),
+  ]
+  for (const candidate of candidates) {
+    if (!fs.existsSync(candidate)) continue
+    try {
+      const data = JSON.parse(fs.readFileSync(candidate, 'utf8'))
+      const list = Array.isArray(data?.profiles) ? data.profiles : []
+      _knownProfileIds = new Set(list.map((p) => p.id).filter(Boolean))
+      return _knownProfileIds
+    } catch {
+      // try next
+    }
+  }
+  _knownProfileIds = null
+  return _knownProfileIds
+}
+
+export function isKnownProfileSlug(slug, rootDir) {
+  const ids = loadKnownProfileIds(rootDir)
+  if (!ids) return true // fail-open if corpus not built yet
+  return ids.has(slug)
+}
+
+
+
 /**
  * Rewrite first-paint shell metas for bots.
  * Shell defaults (index.html): Primary Sources title + primary-source description.
@@ -381,6 +412,23 @@ export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
     const profileMatch = req.path.match(/^\/profile\/(.+)$/)
     if (profileMatch) {
       const slug = profileMatch[1]
+      if (!isKnownProfileSlug(slug, rootDir)) {
+        // Unknown profile — never invent indexable Power Profile shells for junk slugs.
+        res.status(404)
+        res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+        let notFound = applyBotPageMeta(html, {
+          title: 'Page Not Found | Veritas Worldwide',
+          description: 'This profile is not part of The Record public archive.',
+          url: `${SITE_URL}/404`,
+          type: 'website',
+        })
+        notFound = notFound.replace(
+          /<meta name="robots" content="[^"]*"/,
+          '<meta name="robots" content="noindex, nofollow"',
+        )
+        return res.type('html').send(notFound)
+      }
       const name = slug.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
       const profileUrl = `${SITE_URL}/profile/${slug}`
       const profileDesc = `Sourced profile of ${name} — donations, policy actions, network connections, and quotes. Every claim cited to FEC filings, congressional records, and verified journalism.`
