@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
+const SHORT_BIO = 'Primary Sources. Public Record. Your Conclusions.'
+
 const BOILERPLATE =
   'Veritas Worldwide is an independent investigative publisher. Our flagship work, The Record, is a multi-chapter documentary archive built on primary sources, public records, and explicit evidence-tier labeling. Primary sources. Public record. Your conclusions.'
 
@@ -102,7 +104,7 @@ export default function MediaKitPage() {
   const [kitVersion, setKitVersion] = useState<string | null>(null)
   const [kitSha, setKitSha] = useState<string | null>(null)
   const [kitZipBytes, setKitZipBytes] = useState<number | null>(null)
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState<string>('')
 
   useEffect(() => {
     setMetaTags({
@@ -162,10 +164,10 @@ export default function MediaKitPage() {
     }
   }, [])
 
-  const copyBoilerplate = () => {
-    void navigator.clipboard.writeText(BOILERPLATE)
-    setCopied(true)
-    window.setTimeout(() => setCopied(false), 2000)
+  const copyText = (text: string, label: string) => {
+    void navigator.clipboard.writeText(text)
+    setCopied(label)
+    window.setTimeout(() => setCopied(''), 2000)
   }
 
   return (
@@ -246,13 +248,30 @@ export default function MediaKitPage() {
         <section className="mt-12">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 className="font-display text-2xl font-semibold text-ink">Boilerplate</h2>
-            <button
-              type="button"
-              onClick={copyBoilerplate}
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
-            >
-              {copied ? 'Copied' : 'Copy boilerplate'}
-            </button>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => copyText(BOILERPLATE, 'boilerplate')}
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+              >
+                {copied === 'boilerplate' ? 'Copied' : 'Copy boilerplate'}
+              </button>
+              <button
+                type="button"
+                onClick={() => copyText(SHORT_BIO, 'short')}
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+              >
+                {copied === 'short' ? 'Copied' : 'Copy short bio'}
+              </button>
+              <a
+                href="/brand-kit/07-docs/bios.json"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:border-crimson hover:text-crimson"
+              >
+                bios.json
+              </a>
+            </div>
           </div>
           <p className="mt-4 max-w-3xl font-body leading-relaxed text-ink-muted">{BOILERPLATE}</p>
         </section>
