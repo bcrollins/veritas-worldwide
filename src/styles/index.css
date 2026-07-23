@@ -1015,3 +1015,19 @@ html.dark .card-lift:hover {
     display: block !important;
   }
 }
+
+/* top100 print: methodology/sources */
+@media print {
+  .no-print,
+  nav,
+  footer,
+  [data-membership-bar],
+  .sticky-membership-bar {
+    display: none !important;
+  }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    word-break: break-all;
+  }
+}

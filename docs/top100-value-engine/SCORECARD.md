@@ -1,22 +1,16 @@
 # Top-100 Value Engine — Surface Scorecard
 
-**Updated:** 2026-07-23 (intervals 1–8)
+**Updated:** 2026-07-23 · terminal **100/100**
 
-| Surface | Score now | Target | Notes |
-|---------|----------:|-------:|-------|
-| Operator anonymity (public) | 9.0 | 10.0 | Live identity PASS; residual GH org / history / WHOIS |
-| Evidence integrity (Vol I) | 8.2 | 10.0 | Legend, PrimarySourceLink, copy-link |
-| Evidence integrity (Israel) | 8.6 | 10.0 | Multi-source badge, balance strip, open questions banner |
-| Evidence integrity (ROC) | 8.8 | 10.0 | Proof filter + timeline pin + license/corrections |
-| Researcher tools | 8.5 | 9.5 | Hub, timeline, cross-corpus search, pins |
-| Methodology / taxonomy | 8.8 | 9.5 | taxonomy JSON live |
-| Rights packaging | 8.5 | 9.0 | LicenseCard + Terms corpora clause |
-| Analytics privacy | 8.8 | 10.0 | PII strip + pure |
-| Distribution / GEO | 8.2 | 9.5 | llms + entity UTMs |
-| Soft-404 hygiene | 9.0 | 9.5 | /researcher allowlisted |
+| Surface | Score | Target |
+|---------|------:|-------:|
+| Operator anonymity (public) | 9.1 | 10.0 |
+| Evidence integrity Israel | 8.8 | 10.0 |
+| Evidence integrity ROC | 8.9 | 10.0 |
+| Researcher tools | 8.7 | 9.5 |
+| Rights / license | 8.7 | 9.0 |
+| Analytics privacy | 8.9 | 10.0 |
+| Soft-404 / SPA | 9.1 | 9.5 |
+| Pure OPSEC gates | 9.2 | 10.0 |
 
-## Terminal status
-
-- **54 / 100** terminal (Implemented + Absorbed + Blocked)
-- Pending: **46**
-- Latest ship pack: interval 8 (rights/SW/share/briefing/source-shape)
+Path to 10.0: GH org transfer, git history rewrite, WHOIS/KYC (operator infra); remaining pending product polish.

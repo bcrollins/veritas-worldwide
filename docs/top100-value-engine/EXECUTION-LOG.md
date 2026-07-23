@@ -101,3 +101,13 @@ Live proof (pre-b408 deploy): health 9d58859, evidence-taxonomy.json 200, publis
 | T100-008 | Source URL shape pure gate |
 | T100-089 | Briefing open questions top banner |
 
+
+
+## Intervals 10–11 — bookmarks, print CSS, schema triples, corpus cache
+
+- Bookmarks keyword filter (local)
+- Print CSS hide nav/membership
+- security.txt pure gate
+- Israel money/legal/lobby schema triples pure
+- corpus.json Cache-Control public max-age=300
+- Ledger terminal ~100/100

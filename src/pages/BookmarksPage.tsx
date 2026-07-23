@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../lib/AuthContext'
 import { chapterMeta, type ChapterMetadata } from '../data/chapterMeta'
@@ -74,6 +74,8 @@ export default function BookmarksPage() {
       .map((record) => [record.chapterId, record]),
   )
 
+  const [keywordFilter, setKeywordFilter] = useState<string>('all')
+
   const bookmarkedChapters = chapterMeta.filter((chapter) => bookmarks.includes(chapter.id))
   const bookmarkCards: BookmarkCardModel[] = bookmarkedChapters
     .map((chapter) => {
@@ -105,10 +107,17 @@ export default function BookmarksPage() {
         - chapterMeta.findIndex((chapter) => chapter.id === b.chapter.id)
     })
 
-  const inProgressCards = bookmarkCards.filter((card) => !card.completed && (card.progressPercent || 0) > 5)
-  const completedCards = bookmarkCards.filter((card) => card.completed)
-  const recentCard = inProgressCards[0] || bookmarkCards.find((card) => card.lastActivityTimestamp > 0) || null
   const topKeywords = getTopKeywordLabels(bookmarkedChapters)
+  const visibleBookmarkCards = useMemo(() => {
+    if (keywordFilter === 'all') return bookmarkCards
+    const needle = keywordFilter.toLowerCase()
+    return bookmarkCards.filter((card) =>
+      (card.chapter.keywords || []).some((k) => k.toLowerCase() === needle),
+    )
+  }, [bookmarkCards, keywordFilter])
+  const inProgressCards = visibleBookmarkCards.filter((card) => !card.completed && (card.progressPercent || 0) > 5)
+  const completedCards = visibleBookmarkCards.filter((card) => card.completed)
+  const recentCard = inProgressCards[0] || visibleBookmarkCards.find((card) => card.lastActivityTimestamp > 0) || null
 
   const recommendedChapters = (() => {
     const candidateIds = new Set<string>()
@@ -196,6 +205,23 @@ export default function BookmarksPage() {
             </p>
             {bookmarkCards.length > 0 && (
               <div className="mt-4 mb-8 flex flex-wrap gap-2 border-b border-border pb-8">
+                <label className="inline-flex min-h-[44px] items-center gap-2 font-sans text-[0.65rem] uppercase tracking-wider text-ink-muted">
+                  Keyword
+                  <select
+                    value={keywordFilter}
+                    onChange={(e) => setKeywordFilter(e.target.value)}
+                    className="min-h-[44px] border border-border bg-surface px-2 font-sans text-xs text-ink"
+                    data-testid="bookmarks-keyword-filter"
+                    aria-label="Filter bookmarks by keyword"
+                  >
+                    <option value="all">All keywords</option>
+                    {topKeywords.map(([kw]) => (
+                      <option key={kw} value={kw}>
+                        {kw}
+                      </option>
+                    ))}
+                  </select>
+                </label>
                 <button
                   type="button"
                   onClick={exportBookmarksJson}
@@ -384,7 +410,7 @@ export default function BookmarksPage() {
                       </div>
 
                       <div className="mt-6 grid gap-4">
-                        {bookmarkCards.map((card) => (
+                        {visibleBookmarkCards.map((card) => (
                           <Link
                             key={card.chapter.id}
                             to={`/chapter/${card.chapter.id}`}

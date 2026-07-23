@@ -1998,6 +1998,14 @@ app.use(express.static(path.join(__dirname, 'dist'), {
     if (/\.(xml|txt)$/.test(filePath)) {
       res.setHeader('Cache-Control', 'public, max-age=3600')
     }
+    // Machine corpora + taxonomy: short public cache + revalidate (ETag via express.static)
+    if (
+      filePath.endsWith(`${path.sep}corpus.json`) ||
+      filePath.endsWith(`${path.sep}evidence-taxonomy.json`) ||
+      filePath.endsWith(`${path.sep}soft-floor.json`)
+    ) {
+      res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate')
+    }
     // Stable-name PDFs are rebuilt in place each deploy — never mark immutable.
     if (filePath.endsWith('.pdf')) {
       res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate')

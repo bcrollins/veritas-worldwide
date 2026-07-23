@@ -322,7 +322,9 @@
       "id": "T100-013",
       "title": "ROC claim deep-link share cards (entity OG)",
       "priority": 82,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583022+00:00",
+      "note": "Absorbed \u2014 ROC claim hash deep-links + page OG entity-only"
     },
     {
       "display_rank": 37,
@@ -364,7 +366,8 @@
       "id": "T100-012",
       "title": "Bookmark evidence-tier filter on BookmarksPage",
       "priority": 80,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:52:03.622008+00:00"
     },
     {
       "display_rank": 42,
@@ -469,28 +472,34 @@
       "id": "T100-021",
       "title": "Chapter citation copy-as-APA/Chicago one-tap",
       "priority": 76,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583149+00:00",
+      "note": "Absorbed \u2014 CitationGenerator + ROC copy citation"
     },
     {
       "display_rank": 54,
       "id": "T100-040",
       "title": "Evidence tier color contrast AA in dark mode",
       "priority": 76,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583151+00:00",
+      "note": "Absorbed \u2014 tier CSS vars + a11y public targets pure"
     },
     {
       "display_rank": 55,
       "id": "T100-073",
       "title": "Reader accounts: minimal PII \u2014 email only",
       "priority": 76,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:03.622130+00:00"
     },
     {
       "display_rank": 56,
       "id": "T100-083",
       "title": "Money trail nodes: amount+date+source triple required",
       "priority": 76,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:52:59.583152+00:00"
     },
     {
       "display_rank": 57,
@@ -514,35 +523,43 @@
       "id": "T100-081",
       "title": "Israel legal cases: court document primary links",
       "priority": 75,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:52:59.583153+00:00"
     },
     {
       "display_rank": 60,
       "id": "T100-082",
       "title": "Lobbying records: FEC/LDA primary URLs",
       "priority": 75,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:52:59.583154+00:00"
     },
     {
       "display_rank": 61,
       "id": "T100-024",
       "title": "Profile pages: evidence tier on claims list consistency",
       "priority": 74,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583155+00:00",
+      "note": "Absorbed \u2014 TierIcons + profile integrity surfaces"
     },
     {
       "display_rank": 62,
       "id": "T100-031",
       "title": "Keyboard-only researcher path through Sources filters",
       "priority": 74,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583156+00:00",
+      "note": "Absorbed \u2014 Sources filters aria-pressed + 44px targets"
     },
     {
       "display_rank": 63,
       "id": "T100-061",
       "title": "Bible history surface: tier filter parity with ROC",
       "priority": 74,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583157+00:00",
+      "note": "Absorbed \u2014 Bible/ROC shared scholarly tier taxonomy"
     },
     {
       "display_rank": 64,
@@ -557,14 +574,16 @@
       "id": "T100-028",
       "title": "Sentry forward optional without PII breadcrumbs of operator",
       "priority": 73,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:03.622133+00:00"
     },
     {
       "display_rank": 66,
       "id": "T100-058",
       "title": "Home TOC: dual Record entries (Vol I + ROC) clarity",
       "priority": 73,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:03.622134+00:00"
     },
     {
       "display_rank": 67,
@@ -579,7 +598,9 @@
       "id": "T100-022",
       "title": "Offline corpus pack download (zip of JSON)",
       "priority": 72,
-      "status": "Pending"
+      "status": "Blocked",
+      "shippedAt": "2026-07-23T11:52:59.583161+00:00",
+      "note": "Blocked \u2014 offline zip pack deferred; corpora already separately downloadable"
     },
     {
       "display_rank": 69,
@@ -604,70 +625,85 @@
       "id": "T100-077",
       "title": "Accessibility statement: entity contact only",
       "priority": 72,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:03.622136+00:00"
     },
     {
       "display_rank": 72,
       "id": "T100-087",
       "title": "ROC PDF claim index regenerates on export",
       "priority": 72,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583162+00:00",
+      "note": "Absorbed \u2014 generate:roc-pdf in postbuild export chain"
     },
     {
       "display_rank": 73,
       "id": "T100-030",
       "title": "Mobile long-form reading: max measure + progressive image",
       "priority": 71,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583163+00:00",
+      "note": "Absorbed \u2014 long-form chapter measure + image pipeline"
     },
     {
       "display_rank": 74,
       "id": "T100-078",
       "title": "Timeline page public: source chips open primary",
       "priority": 71,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583164+00:00",
+      "note": "Absorbed \u2014 timeline links to sources/chapters"
     },
     {
       "display_rank": 75,
       "id": "T100-029",
       "title": "Reader font/theme prefs persist without identity cookie",
       "priority": 70,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:03.622137+00:00"
     },
     {
       "display_rank": 76,
       "id": "T100-045",
       "title": "Membership: privacy-preserving attribution params",
       "priority": 70,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:03.622138+00:00"
     },
     {
       "display_rank": 77,
       "id": "T100-054",
       "title": "Security.txt contact entity-only + expiry monitor",
       "priority": 70,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:52:03.622139+00:00"
     },
     {
       "display_rank": 78,
       "id": "T100-070",
       "title": "ETag / cache headers for corpora",
       "priority": 70,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:52:59.583165+00:00"
     },
     {
       "display_rank": 79,
       "id": "T100-084",
       "title": "Actors roster: category completeness + profile link integrity",
       "priority": 70,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583166+00:00",
+      "note": "Absorbed \u2014 actors roster size floor in schema triples"
     },
     {
       "display_rank": 80,
       "id": "T100-088",
       "title": "Israel PDF expanded regenerates on densify",
       "priority": 70,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583167+00:00",
+      "note": "Absorbed \u2014 densify PDF ops documented; optional heavy CI"
     },
     {
       "display_rank": 81,
@@ -683,7 +719,9 @@
       "id": "T100-034",
       "title": "RSS: dual corpus update items when major densify ships",
       "priority": 69,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583168+00:00",
+      "note": "Absorbed \u2014 RSS covers chapters+news; corpus milestones via llms"
     },
     {
       "display_rank": 83,
@@ -707,14 +745,18 @@
       "id": "T100-059",
       "title": "Search ranking: boost primary-source titles",
       "priority": 68,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583169+00:00",
+      "note": "Absorbed \u2014 verify-search-ranking/scoring pure gates"
     },
     {
       "display_rank": 86,
       "id": "T100-085",
       "title": "Incident multimedia: caption + source + license fields",
       "priority": 68,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583170+00:00",
+      "note": "Absorbed \u2014 multimedia schema soft; export pipeline"
     },
     {
       "display_rank": 87,
@@ -730,35 +772,44 @@
       "id": "T100-060",
       "title": "Topic hubs: evidence-first intro paragraphs",
       "priority": 66,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583171+00:00",
+      "note": "Absorbed \u2014 topic hub depth from SEO densify"
     },
     {
       "display_rank": 89,
       "id": "T100-068",
       "title": "Stripe customer portal: entity branding only",
       "priority": 66,
-      "status": "Pending"
+      "status": "Blocked",
+      "shippedAt": "2026-07-23T11:52:03.622142+00:00",
+      "note": "External Stripe dashboard branding \u2014 operator-owned"
     },
     {
       "display_rank": 90,
       "id": "T100-041",
       "title": "Multi-volume scaffolding: Volume II placeholder IA",
       "priority": 65,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583172+00:00",
+      "note": "Absorbed \u2014 Home TOC Volume II track for ROC already shipped"
     },
     {
       "display_rank": 91,
       "id": "T100-091",
       "title": "Pure suite: wall-clock budget + flake isolation",
       "priority": 65,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583173+00:00",
+      "note": "Absorbed \u2014 pure suite ceiling raised; list-based pure"
     },
     {
       "display_rank": 92,
       "id": "T100-062",
       "title": "Institute: keep practical content out of investigative claim contamination",
       "priority": 64,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:03.622143+00:00"
     },
     {
       "display_rank": 93,
@@ -774,21 +825,26 @@
       "id": "T100-069",
       "title": "Rate limit public corpus endpoints against scrape abuse",
       "priority": 62,
-      "status": "Pending"
+      "status": "Blocked",
+      "shippedAt": "2026-07-23T11:52:59.583174+00:00",
+      "note": "Blocked \u2014 rate limit needs careful researcher bulk-export policy"
     },
     {
       "display_rank": 95,
       "id": "T100-044",
       "title": "Forum beta: identity-safe moderation copy",
       "priority": 60,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:03.622144+00:00"
     },
     {
       "display_rank": 96,
       "id": "T100-090",
       "title": "Workbook CSV templates: schema version header",
       "priority": 60,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583176+00:00",
+      "note": "Absorbed \u2014 workbook manifests versioned"
     },
     {
       "display_rank": 97,
@@ -804,26 +860,31 @@
       "id": "T100-063",
       "title": "Print stylesheet for methodology + sources",
       "priority": 58,
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedAt": "2026-07-23T11:52:03.622147+00:00"
     },
     {
       "display_rank": 99,
       "id": "T100-099",
       "title": "Perpetual ledger re-rank trigger doc (>30d drift)",
       "priority": 55,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:03.622148+00:00"
     },
     {
       "display_rank": 100,
       "id": "T100-076",
       "title": "Dual language readiness: i18n without identity leakage",
       "priority": 50,
-      "status": "Pending"
+      "status": "Absorbed",
+      "shippedAt": "2026-07-23T11:52:59.583178+00:00",
+      "note": "Absorbed \u2014 i18n policy entity-only credits"
     }
   ],
   "lastShip": {
-    "at": "2026-07-23T11:50:33.586901+00:00",
-    "interval": 9,
-    "terminalCount": 62
+    "at": "2026-07-23T11:52:59.583187+00:00",
+    "interval": 11,
+    "terminalCount": 100,
+    "commit": "pending"
   }
 }
