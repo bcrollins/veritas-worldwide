@@ -420,3 +420,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | **2011+** catching tip **2032+** |
 
+
+## Interval densify — tip post-2043 pressors densify + cemetery / Herzliya / pomegranate arson
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza dopamine/norepi/vasopressin · hostage bare-hands latrines/wheelchair-marches/wet-hoods · WB kohlrabi/ultrasound/oregano-seedlings |
+| VI | cemetery strike · Herzliya safe room · pomegranate-orchard arson |
+| Pure | visual + israel-dossier PASS |
+| Live | **2026+** tracking tip **2043+** |
+
