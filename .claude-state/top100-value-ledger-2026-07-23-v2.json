@@ -15,8 +15,8 @@
   },
   "summary": "Wave 2: $499 Comprehensive Online Profile + OPSEC residual + integrity densify queue.",
   "statusCounts": {
-    "Implemented": 22,
-    "Pending": 78
+    "Implemented": 24,
+    "Pending": 76
   },
   "items": [
     {
@@ -55,7 +55,18 @@
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
       "status": "Implemented",
-      "shippedIn": "this interval"
+      "shippedIn": "this interval",
+      "liveProof": {
+        "http": 200,
+        "title": "Comprehensive Online Profile ($499) | Veritas Worldwide",
+        "api": {
+          "checkoutReady": true,
+          "stripeConfigured": true,
+          "priceUsd": 499
+        },
+        "soft404bot": 404,
+        "commitAtProof": "04d145d+"
+      }
     },
     {
       "rank": 3,
@@ -415,7 +426,9 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "fee10bd",
+      "liveNote": "origin tip includes fee10bd; corpus lag until Railway settles"
     },
     {
       "rank": 22,
@@ -793,7 +806,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "df26963"
     },
     {
       "rank": 43,
@@ -1838,6 +1852,27 @@
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
       "status": "Pending"
+    }
+  ],
+  "updatedAt": "2026-07-23T09:21:33Z",
+  "executionLog": [
+    {
+      "ts": "2026-07-23T09:21:33Z",
+      "item": 2,
+      "event": "LIVE comprehensive-profile 200 + Stripe checkoutReady",
+      "anonymity": "pass"
+    },
+    {
+      "ts": "2026-07-23T09:21:33Z",
+      "item": "mcconnell",
+      "event": "densify 55/3 dual-cite pushed fee10bd",
+      "anonymity": "n/a"
+    },
+    {
+      "ts": "2026-07-23T09:21:33Z",
+      "item": "about",
+      "event": "service boundary copy df26963",
+      "anonymity": "pass"
     }
   ]
 }

@@ -1,3 +1,13 @@
+
+## Recently Closed (2026-07-23 — Top-100 Value Engine Wave 2)
+
+- **Comprehensive Online Profile ($499) is live.**
+  Impact: Clients can commission a fixed-price authenticated OSINT dossier at `/comprehensive-profile` with lawful-purpose intake, methodology appendix, Product+FAQ schema, and Stripe Checkout (server-created session when `STRIPE_SECRET_KEY` is set).
+  Resolution: product page + success route + API `/api/services/comprehensive-profile/checkout` + verify suite + terms/privacy/membership/profiles/about wiring. Live proof: HTTP 200, bot title correct, `checkoutReady:true`, soft-404 bot 404 preserved. Commits `3435580` + follow-ons.
+
+- **McConnell integrity densify to n=3 (55) on origin.**
+  Impact: Dual-cited PolitiFact False (2013 Meet the Press nominees pace) added; score 100−3×15=55. Commit `fee10bd` on origin; live corpus may lag one deploy wave.
+
 # Platform Gaps — 2026-04-08
 
 ## Recently Closed
