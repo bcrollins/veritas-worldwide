@@ -109,3 +109,14 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 - dual-sided densify + VI wave6 multi-party visual packages
 - pure floors ≥870/≥54/≥50
 - anonymity PASS path
+
+## Interval densify (Grok) — dual-sided 892→901
+
+| Ship | Proof |
+|------|-------|
+| `9a99865` | floors/pack lock at 892 / withVideo 63 |
+| `0db46ee` | densify dual-sided to **901** (seizure/formula/suture + hostage infection/kneel/release-news + WB trellis/paramedics/filters) |
+| Pure | verify:visual-investigations-floor, verify:israel-dossier, verify:research-pack PASS |
+| Anonymity | entity-only; densify surfaces identity CLEAN |
+| Multi-agent | densify-only paths; no ROC/brand/profile clobber |
+
