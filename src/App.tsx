@@ -269,7 +269,7 @@ function Header() {
   const desktopPrimaryLinkClass = (link: ShellLink) => {
     const active = isLinkActive(location.pathname, link)
 
-    return `inline-flex min-h-[44px] items-center rounded-full px-4 font-sans text-[0.68rem] font-semibold tracking-[0.08em] uppercase whitespace-nowrap transition-colors ${
+    return `inline-flex min-h-[44px] items-center rounded-full px-4 font-sans text-[0.68rem] font-semibold tracking-[0.08em] uppercase whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 focus-visible:ring-offset-parchment ${
       active
         ? 'bg-ink text-surface shadow-sm'
         : 'text-ink-muted hover:bg-surface hover:text-ink'
@@ -279,7 +279,7 @@ function Header() {
   const desktopUtilityLinkClass = (link: ShellLink) => {
     const active = isLinkActive(location.pathname, link)
 
-    return `inline-flex min-h-[44px] items-center rounded-full px-3 font-sans text-[0.62rem] font-medium tracking-[0.08em] uppercase whitespace-nowrap transition-colors ${
+    return `inline-flex min-h-[44px] items-center rounded-full px-3 font-sans text-[0.62rem] font-medium tracking-[0.08em] uppercase whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 focus-visible:ring-offset-parchment ${
       active
         ? 'text-crimson'
         : 'text-ink-faint hover:text-ink'
@@ -289,7 +289,7 @@ function Header() {
   const drawerLinkClass = (link: ShellLink) => {
     const active = isLinkActive(location.pathname, link)
 
-    return `inline-flex min-h-[48px] items-center justify-between rounded-2xl border px-4 py-3 font-sans text-sm transition-colors ${
+    return `inline-flex min-h-[48px] items-center justify-between rounded-2xl border px-4 py-3 font-sans text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 focus-visible:ring-offset-parchment ${
       active
         ? 'border-ink bg-ink text-surface'
         : 'border-border bg-surface text-ink-muted hover:border-ink/15 hover:text-ink'
