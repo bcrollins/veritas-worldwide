@@ -2095,9 +2095,11 @@ const instituteFieldManualEntries = parseInstituteFieldManualEntries()
 const staticPages = [
   {
     route: '/',
-    title: 'The Record | Veritas Worldwide',
+    // Align with index.html + HomePage setMetaTags (Search Central ~50–60 char titles)
+    title: 'The Record | Primary Sources — Veritas Worldwide',
     heading: 'The Record',
-    description: 'A documentary history of power, money, and the institutions that shaped the modern world.',
+    description:
+      'Primary-source documentary history of power, money, and institutions. 32 archive parts, 500+ citations, free public access. Verify every claim yourself.',
     body: [
       'Veritas Worldwide publishes longform investigative work built on primary sources, congressional records, court filings, declassified files, and public financial disclosures.',
       'Volume I spans 32 archive parts and more than 500 source documents. Every chapter is publicly readable, with traceable citations and source rows available without signing in.',
@@ -2477,6 +2479,59 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     },
   }
 
+  // Homepage: bot-visible WebSite SearchAction + NewsMediaOrganization (matches index.html / seo.ts)
+  if (route === '/') {
+    return [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'The Record — Veritas Worldwide',
+        alternateName: 'The Record',
+        url: SITE_URL,
+        description: page.description,
+        inLanguage: 'en-US',
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
+          },
+          'query-input': 'required name=search_term_string',
+        },
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': ['Organization', 'NewsMediaOrganization'],
+        name: SITE_NAME,
+        alternateName: 'The Record',
+        url: SITE_URL,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${SITE_URL}/brand-kit/01-logos/logo-mark-512.png`,
+          width: 512,
+          height: 512,
+        },
+        image: DEFAULT_OG_IMAGE,
+        description:
+          'Independent investigative journalism built on primary sources. The Record documents 240+ years of institutional power with public archives.',
+        foundingDate: '2025',
+        publishingPrinciples: `${SITE_URL}/methodology`,
+        correctionsPolicy: `${SITE_URL}/methodology`,
+        ethicsPolicy: `${SITE_URL}/methodology`,
+        sameAs: [
+          'https://x.com/VeritasWorldwide',
+          'https://www.reddit.com/r/VeritasWorldwide',
+          'https://github.com/bcrollins/veritas-worldwide',
+        ],
+      },
+      {
+        ...basePage,
+        dateModified: modifiedTime,
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {
@@ -2555,6 +2610,100 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
       {
         ...basePage,
         '@type': 'AboutPage',
+      },
+    ]
+  }
+
+  // Record of Jesus Christ — Book + FAQ + Breadcrumb + ItemList for bot-visible rich results
+  // (client RecordOfJesusChristPage sets these on hydrate; prerender must match for Googlebot).
+  if (route === '/record-of-jesus-christ') {
+    return [
+      {
+        ...basePage,
+        '@type': 'WebPage',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Book',
+        name: 'The Record of Jesus Christ',
+        alternateName: 'Record of Jesus Christ — Evidentiary Compilation',
+        description: page.description,
+        url,
+        datePublished: '2026-07-23',
+        dateModified: modifiedTime,
+        inLanguage: 'en',
+        author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        about: [
+          { '@type': 'Thing', name: 'Jesus of Nazareth' },
+          { '@type': 'Thing', name: 'New Testament textual criticism' },
+          { '@type': 'Thing', name: 'Levantine archaeology' },
+          { '@type': 'Thing', name: 'Dead Sea Scrolls' },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Record of Jesus Christ', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What evidence tiers does The Record of Jesus Christ use?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Seven scholarly tiers: Verified, Well-Attested, Circumstantial, Contested, Interpretive, Speculative, and Literary/Theological. Every claim is labeled; proof is never mixed with tradition.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Does this Record conclude that Jesus is divine or that the resurrection happened?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'No. Theological conclusions are out of scope as historical or scientific fact. Early proclamation of resurrection appearances is documented as attestation of belief; ontology is not labeled VERIFIED.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Where can researchers export the claim set?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'JSON and CSV export on the page, machine corpus at /record-of-jesus-christ/corpus.json, and a portable PDF claim index at /record-of-jesus-christ/record-of-jesus-christ.pdf.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Who publishes this Record?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas Worldwide only. There is no personal author byline. Contact rights@veritasworldwide.com for corrections.',
+            },
+          },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'Chronological sections — Record of Jesus Christ',
+        numberOfItems: 9,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Scientific Description of Cosmological Origins', url: `${url}#cosmology` },
+          { '@type': 'ListItem', position: 2, name: 'Ancient Near Eastern Context', url: `${url}#ancient-near-east` },
+          { '@type': 'ListItem', position: 3, name: 'Second Temple Judaism', url: `${url}#second-temple` },
+          { '@type': 'ListItem', position: 4, name: 'Historical Jesus of Nazareth', url: `${url}#historical-jesus` },
+          { '@type': 'ListItem', position: 5, name: 'New Testament Textual Criticism', url: `${url}#nt-textual-criticism` },
+          { '@type': 'ListItem', position: 6, name: 'Non-Christian Attestations', url: `${url}#non-christian-attestation` },
+          { '@type': 'ListItem', position: 7, name: 'Levantine Archaeology', url: `${url}#levantine-archaeology` },
+          { '@type': 'ListItem', position: 8, name: 'Early Christian Literature', url: `${url}#early-christian-literature` },
+          { '@type': 'ListItem', position: 9, name: 'Modern Scholarship to 2026', url: `${url}#modern-scholarship` },
+        ],
       },
     ]
   }

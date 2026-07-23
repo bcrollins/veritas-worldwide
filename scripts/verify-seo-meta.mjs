@@ -111,6 +111,14 @@ assert(
   'prerender must emit FAQPage JSON-LD for /methodology (bot-visible)',
 )
 assert(
+  prerender.includes('Primary Sources') && prerender.includes("route: '/'"),
+  'prerender homepage title must target primary-source intent (not generic shell)',
+)
+assert(
+  prerender.includes("route === '/'") && prerender.includes('SearchAction'),
+  'prerender homepage must emit WebSite SearchAction for sitelinks',
+)
+assert(
   prerender.includes("route === '/sources'") && prerender.includes('How do I verify a claim in The Record?'),
   'prerender must emit Sources FAQPage for bot-visible voice/PAA queries',
 )
