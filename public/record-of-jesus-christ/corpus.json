@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:39:10.693Z",
-  "claimCount": 498,
+  "generatedAt": "2026-07-23T10:40:03.255Z",
+  "claimCount": 507,
   "tierHistogram": {
-    "well_attested": 201,
-    "verified": 174,
+    "well_attested": 204,
+    "verified": 179,
     "contested": 44,
-    "interpretive": 52,
+    "interpretive": 53,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 22
@@ -243,6 +243,13 @@
       "file": "src/data/recordOfJesusChristWave21.ts"
     },
     {
+      "id": "ane-lmlk-iconography",
+      "claim": "lmlk jar handles carry royal iconography (scarab/winged sun variants) and place-name stamps — primary visual-administrative evidence for late-8th-century Judah.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave45.ts"
+    },
+    {
       "id": "ane-lmlk-jar-handles",
       "claim": "lmlk (“belonging to the king”) jar handles from late-8th-century Judah form a large administrative ceramic corpus associated with Hezekiah-era preparation against Assyria.",
       "tier": "verified",
@@ -402,6 +409,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
+      "id": "arch-caesarea-harbor-herod",
+      "claim": "Herod’s artificial harbor at Caesarea Maritima (Sebastos) is a major engineering achievement documented by underwater and terrestrial archaeology.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave45.ts"
     },
     {
       "id": "arch-caesarea-maritima",
@@ -850,6 +864,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
+      "id": "cosmo-cmb-lensing-potential",
+      "claim": "Reconstruction of the CMB lensing potential map provides a projected mass map of the universe and an independent growth-of-structure probe within ΛCDM.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave45.ts"
     },
     {
       "id": "cosmo-cmb-polarization",
@@ -1412,6 +1433,13 @@
       "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
+      "id": "ec-polycarp-martyrdom-text",
+      "claim": "The Martyrdom of Polycarp is an early Christian martyr narrative (mid-2nd c. core with possible later shaping) describing Polycarp’s death at Smyrna.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave45.ts"
+    },
+    {
       "id": "ec-polycarp-philippians",
       "claim": "Polycarp’s Philippians cites or alludes to multiple NT writings, showing early 2nd-century reception of Pauline and Gospel traditions.",
       "tier": "well_attested",
@@ -1895,6 +1923,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "hj-resurrection-appearances-early",
+      "claim": "Early Christian proclamation included claims of post-crucifixion appearances (notably 1 Cor 15:3–8); historians debate the nature of those experiences while treating the early proclamation itself as well attested.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave45.ts"
+    },
+    {
       "id": "hj-resurrection-hist",
       "claim": "Claims of bodily resurrection are theological assertions; historians can document early belief and proclamation, not laboratory verification of the event.",
       "tier": "literary_theological",
@@ -2187,6 +2222,13 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "mod-memory-approach-limits",
+      "claim": "Social memory approaches to the historical Jesus emphasize how communities remember rather than how criteria recover authentic atoms — a major 21st-century method turn with its own limits and disputes.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave45.ts"
     },
     {
       "id": "mod-memory-distortion",
@@ -2623,6 +2665,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "nc-tacitus-annals-christians-frame",
+      "claim": "Tacitus frames Christians as a hated group blamed by Nero after the Rome fire — valuable for Roman elite attitude and the Christus–Pilate notice nested in Annals 15.44.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave45.ts"
+    },
+    {
       "id": "nc-tacitus-christus-title",
       "claim": "Tacitus’s use of “Christus” as a title/name and “Christians” as a group label reflects Roman awareness of the Christ-derived name by the early second century.",
       "tier": "well_attested",
@@ -3008,6 +3057,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "nt-p46-collection-shape",
+      "claim": "Papyrus P46 is an early substantial Pauline collection whose book order and contents inform debates on early Pauline corpus formation.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave45.ts"
+    },
+    {
       "id": "nt-p46-paul",
       "claim": "Papyrus P46 is among the earliest substantial collections of Pauline letters (typically dated late 2nd / early 3rd century CE).",
       "tier": "verified",
@@ -3314,6 +3370,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave5.ts"
+    },
+    {
+      "id": "st-mikveh-jerusalem-density",
+      "claim": "Jerusalem shows an exceptionally high density of late Second Temple miqva’ot, reflecting intensified purity practice among residents and pilgrims.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave45.ts"
     },
     {
       "id": "st-mikveh-purity",

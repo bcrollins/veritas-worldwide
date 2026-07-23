@@ -55,6 +55,7 @@ import { ROC_WAVE41_CLAIMS } from './recordOfJesusChristWave41'
 import { ROC_WAVE42_CLAIMS } from './recordOfJesusChristWave42'
 import { ROC_WAVE43_CLAIMS } from './recordOfJesusChristWave43'
 import { ROC_WAVE44_CLAIMS } from './recordOfJesusChristWave44'
+import { ROC_WAVE45_CLAIMS } from './recordOfJesusChristWave45'
 
 export { ROC_TIMELINE } from './recordOfJesusChristExtras'
 
@@ -748,6 +749,7 @@ function withExtras(section: RocSection): RocSection {
     ...(ROC_WAVE42_CLAIMS[section.id] ?? []),
     ...(ROC_WAVE43_CLAIMS[section.id] ?? []),
     ...(ROC_WAVE44_CLAIMS[section.id] ?? []),
+    ...(ROC_WAVE45_CLAIMS[section.id] ?? []),
   ]
   if (extra.length === 0) return section
   return { ...section, claims: [...section.claims, ...extra] }
