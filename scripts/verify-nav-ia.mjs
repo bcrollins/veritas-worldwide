@@ -186,6 +186,10 @@ const osint = fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfilePag
 assert(osint.includes('data-testid="osint-related-hubs"'), 'OSINT product related hubs')
 const volumeIi = fs.readFileSync(path.join(root, 'src/pages/VolumeIIHubPage.tsx'), 'utf8')
 assert(volumeIi.includes('ResearchHubChips'), 'Volume II mounts research chips')
+const bible = fs.readFileSync(path.join(root, 'src/pages/BibleHistoryPage.tsx'), 'utf8')
+const roc = fs.readFileSync(path.join(root, 'src/pages/RecordOfJesusChristPage.tsx'), 'utf8')
+assert(bible.includes('ResearchHubChips'), 'Bible history mounts research chips')
+assert(roc.includes('ResearchHubChips'), 'ROC mounts research chips')
 
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
