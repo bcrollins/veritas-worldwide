@@ -3020,4 +3020,25 @@ assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'
 assert(read('src/components/NewsletterSignup.tsx').includes('focus-visible:ring-2'), 'perpetual v31 newsletter focus')
 assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v31 cookie focus')
 
+
+
+// RelatedHubs platform perpetual densify lock v32
+assert(surfaces.length >= 115, `perpetual v32 surfaces ${surfaces.length}`)
+assert(read('src/components/BookmarkButton.tsx').includes('focus-visible:ring-2'), 'perpetual v32 bookmark focus')
+assert(read('src/components/BackToTop.tsx').includes('focus-visible:ring-2'), 'perpetual v32 back-to-top focus')
+assert(read('src/components/CitationGenerator.tsx').includes('focus-visible:ring-2') || read('src/components/CitationGenerator.tsx').includes('min-h-[44px]'), 'perpetual v32 citation')
+assert(read('src/components/SharePanel.tsx').includes('focus-visible:ring-2'), 'perpetual v32 share panel focus')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v32 RelatedHubs focus')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v32 mobile tab bar')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v32 institute')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v32 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v32 server soft-404')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v32 emphasize')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v32 methodology')
+assert(read('src/components/NewsletterSignup.tsx').includes('focus-visible:ring-2'), 'perpetual v32 newsletter focus')
+assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v32 cookie focus')
+assert(read('src/components/AuthModal.tsx').includes('focus-visible:ring-2'), 'perpetual v32 auth modal focus')
+assert(read('src/components/PrimarySourceLink.tsx').includes('focus-visible:ring-2'), 'perpetual v32 primary source focus')
+assert(read('src/components/DownloadModal.tsx').includes('focus-visible:ring-2'), 'perpetual v32 download modal focus')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
