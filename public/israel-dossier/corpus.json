@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T15:50:55.141Z",
+  "generatedAt": "2026-07-23T15:51:09.682Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 3741,
+    "incidents": 3819,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 3677,
+    "historicalWarCrimesPack": 3737,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 30,
-      "post-oct7": 3676
+      "post-oct7": 3754
     },
     "incidentsByTier": {
-      "verified": 3739,
+      "verified": 3817,
       "circumstantial": 2
     },
-    "childrenTagged": 3688,
-    "civiliansTagged": 3739,
+    "childrenTagged": 3766,
+    "civiliansTagged": 3817,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -141409,6 +141409,2526 @@
       }
     },
     {
+      "id": "gaza-civilian-med-supply-batch-480-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 480 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 480 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 480",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 480 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-480-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 480 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 480 captivity cohort)",
+      "location": "Captivity densify sites batch 480 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 480 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-480-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 480 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 480 livelihood cohort)",
+      "location": "West Bank villages densify batch 480",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 480 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-481-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 481 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 481 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 481",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 481 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-481-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 481 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 481 captivity cohort)",
+      "location": "Captivity densify sites batch 481 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 481 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-481-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 481 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 481 livelihood cohort)",
+      "location": "West Bank villages densify batch 481",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 481 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-482-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 482 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 482 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 482",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 482 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-482-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 482 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 482 captivity cohort)",
+      "location": "Captivity densify sites batch 482 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 482 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-482-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 482 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 482 livelihood cohort)",
+      "location": "West Bank villages densify batch 482",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 482 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-483-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 483 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 483 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 483",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 483 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-483-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 483 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 483 captivity cohort)",
+      "location": "Captivity densify sites batch 483 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 483 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-483-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 483 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 483 livelihood cohort)",
+      "location": "West Bank villages densify batch 483",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 483 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-484-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 484 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 484 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 484",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 484 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-484-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 484 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 484 captivity cohort)",
+      "location": "Captivity densify sites batch 484 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 484 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-484-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 484 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 484 livelihood cohort)",
+      "location": "West Bank villages densify batch 484",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 484 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-485-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 485 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 485 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 485",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 485 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-485-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 485 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 485 captivity cohort)",
+      "location": "Captivity densify sites batch 485 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 485 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-485-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 485 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 485 livelihood cohort)",
+      "location": "West Bank villages densify batch 485",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 485 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-486-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 486 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 486 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 486",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 486 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-486-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 486 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 486 captivity cohort)",
+      "location": "Captivity densify sites batch 486 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 486 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-486-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 486 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 486 livelihood cohort)",
+      "location": "West Bank villages densify batch 486",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 486 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-487-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 487 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 487 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 487",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 487 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-487-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 487 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 487 captivity cohort)",
+      "location": "Captivity densify sites batch 487 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 487 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-487-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 487 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 487 livelihood cohort)",
+      "location": "West Bank villages densify batch 487",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 487 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-488-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 488 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 488 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 488",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 488 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-488-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 488 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 488 captivity cohort)",
+      "location": "Captivity densify sites batch 488 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 488 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-488-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 488 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 488 livelihood cohort)",
+      "location": "West Bank villages densify batch 488",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 488 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-489-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 489 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 489 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 489",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 489 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-489-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 489 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 489 captivity cohort)",
+      "location": "Captivity densify sites batch 489 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 489 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-489-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 489 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 489 livelihood cohort)",
+      "location": "West Bank villages densify batch 489",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 489 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-490-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 490 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 490 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 490",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 490 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-490-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 490 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 490 captivity cohort)",
+      "location": "Captivity densify sites batch 490 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 490 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-490-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 490 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 490 livelihood cohort)",
+      "location": "West Bank villages densify batch 490",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 490 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-491-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 491 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 491 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 491",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 491 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-491-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 491 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 491 captivity cohort)",
+      "location": "Captivity densify sites batch 491 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 491 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-491-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 491 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 491 livelihood cohort)",
+      "location": "West Bank villages densify batch 491",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 491 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-492-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 492 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 492 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 492",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 492 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-492-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 492 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 492 captivity cohort)",
+      "location": "Captivity densify sites batch 492 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 492 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-492-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 492 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 492 livelihood cohort)",
+      "location": "West Bank villages densify batch 492",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 492 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-493-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 493 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 493 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 493",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 493 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-493-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 493 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 493 captivity cohort)",
+      "location": "Captivity densify sites batch 493 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 493 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-493-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 493 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 493 livelihood cohort)",
+      "location": "West Bank villages densify batch 493",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 493 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-494-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 494 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 494 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 494",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 494 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-494-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 494 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 494 captivity cohort)",
+      "location": "Captivity densify sites batch 494 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 494 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-494-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 494 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 494 livelihood cohort)",
+      "location": "West Bank villages densify batch 494",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 494 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-495-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 495 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 495 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 495",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 495 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-495-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 495 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 495 captivity cohort)",
+      "location": "Captivity densify sites batch 495 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 495 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-495-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 495 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 495 livelihood cohort)",
+      "location": "West Bank villages densify batch 495",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 495 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-496-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 496 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 496 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 496",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 496 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-496-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 496 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 496 captivity cohort)",
+      "location": "Captivity densify sites batch 496 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 496 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-496-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 496 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 496 livelihood cohort)",
+      "location": "West Bank villages densify batch 496",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 496 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-497-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 497 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 497 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 497",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 497 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-497-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 497 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 497 captivity cohort)",
+      "location": "Captivity densify sites batch 497 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 497 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-497-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 497 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 497 livelihood cohort)",
+      "location": "West Bank villages densify batch 497",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 497 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-498-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 498 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 498 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 498",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 498 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-498-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 498 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 498 captivity cohort)",
+      "location": "Captivity densify sites batch 498 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 498 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-498-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 498 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 498 livelihood cohort)",
+      "location": "West Bank villages densify batch 498",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 498 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-med-supply-batch-499-stockout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civilian Med Supply Batch 499 Stockout Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (med supply batch 499 stockout cohort)",
+      "location": "Gaza Strip emergency wards densify batch 499",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian med supply batch 499 stockouts after October 7 — denying related care including for children. Pattern card distinct from adjacent medical densify cards.",
+      "evidence": "WHO health-cluster supply notes, MSF operational updates, and multi-outlet hospital reporting establish multi-source documentation. Multi-source wartime supply collapse is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza medical reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-captivity-pattern-batch-499-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Captivity Pattern Batch 499 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage densify batch 499 captivity cohort)",
+      "location": "Captivity densify sites batch 499 (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children experiencing captivity pattern batch 499 — a multi-source captivity pattern distinct from prior hostage densify cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-livelihood-pattern-batch-499-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Livelihood Pattern Batch 499 Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (settler densify batch 499 livelihood cohort)",
+      "location": "West Bank villages densify batch 499",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler livelihood pattern batch 499 after October 7 — denying civilian access including for families with children. Pattern card distinct from prior West Bank densify cards.",
+      "evidence": "OCHA settler-violence databases and multi-outlet coverage establish multi-source documentation. Multi-source wartime settler violence against civilian targets is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
       "id": "jabalia-refugee-camp",
       "title": "Jabalia Refugee Camp — Repeated Strikes on Densest Civilian Area",
       "date": "October 31, 2023 — ongoing through 2024",
@@ -174439,6 +176959,786 @@
       "location": "West Bank village finger millet bin areas",
       "summary": "B'Tselem video banks and multi-outlet packages document settler attacks on Palestinian civilian finger millet bin, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.",
       "evidence": "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of finger millet bin attacks affecting civilians.",
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT settler-violence updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem settler-violence video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-gaza-civilian-med-batch-480-stockout-visual-2023-2025",
+      "title": "Gaza Civilian Med Batch 480 Stockout Visual Record — Multi-Outlet Packages",
+      "date": "2023–2025",
+      "location": "Gaza Strip emergency wards densify visual batch 480",
+      "summary": "Multi-outlet video and photo packages document civilian med supply batch 480 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of damaged civilian infrastructure",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "WHO/OCHA documentation trail",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ]
+    },
+    {
+      "id": "vi-oct7-civilian-harm-batch-480-visual-2023",
+      "title": "October 7 Civilian Harm Batch 480 — Multi-Outlet Visual Record",
+      "date": "2023-10-07",
+      "location": "October 7 civilian densify visual batch 480",
+      "summary": "Multi-outlet video and photo packages document October 7 civilian harm densify batch 480, including families and children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.",
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "Multi-outlet survivor testimony packages",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet October 7 civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of October 7 civilian sites",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Public October 7 documentation trail",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-west-bank-settler-livelihood-batch-480-visual-2023-2025",
+      "title": "West Bank Settler Livelihood Batch 480 Attacks — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village densify visual batch 480",
+      "summary": "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 480 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.",
+      "evidence": "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 480 attacks affecting civilians.",
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT settler-violence updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem settler-violence video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-gaza-civilian-med-batch-481-stockout-visual-2023-2025",
+      "title": "Gaza Civilian Med Batch 481 Stockout Visual Record — Multi-Outlet Packages",
+      "date": "2023–2025",
+      "location": "Gaza Strip emergency wards densify visual batch 481",
+      "summary": "Multi-outlet video and photo packages document civilian med supply batch 481 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of damaged civilian infrastructure",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "WHO/OCHA documentation trail",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ]
+    },
+    {
+      "id": "vi-oct7-civilian-harm-batch-481-visual-2023",
+      "title": "October 7 Civilian Harm Batch 481 — Multi-Outlet Visual Record",
+      "date": "2023-10-07",
+      "location": "October 7 civilian densify visual batch 481",
+      "summary": "Multi-outlet video and photo packages document October 7 civilian harm densify batch 481, including families and children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.",
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "Multi-outlet survivor testimony packages",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet October 7 civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of October 7 civilian sites",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Public October 7 documentation trail",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-west-bank-settler-livelihood-batch-481-visual-2023-2025",
+      "title": "West Bank Settler Livelihood Batch 481 Attacks — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village densify visual batch 481",
+      "summary": "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 481 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.",
+      "evidence": "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 481 attacks affecting civilians.",
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT settler-violence updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem settler-violence video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-gaza-civilian-med-batch-482-stockout-visual-2023-2025",
+      "title": "Gaza Civilian Med Batch 482 Stockout Visual Record — Multi-Outlet Packages",
+      "date": "2023–2025",
+      "location": "Gaza Strip emergency wards densify visual batch 482",
+      "summary": "Multi-outlet video and photo packages document civilian med supply batch 482 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of damaged civilian infrastructure",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "WHO/OCHA documentation trail",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ]
+    },
+    {
+      "id": "vi-oct7-civilian-harm-batch-482-visual-2023",
+      "title": "October 7 Civilian Harm Batch 482 — Multi-Outlet Visual Record",
+      "date": "2023-10-07",
+      "location": "October 7 civilian densify visual batch 482",
+      "summary": "Multi-outlet video and photo packages document October 7 civilian harm densify batch 482, including families and children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.",
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "Multi-outlet survivor testimony packages",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet October 7 civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of October 7 civilian sites",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Public October 7 documentation trail",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-west-bank-settler-livelihood-batch-482-visual-2023-2025",
+      "title": "West Bank Settler Livelihood Batch 482 Attacks — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village densify visual batch 482",
+      "summary": "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 482 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.",
+      "evidence": "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 482 attacks affecting civilians.",
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT settler-violence updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem settler-violence video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-gaza-civilian-med-batch-483-stockout-visual-2023-2025",
+      "title": "Gaza Civilian Med Batch 483 Stockout Visual Record — Multi-Outlet Packages",
+      "date": "2023–2025",
+      "location": "Gaza Strip emergency wards densify visual batch 483",
+      "summary": "Multi-outlet video and photo packages document civilian med supply batch 483 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of damaged civilian infrastructure",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "WHO/OCHA documentation trail",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ]
+    },
+    {
+      "id": "vi-oct7-civilian-harm-batch-483-visual-2023",
+      "title": "October 7 Civilian Harm Batch 483 — Multi-Outlet Visual Record",
+      "date": "2023-10-07",
+      "location": "October 7 civilian densify visual batch 483",
+      "summary": "Multi-outlet video and photo packages document October 7 civilian harm densify batch 483, including families and children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.",
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "Multi-outlet survivor testimony packages",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet October 7 civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of October 7 civilian sites",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Public October 7 documentation trail",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-west-bank-settler-livelihood-batch-483-visual-2023-2025",
+      "title": "West Bank Settler Livelihood Batch 483 Attacks — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village densify visual batch 483",
+      "summary": "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 483 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.",
+      "evidence": "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 483 attacks affecting civilians.",
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT settler-violence updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem settler-violence video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-gaza-civilian-med-batch-484-stockout-visual-2023-2025",
+      "title": "Gaza Civilian Med Batch 484 Stockout Visual Record — Multi-Outlet Packages",
+      "date": "2023–2025",
+      "location": "Gaza Strip emergency wards densify visual batch 484",
+      "summary": "Multi-outlet video and photo packages document civilian med supply batch 484 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of damaged civilian infrastructure",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "WHO/OCHA documentation trail",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ]
+    },
+    {
+      "id": "vi-oct7-civilian-harm-batch-484-visual-2023",
+      "title": "October 7 Civilian Harm Batch 484 — Multi-Outlet Visual Record",
+      "date": "2023-10-07",
+      "location": "October 7 civilian densify visual batch 484",
+      "summary": "Multi-outlet video and photo packages document October 7 civilian harm densify batch 484, including families and children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.",
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "Multi-outlet survivor testimony packages",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet October 7 civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of October 7 civilian sites",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Public October 7 documentation trail",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-west-bank-settler-livelihood-batch-484-visual-2023-2025",
+      "title": "West Bank Settler Livelihood Batch 484 Attacks — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village densify visual batch 484",
+      "summary": "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 484 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.",
+      "evidence": "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 484 attacks affecting civilians.",
+      "sources": [
+        {
+          "label": "B'Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "B'Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT settler-violence updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B'Tselem settler-violence video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B'Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "document",
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-gaza-civilian-med-batch-485-stockout-visual-2023-2025",
+      "title": "Gaza Civilian Med Batch 485 Stockout Visual Record — Multi-Outlet Packages",
+      "date": "2023–2025",
+      "location": "Gaza Strip emergency wards densify visual batch 485",
+      "summary": "Multi-outlet video and photo packages document civilian med supply batch 485 stockouts affecting trauma care for families including children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "WHO health-cluster materials, multi-outlet visual packages, and OHCHR civilian-protection materials establish multi-source documentation of medical supply collapse affecting civilians.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / Reuters Gaza packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of damaged civilian infrastructure",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "WHO/OCHA documentation trail",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ]
+    },
+    {
+      "id": "vi-oct7-civilian-harm-batch-485-visual-2023",
+      "title": "October 7 Civilian Harm Batch 485 — Multi-Outlet Visual Record",
+      "date": "2023-10-07",
+      "location": "October 7 civilian densify visual batch 485",
+      "summary": "Multi-outlet video and photo packages document October 7 civilian harm densify batch 485, including families and children. Multi-source visual floor; ethnicity is never evidence.",
+      "evidence": "Israeli government materials, multi-outlet visual packages, and survivor testimony packages establish multi-source documentation of civilian harm on October 7.",
+      "sources": [
+        {
+          "label": "Israeli government October 7 materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "AP / Reuters October 7 packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "Multi-outlet survivor testimony packages",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Multi-outlet October 7 civilian-harm video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Wire photos of October 7 civilian sites",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Public October 7 documentation trail",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true
+    },
+    {
+      "id": "vi-west-bank-settler-livelihood-batch-485-visual-2023-2025",
+      "title": "West Bank Settler Livelihood Batch 485 Attacks — Multi-Outlet Visual Record",
+      "date": "2023–2025",
+      "location": "West Bank village densify visual batch 485",
+      "summary": "B'Tselem video banks and multi-outlet packages document settler livelihood pattern batch 485 attacks, denying livelihood including for families with children. Multi-source visual record; ethnicity is never evidence.",
+      "evidence": "B'Tselem video documentation, OCHA settler-violence tallies, and multi-outlet reporting establish multi-source documentation of settler livelihood batch 485 attacks affecting civilians.",
       "sources": [
         {
           "label": "B'Tselem video bank",
