@@ -1647,4 +1647,21 @@ assert(tabBodyUlt.includes('/israel-dossier') && tabBodyUlt.includes('/profiles'
 assert(tabBodyUlt.includes('mobile-tab-bar'), 'mobile-tab-bar ultimate')
 
 
+
+// RelatedHubs mount count public pages ultimate end
+const relatedPagesEnd = [
+  'AboutPage','AccessibilityPage','AipacPage','AnalyticsPage','ArticlePage','BernieShowPage',
+  'BookmarksPage','ChapterPage','ComprehensiveProfilePage','ComprehensiveProfileSuccessPage',
+  'DeepStatePage','ForumPage','HomePage','IsraelDossierBriefingPage','IsraelDossierPage','MediaKitPage',
+  'MembershipPage','NewsPage','NotFoundPage','PrivacyPage','ProfilePage','ProfilesIndexPage','ReadTheBookPage',
+  'SearchPage','SubscribeSuccessPage','SupportSuccessPage','TermsPage','TimelinePage','TopicPage',
+  'TopicsIndexPage',
+]
+let relatedCountEnd = 0
+for (const name of relatedPagesEnd) {
+  if (read(`src/pages/${name}.tsx`).includes('RelatedHubs') || read(`src/pages/${name}.tsx`).includes('PRIMARY_RELATED')) relatedCountEnd++
+}
+assert(relatedCountEnd >= 30, `RelatedHubs public mounts end ${relatedCountEnd}`)
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
