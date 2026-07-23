@@ -837,4 +837,10 @@ const chapterHubsSrc = read('src/pages/ChapterPage.tsx')
 assert(chapterHubsSrc.includes('chapter-related-hubs'), 'chapter-related-hubs testid')
 assert(chapterHubsSrc.includes("to: '/sources'") || chapterHubsSrc.includes('to: "/sources"') || chapterHubsSrc.includes('/sources'), 'Chapter Sources dest unique')
 
+
+// Profile RelatedHubs Methodology destination
+const profileHubsSrc = read('src/pages/ProfilePage.tsx')
+assert(profileHubsSrc.includes('profile-related-hubs'), 'profile-related-hubs testid')
+assert(profileHubsSrc.includes('/methodology'), 'Profile Methodology dest unique')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
