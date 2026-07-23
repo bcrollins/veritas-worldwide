@@ -99,6 +99,11 @@ assert(
   bookmarks.includes('/research-pack.zip') && bookmarks.includes('bookmarks-research-pack-zip'),
   'Bookmarks quick routes must link research pack zip',
 )
+const supportSuccess = read('src/pages/SupportSuccessPage.tsx')
+assert(
+  supportSuccess.includes('/research-pack.zip') && supportSuccess.includes('support-success-research-pack'),
+  'Support success must offer free research pack card',
+)
 const platformHealth = read('scripts/verify-platform-health.mjs')
 assert(
   platformHealth.includes('/research-pack.zip') && platformHealth.includes('Research pack'),

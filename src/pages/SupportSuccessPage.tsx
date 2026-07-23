@@ -149,7 +149,7 @@ export default function SupportSuccessPage() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-6 md:grid-cols-3">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {[
           {
             eyebrow: 'Archive',
@@ -169,21 +169,47 @@ export default function SupportSuccessPage() {
             description: 'Evidence standards, taxonomy, and the public methodology page.',
             to: '/methodology',
           },
-        ].map((card) => (
-          <Link
-            key={card.to}
-            to={card.to}
-            className="group block border border-border bg-surface p-5 hover:border-crimson/40 transition-colors min-h-[44px]"
-          >
-            <p className="font-sans text-[0.55rem] font-bold tracking-[0.16em] uppercase text-crimson mb-2">
-              {card.eyebrow}
-            </p>
-            <h2 className="font-display text-xl font-bold text-ink group-hover:text-crimson transition-colors">
-              {card.title}
-            </h2>
-            <p className="font-body text-sm text-ink-muted leading-relaxed mt-3">{card.description}</p>
-          </Link>
-        ))}
+          {
+            eyebrow: 'Free corpora',
+            title: 'Research pack (ZIP)',
+            description: 'Offline machine-readable profiles, ROC, Israel, and taxonomy. Not a paid dossier.',
+            href: '/research-pack.zip',
+            download: 'veritas-research-pack.zip',
+            testId: 'support-success-research-pack',
+          },
+        ].map((card) =>
+          card.href ? (
+            <a
+              key={card.href}
+              href={card.href}
+              download={card.download}
+              data-testid={card.testId}
+              className="group block border border-border bg-surface p-5 hover:border-crimson/40 transition-colors min-h-[44px]"
+            >
+              <p className="font-sans text-[0.55rem] font-bold tracking-[0.16em] uppercase text-crimson mb-2">
+                {card.eyebrow}
+              </p>
+              <h2 className="font-display text-xl font-bold text-ink group-hover:text-crimson transition-colors">
+                {card.title}
+              </h2>
+              <p className="font-body text-sm text-ink-muted leading-relaxed mt-3">{card.description}</p>
+            </a>
+          ) : (
+            <Link
+              key={card.to}
+              to={card.to!}
+              className="group block border border-border bg-surface p-5 hover:border-crimson/40 transition-colors min-h-[44px]"
+            >
+              <p className="font-sans text-[0.55rem] font-bold tracking-[0.16em] uppercase text-crimson mb-2">
+                {card.eyebrow}
+              </p>
+              <h2 className="font-display text-xl font-bold text-ink group-hover:text-crimson transition-colors">
+                {card.title}
+              </h2>
+              <p className="font-body text-sm text-ink-muted leading-relaxed mt-3">{card.description}</p>
+            </Link>
+          ),
+        )}
       </section>
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
