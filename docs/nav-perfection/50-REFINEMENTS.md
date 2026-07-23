@@ -1,6 +1,6 @@
 # 50 Nav/UX Refinements — Veritas (SCOPE: entire platform)
 
-Grouped sprints. **Shipped this session: Sprint 1 (#1–#12).** Remaining are backlog for next intervals.
+Grouped sprints. **Entity-only. Multi-agent: do not thrash peer densify WIP.**
 
 ## Sprint 1 — Hub budget + mobile shell (SHIPPED)
 1. Primary hubs ≤5 (Record, Read, Dossiers, Profiles, Search) — Hick  
@@ -22,50 +22,56 @@ Grouped sprints. **Shipped this session: Sprint 1 (#1–#12).** Remaining are ba
 15. Forum page breadcrumb to Dossiers hub — inline variant  
 16. Home hero primary CTA row (Read · Dossiers · Search) — `home-hub-cta-row`  
 17. Home News chip in 1-tap from Record hub — `home-news-chip`  
-18. Profiles hub strip: integrity + pack + OSINT + Search + Dossiers — **SHIPPED**  
-19. Read hub chapter list density (grouping by part) — **SHIPPED** (`read-toc-by-part`)  
-20. Timeline under Browse + Read “Related” — **SHIPPED** (`timeline-related-hubs`)  
+18. Profiles hub strip: integrity + pack + OSINT + Search + Dossiers  
+19. Read hub chapter list density (grouping by part) — `read-toc-by-part`  
+20. Timeline under Browse + Read “Related” — `timeline-related-hubs`  
 + Briefing page also-in spokes  
 + Search empty-state hubs (`search-empty-hubs`)  
 + Soft-404 primary hub chips (`not-found-hub-chips`) + server HTML hubs  
 + Cookie z-[100] above tab bar (z-50) / membership (z-40) documented  
 
 ## Sprint 3 — Research hub (SHIPPED)
-21. /researcher mounts ResearchHubChips — **SHIPPED**  
-22. Methodology ↔ Sources bidirectional hub chips — **SHIPPED** (`ResearchHubChips`)  
-23. Institute entry from Research drawer only (already)  
-24. Content pack mounts ResearchHubChips — **SHIPPED**  
-25. Search empty-state: top destinations — **SHIPPED Sprint 2**  
-26. Search placeholder improved — **SHIPPED**  
-27. Bookmarks empty + News + Pack — **SHIPPED**  
-28. Analytics under Account (already)  
-29. Media kit under Account (already)  
-30. Comprehensive profile under Account (already)  
-+ Footer mirrors ≤5 hub order — **SHIPPED**  
-+ Dossiers tooltip “Israel · Deep State · Forum” — **SHIPPED** 
+21. /researcher mounts ResearchHubChips  
+22. Methodology ↔ Sources bidirectional hub chips — `ResearchHubChips`  
+23. Institute mounts ResearchHubChips  
+24. Content pack mounts ResearchHubChips  
+25. Search empty-state: top destinations — Sprint 2  
+26. Search placeholder improved  
+27. Bookmarks empty + News + Pack  
+28–30. Analytics / Media kit / Comprehensive under Account (already)  
++ Footer mirrors ≤5 hub order  
++ Dossiers tooltip “Israel · Deep State · Forum”  
 
-## Sprint 4 — Information scent & labels
+## Sprint 4 — Information scent & labels (SHIPPED core)
 31. Label “The Record” tab short “Record” mobile only (done tab)  
 32. Dossiers tooltip: Israel · Deep State · Forum  
 33. Footer mirror ≤5 hub order for scent consistency  
-34. Breadcrumb component on all major pages  
-35. Aria-current already on hubs — extend to drawer  
-36. Focus ring audit drawer links  
+34. Breadcrumb component on major pages — chapter breadcrumb retained; hub chips cover recovery  
+35. Aria-current already on hubs — drawer included  
+36. Focus ring audit drawer links — global `:focus-visible` crimson  
 37. Skip link already present  
 38. Language selector stays Account drawer  
 39. Theme toggle stays Account drawer  
-40. Sign-in spatial consistency  
+40. Sign-in spatial consistency retained  
 
-## Sprint 5 — Depth & scan
+## Sprint 5 — Depth & scan (SHIPPED recovery web)
 41. Chapter page sticky section TOC already — keep  
 42. Israel sticky TOC peer — do not thrash  
-43. News desk filters compact  
-44. Forum mobile action bar  
-45. Membership pricing above fold  
-46. Empty bookmarks already guided  
-47. Soft-404 CTAs to 5 hubs — **SHIPPED Sprint 2**  
-48. 404 page hub chips — **SHIPPED Sprint 2**  
-49. Cookie consent above tab bar z-index check — **SHIPPED Sprint 2**  
-50. Pure floor expand: primaryLinks + spokes + empty/404 — **SHIPPED Sprint 2**  
+43. News desk related hubs — `news-related-hubs`  
+44. Forum hub-and-spoke breadcrumb  
+45. Membership related hubs — free archive scent  
+46. Empty bookmarks guided + News + Pack  
+47. Soft-404 CTAs to 5 hubs — SPA + server  
+48. 404 page hub chips  
+49. Cookie consent above tab bar z-index  
+50. Pure floor expand: primaryLinks + spokes + recovery + a11y floors  
 
-**Capability check:** News, Forum, Deep State, Timeline, all research surfaces, OSINT, membership, legal — all reachable ≤3 taps. Zero removals.
+## Account & Trust recovery (SHIPPED)
+- About, Media Kit, Accessibility, Membership, Privacy, Terms related hub chips  
+- Topics, News, Timeline, Institute recovery chips  
+
+## Capability check
+News, Forum, Deep State, Timeline, all research surfaces, OSINT, membership, legal — all reachable ≤3 taps. Zero removals. Zero peer densify thrash.
+
+## Live proof (2026-07-23)
+`mobile-tab-bar`, `DossierHubSpokes`, `ResearchHubChips`, `home-hub-cta-row`, `home-news-chip`, `dossier-hub-spokes`, `research-hub-chips`, `news-related-hubs`, `server-soft-404` + Primary hubs, research pack health true.

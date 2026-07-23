@@ -927,12 +927,23 @@ export default function SearchPage() {
             )}
 
             {debouncedQuery.trim() === '' ? (
-              <div className="text-center py-16">
+              <div className="text-center py-16" data-testid="search-idle-state">
                 <p className="font-body text-lg text-ink-muted mb-3">Enter a search term to explore.</p>
-                <div className="flex flex-wrap justify-center gap-2 mt-6">
+                <div
+                  className="mx-auto mb-6 flex max-w-xl flex-wrap items-center justify-center gap-2"
+                  data-testid="search-idle-hubs"
+                  aria-label="Top destinations"
+                >
+                  <Link to="/read" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors">Read</Link>
+                  <Link to="/israel-dossier" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors">Dossiers</Link>
+                  <Link to="/profiles" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors">Profiles</Link>
+                  <Link to="/content-pack" className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-4 py-2 font-sans text-xs font-semibold text-ink hover:border-crimson hover:text-crimson transition-colors">Research Pack</Link>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2 mt-2">
                   {['Federal Reserve', 'Rothschild', 'BlackRock', 'CIA', 'Eisenhower', 'AIPAC', 'Central Banking', 'Andrew Jackson'].map(term => (
                     <button
                       key={term}
+                      type="button"
                       onClick={() => handleSearch(term)}
                       className="font-sans text-xs px-4 py-2.5 min-h-[44px] border border-border text-ink-muted rounded-sm hover:border-crimson hover:text-crimson transition-colors"
                     >

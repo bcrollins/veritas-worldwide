@@ -82,6 +82,7 @@ assert(home.includes('to="/read"'), 'Home Read hub CTA required')
 
 // Search empty-state hubs
 assert(search.includes('data-testid="search-empty-hubs"') || search.includes('search-empty-state'), 'Search empty hub destinations required')
+assert(search.includes('data-testid="search-idle-hubs"') || search.includes('search-idle-state'), 'Search idle hub destinations required')
 assert(search.includes('to="/content-pack"'), 'Search empty includes research pack')
 assert(search.includes('to="/profiles"'), 'Search empty includes profiles')
 
