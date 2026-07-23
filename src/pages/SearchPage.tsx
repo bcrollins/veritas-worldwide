@@ -5,7 +5,15 @@ import { chapterMeta } from '../data/chapterMeta'
 import { allArticles as articles, CATEGORY_META } from '../data/articles'
 import { PROFILES, getProfilePhoto } from '../data/profileData'
 import { getTopicHubsForChapter, topicHubs } from '../data/topicHubs'
-import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAME } from '../lib/seo'
+import {
+  setMetaTags,
+  clearMetaTags,
+  setJsonLd,
+  removeJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+  SITE_NAME,
+} from '../lib/seo'
 import { trackSearch } from '../lib/ga4'
 import { scoreSearchPerformed } from '../lib/leadScoring'
 import { getScopedReadingHistory } from '../lib/readerState'
@@ -347,15 +355,26 @@ export default function SearchPage() {
       // Internal search UIs are thin/duplicate risk (Search Central: avoid indexing utility pages).
       url: `${SITE_URL}/search`,
       robots: 'noindex, follow',
+      imageAlt: 'Search The Record — Veritas Worldwide archive',
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'SearchResultsPage',
-      name: `Search | ${SITE_NAME}`,
-      url: `${SITE_URL}/search`,
-      isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
-    })
-    return () => { clearMetaTags(); removeJsonLd() }
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'SearchResultsPage',
+        name: `Search | ${SITE_NAME}`,
+        url: `${SITE_URL}/search`,
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Search', url: `${SITE_URL}/search` },
+      ]),
+    ])
+    return () => {
+      clearMetaTags()
+      removeJsonLd()
+    }
   }, [searchScope, totalChapters])
 
   useEffect(() => {

@@ -1026,6 +1026,7 @@ export default function ForumPage() {
       url: `${SITE_URL}/forum`,
       // Beta UGC shell — keep crawlable for product discovery but deprioritize thin threads
       robots: 'index, follow, max-image-preview:large, max-snippet:160',
+      imageAlt: 'Community Forum Beta — Veritas Worldwide',
     })
     setJsonLd([
       {

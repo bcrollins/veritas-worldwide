@@ -35,6 +35,7 @@ export default function AccessibilityPage() {
       description:
         'Accessibility statement for Veritas Worldwide — WCAG 2.1 AA commitment, inclusive design, and how to report barriers.',
       url: `${SITE_URL}/accessibility`,
+      imageAlt: 'Accessibility statement — Veritas Worldwide',
     })
     setJsonLd([
       {

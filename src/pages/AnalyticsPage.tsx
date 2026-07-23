@@ -955,6 +955,7 @@ export default function AnalyticsPage() {
       description:
         'Public readership analytics for The Record — lifetime readers, daily traffic, and geographic distribution as a transparency surface.',
       url: `${SITE_URL}/analytics`,
+      imageAlt: 'Reader Analytics — The Record, Veritas Worldwide',
     })
     setJsonLd([
       {

@@ -1,7 +1,16 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getInstitutePracticalTrackCounts, instituteResearchSources } from '../data/instituteCatalog'
-import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
+import {
+  clearMetaTags,
+  removeJsonLd,
+  setJsonLd,
+  setMetaTags,
+  breadcrumbJsonLd,
+  faqJsonLd,
+  SITE_NAME,
+  SITE_URL,
+} from '../lib/seo'
 
 const practicalTracks = getInstitutePracticalTrackCounts()
 
@@ -12,15 +21,42 @@ export default function InstituteMethodologyPage() {
       description:
         'How Veritas Institute builds a practical field manual and trade-course library from public safety guidance, licensing pathways, extension systems, and source-first editing.',
       url: `${SITE_URL}/institute/methodology`,
+      imageAlt: 'Veritas Institute methodology — source-first practical skills',
     })
-    setJsonLd({
-      '@context': 'https://schema.org',
-      '@type': 'AboutPage',
-      name: 'Veritas Institute Methodology',
-      url: `${SITE_URL}/institute/methodology`,
-      description:
-        'An explanation of the research and editorial method used to build the Veritas Institute field manual and practical course library.',
-    })
+    setJsonLd([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        name: 'Veritas Institute Methodology',
+        url: `${SITE_URL}/institute/methodology`,
+        description:
+          'An explanation of the research and editorial method used to build the Veritas Institute field manual and practical course library.',
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+        publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+      },
+      breadcrumbJsonLd([
+        { name: 'The Record', url: SITE_URL },
+        { name: 'Veritas Institute', url: `${SITE_URL}/institute` },
+        { name: 'Methodology', url: `${SITE_URL}/institute/methodology` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'How does Veritas Institute choose topics?',
+          answer:
+            'Topics start from durable public need—household failures, roadside failures, emergency basics, repair literacy, and trade pathways with clear real-world use—then anchor to public safety, extension, licensing, and labor guidance.',
+        },
+        {
+          question: 'Is Institute content the same as DIY entertainment?',
+          answer:
+            'No. High-stakes medical, electrical, gas, structural, and legal matters are never presented as casual DIY. The fastest answer still has to be a defensible, source-backed answer.',
+        },
+        {
+          question: 'Where do Institute sources come from?',
+          answer:
+            'Public safety agencies, extension systems, licensing boards, manufacturers, utilities, labor guidance, and accredited training routes. See the institute methodology page for the editorial rules.',
+        },
+      ]),
+    ])
 
     return () => {
       clearMetaTags()

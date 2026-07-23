@@ -82,6 +82,7 @@ export default function SourcesPage() {
       description:
         'Master bibliography and verification library for The Record. Every chapter source and direct link is open to every reader.',
       url: `${SITE_URL}/sources`,
+      imageAlt: 'Sources & bibliography — The Record verification library',
     })
     setJsonLd([
       {

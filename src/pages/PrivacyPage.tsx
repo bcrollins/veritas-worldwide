@@ -26,6 +26,7 @@ export default function PrivacyPage() {
       description:
         'How Veritas Worldwide collects, uses, and protects your information. Minimal analytics, no ads, no data sales.',
       url: `${SITE_URL}/privacy`,
+      imageAlt: 'Privacy Policy — Veritas Worldwide',
     })
     setJsonLd([
       {

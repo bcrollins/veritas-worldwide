@@ -26,6 +26,7 @@ export default function TermsPage() {
       description:
         'Terms of use for Veritas Worldwide. Free open access; content licensed under Creative Commons BY-NC-SA 4.0.',
       url: `${SITE_URL}/terms`,
+      imageAlt: 'Terms of Use — Veritas Worldwide',
     })
     setJsonLd([
       {
