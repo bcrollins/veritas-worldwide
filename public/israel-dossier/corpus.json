@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:03:44.336Z",
+  "generatedAt": "2026-07-23T09:04:16.607Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 134,
-    "timelineEvents": 122,
+    "incidents": 135,
+    "timelineEvents": 123,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 120,
+    "historicalWarCrimesPack": 121,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 74
+      "post-oct7": 75
     },
     "incidentsByTier": {
-      "verified": 132,
+      "verified": 133,
       "circumstantial": 2
     },
-    "childrenTagged": 110,
-    "civiliansTagged": 132,
+    "childrenTagged": 111,
+    "civiliansTagged": 133,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3388,6 +3388,28 @@
       "tags": [
         "disabled",
         "elderly",
+        "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-tent-flooding-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Displacement Camp Winter Flooding Pattern",
+      "description": "OCHA/UNRWA multi-source documentation of recurrent winter flooding of tent camps sheltering displaced civilians and children.",
+      "source": "OCHA / UNRWA / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-winter-tent-flooding-pattern-2023-2025",
+        "rafah-tent-camp-2024",
+        "gaza-evacuation-orders-pattern-2023-2024"
+      ],
+      "tags": [
+        "displacement",
+        "shelter",
+        "children",
         "civilians",
         "gaza"
       ]
@@ -8978,6 +9000,49 @@
           "type": "document",
           "label": "WFP public market updates",
           "url": "https://www.wfp.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-winter-tent-flooding-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Displacement Camp Winter Flooding Pattern (2023–2025)",
+      "date": "Winter 2023–2025 (flooding cohort)",
+      "location": "Gaza Strip tent / makeshift displacement camps",
+      "summary": "OCHA, UNRWA, and multi-source reporting document repeated winter flooding of tent and makeshift camps sheltering displaced civilians — soaking blankets, spoiling food, and driving respiratory and skin disease risk for children. Pattern card for weather-exposed displacement shelter failure as a civilian-harm multiplier.",
+      "evidence": "OCHA/UNRWA shelter situation reports and multi-outlet visual coverage establish multi-source camp flooding episodes. Exact household counts evolve; multi-source recurrent winter flooding of displacement shelters is the claim.",
+      "sources": [
+        {
+          "label": "OCHA shelter / displacement materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNRWA operational updates",
+          "url": "https://www.unrwa.org"
+        },
+        {
+          "label": "Multi-outlet Gaza tent flooding coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "photo-essay",
+          "label": "Multi-outlet tent camp coverage",
+          "url": "https://apnews.com"
         }
       ],
       "tier": "verified",
