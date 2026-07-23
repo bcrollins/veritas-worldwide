@@ -198,6 +198,30 @@ export default function MembershipPage() {
           <p className="font-body text-lg md:text-xl text-white/60 italic leading-relaxed max-w-2xl mx-auto mb-8">
             {TAGLINE} Membership funds document acquisition, reporting, and the infrastructure that keeps the core publication free to read.
           </p>
+          <nav
+            className="mb-8 flex flex-wrap justify-center gap-2"
+            aria-label="Also explore"
+            data-testid="membership-related-hubs"
+          >
+            <Link
+              to="/read"
+              className="inline-flex min-h-[44px] items-center rounded-full border border-white/20 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white/70 transition-colors hover:border-white/50 hover:text-white"
+            >
+              Read free archive
+            </Link>
+            <Link
+              to="/about"
+              className="inline-flex min-h-[44px] items-center rounded-full border border-white/20 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white/70 transition-colors hover:border-white/50 hover:text-white"
+            >
+              About
+            </Link>
+            <Link
+              to="/methodology"
+              className="inline-flex min-h-[44px] items-center rounded-full border border-white/20 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white/70 transition-colors hover:border-white/50 hover:text-white"
+            >
+              Methodology
+            </Link>
+          </nav>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm font-sans text-white/40 mb-10">
             <span>29 chapters published</span>

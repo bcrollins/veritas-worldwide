@@ -136,9 +136,45 @@ export default function AccessibilityPage() {
             <h1 className="text-3xl md:text-4xl font-display font-bold text-ink mb-3">
               Accessibility Statement
             </h1>
-            <p className="text-lg text-ink-muted mb-10 leading-relaxed border-b border-border pb-8">
+            <p className="text-lg text-ink-muted mb-6 leading-relaxed">
               Our commitment to making The Record accessible to every reader.
             </p>
+            <nav
+              className="mb-10 flex flex-wrap gap-2 border-b border-border pb-8"
+              aria-label="Related trust surfaces"
+              data-testid="accessibility-related-hubs"
+            >
+              <Link
+                to="/methodology"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Methodology
+              </Link>
+              <Link
+                to="/privacy"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Privacy
+              </Link>
+              <Link
+                to="/terms"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Terms
+              </Link>
+              <Link
+                to="/about"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                About
+              </Link>
+              <Link
+                to="/read"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+              >
+                Read
+              </Link>
+            </nav>
 
             <section id="standards" className="mb-10">
               <h2 className="text-xl font-display font-semibold text-ink mb-3">Standards</h2>
