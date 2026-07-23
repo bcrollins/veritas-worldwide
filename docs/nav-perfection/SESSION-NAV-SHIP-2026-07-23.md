@@ -145,3 +145,23 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 
 | `6e7c8d8` | shrink-0 CTA cluster |
 | recovery | **64 surface needles** |
+
+## Pure floor densification wave (post RelatedHubs)
+Locked after platformization so multi-agent densify cannot drift IA:
+- PRIMARY hub labels + exact 5 primaryLinks
+- MobileTabBar ≥5 destinations
+- Server soft-404 hub labels
+- Search idle/empty destinations
+- Home hub CTA destinations
+- NotFound secondary News/Methodology/Pack
+- Bookmarks empty Read+Search
+- Profiles strip Search+Dossiers+pack
+- Read TOC-by-part
+- Media Kit pack/about
+- Institute course/guide chips + excludePath
+- OSINT success recovery
+- AIPAC map recovery
+- ResearchHubChips + DossierHubSpokes labels
+
+**Live matrix (observed green while densify tip advances):**  
+`mobile-tab-bar` · `RelatedHubs` · `DossierHubSpokes` · `ResearchHubChips` · `home-hub-cta-row` · `search-idle/empty` · `not-found-hub-chips` · `sticky-membership-bar` · `server-soft-404` + 5 hub hrefs · health checks all true
