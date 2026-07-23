@@ -11835,6 +11835,88 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
   {
+    id: 'gaza-civilian-orthopedic-implant-shortage-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Orthopedic Implant and Fixation Shortage (Pattern)',
+    date: '2023–2025',
+    location: 'Gaza Strip hospitals',
+    summary:
+      'Multi-source medical reporting documents shortages of orthopedic implants and external fixators for blast fracture care—civilian disability and secondary infection multi-source documented under siege supply collapse.',
+    evidence:
+      'WHO emergency materials, multi-outlet hospital embeds, and medical NGO updates establish multi-source documentation of orthopedic supply collapse.',
+    sources: [
+      { label: 'WHO OPT emergency health', url: 'https://www.who.int/emergencies/situations/occupied-palestinian-territory' },
+      { label: 'MSF Palestine updates', url: 'https://www.msf.org/palestine' },
+      { label: 'AP / Reuters hospital packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Wire/NGO orthopedic trauma packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'WHO emergency health updates', url: 'https://www.who.int/emergencies/situations/occupied-palestinian-territory' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+  {
+    id: 'israel-hostages-forced-to-dig-tunnels-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Hostages Forced into Labor (Pattern)',
+    date: '2023–2025',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-outlet investigations document forced labor of civilian captives, including digging and carrying under threat—multi-party documentation of captive abuse.',
+    evidence:
+      'Released-hostage testimony packages and multi-outlet investigations establish multi-source documentation of forced labor of civilian hostages.',
+    sources: [
+      { label: 'AP / Reuters released-hostage packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT / multi-outlet hostage investigations', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on captive treatment', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'investigation', label: 'Multi-outlet forced-labor investigation packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'document', label: 'UN documentation on captive treatment', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+  {
+    id: 'west-bank-settler-destroying-greenhouses-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Settler Destruction of Civilian Greenhouses (Pattern)',
+    date: '2023–2025',
+    location: 'West Bank agricultural communities',
+    summary:
+      'B’Tselem and multi-outlet documentation shows settlers destroying Palestinian greenhouses and irrigation—civilian food production infrastructure multi-source filmed and reported.',
+    evidence:
+      'B’Tselem documentation, OCHA agricultural-livelihood notes, and multi-outlet reporting establish multi-source documentation of greenhouse destruction.',
+    sources: [
+      { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem greenhouse-destruction video packages', url: 'https://www.btselem.org/video' },
+      { type: 'document', label: 'OCHA humanitarian updates', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
     id: 'gaza-civilian-oxygen-plant-strike-pattern-2023-2025',
     era: 'post-oct7',
     targetsCivilians: true,

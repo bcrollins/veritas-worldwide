@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T12:37:31.312Z"
+    "generatedAt": "2026-07-23T12:37:53.491Z"
   },
   "counts": {
     "incidentsWithVideoAndCivilians": 67,
     "viPackCards": 48,
-    "totalIncidents": 945
+    "totalIncidents": 946
   },
   "incidents": [
     {
@@ -283,8 +283,8 @@
       ]
     },
     {
-      "id": "gaza-civilian-oxygen-plant-strike-pattern-2023-2025",
-      "title": "Medical Oxygen and Gas Supply Disruptions (Pattern)",
+      "id": "gaza-civilian-orthopedic-implant-shortage-pattern-2023-2025",
+      "title": "Orthopedic Implant and Fixation Shortage (Pattern)",
       "date": "2023–2025",
       "location": "Gaza Strip hospitals",
       "tier": "verified",
@@ -314,7 +314,7 @@
       "multimedia": [
         {
           "type": "video",
-          "label": "Wire/NGO hospital oxygen crisis packages",
+          "label": "Wire/NGO orthopedic trauma packages",
           "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
@@ -325,10 +325,10 @@
       ]
     },
     {
-      "id": "israel-hostages-starvation-in-captivity-pattern-2023-2025",
-      "title": "Hostage Starvation and Severe Food Denial (Pattern)",
+      "id": "west-bank-settler-destroying-greenhouses-pattern-2023-2025",
+      "title": "Settler Destruction of Civilian Greenhouses (Pattern)",
       "date": "2023–2025",
-      "location": "Gaza Strip captivity sites",
+      "location": "West Bank agricultural communities",
       "tier": "verified",
       "targetsCivilians": true,
       "targetsChildren": true,
@@ -337,42 +337,28 @@
       },
       "sources": [
         {
-          "label": "AP / Reuters released-hostage packages",
-          "url": "https://apnews.com/hub/israel-hamas-war"
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
         },
         {
-          "label": "NYT / multi-outlet hostage investigations",
-          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
         },
         {
-          "label": "OHCHR materials on captive treatment",
-          "url": "https://www.ohchr.org/"
-        },
-        {
-          "label": "Israeli multi-outlet medical follow-ups (via wires)",
-          "url": "https://www.reuters.com/world/middle-east/"
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
         }
       ],
       "multimedia": [
         {
-          "type": "investigation",
-          "label": "Multi-outlet hostage condition packages",
-          "url": "https://apnews.com/hub/israel-hamas-war"
-        },
-        {
           "type": "video",
-          "label": "Authenticated release appearance packages",
-          "url": "https://apnews.com/hub/israel-hamas-war"
-        },
-        {
-          "type": "investigation",
-          "label": "Multi-outlet hostage investigation packages",
-          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+          "label": "B’Tselem greenhouse-destruction video packages",
+          "url": "https://www.btselem.org/video"
         },
         {
           "type": "document",
-          "label": "UN documentation on captive treatment",
-          "url": "https://www.ohchr.org/"
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org/"
         }
       ]
     },

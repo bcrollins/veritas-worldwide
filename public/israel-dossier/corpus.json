@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T12:37:31.312Z",
+  "generatedAt": "2026-07-23T12:37:53.491Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 945,
+    "incidents": 946,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 887,
+    "historicalWarCrimesPack": 890,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 30,
-      "post-oct7": 880
+      "post-oct7": 881
     },
     "incidentsByTier": {
-      "verified": 943,
+      "verified": 944,
       "circumstantial": 2
     },
-    "childrenTagged": 895,
-    "civiliansTagged": 943,
+    "childrenTagged": 896,
+    "civiliansTagged": 944,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -35393,21 +35393,20 @@
       }
     },
     {
-      "id": "gaza-civilian-oxygen-plant-strike-pattern-2023-2025",
+      "id": "gaza-civilian-orthopedic-implant-shortage-pattern-2023-2025",
       "era": "post-oct7",
       "targetsCivilians": true,
       "targetsChildren": true,
       "relatedProfileIds": [],
       "relatedMoneyNodeIds": [
-        "oct7-emergency-arms-surge",
-        "fmf-weapons"
+        "oct7-emergency-arms-surge"
       ],
       "legalStatus": "multi-source-investigation",
-      "title": "Medical Oxygen and Gas Supply Disruptions (Pattern)",
+      "title": "Orthopedic Implant and Fixation Shortage (Pattern)",
       "date": "2023–2025",
       "location": "Gaza Strip hospitals",
-      "summary": "Multi-outlet and WHO reporting documents oxygen and medical-gas shortages after strikes and siege conditions—civilian patient deaths from oxygen failure multi-source reported alongside hospital functionality collapse.",
-      "evidence": "WHO emergency health updates, multi-outlet hospital embeds, and medical NGO materials establish multi-source documentation of oxygen/medical-gas crisis conditions.",
+      "summary": "Multi-source medical reporting documents shortages of orthopedic implants and external fixators for blast fracture care—civilian disability and secondary infection multi-source documented under siege supply collapse.",
+      "evidence": "WHO emergency materials, multi-outlet hospital embeds, and medical NGO updates establish multi-source documentation of orthopedic supply collapse.",
       "sources": [
         {
           "label": "WHO OPT emergency health",
@@ -35429,7 +35428,7 @@
       "multimedia": [
         {
           "type": "video",
-          "label": "Wire/NGO hospital oxygen crisis packages",
+          "label": "Wire/NGO orthopedic trauma packages",
           "url": "https://apnews.com/hub/israel-hamas-war"
         },
         {
@@ -35444,18 +35443,18 @@
       }
     },
     {
-      "id": "israel-hostages-starvation-in-captivity-pattern-2023-2025",
+      "id": "israel-hostages-forced-to-dig-tunnels-pattern-2023-2025",
       "era": "post-oct7",
       "targetsCivilians": true,
       "targetsChildren": true,
       "relatedProfileIds": [],
       "relatedMoneyNodeIds": [],
       "legalStatus": "multi-source-investigation",
-      "title": "Hostage Starvation and Severe Food Denial (Pattern)",
+      "title": "Hostages Forced into Labor (Pattern)",
       "date": "2023–2025",
       "location": "Gaza Strip captivity sites",
-      "summary": "Released hostages and multi-outlet investigations document severe food denial and starvation conditions for civilian captives—multi-party documentation alongside Gaza wartime famine-risk packages.",
-      "evidence": "Released-hostage testimony, multi-outlet investigations, and medical assessments after release establish multi-source documentation of food denial in captivity.",
+      "summary": "Released-hostage testimony and multi-outlet investigations document forced labor of civilian captives, including digging and carrying under threat—multi-party documentation of captive abuse.",
+      "evidence": "Released-hostage testimony packages and multi-outlet investigations establish multi-source documentation of forced labor of civilian hostages.",
       "sources": [
         {
           "label": "AP / Reuters released-hostage packages",
@@ -35477,23 +35476,62 @@
       "multimedia": [
         {
           "type": "investigation",
-          "label": "Multi-outlet hostage condition packages",
+          "label": "Multi-outlet forced-labor investigation packages",
           "url": "https://apnews.com/hub/israel-hamas-war"
-        },
-        {
-          "type": "video",
-          "label": "Authenticated release appearance packages",
-          "url": "https://apnews.com/hub/israel-hamas-war"
-        },
-        {
-          "type": "investigation",
-          "label": "Multi-outlet hostage investigation packages",
-          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
         },
         {
           "type": "document",
           "label": "UN documentation on captive treatment",
           "url": "https://www.ohchr.org/"
+        },
+        {
+          "type": "investigation",
+          "label": "Multi-outlet hostage investigation packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-greenhouses-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Settler Destruction of Civilian Greenhouses (Pattern)",
+      "date": "2023–2025",
+      "location": "West Bank agricultural communities",
+      "summary": "B’Tselem and multi-outlet documentation shows settlers destroying Palestinian greenhouses and irrigation—civilian food production infrastructure multi-source filmed and reported.",
+      "evidence": "B’Tselem documentation, OCHA agricultural-livelihood notes, and multi-outlet reporting establish multi-source documentation of greenhouse destruction.",
+      "sources": [
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem greenhouse-destruction video packages",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "document",
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org/"
         }
       ],
       "tier": "verified",
