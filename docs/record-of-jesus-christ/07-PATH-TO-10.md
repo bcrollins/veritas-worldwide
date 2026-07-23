@@ -1,12 +1,12 @@
 # Path to 10.0 — Record of Jesus Christ Surface
 
-**Current verified baseline (2026-07-23 Interval 12 / Wave 9):** ~9.35 / 10 for core evidentiary surface.
+**Current verified baseline (2026-07-23 Interval 13 / Wave 10):** ~9.4 / 10 for core evidentiary surface.
 
 | Dimension | Score | Notes |
 |-----------|------:|-------|
 | Evidence rigor / tiers | 9.4 | Seven-tier + proofVsConcept on every claim |
 | Citation integrity | 9.0 | Primary/peer/critical-edition paths; ECM/CBGM + Comma + Byzantine-priority + orthodox-corruption debate |
-| Completeness of corpus | 9.1 | 182 claims waves 3–9 (Elephantine, Kuntillet, Magdala synagogue, structure formation) |
+| Completeness of corpus | 9.1 | 191 claims waves 3–10 (Elephantine, Kuntillet, Magdala synagogue, structure formation) |
 | Researcher tools | 9.1 | JSON/CSV export, cite-as, PDF, corpus.json, Dataset schema, HowTo |
 | Discoverability | 9.05 | Home card 170+, llms 180+, sitemap, OG, FAQ/Book/HowTo/Dataset + NT figure |
 | A11y / print | 8.5 | Skip link, 44px targets, print CSS |
