@@ -2357,6 +2357,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0, injured: 1000 },
   },
 
+  {
+    id: 'gaza-starvation-ipc-phases-2024-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden', 'antony-blinken'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza IPC Famine Phases — Multi-Source Food Security Floor (2024–2025)',
+    date: 'March 2024 – 2025 (IPC assessment windows)',
+    location: 'Gaza Strip (IPC analysis units)',
+    summary:
+      'Integrated Food Security Phase Classification (IPC) multi-partner assessments documented catastrophic food insecurity and famine-risk phases across Gaza governorates during 2024–2025. Distinct from the WFP starvation card — this isolates the IPC phase methodology floor used by UN agencies and donors.',
+    evidence:
+      'IPC partnership reports (FAO/WFP/UNICEF and technical partners), multi-source nutritional surveys, and UN humanitarian appeals establish phase classifications. Exact phase boundaries are contested by parties; multi-source IPC catastrophic-phase findings are the claim.',
+    sources: [
+      { label: 'IPC partnership public reports', url: 'https://www.ipcinfo.org' },
+      { label: 'WFP Gaza emergency materials', url: 'https://www.wfp.org' },
+      { label: 'UN OCHA food security updates', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'IPC public materials', url: 'https://www.ipcinfo.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3311,6 +3338,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-amputations-children-pattern-2023-2025', 'gaza-health-system-collapse-2023-2025', 'gaza-children-killed-pattern-2023-2025'],
     tags: ['children', 'health', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-ipc-famine-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'IPC Famine-Risk Phases — Gaza Food Security Floor',
+    description: 'IPC multi-partner assessments document catastrophic food insecurity phases across Gaza.',
+    source: 'IPC / WFP / OCHA',
+    sourceUrl: 'https://www.ipcinfo.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-starvation-ipc-phases-2024-2025', 'world-food-programme-gaza-starvation-2024', 'starvation-aid-blockade'],
+    tags: ['starvation', 'famine', 'children', 'civilians', 'gaza'],
   },
 
 ]
