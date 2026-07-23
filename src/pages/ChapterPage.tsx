@@ -860,7 +860,11 @@ export default function ChapterPage() {
         url: `${SITE_URL}/chapter/${chapter.id}`,
         type: 'article',
         image: chapterOgImage,
+        imageAlt:
+          chapter.heroImage?.alt ||
+          `${chapter.title} — documentary chapter cover, Veritas Worldwide`,
         publishedTime: chapter.publishDate,
+        modifiedTime: chapter.publishDate,
         author: chapter.author,
         section: 'Documentary History',
         tags: chapter.keywords,

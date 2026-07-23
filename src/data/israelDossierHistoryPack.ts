@@ -2762,6 +2762,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-agricultural-land-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Agricultural Land Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (agriculture cohort)',
+    location: 'Gaza Strip farmland / orchards / greenhouses',
+    summary:
+      'FAO, UNOSAT, and multi-source satellite reporting document majority damage or destruction of Gaza cropland, orchards, and greenhouse infrastructure during the war — collapsing local food production that civilians (including children) depend on alongside aid. Pattern card for agricultural system destruction as a civilian-harm multiplier distinct from bakery/IPC starvation cards.',
+    evidence:
+      'FAO geospatial assessments, UNOSAT cropland damage analyses, and multi-source satellite/field reporting establish multi-source majority agricultural land damage. Exact percentages evolve by governorate and date; multi-source system-scale cropland/orchard destruction is the claim.',
+    sources: [
+      { label: 'FAO geospatial / agricultural damage assessments', url: 'https://www.fao.org' },
+      { label: 'UNOSAT satellite damage analyses', url: 'https://unosat.org' },
+      { label: 'OCHA humanitarian access / food-system materials', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'FAO public damage materials', url: 'https://www.fao.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3911,6 +3938,23 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-polio-outbreak-pattern-2024', 'gaza-water-sanitation-collapse-2023-2025', 'gaza-health-system-collapse-2023-2025'],
     tags: ['children', 'disease', 'health', 'polio', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-agriculture-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Agricultural Land Destruction Pattern',
+    description: 'FAO/UNOSAT multi-source documentation of majority cropland, orchard, and greenhouse damage collapsing local food production.',
+    source: 'FAO / UNOSAT / OCHA',
+    sourceUrl: 'https://www.fao.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-agricultural-land-destruction-pattern-2023-2025',
+      'gaza-bakeries-food-system-collapse-2023-2025',
+      'gaza-starvation-ipc-phases-2024-2025',
+    ],
+    tags: ['agriculture', 'food', 'civilians', 'children', 'gaza'],
   },
 
 ]

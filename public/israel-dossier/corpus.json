@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:33:03.927Z",
+  "generatedAt": "2026-07-23T08:46:30.119Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 117,
-    "timelineEvents": 105,
+    "incidents": 118,
+    "timelineEvents": 106,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 103,
+    "historicalWarCrimesPack": 104,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 57
+      "post-oct7": 58
     },
     "incidentsByTier": {
-      "verified": 115,
+      "verified": 116,
       "circumstantial": 2
     },
-    "childrenTagged": 97,
-    "civiliansTagged": 115,
+    "childrenTagged": 98,
+    "civiliansTagged": 116,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3098,6 +3098,28 @@
         "settler-violence",
         "west-bank",
         "pattern-record"
+      ]
+    },
+    {
+      "id": "tl-gaza-agriculture-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Agricultural Land Destruction Pattern",
+      "description": "FAO/UNOSAT multi-source documentation of majority cropland, orchard, and greenhouse damage collapsing local food production.",
+      "source": "FAO / UNOSAT / OCHA",
+      "sourceUrl": "https://www.fao.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-agricultural-land-destruction-pattern-2023-2025",
+        "gaza-bakeries-food-system-collapse-2023-2025",
+        "gaza-starvation-ipc-phases-2024-2025"
+      ],
+      "tags": [
+        "agriculture",
+        "food",
+        "civilians",
+        "children",
+        "gaza"
       ]
     },
     {
@@ -7919,6 +7941,50 @@
           "type": "document",
           "label": "OCHA public updates",
           "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-agricultural-land-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Agricultural Land Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (agriculture cohort)",
+      "location": "Gaza Strip farmland / orchards / greenhouses",
+      "summary": "FAO, UNOSAT, and multi-source satellite reporting document majority damage or destruction of Gaza cropland, orchards, and greenhouse infrastructure during the war — collapsing local food production that civilians (including children) depend on alongside aid. Pattern card for agricultural system destruction as a civilian-harm multiplier distinct from bakery/IPC starvation cards.",
+      "evidence": "FAO geospatial assessments, UNOSAT cropland damage analyses, and multi-source satellite/field reporting establish multi-source majority agricultural land damage. Exact percentages evolve by governorate and date; multi-source system-scale cropland/orchard destruction is the claim.",
+      "sources": [
+        {
+          "label": "FAO geospatial / agricultural damage assessments",
+          "url": "https://www.fao.org"
+        },
+        {
+          "label": "UNOSAT satellite damage analyses",
+          "url": "https://unosat.org"
+        },
+        {
+          "label": "OCHA humanitarian access / food-system materials",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "FAO public damage materials",
+          "url": "https://www.fao.org"
         }
       ],
       "tier": "verified",
