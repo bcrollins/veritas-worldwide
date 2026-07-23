@@ -67,7 +67,7 @@ if (!corpusRes.ok) {
   // Growth floors (≥198 post-wave11) are soft during Railway lag so identity suite stays green.
   const HARD_CLAIM_FLOOR = Number(process.env.LIVE_ANONYMITY_HARD_CLAIM_FLOOR || 160)
   // Soft floor tracks latest shipped wave (wave13 ≈ 218); WARN only on lag.
-  const SOFT_CLAIM_FLOOR = Number(process.env.LIVE_ANONYMITY_SOFT_CLAIM_FLOOR || 218)
+  const SOFT_CLAIM_FLOOR = Number(process.env.LIVE_ANONYMITY_SOFT_CLAIM_FLOOR || 227)
   if (typeof corpus?.claimCount === 'number' && corpus.claimCount < HARD_CLAIM_FLOOR) {
     failures.push(
       `corpus claimCount catastrophically low: ${corpus.claimCount} (hard floor ${HARD_CLAIM_FLOOR})`,
