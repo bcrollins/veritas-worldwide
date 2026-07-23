@@ -803,6 +803,32 @@ assert(
     prerender.includes('What is the Veritas Community Forum?'),
   'prerender must emit Forum FAQPage',
 )
+
+// #23 — chapter one-tap primary source open + analytics
+const chapterPageSources = read('src/pages/ChapterPage.tsx')
+assert(
+  chapterPageSources.includes('trackSourceClick') || chapterPageSources.includes('PrimarySourceLink'),
+  'ChapterPage must one-tap open primary sources with analytics (trackSourceClick/PrimarySourceLink)',
+)
+assert(
+  chapterPageSources.includes('Open primary source') || chapterPageSources.includes('PrimarySourceLink'),
+  'ChapterPage sources must expose primary-source open control',
+)
+// #66 — personal timeline is local-only: no network surface
+assert(
+  !/\bfetch\s*\(/.test(personalTimelinePage) &&
+    !personalTimelinePage.includes('XMLHttpRequest') &&
+    !personalTimelinePage.includes('navigator.sendBeacon'),
+  'PersonalTimelinePage must not call fetch/XHR/beacon (localStorage only)',
+)
+// #5 — server injects noindex on prerender path for OPSEC surfaces (not SPA-only)
+assert(
+  server.includes('injectNoindexShell') &&
+    server.includes('isNoindexPublicPath') &&
+    /isNoindexPublicPath[\s\S]{0,400}injectNoindexShell/.test(server),
+  'server must inject noindex into prerender HTML for /bernie and other noindex paths',
+)
+
 const archiveTimelinePage = read('src/pages/TimelinePage.tsx')
 assert(archiveTimelinePage.includes('faqJsonLd'), 'TimelinePage must emit FAQPage schema')
 const analyticsPage = read('src/pages/AnalyticsPage.tsx')

@@ -51,7 +51,7 @@ Area: OPSEC · Anchor: OPSEC · Score: 8.0→9.5 · PRIORITY: 9.5 · Launch-crit
 Problem: Product surface with residual surname OPSEC risk.  
 Evidence: robots Disallow + noindex live.  
 WHAT TO IMPLEMENT: Pure assert robots+noindex+bot-meta; no personal FB URLs; live probe.  
-Status: **Implemented** (2026-07-23) — pure robots+noindex+bot-meta floors; live-anonymity probes /bernie X-Robots + HTML noindex + identity FORBIDDEN; SPA shell injects noindex meta for **all UAs** (not bot-only).
+Status: **Implemented** (2026-07-23) — prerender path injectNoindexShell for /bernie+noindex surfaces (all UAs); X-Robots + live anonymity probe; pure floors.
 
 ## #6 — OSINT order PII never in git or public dist
 Area: OPSEC · Anchor: OPSEC · Score: 8.5→10.0 · PRIORITY: 10 · Launch-critical: yes  
@@ -126,7 +126,7 @@ WHAT TO IMPLEMENT: Sync `evidenceTierFilter` to query param; deep-linkable. Stat
 
 ## #23 — Chapter one-tap open primary source (new tab + analytics)
 Area: Researcher · Anchor: NYT · Score: 8.0→9.4 · PRIORITY: 8.5 · Launch-critical: yes  
-WHAT TO IMPLEMENT: Primary source button on evidence cards with `trackPrimarySourceOpen`. Status: **Pending**
+WHAT TO IMPLEMENT: Primary source button on evidence cards with `trackPrimarySourceOpen`. Status: **Implemented** (2026-07-23) — PrimarySourceLink + trackSourceClick on chapter sources; min 44px touch; pure floors.
 
 ## #24 — Chapter source tag chips filter
 Area: Researcher · Anchor: ProPublica · Score: 7.5→9.0 · PRIORITY: 8 · Launch-critical: no  
@@ -298,7 +298,7 @@ Status: **Pending**
 
 ## #66 — Personal timeline never network fetch
 Area: OPSEC · Anchor: OPSEC · Score: 8.5→9.8 · PRIORITY: 9 · Launch-critical: yes  
-WHAT TO IMPLEMENT: Pure assert no fetch/XHR in PersonalTimelinePage. Status: **Pending**
+WHAT TO IMPLEMENT: Pure assert no fetch/XHR in PersonalTimelinePage. Status: **Implemented** (2026-07-23) — pure assert PersonalTimelinePage has no fetch/XHR/beacon (localStorage only).
 
 ## #67 — Sources page personal-timeline link labeled local-only
 Area: OPSEC · Anchor: OPSEC · Score: 8.0→9.2 · PRIORITY: 8 · Launch-critical: yes  

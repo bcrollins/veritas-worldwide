@@ -31,3 +31,12 @@
 - server.js injectNoindexShell all-UA for /bernie /admin transactional
 - ROC: sticky domain/query, multi-tier clear, filtered export, primary open, cite hygiene, empty CTA, URL deep-links
 - anonymity audit note updated
+
+## Interval 2 — /bernie prerender noindex + primary source open
+
+| Item | Ship proof | Anonymity audit |
+|------|------------|-----------------|
+| #5 | server injectNoindexShell on prerender noindex paths | Hardens first-paint OPSEC for all UAs |
+| #23 | ChapterPage PrimarySourceLink + trackSourceClick | N/A researcher utility |
+| #66 | pure: no fetch/XHR/beacon on PersonalTimelinePage | Hardens local-only researcher surface |
+

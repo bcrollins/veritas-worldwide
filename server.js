@@ -1836,6 +1836,22 @@ function isNoindexPublicPath(pathname) {
   return false
 }
 
+/** Force noindex in first-paint HTML for all UAs (prerender + SPA shell). */
+function injectNoindexShell(html) {
+  // Prevents index,follow default from being the last signal for scrapers that skip JS.
+  let out = String(html || '')
+  const noindexMeta = '<meta name="robots" content="noindex, nofollow" />'
+  if (/<meta[^>]+name=["']robots["'][^>]*>/i.test(out)) {
+    out = out.replace(/<meta[^>]+name=["']robots["'][^>]*>/i, noindexMeta)
+  } else if (out.includes('</head>')) {
+    out = out.replace('</head>', `    ${noindexMeta}\n  </head>`)
+  } else {
+    out = `${noindexMeta}\n${out}`
+  }
+  if (!/noindex/i.test(out)) out = noindexMeta + out
+  return out
+}
+
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next()
   if (req.path.startsWith('/api/') || path.extname(req.path)) return next()
@@ -1851,6 +1867,15 @@ app.use((req, res, next) => {
   // Prerender HTML may already include meta robots=noindex; header is defense-in-depth for crawlers.
   if (isNoindexPublicPath(route)) {
     res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+    // Critical OPSEC: prerender shells often inherit index,follow from templates.
+    // Rewrite robots meta for all UAs (not only bots) so scrapers never see indexable first paint.
+    try {
+      const html = fs.readFileSync(filePath, 'utf8')
+      res.type('html')
+      return res.send(injectNoindexShell(html))
+    } catch {
+      // Fall through to sendFile if read fails
+    }
   }
   res.sendFile(filePath)
 })
@@ -2423,29 +2448,7 @@ function buildNotFoundHtml() {
 // Bot meta runs before SPA shell, but defers unknown paths so soft-404 still wins for crawlers.
 registerBotMetaInjection({ app, rootDir: __dirname, isKnownRoute: isKnownSpaRoute })
 
-function injectNoindexShell(html) {
-  // Force noindex in first-paint HTML for all UAs (not only bot-meta).
-  // Prevents index,follow default in dist/index.html from being the last crawler signal
-  // for scrapers that skip JS or ignore X-Robots-Tag alone.
-  let out = String(html || '')
-  const noindexMeta = '<meta name="robots" content="noindex, nofollow" />'
-  // Match robots meta even when attributes are reordered or multi-value content is long.
-  if (/<meta[^>]+name=["']robots["'][^>]*>/i.test(out)) {
-    out = out.replace(
-      /<meta[^>]+name=["']robots["'][^>]*>/i,
-      noindexMeta,
-    )
-  } else if (out.includes('</head>')) {
-    out = out.replace('</head>', `    ${noindexMeta}\n  </head>`)
-  } else {
-    out = `${noindexMeta}\n${out}`
-  }
-  // Hard guarantee: body must contain the token verify:live-anonymity checks.
-  if (!/noindex/i.test(out)) {
-    out = noindexMeta + out
-  }
-  return out
-}
+// injectNoindexShell defined above with isNoindexPublicPath (shared prerender + SPA).
 
 app.use((req, res) => {
   // SPA shell must never be immutably cached (deploy-safe HTML).

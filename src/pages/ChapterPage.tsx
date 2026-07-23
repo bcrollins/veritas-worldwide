@@ -16,7 +16,14 @@ import { useScrollRestore } from '../hooks/useScrollRestore'
 import { useReadingHistory } from '../hooks/useReadingHistory'
 import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { estimateReadingTime } from '../lib/readingTime'
-import { trackShare, trackDownload, trackReadingMilestone, trackChapterComplete } from '../lib/ga4'
+import {
+  trackShare,
+  trackDownload,
+  trackReadingMilestone,
+  trackChapterComplete,
+  trackSourceClick,
+} from '../lib/ga4'
+import PrimarySourceLink from '../components/PrimarySourceLink'
 import { scoreChapterViewed, scorePdfDownloaded } from '../lib/leadScoring'
 import ChapterPDF from '../components/ChapterPDF'
 import FloatingShareBar from '../components/engagement/FloatingShareBar'
@@ -1321,14 +1328,18 @@ export default function ChapterPage() {
                         {source.url && (
                           <>
                             {' '}
-                            <a
+                            <PrimarySourceLink
                               href={source.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-crimson hover:text-crimson-dark underline underline-offset-2"
+                              title={source.text}
+                              className="inline-flex min-h-[44px] items-center text-crimson hover:text-crimson-dark underline underline-offset-2"
+                              showArchiveBadge={false}
+                              onClick={() =>
+                                trackSourceClick(source.url!, source.text, chapter.id)
+                              }
+                              data-testid="chapter-primary-source-open"
                             >
-                              View Source &rarr;
-                            </a>
+                              Open primary source →
+                            </PrimarySourceLink>
                           </>
                         )}
                       </span>
