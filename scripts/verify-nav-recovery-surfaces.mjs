@@ -721,4 +721,15 @@ for (const rel of [
   assert(body.includes('ResearchHubChips') && body.includes('excludePath='), `${rel} excludePath`)
 }
 
+
+// Institute catalog + methodology + book excludePath
+for (const rel of [
+  'src/pages/InstitutePage.tsx',
+  'src/pages/InstituteMethodologyPage.tsx',
+  'src/pages/InstituteBookPage.tsx',
+]) {
+  const body = read(rel)
+  assert(body.includes('ResearchHubChips') && body.includes('excludePath='), `${rel} excludePath`)
+}
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
