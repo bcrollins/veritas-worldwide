@@ -44,6 +44,7 @@ export type SubscriptionSource =
   | 'institute_book'
   | 'newsletter_legacy_migration'
   | 'bible_history_page'
+  | 'comprehensive_profile'
 
 /* ── HubSpot Tracking Queue ───────────────────────────────────── */
 declare global {

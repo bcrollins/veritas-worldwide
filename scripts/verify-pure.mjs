@@ -31,6 +31,7 @@ const pure = [
   'verify-soft-404-gates.mjs',
   'verify-comprehensive-profile.mjs',
   'verify-docs-anonymity.mjs',
+  'verify-osint-attestation-gate.mjs',
   'verify-brand-kit.mjs',
   'verify-integrity-score.mjs',
 ]

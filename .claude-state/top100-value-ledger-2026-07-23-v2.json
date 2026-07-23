@@ -15,8 +15,8 @@
   },
   "summary": "Wave 2: $499 Comprehensive Online Profile + OPSEC residual + integrity densify queue.",
   "statusCounts": {
-    "Implemented": 81,
-    "Pending": 19
+    "Implemented": 88,
+    "Pending": 12
   },
   "items": [
     {
@@ -407,8 +407,14 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending",
-      "blocker": "Stripe secret on Railway"
+      "status": "Implemented",
+      "blocker": "Stripe secret on Railway",
+      "shippedIn": "wave-osint-a11y-ops-2026-07-23",
+      "liveProof": {
+        "stripeConfigured": true,
+        "checkoutReady": true,
+        "note": "health endpoint 2026-07-23"
+      }
     },
     {
       "rank": 21,
@@ -1400,7 +1406,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-osint-a11y-ops-2026-07-23"
     },
     {
       "rank": 74,
@@ -1454,7 +1461,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-osint-a11y-ops-2026-07-23"
     },
     {
       "rank": 77,
@@ -1510,7 +1518,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-osint-a11y-ops-2026-07-23"
     },
     {
       "rank": 80,
@@ -1528,7 +1537,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-osint-a11y-ops-2026-07-23"
     },
     {
       "rank": 81,
@@ -1678,7 +1688,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-osint-a11y-ops-2026-07-23"
     },
     {
       "rank": 89,
@@ -1847,7 +1858,8 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "neutral",
-      "status": "Pending"
+      "status": "Implemented",
+      "shippedIn": "wave-osint-a11y-ops-2026-07-23"
     },
     {
       "rank": 98,

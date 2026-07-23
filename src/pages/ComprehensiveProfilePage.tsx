@@ -18,6 +18,7 @@ import {
 import { trackCheckoutIntent, withCheckoutAttribution } from '../lib/conversionTracking'
 import { trackSupportClick } from '../lib/ga4'
 import { recordAnalyticsEvent } from '../lib/analytics'
+import { identifyContact } from '../lib/hubspot'
 import FontSizeToggle from '../components/FontSizeToggle'
 
 type IntakeState = {
@@ -189,6 +190,18 @@ export default function ComprehensiveProfilePage() {
           localStorage.setItem('veritas_checkout_amount', String(COMPREHENSIVE_PROFILE.priceUsd))
         } catch {
           /* ignore */
+        }
+        // Optional HubSpot lead mirror — email + service source only (no free-text purpose/notes in CRM props)
+        try {
+          identifyContact({
+            email: form.clientEmail.trim().toLowerCase(),
+            firstName: form.clientName.trim().split(/\s+/)[0] || undefined,
+            source: 'comprehensive_profile',
+            contentInterest: 'osint_service',
+            referrer: '/comprehensive-profile',
+          })
+        } catch {
+          /* HubSpot optional */
         }
       }
 
@@ -365,7 +378,7 @@ export default function ComprehensiveProfilePage() {
                   <span className="font-sans text-xs text-ink-muted">Your name</span>
                   <input
                     required
-                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink"
+                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink dark:border-white/20 dark:bg-obsidian dark:text-white"
                     value={form.clientName}
                     onChange={(e) => update('clientName', e.target.value)}
                     autoComplete="name"
@@ -376,7 +389,7 @@ export default function ComprehensiveProfilePage() {
                   <input
                     required
                     type="email"
-                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink"
+                    className="mt-1 w-full min-h-[44px] border border-border bg-parchment px-3 font-body text-sm text-ink dark:border-white/20 dark:bg-obsidian dark:text-white"
                     value={form.clientEmail}
                     onChange={(e) => update('clientEmail', e.target.value)}
                     autoComplete="email"
@@ -549,11 +562,15 @@ export default function ComprehensiveProfilePage() {
           <h2 className="font-display text-2xl font-bold text-ink mb-8 text-center">FAQ</h2>
           <div className="space-y-4">
             {PROFILE_FAQS.map((item) => (
-              <details key={item.q} className="border border-border bg-parchment/40 px-5 py-4 group">
-                <summary className="cursor-pointer font-display text-base font-semibold text-ink min-h-[44px] flex items-center list-none">
+              <details
+                key={item.q}
+                name="osint-faq"
+                className="border border-border bg-parchment/40 px-5 py-4 group dark:border-white/15 dark:bg-white/5"
+              >
+                <summary className="cursor-pointer font-display text-base font-semibold text-ink min-h-[44px] flex items-center list-none rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson dark:text-white">
                   {item.q}
                 </summary>
-                <p className="font-body text-sm text-ink-muted leading-relaxed mt-3 pb-1">{item.a}</p>
+                <p className="font-body text-sm text-ink-muted leading-relaxed mt-3 pb-1 dark:text-white/70">{item.a}</p>
               </details>
             ))}
           </div>
