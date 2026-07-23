@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:56:22.558Z",
-  "claimCount": 561,
+  "generatedAt": "2026-07-23T11:00:10.963Z",
+  "claimCount": 570,
   "tierHistogram": {
-    "well_attested": 224,
-    "verified": 201,
+    "well_attested": 229,
+    "verified": 204,
     "contested": 47,
-    "interpretive": 59,
+    "interpretive": 60,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 25
@@ -80,6 +80,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave22.ts"
+    },
+    {
+      "id": "ane-black-obelisk-jehu-detail",
+      "claim": "The Black Obelisk of Shalmaneser III depicts a kneeling figure labeled as of Jehu of Israel paying tribute — a rare visual control for 9th-century Israelite kingship.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave52.ts"
     },
     {
       "id": "ane-bulla-baruch",
@@ -479,6 +486,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave38.ts"
+    },
+    {
+      "id": "arch-caesarea-theater",
+      "claim": "The Herodian/Roman theater at Caesarea Maritima is a major excavated entertainment structure documenting urban cultural architecture of the provincial capital.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave52.ts"
     },
     {
       "id": "arch-caiaphas-ossuary",
@@ -1244,6 +1258,13 @@
       "file": "src/data/recordOfJesusChristWave19.ts"
     },
     {
+      "id": "cosmo-supernova-ia-standard-candle",
+      "claim": "Type Ia supernovae serve as standardized candles for measuring cosmic distances and provided foundational evidence for late-time acceleration.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave52.ts"
+    },
+    {
       "id": "cosmo-sz-sunyaev-zeldovich",
       "claim": "The Sunyaev–Zel’dovich effect measures CMB spectral distortion from hot cluster gas and is used as a cluster-finding and cosmology probe complementary to X-ray and optical surveys.",
       "tier": "verified",
@@ -1501,6 +1522,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave27.ts"
+    },
+    {
+      "id": "ec-justin-trypho-limits",
+      "claim": "Justin’s Dialogue with Trypho is a constructed literary dialogue; it evidence mid-2nd-c. Christian scriptural argument but cannot be treated as a transcript of a single historical debate.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave52.ts"
     },
     {
       "id": "ec-marcion",
@@ -2042,6 +2070,13 @@
       "file": "src/data/recordOfJesusChristWave34.ts"
     },
     {
+      "id": "hj-parables-kingdom",
+      "claim": "Many parables are framed as kingdom-of-God teaching; historians widely treat parabolic teaching as characteristic of Jesus while debating authenticity of individual parables.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave52.ts"
+    },
+    {
       "id": "hj-passion-predictions",
       "claim": "Synoptic passion predictions (Jesus foretelling death/resurrection) are multiply present in the Gospels; historians disagree whether they are authentic forecasts, post-event vaticinia ex eventu, or mixed.",
       "tier": "contested",
@@ -2341,6 +2376,13 @@
       "tier": "interpretive",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave33.ts"
+    },
+    {
+      "id": "mod-crossan-historical-jesus-book",
+      "claim": "John Dominic Crossan’s The Historical Jesus (1991) was a landmark Jesus Seminar–era synthesis using inventory methods and open-commensality models — still a reference point for critique and engagement.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave52.ts"
     },
     {
       "id": "mod-crossan-open-commensality",
@@ -2847,6 +2889,13 @@
       "file": "src/data/recordOfJesusChristWave36.ts"
     },
     {
+      "id": "nc-origen-celsus-method",
+      "claim": "Using Origen’s Contra Celsum as a source for Celsus requires discounting Origen’s selection, paraphrase, and rebuttal framing when reconstructing the pagan critique.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave52.ts"
+    },
+    {
       "id": "nc-philo-silence-on-jesus",
       "claim": "Philo of Alexandria (d. c. 50 CE), a prolific Jewish writer overlapping Jesus’ lifetime regionally in the empire, never mentions Jesus — a silence that is expected given Philo’s Egyptian diaspora focus and genre, not a decisive non-existence proof.",
       "tier": "circumstantial",
@@ -3069,6 +3118,13 @@
       "tier": "well_attested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave40.ts"
+    },
+    {
+      "id": "nt-bohairic-coptic",
+      "claim": "The Bohairic Coptic version is a major Egyptian versional witness, later than Sahidic in many assessments, and remains valuable for the full versional apparatus.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave52.ts"
     },
     {
       "id": "nt-byzantine-priority",
@@ -3685,6 +3741,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave43.ts"
+    },
+    {
+      "id": "st-josephus-apion",
+      "claim": "Josephus’s Against Apion defends Jewish antiquity and customs against Greco-Roman critics — primary evidence of late first-century Jewish apologetic discourse.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave52.ts"
     },
     {
       "id": "st-josephus-biases",
