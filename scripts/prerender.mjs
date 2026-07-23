@@ -2644,6 +2644,66 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  if (route === '/media-kit') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Media Kit', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Can journalists use Veritas Worldwide logos and social assets?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. The Media Kit ZIP and individual assets are free for press, social media, and advocacy with attribution to Veritas Worldwide. Prefer vectors; do not recolor the seal outside brand tokens.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Where do I download the full brand kit?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Download the Ultimate Brand Kit ZIP from /media-kit or /brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip. The package includes logos, social banners, evidence-tier cards, and design tokens.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What is the press contact for Veritas Worldwide?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Press and rights inquiries: rights@veritasworldwide.com. Evidence taxonomy labels are Verified, Circumstantial, and Disputed — defined on the methodology page.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is /brand-kit a public page?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'No. /brand-kit is an asset tree (and admin console path). The public press surface is /media-kit; crawlers that hit /brand-kit are redirected there.',
+            },
+          },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'DataDownload',
+        name: 'Veritas Worldwide Ultimate Brand Kit',
+        encodingFormat: 'application/zip',
+        contentUrl: `${SITE_URL}/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip`,
+        description: 'Full logo, social, press template, and design token package for Veritas Worldwide Press.',
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {

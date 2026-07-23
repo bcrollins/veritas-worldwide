@@ -201,6 +201,17 @@ assert(
   membershipPage.includes('Does membership paywall The Record?'),
   'Membership FAQ must answer paywall concern for SERP/PAA',
 )
+assert(
+  prerender.includes("route === '/media-kit'") &&
+    prerender.includes('Can journalists use Veritas Worldwide logos'),
+  'prerender must emit Media Kit FAQPage for press discoverability',
+)
+const mediaKitPage = read('src/pages/MediaKitPage.tsx')
+assert(mediaKitPage.includes('faqJsonLd'), 'MediaKitPage must emit FAQPage schema')
+assert(
+  mediaKitPage.includes('Is /brand-kit a public page?'),
+  'Media Kit FAQ must clarify /brand-kit alias vs /media-kit',
+)
 assert(existsSync(join(root, 'docs/SEO-OPS-SCORECARD.md')), 'SEO ops scorecard + GSC runbook must exist')
 assert(existsSync(join(root, 'docs/SEO-AUDIT-50.md')), 'SEO 50-item audit must exist')
 

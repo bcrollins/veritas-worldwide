@@ -6,6 +6,7 @@ import {
   setJsonLd,
   setMetaTags,
   breadcrumbJsonLd,
+  faqJsonLd,
   newsMediaOrganizationJsonLd,
   SITE_NAME,
   SITE_URL,
@@ -144,6 +145,28 @@ export default function MediaKitPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Media Kit', url: `${SITE_URL}/media-kit` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'Can journalists use Veritas Worldwide logos and social assets?',
+          answer:
+            'Yes. The Media Kit ZIP and individual assets are free for press, social media, and advocacy with attribution to Veritas Worldwide. Prefer vectors; do not recolor the seal outside brand tokens.',
+        },
+        {
+          question: 'Where do I download the full brand kit?',
+          answer:
+            'Download the Ultimate Brand Kit ZIP from /media-kit or /brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip. The package includes logos, social banners, evidence-tier cards, and design tokens.',
+        },
+        {
+          question: 'What is the press contact for Veritas Worldwide?',
+          answer:
+            'Press and rights inquiries: rights@veritasworldwide.com. Evidence taxonomy labels are Verified, Circumstantial, and Disputed — defined on the methodology page.',
+        },
+        {
+          question: 'Is /brand-kit a public page?',
+          answer:
+            'No. /brand-kit is an asset tree (and admin console path). The public press surface is /media-kit; crawlers that hit /brand-kit are redirected there.',
+        },
       ]),
       {
         '@context': 'https://schema.org',
