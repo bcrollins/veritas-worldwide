@@ -2343,4 +2343,18 @@ assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'final ultimat
 assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'final ultimate Terms Membership')
 
 
+
+// RelatedHubs platform live green perpetual densify lock
+assert(surfaces.length >= 102, `perpetual surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'perpetual PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual emphasize')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perpetual soft-404')
+assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'perpetual search')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'perpetual home')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'perpetual Privacy Membership')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'perpetual Terms Membership')
+assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'perpetual A11Y Membership')
+assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'perpetual OSINT Dossiers')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
