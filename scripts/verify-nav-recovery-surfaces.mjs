@@ -150,6 +150,7 @@ const relatedPrimaryCount = (relatedPrimaryBlock[1].match(/to:/g) || []).length
 assert(relatedPrimaryCount === 5, `PRIMARY_RELATED_HUBS count ${relatedPrimaryCount} !== 5`)
 assert(relatedHubsSrc.includes("to: '/'") || relatedHubsSrc.includes('to: "/"'), 'PRIMARY includes Record /')
 assert(relatedHubsSrc.includes('/read') && relatedHubsSrc.includes('/search'), 'PRIMARY includes Read+Search')
+assert(read('src/pages/NotFoundPage.tsx').includes('PRIMARY_RELATED_HUBS'), 'NotFound reuses PRIMARY_RELATED_HUBS')
 // ResearchHubChips excludePath actually filters (not dead-true)
 const researchChipsSrc = read('src/components/ResearchHubChips.tsx')
 assert(researchChipsSrc.includes('if (c.to === excludePath) return false'), 'ResearchHubChips excludePath filters')

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { PRIMARY_RELATED_HUBS } from '../components/RelatedHubs'
 import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_URL } from '../lib/seo'
 
 /**
@@ -7,13 +8,7 @@ import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_UR
  * Server also returns HTTP 404 + X-Robots-Tag for unknown URLs (see server.js).
  * Hub chips mirror the ≤5 primary IA so recovery never dumps readers into a dead end.
  */
-const PRIMARY_HUBS = [
-  { to: '/', label: 'Record' },
-  { to: '/read', label: 'Read' },
-  { to: '/israel-dossier', label: 'Dossiers' },
-  { to: '/profiles', label: 'Profiles' },
-  { to: '/search', label: 'Search' },
-] as const
+const PRIMARY_HUBS = PRIMARY_RELATED_HUBS
 
 const SECONDARY = [
   { to: '/news', label: 'News' },
