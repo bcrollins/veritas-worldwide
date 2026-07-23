@@ -1397,4 +1397,16 @@ for (const name of relatedBreadthPages) {
 assert(relatedBreadthFinal >= 30, `RelatedHubs breadth final ${relatedBreadthFinal} < 30`)
 
 
+
+// Search empty and idle share SEARCH_RECOVERY_HUBS reaffirm
+const searchShareFinal = read('src/pages/SearchPage.tsx')
+const searchHubsUses = (searchShareFinal.match(/hubs=\{SEARCH_RECOVERY_HUBS\}/g) || []).length
+assert(searchHubsUses >= 2, `Search SEARCH_RECOVERY_HUBS uses ${searchHubsUses} < 2`)
+
+// Bookmarks header+empty share BOOKMARKS_HUBS reaffirm
+const bmShareFinal = read('src/pages/BookmarksPage.tsx')
+const bmHubsUses = (bmShareFinal.match(/hubs=\{BOOKMARKS_HUBS\}/g) || []).length
+assert(bmHubsUses >= 2, `Bookmarks BOOKMARKS_HUBS uses ${bmHubsUses} < 2`)
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
