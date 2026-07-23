@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:34:54.245Z",
+  "generatedAt": "2026-07-23T10:36:15.142Z",
   "count": 96,
   "profiles": [
     {
@@ -287,9 +287,9 @@
         "Civil Rights History",
         "Public Intellectual"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 52,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "les-wexner",
@@ -1213,9 +1213,9 @@
         "Washington Post Owner",
         "Tech Mogul"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "mark-zuckerberg",
@@ -1553,9 +1553,9 @@
         "Political Influence",
         "Businessman"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 62,
+      "integrityFalsehoods": 3,
+      "integrityHasDocket": true
     },
     {
       "id": "howard-kohr",

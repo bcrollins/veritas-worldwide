@@ -151,6 +151,9 @@ const required = [
   'leon-black',
   'rupert-murdoch',
   'jamie-dimon',
+  'charles-koch',
+  'jeff-bezos',
+  'alan-dershowitz',
 ];
 const scores = {};
 for (const id of required) {
@@ -1254,8 +1257,57 @@ for (const f of (dimonP.documentedFalsehoods || []).filter((x) => x.tier === 've
   if (f.statementUrl === f.debunkUrl) throw new Error('dimon dual-cite collision: ' + f.id);
 }
 
+
+// Charles Koch densify gate (n≥3)
+const koch = scores['charles-koch'];
+if (!koch || koch.n < 3) throw new Error('charles-koch needs ≥3 verified falsehoods, got ' + (koch?.n ?? 0));
+if (koch.score > 70) throw new Error('charles-koch score expected ≤70 after densify, got ' + koch.score);
+const kochP = getProfileBySlug('charles-koch');
+for (const id of [
+  'koch-no-climate-denial-funding-absolute',
+  'koch-americans-for-prosperity-grassroots-only-framing',
+  'koch-no-influence-on-state-legislation-absolute',
+]) {
+  if (!(kochP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('charles-koch missing docket id: ' + id);
+}
+for (const f of (kochP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('koch dual-cite collision: ' + f.id);
+}
+
+// Jeff Bezos densify gate (n≥3)
+const bezos = scores['jeff-bezos'];
+if (!bezos || bezos.n < 3) throw new Error('jeff-bezos needs ≥3 verified falsehoods, got ' + (bezos?.n ?? 0));
+if (bezos.score > 70) throw new Error('jeff-bezos score expected ≤70 after densify, got ' + bezos.score);
+const bezosP = getProfileBySlug('jeff-bezos');
+for (const id of [
+  'bezos-amazon-warehouse-safety-excellent-absolute',
+  'bezos-amazon-not-a-monopoly-absolute-antitrust-framing',
+  'bezos-customer-obsession-never-harms-workers-absolute',
+]) {
+  if (!(bezosP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('jeff-bezos missing docket id: ' + id);
+}
+for (const f of (bezosP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('bezos dual-cite collision: ' + f.id);
+}
+
+// Alan Dershowitz densify gate (n≥3)
+const dersh = scores['alan-dershowitz'];
+if (!dersh || dersh.n < 3) throw new Error('alan-dershowitz needs ≥3 verified falsehoods, got ' + (dersh?.n ?? 0));
+if (dersh.score > 60) throw new Error('alan-dershowitz score expected ≤60 after densify, got ' + dersh.score);
+const dershP = getProfileBySlug('alan-dershowitz');
+for (const id of [
+  'dershowitz-epstein-npa-perfectly-proper-absolute',
+  'dershowitz-never-met-giuffre-absolute-vs-later-record',
+  'dershowitz-epstein-was-not-a-sex-trafficker-public-minimization',
+]) {
+  if (!(dershP.documentedFalsehoods || []).some((f) => f.id === id)) throw new Error('alan-dershowitz missing docket id: ' + id);
+}
+for (const f of (dershP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('dershowitz dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 64) throw new Error('expected ≥64 compiled dockets, got ' + docketCount);
+if (docketCount < 67) throw new Error('expected ≥67 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

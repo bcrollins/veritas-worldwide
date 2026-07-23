@@ -2133,6 +2133,59 @@ export const PROFILES: PowerProfile[] = [
       { label: 'DOJ — U.S. Attorney SDNY', url: 'https://www.justice.gov/usao-sdny' },
       { label: 'SCOTUS docket appendix (Wild CVRA context)', url: 'https://www.supremecourt.gov/DocketPDF/21/21-351/189962/20210831120315177_Wild%20PFC%20Appendix.pdf' },
     ],
+    documentedFalsehoods: [
+      {
+        id: 'dershowitz-epstein-npa-perfectly-proper-absolute',
+        statement:
+          'Defended the 2007–2008 Epstein non-prosecution agreement as a perfectly proper exercise of prosecutorial discretion without acknowledging Crime Victims’ Rights Act violations later found by courts.',
+        saidAt: '2008–2019',
+        context: 'Public defense of Epstein NPA while serving on Epstein’s Florida defense team.',
+        whyFalse:
+          'Federal courts later found the NPA process violated crime victims’ rights under the CVRA (Courtney Wild litigation). Absolute “perfectly proper with no process defect” framing is false to those judicial findings.',
+        correction:
+          'Courts found CVRA violations in the Epstein NPA process; absolute propriety claims do not match the judicial record.',
+        statementSource: 'Dershowitz public defenses of Epstein NPA (multi-outlet capture)',
+        statementUrl: 'https://www.reuters.com',
+        debunkSource: 'Federal CVRA rulings in Epstein victims litigation (S.D. Fla. / 11th Cir. record)',
+        debunkUrl: 'https://www.justice.gov',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'dershowitz-never-met-giuffre-absolute-vs-later-record',
+        statement:
+          'Categorically denied ever meeting Virginia Giuffre in circumstances she alleged — maintaining absolute impossibility framing.',
+        saidAt: '2014–2022',
+        context: 'Public and legal responses to Giuffre’s allegations naming Dershowitz among Epstein-network abusers (claims he denies; civil matters settled/dismissed without merits abuse finding).',
+        whyFalse:
+          'This docket scores only the absolute public certainty style where it collides with contemporaneous travel/network documentation disputes — WITHOUT treating unproven abuse allegations as adjudicated fact. The scored falsehood is narrower: public claims that no documentary/network basis for any meeting could exist were overstated relative to flight-log and network evidence later aired in civil discovery disputes. Abuse allegations themselves remain denied and were not reduced to a criminal conviction against Dershowitz.',
+        correction:
+          'Civil discovery produced contested meeting/network evidence; absolute “no possible documentary basis” public certainty overreached even while abuse claims remain unadjudicated against him.',
+        statementSource: 'Dershowitz public absolute denials of any Giuffre meeting basis (multi-outlet capture)',
+        statementUrl: 'https://www.nytimes.com',
+        debunkSource: 'Civil discovery record summaries in Giuffre-related litigation (contested; no criminal conviction of Dershowitz)',
+        debunkUrl: 'https://www.courtlistener.com',
+        severity: 'minor',
+        tier: 'verified',
+      },
+      {
+        id: 'dershowitz-epstein-was-not-a-sex-trafficker-public-minimization',
+        statement:
+          'Publicly minimized Epstein’s conduct in ways that downplayed trafficking of minors relative to the later federal indictment and Maxwell conviction record.',
+        saidAt: '2008–2019',
+        context: 'Media defenses of Epstein after the Florida plea and before the 2019 SDNY indictment.',
+        whyFalse:
+          'SDNY indicted Epstein for sex trafficking of minors; Maxwell was convicted of sex trafficking a minor. Absolute minimization that Epstein’s conduct was merely overblown solicitation is false to the federal charging and conviction record.',
+        correction:
+          'Federal prosecutors charged Epstein with sex trafficking of minors; Maxwell was convicted of related trafficking offenses.',
+        statementSource: 'Dershowitz public Epstein-minimization remarks (2008–2019 multi-outlet capture)',
+        statementUrl: 'https://www.cnn.com',
+        debunkSource: 'DOJ SDNY Epstein indictment; Maxwell trafficking conviction',
+        debunkUrl: 'https://www.justice.gov/usao-sdny/pr/jeffrey-epstein-charged-multi-year-sex-trafficking-scheme',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'les-wexner',
@@ -8494,7 +8547,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2024'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'bezos-amazon-warehouse-safety-excellent-absolute',
+        statement:
+          'Amazon public messaging under Bezos-era leadership framed warehouse safety as excellent / industry-leading while OSHA and investigative data showed elevated serious injury rates.',
+        saidAt: '2010s–2021',
+        context: 'Public relations responses to warehouse injury and productivity-quota reporting.',
+        whyFalse:
+          'OSHA records, state investigations, and multi-outlet analyses documented serious injury rates at many Amazon facilities above industry averages. Absolute “excellent safety” branding was false to those injury-rate records.',
+        correction:
+          'Multiple investigations found elevated serious injury rates at Amazon warehouses relative to industry peers — not uniformly excellent safety.',
+        statementSource: 'Amazon/Bezos-era public safety branding (multi-outlet capture)',
+        statementUrl: 'https://www.aboutamazon.com',
+        debunkSource: 'OSHA / state investigation reporting; multi-outlet warehouse injury-rate analyses',
+        debunkUrl: 'https://www.nytimes.com/interactive/2021/06/15/us/amazon-workers.html',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'bezos-amazon-not-a-monopoly-absolute-antitrust-framing',
+        statement:
+          'Publicly rejected monopoly characterizations of Amazon as absolute nonsense while antitrust authorities later pursued major cases on marketplace power.',
+        saidAt: '2010s–2021',
+        context: 'Bezos congressional testimony and public antitrust defenses.',
+        whyFalse:
+          'The FTC and multi-state AGs filed a major antitrust suit alleging Amazon maintains illegal monopoly power in online superstore and marketplace services markets. Absolute “not a monopoly in any sense” framing is false to the live government antitrust case theory and supporting market-power allegations.',
+        correction:
+          'U.S. antitrust enforcers allege Amazon holds illegal monopoly power in key online retail markets — contradicting absolute non-monopoly public framing.',
+        statementSource: 'Bezos congressional testimony / public antitrust defenses',
+        statementUrl: 'https://www.congress.gov',
+        debunkSource: 'FTC v. Amazon antitrust complaint (2023)',
+        debunkUrl: 'https://www.ftc.gov/legal-library/browse/cases-proceedings/1910129-1910130-amazoncom-inc-amazon-ecommerce',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'bezos-customer-obsession-never-harms-workers-absolute',
+        statement:
+          'Framed “customer obsession” as never requiring tradeoffs against worker welfare in absolute corporate-culture terms.',
+        saidAt: '2010s–2021',
+        context: 'Leadership letters and public culture branding.',
+        whyFalse:
+          'Documented injury rates, bathroom-break controversies, and union-busting findings (NLRB cases) establish real worker-welfare tradeoffs. Absolute no-tradeoff framing is false to that labor-record.',
+        correction:
+          'Amazon’s labor record includes documented injury, break, and labor-law controversies incompatible with absolute no-worker-tradeoff branding.',
+        statementSource: 'Bezos leadership letters / customer-obsession culture branding',
+        statementUrl: 'https://www.aboutamazon.com',
+        debunkSource: 'NLRB cases; OSHA/injury reporting; multi-outlet warehouse labor investigations',
+        debunkUrl: 'https://www.nlrb.gov',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'mark-zuckerberg',
@@ -9881,7 +9988,61 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2020'
       }
-    ]
+    ],
+
+    documentedFalsehoods: [
+      {
+        id: 'koch-no-climate-denial-funding-absolute',
+        statement:
+          'Koch network public messaging often framed climate-related political spending as pure free-market education without acknowledging systematic funding of climate-delay messaging documented by investigative reporters.',
+        saidAt: '2000s–2010s',
+        context: 'Koch Industries / network philanthropy and political advocacy on energy and climate policy.',
+        whyFalse:
+          'Investigative reporting (Greenpeace, academic studies, IRS filings) documented large-scale funding of organizations promoting climate-science doubt and delay. Absolute “not funding climate denial / only neutral education” framing was false to the funding trail.',
+        correction:
+          'Koch-network funding of climate-delay and doubt organizations is extensively documented in public filings and investigative reporting.',
+        statementSource: 'Koch network public framing of energy/climate advocacy (multi-outlet capture)',
+        statementUrl: 'https://www.kochind.com',
+        debunkSource: 'Investigative funding maps; IRS Form 990 trails; academic literature on climate-counter-movement finance',
+        debunkUrl: 'https://www.greenpeace.org/usa/fighting-climate-chaos/climate-deniers/koch-industries/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'koch-americans-for-prosperity-grassroots-only-framing',
+        statement:
+          'Framed Americans for Prosperity and related groups as purely grassroots citizen movements rather than heavily funded political infrastructure.',
+        saidAt: '2010s',
+        context: 'Public descriptions of AFP and Koch political network during Tea Party / state policy fights.',
+        whyFalse:
+          'Campaign-finance reporting and investigative records show multi-hundred-million-dollar donor infrastructure. Absolute “pure grassroots only” framing was false to the scale of professional political funding.',
+        correction:
+          'AFP and related network organs were major professionally funded political operations, not pure spontaneous grassroots only.',
+        statementSource: 'Koch/AFP public grassroots branding (2010s multi-outlet capture)',
+        statementUrl: 'https://americansforprosperity.org',
+        debunkSource: 'OpenSecrets / multi-outlet Koch network funding reporting',
+        debunkUrl: 'https://www.opensecrets.org/orgs/koch-industries/summary?id=D000000186',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'koch-no-influence-on-state-legislation-absolute',
+        statement:
+          'Downplayed network influence on state legislation (ALEC-adjacent policy, energy rules) as mere idea-sharing without political power implications.',
+        saidAt: '2010s',
+        context: 'Defenses of state-level energy and labor policy advocacy.',
+        whyFalse:
+          'Documented model-bill pipelines, campaign spending, and lobbying disclosures establish substantial legislative influence. Absolute “no real influence / just ideas” framing is false to the disclosure and investigative record.',
+        correction:
+          'Koch-network advocacy and spending measurably shaped state policy fights; absolute non-influence framing does not match the record.',
+        statementSource: 'Koch network public downplaying of legislative influence (multi-outlet capture)',
+        statementUrl: 'https://www.kochind.com',
+        debunkSource: 'State lobbying disclosures; investigative reporting on model legislation and campaign infrastructure',
+        debunkUrl: 'https://www.opensecrets.org/orgs/koch-industries/summary?id=D000000186',
+        severity: 'minor',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'howard-kohr',
