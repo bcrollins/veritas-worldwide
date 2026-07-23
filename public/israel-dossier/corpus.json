@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:29:03.004Z",
+  "generatedAt": "2026-07-23T07:32:35.879Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 80,
     "timelineEvents": 68,
     "actors": 47,
-    "moneyTrailNodes": 24,
+    "moneyTrailNodes": 25,
     "historicalWarCrimesPack": 66,
     "legalCases": 16,
     "lobbyingRecords": 4,
@@ -35,7 +35,7 @@
       "delivery": 3,
       "weapon": 7,
       "impact": 3,
-      "lobby": 6
+      "lobby": 7
     }
   },
   "publicRecords": [
@@ -510,6 +510,25 @@
         "elizabeth-warren",
         "chuck-schumer",
         "hakeem-jeffries"
+      ]
+    },
+    {
+      "id": "norpac-2024",
+      "label": "NORPAC — Bipartisan Pro-Israel PAC",
+      "amount": "~$1.7M contributions (OpenSecrets / FEC 2023–24 window)",
+      "type": "lobby",
+      "date": "2023–2024 cycle",
+      "detail": "NORPAC is a long-running bipartisan pro-Israel PAC (New Jersey–rooted) that bundles and contributes multi-million cycle totals across party lines. Complements AIPAC hard money, UDP Super PAC IEs, DMFI, and J Street as a distinct electoral-enablement node on the full-spectrum lobby map (chapter-14 FEC synthesis references ~$1.66M cycle scale).",
+      "sourceUrl": "https://www.opensecrets.org/orgs/norpac/summary?id=D000000440",
+      "children": [
+        "pro-israel-lobby-2024",
+        "aipac-pac-hard-money-2024"
+      ],
+      "relatedProfileIds": [
+        "josh-gottheimer",
+        "bob-menendez",
+        "cory-booker",
+        "chuck-schumer"
       ]
     }
   ],

@@ -1234,6 +1234,18 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['pro-israel-lobby-2024'],
     relatedProfileIds: ['bernie-sanders', 'elizabeth-warren', 'chuck-schumer', 'hakeem-jeffries'],
   },
+  {
+    id: 'norpac-2024',
+    label: 'NORPAC — Bipartisan Pro-Israel PAC',
+    amount: '~$1.7M contributions (OpenSecrets / FEC 2023–24 window)',
+    type: 'lobby',
+    date: '2023–2024 cycle',
+    detail:
+      'NORPAC is a long-running bipartisan pro-Israel PAC (New Jersey–rooted) that bundles and contributes multi-million cycle totals across party lines. Complements AIPAC hard money, UDP Super PAC IEs, DMFI, and J Street as a distinct electoral-enablement node on the full-spectrum lobby map (chapter-14 FEC synthesis references ~$1.66M cycle scale).',
+    sourceUrl: 'https://www.opensecrets.org/orgs/norpac/summary?id=D000000440',
+    children: ['pro-israel-lobby-2024', 'aipac-pac-hard-money-2024'],
+    relatedProfileIds: ['josh-gottheimer', 'bob-menendez', 'cory-booker', 'chuck-schumer'],
+  },
 
 ]
 
