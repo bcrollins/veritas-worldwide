@@ -5031,6 +5031,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'israel-hostages-tunnel-captivity-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Tunnel Captivity Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (tunnel-captivity cohort)',
+    location: 'Gaza Strip underground tunnel captivity sites',
+    summary:
+      'Israeli government, released-hostage testimony, and multi-source reporting document prolonged captivity of Israeli civilians including children in underground tunnel networks — a protected-person detention environment distinct from the aggregate hostages-held and medical-neglect cards.',
+    evidence:
+      'Released-hostage multi-outlet testimony, Israeli government captivity assessments, and multi-source tunnel-environment reporting establish multi-source tunnel captivity of civilians. Exact tunnel-held counts evolve with releases; multi-source underground civilian captivity is the claim.',
+    sources: [
+      { label: 'Israeli government hostage public materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'ICRC access / missing persons context', url: 'https://www.icrc.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-education-remote-learning-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Education & Remote Learning Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (education-access cohort)',
+    location: 'Gaza Strip schools, shelters, and displacement sites',
+    summary:
+      'UNICEF, UNESCO, and multi-source reporting document near-total collapse of in-person schooling and failed remote-learning substitution under bombardment, displacement, and connectivity blackouts — a child-specific harm pattern distinct from school-shelter strikes and universities-destroyed structural cards.',
+    evidence:
+      'UNICEF education-in-emergencies materials, UNESCO school-damage tallies, and multi-outlet coverage of lost school years establish multi-source education access collapse for children. Exact out-of-school counts evolve; multi-source wartime schooling collapse is the claim.',
+    sources: [
+      { label: 'UNICEF education materials', url: 'https://www.unicef.org' },
+      { label: 'UNESCO education-in-emergency materials', url: 'https://www.unesco.org' },
+      { label: 'Multi-outlet Gaza schooling collapse coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-outpost-legalization-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Outpost Legalization Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (outpost-legalization cohort)',
+    location: 'West Bank Area C unauthorized / newly legalized outposts',
+    summary:
+      'Peace Now, B\'Tselem, and multi-source reporting document accelerated Israeli government legalization and infrastructure support for settler outposts after October 7 — expanding de facto settlement footprint with documented civilian displacement pressure on adjacent Palestinian communities.',
+    evidence:
+      'Peace Now outpost-tracking databases, multi-source government legalization decisions, and multi-outlet coverage establish multi-source outpost legalization surge. Exact outpost counts evolve; multi-source wartime outpost formalization is the claim.',
+    sources: [
+      { label: 'Peace Now settlement / outpost materials', url: 'https://peacenow.org.il' },
+      { label: "B'Tselem settlement materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet outpost legalization coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Peace Now public materials', url: 'https://peacenow.org.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -7609,6 +7690,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['journalists', 'families', 'children', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-hostages-tunnel-captivity-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Tunnel Captivity Pattern',
+    description: 'Multi-source documentation of prolonged captivity of Israeli civilians in underground tunnel networks.',
+    source: 'Israeli government / multi-outlet / ICRC',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-tunnel-captivity-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'tunnels', 'civilians', 'children', 'israel'],
+  },
+
+  {
+    id: 'tl-gaza-education-collapse-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Education & Remote Learning Collapse Pattern',
+    description: 'UNICEF/UNESCO multi-source documentation of near-total schooling collapse under bombardment and displacement.',
+    source: 'UNICEF / UNESCO / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-education-remote-learning-collapse-pattern-2023-2025',
+      'gaza-education-system-destroyed-2023-2025',
+      'gaza-schools-shelters-struck-pattern-2023-2025',
+    ],
+    tags: ['education', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-wb-outpost-legalization-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Outpost Legalization Pattern',
+    description: "Peace Now/B'Tselem multi-source documentation of accelerated outpost legalization after October 7.",
+    source: "Peace Now / B'Tselem / multi-outlet",
+    sourceUrl: 'https://peacenow.org.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-outpost-legalization-pattern-2023-2025',
+      'west-bank-settlement-surge-2023-2025',
+      'west-bank-herding-bedouin-dispossession-pattern-2023-2025',
+    ],
+    tags: ['settlements', 'outposts', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
