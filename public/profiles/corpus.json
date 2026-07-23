@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:06:29.798Z",
+  "generatedAt": "2026-07-23T08:11:26.928Z",
   "count": 96,
   "profiles": [
     {
@@ -428,7 +428,7 @@
       "name": "Tom Cotton",
       "title": "U.S. Senator (R-AR)",
       "category": "politician",
-      "summary": "Arkansas Republican senator and leading Iran/China hawk with consistent pro-Israel security voting. Documented pro-Israel PAC recipient (OpenSecrets). Frequent sponsor of Iran sanctions and Israel security vehicles. Integrity docket: dual-cited PolitiFact False on COVID-era immigrant screening impossibility claim. Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact.",
+      "summary": "Arkansas Republican senator and leading Iran/China hawk with consistent pro-Israel security voting. Documented pro-Israel PAC recipient (OpenSecrets). Frequent sponsor of Iran sanctions and Israel security vehicles. Integrity docket: dual-cited PolitiFact Falses — COVID-era “no way to screen” immigrants and CPAC claim Biden halted deportations of murderers/rapists/terrorists/MS-13 (pause exempted national-security and public-safety threats). Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact, DHS.",
       "photo": "/profiles/tom-cotton.jpg",
       "url": "https://veritasworldwide.com/profile/tom-cotton",
       "bioguideId": "C001095",
@@ -442,8 +442,8 @@
         "Iron Dome",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -757,7 +757,7 @@
       "name": "Mike Pompeo",
       "title": "Former U.S. Secretary of State; CIA Director",
       "category": "politician",
-      "summary": "Trump Secretary of State (2018–2021) and CIA Director. Principal diplomatic executor of Jerusalem embassy move, Golan recognition, and Abraham Accords era policy. Structural executive enablement of Israeli government diplomatic priorities. Primary: State Department record, White House proclamations.",
+      "summary": "Trump Secretary of State (2018–2021) and CIA Director. Principal diplomatic executor of Jerusalem embassy move, Golan recognition, and Abraham Accords era policy. Structural executive enablement of Israeli government diplomatic priorities. Integrity docket: dual-cited PolitiFact Falses — “defended every single person” including Yovanovitch and denial that Trump threatened Iranian cultural sites. Primary: State Department record, White House proclamations, PolitiFact.",
       "photo": "/profiles/mike-pompeo.jpg",
       "url": "https://veritasworldwide.com/profile/mike-pompeo",
       "bioguideId": null,
@@ -768,10 +768,11 @@
         "Abraham Accords Era",
         "Republican",
         "Golan",
-        "Jerusalem"
+        "Jerusalem",
+        "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {
@@ -1115,7 +1116,7 @@
       "name": "Tim Scott",
       "title": "U.S. Senator (R-SC)",
       "category": "politician",
-      "summary": "South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False that “Secret Service remains unpaid” during 2026 DHS funding lapse (OBBBA reallocation paid salaries). Primary: OpenSecrets, Senate roll calls, CRS RL33222, PolitiFact.",
+      "summary": "South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact Falses — “Secret Service remains unpaid” during 2026 DHS funding lapse and Aug 2022 claim CBO said 90% of new IRS-agent revenue comes from people making under $200k (wrong agency/wrong policy letter). Primary: OpenSecrets, Senate roll calls, CRS RL33222, PolitiFact.",
       "photo": "/profiles/tim-scott.jpg",
       "url": "https://veritasworldwide.com/profile/tim-scott",
       "bioguideId": "S001184",
@@ -1129,8 +1130,8 @@
         "FMF",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {

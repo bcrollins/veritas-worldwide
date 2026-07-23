@@ -339,13 +339,19 @@ if (!(rubioP.documentedFalsehoods || []).some((f) => f.id === 'rubio-20-to-30-mi
   throw new Error('marco-rubio missing 20-30M immigration docket id');
 }
 
-// Mike Pompeo integrity gate
+// Mike Pompeo integrity gate (multi-entry)
 const pompeo = scores['mike-pompeo'];
-if (!pompeo || pompeo.n < 1) throw new Error('mike-pompeo needs ≥1 verified falsehood, got ' + (pompeo?.n ?? 0));
-if (pompeo.score > 90) throw new Error('mike-pompeo score expected ≤90, got ' + pompeo.score);
+if (!pompeo || pompeo.n < 2) throw new Error('mike-pompeo needs ≥2 verified falsehoods, got ' + (pompeo?.n ?? 0));
+if (pompeo.score > 75) throw new Error('mike-pompeo score expected ≤75, got ' + pompeo.score);
 const pompeoP = getProfileBySlug('mike-pompeo');
 if (!(pompeoP.documentedFalsehoods || []).some((f) => f.id === 'pompeo-defended-every-person-yovanovitch-2020')) {
   throw new Error('mike-pompeo missing Yovanovitch docket id');
+}
+if (!(pompeoP.documentedFalsehoods || []).some((f) => f.id === 'pompeo-trump-did-not-threaten-cultural-sites-2020')) {
+  throw new Error('mike-pompeo missing cultural sites docket id');
+}
+for (const f of (pompeoP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('mike-pompeo dual-cite collision: ' + f.id);
 }
 
 // Lindsey Graham multi-entry integrity deep-dive
@@ -365,13 +371,16 @@ for (const f of (grahamP.documentedFalsehoods || []).filter((x) => x.tier === 'v
   if (f.statementUrl === f.debunkUrl) throw new Error('graham dual-cite collision: ' + f.id);
 }
 
-// Tom Cotton integrity gate
+// Tom Cotton integrity gate (multi-entry)
 const cotton = scores['tom-cotton'];
-if (!cotton || cotton.n < 1) throw new Error('tom-cotton needs ≥1 verified falsehood, got ' + (cotton?.n ?? 0));
-if (cotton.score > 90) throw new Error('tom-cotton score expected ≤90, got ' + cotton.score);
+if (!cotton || cotton.n < 2) throw new Error('tom-cotton needs ≥2 verified falsehoods, got ' + (cotton?.n ?? 0));
+if (cotton.score > 75) throw new Error('tom-cotton score expected ≤75, got ' + cotton.score);
 const cottonP = getProfileBySlug('tom-cotton');
 if (!(cottonP.documentedFalsehoods || []).some((f) => f.id === 'cotton-no-way-to-screen-immigrants-covid-2021')) {
   throw new Error('tom-cotton missing COVID screening docket id');
+}
+if (!(cottonP.documentedFalsehoods || []).some((f) => f.id === 'cotton-halted-deportations-all-criminals-2021')) {
+  throw new Error('tom-cotton missing halted deportations docket id');
 }
 for (const f of (cottonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('cotton dual-cite collision: ' + f.id);
@@ -554,13 +563,16 @@ for (const f of (stefanikP.documentedFalsehoods || []).filter((x) => x.tier === 
   if (f.statementUrl === f.debunkUrl) throw new Error('stefanik dual-cite collision: ' + f.id);
 }
 
-// Tim Scott integrity gate
+// Tim Scott integrity gate (multi-entry)
 const timScott = scores['tim-scott'];
-if (!timScott || timScott.n < 1) throw new Error('tim-scott needs ≥1 verified falsehood, got ' + (timScott?.n ?? 0));
-if (timScott.score > 90) throw new Error('tim-scott score expected ≤90, got ' + timScott.score);
+if (!timScott || timScott.n < 2) throw new Error('tim-scott needs ≥2 verified falsehoods, got ' + (timScott?.n ?? 0));
+if (timScott.score > 75) throw new Error('tim-scott score expected ≤75, got ' + timScott.score);
 const timScottP = getProfileBySlug('tim-scott');
 if (!(timScottP.documentedFalsehoods || []).some((f) => f.id === 'scott-secret-service-remains-unpaid-2026')) {
   throw new Error('tim-scott missing Secret Service unpaid docket id');
+}
+if (!(timScottP.documentedFalsehoods || []).some((f) => f.id === 'scott-irs-agents-90pct-under-200k-2022')) {
+  throw new Error('tim-scott missing IRS 90% revenue docket id');
 }
 for (const f of (timScottP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('tim-scott dual-cite collision: ' + f.id);

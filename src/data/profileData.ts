@@ -2605,7 +2605,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'AR',
     photoUrl: getProfilePhoto('tom-cotton'),
     summary:
-      'Arkansas Republican senator and leading Iran/China hawk with consistent pro-Israel security voting. Documented pro-Israel PAC recipient (OpenSecrets). Frequent sponsor of Iran sanctions and Israel security vehicles. Integrity docket: dual-cited PolitiFact False on COVID-era immigrant screening impossibility claim. Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact.',
+      'Arkansas Republican senator and leading Iran/China hawk with consistent pro-Israel security voting. Documented pro-Israel PAC recipient (OpenSecrets). Frequent sponsor of Iran sanctions and Israel security vehicles. Integrity docket: dual-cited PolitiFact Falses — COVID-era “no way to screen” immigrants and CPAC claim Biden halted deportations of murderers/rapists/terrorists/MS-13 (pause exempted national-security and public-safety threats). Primary: OpenSecrets, Congress.gov, CRS RL33222, PolitiFact, DHS.',
     tags: [
       'Senator',
       'Pro-Israel',
@@ -2693,6 +2693,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2021',
       },
+      {
+        claim:
+          'Integrity docket: Feb 2021 CPAC claim Biden “halted deportations for all illegal aliens” including murderers/rapists/terrorists/MS-13 rated False (100-day pause exempted national-security and public-safety threats / aggravated felons).',
+        source: 'PolitiFact False; DHS Pekoske memo Jan 20, 2021; ICE interim guidance',
+        url: 'https://www.politifact.com/factchecks/2021/feb/26/tom-cotton/tom-cotton-falsely-claims-joe-biden-halted-deporta/',
+        tier: 'verified',
+        date: '2021',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -2710,6 +2718,24 @@ export const PROFILES: PowerProfile[] = [
         debunkSource: 'PolitiFact — False (Feb 3, 2021) with CBP spokesperson + DHS OIG COVID custody screening report',
         debunkUrl:
           'https://www.politifact.com/factchecks/2021/feb/03/tom-cotton/tom-cotton-wrong-theres-no-way-screen-immigrants/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'cotton-halted-deportations-all-criminals-2021',
+        statement:
+          'The Biden administration “halted deportations for all illegal aliens — murderers, rapists, terrorists, MS-13 gang members are not being deported.”',
+        saidAt: 'February 26, 2021',
+        context: 'CPAC speech in Orlando criticizing Biden immigration enforcement; office later said he misspoke regarding terrorists.',
+        whyFalse:
+          'PolitiFact rated False. The Jan. 20, 2021 DHS memo ordered a 100-day deportation pause but explicitly exempted terrorism/espionage/national-security threats and people convicted of aggravated felonies (including murder and rape). ICE Feb. 18 interim guidance prioritized national security, border security, and public safety threats including gang activity. Absolute “all … murderers, rapists, terrorists, MS-13” framing was false.',
+        correction:
+          'Biden’s temporary deportation pause did not halt removals of murderers, rapists, terrorists, or gang members posing public-safety threats.',
+        statementSource: 'YouTube — Sen. Tom Cotton CPAC speech, Feb 26, 2021',
+        statementUrl: 'https://www.youtube.com/watch?v=lpO0_tAA0i4',
+        debunkSource: 'PolitiFact — False (Feb 26, 2021); DHS Pekoske enforcement memo; ICE interim guidance',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2021/feb/26/tom-cotton/tom-cotton-falsely-claims-joe-biden-halted-deporta/',
         severity: 'material',
         tier: 'verified',
       },
@@ -4556,8 +4582,17 @@ export const PROFILES: PowerProfile[] = [
     party: 'R',
     photoUrl: getProfilePhoto('mike-pompeo'),
     summary:
-      'Trump Secretary of State (2018–2021) and CIA Director. Principal diplomatic executor of Jerusalem embassy move, Golan recognition, and Abraham Accords era policy. Structural executive enablement of Israeli government diplomatic priorities. Primary: State Department record, White House proclamations.',
-    tags: ['Secretary of State', 'CIA Director', 'Pro-Israel', 'Abraham Accords Era', 'Republican', 'Golan', 'Jerusalem'],
+      'Trump Secretary of State (2018–2021) and CIA Director. Principal diplomatic executor of Jerusalem embassy move, Golan recognition, and Abraham Accords era policy. Structural executive enablement of Israeli government diplomatic priorities. Integrity docket: dual-cited PolitiFact Falses — “defended every single person” including Yovanovitch and denial that Trump threatened Iranian cultural sites. Primary: State Department record, White House proclamations, PolitiFact.',
+    tags: [
+      'Secretary of State',
+      'CIA Director',
+      'Pro-Israel',
+      'Abraham Accords Era',
+      'Republican',
+      'Golan',
+      'Jerusalem',
+      'Integrity Docket',
+    ],
     career: [
       'U.S. House KS-4 (public bio)',
       '2017–2018 — CIA Director',
@@ -4626,6 +4661,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2020',
       },
+      {
+        claim:
+          'Integrity docket: Jan 2020 Fox claim “President Trump didn’t say he’d go after a cultural site” rated False (Trump tweeted targeting sites “important to Iran & the Iranian culture”).',
+        source: 'PolitiFact False; Trump @realDonaldTrump Jan 4, 2020; AP reporting',
+        url: 'https://www.politifact.com/factchecks/2020/jan/06/mike-pompeo/pompeo-falsely-claims-trump-did-not-say-hed-go-aft/',
+        tier: 'verified',
+        date: '2020',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -4640,9 +4683,28 @@ export const PROFILES: PowerProfile[] = [
         correction:
           'Pompeo did not publicly defend Yovanovitch; the absolute "every single person" claim was false.',
         statementSource: 'NPR interview Jan 24, 2020 (PolitiFact statement capture)',
-        statementUrl: 'https://www.politifact.com/personalities/mike-pompeo/',
+        statementUrl: 'https://www.npr.org/2020/01/24/799182577/transcript-npr-s-full-interview-with-secretary-of-state-mike-pompeo',
         debunkSource: 'PolitiFact — False (Jan 29, 2020)',
         debunkUrl: 'https://www.politifact.com/factchecks/2020/jan/29/mike-pompeo/no-evidence-mike-pompeos-claim-hes-defended-ambass/',
+        severity: 'material',
+        tier: 'verified',
+      },
+      {
+        id: 'pompeo-trump-did-not-threaten-cultural-sites-2020',
+        statement: '“President Trump didn’t say he’d go after a cultural site. Read what he said very closely.”',
+        saidAt: 'January 5, 2020',
+        context:
+          'Fox News appearance with Maria Bartiromo after Soleimani strike, responding to claims Trump threatened Iranian cultural sites (war-crime debate).',
+        whyFalse:
+          'PolitiFact rated False. Trump tweeted Jan. 4, 2020 that the U.S. had “targeted 52 Iranian sites … some at a very high level & important to Iran & the Iranian culture.” He later restated willingness to hit cultural sites to reporters (AP). Absolute denial is contradicted by the primary statement.',
+        correction:
+          'Trump did threaten Iranian cultural sites in a public tweet and subsequent remarks; Pompeo’s denial was false.',
+        statementSource: 'Mediaite capture of Pompeo on Fox News with Maria Bartiromo, Jan 5, 2020',
+        statementUrl:
+          'https://www.mediaite.com/tv/mike-pompeo-falsely-claims-trump-didnt-threaten-to-strike-iranian-cultural-sites/',
+        debunkSource: 'PolitiFact — False (Jan 6, 2020); Trump tweet Jan 4, 2020; AP',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2020/jan/06/mike-pompeo/pompeo-falsely-claims-trump-did-not-say-hed-go-aft/',
         severity: 'material',
         tier: 'verified',
       },
@@ -4650,7 +4712,14 @@ export const PROFILES: PowerProfile[] = [
     websites: [
       { label: 'Abraham Accords (State)', url: 'https://www.state.gov/the-abraham-accords/' },
       { label: 'U.S. Embassy Jerusalem', url: 'https://il.usembassy.gov' },
-      { label: 'PolitiFact — Yovanovitch defense claim (False)', url: 'https://www.politifact.com/factchecks/2020/jan/29/mike-pompeo/no-evidence-mike-pompeos-claim-hes-defended-ambass/' },
+      {
+        label: 'PolitiFact — Yovanovitch defense claim (False)',
+        url: 'https://www.politifact.com/factchecks/2020/jan/29/mike-pompeo/no-evidence-mike-pompeos-claim-hes-defended-ambass/',
+      },
+      {
+        label: 'PolitiFact — Cultural sites denial (False)',
+        url: 'https://www.politifact.com/factchecks/2020/jan/06/mike-pompeo/pompeo-falsely-claims-trump-did-not-say-hed-go-aft/',
+      },
       { label: 'Wikipedia (secondary index)', url: 'https://en.wikipedia.org/wiki/Mike_Pompeo' },
     ],
   },
@@ -6708,7 +6777,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'SC',
     photoUrl: getProfilePhoto('tim-scott'),
     summary:
-      'South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact False that “Secret Service remains unpaid” during 2026 DHS funding lapse (OBBBA reallocation paid salaries). Primary: OpenSecrets, Senate roll calls, CRS RL33222, PolitiFact.',
+      'South Carolina Republican senator; only Black Republican senator for much of his tenure. Consistent pro-Israel security voter and public advocate for unconditional U.S. support for Israeli government positions. Documented pro-Israel PAC recipient (OpenSecrets). Integrity docket: dual-cited PolitiFact Falses — “Secret Service remains unpaid” during 2026 DHS funding lapse and Aug 2022 claim CBO said 90% of new IRS-agent revenue comes from people making under $200k (wrong agency/wrong policy letter). Primary: OpenSecrets, Senate roll calls, CRS RL33222, PolitiFact.',
     tags: [
       'Senator',
       'Pro-Israel',
@@ -6803,6 +6872,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2026',
       },
+      {
+        claim:
+          'Integrity docket: Aug 2022 claim CBO said 90% of revenue from new IRS agents would come from people making under $200,000 rated False (misapplied 2021 JCT letter on a different policy; IRA revenue estimate ~$204B not $300B+).',
+        source: 'PolitiFact False; CBO IRA score; JCT Aug 2021 letter',
+        url: 'https://www.politifact.com/factchecks/2022/aug/17/tim-scott/tim-scott-mangles-false-gop-talking-point-irs-houn/',
+        tier: 'verified',
+        date: '2022',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -6822,6 +6899,25 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'scott-irs-agents-90pct-under-200k-2022',
+        statement:
+          '“The Congressional Budget Office says that 90% of the revenue generated from the new IRS agents will come from people making less than $200,000 … The revenue generated will be $300-plus billion.”',
+        saidAt: 'August 10, 2022',
+        context: 'Fox News interview attacking Inflation Reduction Act IRS enforcement funding.',
+        whyFalse:
+          'PolitiFact rated False. CBO’s IRA score projected ~$204B additional revenue over 10 years and said nothing about the under-$200k split. The 90% figure came from a 2021 Joint Committee on Taxation letter analyzing a different bank-reporting proposal (Schedule C underreporting), not IRA IRS hiring. Staff later said Scott meant JCT, but that still misapplied the letter.',
+        correction:
+          'IRA IRS funding was projected to raise ~$204B focusing on corporations and high-net-worth noncompliance; the 90% under-$200k claim misused an unrelated 2021 JCT analysis.',
+        statementSource: 'RealClearPolitics video of Sen. Tim Scott on Fox News, Aug 10–11, 2022',
+        statementUrl:
+          'https://www.realclearpolitics.com/video/2022/08/11/sen_tim_scott_90_of_funding_for_new_irs_agents_will_come_from_people_making_200000_or_less.html',
+        debunkSource: 'PolitiFact — False (Aug 17, 2022); CBO IRA score; JCT Aug 2021 letter',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2022/aug/17/tim-scott/tim-scott-mangles-false-gop-talking-point-irs-houn/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.scott.senate.gov' },
@@ -6830,6 +6926,10 @@ export const PROFILES: PowerProfile[] = [
       {
         label: 'PolitiFact — Secret Service unpaid (False)',
         url: 'https://www.politifact.com/factchecks/2026/apr/29/tim-scott/secret-service-assassination-shutdown-paychecks/',
+      },
+      {
+        label: 'PolitiFact — IRS agents 90% claim (False)',
+        url: 'https://www.politifact.com/factchecks/2022/aug/17/tim-scott/tim-scott-mangles-false-gop-talking-point-irs-houn/',
       },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Tim_Scott' },
     ],
