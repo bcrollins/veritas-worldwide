@@ -2735,6 +2735,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-polio-outbreak-pattern-2024',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'un-finding',
+    title: 'Gaza Circulating Vaccine-Derived Polio Outbreak Pattern (2024)',
+    date: 'June–September 2024 (outbreak + campaign cohort)',
+    location: 'Gaza Strip (Deir al-Balah / central Gaza environmental + clinical cluster)',
+    summary:
+      'WHO, UNICEF, and the Global Polio Eradication Initiative document Gaza’s first confirmed poliovirus detection in ~25 years: circulating vaccine-derived poliovirus type 2 (cVDPV2) in environmental samples and a confirmed clinical case in an infant, triggering multi-round emergency nOPV2 vaccination campaigns under wartime access constraints. Pattern card for conflict-driven disease resurgence as a children-targeting civilian-harm multiplier.',
+    evidence:
+      'WHO outbreak notices, GPEI campaign summaries, and multi-source clinical/environmental lab reporting establish multi-source cVDPV2 detection and emergency vaccination. Case counts and coverage figures evolve; multi-source reappearance after a quarter-century polio-free interval is the claim.',
+    sources: [
+      { label: 'WHO — first-phase Gaza polio campaign (Sept 2024)', url: 'https://www.who.int/news/item/04-09-2024-first-phase-of-polio-campaign-concludes-successfully-in-gaza' },
+      { label: 'Global Polio Eradication Initiative — outbreak response materials', url: 'https://polioeradication.org' },
+      { label: 'Harvard Chan School — multi-source outbreak explainers', url: 'https://hsph.harvard.edu/news/polio-gaza-public-health-response/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public outbreak / campaign updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3871,6 +3898,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-cash-liquidity-banking-collapse-2023-2025', 'gaza-bakeries-food-system-collapse-2023-2025'],
     tags: ['economy', 'cash', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-polio-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Gaza cVDPV2 Polio Outbreak — First in ~25 Years',
+    description: 'WHO/GPEI multi-source confirmation of circulating vaccine-derived poliovirus type 2 and emergency nOPV2 campaigns under wartime access constraints.',
+    source: 'WHO / GPEI / UNICEF',
+    sourceUrl: 'https://www.who.int/news/item/04-09-2024-first-phase-of-polio-campaign-concludes-successfully-in-gaza',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-polio-outbreak-pattern-2024', 'gaza-water-sanitation-collapse-2023-2025', 'gaza-health-system-collapse-2023-2025'],
+    tags: ['children', 'disease', 'health', 'polio', 'gaza'],
   },
 
 ]
