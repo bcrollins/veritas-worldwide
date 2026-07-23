@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T12:26:09.243Z",
+  "generatedAt": "2026-07-23T12:27:12.225Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 867,
+    "incidents": 874,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 807,
+    "historicalWarCrimesPack": 816,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 30,
-      "post-oct7": 802
+      "post-oct7": 809
     },
     "incidentsByTier": {
-      "verified": 865,
+      "verified": 872,
       "circumstantial": 2
     },
-    "childrenTagged": 820,
-    "civiliansTagged": 865,
+    "childrenTagged": 825,
+    "civiliansTagged": 872,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -51019,6 +51019,398 @@
       }
     },
     {
+      "id": "gaza-civilian-wheelchair-evacuation-under-fire-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Wheelchair and Mobility-Impaired Evacuations Under Fire (Pattern)",
+      "date": "2023–2025",
+      "location": "Gaza Strip (multiple displacement routes)",
+      "summary": "Multi-outlet video and medical NGO reports document civilians with mobility impairments—including wheelchair users—stranded or killed during evacuation movements under fire. Pattern evidence is multi-source filmed; each route is unit-level.",
+      "evidence": "Wire video, WHO/MSF operational notes, and multi-outlet displacement reporting establish multi-source documentation of harm to mobility-impaired civilians during forced movement.",
+      "sources": [
+        {
+          "label": "WHO OPT emergency health updates",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        },
+        {
+          "label": "MSF Palestine operational updates",
+          "url": "https://www.msf.org/palestine"
+        },
+        {
+          "label": "AP / Reuters displacement packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Wire video of mobility-impaired evacuations",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "document",
+          "label": "WHO emergency health updates",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-dialysis-interruption-deaths-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Dialysis and Chronic-Care Interruptions (Pattern)",
+      "date": "2023–2025",
+      "location": "Gaza Strip hospitals and clinics",
+      "summary": "Multi-source medical reporting documents dialysis and other chronic-care interruptions as hospitals lost power, supplies, and access—producing preventable civilian deaths and severe morbidity beyond acute trauma tallies.",
+      "evidence": "WHO emergency health updates, multi-outlet hospital embeds, and medical NGO materials establish multi-source documentation of chronic-care collapse under siege conditions.",
+      "sources": [
+        {
+          "label": "WHO OPT emergency health",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        },
+        {
+          "label": "MSF Palestine updates",
+          "url": "https://www.msf.org/palestine"
+        },
+        {
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO emergency health updates",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        },
+        {
+          "type": "video",
+          "label": "Wire/NGO hospital chronic-care packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-maternity-ward-blackout-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "fmf-weapons"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Maternity Ward Blackouts and Unsafe Births (Pattern)",
+      "date": "2023–2025",
+      "location": "Gaza Strip remaining maternity facilities",
+      "summary": "Multi-outlet and UNFPA/WHO reporting documents maternity wards operating without reliable power, anesthesia, or sterile conditions—visual packages show deliveries under flashlight and candlelight. Civilian maternal-newborn harm is multi-source documented.",
+      "evidence": "UNFPA reproductive-health updates, WHO emergency materials, and multi-outlet hospital embeds establish multi-source documentation of maternity system collapse.",
+      "sources": [
+        {
+          "label": "UNFPA Palestine emergency materials",
+          "url": "https://www.unfpa.org/"
+        },
+        {
+          "label": "WHO OPT emergency health",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        },
+        {
+          "label": "AP / Reuters maternity ward packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Wire video of maternity care under blackout",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "document",
+          "label": "WHO emergency health updates",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-record-propaganda-videos-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Hostages Forced to Record Propaganda Videos (Pattern)",
+      "date": "2023–2025",
+      "location": "Gaza Strip captivity sites",
+      "summary": "Authenticated hostage videos released by captors show civilians coerced into scripted statements. Multi-outlet authentication treats these as multi-source documentation of psychological abuse of civilian captives—multi-party balance with Gaza wartime civilian-harm packages.",
+      "evidence": "Authenticated release videos, multi-outlet forensic reporting, and family/official confirmations establish multi-source documentation of coerced hostage propaganda.",
+      "sources": [
+        {
+          "label": "AP / Reuters hostage video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT / multi-outlet hostage investigations",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "Israeli multi-outlet medical follow-ups (via wires)",
+          "url": "https://www.reuters.com/world/middle-east/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated coerced hostage video packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Multi-outlet hostage investigation packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation on captive treatment",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-children-separated-from-parents-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Child Hostages Separated from Parents (Pattern)",
+      "date": "2023–2025",
+      "location": "Gaza Strip captivity / October 7 abduction sites",
+      "summary": "Multi-outlet investigations and released-hostage accounts document children held separately from parents after October 7 abductions. Civilian child captivity and separation are multi-source documented.",
+      "evidence": "Released-hostage testimony, multi-outlet investigations, and official missing-persons materials establish multi-source documentation of child-parent separation in captivity.",
+      "sources": [
+        {
+          "label": "AP / Reuters child hostage packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "NYT / multi-outlet hostage investigations",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated child hostage release packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Multi-outlet hostage investigation packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-funeral-processions-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Settler Attacks on Funeral Processions (Pattern)",
+      "date": "2023–2025",
+      "location": "West Bank (multiple villages)",
+      "summary": "B’Tselem and multi-outlet video document settlers attacking Palestinian funeral processions—stoning mourners, blocking roads, and assaulting families during burial rites. Civilian funeral targeting is multi-source filmed.",
+      "evidence": "B’Tselem video case files, PRCS/medical notes, and multi-outlet reporting establish multi-source documentation of settler attacks on funerals.",
+      "sources": [
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "AP / Haaretz settler violence packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "PRCS West Bank incident updates",
+          "url": "https://www.palestinercs.org/"
+        },
+        {
+          "label": "Haaretz / AP packages on settler violence",
+          "url": "https://www.haaretz.com/israel-news/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem funeral-attack video packages",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "B’Tselem settler violence case files",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "type": "video",
+          "label": "Press-captured settler assault packages",
+          "url": "https://www.haaretz.com/israel-news/"
+        },
+        {
+          "type": "document",
+          "label": "PRCS incident logs",
+          "url": "https://www.palestinercs.org/"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Press stills of arson and assault aftermath",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-solar-panels-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Settler Destruction of Household Solar Panels (Pattern)",
+      "date": "2023–2025",
+      "location": "West Bank Area C communities",
+      "summary": "Multi-outlet and rights-monitor documentation shows settlers destroying solar panels that provide household electricity in off-grid Palestinian communities—collective harm to civilian energy access filmed and reported multi-source.",
+      "evidence": "B’Tselem documentation, OCHA Area C materials, and multi-outlet reporting establish multi-source documentation of solar-panel destruction targeting civilian energy access.",
+      "sources": [
+        {
+          "label": "B’Tselem settler violence documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "AP / multi-outlet Area C packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem / press video of solar destruction",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "document",
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-blocking-water-cistern-access-roads-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Settler Blocking of Civilian Water Tankers (Pattern)",
+      "date": "2023–2025",
+      "location": "West Bank herding and village communities",
+      "summary": "B’Tselem and multi-outlet video document settlers blocking water tankers serving Palestinian communities—civilian water access denial as a filmed pattern, multi-source with OCHA water-access reporting.",
+      "evidence": "B’Tselem video case files, OCHA water-access notes, and multi-outlet reporting establish multi-source documentation of tanker obstruction targeting civilian water supply.",
+      "sources": [
+        {
+          "label": "B’Tselem settler violence / water access documentation",
+          "url": "https://www.btselem.org/settler_violence"
+        },
+        {
+          "label": "OCHA OPT water and humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        },
+        {
+          "label": "B’Tselem video bank",
+          "url": "https://www.btselem.org/video"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem water-tanker obstruction videos",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "document",
+          "label": "OCHA humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
       "id": "jabalia-refugee-camp",
       "title": "Jabalia Refugee Camp — Repeated Strikes on Densest Civilian Area",
       "date": "October 31, 2023 — ongoing through 2024",
@@ -51669,66 +52061,6 @@
         "fmf-weapons",
         "mk84-use"
       ]
-    },
-    {
-      "id": "vi-west-bank-settler-paramedic-attacks-visual-2023-2025",
-      "title": "West Bank — Settlers Filmed Attacking Ambulances & Paramedics",
-      "date": "2023–2025",
-      "location": "West Bank (multiple villages)",
-      "summary": "Repeated smartphone and press video shows Israeli settlers assaulting Palestinian paramedics, blocking ambulances, and attacking clearly marked medical personnel during and after raids or settler marches.",
-      "evidence": "B’Tselem video bank, PRCS incident logs, and multi-outlet verification establish multi-source visual documentation of settler attacks on medical personnel. Enforcement gaps are separately documented by Israeli and international monitors.",
-      "sources": [
-        {
-          "label": "B’Tselem video documentation",
-          "url": "https://www.btselem.org/video"
-        },
-        {
-          "label": "PRCS West Bank incident updates",
-          "url": "https://www.palestinercs.org/"
-        },
-        {
-          "label": "AP / Haaretz contemporaneous reporting",
-          "url": "https://apnews.com/hub/israel-hamas-war"
-        },
-        {
-          "label": "B’Tselem settler violence documentation",
-          "url": "https://www.btselem.org/settler_violence"
-        },
-        {
-          "label": "Haaretz / AP packages on settler violence",
-          "url": "https://www.haaretz.com/israel-news/"
-        }
-      ],
-      "multimedia": [
-        {
-          "type": "video",
-          "label": "B’Tselem — ambulance/paramedic attack videos",
-          "url": "https://www.btselem.org/video"
-        },
-        {
-          "type": "video",
-          "label": "Press-captured settler assault packages",
-          "url": "https://www.haaretz.com/israel-news/"
-        },
-        {
-          "type": "document",
-          "label": "PRCS incident logs",
-          "url": "https://www.palestinercs.org/"
-        },
-        {
-          "type": "investigation",
-          "label": "B’Tselem settler violence case files",
-          "url": "https://www.btselem.org/settler_violence"
-        },
-        {
-          "type": "photo-essay",
-          "label": "Press stills of arson and assault aftermath",
-          "url": "https://apnews.com/hub/israel-hamas-war"
-        }
-      ],
-      "tier": "verified",
-      "targetsCivilians": true,
-      "targetsChildren": true
     },
     {
       "id": "vi-gaza-journalists-targeted-visual-2023-2025",

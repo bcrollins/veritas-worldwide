@@ -29,24 +29,24 @@ assert(vi.includes('vi-al-ahli-hospital-blast-visual-2023'), 'visual pack missin
 assert(!/brollins|brandoncrollins|aerolink/i.test(vi), 'VI pack identity leak')
 
 const cards = (vi.match(/id: 'vi-/g) || []).length
-assert(cards >= 50, `VI pack should have ≥50 cards, got ${cards}`)
+assert(cards >= 52, `VI pack should have ≥50 cards, got ${cards}`)
 const urls = (vi.match(/url: 'https?:\/\//g) || []).length
 assert(urls >= cards * 2, `VI dual-cite floor: cards=${cards} urls=${urls}`)
 
 const n = (corpus.incidents || []).length
-assert(n >= 867, `corpus incidents ${n} < 855`)
+assert(n >= 874, `corpus incidents ${n} < 855`)
 const withVideo = (corpus.incidents || []).filter((i) =>
   (i.multimedia || []).some((m) => m.type === 'video'),
 ).length
-assert(withVideo >= 54, `corpus video-linked incidents ${withVideo} < 50`)
-assert(soft.incidentCount >= 867, `soft-floor ${soft.incidentCount} < 855`)
+assert(withVideo >= 61, `corpus video-linked incidents ${withVideo} < 50`)
+assert(soft.incidentCount >= 874, `soft-floor ${soft.incidentCount} < 855`)
 assert(
-  soft.visualInvestigations && soft.visualInvestigations.withVideo >= 54,
+  soft.visualInvestigations && soft.visualInvestigations.withVideo >= 61,
   `soft-floor withVideo ${soft.visualInvestigations?.withVideo} < 50`,
 )
 assert(viIndex.meta?.publisher === 'Veritas Worldwide', 'VI index publisher must be entity-only')
 assert(
-  (viIndex.counts?.incidentsWithVideoAndCivilians || 0) >= 54,
+  (viIndex.counts?.incidentsWithVideoAndCivilians || 0) >= 61,
   `VI index video+civilian ${viIndex.counts?.incidentsWithVideoAndCivilians} < 50`,
 )
 
