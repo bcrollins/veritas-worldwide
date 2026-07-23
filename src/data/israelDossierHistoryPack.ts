@@ -6246,6 +6246,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-hepatitis-jaundice-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Hepatitis & Jaundice Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hepatitis cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source health reporting document surges in hepatitis A and jaundice under collapsed WASH and overcrowding — a pediatric and civilian disease-harm pattern distinct from polio outbreak and AWD cards.',
+    evidence:
+      'WHO disease surveillance materials, UNICEF WASH notes, and multi-outlet coverage establish multi-source hepatitis/jaundice surges. Exact case counts evolve; multi-source wartime hepatitis surge is the claim.',
+    sources: [
+      { label: 'WHO disease surveillance materials', url: 'https://www.who.int' },
+      { label: 'UNICEF WASH materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza hepatitis coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-physical-abuse-captivity-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Physical Abuse in Captivity Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (captivity-abuse cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony, Israeli medical authorities, and multi-source reporting document physical abuse and violence against Israeli civilian hostages during captivity — a protected-person treatment crime pattern distinct from sexual-violence, solitary, and medical-neglect cards.',
+    evidence:
+      'Multi-source released-hostage medical and testimony records plus multi-outlet investigative coverage establish multi-source physical abuse in captivity. Exact case counts remain incomplete; multi-source physical abuse of civilian hostages is the claim.',
+    sources: [
+      { label: 'Israeli government hostage / health materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet hostage physical abuse coverage', url: 'https://apnews.com' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-grazing-outposts-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Grazing Outposts Expansion Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (grazing-outpost cohort)',
+    location: 'West Bank Area C herding and grazing lands',
+    summary:
+      'Kerem Navot, Peace Now, and multi-source reporting document rapid expansion of settler “grazing outposts” after October 7 — using livestock and intimidation to seize large land areas with few settlers, displacing Palestinian herders. Pattern card for grazing-outpost strategy distinct from herding dispossession and outpost-legalization cards.',
+    evidence:
+      'Multi-source land-tracking databases, OCHA protection notes, and multi-outlet coverage establish multi-source grazing-outpost expansion. Exact outpost and dunam counts evolve; multi-source wartime grazing-outpost surge is the claim.',
+    sources: [
+      { label: 'Peace Now settlement materials', url: 'https://peacenow.org.il' },
+      { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet grazing outpost coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Peace Now public materials', url: 'https://peacenow.org.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -9589,6 +9670,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['agriculture', 'settlers', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-hepatitis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Hepatitis & Jaundice Surge Pattern',
+    description: 'WHO/UNICEF multi-source documentation of hepatitis A and jaundice surges under collapsed WASH.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-hepatitis-jaundice-pattern-2023-2025',
+      'gaza-infectious-disease-surge-pattern-2023-2025',
+      'gaza-polio-outbreak-pattern-2024',
+    ],
+    tags: ['hepatitis', 'disease', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-physical-abuse-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Physical Abuse Pattern',
+    description: 'Multi-source documentation of physical abuse of Israeli civilian hostages during captivity.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-physical-abuse-captivity-pattern-2023-2025',
+      'israel-hostages-sexual-violence-captivity-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'abuse', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-grazing-outposts-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Grazing Outposts Pattern',
+    description: 'Peace Now/OCHA multi-source documentation of rapid grazing-outpost expansion after October 7.',
+    source: 'Peace Now / OCHA / multi-outlet',
+    sourceUrl: 'https://peacenow.org.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-grazing-outposts-pattern-2023-2025',
+      'west-bank-herding-bedouin-dispossession-pattern-2023-2025',
+      'west-bank-settler-outpost-legalization-pattern-2023-2025',
+    ],
+    tags: ['grazing', 'outposts', 'settlers', 'west-bank'],
+  },
+
+
 
 
 
