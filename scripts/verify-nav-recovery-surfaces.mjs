@@ -1446,4 +1446,19 @@ for (const [rel, id] of [
 }
 
 
+
+// legal Account RelatedHubs reaffirm final
+for (const [rel, id] of [
+  ['src/pages/PrivacyPage.tsx', 'privacy-related-hubs'],
+  ['src/pages/TermsPage.tsx', 'terms-related-hubs'],
+  ['src/pages/AboutPage.tsx', 'about-related-hubs'],
+  ['src/pages/AccessibilityPage.tsx', 'accessibility-related-hubs'],
+  ['src/pages/MembershipPage.tsx', 'membership-related-hubs'],
+  ['src/pages/AnalyticsPage.tsx', 'analytics-related-hubs'],
+]) {
+  assert(read(rel).includes(id), `${id} final`)
+  assert(read(rel).includes('RelatedHubs'), `${rel} RelatedHubs final`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
