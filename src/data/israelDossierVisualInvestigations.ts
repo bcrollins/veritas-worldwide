@@ -1915,6 +1915,78 @@ export const ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS: DossierDocumentedIncident[] =
     targetsChildren: true,
   },
 
+
+  {
+    id: 'vi-oct7-holit-kibbutz-visual-2023',
+    title: 'October 7 Kibbutz Holit — Multi-Outlet Civilian Murder & Capture Visual Record',
+    date: 'October 7, 2023',
+    location: 'Kibbutz Holit, southern Israel',
+    summary:
+      'Multi-outlet video and authenticated phone footage document the October 7 assault on Kibbutz Holit, including civilian murders and hostage-taking. Multi-party visual record distinct from Be’eri, Nir Oz, Kfar Aza, and Nahal Oz packages; ethnicity is never evidence.',
+    evidence:
+      'Authenticated video packages, multi-outlet investigations, and official compilations establish multi-source documentation of civilian-targeted violence at Holit on October 7.',
+    sources: [
+      { label: 'AP / Reuters October 7 packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { label: 'OHCHR materials on October 7 crimes', url: 'https://www.ohchr.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Authenticated Holit October 7 video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'NYT Visual Investigations packages', url: 'https://www.nytimes.com/news-event/israel-hamas-gaza' },
+      { type: 'document', label: 'UN documentation trail', url: 'https://www.ohchr.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+  {
+    id: 'vi-gaza-aid-truck-looting-visual-2024-2025',
+    title: 'Gaza Aid Truck Chaos & Civilian Casualties — Multi-Outlet Visual Record',
+    date: '2024–2025',
+    location: 'Aid truck routes and distribution points in Gaza',
+    summary:
+      'Multi-outlet video packages document chaotic aid truck incidents and civilian casualties along distribution routes. Multi-source visual floor without single-camera overclaim; ethnicity is never evidence.',
+    evidence:
+      'OCHA aid-access tallies, multi-outlet visual packages, and OHCHR materials establish multi-source documentation of civilian harm around aid logistics.',
+    sources: [
+      { label: 'OCHA OPT humanitarian updates', url: 'https://www.ochaopt.org/' },
+      { label: 'OHCHR civilian-protection materials', url: 'https://www.ohchr.org/' },
+      { label: 'AP / Reuters Gaza aid packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'Multi-outlet aid-route video packages', url: 'https://apnews.com/hub/israel-hamas-war' },
+      { type: 'investigation', label: 'OCHA/OHCHR aid-access trail', url: 'https://www.ochaopt.org/' },
+      { type: 'photo-essay', label: 'Wire photos of aid-route aftermath', url: 'https://apnews.com/hub/israel-hamas-war' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge', 'fmf-weapons'],
+  },
+  {
+    id: 'vi-west-bank-settler-bulldozer-land-visual-2023-2025',
+    title: 'West Bank Settler Bulldozer Land Clearance Against Civilian Fields — Multi-Outlet Visual Record',
+    date: '2023–2025',
+    location: 'West Bank village agricultural land',
+    summary:
+      'B’Tselem video banks and multi-outlet packages document settler bulldozer clearance of Palestinian civilian agricultural land, denying multi-year crop investment including food for families with children. Multi-source visual record; ethnicity is never evidence.',
+    evidence:
+      'B’Tselem video documentation, OCHA settler-violence and land-access tallies, and multi-outlet reporting establish multi-source documentation of land clearance harming civilian agriculture.',
+    sources: [
+      { label: 'B’Tselem video bank', url: 'https://www.btselem.org/video' },
+      { label: 'B’Tselem settler violence documentation', url: 'https://www.btselem.org/settler_violence' },
+      { label: 'OCHA OPT updates', url: 'https://www.ochaopt.org/' },
+    ],
+    multimedia: [
+      { type: 'video', label: 'B’Tselem bulldozer land-clearance video bank', url: 'https://www.btselem.org/video' },
+      { type: 'investigation', label: 'B’Tselem settler violence case files', url: 'https://www.btselem.org/settler_violence' },
+      { type: 'document', label: 'OCHA land-access materials', url: 'https://www.ochaopt.org/' },
+    ],
+    tier: 'verified',
+    targetsCivilians: true,
+    targetsChildren: true,
+  },
+
 ]
 
 /** Quick count helpers for UI badges */
