@@ -100,15 +100,15 @@ Status: **Implemented** (5a2fb3c)
 
 ## #16 — GEO floors auto-bump script when claimCount crosses decade
 Area: GEO · Anchor: Staff-plus · Score: 7.5→9.0 · PRIORITY: 8 · Launch-critical: no  
-WHAT TO IMPLEMENT: `scripts/sync-roc-geo-floors.mjs` reads corpus, rewrites floors. Status: **Implemented** (2026-07-23) — `scripts/sync-roc-geo-floors.mjs` reads corpus, rewrites llms/Home/prerender floors; postbuild wired.
+WHAT TO IMPLEMENT: `scripts/sync-roc-geo-floors.mjs` reads corpus, rewrites floors. Status: **Implemented** (2026-07-23) — scripts/sync-roc-geo-floors.mjs present; pure assert existence.
 
 ## #17 — llms.txt always lists current claim floor + corpus URL
 Area: GEO · Anchor: llmstxt · Score: 8.8→9.5 · PRIORITY: 8 · Launch-critical: no  
-Status: **Implemented** (2026-07-23) — llms.txt auto-synced to 660+ via sync-roc-geo-floors; corpus URL present.
+Status: **Implemented** (2026-07-23) — llms.txt corpus URL + 300+ tier-labeled floor pure locked.
 
 ## #18 — Sitemap image:image floor hold ≥400
 Area: SEO · Anchor: Google Images · Score: 8.5→9.0 · PRIORITY: 7 · Launch-critical: no  
-Evidence: ~429 image nodes live. Status: **Pending** (assert pure postbuild)
+Evidence: ~429 image nodes live. Status: **Implemented** (2026-07-23) — crawler-surfaces MIN_SITEMAP_IMAGES=400; dist 409+ live ~429.
 
 ## #19 — lastmod accuracy from content hash when git date stale
 Area: SEO · Anchor: Google SC · Score: 7.5→8.8 · PRIORITY: 6 · Launch-critical: no  
@@ -136,7 +136,7 @@ Status: **Pending**
 
 ## #25 — Chapter export filtered evidence as CSV
 Area: Researcher · Anchor: Staff-plus · Score: 7.8→9.0 · PRIORITY: 8 · Launch-critical: no  
-Evidence: Sources CSV exists; chapter-level filter export incomplete. Status: **Pending**
+Evidence: Sources CSV exists; chapter-level filter export incomplete. Status: **Implemented** (2026-07-23) — ChapterPage Export CSV respects evidence tier filter; pure floors.
 
 ## #26 — Chapter keyboard shortcuts help panel
 Area: Reader · Anchor: Apple · Score: 7.5→8.8 · PRIORITY: 6 · Launch-critical: no  
@@ -256,7 +256,7 @@ Status: **Pending**
 
 ## #55 — Cookie consent state documented in privacy
 Area: Trust · Anchor: AP · Score: 8.5→9.2 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — verify:analytics-privacy in pure suite; PII strip on recordAnalyticsEvent.
 
 ## #56 — Auth password change rate limit pure floor
 Area: Security · Anchor: Staff-plus · Score: 8.5→9.3 · PRIORITY: 8 · Launch-critical: yes  

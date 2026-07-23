@@ -1221,6 +1221,40 @@ export default function ChapterPage() {
                   {filteredEvidenceCount === 1 ? '' : 'es'}
                 </span>
               )}
+              <button
+                type="button"
+                data-testid="chapter-export-evidence-csv"
+                onClick={() => {
+                  if (!chapter) return
+                  const rows = [
+                    ['chapter_id', 'tier', 'label', 'text'],
+                    ...visibleBlocks
+                      .filter((b) => b.type === 'evidence' && b.evidence)
+                      .map((b) => [
+                        chapter.id,
+                        b.evidence!.tier,
+                        b.evidence!.label.replace(/"/g, '""'),
+                        b.evidence!.text.replace(/"/g, '""'),
+                      ]),
+                  ]
+                  const csv = rows
+                    .map((r) => r.map((c) => `"${String(c)}"`).join(','))
+                    .join('\n')
+                  const blob = new Blob([`${csv}\n`], { type: 'text/csv;charset=utf-8' })
+                  const url = URL.createObjectURL(blob)
+                  const a = document.createElement('a')
+                  a.href = url
+                  a.download = `${chapter.id}-evidence${evidenceTierFilter === 'all' ? '' : `-${evidenceTierFilter}`}.csv`
+                  a.rel = 'noopener'
+                  a.click()
+                  URL.revokeObjectURL(url)
+                  trackDownload(chapter.id)
+                }}
+                className="inline-flex min-h-[44px] items-center gap-1.5 rounded-sm border border-border px-3 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
+                title="Download currently visible evidence boxes as CSV (respects tier filter)"
+              >
+                Export CSV
+              </button>
             </div>
           )}
           {hasEvidence && <EvidenceTierLegend mode="compact" className="mt-4" />}

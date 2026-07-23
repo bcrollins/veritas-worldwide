@@ -17,6 +17,8 @@ const root = path.join(__dirname, '..')
 const MIN_PRERENDER_ROUTES = 360
 // Profile prerenders + corpus (~387 public sitemap URLs).
 const MIN_SITEMAP_URLS = 360
+// Image sitemap nodes (image:image) — hold Discover/image SEO floor under densify.
+const MIN_SITEMAP_IMAGES = 400
 // Floor sits ~10% under the 2026-07-16 baseline (~30 llms links after About/Accessibility GEO).
 // After profile corpus + flagship profile GEO links (~49).
 const MIN_LLMS_LINKS = 40
@@ -136,6 +138,21 @@ const sitemapCount = Math.max(publicCount, distCount)
 assert(
   publicCount >= MIN_SITEMAP_URLS,
   `public sitemap URL count ${publicCount} is below floor ${MIN_SITEMAP_URLS}`
+)
+// #18 — image:image floor (public sitemap authoritative; dist may lag mid-build)
+const publicImageCount = (publicSitemapXml.match(/<image:image>/g) || []).length
+const distImageCount = distSitemapXml
+  ? (distSitemapXml.match(/<image:image>/g) || []).length
+  : 0
+const imageCount = Math.max(publicImageCount, distImageCount)
+assert(
+  imageCount >= MIN_SITEMAP_IMAGES,
+  `sitemap image:image count ${imageCount} (public=${publicImageCount} dist=${distImageCount}) below floor ${MIN_SITEMAP_IMAGES}`,
+)
+console.log(
+  `[verify:crawler-surfaces] sitemap image:image public=${publicImageCount}` +
+    (distSitemapXml ? ` dist=${distImageCount}` : '') +
+    ` (effective ${imageCount}) ≥ ${MIN_SITEMAP_IMAGES}`,
 )
 console.log(
   `[verify:crawler-surfaces] sitemap public=${publicCount}` +

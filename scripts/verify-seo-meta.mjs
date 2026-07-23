@@ -538,6 +538,19 @@ const llms = read('public/llms.txt')
 assert(llms.includes('veritasworldwide.com/privacy'), 'llms.txt must link Privacy for GEO trust discovery')
 assert(llms.includes('veritasworldwide.com/terms'), 'llms.txt must link Terms for GEO trust discovery')
 assert(llms.includes('veritasworldwide.com/membership'), 'llms.txt must link Membership for GEO discovery')
+// #17 — llms always lists current ROC claim floor + corpus URL for GEO retrieval
+assert(
+  llms.includes('veritasworldwide.com/record-of-jesus-christ/corpus.json'),
+  'llms.txt must list ROC corpus.json absolute URL',
+)
+assert(
+  /(?<!\d)([3-9]\d{2})\+\s*tier-labeled claims/.test(llms),
+  'llms.txt must advertise current 300+ ROC claim floor (e.g. 660+ tier-labeled claims)',
+)
+assert(
+  existsSync(join(root, 'scripts/sync-roc-geo-floors.mjs')),
+  'sync-roc-geo-floors.mjs must exist for GEO decade auto-bump (#16)',
+)
 assert(
   prerender.includes('veritasworldwide.com/privacy') && prerender.includes('## Trust layers'),
   'prerender llms generator must emit Privacy in Trust layers',
@@ -822,6 +835,12 @@ assert(
 assert(
   chapterPageSources.includes('Open primary source') || chapterPageSources.includes('PrimarySourceLink'),
   'ChapterPage sources must expose primary-source open control',
+)
+// #25 — chapter export filtered evidence as CSV
+assert(
+  chapterPageSources.includes('chapter-export-evidence-csv') &&
+    chapterPageSources.includes('text/csv'),
+  'ChapterPage must export filtered evidence boxes as CSV',
 )
 // #66 — personal timeline is local-only: no network surface
 assert(
