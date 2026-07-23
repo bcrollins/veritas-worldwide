@@ -1572,7 +1572,9 @@ assert(homeEnd.includes('home-related-hubs') && homeEnd.includes('RelatedHubs'),
 
 // MULTI-AGENT densify path never staged by nav pure suite (self-check)
 const suiteSelf = read('scripts/verify-nav-recovery-surfaces.mjs')
-assert(!suiteSelf.includes('public/israel-dossier/corpus.json'), 'suite does not thrash densify corpus path')
+// Recovery suite must not read densify corpus files (ownership boundary)
+assert(!suiteSelf.includes("read('public/israel-dossier"), 'suite does not thrash densify corpus reads')
+assert(!suiteSelf.includes('src/data/israelDossier'), 'suite does not thrash densify sources')
 assert(suiteSelf.includes('RelatedHubs'), 'suite owns RelatedHubs')
 assert(suiteSelf.includes('DossierHubSpokes') || suiteSelf.includes('dossier-hub-spokes'), 'suite owns spokes')
 assert(suiteSelf.includes('ResearchHubChips') || suiteSelf.includes('research-hub-chips'), 'suite owns research chips')
