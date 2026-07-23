@@ -12,6 +12,7 @@ A single ZIP of public machine-readable corpora used by the live site:
 - `profiles/corpus.json`
 - `record-of-jesus-christ/corpus.json`
 - `israel-dossier/corpus.json`
+- `israel-dossier/visual-investigations.json` (multi-source video/photo incident index)
 - soft-floor JSON files
 - Israel template/workbook manifests
 - `llms.txt`
@@ -38,6 +39,7 @@ Runs automatically in `postbuild` after corpus exports. Writes **both** `public/
 - `/researcher` hub tool cards
 - `/sources` machine-readable panel
 - `/methodology` downloads panel
+- Home Power Profiles band + Media Kit press one-liner
 - `llms.txt`
 
 ## Verify
