@@ -1,9 +1,9 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:51:35.151Z  
+**Generated:** 2026-07-23T09:54:18.892Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 309  
-**Tier histogram:** `{"circumstantial": 15, "contested": 31, "interpretive": 30, "literary_theological": 3, "speculative": 2, "verified": 108, "well_attested": 120}`
+**Claim count:** 318  
+**Tier histogram:** `{"circumstantial": 15, "contested": 32, "interpretive": 31, "literary_theological": 3, "speculative": 2, "verified": 113, "well_attested": 122}`
 
 Entity-only attribution. Live on veritasworldwide.com.
 
@@ -18,6 +18,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ane-black-obelisk-jehu` | verified | proof_grade_data | The Black Obelisk of Shalmaneser III depicts Jehu (or envoy) of Israel paying tribute — a primary visual control for 9th-century Israelite kingship. |
 | `ane-cos-corpus` | well_attested | attested_report | The Context of Scripture (COS) and ANET anthologies assemble primary ANE texts used as comparative controls for Hebrew Bible literature and historiography. |
 | `ane-cyrus-cylinder` | verified | proof_grade_data | The Cyrus Cylinder (c. 539 BCE) records Achaemenid policy of restoring temples and returning displaced populations after the conquest of Babylon. |
+| `ane-cyrus-cylinder-policy` | verified | proof_grade_data | The Cyrus Cylinder documents Achaemenid policy language of temple restoration and population returns; it is not a verbatim Ezra decree. |
 | `ane-deir-alla` | well_attested | proof_grade_data | The Deir Alla inscription mentions Balaam son of Beor — a rare extra-biblical onomastic parallel to Numbers 22–24 traditions. |
 | `ane-ekron-inscription` | verified | proof_grade_data | The Ekron royal dedicatory inscription names Philistine rulers and a temple of Ptgyh — primary control for Iron Age Philistine urban religion and politics. |
 | `ane-exodus-historicity` | contested | debate | The historicity and scale of an Israelite exodus from Egypt remain contested in critical scholarship. |
@@ -47,6 +48,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `arch-dead-sea-scroll-caves` | verified | proof_grade_data | The Qumran cave finds (1947–) remain the primary archaeological recovery context for the Dead Sea Scrolls corpus. |
 | `arch-destruction-70` | verified | proof_grade_data | The Roman destruction of Jerusalem and the Temple in 70 CE is multiply attested (Josephus; archaeological burn/destruction layers; Roman triumph iconography such as the Arch of Titus spoils relief). |
 | `arch-galilee-boat` | verified | proof_grade_data | The “Jesus Boat” (first-century Galilee boat, discovered 1986) illustrates fishing technology on the lake in the Early Roman period. |
+| `arch-galilee-boat-tech` | verified | proof_grade_data | The so-called “Jesus Boat” (1st-c. Galilee fishing vessel from the Sea of Galilee drought finds) illustrates period boat technology, not a specific Gospel craft. |
 | `arch-gamla` | verified | proof_grade_data | Gamla (Golan) destruction in the First Jewish Revolt is archaeologically and literarily documented (Josephus), illustrating Galilee/Golan war archaeology. |
 | `arch-herodium` | verified | proof_grade_data | Herodium is a major Herodian fortress-palace complex with extensive excavation; it anchors elite architecture of late Second Temple Judea. |
 | `arch-herodium-tomb-debate` | contested | debate | A monumental mausoleum at Herodium has been proposed as Herod’s tomb; identification remains debated among excavators and reviewers. |
@@ -76,6 +78,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `arch-yodefat` | verified | proof_grade_data | Yodefat (Jotapata) siege archaeology correlates with Josephus’s First Revolt narrative and illustrates Galilean war destruction layers. |
 | `cosmo-acoustic-scale` | verified | science_model | The angular scale of the CMB acoustic peaks (θ_*) tightly constrains the angular diameter distance to recombination in flat ΛCDM. |
 | `cosmo-age` | well_attested | science_model | Under Planck 2018 ΛCDM parameters, the universe age is approximately 13.8 billion years. |
+| `cosmo-age-universe` | verified | science_model | ΛCDM age of the universe is ~13.8 Gyr from CMB + BAO baselines; local distance-ladder routes can differ slightly within tension research. |
 | `cosmo-bao` | verified | science_model | Baryon acoustic oscillations (BAO) measured in large-scale galaxy surveys provide an independent standard-ruler constraint on the expansion history within ΛCDM. |
 | `cosmo-baryon-acoustic-fixed` | verified | science_model | The comoving sound horizon r_d is a calibrated standard ruler from early-universe physics used by BAO surveys to map H(z) and D_A(z). |
 | `cosmo-bbn` | well_attested | science_model | Primordial abundances of light elements (⁴He, D, ³He, ⁷Li) are broadly consistent with Big Bang nucleosynthesis predictions. |
@@ -125,6 +128,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ec-melito-passover` | well_attested | attested_report | Melito of Sardis’s Peri Pascha (2nd c.) is an early Christian paschal homily with high christology and anti-Jewish rhetoric — reception history, not HJ primary data. |
 | `ec-melito-passover-pascha` | well_attested | attested_report | Melito’s Peri Pascha links Passover typology to Jesus’ passion in a high christology — second-century reception, not first-century reportage. |
 | `ec-muratorian` | well_attested | attested_report | The Muratorian Fragment is an early (often 2nd-century, date contested) Latin canon list showing a nearly formed but not identical NT collection. |
+| `ec-muratorian-fragment` | contested | debate | The Muratorian Fragment is an early (often 2nd c., some later-date arguments) Latin canon list reflecting developing New Testament collection boundaries. |
 | `ec-nicaea` | literary_theological | tradition | The Council of Nicaea (325 CE) addressed Christological doctrine (homoousios) under Constantine; it did not create the NT canon list. |
 | `ec-origen-hexapla` | well_attested | attested_report | Origen’s Hexapla (3rd c.) arranged Hebrew and Greek OT columns for comparative textual work — early Christian engagement with pluriform scriptural text. |
 | `ec-papias` | circumstantial | attested_report | Papias of Hierapolis (early 2nd c.), preserved in fragments via Eusebius, offers early traditions about Mark and Matthew’s composition — valuable and debated. |
@@ -154,6 +158,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `hj-galilee-context` | well_attested | attested_report | Early Roman Galilee included agricultural villages, fishing economy on the lake, and nearby urban centers such as Sepphoris and Tiberias. |
 | `hj-galilee-economy` | well_attested | reconstruction | Galilee under Antipas was an agrarian and fishing economy with urbanization at Sepphoris and Tiberias; Jesus traditions sit in that social landscape. |
 | `hj-galilee-jewishness` | well_attested | reconstruction | Archaeology and literary sources support a predominantly Jewish Galilee in the early first century with hellenizing urban pockets (Sepphoris, Tiberias). |
+| `hj-galilee-to-jerusalem` | well_attested | reconstruction | A Galilee-centered public activity culminating in a final Jerusalem journey is a common historical outline across Synoptic reconstructions. |
 | `hj-healings-reputation` | well_attested | reconstruction | Healing activity is multiply attested as part of Jesus’ public reputation in Synoptic tradition; historians often accept a healing reputation while bracketing modern medical ontologies. |
 | `hj-herod-death` | contested | debate | The death of Herod the Great is conventionally dated to 4 BCE (with minority arguments for 1 BCE / other), anchoring the latest plausible nativity window in Matthew’s framework. |
 | `hj-james-leadership` | well_attested | attested_report | James the brother of Jesus is attested as a Jerusalem leadership figure (Paul; Acts; Josephus Ant. 20.200) until his death c. 62 CE. |
@@ -210,6 +215,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `mod-open-data-ethics` | interpretive | attested_report | Modern digital manuscript projects raise access, conservation, provenance, and citation-ethics issues distinct from the content of any single reading. |
 | `mod-population-genetics` | well_attested | science_model | Population genetics of the Levant documents deep regional continuity with admixture layers; it does not identify individuals named in ancient texts. |
 | `mod-print-gutenberg` | verified | proof_grade_data | Print culture from Gutenberg onward multiplied biblical text access and stabilized vernacular canons — a reception-historical fact separate from first-century origins. |
+| `mod-proof-vs-belief` | interpretive | reconstruction | This corpus’s proofVsConcept field exists to prevent readers from equating historical attestation, scientific models, tradition, and theological belief. |
 | `mod-quest-historiography` | interpretive | reconstruction | Historiography of the “quests” for the historical Jesus is itself a modern scholarly narrative with periodization that can oversimplify continuous research traditions. |
 | `mod-radiocarbon-dss` | well_attested | science_model | Radiocarbon dating of selected Dead Sea Scrolls supports late Second Temple copy ranges broadly consistent with paleography. |
 | `mod-social-memory` | interpretive | reconstruction | Social memory approaches treat Gospel traditions as communal remembering under social constraints rather than pure invention or pure stenography. |
@@ -238,6 +244,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nc-suetonius-chrestus` | circumstantial | attested_report | Suetonius (Claudius 25) mentions disturbances in Rome under Claudius involving “Chrestus” — identification with Christ/Christians is possible but contested. |
 | `nc-suetonius-nero` | well_attested | attested_report | Suetonius (Nero 16) mentions punishments of Christians under Nero as adherents of a new and mischievous superstition. |
 | `nc-tacitus` | well_attested | attested_report | Tacitus, Annals 15.44 reports that “Christus” was executed under Tiberius by the procurator Pontius Pilate and that the movement originated in Judea. |
+| `nc-tacitus-christus-title` | well_attested | attested_report | Tacitus’s use of “Christus” as a title/name and “Christians” as a group label reflects Roman awareness of the Christ-derived name by the early second century. |
 | `nc-tacitus-context` | well_attested | attested_report | Tacitus Annals 15.44 places Christus’s execution under Tiberius by procurator Pontius Pilate within a Nero-era persecution narrative. |
 | `nc-tacitus-latin` | well_attested | attested_report | Tacitus Annals 15.44 (Latin) states that Christus suffered the extreme penalty under Tiberius by sentence of procurator Pontius Pilate, and that the superstitio arose in Judea. |
 | `nc-talmud` | circumstantial | reconstruction | Certain Babylonian Talmud passages are sometimes read as hostile allusions to Jesus; dating, redaction, and identification are highly contested and often late. |
@@ -275,6 +282,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nt-p46-paul` | verified | proof_grade_data | Papyrus P46 is among the earliest substantial collections of Pauline letters (typically dated late 2nd / early 3rd century CE). |
 | `nt-p52` | well_attested | attested_report | Papyrus P52 (Rylands Greek P 457) is among the earliest surviving NT fragments (John 18), paleographically dated roughly to the second century CE. |
 | `nt-p66-p75` | verified | proof_grade_data | Bodmer papyri P66 (John) and P75 (Luke/John) are major early substantial witnesses typically dated to the late 2nd / early 3rd century and foundational for early Alexandrian text studies. |
+| `nt-papyrus-discovery-curve` | verified | proof_grade_data | Twentieth–twenty-first century papyrus discoveries (Oxyrhynchus, etc.) continuously expand the early Greek NT evidence base catalogued by INTF. |
 | `nt-patristic-citations` | well_attested | proof_grade_data | Patristic citations are secondary witnesses that can preserve early readings but require careful evaluation of quoting habits and later manuscript tradition of the fathers. |
 | `nt-paul-dates` | well_attested | reconstruction | Undisputed Pauline letters are typically dated c. 49–58 CE and are the earliest surviving Christian literary corpus. |
 | `nt-pericope-adulterae` | well_attested | proof_grade_data | The pericope adulterae (John 7:53–8:11) is widely judged a later insertion on strong external manuscript grounds, though the story circulated early in the Latin and some Greek traditions. |
@@ -298,6 +306,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `st-herod-antipas` | verified | proof_grade_data | Herod Antipas ruled Galilee and Perea as tetrarch (4 BCE–39 CE); Josephus and coins document his rule and cities (Tiberias; Sepphoris reconstruction). |
 | `st-herod-great-death` | contested | debate | Herod the Great’s death is commonly dated 4 BCE (with minority 1 BCE arguments), framing the terminus for Matthew’s birth narrative chronology. |
 | `st-herod-temple` | verified | proof_grade_data | Herod’s expansion of the Jerusalem Temple Mount is archaeologically and literarily documented (Josephus; Western Wall / Temple Mount retaining architecture). |
+| `st-herod-temple-expansion` | verified | proof_grade_data | Herod’s Temple Mount expansion created a massive platform whose retaining architecture remains archaeologically visible (Western Wall, etc.). |
 | `st-isaiah-stability` | well_attested | attested_report | Comparison of 1QIsaᵃ (c. 2nd–1st century BCE) with the medieval Masoretic Text shows high overall agreement with mostly orthographic and minor variants. |
 | `st-josephus-corpus` | verified | proof_grade_data | Flavius Josephus (late first century CE) is a principal non-Christian Jewish historian for Herodian and early Roman Judea. |
 | `st-lxx-textual` | verified | proof_grade_data | The Septuagint often preserves readings that differ from the medieval Masoretic Text; some align with Qumran Hebrew witnesses. |
