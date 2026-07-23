@@ -104,8 +104,12 @@ assert(support.includes("robots: 'noindex, nofollow'"), 'support success must be
 const notFound = read('src/pages/NotFoundPage.tsx')
 assert(notFound.includes("robots: 'noindex, nofollow'"), 'NotFoundPage must be noindex')
 assert(notFound.includes('404'), 'NotFoundPage must surface 404')
-assert(notFound.includes('/profiles'), 'NotFoundPage must hub-link Power Profiles for recovery')
-assert(notFound.includes('/israel-dossier'), 'NotFoundPage must hub-link Israel Dossier')
+// Primary hubs may live in RelatedHubs PRIMARY_RELATED_HUBS when NotFound reuses the shared source.
+const notFoundHubs = notFound.includes('PRIMARY_RELATED_HUBS')
+  ? read('src/components/RelatedHubs.tsx') + notFound
+  : notFound
+assert(notFoundHubs.includes('/profiles'), 'NotFoundPage must hub-link Power Profiles for recovery')
+assert(notFoundHubs.includes('/israel-dossier'), 'NotFoundPage must hub-link Israel Dossier')
 assert(notFound.includes('/methodology'), 'NotFoundPage must hub-link Methodology')
 
 const app = read('src/App.tsx')

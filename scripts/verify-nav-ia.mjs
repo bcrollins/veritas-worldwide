@@ -86,17 +86,24 @@ assert(search.includes('data-testid="search-idle-hubs"') || search.includes('sea
 assert(search.includes('to="/content-pack"'), 'Search empty includes research pack')
 assert(search.includes('to="/profiles"'), 'Search empty includes profiles')
 
-// Soft-404 / NotFound primary hubs
+// Soft-404 / NotFound primary hubs (inline PRIMARY_HUBS or shared PRIMARY_RELATED_HUBS)
 assert(notFound.includes('data-testid="not-found-hub-chips"') || notFound.includes('PRIMARY_HUBS'), '404 hub chips required')
-assert(notFound.includes("to: '/'") || notFound.includes('to: "/"') || notFound.includes("to: '/'") || notFound.includes('to="/"'), '404 Record hub')
-assert(notFound.includes('/israel-dossier'), '404 Dossiers hub')
-assert(notFound.includes('/search'), '404 Search hub')
-assert(notFound.includes('/profiles'), '404 Profiles hub')
-assert(notFound.includes('/read'), '404 Read hub')
-const hubBlock = notFound.match(/PRIMARY_HUBS = \[([\s\S]*?)\] as const/)
-assert(hubBlock, 'PRIMARY_HUBS const')
+const notFoundHubsSrc = notFound.includes('PRIMARY_RELATED_HUBS')
+  ? fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
+  : notFound
+assert(notFoundHubsSrc.includes("to: '/'") || notFoundHubsSrc.includes('to: "/"') || notFoundHubsSrc.includes('to="/"'), '404 Record hub')
+assert(notFoundHubsSrc.includes('/israel-dossier'), '404 Dossiers hub')
+assert(notFoundHubsSrc.includes('/search'), '404 Search hub')
+assert(notFoundHubsSrc.includes('/profiles'), '404 Profiles hub')
+assert(notFoundHubsSrc.includes('/read'), '404 Read hub')
+const hubBlock =
+  notFound.match(/PRIMARY_HUBS = \[([\s\S]*?)\] as const/) ||
+  (notFound.includes('PRIMARY_RELATED_HUBS')
+    ? fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').match(/PRIMARY_RELATED_HUBS[^=]*= \[([\s\S]*?)\] as const/)
+    : null)
+assert(hubBlock, 'PRIMARY_HUBS or PRIMARY_RELATED_HUBS const')
 const hubCount = (hubBlock[1].match(/to:/g) || []).length
-assert(hubCount === 5, `PRIMARY_HUBS must be exactly 5; got ${hubCount}`)
+assert(hubCount === 5, `PRIMARY hubs must be exactly 5; got ${hubCount}`)
 assert(notFound.includes("robots: 'noindex, nofollow'") || notFound.includes('noindex'), '404 must stay noindex')
 
 // Server soft-404 HTML also exposes ≤5 primary hubs (no-JS / crawler recovery)
