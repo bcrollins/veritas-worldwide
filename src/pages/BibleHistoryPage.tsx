@@ -4,15 +4,32 @@ import { setMetaTags, clearMetaTags, setJsonLd, removeJsonLd, SITE_URL, SITE_NAM
 import SharePanel from '../components/SharePanel'
 import NewsletterSignup from '../components/NewsletterSignup'
 import ReadingProgress from '../components/ReadingProgress'
+import {
+  SCHOLARLY_TIERS,
+  type ScholarlyEvidenceTier,
+} from '../data/evidenceTiers'
 
-/* ── Evidence Tier System ─────────────────────────────────────── */
-type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'
+/* ── Evidence Tier System (aligned with Record of Jesus Christ 7-tier taxonomy) ─ */
+type EvidenceTier = ScholarlyEvidenceTier
 
-const TIER_CONFIG: Record<EvidenceTier, { label: string; color: string; bg: string; border: string; desc: string; icon: string }> = {
-  verified: { label: 'Verified', color: 'var(--color-verified)', bg: 'var(--color-verified-bg)', border: 'var(--color-verified-border)', desc: 'Confirmed via archaeological evidence, manuscript records, or independent historical attestation', icon: '✓' },
-  circumstantial: { label: 'Circumstantial', color: 'var(--color-circumstantial)', bg: 'var(--color-circumstantial-bg)', border: 'var(--color-circumstantial-border)', desc: 'Individual facts documented — the connection or interpretation involves scholarly debate', icon: '◐' },
-  disputed: { label: 'Disputed', color: 'var(--color-disputed)', bg: 'var(--color-disputed-bg)', border: 'var(--color-disputed-border)', desc: 'Claimed by tradition or text but not independently confirmed by external evidence', icon: '⚠' },
-}
+/** Active filters on this companion page (subset + full labels available). */
+const BIBLE_TIER_ORDER: EvidenceTier[] = [
+  'verified',
+  'well_attested',
+  'circumstantial',
+  'contested',
+  'interpretive',
+  'speculative',
+  'literary_theological',
+]
+
+const TIER_CONFIG: Record<EvidenceTier, { label: string; color: string; bg: string; border: string; desc: string; icon: string }> =
+  Object.fromEntries(
+    BIBLE_TIER_ORDER.map(t => {
+      const s = SCHOLARLY_TIERS[t]
+      return [t, { label: s.shortLabel, color: s.colorVar, bg: s.bgVar, border: s.borderVar, desc: s.description, icon: s.icon }]
+    }),
+  ) as Record<EvidenceTier, { label: string; color: string; bg: string; border: string; desc: string; icon: string }>
 
 /* ── Data Types ───────────────────────────────────────────────── */
 interface EvidenceBlock {
@@ -174,7 +191,7 @@ const EVIDENCE_BLOCKS: EvidenceBlock[] = [
   {
     claim: 'Moses\' authorship of the Torah is attributed by tradition but challenged by modern textual criticism',
     detail: 'Jewish and Christian tradition attributes the first five books (Genesis–Deuteronomy) to Moses. However, since the 18th century, scholars have identified multiple literary sources within the Torah (the Documentary Hypothesis: J, E, D, P sources), suggesting composite authorship over several centuries. The text refers to Moses\' death (Deuteronomy 34), uses anachronistic place names, and contains duplicate narratives with distinct vocabulary and theology. Conservative scholars counter that Mosaic authorship allows for later editorial updates and that the text itself claims Mosaic origin in several passages (Exodus 24:4, Deuteronomy 31:9).',
-    tier: 'disputed',
+    tier: 'contested',
     sources: [
       { label: 'Wellhausen, Julius. Prolegomena to the History of Israel. 1883.', url: 'https://archive.org/' },
       { label: 'Friedman, Richard Elliott. Who Wrote the Bible? Harper, 1987.', url: 'https://www.harpercollins.com/' },
@@ -194,7 +211,7 @@ const EVIDENCE_BLOCKS: EvidenceBlock[] = [
   {
     claim: 'The resurrection of Jesus: historical claim attested by early sources, but not independently verifiable',
     detail: 'The bodily resurrection of Jesus is the central claim of Christianity. Paul\'s creedal tradition in 1 Corinthians 15:3–8 (dated to within ~5 years of the event) lists post-resurrection appearances to Peter, the Twelve, 500+ witnesses, James, and Paul himself. All four Gospels report the empty tomb. Historian N.T. Wright argues the combination of an empty tomb and post-mortem appearances is best explained by bodily resurrection; skeptical scholars (e.g., Bart Ehrman) attribute the appearances to visionary experiences. No physical or documentary evidence exists to confirm or refute the claim — it is a matter of historical inference and interpretive framework.',
-    tier: 'disputed',
+    tier: 'contested',
     sources: [
       { label: 'Wright, N.T. The Resurrection of the Son of God. Fortress Press, 2003.', url: 'https://www.fortresspress.com/' },
       { label: 'Ehrman, Bart D. How Jesus Became God. HarperOne, 2014.', url: 'https://www.harpercollins.com/' },
@@ -205,7 +222,7 @@ const EVIDENCE_BLOCKS: EvidenceBlock[] = [
 
 /* ── Bible Timeline ───────────────────────────────────────────── */
 const TIMELINE: TimelineEntry[] = [
-  { date: 'c. 1400–1200 BCE', title: 'Earliest proposed composition of Torah sources', detail: 'The oldest textual traditions within Genesis–Deuteronomy may originate from this period, though dating is debated.', tier: 'disputed' },
+  { date: 'c. 1400–1200 BCE', title: 'Earliest proposed composition of Torah sources', detail: 'The oldest textual traditions within Genesis–Deuteronomy may originate from this period, though dating is debated.', tier: 'contested' },
   { date: 'c. 1208 BCE', title: 'Merneptah Stele — earliest mention of "Israel"', detail: 'Egyptian pharaoh records a military campaign against a people called Israel in Canaan.', tier: 'verified' },
   { date: 'c. 840 BCE', title: 'Mesha Stele erected', detail: 'King Mesha of Moab records events paralleling 2 Kings, mentioning Omri, Israel, and Yahweh.', tier: 'verified' },
   { date: 'c. 840–830 BCE', title: 'Tel Dan Stele — "House of David"', detail: 'Aramean king commemorates victory over the "House of David," confirming the Davidic dynasty.', tier: 'verified' },
@@ -241,7 +258,7 @@ const STATS = [
 function TierFilter({ active, onToggle }: { active: Set<EvidenceTier>; onToggle: (t: EvidenceTier) => void }) {
   return (
     <div className="flex flex-wrap gap-2">
-      {(Object.keys(TIER_CONFIG) as EvidenceTier[]).map(tier => {
+      {BIBLE_TIER_ORDER.map(tier => {
         const cfg = TIER_CONFIG[tier]
         const isActive = active.has(tier)
         return (
@@ -328,7 +345,9 @@ function EvidenceCard({ block }: { block: EvidenceBlock }) {
 
 /* ── Main Page ────────────────────────────────────────────────── */
 export default function BibleHistoryPage() {
-  const [activeTiers, setActiveTiers] = useState<Set<EvidenceTier>>(new Set(['verified', 'circumstantial', 'disputed']))
+  const [activeTiers, setActiveTiers] = useState<Set<EvidenceTier>>(
+    () => new Set(['verified', 'well_attested', 'circumstantial', 'contested', 'interpretive', 'speculative', 'literary_theological']),
+  )
 
   const toggleTier = (tier: EvidenceTier) => {
     setActiveTiers(prev => {
@@ -417,7 +436,7 @@ export default function BibleHistoryPage() {
                 Evidence Classification System
               </h2>
               <div className="space-y-3">
-                {(Object.keys(TIER_CONFIG) as EvidenceTier[]).map(tier => {
+                {BIBLE_TIER_ORDER.map(tier => {
                   const cfg = TIER_CONFIG[tier]
                   return (
                     <div key={tier} className="flex items-start gap-3">
@@ -550,7 +569,7 @@ export default function BibleHistoryPage() {
                 <h3 className="font-sans text-[0.65rem] font-bold tracking-[0.15em] uppercase text-ink-muted mb-4">
                   Evidence Breakdown
                 </h3>
-                {(Object.keys(TIER_CONFIG) as EvidenceTier[]).map(tier => {
+                {BIBLE_TIER_ORDER.map(tier => {
                   const cfg = TIER_CONFIG[tier]
                   const count = EVIDENCE_BLOCKS.filter(b => b.tier === tier).length
                   const pct = Math.round((count / EVIDENCE_BLOCKS.length) * 100)

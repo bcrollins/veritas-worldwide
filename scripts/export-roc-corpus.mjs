@@ -9,6 +9,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const files = [
   path.join(root, 'src/data/recordOfJesusChrist.ts'),
   path.join(root, 'src/data/recordOfJesusChristExtras.ts'),
+  path.join(root, 'src/data/recordOfJesusChristWave3.ts'),
 ]
 
 const CLAIM_ID = /id:\s*'((?:cosmo|ane|st|hj|nt|nc|arch|ec|mod)-[^']+)'/g

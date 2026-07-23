@@ -998,3 +998,20 @@ html.dark .card-lift:hover {
     box-shadow: none !important;
   }
 }
+
+/* Record of Jesus Christ — print / long-form archive */
+@media print {
+  .roc-claim-card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+  }
+
+  .roc-claim-card button {
+    display: none !important;
+  }
+
+  .roc-claim-card ul {
+    display: block !important;
+  }
+}

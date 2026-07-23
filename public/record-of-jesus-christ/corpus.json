@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T08:07:24.257Z",
-  "claimCount": 85,
+  "generatedAt": "2026-07-23T08:16:57.194Z",
+  "claimCount": 105,
   "tierHistogram": {
-    "verified": 33,
-    "contested": 14,
-    "well_attested": 26,
+    "verified": 37,
+    "contested": 16,
+    "well_attested": 37,
     "speculative": 2,
-    "interpretive": 5,
+    "interpretive": 6,
     "literary_theological": 3,
-    "circumstantial": 2
+    "circumstantial": 4
   },
   "claims": [
     {
@@ -54,6 +54,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "ane-inscription-map",
+      "claim": "Key West Semitic and Egyptian inscriptions relevant to Israel/Judah (Merneptah, Mesha, Tel Dan, Siloam, etc.) form a geographically distributed control set across Egypt, Transjordan, and the Galilee–Golan.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
       "id": "ane-merneptah",
       "claim": "The Merneptah Stele (c. 1208 BCE) contains the earliest known extra-biblical reference to “Israel” as a people in Canaan.",
       "tier": "verified",
@@ -75,6 +82,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "arch-bar-kokhba",
+      "claim": "The Bar Kokhba revolt (132–135 CE) is archaeologically and papyrologically attested; its aftermath reshaped Judean demography and Jewish–Christian trajectories.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
       "id": "arch-capernaum",
       "claim": "Capernaum (Kefar Nahum) was a fishing village on the Sea of Galilee with Early Roman occupation; a later synagogue stands over earlier remains.",
       "tier": "well_attested",
@@ -94,6 +108,13 @@
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "arch-masada",
+      "claim": "Masada’s archaeology confirms a First Jewish Revolt–period fortress with Roman siege works; Josephus’s mass-suicide narrative is only partly controllable by material remains.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
       "id": "arch-nazareth",
@@ -157,6 +178,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "cosmo-cmb-power",
+      "claim": "The CMB angular power spectrum exhibits acoustic peaks whose positions and amplitudes constrain baryon density, dark matter density, and curvature in ΛCDM fits.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
       "id": "cosmo-expansion",
@@ -229,6 +257,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "ec-update-triggers",
+      "claim": "This Record’s perpetual update triggers include: new major papyri/majuscule publications, INTF Liste changes, peer-reviewed dig reports, and material consensus shifts in historical Jesus research.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
       "id": "hj-appearances",
       "claim": "Early Christian proclamation included claims of post-crucifixion appearances to individuals and groups (1 Cor 15:3–8); the nature of those experiences is not scientifically settled.",
       "tier": "well_attested",
@@ -285,6 +320,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "hj-gal2-conflict",
+      "claim": "Galatians 2 records a conflict between Paul and Cephas (Peter) at Antioch over table fellowship with gentiles — primary evidence of diversity and dispute in the earliest movement.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
       "id": "hj-galilee-context",
       "claim": "Early Roman Galilee included agricultural villages, fishing economy on the lake, and nearby urban centers such as Sepphoris and Tiberias.",
       "tier": "well_attested",
@@ -292,11 +334,32 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "hj-herod-death",
+      "claim": "The death of Herod the Great is conventionally dated to 4 BCE (with minority arguments for 1 BCE / other), anchoring the latest plausible nativity window in Matthew’s framework.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "hj-james-leadership",
+      "claim": "James the brother of Jesus is attested as a Jerusalem leadership figure (Paul; Acts; Josephus Ant. 20.200) until his death c. 62 CE.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
       "id": "hj-language",
       "claim": "Jesus likely spoke Aramaic as a primary vernacular; Greek exposure in Galilee is plausible; Hebrew literacy/use is debated for the population stratum.",
       "tier": "contested",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-literacy",
+      "claim": "Literacy rates in Early Roman Judea/Galilee were limited relative to modern norms; most people encountered texts orally and through specialists.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
       "id": "hj-magi-star",
@@ -311,6 +374,20 @@
       "tier": "interpretive",
       "proofVsConcept": "reconstruction",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "hj-pauline-chronology",
+      "claim": "Pauline absolute chronology is reconstructed from Acts, the letters, and external anchors (Gallio inscription at Delphi); competing schemes (Ramsay, Knox, Hyldahl, et al.) differ by several years.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "hj-peter-rome",
+      "claim": "Peter’s presence and martyrdom in Rome are early traditions (1 Clement; later Acts of Peter) with varying historical confidence; New Testament itself does not narrate a Roman martyrdom.",
+      "tier": "circumstantial",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
       "id": "hj-pilate-stone",
@@ -334,6 +411,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "hj-women-movement",
+      "claim": "Early Christian sources name women as patrons, witnesses, and coworkers (e.g., Mary Magdalene traditions; Romans 16 co-workers); social roles are historically reconstructable within limits.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
       "id": "mod-criteria-critique",
       "claim": "Classical criteria of authenticity (embarrassment, dissimilarity, multiple attestation) are historiographical tools with known biases; recent memory and social approaches revise their use.",
       "tier": "interpretive",
@@ -346,6 +430,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "mod-genetics-limits",
+      "claim": "Ancient DNA of the Southern Levant informs regional demographic history; it cannot identify named New Testament individuals or prove specific genealogies in the Gospels.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
       "id": "mod-historical-jesus-quests",
@@ -367,6 +458,13 @@
       "tier": "well_attested",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "mod-print-gutenberg",
+      "claim": "Print culture from Gutenberg onward multiplied biblical text access and stabilized vernacular canons — a reception-historical fact separate from first-century origins.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
       "id": "mod-radiocarbon-dss",
@@ -446,6 +544,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "nc-talmud",
+      "claim": "Certain Babylonian Talmud passages are sometimes read as hostile allusions to Jesus; dating, redaction, and identification are highly contested and often late.",
+      "tier": "circumstantial",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
       "id": "nc-tf",
       "claim": "Josephus, Antiquities 18.63–64 (Testimonium Flavianum) is widely judged partly authentic with Christian interpolations; fully authentic and fully forged positions are minorities.",
       "tier": "contested",
@@ -465,6 +570,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nt-eusebius-ch",
+      "claim": "Eusebius’s Church History is an indispensable but tendentious fourth-century source for earlier Christian literature and martyrdoms; source-critical caution is mandatory.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
       "id": "nt-gospel-dates",
@@ -500,6 +612,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "nt-origen-hexapla",
+      "claim": "Origen’s Hexapla (3rd c.) arranged Hebrew and Greek columns for comparative Old Testament textual work — a landmark of ancient textual criticism.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave3.ts"
     },
     {
       "id": "nt-p45-p46-p47",
@@ -600,6 +719,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "st-mishnah-context",
+      "claim": "The Mishnah (c. 200 CE redaction) and related Tannaitic literature preserve legal memory of Second Temple practice but are post-70 literary products requiring critical use for pre-70 reconstruction.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
       "id": "st-parties",
       "claim": "Josephus and later rabbinic memory describe Pharisees, Sadducees, and Essenes as major Jewish schools; exact social demographics remain reconstructed.",
       "tier": "well_attested",
@@ -612,6 +738,20 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "st-prefecture",
+      "claim": "Roman Judea after 6 CE was administered by equestrian prefects (later procurators) based primarily at Caesarea, with troops and judicial powers including capital cases in practice.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave3.ts"
+    },
+    {
+      "id": "st-temple-economy",
+      "claim": "The Jerusalem Temple system involved tithes, offerings, and currency exchange for worshippers — a documented economic-religious complex in Josephus and later rabbinic memory.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave3.ts"
     }
   ]
 }

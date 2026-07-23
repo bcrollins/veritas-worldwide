@@ -92,12 +92,27 @@ function TierFilter({
 
 function ClaimCard({ claim }: { claim: RocClaim }) {
   const [open, setOpen] = useState(false)
+  const [copied, setCopied] = useState(false)
   const cfg = SCHOLARLY_TIERS[claim.tier]
+
+  const copyCitation = async () => {
+    const url = `${SITE_URL}${ROC_META.path}#${claim.id}`
+    const text = `Veritas Worldwide. “${claim.claim}” [${SCHOLARLY_TIERS[claim.tier].label}; ${PROOF_LABELS[claim.proofVsConcept]}]. In ${ROC_META.title}. ${ROC_META.publishDate}. ${url}`
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      /* ignore */
+    }
+  }
+
   return (
     <article
-      className="border rounded-sm overflow-hidden transition-shadow hover:shadow-md"
+      className="border rounded-sm overflow-hidden transition-shadow hover:shadow-md roc-claim-card"
       style={{ borderColor: `color-mix(in srgb, ${cfg.colorVar} 35%, transparent)` }}
       id={claim.id}
+      aria-labelledby={`${claim.id}-title`}
     >
       <div className="p-5 sm:p-6" style={{ backgroundColor: cfg.bgVar }}>
         <div className="flex flex-wrap items-center gap-2 mb-3">
@@ -105,8 +120,9 @@ function ClaimCard({ claim }: { claim: RocClaim }) {
           <span className="font-sans text-[0.6rem] tracking-[0.06em] uppercase text-ink-faint">
             {PROOF_LABELS[claim.proofVsConcept]}
           </span>
+          <span className="font-mono text-[0.55rem] text-ink-faint ml-auto">{claim.id}</span>
         </div>
-        <h3 className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-3">
+        <h3 id={`${claim.id}-title`} className="font-display text-lg sm:text-xl font-bold text-ink leading-snug mb-3">
           {claim.claim}
         </h3>
         <p className="font-body text-sm text-ink-light leading-relaxed">{claim.detail}</p>
@@ -116,20 +132,35 @@ function ClaimCard({ claim }: { claim: RocClaim }) {
             {claim.confidenceNote}
           </p>
         )}
-        <button
-          type="button"
-          onClick={() => setOpen(v => !v)}
-          className="mt-4 inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.7rem] font-semibold tracking-[0.05em] uppercase transition-colors"
-          style={{ color: cfg.colorVar }}
-          aria-expanded={open}
-        >
-          <svg className={`w-3 h-3 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-          {open ? 'Hide' : 'View'} Sources ({claim.sources.length})
-        </button>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => setOpen(v => !v)}
+            className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.7rem] font-semibold tracking-[0.05em] uppercase transition-colors px-1"
+            style={{ color: cfg.colorVar }}
+            aria-expanded={open}
+            aria-controls={`${claim.id}-sources`}
+          >
+            <svg className={`w-3 h-3 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+            {open ? 'Hide' : 'View'} Sources ({claim.sources.length})
+          </button>
+          <button
+            type="button"
+            onClick={copyCitation}
+            className="inline-flex min-h-[44px] items-center gap-1.5 font-sans text-[0.7rem] font-semibold tracking-[0.05em] uppercase text-ink-muted hover:text-crimson transition-colors px-1"
+            aria-label={`Copy citation for claim ${claim.id}`}
+          >
+            {copied ? 'Copied' : 'Copy citation'}
+          </button>
+        </div>
         {open && (
-          <ul className="mt-3 pt-3 border-t space-y-1.5" style={{ borderColor: `color-mix(in srgb, ${cfg.colorVar} 20%, transparent)` }}>
+          <ul
+            id={`${claim.id}-sources`}
+            className="mt-3 pt-3 border-t space-y-1.5"
+            style={{ borderColor: `color-mix(in srgb, ${cfg.colorVar} 20%, transparent)` }}
+          >
             {claim.sources.map((s, i) => (
               <li key={s.id}>
                 {s.url ? (
@@ -141,7 +172,7 @@ function ClaimCard({ claim }: { claim: RocClaim }) {
                   >
                     <span className="font-semibold shrink-0" style={{ color: cfg.colorVar }}>[{i + 1}]</span>
                     <span>
-                      {s.citation} <span className="text-ink-faint">↗</span>
+                      {s.citation} <span className="text-ink-faint" aria-hidden="true">↗</span>
                       <span className="block text-[0.6rem] uppercase tracking-wider text-ink-faint mt-0.5">{s.kind.replace('_', ' ')}</span>
                     </span>
                   </a>
@@ -275,10 +306,16 @@ export default function RecordOfJesusChristPage() {
   }, [])
 
   return (
-    <div className="w-full max-w-[1920px] mx-auto">
+    <div className="w-full max-w-[1920px] mx-auto roc-record-page">
+      <a
+        href="#roc-main"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:bg-crimson focus:text-white focus:px-4 focus:py-2 focus:rounded-sm font-sans text-sm"
+      >
+        Skip to evidence content
+      </a>
       <ReadingProgress />
 
-      <div className="border-b border-border bg-surface">
+      <div className="border-b border-border bg-surface no-print">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-3 py-2">
             <Link
@@ -302,7 +339,7 @@ export default function RecordOfJesusChristPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+      <div id="roc-main" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16" tabIndex={-1}>
         <header className="max-w-3xl mb-12 border-b border-border pb-10">
           <p className="font-sans text-[0.6rem] font-bold tracking-[0.2em] uppercase text-crimson mb-4">
             Documentary Record · Volume II Track

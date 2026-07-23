@@ -44,3 +44,6 @@
 **Something missing** relative to decade-complete ocean boil: deep variant catalogues, full papyri tables, interactive timeline, PDF export — queued in Top-100 ledger ranks 17–100.
 
 **Anonymity:** public ROC package PASS; production password hash env + org transfer remain open.
+
+## Interval 4 (2026-07-23)
+Wave3 claims (James, Gal 2, Masada, Bar Kokhba, prefecture, Herod death, Pauline chronology, Talmud caution, Origen/Eusebius). Bible page on 7-tier taxonomy. Cite-as, skip link, print CSS, corpus 105. Operator-blocked: admin env hash, GH org.

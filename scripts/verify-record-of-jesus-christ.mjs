@@ -14,26 +14,30 @@ function assert(cond, msg) {
 
 const dataPath = path.join(root, 'src/data/recordOfJesusChrist.ts')
 const extrasPath = path.join(root, 'src/data/recordOfJesusChristExtras.ts')
+const wave3Path = path.join(root, 'src/data/recordOfJesusChristWave3.ts')
 const pagePath = path.join(root, 'src/pages/RecordOfJesusChristPage.tsx')
 const tiersPath = path.join(root, 'src/data/evidenceTiers.ts')
 const appPath = path.join(root, 'src/App.tsx')
 const adminPath = path.join(root, 'src/lib/adminAuth.ts')
 const citePath = path.join(root, 'src/components/CitationGenerator.tsx')
 const homePath = path.join(root, 'src/pages/HomePage.tsx')
+const biblePath = path.join(root, 'src/pages/BibleHistoryPage.tsx')
 const llmsPath = path.join(root, 'public/llms.txt')
 
-for (const p of [dataPath, extrasPath, pagePath, tiersPath, appPath, adminPath, citePath, homePath, llmsPath]) {
+for (const p of [dataPath, extrasPath, wave3Path, pagePath, tiersPath, appPath, adminPath, citePath, homePath, biblePath, llmsPath]) {
   assert(fs.existsSync(p), `missing required file ${path.relative(root, p)}`)
 }
 
 const data = fs.readFileSync(dataPath, 'utf8')
 const extras = fs.readFileSync(extrasPath, 'utf8')
+const wave3 = fs.readFileSync(wave3Path, 'utf8')
 const page = fs.readFileSync(pagePath, 'utf8')
 const tiers = fs.readFileSync(tiersPath, 'utf8')
 const app = fs.readFileSync(appPath, 'utf8')
 const admin = fs.readFileSync(adminPath, 'utf8')
 const cite = fs.readFileSync(citePath, 'utf8')
 const home = fs.readFileSync(homePath, 'utf8')
+const bible = fs.readFileSync(biblePath, 'utf8')
 const llms = fs.readFileSync(llmsPath, 'utf8')
 
 const requiredTiers = [
@@ -60,8 +64,16 @@ assert(data.includes('ROC_EXTRA_CLAIMS'), 'extras merge missing')
 assert(extras.includes('ROC_TIMELINE'), 'timeline export missing')
 assert(extras.includes('ROC_EXTRA_CLAIMS'), 'extra claims map missing')
 
-const tierHits = (data.match(/tier: '/g) || []).length + (extras.match(/tier: '/g) || []).length
-assert(tierHits >= 70, `expected ≥70 tiered claims across base+extras, got ${tierHits}`)
+const tierHits =
+  (data.match(/tier: '/g) || []).length +
+  (extras.match(/tier: '/g) || []).length +
+  (wave3.match(/tier: '/g) || []).length
+assert(tierHits >= 90, `expected ≥90 tiered claims across base+extras+wave3, got ${tierHits}`)
+assert(data.includes('ROC_WAVE3_CLAIMS'), 'wave3 merge missing')
+assert(page.includes('Copy citation'), 'per-claim cite control missing')
+assert(page.includes('Skip to evidence content'), 'skip link missing for a11y')
+assert(bible.includes('SCHOLARLY_TIERS') || bible.includes('well_attested') || bible.includes('contested'), 'Bible page not upgraded toward 7-tier taxonomy')
+assert(!bible.includes("type EvidenceTier = 'verified' | 'circumstantial' | 'disputed'"), 'Bible page still on legacy 3-tier type')
 
 assert(data.includes("publisher: 'Veritas Worldwide'") || data.includes('Veritas Worldwide'), 'entity publisher required')
 assert(page.includes('Record of Jesus Christ'), 'page title missing')
