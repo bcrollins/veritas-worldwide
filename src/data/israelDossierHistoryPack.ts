@@ -1660,6 +1660,58 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     tier: 'verified',
     casualties: { killed: 15, injured: 130 },
   },
+  {
+    id: 'operation-defensive-shield-jenin-2002-depth',
+    era: 'occupation-1967-2005',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: [],
+    relatedMoneyNodeIds: ['fmf-weapons', 'annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Operation Defensive Shield — Jenin Refugee Camp Battle (2002 Depth Entry)',
+    date: 'April 2002',
+    location: 'Jenin refugee camp, West Bank',
+    summary:
+      'Israeli military operation inside Jenin refugee camp during Operation Defensive Shield produced dozens of Palestinian deaths and extensive camp destruction. UN fact-finding and multi-source historiography document civilian harm and contested combatant/civilian ratios; this depth entry complements the base Jenin 2002 card with camp-level focus.',
+    evidence:
+      'UN Secretary-General fact-finding materials, HRW contemporaneous reporting, and multi-source Second Intifada historiography. Claims of a "massacre" at the extreme high end were not sustained by the UN report; civilian deaths and property destruction remain multi-source established.',
+    sources: [
+      { label: 'UN — Report of the Secretary-General on Jenin (2002)', url: 'https://www.un.org/unispal/' },
+      { label: 'HRW — Jenin: IDF Military Operations', url: 'https://www.hrw.org/report/2002/05/02/jenin/idf-military-operations' },
+      { label: 'UNISPAL Jenin index', url: 'https://www.un.org/unispal/' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'HRW Jenin 2002 report', url: 'https://www.hrw.org/report/2002/05/02/jenin/idf-military-operations' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 52 },
+  },
+  {
+    id: 'tel-al-sultan-rafah-2024',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['mk84-use', 'fmf-weapons', 'oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Tel al-Sultan Rafah Camp Strike (May 26, 2024)',
+    date: 'May 26, 2024',
+    location: 'Tel al-Sultan, Rafah, Gaza',
+    summary:
+      'Israeli airstrike on a displacement camp area in western Rafah killed dozens of Palestinians (multi-source estimates typically 45+) and produced widely circulated fire-and-smoke imagery after a munition ignited tents. Occurs after ICJ May 24 Rafah-related order; Israel stated it targeted two Hamas officials and used a smaller munition.',
+    evidence:
+      'OHCHR, multi-outlet visual investigations, and hospital/morgue counts establish mass civilian deaths in a designated displacement area. Munition type and intended target remain disputed; the multi-source civilian death floor in a tent camp is the claim.',
+    sources: [
+      { label: 'OHCHR — Gaza updates (May 2024)', url: 'https://www.ohchr.org/en/countries/palestine' },
+      { label: 'AP / multi-outlet visual coverage of Rafah tent fire', url: 'https://apnews.com' },
+      { label: 'ICJ Case 192 context (Rafah order May 24)', url: 'https://www.icj-cij.org/case/192' },
+    ],
+    multimedia: [
+      { type: 'photo-essay', label: 'AP Rafah tent camp coverage', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 45 },
+  },
 
 ]
 
@@ -2283,6 +2335,30 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['sbarro-restaurant-bombing-2001', 'second-intifada-civilian-toll', 'dolphinarium-disco-2001'],
     tags: ['civilians', 'children', 'terrorism'],
+  },
+  {
+    id: 'tl-jenin-defensive-shield-depth-2002',
+    year: '2002',
+    era: 'occupation-1967-2005',
+    title: 'Jenin Camp — Operation Defensive Shield Depth',
+    description: 'UN/HRW multi-source documentation of camp battle deaths and destruction during Defensive Shield.',
+    source: 'UN / HRW',
+    sourceUrl: 'https://www.hrw.org/report/2002/05/02/jenin/idf-military-operations',
+    tier: 'verified',
+    relatedIncidentIds: ['operation-defensive-shield-jenin-2002-depth', 'jenin-2002', 'operation-defensive-shield-2002'],
+    tags: ['civilians', 'children', 'west-bank'],
+  },
+  {
+    id: 'tl-tel-al-sultan-rafah-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Tel al-Sultan Rafah Tent Camp Strike',
+    description: 'Airstrike on displacement camp area kills dozens; multi-source civilian harm floor after ICJ Rafah order.',
+    source: 'OHCHR / AP',
+    sourceUrl: 'https://www.ohchr.org/en/countries/palestine',
+    tier: 'verified',
+    relatedIncidentIds: ['tel-al-sultan-rafah-2024', 'rafah-tent-camp-2024'],
+    tags: ['civilians', 'children', 'rafah', 'displacement'],
   },
 
 ]

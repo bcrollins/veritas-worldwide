@@ -399,10 +399,10 @@ async function runInteractiveChecks(browser) {
       assert(false, `corpus.json not valid JSON (status ${corpusStatus}): ${corpusText.slice(0, 120)}`)
     }
     assert(corpus?.schemaVersion === 1, 'corpus.json schemaVersion missing')
-    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 76, 'corpus.json incidents too few')
-    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 41, 'corpus.json actors too few')
+    assert(Array.isArray(corpus?.incidents) && corpus.incidents.length >= 78, 'corpus.json incidents too few')
+    assert(Array.isArray(corpus?.actors) && corpus.actors.length >= 46, 'corpus.json actors too few')
     assert(Array.isArray(corpus?.timeline) && corpus.timeline.length >= 48, 'corpus.json timeline too few')
-    assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 21, 'corpus.json moneyTrail too few')
+    assert(Array.isArray(corpus?.moneyTrail) && corpus.moneyTrail.length >= 22, 'corpus.json moneyTrail too few')
     assert(Array.isArray(corpus?.legalCases) && corpus.legalCases.length >= 14, 'corpus.json legalCases too few')
     assert(Array.isArray(corpus?.lobbying) && corpus.lobbying.length >= 3, 'corpus.json lobbying too few')
     assert(corpus?.counts?.incidentsByEra && typeof corpus.counts.incidentsByEra === 'object', 'corpus.json missing incidentsByEra breakdown')
@@ -599,6 +599,9 @@ async function runInteractiveChecks(browser) {
       'sbarro',
       '2728',
       'aipac',
+      'tel al-sultan',
+      'dmfi',
+      'jenin',
     ]) {
       assert(densifyBody.includes(needle), `dossier densify wave missing visible text: ${needle}`)
     }

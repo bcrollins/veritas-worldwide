@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:18:08.479Z",
+  "generatedAt": "2026-07-23T07:20:20.716Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 77,
-    "timelineEvents": 64,
+    "incidents": 78,
+    "timelineEvents": 66,
     "actors": 47,
-    "moneyTrailNodes": 21,
-    "historicalWarCrimesPack": 62,
+    "moneyTrailNodes": 22,
+    "historicalWarCrimesPack": 64,
     "legalCases": 14,
     "lobbyingRecords": 4,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 25,
       "blockade-2007-2023": 25,
-      "post-oct7": 18
+      "post-oct7": 19
     },
     "incidentsByTier": {
-      "verified": 75,
+      "verified": 76,
       "circumstantial": 2
     },
-    "childrenTagged": 66,
-    "civiliansTagged": 75,
+    "childrenTagged": 67,
+    "civiliansTagged": 76,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -35,7 +35,7 @@
       "delivery": 3,
       "weapon": 7,
       "impact": 3,
-      "lobby": 3
+      "lobby": 4
     }
   },
   "publicRecords": [
@@ -451,6 +451,26 @@
         "donald-trump",
         "benjamin-netanyahu",
         "chuck-schumer"
+      ]
+    },
+    {
+      "id": "dmfi-pac-2024",
+      "label": "Democratic Majority for Israel (DMFI) — 2024 Cycle",
+      "amount": "multi-million IEs / PAC activity (OpenSecrets cycle window)",
+      "type": "lobby",
+      "date": "2023–2024 cycle",
+      "detail": "DMFI is a Democratic pro-Israel PAC/outside-spending vehicle targeting primaries and general races based on Israel-policy positions — the Democratic-party counterpart layer to AIPAC UDP Super PAC independent expenditures. OpenSecrets tracks DMFI PAC and related spending as electoral enablement of the aid orthodoxy floor.",
+      "sourceUrl": "https://www.opensecrets.org/political-action-committees-pacs/democratic-majority-for-israel/C00694455/summary/2024",
+      "children": [
+        "pro-israel-lobby-2024",
+        "udp-superpac-2024"
+      ],
+      "relatedProfileIds": [
+        "josh-gottheimer",
+        "ritchie-torres",
+        "chuck-schumer",
+        "hakeem-jeffries",
+        "haim-saban"
       ]
     }
   ],
@@ -2371,6 +2391,26 @@
       ]
     },
     {
+      "id": "tl-jenin-defensive-shield-depth-2002",
+      "year": "2002",
+      "era": "occupation-1967-2005",
+      "title": "Jenin Camp — Operation Defensive Shield Depth",
+      "description": "UN/HRW multi-source documentation of camp battle deaths and destruction during Defensive Shield.",
+      "source": "UN / HRW",
+      "sourceUrl": "https://www.hrw.org/report/2002/05/02/jenin/idf-military-operations",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "operation-defensive-shield-jenin-2002-depth",
+        "jenin-2002",
+        "operation-defensive-shield-2002"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-jenin-2002",
       "year": "2002",
       "era": "occupation-1967-2005",
@@ -2957,6 +2997,26 @@
         "children",
         "starvation",
         "un-finding"
+      ]
+    },
+    {
+      "id": "tl-tel-al-sultan-rafah-2024",
+      "year": "2024",
+      "era": "post-oct7",
+      "title": "Tel al-Sultan Rafah Tent Camp Strike",
+      "description": "Airstrike on displacement camp area kills dozens; multi-source civilian harm floor after ICJ Rafah order.",
+      "source": "OHCHR / AP",
+      "sourceUrl": "https://www.ohchr.org/en/countries/palestine",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "tel-al-sultan-rafah-2024",
+        "rafah-tent-camp-2024"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "rafah",
+        "displacement"
       ]
     }
   ],
@@ -6152,6 +6212,53 @@
       "tier": "verified",
       "casualties": {
         "killed": 0
+      }
+    },
+    {
+      "id": "tel-al-sultan-rafah-2024",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant",
+        "joe-biden"
+      ],
+      "relatedMoneyNodeIds": [
+        "mk84-use",
+        "fmf-weapons",
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Tel al-Sultan Rafah Camp Strike (May 26, 2024)",
+      "date": "May 26, 2024",
+      "location": "Tel al-Sultan, Rafah, Gaza",
+      "summary": "Israeli airstrike on a displacement camp area in western Rafah killed dozens of Palestinians (multi-source estimates typically 45+) and produced widely circulated fire-and-smoke imagery after a munition ignited tents. Occurs after ICJ May 24 Rafah-related order; Israel stated it targeted two Hamas officials and used a smaller munition.",
+      "evidence": "OHCHR, multi-outlet visual investigations, and hospital/morgue counts establish mass civilian deaths in a designated displacement area. Munition type and intended target remain disputed; the multi-source civilian death floor in a tent camp is the claim.",
+      "sources": [
+        {
+          "label": "OHCHR — Gaza updates (May 2024)",
+          "url": "https://www.ohchr.org/en/countries/palestine"
+        },
+        {
+          "label": "AP / multi-outlet visual coverage of Rafah tent fire",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "ICJ Case 192 context (Rafah order May 24)",
+          "url": "https://www.icj-cij.org/case/192"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "photo-essay",
+          "label": "AP Rafah tent camp coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 45
       }
     },
     {

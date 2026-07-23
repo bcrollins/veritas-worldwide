@@ -1198,6 +1198,18 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     children: ['fmf-weapons', 'munitions', 'mk84-use', 'war-reserve-stockpile', 'hr815'],
     relatedProfileIds: ['joe-biden', 'antony-blinken', 'donald-trump', 'benjamin-netanyahu', 'chuck-schumer'],
   },
+  {
+    id: 'dmfi-pac-2024',
+    label: 'Democratic Majority for Israel (DMFI) — 2024 Cycle',
+    amount: 'multi-million IEs / PAC activity (OpenSecrets cycle window)',
+    type: 'lobby',
+    date: '2023–2024 cycle',
+    detail:
+      'DMFI is a Democratic pro-Israel PAC/outside-spending vehicle targeting primaries and general races based on Israel-policy positions — the Democratic-party counterpart layer to AIPAC UDP Super PAC independent expenditures. OpenSecrets tracks DMFI PAC and related spending as electoral enablement of the aid orthodoxy floor.',
+    sourceUrl: 'https://www.opensecrets.org/political-action-committees-pacs/democratic-majority-for-israel/C00694455/summary/2024',
+    children: ['pro-israel-lobby-2024', 'udp-superpac-2024'],
+    relatedProfileIds: ['josh-gottheimer', 'ritchie-torres', 'chuck-schumer', 'hakeem-jeffries', 'haim-saban'],
+  },
 
 ]
 
