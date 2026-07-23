@@ -499,3 +499,13 @@ Live: verify-live-anonymity PASS (55ca137); verify-live-bot-noindex PASS 12 surf
 | Pure | visual + israel-dossier PASS |
 | Live | lag-aware tracking tip past 2100 |
 
+
+## Interval densify — tip post-2157 clotting densify + medical warehouse / Netanya / press-door arson
+
+| Ship | Proof |
+|------|-------|
+| Dual-sided | Gaza whole-blood/FVIII/FIX · hostage earthworks/helmet-install/arms-overhead · WB collard/thermometer/tarragon-seedlings |
+| VI | medical warehouse · Netanya · olive-press door arson |
+| Pure | visual + israel-dossier PASS |
+| Live | lag-aware tracking tip past 2118+ |
+
