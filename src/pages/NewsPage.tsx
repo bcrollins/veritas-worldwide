@@ -71,6 +71,8 @@ function HeroArticle({ article }: { article: Article }) {
             alt={article.heroImage.alt}
             className="h-72 w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 md:h-full"
             loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
           <p className="px-4 py-2 font-sans text-[10px] text-ink-faint">{article.heroImage.credit}</p>
         </div>

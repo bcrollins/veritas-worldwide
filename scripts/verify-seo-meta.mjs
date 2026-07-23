@@ -395,3 +395,7 @@ for (const rel of opsDocs) {
 console.log(
   '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, anonymity floors green',
 )
+
+// CWV: LCP hero must advertise fetchPriority=high for mobile CWV.
+const homeLcp = read('src/pages/HomePage.tsx')
+assert(homeLcp.includes('fetchPriority') || homeLcp.includes('fetchpriority'), 'HomePage featured hero must set fetchPriority high for LCP')

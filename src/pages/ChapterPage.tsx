@@ -118,6 +118,8 @@ function HeroImage({ image }: { image: ImageData }) {
           src={image.src}
           alt={image.alt}
           loading="eager"
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-64 md:h-80 lg:h-[420px] object-cover will-change-transform"
           style={{ transform: 'translateY(0) scale(1.1)' }}
           retryCount={3}
