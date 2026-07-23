@@ -754,4 +754,9 @@ assert(pureRunner.includes('nav-recovery') || pureRunner.includes('verify-nav-re
 const stickyScrollSrc = read('src/components/StickyMembershipBar.tsx')
 assert(stickyScrollSrc.includes('scrollY > 400'), 'membership 400px scroll gate')
 
+
+// Sticky membership uses passive scroll listener
+const stickyPassive = read('src/components/StickyMembershipBar.tsx')
+assert(stickyPassive.includes('passive: true') || stickyPassive.includes('passive:true'), 'membership passive scroll')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
