@@ -175,6 +175,10 @@ export default function AdminBrandKit() {
         <div className="rounded-lg border border-white/5 bg-white/5 p-4">
           <p className="font-sans text-[10px] uppercase tracking-widest text-white/30">Sections</p>
           <p className="mt-1 font-serif text-2xl font-bold text-white">{manifest?.sections.length ?? '—'}</p>
+          <p className="mt-1 font-mono text-[10px] text-white/25">
+            {manifest?.downloads?.length ?? '—'} downloads ·{' '}
+            {manifest?.platformAssets ? Object.keys(manifest.platformAssets).length : '—'} platforms
+          </p>
         </div>
         <div className="rounded-lg border border-white/5 bg-white/5 p-4">
           <p className="font-sans text-[10px] uppercase tracking-widest text-white/30">Admin Access</p>
