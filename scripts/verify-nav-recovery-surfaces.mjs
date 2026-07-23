@@ -1253,4 +1253,20 @@ assert(spokesExcludeFinal.includes('exclude'), 'DossierHubSpokes exclude prop')
 assert(spokesExcludeFinal.includes('s.id !== exclude') || spokesExcludeFinal.includes('filter'), 'DossierHubSpokes filters exclude')
 
 
+
+// RelatedHubs excludeTo Set filter reaffirm
+const relatedExcludeFinal = read('src/components/RelatedHubs.tsx')
+assert(relatedExcludeFinal.includes('excludeTo'), 'RelatedHubs excludeTo prop')
+assert(relatedExcludeFinal.includes('excluded') || relatedExcludeFinal.includes('filter'), 'RelatedHubs exclude filter')
+assert(relatedExcludeFinal.includes('new Set') || relatedExcludeFinal.includes('Set('), 'RelatedHubs exclude Set')
+
+// PRIMARY_RELATED_HUBS labels lockstep final
+const primaryLabelsFinal = read('src/components/RelatedHubs.tsx')
+const pBlockFinal = primaryLabelsFinal.match(/PRIMARY_RELATED_HUBS[^=]*= \[([\s\S]*?)\] as const/)
+assert(pBlockFinal, 'PRIMARY block labels')
+for (const label of ['Record', 'Read', 'Dossiers', 'Profiles', 'Search']) {
+  assert(pBlockFinal[1].includes(label), `PRIMARY final label ${label}`)
+}
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
