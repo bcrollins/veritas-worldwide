@@ -79,7 +79,7 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 
 
 ## Recovery suite scale
-- `verify-nav-recovery-surfaces`: **63 surface needles** + family mounts + Hick/soft-404 exactness
+- `verify-nav-recovery-surfaces`: **64 surface needles** + family mounts + Hick/soft-404 exactness
 - Live continuously green under densify tip ≥1500 incidents
 
 | `75ff335` | recovery suite 40 needles (not-found-page) |
@@ -98,12 +98,12 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 | `4de6574` | sticky dismiss key |
 
 | `b7a2376` | trackSupportClick on membership bar |
-| recovery | **63 surface needles** milestone |
+| recovery | **64 surface needles** milestone |
 
 | `7567a6b` | Join CTA label |
 
 | `3e75719` | Dismiss aria-label |
-| recovery | **63 surface needles** |
+| recovery | **64 surface needles** |
 
 | `7600a35` | mobile support copy |
 
@@ -112,7 +112,7 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 | `7a549c3` | no-print membership bar |
 
 | `5f3024f` | min-w-[44px] touch targets |
-| recovery | **63 surface needles** |
+| recovery | **64 surface needles** |
 
 | `a49e4c9` | bg-obsidian membership chrome |
 
@@ -121,11 +121,14 @@ Never stage peer `public/israel-dossier/*` densify WIP. Entity-authored nav inte
 | `f5a5533` | border-t membership chrome |
 
 | `faad03d` | max-w-5xl membership width |
-| recovery | **63 surface needles** milestone |
+| recovery | **64 surface needles** milestone |
 
 | `85d702e` | text-white contrast |
-| recovery | **63 surface needles** |
+| recovery | **64 surface needles** |
 
 | `746590e` | bg-crimson Join CTA |
 
 | `ba7ce1b` | Join hover:bg-crimson-dark |
+
+| `6e7c8d8` | shrink-0 CTA cluster |
+| recovery | **64 surface needles** |
