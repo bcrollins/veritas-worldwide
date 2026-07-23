@@ -8,6 +8,7 @@
 
 ## Execution status (rolling)
 
+- **Interval 7 (2026-07-23):** waves 61–65 → 687 local/shipping; soft-floor auto; wave barrel; /bernie all-UA noindex; GEO floors; sticky TOC; Volume II hub; identity-scrub pure.
 - **Interval 1 (2026-07-23):** #1 #2 #3 #4 #5 #6 #7 #9 #22 #88 Implemented/Absorbed. Pure 29/29 PASS. Peer ROC densify left unstaged.
 - **Interval 2 (2026-07-23):** soft-floor.json auto; wave barrel Wave3–61; wave61 → 651 claims; /bernie+/admin all-UA noindex HTML inject; ROC sticky + ?q/?tier/?domain deep-links; filtered export; one-tap primary source; empty-state CTA. Local export 651. LIVE was 642 pre-deploy.
 - **Interval 6 (2026-07-23):** #34 Volume II noindex scaffold; absorb security/integrity already pure-gated (#36 #45 #56 #58 #59 #63 #69 #71).
@@ -158,7 +159,7 @@ Status: **Implemented** (2026-07-23) — multi-tier `?tier=verified,well_atteste
 
 ## #30 — ROC section jump TOC sticky mobile
 Area: ROC · Anchor: Apple · Score: 8.0→9.0 · PRIORITY: 7 · Launch-critical: no  
-Status: **Implemented** (2026-07-23) — sticky mobile TOC with max-h scroll; desktop static.
+Status: **Implemented** (2026-07-23) — sticky mobile TOC with max-h scroll.
 
 ## #31 — ROC PDF index claim count matches corpus
 Area: ROC · Anchor: AP · Score: 8.5→9.5 · PRIORITY: 8 · Launch-critical: yes  
@@ -430,7 +431,7 @@ Status: **Pending**
 
 ## #98 — Pure suite never prints personal emails
 Area: OPSEC · Anchor: OPSEC · Score: 9.0→9.7 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — verify:identity-scrub + seo-meta forbid personal emails/gmail; PASS 496 product files.
 
 ## #99 — Top-100 ledger re-rank after densify wave
 Area: Process · Anchor: Staff-plus · Score: 8.0→9.0 · PRIORITY: 6 · Launch-critical: no  
