@@ -5274,6 +5274,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'israel-hostages-sexual-violence-captivity-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Sexual Violence in Captivity Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (captivity-CRSV cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'UN Special Representative on Sexual Violence in Conflict, released-hostage testimony, and multi-source reporting document conflict-related sexual violence against Israeli hostages during captivity in Gaza — a protected-person crime pattern distinct from the October 7 CRSV card that covers the multi-site assault day itself.',
+    evidence:
+      'UN SRSG reporting, multi-source released-hostage testimony, and multi-outlet investigative coverage establish multi-source sexual violence in captivity. Exact case counts remain incomplete; multi-source documentation that CRSV occurred in captivity is the claim.',
+    sources: [
+      { label: 'UN SRSG on Sexual Violence in Conflict materials', url: 'https://www.un.org' },
+      { label: 'Multi-outlet hostage captivity CRSV coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage public materials', url: 'https://www.gov.il' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UN public materials', url: 'https://www.un.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-amputee-children-rehab-collapse-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Amputee Children Rehabilitation Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (amputee-rehab cohort)',
+    location: 'Gaza Strip hospitals and field medical points',
+    summary:
+      'UNICEF, WHO, and multi-source reporting document large numbers of child amputees under wartime trauma care with collapsed prosthetic and rehabilitation capacity — a child-specific long-term harm pattern distinct from the aggregate amputations-children card by focusing on rehab-system failure after limb loss.',
+    evidence:
+      'UNICEF child-protection materials, WHO trauma-care notes, and multi-outlet amputee-rehab coverage establish multi-source child amputation with rehab collapse. Exact amputee counts evolve; multi-source wartime child-amputee rehab failure is the claim.',
+    sources: [
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'WHO trauma / rehab materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza child amputee coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-aid-distribution-site-killings-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Aid Distribution Site Killings Pattern (2023–2025)',
+    date: '2024 – 2025 (aid-site killings cohort)',
+    location: 'Gaza Strip aid distribution points and convoy routes',
+    summary:
+      'OCHA, OHCHR, and multi-source reporting document repeated lethal incidents at or near aid distribution sites and convoys — including the Flour Massacre pattern context and later distribution-point shootings — killing civilians seeking food including children. Pattern card for aid-site lethal force distinct from aid-looting chaos and starvation-blockade cards.',
+    evidence:
+      'OCHA protection updates, OHCHR statements, and multi-outlet distribution-site coverage establish multi-source lethal incidents at aid points. Exact death counts per site evolve and attribution is multi-source contested in places; multi-source repeated aid-site civilian deaths is the claim.',
+    sources: [
+      { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
+      { label: 'OHCHR statements', url: 'https://www.ohchr.org' },
+      { label: 'Multi-outlet aid distribution site coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -8005,6 +8086,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['jenin', 'tulkarm', 'raids', 'children', 'west-bank'],
   },
+
+  {
+    id: 'tl-hostages-crsv-captivity-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Sexual Violence in Captivity Pattern',
+    description: 'UN SRSG multi-source documentation of conflict-related sexual violence against hostages during captivity in Gaza.',
+    source: 'UN SRSG / multi-outlet',
+    sourceUrl: 'https://www.un.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-sexual-violence-captivity-pattern-2023-2025',
+      'oct7-sexual-violence-pattern-2023',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'crsv', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-gaza-amputee-rehab-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Amputee Children Rehabilitation Collapse Pattern',
+    description: 'UNICEF/WHO multi-source documentation of child amputees under collapsed prosthetic and rehab capacity.',
+    source: 'UNICEF / WHO / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-amputee-children-rehab-collapse-pattern-2023-2025',
+      'gaza-amputations-children-pattern-2023-2025',
+      'gaza-assistive-devices-destroyed-pattern-2023-2025',
+    ],
+    tags: ['amputees', 'children', 'rehab', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-aid-site-killings-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Gaza Aid Distribution Site Killings Pattern',
+    description: 'OCHA/OHCHR multi-source documentation of repeated lethal incidents at aid distribution points and convoys.',
+    source: 'OCHA / OHCHR / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-aid-distribution-site-killings-pattern-2023-2025',
+      'flour-massacre-2024',
+      'gaza-aid-convoy-looting-chaos-pattern-2023-2025',
+    ],
+    tags: ['aid', 'killings', 'civilians', 'children', 'gaza'],
+  },
+
+
 
 
 
