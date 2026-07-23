@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:04:28.691Z",
+  "generatedAt": "2026-07-23T08:05:08.973Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 92,
-    "timelineEvents": 80,
+    "incidents": 93,
+    "timelineEvents": 81,
     "actors": 47,
     "moneyTrailNodes": 29,
-    "historicalWarCrimesPack": 78,
+    "historicalWarCrimesPack": 79,
     "legalCases": 19,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 32
+      "post-oct7": 33
     },
     "incidentsByTier": {
-      "verified": 90,
+      "verified": 91,
       "circumstantial": 2
     },
-    "childrenTagged": 76,
-    "civiliansTagged": 90,
+    "childrenTagged": 77,
+    "civiliansTagged": 91,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3231,6 +3231,27 @@
       "tier": "verified"
     },
     {
+      "id": "tl-oct7-hostages-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "October 7 Hostages — ~250 Abducted to Gaza",
+      "description": "Multi-source hostage lists establish mass abduction of civilians including children and elderly.",
+      "source": "Israeli gov / multi-outlet",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "oct7-hostages-held-pattern",
+        "oct7-hamas-attack-2023",
+        "nuseirat-rescue-2024"
+      ],
+      "tags": [
+        "civilians",
+        "children",
+        "hostages",
+        "terrorism"
+      ]
+    },
+    {
       "id": "tl-nasrallah-beirut-2024",
       "year": "2024",
       "era": "post-oct7",
@@ -6398,6 +6419,47 @@
       "tier": "verified",
       "casualties": {
         "killed": 100
+      }
+    },
+    {
+      "id": "oct7-hostages-held-pattern",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "October 7 Hostages Held in Gaza (2023–2025 Pattern)",
+      "date": "October 7, 2023 – ongoing releases/deaths",
+      "location": "Gaza Strip (captivity sites)",
+      "summary": "Hamas and other groups took approximately 250 hostages on October 7, including civilians, children, elderly, and foreign nationals. Multi-source reporting documents subsequent releases via deals, military rescues, and deaths in captivity. Pattern card for the hostage crisis as a continuous civilian-targeting crime across the war timeline.",
+      "evidence": "Israeli government hostage lists, multi-source international press, Red Cross/ICRC access disputes, and negotiated release deals establish the scale of abduction and ongoing captivity. Exact remaining counts change with releases and confirmed deaths.",
+      "sources": [
+        {
+          "label": "Israeli government hostage public record",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "ICRC statements on hostages/detainees",
+          "url": "https://www.icrc.org"
+        },
+        {
+          "label": "Multi-outlet hostage crisis coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "ICRC public materials",
+          "url": "https://www.icrc.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 30
       }
     },
     {

@@ -2087,6 +2087,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 100 },
   },
 
+  {
+    id: 'oct7-hostages-held-pattern',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'October 7 Hostages Held in Gaza (2023–2025 Pattern)',
+    date: 'October 7, 2023 – ongoing releases/deaths',
+    location: 'Gaza Strip (captivity sites)',
+    summary:
+      'Hamas and other groups took approximately 250 hostages on October 7, including civilians, children, elderly, and foreign nationals. Multi-source reporting documents subsequent releases via deals, military rescues, and deaths in captivity. Pattern card for the hostage crisis as a continuous civilian-targeting crime across the war timeline.',
+    evidence:
+      'Israeli government hostage lists, multi-source international press, Red Cross/ICRC access disputes, and negotiated release deals establish the scale of abduction and ongoing captivity. Exact remaining counts change with releases and confirmed deaths.',
+    sources: [
+      { label: 'Israeli government hostage public record', url: 'https://www.gov.il' },
+      { label: 'ICRC statements on hostages/detainees', url: 'https://www.icrc.org' },
+      { label: 'Multi-outlet hostage crisis coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'ICRC public materials', url: 'https://www.icrc.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 30 },
+  },
+
+
 
 
 
@@ -2920,6 +2948,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-journalists-killed-pattern-2023-2025', 'shireen-abu-akleh-2022'],
     tags: ['journalists', 'civilians', 'gaza', 'press'],
+  },
+
+  {
+    id: 'tl-oct7-hostages-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'October 7 Hostages — ~250 Abducted to Gaza',
+    description: 'Multi-source hostage lists establish mass abduction of civilians including children and elderly.',
+    source: 'Israeli gov / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: ['oct7-hostages-held-pattern', 'oct7-hamas-attack-2023', 'nuseirat-rescue-2024'],
+    tags: ['civilians', 'children', 'hostages', 'terrorism'],
   },
 
 ]
