@@ -1748,4 +1748,15 @@ assert(typeof surfaces.length === 'number' && surfaces.length >= 102, 'surfaces 
 assert(surfaces.length === surfaces.filter(Boolean).length, 'surfaces no holes ultimate end')
 
 
+
+// entity-only recovery suite author comment end
+const suiteHeader = read('scripts/verify-nav-recovery-surfaces.mjs').slice(0, 400)
+assert(suiteHeader.includes('Entity-only') || suiteHeader.includes('entity'), 'suite entity-only header')
+assert(suiteHeader.includes('recovery') || suiteHeader.includes('RelatedHubs') || suiteHeader.includes('pure floor'), 'suite recovery scope')
+
+// package entity author floor already elsewhere — reaffirm RelatedHubs entity comment
+const relatedEntity = read('src/components/RelatedHubs.tsx')
+assert(relatedEntity.includes('Entity-only') || relatedEntity.includes('entity') || relatedEntity.includes('no personal'), 'RelatedHubs entity comment')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
