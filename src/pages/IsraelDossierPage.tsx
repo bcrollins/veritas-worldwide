@@ -1952,7 +1952,7 @@ export default function IsraelDossierPage() {
                     setIncidentMedia('video')
                     setIncidentFocus('civilians')
                     setIncidentSort('newest')
-                    syncShareParams({ media: 'video', focus: 'civilians', sort: 'newest' })
+                    syncShareParams({ media: 'video', focus: 'civilians', sort: 'video' })
                     document.getElementById('incidents')?.scrollIntoView({ behavior: 'smooth' })
                   }}
                   className="inline-flex min-h-[44px] items-center px-4 rounded-sm bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase hover:bg-crimson/90 transition-colors"
@@ -2213,7 +2213,7 @@ export default function IsraelDossierPage() {
                     syncShareParams({
                       media: chip.media,
                       focus: chip.focus,
-                      sort: chip.media === 'video' ? 'newest' : undefined,
+                      sort: chip.media === 'video' ? 'video' : undefined,
                     })
                   }}
                   className={`inline-flex min-h-[44px] items-center rounded-full border px-3 font-sans text-[0.6rem] font-bold uppercase tracking-wider transition-colors ${
