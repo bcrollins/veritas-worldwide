@@ -399,3 +399,9 @@ console.log(
 // CWV: LCP hero must advertise fetchPriority=high for mobile CWV.
 const homeLcp = read('src/pages/HomePage.tsx')
 assert(homeLcp.includes('fetchPriority') || homeLcp.includes('fetchpriority'), 'HomePage featured hero must set fetchPriority high for LCP')
+
+// Topic hub GEO copy must track ROC claim growth (never advertise stale 150+ floors).
+const topicHubs = read('src/data/topicHubs.json')
+assert(topicHubs.includes('historical-jesus-evidence'), 'topic hubs must include historical-jesus-evidence')
+assert(!topicHubs.includes('150+ tier-labeled'), 'historical Jesus topic must not advertise stale 150+ claim floor')
+assert(topicHubs.includes('250+ tier-labeled') || topicHubs.includes('230+ tier-labeled') || topicHubs.includes('200+ tier-labeled'), 'historical Jesus topic must advertise current 250+ claim floor')
