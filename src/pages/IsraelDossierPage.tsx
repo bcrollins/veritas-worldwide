@@ -16,7 +16,17 @@ import DisputeStory from '../components/DisputeStory'
 import SharePanel from '../components/SharePanel'
 import AdBanner from '../components/AdBanner'
 import { TierIcon } from '../components/TierIcons'
-import { HISTORICAL_TIMELINE, EXPANDED_INCIDENTS, EXPANDED_STATS, LOBBYING_DATA, LEGAL_CASES, ISRAEL_DOSSIER_CAROUSEL, PINNED_POSTS } from '../data/israelDossierExpanded'
+import {
+  HISTORICAL_TIMELINE,
+  EXPANDED_INCIDENTS,
+  EXPANDED_STATS,
+  LOBBYING_DATA,
+  LEGAL_CASES,
+  ISRAEL_DOSSIER_CAROUSEL,
+  PINNED_POSTS,
+  ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS,
+  visualInvestigationStats,
+} from '../data/israelDossierExpanded'
 import { CarouselDownloader, PinnedPostDownloader } from '../components/DossierCarousel'
 import DossierPDF from '../components/DossierPDF'
 import NewsletterSignup from '../components/NewsletterSignup'
@@ -566,15 +576,51 @@ function normalizeIncidentKey(incident: DossierDocumentedIncident) {
 }
 
 function dedupeIncidents(incidents: DossierDocumentedIncident[]) {
-  const seen = new Set<string>()
-  const deduped: DossierDocumentedIncident[] = []
+  // Merge multimedia + sources when the same date|location key collides so visual
+  // densify packs can enrich earlier rows instead of being dropped.
+  const byKey = new Map<string, DossierDocumentedIncident>()
   for (const incident of incidents) {
     const key = normalizeIncidentKey(incident)
-    if (seen.has(key)) continue
-    seen.add(key)
-    deduped.push(incident)
+    const prev = byKey.get(key)
+    if (!prev) {
+      byKey.set(key, {
+        ...incident,
+        sources: [...(incident.sources || [])],
+        multimedia: [...(incident.multimedia || [])],
+        relatedProfileIds: [...(incident.relatedProfileIds || [])],
+        relatedMoneyNodeIds: [...(incident.relatedMoneyNodeIds || [])],
+      })
+      continue
+    }
+    const sourceUrls = new Set(prev.sources.map((s) => s.url))
+    for (const s of incident.sources || []) {
+      if (s.url && !sourceUrls.has(s.url)) {
+        prev.sources.push(s)
+        sourceUrls.add(s.url)
+      }
+    }
+    const mediaUrls = new Set(prev.multimedia.map((m) => m.url))
+    for (const m of incident.multimedia || []) {
+      if (m.url && !mediaUrls.has(m.url)) {
+        prev.multimedia.push(m)
+        mediaUrls.add(m.url)
+      }
+    }
+    if (incident.targetsCivilians) prev.targetsCivilians = true
+    if (incident.targetsChildren) prev.targetsChildren = true
+    if ((incident.casualties?.killed || 0) > (prev.casualties?.killed || 0)) {
+      prev.casualties = incident.casualties
+    }
+    // Prefer longer evidence / summary when densify pack is richer
+    if ((incident.evidence || '').length > (prev.evidence || '').length) prev.evidence = incident.evidence
+    if ((incident.summary || '').length > (prev.summary || '').length) prev.summary = incident.summary
+    if (incident.tier === 'verified') prev.tier = 'verified'
+    const profiles = new Set([...(prev.relatedProfileIds || []), ...(incident.relatedProfileIds || [])])
+    prev.relatedProfileIds = [...profiles]
+    const money = new Set([...(prev.relatedMoneyNodeIds || []), ...(incident.relatedMoneyNodeIds || [])])
+    prev.relatedMoneyNodeIds = [...money]
   }
-  return deduped
+  return [...byKey.values()]
 }
 
 function buildSourceIndex(): SourceIndexRecord[] {
@@ -1779,6 +1825,128 @@ export default function IsraelDossierPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+         VISUAL INVESTIGATIONS — video/photo primary packages (NYT VI standard)
+         ═══════════════════════════════════════════════════════════ */}
+      <section id="visual-investigations" className="mb-16 scroll-mt-20" data-testid="dossier-visual-investigations">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-3 h-3 rounded-full flex-shrink-0 bg-crimson" />
+          <h2 className="font-display text-2xl font-bold text-ink">Visual Investigations</h2>
+        </div>
+        <p className="font-body text-sm text-ink-muted leading-relaxed mb-2 max-w-3xl">
+          Multi-source video, photo-essay, and forensic packages documenting civilian harm — including Gaza wartime
+          patterns, West Bank settler violence, and October 7 civilian massacres. Every card links to checkable
+          primary packages. AP-style labeling: proof is never mixed with slogans; contested intent stays contested.
+        </p>
+        {(() => {
+          const viStats = visualInvestigationStats(ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS)
+          const videoIncidents = allIncidents.filter((i) => i.multimedia.some((m) => m.type === 'video'))
+          return (
+            <>
+              <div className="flex flex-wrap gap-2 mb-5">
+                <span className="inline-flex min-h-[44px] items-center px-3 rounded-full text-[0.65rem] font-sans font-bold tracking-wider uppercase bg-crimson/10 text-crimson border border-crimson/30">
+                  {viStats.incidents} VI densify cards
+                </span>
+                <span className="inline-flex min-h-[44px] items-center px-3 rounded-full text-[0.65rem] font-sans font-bold tracking-wider uppercase bg-surface border border-border text-ink">
+                  {videoIncidents.length} incidents with video links (merged corpus)
+                </span>
+                <span className="inline-flex min-h-[44px] items-center px-3 rounded-full text-[0.65rem] font-sans font-bold tracking-wider uppercase bg-surface border border-border text-ink">
+                  {viStats.videoLinks} video · {viStats.investigationLinks} investigation · {viStats.photoLinks} photo links
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIncidentMedia('video')
+                    setIncidentFocus('civilians')
+                    setIncidentSort('newest')
+                    syncShareParams({ media: 'video', focus: 'civilians', sort: 'newest' })
+                    document.getElementById('incidents')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className="inline-flex min-h-[44px] items-center px-4 rounded-sm bg-crimson text-white font-sans text-[0.65rem] font-bold tracking-[0.08em] uppercase hover:bg-crimson/90 transition-colors"
+                >
+                  Filter full ledger → video + civilians
+                </button>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS.map((incident) => {
+                  const primaryVideo = incident.multimedia.find((m) => m.type === 'video') || incident.multimedia[0]
+                  return (
+                    <article
+                      key={incident.id}
+                      className="rounded-sm border border-border bg-surface p-4 sm:p-5 flex flex-col"
+                      data-testid="vi-card"
+                    >
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <span className="font-sans text-[0.55rem] font-bold tracking-[0.12em] uppercase text-crimson">
+                          {incident.tier}
+                        </span>
+                        {incident.targetsCivilians && (
+                          <span className="font-sans text-[0.55rem] font-bold tracking-[0.1em] uppercase text-red-800 dark:text-red-300">
+                            civilians
+                          </span>
+                        )}
+                        {incident.targetsChildren && (
+                          <span className="font-sans text-[0.55rem] font-bold tracking-[0.1em] uppercase text-amber-800 dark:text-amber-200">
+                            children
+                          </span>
+                        )}
+                        <span className="font-mono text-[0.55rem] text-ink-faint ml-auto">{incident.date}</span>
+                      </div>
+                      <h3 className="font-display text-lg font-bold text-ink leading-snug mb-2">{incident.title}</h3>
+                      <p className="font-body text-sm text-ink-light leading-relaxed mb-3 line-clamp-4">{incident.summary}</p>
+                      <p className="font-sans text-xs text-ink-muted mb-4 border-l-2 border-crimson/40 pl-3">
+                        <span className="font-semibold text-ink">Evidence: </span>
+                        {incident.evidence.slice(0, 220)}
+                        {incident.evidence.length > 220 ? '…' : ''}
+                      </p>
+                      <div className="mt-auto flex flex-wrap gap-2">
+                        {primaryVideo && (
+                          <a
+                            href={primaryVideo.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex min-h-[44px] items-center gap-1.5 px-3 rounded-sm border border-crimson text-crimson font-sans text-[0.65rem] font-bold tracking-[0.06em] uppercase hover:bg-crimson/5 transition-colors"
+                          >
+                            Open {primaryVideo.type.replace('-', ' ')} ↗
+                          </a>
+                        )}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            if (incident.id) {
+                              setDeepIncidentId(incident.id)
+                              syncShareParams({ incident: incident.id })
+                            }
+                            document.getElementById('incidents')?.scrollIntoView({ behavior: 'smooth' })
+                          }}
+                          className="inline-flex min-h-[44px] items-center px-3 rounded-sm border border-border font-sans text-[0.65rem] font-bold tracking-[0.06em] uppercase text-ink-muted hover:border-crimson hover:text-crimson transition-colors"
+                        >
+                          Full dossier card
+                        </button>
+                      </div>
+                      <ul className="mt-3 space-y-1">
+                        {incident.multimedia.slice(0, 3).map((m, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={m.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-sans text-[0.7rem] text-ink-muted hover:text-crimson underline-offset-2 hover:underline"
+                            >
+                              [{m.type}] {m.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </article>
+                  )
+                })}
+              </div>
+            </>
+          )
+        })()}
       </section>
 
       {/* ═══════════════════════════════════════════════════════════

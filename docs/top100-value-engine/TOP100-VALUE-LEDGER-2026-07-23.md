@@ -10,6 +10,7 @@
 
 ## Execution status (rolling)
 
+- **Interval VI (2026-07-23):** Israel Dossier Visual Investigations densify — 23 VI cards, 28+ video-linked incidents, dual-cite floors, multi-party (Oct 7 + Gaza/WB civilian harm). Entity-only.
 - **Interval 8 (2026-07-23):** remaining 22 → terminal (dossier export, error boundary, device matrix, pure floors batch).
 - **Interval 7 (2026-07-23):** waves 61–65 → 687 local/shipping; soft-floor auto; wave barrel; /bernie all-UA noindex; GEO floors; sticky TOC; Volume II hub; identity-scrub pure.
 - **Interval 1 (2026-07-23):** #1 #2 #3 #4 #5 #6 #7 #9 #22 #88 Implemented/Absorbed. Pure 29/29 PASS. Peer ROC densify left unstaged.
@@ -202,11 +203,11 @@ Status: **Implemented** (2026-07-23) — profile Export CSV for filtered claims;
 
 ## #40 — Israel dossier briefing confidence sticky always visible mobile
 Area: Dossier · Anchor: NYT VI · Score: 8.3→9.2 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Implemented** (2026-07-23) — briefing-confidence-sticky mobile fixed bar pure floor.
+Status: **Implemented** (2026-07-23) — fixed mobile confidence legend sticky; open-questions section.
 
 ## #41 — Dossier source-row filter by confidence
 Area: Dossier · Anchor: ProPublica · Score: 8.0→9.1 · PRIORITY: 8 · Launch-critical: no  
-Status: **Absorbed** — briefing confidence + open-questions UX pure floor.
+Status: **Implemented** (2026-07-23) — incident media/tier/focus filters + VI gallery one-tap video filter.
 
 ## #42 — Dossier open-questions list export
 Area: Dossier · Anchor: AP · Score: 7.5→8.8 · PRIORITY: 6 · Launch-critical: no  

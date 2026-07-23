@@ -77,15 +77,38 @@ async function importTsModule(filePath) {
 }
 
 function dedupeIncidents(incidents) {
-  const seen = new Set()
-  const out = []
+  // Merge multimedia + sources on date|location collisions (visual densify enrich).
+  const byKey = new Map()
   for (const incident of incidents) {
     const key = `${incident.date}|${incident.location}`.toLowerCase()
-    if (seen.has(key)) continue
-    seen.add(key)
-    out.push(incident)
+    const prev = byKey.get(key)
+    if (!prev) {
+      byKey.set(key, {
+        ...incident,
+        sources: [...(incident.sources || [])],
+        multimedia: [...(incident.multimedia || [])],
+      })
+      continue
+    }
+    const sourceUrls = new Set((prev.sources || []).map((s) => s.url))
+    for (const s of incident.sources || []) {
+      if (s?.url && !sourceUrls.has(s.url)) {
+        prev.sources.push(s)
+        sourceUrls.add(s.url)
+      }
+    }
+    const mediaUrls = new Set((prev.multimedia || []).map((m) => m.url))
+    for (const m of incident.multimedia || []) {
+      if (m?.url && !mediaUrls.has(m.url)) {
+        prev.multimedia.push(m)
+        mediaUrls.add(m.url)
+      }
+    }
+    if (incident.targetsCivilians) prev.targetsCivilians = true
+    if (incident.targetsChildren) prev.targetsChildren = true
+    if (incident.tier === 'verified') prev.tier = 'verified'
   }
-  return out
+  return [...byKey.values()]
 }
 
 async function main() {
@@ -172,16 +195,33 @@ async function main() {
     eraMeta: history.ISRAEL_DOSSIER_ERA_META,
   }
 
+  const withVideo = incidents.filter((i) =>
+    (i.multimedia || []).some((m) => m.type === 'video'),
+  ).length
+
   ensureDir(outDir)
   const outPath = path.join(outDir, 'corpus.json')
   fs.writeFileSync(outPath, `${JSON.stringify(corpus, null, 2)}\n`, 'utf8')
+  const softFloor = {
+    incidentCount: corpus.counts.incidents,
+    updatedAt: corpus.generatedAt,
+    source: 'export-israel-dossier-corpus.mjs',
+    note: 'Soft floor for verify:live-anonymity; WARN on Railway lag only.',
+    visualInvestigations: {
+      withVideo,
+      civiliansTagged: civiliansTagged,
+    },
+  }
+  const softPath = path.join(outDir, 'soft-floor.json')
+  fs.writeFileSync(softPath, `${JSON.stringify(softFloor, null, 2)}\n`, 'utf8')
   if (fs.existsSync(path.join(repoRoot, 'dist'))) {
     ensureDir(distDir)
     fs.writeFileSync(path.join(distDir, 'corpus.json'), `${JSON.stringify(corpus, null, 2)}\n`, 'utf8')
+    fs.writeFileSync(path.join(distDir, 'soft-floor.json'), `${JSON.stringify(softFloor, null, 2)}\n`, 'utf8')
   }
 
   console.log(
-    `[export-israel-dossier-corpus] wrote ${outPath} · incidents=${corpus.counts.incidents} timeline=${corpus.counts.timelineEvents} actors=${corpus.counts.actors}`,
+    `[export-israel-dossier-corpus] wrote ${outPath} · incidents=${corpus.counts.incidents} timeline=${corpus.counts.timelineEvents} actors=${corpus.counts.actors} video=${withVideo}`,
   )
 }
 

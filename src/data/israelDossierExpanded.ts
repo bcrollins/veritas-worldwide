@@ -12,6 +12,7 @@ import {
   ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES,
   ISRAEL_DOSSIER_TIMELINE_EXPANSION,
 } from './israelDossierHistoryPack'
+import { ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS } from './israelDossierVisualInvestigations'
 
 export type {
   DossierStatCard as StatCard,
@@ -63,11 +64,14 @@ export const HISTORICAL_TIMELINE: DossierTimelineEvent[] = [
   return a.title.localeCompare(b.title)
 })
 
-/** Post-Oct-7 expanded incidents + historical war-crimes pack (1948→). */
+/** Post-Oct-7 expanded incidents + historical war-crimes pack (1948→) + visual investigations densify. */
 export const EXPANDED_INCIDENTS: DossierDocumentedIncident[] = [
   ...ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES,
   ...ISRAEL_DOSSIER_EXPANDED_INCIDENTS,
+  ...ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS,
 ]
+
+export { ISRAEL_DOSSIER_VISUAL_INVESTIGATIONS, visualInvestigationStats } from './israelDossierVisualInvestigations'
 
 // ═══════════════════════════════════════════════════════════
 // INSTAGRAM CAROUSEL SLIDE DATA — 10 slides for viral content
