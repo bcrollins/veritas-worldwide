@@ -238,6 +238,6 @@ Verified live Googlebot matrix on tip lineage including `f92ff79` + SEO ships th
 - `express.static` **redirect:false** (asset dirs like `dist/brand-kit` no longer 301-loop)
 - Prerender default static hubs emit **BreadcrumbList** (membership, content-pack, media-kit, privacy, terms, profiles, news, read, forum, deep-state, analytics, accessibility, israel-dossier, …)
 - Institute hub + Field Manual emit **BreadcrumbList**
-- **FAQPage live:** Membership, Media Kit, Content Pack (+ About/Methodology/Sources/ROC); Privacy + Terms shipping
+- **FAQPage live:** Membership, Media Kit, Content Pack, Privacy, Terms (+ About/Methodology/Sources/ROC); Accessibility shipping
 - Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` **PASS** (incl. no `/404` canonical on junk)
 - Railway unblock: `SEOConfig.url` optional for noindex soft-404 shells
