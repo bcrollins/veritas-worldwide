@@ -35,6 +35,7 @@ const surfaces = [
   ['src/pages/MediaKitPage.tsx', 'media-kit-related-hubs'],
   ['src/components/CookieConsent.tsx', 'data-z-above-tab-bar'],
   ['src/components/CookieConsent.tsx', 'z-[100]'],
+  ['src/components/CookieConsent.tsx', 'cookie-consent-banner'],
   ['src/App.tsx', 'mobile-tab-bar'],
   ['src/App.tsx', 'function MobileTabBar'],
   ['src/App.tsx', '<MobileTabBar'],
