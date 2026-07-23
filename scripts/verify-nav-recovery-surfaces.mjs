@@ -710,4 +710,15 @@ const srcPage = read('src/pages/SourcesPage.tsx')
 assert(methPage.includes('ResearchHubChips') && methPage.includes('excludePath='), 'Methodology excludePath')
 assert(srcPage.includes('ResearchHubChips') && srcPage.includes('excludePath='), 'Sources excludePath')
 
+
+// Bible / ROC / Volume II ResearchHubChips excludePath
+for (const rel of [
+  'src/pages/BibleHistoryPage.tsx',
+  'src/pages/RecordOfJesusChristPage.tsx',
+  'src/pages/VolumeIIHubPage.tsx',
+]) {
+  const body = read(rel)
+  assert(body.includes('ResearchHubChips') && body.includes('excludePath='), `${rel} excludePath`)
+}
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
