@@ -337,3 +337,11 @@ Shell keyboard a11y now covers: skip-link (existing), desktop nav, mobile tabs, 
 
 **Coverage:** All `src/components/**` interactive controls with `min-h-[44px]` now include `focus-visible:ring-2` (37+ component files). Global CSS `:focus-visible` outline remains as baseline.
 
+
+## Sprint 9h — RelatedHubs active hub aria-current
+
+| Commit | Unit |
+|--------|------|
+| `231bcc81` | RelatedHubs useLocation + aria-current=page on active primary hub |
+| `3cca1418` | pure densify lock v34 + coverage suite aria-current assert |
+
