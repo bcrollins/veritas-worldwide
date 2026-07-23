@@ -317,6 +317,8 @@ export default function AdminSocialHub() {
           { label: 'WhatsApp', href: BRAND_ASSETS.whatsappCover },
           { label: 'Video End', href: BRAND_ASSETS.videoEndCard },
           { label: 'Watermark', href: BRAND_ASSETS.videoWatermark },
+          { label: 'LI Post', href: BRAND_ASSETS.linkedinPost },
+          { label: 'FB Post', href: BRAND_ASSETS.facebookPost },
           { label: 'OG Card', href: BRAND_ASSETS.og },
         ].map(a => (
           <a
