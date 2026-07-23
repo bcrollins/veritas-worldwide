@@ -29,6 +29,7 @@ const surfaces = [
   ['src/pages/AnalyticsPage.tsx', 'analytics-related-hubs'],
   ['src/pages/ComprehensiveProfilePage.tsx', 'osint-related-hubs'],
   ['src/pages/BookmarksPage.tsx', 'bookmarks-empty-hubs'],
+  ['src/pages/ProfilesIndexPage.tsx', 'profiles-research-pack-banner'],
   ['src/pages/ReadTheBookPage.tsx', 'read-toc-by-part'],
   ['src/pages/MediaKitPage.tsx', 'media-kit-related-hubs'],
   ['src/components/CookieConsent.tsx', 'data-z-above-tab-bar'],
