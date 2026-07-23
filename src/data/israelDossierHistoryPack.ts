@@ -7461,6 +7461,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-calcium-vitamin-d-deficiency-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Calcium & Vitamin-D Deficiency Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (calcium/D cohort)',
+    location: 'Gaza Strip clinics and displacement sites',
+    summary:
+      'UNICEF, WHO, and multi-source nutrition reporting document elevated calcium and vitamin-D deficiency risk among Gaza children under wartime diet collapse and reduced sunlight exposure in overcrowded shelters — threatening bone health. Pattern card distinct from zinc/iodine and stunting cards.',
+    evidence:
+      'UNICEF micronutrient materials, WHO nutrition notes, and multi-outlet coverage establish multi-source calcium/vitamin-D deficiency risk. Exact prevalence rates evolve; multi-source wartime pediatric calcium/vitamin-D failure is the claim.',
+    sources: [
+      { label: 'UNICEF micronutrient materials', url: 'https://www.unicef.org' },
+      { label: 'WHO nutrition materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza micronutrient coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-exercise-movement-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Exercise & Movement Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (movement-denial cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document prolonged confinement without exercise or free movement for Israeli civilian hostages — causing muscle atrophy and health decline. Pattern card distinct from solitary and daylight-denial cards.',
+    evidence:
+      'Multi-source released-hostage medical and testimony records establish multi-source movement/exercise denial in captivity. Exact durations vary; multi-source prolonged movement denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-irrigation-pipe-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Irrigation Pipe Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (irrigation-destruction cohort)',
+    location: 'West Bank Palestinian agricultural irrigation systems',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler destruction of Palestinian irrigation pipes and water infrastructure after October 7 — collapsing crop survival for civilian farmers. Pattern card for irrigation destruction distinct from water-source seizure and farm-equipment cards.',
+    evidence:
+      'OCHA agricultural-damage tallies, multi-source case reporting, and multi-outlet coverage establish multi-source irrigation-system destruction. Exact pipe lengths evolve; multi-source wartime irrigation destruction is the claim.',
+    sources: [
+      { label: 'OCHA agricultural damage materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem water materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet irrigation destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -11569,6 +11650,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['agriculture', 'equipment', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-calcium-d-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Calcium & Vitamin-D Deficiency Pattern',
+    description: 'UNICEF/WHO multi-source documentation of elevated calcium and vitamin-D deficiency risk among children.',
+    source: 'UNICEF / WHO / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-calcium-vitamin-d-deficiency-pattern-2023-2025',
+      'gaza-children-zinc-vitamin-a-deficiency-pattern-2023-2025',
+      'gaza-children-iodine-deficiency-risk-pattern-2023-2025',
+    ],
+    tags: ['calcium', 'vitamin-d', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-movement-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Exercise & Movement Pattern',
+    description: 'Multi-source documentation of prolonged confinement without exercise or free movement for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-exercise-movement-pattern-2023-2025',
+      'israel-hostages-solitary-confinement-pattern-2023-2025',
+      'israel-hostages-denied-daylight-fresh-air-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'confinement', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-irrigation-destruction-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Irrigation Pipe Destruction Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated destruction of Palestinian irrigation systems after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-irrigation-pipe-destruction-pattern-2023-2025',
+      'west-bank-settler-water-source-seizure-pattern-2023-2025',
+      'west-bank-settler-farm-equipment-destruction-pattern-2023-2025',
+    ],
+    tags: ['irrigation', 'water', 'settlers', 'west-bank'],
+  },
+
+
 
 
 
