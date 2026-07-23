@@ -327,3 +327,13 @@ Shell keyboard a11y now covers: skip-link (existing), desktop nav, mobile tabs, 
 | `277d91a3` | Bookmark, FontSize, Breadcrumb, BackToTop, DonationBanner, Language, PrimarySource, FloatingShare, ContentGate, DownloadModal, ContinueReading, ErrorBoundary, RecordTabs, CorpusSearch, TextSelectionShare focus-visible |
 | `f94a2a58` | pure densify lock v31 |
 
+
+## Sprint 9g — remaining reader surfaces keyboard focus
+
+| Commit | Unit |
+|--------|------|
+| `6249fdaf` | Citation, Dispute, Forum, PDF suite, DossierCarousel, MarketingConsent, ReadingStreak, AipacDiagram, InstituteLayout, InstituteBookPDF focus-visible |
+| `acbf3e4c` | pure densify lock v32 |
+
+**Coverage:** All `src/components/**` interactive controls with `min-h-[44px]` now include `focus-visible:ring-2` (37+ component files). Global CSS `:focus-visible` outline remains as baseline.
+
