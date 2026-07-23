@@ -680,4 +680,11 @@ const pkgJson = read('package.json')
 assert(pkgJson.includes('verify:nav-ia') && pkgJson.includes('verify:nav-recovery'), 'package.json nav pure scripts')
 assert(pkgJson.includes('verify:pure'), 'package.json verify:pure')
 
+
+// Israel sticky RelatedHubs destinations
+const israelHubsSrc = read('src/pages/IsraelDossierPage.tsx')
+assert(israelHubsSrc.includes("to: '/read'") || israelHubsSrc.includes('to: "/read"'), 'Israel RelatedHubs Read')
+assert(israelHubsSrc.includes("to: '/methodology'") || israelHubsSrc.includes('to: "/methodology"'), 'Israel RelatedHubs Methodology')
+assert(israelHubsSrc.includes("to: '/search'") || israelHubsSrc.includes('to: "/search"'), 'Israel RelatedHubs Search')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
