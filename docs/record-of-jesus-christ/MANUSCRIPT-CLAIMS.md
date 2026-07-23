@@ -1,14 +1,15 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:41:16.215Z  
+**Generated:** 2026-07-23T09:43:38.051Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 272  
-**Tier histogram:** `{"circumstantial": 14, "contested": 29, "interpretive": 25, "literary_theological": 3, "speculative": 2, "verified": 95, "well_attested": 104}`
+**Claim count:** 281  
+**Tier histogram:** `{"circumstantial": 15, "contested": 30, "interpretive": 27, "literary_theological": 3, "speculative": 2, "verified": 96, "well_attested": 108}`
 
 Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.json`.
 
 | ID | Tier | Proof vs concept | Claim |
 |----|------|------------------|-------|
+| `ane-amarna-habiru` | well_attested | debate | Amarna letters mention ʿApiru/Habiru groups in Late Bronze Canaan — sociopolitical bandits/mercenaries, not a simple ethnonym for “Hebrews.” |
 | `ane-amarna-letters` | verified | proof_grade_data | The Amarna letters (14th c. BCE) document Late Bronze Canaanite-Egyptian diplomacy and conflict language used in comparative ANE historical method. |
 | `ane-annals-shoshenq` | well_attested | proof_grade_data | Shoshenq I (biblical Shishak) campaign reliefs at Karnak list Levantine toponyms relevant to 10th-century BCE geopolitics debates. |
 | `ane-babylonian-chronicle-jerusalem` | verified | proof_grade_data | Babylonian Chronicle entries record Nebuchadnezzar’s campaigns against Judah, including the 597 BCE deportation horizon. |
@@ -44,6 +45,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `arch-galilee-boat` | verified | proof_grade_data | The “Jesus Boat” (first-century Galilee boat, discovered 1986) illustrates fishing technology on the lake in the Early Roman period. |
 | `arch-gamla` | verified | proof_grade_data | Gamla (Golan) destruction in the First Jewish Revolt is archaeologically and literarily documented (Josephus), illustrating Galilee/Golan war archaeology. |
 | `arch-herodium` | verified | proof_grade_data | Herodium is a major Herodian fortress-palace complex with extensive excavation; it anchors elite architecture of late Second Temple Judea. |
+| `arch-herodium-tomb-debate` | contested | debate | A monumental mausoleum at Herodium has been proposed as Herod’s tomb; identification remains debated among excavators and reviewers. |
 | `arch-hippos-sussita` | verified | proof_grade_data | Hippos-Sussita (Decapolis) excavations illuminate Greco-Roman urbanism east of the Sea of Galilee relevant to Gospel geographic horizons. |
 | `arch-james-ossuary` | contested | debate | The so-called James ossuary inscription (“James son of Joseph brother of Jesus”) remains contested regarding authenticity of the brother phrase and provenance. |
 | `arch-jericho` | contested | debate | Jericho’s Late Bronze destruction layers and relation to a conquest narrative remain a classic contested case in biblical archaeology. |
@@ -66,6 +68,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `arch-titus` | well_attested | attested_report | 1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative. |
 | `arch-yehohanan` | verified | proof_grade_data | The crucified remains of Yehohanan son of Hagkol (Giv‘at ha-Mivtar) provide osteological evidence of Roman crucifixion practice in Judea (nail through heel bone). |
 | `arch-yodefat` | verified | proof_grade_data | Yodefat (Jotapata) siege archaeology correlates with Josephus’s First Revolt narrative and illustrates Galilean war destruction layers. |
+| `cosmo-acoustic-scale` | verified | science_model | The angular scale of the CMB acoustic peaks (θ_*) tightly constrains the angular diameter distance to recombination in flat ΛCDM. |
 | `cosmo-age` | well_attested | science_model | Under Planck 2018 ΛCDM parameters, the universe age is approximately 13.8 billion years. |
 | `cosmo-bao` | verified | science_model | Baryon acoustic oscillations (BAO) measured in large-scale galaxy surveys provide an independent standard-ruler constraint on the expansion history within ΛCDM. |
 | `cosmo-bbn` | well_attested | science_model | Primordial abundances of light elements (⁴He, D, ³He, ⁷Li) are broadly consistent with Big Bang nucleosynthesis predictions. |
@@ -104,6 +107,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ec-ignatius-letters` | well_attested | attested_report | Ignatius of Antioch’s letters (early 2nd c., middle recension) document episcopal structure and early christological confessions en route to martyrdom. |
 | `ec-irenaeus` | verified | proof_grade_data | Irenaeus (c. 180 CE) argues for a fourfold Gospel (Matthew, Mark, Luke, John) against alternative gospel usages. |
 | `ec-justin-apology` | well_attested | attested_report | Justin Martyr’s First Apology (mid-2nd c.) describes Christian worship, “memoirs of the apostles,” and defends Christians before a Roman audience. |
+| `ec-justin-dialogue` | well_attested | attested_report | Justin Martyr’s Dialogue with Trypho engages Jewish-Christian scriptural argument in the mid-2nd century. |
 | `ec-marcion` | well_attested | attested_report | Marcion of Sinope (mid-2nd century) promulgated a reduced Gospel+Paul collection, prompting proto-orthodox canon and theological responses. |
 | `ec-martyrdom-polycarp` | well_attested | attested_report | The Martyrdom of Polycarp (mid-2nd c. traditions) is an early Christian martyr narrative shaping later hagiography. |
 | `ec-melito-passover` | well_attested | attested_report | Melito of Sardis’s Peri Pascha (2nd c.) is an early Christian paschal homily with high christology and anti-Jewish rhetoric — reception history, not HJ primary data. |
@@ -141,6 +145,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `hj-jerusalem-pilgrimage` | verified | proof_grade_data | Pilgrimage to Jerusalem for festivals is a well-attested Second Temple practice providing social context for Gospel Jerusalem scenes. |
 | `hj-jewishness-consensus` | well_attested | reconstruction | Mainstream historical Jesus research treats Jesus as a first-century Jew operating within Second Temple Judaism, not as a later Gentile construct. |
 | `hj-john-baptist-movement` | well_attested | attested_report | John the Baptist is multiply attested (Josephus Ant. 18; Synoptics; Johannine tradition) as an independent purification/repentance preacher executed by Herod Antipas. |
+| `hj-john-baptizer-independence` | well_attested | attested_report | John the Baptist is treated as an independent prophetic figure in Josephus and the Gospels, not a mere literary foil invented de novo. |
 | `hj-kingdom-proclamation` | well_attested | reconstruction | A core historical judgment across diverse scholars is that Jesus proclaimed God’s kingdom / reign as central to his public activity. |
 | `hj-language` | contested | debate | Jesus likely spoke Aramaic as a primary vernacular; Greek exposure in Galilee is plausible; Hebrew literacy/use is debated for the population stratum. |
 | `hj-literacy` | well_attested | attested_report | Literacy rates in Early Roman Judea/Galilee were limited relative to modern norms; most people encountered texts orally and through specialists. |
@@ -174,6 +179,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `mod-digital-dss` | verified | proof_grade_data | The Leon Levy Dead Sea Scrolls Digital Library enables open inspection of high-resolution plate images for many Qumran manuscripts. |
 | `mod-form-criticism-limits` | interpretive | reconstruction | Form criticism classifies Gospel units by genre and Sitz im Leben; its older assumption of pure oral isolation before writing is now heavily qualified. |
 | `mod-genetics-limits` | well_attested | science_model | Ancient DNA of the Southern Levant informs regional demographic history; it cannot identify named New Testament individuals or prove specific genealogies in the Gospels. |
+| `mod-gospel-genre-bios` | interpretive | reconstruction | Many scholars classify the Gospels as a form of ancient biography (bios) with flexible historical conventions rather than modern historiography. |
 | `mod-historical-jesus-quests` | interpretive | reconstruction | “Quests” for the historical Jesus are historiographical programs with shifting criteria; no single reconstruction commands universal assent. |
 | `mod-jesus-seminar` | contested | debate | The Jesus Seminar (1980s–2000s) popularized colored-bead voting on sayings authenticity; its methods and conclusions remain highly contested in the guild. |
 | `mod-living-text` | interpretive | reconstruction | “Living text” models (e.g., Parker) emphasize early Christian textual fluidity and community use rather than a single frozen original always recoverable. |
@@ -194,6 +200,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `mod-turin-shroud` | speculative | tradition | The Shroud of Turin is a medieval relic by mainstream radiocarbon dating (1988); authenticity as first-century burial cloth remains speculative/unverified for historical Jesus studies. |
 | `mod-war-70` | verified | proof_grade_data | The Jewish-Roman War culminating in the 70 CE destruction of the Temple is a primary historical horizon for dating and interpreting the Synoptic Gospels. |
 | `nc-celsus` | well_attested | attested_report | Celsus (2nd c.), preserved mainly via Origen’s Contra Celsum, is an early pagan critic who treats Jesus as a historical magician/charlatan figure rather than a mythic non-entity. |
+| `nc-celsus-virgin` | circumstantial | attested_report | Celsus (via Origen) preserves a hostile Jewish/pagan counter-narrative about Jesus’ birth involving panthera traditions — reception of controversy, not primary birth documentation. |
 | `nc-epictetus-christians` | circumstantial | attested_report | Epictetus (via Arrian) may allude to Christians as fearless under threat — thin and debated philosophical notice of a social type. |
 | `nc-galen-christians` | well_attested | attested_report | Galen (2nd c.) makes brief remarks on Christians as a philosophical school/sect — hostile/neutral medical-philosopher notice of a known group. |
 | `nc-james` | well_attested | attested_report | Josephus, Antiquities 20.200 refers to “the brother of Jesus who is called Christ, James” in the account of Ananus’s execution of James — generally judged authentic. |
@@ -229,6 +236,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nt-gospel-dates` | contested | debate | Critical consensus commonly dates Mark c. 65–75 CE, Matthew and Luke c. 80–90 CE, John c. 90–100 CE — with debate bands around each. |
 | `nt-harmonie-readings` | well_attested | proof_grade_data | Harmonization among Synoptic parallels is a recognized scribal tendency that can produce secondary agreements in later manuscripts. |
 | `nt-homoeoteleuton` | verified | proof_grade_data | Many NT variants arise from ordinary scribal mechanics (homoeoteleuton, dittography, orthography), not theological conspiracy. |
+| `nt-initial-text-vs-autograph` | interpretive | reconstruction | Modern critical editions target an initial text (Ausgangstext) that may not be identical to a single authorial autograph in every book. |
 | `nt-itacism` | verified | proof_grade_data | Itacism and vowel interchange are common Greek scribal phenomena that generate many orthographic variants without semantic change. |
 | `nt-john-historicity` | contested | debate | John’s Gospel is generally dated later than the Synoptics; its independent historical value for Jesus research is debated (high Christology vs. early tradition cores). |
 | `nt-lectionaries` | well_attested | proof_grade_data | Greek lectionary manuscripts form a large late witness class used in ECM/CBGM and traditional criticism for reception history more than for earliest text alone. |
@@ -280,4 +288,5 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `st-samaria-papyri` | verified | proof_grade_data | The Wadi Daliyeh (Samaria) papyri document mid-4th-century BCE legal/administrative life under late Persian / early Hellenistic rule in Samaria. |
 | `st-synagogue-origins` | contested | debate | The institutional origins and pre-70 function of “synagogues” remain debated; archaeological assembly buildings and literary references do not form a single simple type. |
 | `st-temple-economy` | well_attested | attested_report | The Jerusalem Temple system involved tithes, offerings, and currency exchange for worshippers — a documented economic-religious complex in Josephus and later rabbinic memory. |
+| `st-temple-tax` | well_attested | attested_report | The half-shekel Temple tax and related fiscal practices are documented in Josephus, Matthew 17 tradition, and later rabbinic memory. |
 | `st-war-scroll` | well_attested | attested_report | The War Scroll (1QM) and related DSS texts depict eschatological battle ideology within a Second Temple Jewish sectarian milieu. |
