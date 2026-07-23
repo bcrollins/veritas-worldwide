@@ -41,6 +41,11 @@ for (const [rel, needle] of surfaces) {
   assert(read(rel).includes(needle), `${rel} must include ${needle}`)
 }
 
+// Soft-404 SPA stays noindex (must not set a /404 page URL in meta)
+const notFoundSrc = read('src/pages/NotFoundPage.tsx')
+assert(notFoundSrc.includes('noindex'), 'NotFoundPage must stay noindex')
+assert(!/url:\s*[`'"][^`'"]*\/404/.test(notFoundSrc), 'NotFoundPage must not invent /404 url meta')
+
 // Research family mounts chips
 for (const rel of [
   'src/pages/MethodologyPage.tsx',
