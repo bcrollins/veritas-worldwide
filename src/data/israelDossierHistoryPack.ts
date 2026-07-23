@@ -6975,6 +6975,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-surgery-without-anesthesia-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Surgery Without Anesthesia Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (anesthesia-shortage cohort)',
+    location: 'Gaza Strip operating theaters and field surgical points',
+    summary:
+      'WHO, MSF, and multi-source health reporting document surgeries including on children performed without adequate anesthesia under siege drug shortages — a pediatric surgical-harm pattern distinct from pharmacy-shortage and orthopedic-care cards.',
+    evidence:
+      'WHO trauma materials, MSF surgical statements, and multi-outlet coverage establish multi-source anesthesia-shortage surgeries. Exact case counts evolve; multi-source wartime surgery without adequate anesthesia for children is the claim.',
+    sources: [
+      { label: 'WHO trauma care materials', url: 'https://www.who.int' },
+      { label: 'MSF surgical statements', url: 'https://www.msf.org' },
+      { label: 'Multi-outlet Gaza surgery without anesthesia coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-labor-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced Labor Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-labor cohort)',
+    location: 'Gaza Strip captivity sites and tunnel systems',
+    summary:
+      'Released-hostage testimony and multi-source reporting document forced labor of Israeli civilian hostages including digging and camp work — a protected-person exploitation pattern distinct from tunnel-captivity and physical-abuse cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet investigative coverage establish multi-source forced labor in captivity. Exact task lists vary; multi-source forced labor of civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-child-attacks-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Palestinian Children Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (child-attack cohort)',
+    location: 'West Bank villages, roads, and school routes',
+    summary:
+      'UNICEF, OCHA, and multi-source reporting document elevated settler physical attacks specifically targeting or injuring Palestinian children after October 7 — a child-specific civilian-harm pattern distinct from aggregate settler-violence and children-killed cards.',
+    evidence:
+      'UNICEF child-protection materials, OCHA settler-violence databases, and multi-outlet coverage establish multi-source settler attacks affecting children. Exact injury counts evolve; multi-source wartime settler attacks on children is the claim.',
+    sources: [
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet settler child-attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -10777,6 +10858,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['olives', 'settlers', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-no-anesthesia-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Surgery Without Anesthesia Pattern',
+    description: 'WHO/MSF multi-source documentation of pediatric surgeries without adequate anesthesia under drug shortages.',
+    source: 'WHO / MSF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-surgery-without-anesthesia-pattern-2023-2025',
+      'gaza-pharmacy-medicine-shortage-pattern-2023-2025',
+      'gaza-children-orthopedic-care-collapse-pattern-2023-2025',
+    ],
+    tags: ['anesthesia', 'children', 'surgery', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-labor-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced Labor Pattern',
+    description: 'Multi-source documentation of forced labor of civilian hostages including digging and camp work.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-labor-pattern-2023-2025',
+      'israel-hostages-tunnel-captivity-pattern-2023-2025',
+      'israel-hostages-physical-abuse-captivity-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'forced-labor', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-child-attacks-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Children Pattern',
+    description: 'UNICEF/OCHA multi-source documentation of elevated settler attacks targeting or injuring Palestinian children.',
+    source: 'UNICEF / OCHA / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-child-attacks-pattern-2023-2025',
+      'west-bank-children-killed-pattern-2023-2025',
+      'west-bank-price-tag-violence-pattern-2023-2025',
+    ],
+    tags: ['children', 'settlers', 'violence', 'west-bank'],
+  },
+
+
 
 
 
