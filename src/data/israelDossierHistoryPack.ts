@@ -3423,9 +3423,9 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     date: 'October 2023 – 2025 (demolitions cohort)',
     location: 'West Bank / East Jerusalem',
     summary:
-      'OCHA, B'Tselem, and multi-source reporting document elevated home demolitions and displacement of Palestinian families in the West Bank after October 7 — including punitive and administrative demolitions affecting children. Pattern card for shelter destruction outside Gaza, distinct from settlement-expansion and settler-violence cards.',
+      "OCHA, B'Tselem, and multi-source reporting document elevated home demolitions and displacement of Palestinian families in the West Bank after October 7 — including punitive and administrative demolitions affecting children. Pattern card for shelter destruction outside Gaza, distinct from settlement-expansion and settler-violence cards.",
     evidence:
-      'OCHA demolition databases, B'Tselem field documentation, and multi-outlet coverage establish multi-source elevated demolitions. Exact structure counts evolve; multi-source wartime demolition surge is the claim.',
+      "OCHA demolition databases, B'Tselem field documentation, and multi-outlet coverage establish multi-source elevated demolitions. Exact structure counts evolve; multi-source wartime demolition surge is the claim.",
     sources: [
       { label: 'OCHA demolition / displacement materials', url: 'https://www.ochaopt.org' },
       { label: "B'Tselem home demolitions materials", url: 'https://www.btselem.org' },
