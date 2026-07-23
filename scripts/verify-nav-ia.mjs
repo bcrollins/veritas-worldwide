@@ -845,6 +845,26 @@ assert(fs.readFileSync(path.join(root, 'src/components/ResearchHubChips.tsx'), '
 assert(fs.readFileSync(path.join(root, 'src/components/DossierHubSpokes.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v22 IA spokes focus')
 assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('focus-visible:ring-offset-obsidian'), 'perpetual v22 IA footer focus')
 
+
+
+// RelatedHubs perpetual densify lock v23 IA
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('activeChip'), 'perpetual v23 IA activeChip')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('darkActiveChip'), 'perpetual v23 IA darkActiveChip')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('aria-current'), 'perpetual v23 IA aria-current')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('useLocation'), 'perpetual v23 IA useLocation')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes("tone === 'parchment'"), 'perpetual v23 IA parchment')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('emphasizeTo'), 'perpetual v23 IA emphasize')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v23 IA focus')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('mobile-tab-bar'), 'perpetual v23 IA mobile tab bar')
+assert(fs.readFileSync(path.join(root, 'server.js'), 'utf8').includes('server-soft-404'), 'perpetual v23 IA server soft-404')
+assert(fs.readFileSync(path.join(root, 'src/pages/InstitutePage.tsx'), 'utf8').includes('institute-related-hubs'), 'perpetual v23 IA institute')
+assert(fs.readFileSync(path.join(root, 'scripts/verify-related-hubs-coverage.mjs'), 'utf8').includes('related-hubs-coverage'), 'perpetual v23 IA coverage')
+assert(fs.readFileSync(path.join(root, 'scripts/verify-pure.mjs'), 'utf8').includes('verify-related-hubs-coverage.mjs'), 'perpetual v23 IA pure wire')
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-hub-chips'), 'perpetual v23 IA soft-404')
+assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'perpetual v23 IA home')
+assert(fs.readFileSync(path.join(root, 'src/components/ResearchHubChips.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v23 IA Research chips')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('focus-visible:ring-offset-obsidian'), 'perpetual v23 IA footer focus')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
