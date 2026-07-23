@@ -296,6 +296,24 @@ const bill = scores['bill-clinton'];
 if (!bill || bill.n < 2) throw new Error('bill-clinton needs ≥2 verified falsehoods, got ' + (bill?.n ?? 0));
 if (bill.score > 55) throw new Error('bill-clinton score expected ≤55 after deep dive, got ' + bill.score);
 
+// Hillary Clinton multi-entry densify (Bosnia + email + subpoena)
+const hillary = scores['hillary-clinton'];
+if (!hillary || hillary.n < 3) throw new Error('hillary-clinton needs ≥3 verified falsehoods, got ' + (hillary?.n ?? 0));
+if (hillary.score > 50) throw new Error('hillary-clinton score expected ≤50 after densify, got ' + hillary.score);
+const hillaryP = getProfileBySlug('hillary-clinton');
+for (const id of [
+  'hillary-clinton-bosnia-sniper-fire-2008',
+  'hillary-clinton-email-no-classified-2015-2016',
+  'hillary-clinton-never-had-subpoena-2015',
+]) {
+  if (!(hillaryP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('hillary-clinton missing docket id: ' + id);
+  }
+}
+for (const f of (hillaryP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('hillary-clinton dual-cite collision: ' + f.id);
+}
+
 // Barack Obama multi-entry densify (keep-your-plan + steel + caveat rewrite)
 const obama = scores['barack-obama'];
 if (!obama || obama.n < 3) throw new Error('barack-obama needs ≥3 verified falsehoods, got ' + (obama?.n ?? 0));
