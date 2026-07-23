@@ -468,6 +468,13 @@ assert(fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8').inc
 assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'live IA home')
 assert(fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), 'utf8').includes('SEARCH_RECOVERY_HUBS'), 'live IA search')
 
+
+// RelatedHubs perpetual densify lock v2 IA
+assert(fs.readFileSync(path.join(root, 'src/pages/BookmarksPage.tsx'), 'utf8').includes('BOOKMARKS_HUBS'), 'perpetual v2 IA bookmarks')
+assert(fs.readFileSync(path.join(root, 'src/pages/BernieShowPage.tsx'), 'utf8').includes('bernie-related-hubs'), 'perpetual v2 IA bernie')
+assert(fs.readFileSync(path.join(root, 'src/pages/MediaKitPage.tsx'), 'utf8').includes('media-kit-primary-hubs'), 'perpetual v2 IA media-kit')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('emphasizeTo'), 'perpetual v2 IA emphasize')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
