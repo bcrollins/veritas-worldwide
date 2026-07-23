@@ -2789,6 +2789,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-civil-defense-killed-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Civil Defense & Rescue Workers Killed Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (civil-defense cohort)',
+    location: 'Gaza Strip (rescue/search sites across governorates)',
+    summary:
+      'Gaza Civil Defense, OCHA, and multi-source reporting document large numbers of civil-defense and rescue workers killed while extricating civilians from rubble — a distinct occupational-harm pattern adjacent to (but not identical with) aid-worker and paramedic convoy cards. Pattern card for systematic risk to protected rescue personnel under wartime bombardment.',
+    evidence:
+      'Gaza Civil Defense fatality tallies, OCHA protection of civilians materials, and multi-outlet coverage of rescue-worker deaths establish multi-source occupational targeting/risk. Exact counts evolve; multi-source elevated civil-defense fatalities during rescue operations is the claim.',
+    sources: [
+      { label: 'OCHA Protection of Civilians / humanitarian updates', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza Civil Defense casualty coverage', url: 'https://apnews.com' },
+      { label: 'OHCHR public statements on rescue/medical personnel', url: 'https://www.ohchr.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3955,6 +3982,23 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
       'gaza-starvation-ipc-phases-2024-2025',
     ],
     tags: ['agriculture', 'food', 'civilians', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-civil-defense-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Civil Defense & Rescue Workers Killed Pattern',
+    description: 'OCHA/multi-source documentation of elevated civil-defense and rescue-worker fatalities during rubble extrication operations.',
+    source: 'OCHA / OHCHR / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-civil-defense-killed-pattern-2023-2025',
+      'gaza-aid-workers-killed-pattern-2023-2025',
+      'rafah-paramedic-convoy-2025',
+    ],
+    tags: ['civil-defense', 'rescue', 'civilians', 'gaza'],
   },
 
 ]

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:46:30.119Z",
+  "generatedAt": "2026-07-23T08:48:25.012Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 118,
-    "timelineEvents": 106,
+    "incidents": 119,
+    "timelineEvents": 107,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 104,
+    "historicalWarCrimesPack": 105,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 58
+      "post-oct7": 59
     },
     "incidentsByTier": {
-      "verified": 116,
+      "verified": 117,
       "circumstantial": 2
     },
     "childrenTagged": 98,
-    "civiliansTagged": 116,
+    "civiliansTagged": 117,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3244,6 +3244,27 @@
         "civilians",
         "gaza",
         "casualties"
+      ]
+    },
+    {
+      "id": "tl-gaza-civil-defense-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Civil Defense & Rescue Workers Killed Pattern",
+      "description": "OCHA/multi-source documentation of elevated civil-defense and rescue-worker fatalities during rubble extrication operations.",
+      "source": "OCHA / OHCHR / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-civil-defense-killed-pattern-2023-2025",
+        "gaza-aid-workers-killed-pattern-2023-2025",
+        "rafah-paramedic-convoy-2025"
+      ],
+      "tags": [
+        "civil-defense",
+        "rescue",
+        "civilians",
+        "gaza"
       ]
     },
     {
@@ -7985,6 +8006,50 @@
           "type": "document",
           "label": "FAO public damage materials",
           "url": "https://www.fao.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civil-defense-killed-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Civil Defense & Rescue Workers Killed Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (civil-defense cohort)",
+      "location": "Gaza Strip (rescue/search sites across governorates)",
+      "summary": "Gaza Civil Defense, OCHA, and multi-source reporting document large numbers of civil-defense and rescue workers killed while extricating civilians from rubble — a distinct occupational-harm pattern adjacent to (but not identical with) aid-worker and paramedic convoy cards. Pattern card for systematic risk to protected rescue personnel under wartime bombardment.",
+      "evidence": "Gaza Civil Defense fatality tallies, OCHA protection of civilians materials, and multi-outlet coverage of rescue-worker deaths establish multi-source occupational targeting/risk. Exact counts evolve; multi-source elevated civil-defense fatalities during rescue operations is the claim.",
+      "sources": [
+        {
+          "label": "OCHA Protection of Civilians / humanitarian updates",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza Civil Defense casualty coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "OHCHR public statements on rescue/medical personnel",
+          "url": "https://www.ohchr.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
         }
       ],
       "tier": "verified",
