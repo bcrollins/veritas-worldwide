@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T06:56:45.111Z",
+  "generatedAt": "2026-07-23T06:58:25.056Z",
   "lastVerified": "2026-07-22",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 73,
     "timelineEvents": 60,
-    "actors": 44,
+    "actors": 45,
     "moneyTrailNodes": 16,
     "historicalWarCrimesPack": 58,
     "legalCases": 10,
@@ -26,7 +26,7 @@
     "civiliansTagged": 72,
     "actorsByCategory": {
       "us-executive": 12,
-      "us-congress": 25,
+      "us-congress": 26,
       "us-donor-lobby": 5,
       "israeli-leadership": 2
     },
@@ -1711,6 +1711,35 @@
         {
           "label": "U.S. Embassy Jerusalem",
           "sourceUrl": "https://il.usembassy.gov"
+        }
+      ],
+      "tier": "verified"
+    },
+    {
+      "profileId": "rand-paul",
+      "name": "Rand Paul",
+      "role": "U.S. Senator (R-KY); leading foreign-aid skeptic",
+      "category": "us-congress",
+      "enablementSummary": "Documents the minority Republican counter-position to unconditional Israel/foreign-aid orthodoxy — frequent NO votes or hold threats on large packages. Essential full-spectrum map entry (opposition is also public record).",
+      "relatedTimelineYears": [
+        "2014",
+        "2021",
+        "2023",
+        "2024"
+      ],
+      "relatedIncidentIds": [],
+      "relatedMoneyNodeIds": [
+        "hr815",
+        "annual-mou"
+      ],
+      "fundingLinks": [
+        {
+          "label": "OpenSecrets — Rand Paul (contrast low pro-Israel PAC capture)",
+          "sourceUrl": "https://www.opensecrets.org/members-of-congress/rand-paul/summary?cid=N00030836"
+        },
+        {
+          "label": "Official Senate record — foreign aid skepticism",
+          "sourceUrl": "https://www.paul.senate.gov"
         }
       ],
       "tier": "verified"

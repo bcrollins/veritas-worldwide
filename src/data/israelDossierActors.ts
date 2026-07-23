@@ -1005,6 +1005,29 @@ export const ISRAEL_DOSSIER_ACTORS: DossierActorEnablement[] = [
     tier: 'verified',
   },
 
+  {
+    profileId: 'rand-paul',
+    name: 'Rand Paul',
+    role: 'U.S. Senator (R-KY); leading foreign-aid skeptic',
+    category: 'us-congress',
+    enablementSummary:
+      'Documents the minority Republican counter-position to unconditional Israel/foreign-aid orthodoxy — frequent NO votes or hold threats on large packages. Essential full-spectrum map entry (opposition is also public record).',
+    relatedTimelineYears: ['2014', '2021', '2023', '2024'],
+    relatedIncidentIds: [],
+    relatedMoneyNodeIds: ['hr815', 'annual-mou'],
+    fundingLinks: [
+      {
+        label: 'OpenSecrets — Rand Paul (contrast low pro-Israel PAC capture)',
+        sourceUrl: 'https://www.opensecrets.org/members-of-congress/rand-paul/summary?cid=N00030836',
+      },
+      {
+        label: 'Official Senate record — foreign aid skepticism',
+        sourceUrl: 'https://www.paul.senate.gov',
+      },
+    ],
+    tier: 'verified',
+  },
+
 ]
 
 export function getDossierActorByProfileId(profileId: string): DossierActorEnablement | undefined {
