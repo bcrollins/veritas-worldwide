@@ -6327,6 +6327,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-respiratory-infections-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Respiratory Infection Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (respiratory cohort)',
+    location: 'Gaza Strip clinics, shelters, and field medical points',
+    summary:
+      'UNICEF, WHO, and multi-source health reporting document surges in pediatric respiratory infections under overcrowding, cold, smoke, and collapsed primary care — a child-specific disease-harm pattern distinct from infectious-disease aggregate and winter-tent cards.',
+    evidence:
+      'UNICEF child-health materials, WHO surveillance notes, and multi-outlet coverage establish multi-source pediatric respiratory infection surges. Exact case counts evolve; multi-source wartime pediatric respiratory surge is the claim.',
+    sources: [
+      { label: 'UNICEF child health materials', url: 'https://www.unicef.org' },
+      { label: 'WHO disease surveillance materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet Gaza child respiratory coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-witnessing-killings-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Witness Killings Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (witness-coercion cohort)',
+    location: 'Gaza Strip captivity sites and October 7 abduction routes',
+    summary:
+      'Released-hostage testimony and multi-source reporting document Israeli civilian hostages including children forced to witness killings of family members or other civilians during abduction and captivity — a psychological-torture pattern distinct from physical-abuse and sexual-violence cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet investigative coverage establish multi-source forced witnessing of killings. Exact case counts remain incomplete; multi-source forced witnessing by civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-home-invasions-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Home Invasions Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (home-invasion cohort)',
+    location: 'West Bank Palestinian villages and homes',
+    summary:
+      'OCHA, B\'Tselem, and multi-source reporting document elevated settler home invasions after October 7 — armed entry into Palestinian homes, intimidation of families including children, and property destruction. Pattern card for home invasions distinct from price-tag and night-raid military cards.',
+    evidence:
+      'OCHA settler-violence databases, B\'Tselem case files, and multi-outlet coverage establish multi-source home-invasion surge. Exact incident counts evolve; multi-source wartime settler home invasions is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settler home invasion coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -9721,6 +9802,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['grazing', 'outposts', 'settlers', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-respiratory-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Respiratory Infection Surge Pattern',
+    description: 'UNICEF/WHO multi-source documentation of pediatric respiratory infection surges under overcrowding and collapsed care.',
+    source: 'UNICEF / WHO / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-respiratory-infections-pattern-2023-2025',
+      'gaza-infectious-disease-surge-pattern-2023-2025',
+      'gaza-winter-tent-flooding-pattern-2023-2025',
+    ],
+    tags: ['respiratory', 'children', 'disease', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-witness-killings-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Witness Killings Pattern',
+    description: 'Multi-source documentation of civilian hostages forced to witness killings during abduction and captivity.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-witnessing-killings-pattern-2023-2025',
+      'israel-hostages-physical-abuse-captivity-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+    ],
+    tags: ['hostages', 'coercion', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-home-invasions-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Home Invasions Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler home invasions after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-home-invasions-pattern-2023-2025',
+      'west-bank-price-tag-violence-pattern-2023-2025',
+      'west-bank-night-raids-children-pattern-2023-2025',
+    ],
+    tags: ['settlers', 'homes', 'civilians', 'children', 'west-bank'],
+  },
+
+
 
 
 
