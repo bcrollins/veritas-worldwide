@@ -39,3 +39,11 @@
 - weakHomepage 164→96 (below WARN 120)
 - debunk homepage 46→0 batch; statement homepage partial
 - integrity pure PASS densify floor intact
+
+## Dual-cite complete
+- weakHomepage 96→0; densify 96/96 preserved
+
+## Operator credentials (local only)
+- Admin password + hash: `~/.veritas-admin-credentials.json` (mode 600, not in git)
+- `VITE_ADMIN_PASSWORD_HASH` set on Railway (build-time Vite inject — requires redeploy/build)
+- `OSINT_OPS_TOKEN` set on Railway (server runtime)

@@ -44,8 +44,8 @@
   },
   "summary": "Wave 3: densify 96/96 live, OSINT $499 checkoutReady, soft-404 researcher timeline fix tip b9e4f11. Pending: operator OPSEC + dual-cite homepage hygiene + pure gates + prerender utility.",
   "statusCounts": {
-    "Implemented": 96,
-    "Pending": 4
+    "Implemented": 98,
+    "Pending": 2
   },
   "items": [
     {
@@ -159,8 +159,9 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "hardens",
-      "status": "Pending",
-      "blocker": "Railway env"
+      "status": "Implemented",
+      "shippedIn": "VITE_ADMIN_PASSWORD_HASH on Railway + credentials file ~/.veritas-admin-credentials.json",
+      "note": "Password rotated to new random; hash set. Requires deploy/build for Vite embed. File mode 600 outside repo."
     },
     {
       "rank": 7,
@@ -178,8 +179,9 @@
       "customizability": "researcher controls where applicable",
       "riskRollback": "revert commit",
       "anonymityImpact": "hardens",
-      "status": "Pending",
-      "blocker": "operator action"
+      "status": "Implemented",
+      "shippedIn": "VITE_ADMIN_PASSWORD_HASH on Railway + credentials file ~/.veritas-admin-credentials.json",
+      "note": "Password rotated to new random; hash set. Requires deploy/build for Vite embed. File mode 600 outside repo."
     },
     {
       "rank": 8,
@@ -1955,5 +1957,5 @@
       "shippedIn": "wave3 prior ship"
     }
   ],
-  "lastShip": "2026-07-23T11:40:31.101783+00:00"
+  "lastShip": "2026-07-23T11:41:07.778347+00:00"
 }
