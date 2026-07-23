@@ -774,6 +774,34 @@ assert(fs.readFileSync(path.join(root, 'src/pages/SourcesPage.tsx'), 'utf8').inc
 assert(fs.readFileSync(path.join(root, 'scripts/verify-related-hubs-coverage.mjs'), 'utf8').includes('related-hubs-coverage'), 'perpetual v19 IA coverage')
 assert(fs.readFileSync(path.join(root, 'scripts/verify-pure.mjs'), 'utf8').includes('verify-related-hubs-coverage.mjs'), 'perpetual v19 IA pure wire')
 
+
+
+// RelatedHubs perpetual densify lock v20 IA
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('mobile-tab-bar'), 'perpetual v20 IA mobile tab bar')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('primaryLinks'), 'perpetual v20 IA primaryLinks')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('focus-visible:ring-offset-obsidian'), 'perpetual v20 IA footer focus')
+assert(fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8').includes('desktopPrimaryLinkClass'), 'perpetual v20 IA desktop primary')
+assert(fs.readFileSync(path.join(root, 'server.js'), 'utf8').includes('server-soft-404'), 'perpetual v20 IA server soft-404')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('emphasizeTo'), 'perpetual v20 IA emphasize')
+assert(fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v20 IA RelatedHubs focus')
+assert(fs.readFileSync(path.join(root, 'src/components/ResearchHubChips.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v20 IA Research chips focus')
+assert(fs.readFileSync(path.join(root, 'src/components/DossierHubSpokes.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v20 IA spokes focus')
+assert(fs.readFileSync(path.join(root, 'src/components/CookieConsent.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v20 IA cookie focus')
+assert(fs.readFileSync(path.join(root, 'src/components/StickyMembershipBar.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v20 IA sticky membership')
+assert(fs.readFileSync(path.join(root, 'src/components/ExitIntentCapture.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v20 IA exit intent')
+assert(fs.readFileSync(path.join(root, 'src/components/AuthModal.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v20 IA auth modal')
+assert(fs.readFileSync(path.join(root, 'src/components/NewsletterSignup.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v20 IA newsletter')
+assert(fs.readFileSync(path.join(root, 'src/components/SharePanel.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v20 IA share panel')
+assert(fs.readFileSync(path.join(root, 'src/components/CorrectionsCTA.tsx'), 'utf8').includes('focus-visible:ring-2'), 'perpetual v20 IA corrections')
+assert(fs.readFileSync(path.join(root, 'src/pages/InstitutePage.tsx'), 'utf8').includes('institute-related-hubs'), 'perpetual v20 IA institute')
+assert(fs.readFileSync(path.join(root, 'src/pages/MethodologyPage.tsx'), 'utf8').includes('methodology-related-hubs'), 'perpetual v20 IA methodology')
+assert(fs.readFileSync(path.join(root, 'src/pages/SourcesPage.tsx'), 'utf8').includes('sources-related-hubs'), 'perpetual v20 IA sources')
+assert(fs.readFileSync(path.join(root, 'scripts/verify-related-hubs-coverage.mjs'), 'utf8').includes('related-hubs-coverage'), 'perpetual v20 IA coverage')
+assert(fs.readFileSync(path.join(root, 'scripts/verify-pure.mjs'), 'utf8').includes('verify-related-hubs-coverage.mjs'), 'perpetual v20 IA pure wire')
+assert(fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8').includes('not-found-hub-chips'), 'perpetual v20 IA soft-404')
+assert(fs.readFileSync(path.join(root, 'src/pages/HomePage.tsx'), 'utf8').includes('home-related-hubs'), 'perpetual v20 IA home')
+assert(fs.readFileSync(path.join(root, 'src/pages/SearchPage.tsx'), 'utf8').includes('SEARCH_RECOVERY_HUBS'), 'perpetual v20 IA search')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
