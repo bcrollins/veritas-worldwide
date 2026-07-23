@@ -1496,4 +1496,21 @@ assert(relatedUltimate.includes('excludeTo'), 'RelatedHubs excludeTo ultimate')
 assert((relatedUltimate.match(/to:/g) || []).length >= 5, 'PRIMARY destinations ultimate')
 
 
+
+// DossierHubSpokes platform contracts ultimate
+const spokesUltimate = read('src/components/DossierHubSpokes.tsx')
+assert(spokesUltimate.includes('export default function DossierHubSpokes'), 'spokes export ultimate')
+assert(spokesUltimate.includes('export const DOSSIER_SPOKES'), 'DOSSIER_SPOKES export ultimate')
+assert((spokesUltimate.match(/id:/g) || []).length >= 5, 'DOSSIER_SPOKES count ultimate')
+assert(spokesUltimate.includes('dossier-hub-spokes') || spokesUltimate.includes('Also in Dossiers') || spokesUltimate.includes('Dossier hub'), 'spokes chrome ultimate')
+
+// ResearchHubChips platform contracts ultimate
+const rhcUltimate = read('src/components/ResearchHubChips.tsx')
+assert(rhcUltimate.includes('export default function ResearchHubChips'), 'RHC export ultimate')
+assert(rhcUltimate.includes('excludePath'), 'RHC excludePath ultimate')
+const chipsUlt = rhcUltimate.match(/const CHIPS = \[([\s\S]*?)\] as const/)
+assert(chipsUlt, 'RHC CHIPS ultimate')
+assert((chipsUlt[1].match(/to:/g) || []).length === 5, 'RHC count 5 ultimate')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
