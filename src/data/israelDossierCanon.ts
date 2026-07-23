@@ -1272,6 +1272,19 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     relatedProfileIds: ['joe-biden', 'donald-trump', 'barack-obama', 'chuck-schumer', 'mike-johnson', 'benjamin-netanyahu'],
   },
 
+  {
+    id: 'thaad-deployment-israel',
+    label: 'U.S. THAAD Battery Deployment to Israel',
+    amount: 'battery + U.S. crews (wartime deployment)',
+    type: 'delivery',
+    date: '2024–2025',
+    detail:
+      'The United States deployed a Terminal High Altitude Area Defense (THAAD) battery and U.S. service members to Israel to reinforce missile defense during the expanded Iran/Hezbollah threat environment. Distinct from FMF-financed Israeli systems: this is direct U.S. force posture enablement of Israeli air defense.',
+    sourceUrl: 'https://www.defense.gov',
+    children: ['iron-dome', 'iron-beam-laser-2024', 'annual-mou'],
+    relatedProfileIds: ['joe-biden', 'donald-trump', 'benjamin-netanyahu', 'antony-blinken'],
+  },
+
 ]
 
 export const ISRAEL_DOSSIER_HISTORICAL_TIMELINE: DossierTimelineEvent[] = [

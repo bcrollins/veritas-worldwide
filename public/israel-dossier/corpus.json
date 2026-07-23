@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:53:55.830Z",
+  "generatedAt": "2026-07-23T07:55:05.817Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
     "incidents": 87,
     "timelineEvents": 75,
     "actors": 47,
-    "moneyTrailNodes": 27,
+    "moneyTrailNodes": 28,
     "historicalWarCrimesPack": 73,
     "legalCases": 18,
     "lobbyingRecords": 4,
@@ -32,7 +32,7 @@
     },
     "moneyTrailByType": {
       "legislation": 6,
-      "delivery": 3,
+      "delivery": 4,
       "weapon": 7,
       "impact": 3,
       "lobby": 8
@@ -572,6 +572,26 @@
         "chuck-schumer",
         "mike-johnson",
         "benjamin-netanyahu"
+      ]
+    },
+    {
+      "id": "thaad-deployment-israel",
+      "label": "U.S. THAAD Battery Deployment to Israel",
+      "amount": "battery + U.S. crews (wartime deployment)",
+      "type": "delivery",
+      "date": "2024–2025",
+      "detail": "The United States deployed a Terminal High Altitude Area Defense (THAAD) battery and U.S. service members to Israel to reinforce missile defense during the expanded Iran/Hezbollah threat environment. Distinct from FMF-financed Israeli systems: this is direct U.S. force posture enablement of Israeli air defense.",
+      "sourceUrl": "https://www.defense.gov",
+      "children": [
+        "iron-dome",
+        "iron-beam-laser-2024",
+        "annual-mou"
+      ],
+      "relatedProfileIds": [
+        "joe-biden",
+        "donald-trump",
+        "benjamin-netanyahu",
+        "antony-blinken"
       ]
     }
   ],
