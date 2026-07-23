@@ -2811,6 +2811,58 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  if (route === '/terms') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Terms of Use', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Under what license is The Record published?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'The Record and related Veritas assets are open access under Creative Commons BY-NC-SA 4.0: share and adapt for non-commercial use with attribution and share-alike. Commercial use requires written permission.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Can I quote Veritas chapters in my own writing?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes for non-commercial scholarly, journalistic, and educational use with clear attribution and a link to the source chapter when practical. Do not imply Veritas endorsement of your conclusions.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How do corrections work?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas corrects the public record when primary sources show an error. Contact corrections@veritasworldwide.com or rights@veritasworldwide.com with the claim URL and supporting primary documents.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Does free access mean free for commercial reuse?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'No. Free to read is not free to commercialize. Commercial licensing is separate from open-access reading. See also the Membership page for how reader funding keeps the archive free to read.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {

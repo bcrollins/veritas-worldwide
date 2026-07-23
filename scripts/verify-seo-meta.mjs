@@ -234,6 +234,17 @@ assert(
   privacyPage.includes('Does Veritas Worldwide sell reader data?'),
   'Privacy FAQ must answer data-sale concern for E-E-A-T',
 )
+assert(
+  prerender.includes("route === '/terms'") &&
+    prerender.includes('Under what license is The Record published?'),
+  'prerender must emit Terms FAQPage for license / reuse queries',
+)
+const termsPage = read('src/pages/TermsPage.tsx')
+assert(termsPage.includes('faqJsonLd'), 'TermsPage must emit FAQPage schema')
+assert(
+  termsPage.includes('Under what license is The Record published?'),
+  'Terms FAQ must answer CC BY-NC-SA license question',
+)
 assert(existsSync(join(root, 'docs/SEO-OPS-SCORECARD.md')), 'SEO ops scorecard + GSC runbook must exist')
 assert(existsSync(join(root, 'docs/SEO-AUDIT-50.md')), 'SEO 50-item audit must exist')
 

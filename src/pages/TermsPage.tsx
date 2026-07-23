@@ -6,6 +6,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
@@ -43,6 +44,28 @@ export default function TermsPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Terms of Use', url: `${SITE_URL}/terms` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'Under what license is The Record published?',
+          answer:
+            'The Record and related Veritas assets are open access under Creative Commons BY-NC-SA 4.0: share and adapt for non-commercial use with attribution and share-alike. Commercial use requires written permission.',
+        },
+        {
+          question: 'Can I quote Veritas chapters in my own writing?',
+          answer:
+            'Yes for non-commercial scholarly, journalistic, and educational use with clear attribution and a link to the source chapter when practical. Do not imply Veritas endorsement of your conclusions.',
+        },
+        {
+          question: 'How do corrections work?',
+          answer:
+            'Veritas corrects the public record when primary sources show an error. Contact corrections@veritasworldwide.com or rights@veritasworldwide.com with the claim URL and supporting primary documents.',
+        },
+        {
+          question: 'Does free access mean free for commercial reuse?',
+          answer:
+            'No. Free to read is not free to commercialize. Commercial licensing is separate from open-access reading. See also the Membership page for how reader funding keeps the archive free to read.',
+        },
       ]),
     ])
     return () => {
