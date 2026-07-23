@@ -950,4 +950,11 @@ const readTocSrc = read('src/pages/ReadTheBookPage.tsx')
 assert(readTocSrc.includes('read-toc-by-part') || readTocSrc.includes('groupChaptersByPart'), 'Read TOC by part present')
 assert(readTocSrc.includes('Part') || readTocSrc.includes('part'), 'Read TOC part labels unique')
 
+
+// OSINT product RelatedHubs Profiles destination
+const osintProdSrc = read('src/pages/ComprehensiveProfilePage.tsx')
+assert(osintProdSrc.includes('osint-related-hubs'), 'osint-related-hubs testid')
+assert(osintProdSrc.includes('/profiles'), 'OSINT product Profiles dest unique')
+assert(osintProdSrc.includes('/methodology'), 'OSINT product Methodology dest unique')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
