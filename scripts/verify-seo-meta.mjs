@@ -210,6 +210,16 @@ const sw = read('public/sw.js')
 assert(sw.includes("request.mode === 'navigate'"), 'SW must special-case navigation requests')
 assert(sw.includes('fetch(request)'), 'SW navigation must be network-first')
 
+// Bot meta must defer unknown paths so crawlers get true soft-404 (not 200 homepage shells).
+const botMeta = read('server-social-meta.js')
+assert(botMeta.includes('isKnownRoute'), 'bot meta must accept isKnownRoute for soft-404 deferral')
+assert(
+  botMeta.includes('typeof isKnownRoute === \'function\'') || botMeta.includes('typeof isKnownRoute === "function"'),
+  'bot meta must guard isKnownRoute and next() for unknown crawler paths',
+)
+assert(server.includes('isKnownRoute: isKnownSpaRoute'), 'server must pass isKnownSpaRoute into bot meta')
+assert(server.includes('buildNotFoundHtml'), 'server must soft-404 with dedicated HTML')
+
 console.log(
   '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, image sitemap floors green',
 )

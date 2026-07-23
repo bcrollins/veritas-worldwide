@@ -1805,12 +1805,11 @@ app.use('/api', (req, res) => {
   res.status(404).json({ error: 'API route not found' })
 })
 
-registerBotMetaInjection({ app, rootDir: __dirname })
-
 /**
  * Google Search Central: unknown URLs must not soft-404 with HTTP 200 + homepage title.
  * Known SPA surfaces (prerender manifest + dynamic public prefixes) keep 200 + shell.
  * Everything else returns HTTP 404 + noindex so crawlers de-index junk paths.
+ * Defined before bot meta injection so crawlers share the same allowlist.
  */
 function isKnownSpaRoute(pathname) {
   const route = normalizePrerenderRoute(pathname || '/')
@@ -1881,6 +1880,9 @@ function buildNotFoundHtml() {
 </body>
 </html>`
 }
+
+// Bot meta runs before SPA shell, but defers unknown paths so soft-404 still wins for crawlers.
+registerBotMetaInjection({ app, rootDir: __dirname, isKnownRoute: isKnownSpaRoute })
 
 app.use((req, res) => {
   // SPA shell must never be immutably cached (deploy-safe HTML).

@@ -43,10 +43,22 @@ function getChapterMeta(slug) {
   return chapters[slug] || null
 }
 
-export function registerBotMetaInjection({ app, rootDir }) {
+/**
+ * Injects crawler-visible title/OG metas for known SPA routes.
+ * Unknown paths must call next() so soft-404 (HTTP 404 + noindex) can run —
+ * bots previously always received HTTP 200 homepage shells (Google soft-404 risk).
+ *
+ * @param {{ app: import('express').Express, rootDir: string, isKnownRoute?: (pathname: string) => boolean }} opts
+ */
+export function registerBotMetaInjection({ app, rootDir, isKnownRoute }) {
   app.use((req, res, next) => {
     const ua = req.headers['user-agent'] || ''
     if (!BOT_UA.test(ua)) return next()
+
+    // Defer unknown paths to soft-404 catch-all (crawlers must not get 200 soft shells).
+    if (typeof isKnownRoute === 'function' && !isKnownRoute(req.path)) {
+      return next()
+    }
 
     const htmlPath = path.join(rootDir, 'dist', 'index.html')
     let html = fs.readFileSync(htmlPath, 'utf-8')
