@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:24:03.872Z",
+  "generatedAt": "2026-07-23T09:24:25.870Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 170,
-    "timelineEvents": 158,
+    "incidents": 171,
+    "timelineEvents": 159,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 156,
+    "historicalWarCrimesPack": 157,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 110
+      "post-oct7": 111
     },
     "incidentsByTier": {
-      "verified": 168,
+      "verified": 169,
       "circumstantial": 2
     },
-    "childrenTagged": 143,
-    "civiliansTagged": 168,
+    "childrenTagged": 144,
+    "civiliansTagged": 169,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -4638,6 +4638,28 @@
       "source": "Israeli Ministry of Foreign Affairs / Gaza MoH / Lancet",
       "sourceUrl": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00522-4/fulltext",
       "tier": "verified"
+    },
+    {
+      "id": "tl-hostages-children-elderly-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "October 7 Child & Elderly Hostages Pattern",
+      "description": "Multi-source documentation of Israeli children and elderly civilians held hostage after October 7.",
+      "source": "Israeli government / ICRC / multi-outlet",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "oct7-hostages-children-elderly-pattern-2023-2025",
+        "oct7-hostages-held-pattern",
+        "oct7-hamas-attack-2023"
+      ],
+      "tags": [
+        "hostages",
+        "children",
+        "elderly",
+        "terrorism",
+        "israel"
+      ]
     },
     {
       "id": "tl-oct7-sexual-violence-2023",
@@ -11320,6 +11342,47 @@
           "type": "document",
           "label": "OCHA public updates",
           "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "oct7-hostages-children-elderly-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "October 7 Child & Elderly Hostages Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (vulnerable-hostage cohort)",
+      "location": "Gaza Strip captivity sites",
+      "summary": "Israeli government hostage lists and multi-source reporting document abduction and prolonged captivity of Israeli children and elderly civilians after October 7 — a protected-person targeting pattern within the broader hostages-held card. Pattern card for vulnerable-hostage civilian targeting required for non-selective documentation.",
+      "evidence": "Israeli government public hostage lists naming children and elderly, multi-source release/deal reporting, and ICRC access statements establish multi-source captivity of protected-age groups. Exact remaining counts change with releases; multi-source child and elderly captivity is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government hostage public record",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "ICRC statements on hostages/detainees",
+          "url": "https://www.icrc.org"
+        },
+        {
+          "label": "Multi-outlet hostage children/elderly coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public materials",
+          "url": "https://www.gov.il"
         }
       ],
       "tier": "verified",

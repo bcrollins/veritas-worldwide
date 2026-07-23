@@ -4194,6 +4194,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'oct7-hostages-children-elderly-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'October 7 Child & Elderly Hostages Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (vulnerable-hostage cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Israeli government hostage lists and multi-source reporting document abduction and prolonged captivity of Israeli children and elderly civilians after October 7 — a protected-person targeting pattern within the broader hostages-held card. Pattern card for vulnerable-hostage civilian targeting required for non-selective documentation.',
+    evidence:
+      'Israeli government public hostage lists naming children and elderly, multi-source release/deal reporting, and ICRC access statements establish multi-source captivity of protected-age groups. Exact remaining counts change with releases; multi-source child and elderly captivity is the claim.',
+    sources: [
+      { label: 'Israeli government hostage public record', url: 'https://www.gov.il' },
+      { label: 'ICRC statements on hostages/detainees', url: 'https://www.icrc.org' },
+      { label: 'Multi-outlet hostage children/elderly coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public materials', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -6244,6 +6271,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['aid', 'distribution', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-hostages-children-elderly-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'October 7 Child & Elderly Hostages Pattern',
+    description: 'Multi-source documentation of Israeli children and elderly civilians held hostage after October 7.',
+    source: 'Israeli government / ICRC / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'oct7-hostages-children-elderly-pattern-2023-2025',
+      'oct7-hostages-held-pattern',
+      'oct7-hamas-attack-2023',
+    ],
+    tags: ['hostages', 'children', 'elderly', 'terrorism', 'israel'],
+  },
+
 
 
 
