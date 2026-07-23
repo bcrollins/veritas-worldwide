@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T09:31:53.331Z",
+  "generatedAt": "2026-07-23T09:33:39.519Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 180,
-    "timelineEvents": 168,
+    "incidents": 183,
+    "timelineEvents": 171,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 166,
+    "historicalWarCrimesPack": 169,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 120
+      "post-oct7": 123
     },
     "incidentsByTier": {
-      "verified": 178,
+      "verified": 181,
       "circumstantial": 2
     },
-    "childrenTagged": 152,
-    "civiliansTagged": 178,
+    "childrenTagged": 155,
+    "civiliansTagged": 181,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -4084,6 +4084,28 @@
       ]
     },
     {
+      "id": "tl-gaza-netzarim-corridor-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Netzarim Corridor Displacement Pattern",
+      "description": "OCHA/UNOSAT multi-source documentation of military corridor control bisecting Gaza with large-scale civilian displacement.",
+      "source": "OCHA / UNOSAT / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-netzarim-corridor-displacement-pattern-2023-2025",
+        "gaza-philadelphi-buffer-zone-displacement-pattern-2023-2025",
+        "gaza-housing-destruction-pattern-2023-2025"
+      ],
+      "tags": [
+        "displacement",
+        "corridor",
+        "civilians",
+        "children",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-olives-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -4361,6 +4383,28 @@
       "tags": [
         "communications",
         "blackout",
+        "civilians",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-tunnel-seawater-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Tunnel Seawater Flooding Pattern",
+      "description": "Multi-source documentation of IDF seawater pumping into tunnel networks with documented coastal-aquifer risk debate.",
+      "source": "Israeli government / multi-outlet / UNEP context",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-tunnel-seawater-flooding-pattern-2023-2025",
+        "gaza-water-wells-aquifers-contamination-pattern-2023-2025",
+        "gaza-desalination-water-infrastructure-pattern-2023-2025"
+      ],
+      "tags": [
+        "tunnels",
+        "water",
+        "environment",
         "civilians",
         "gaza"
       ]
@@ -4852,6 +4896,28 @@
       "tags": [
         "sexual-violence",
         "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-oct7-forensic-id-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "October 7 Forensic Body Identification Pattern",
+      "description": "Multi-source documentation of prolonged DNA and forensic identification of civilian remains from the October 7 multi-site assault.",
+      "source": "Israeli government / multi-outlet",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "oct7-forensic-body-identification-pattern-2023-2025",
+        "oct7-hamas-attack-2023",
+        "oct7-children-killed-pattern-2023"
+      ],
+      "tags": [
+        "forensics",
+        "civilians",
+        "children",
         "terrorism",
         "israel"
       ]
@@ -11975,6 +12041,136 @@
           "type": "document",
           "label": "OCHA public access updates",
           "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-netzarim-corridor-displacement-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge",
+        "artillery-use"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Netzarim Corridor Displacement Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (Netzarim corridor cohort)",
+      "location": "Central Gaza Netzarim corridor (east–west military axis)",
+      "summary": "OCHA, satellite assessments, and multi-source reporting document military control of the Netzarim corridor bisecting Gaza — with large-scale housing destruction and civilian displacement along the axis separating northern and southern population movements. Pattern card for corridor-bisect displacement distinct from Philadelphi buffer and general housing-destruction cards.",
+      "evidence": "OCHA access maps, multi-source satellite damage assessments, and multi-outlet corridor reporting establish multi-source Netzarim-axis control with civilian displacement. Exact corridor width and demolished structure counts evolve; multi-source corridor bisect/displacement is the claim.",
+      "sources": [
+        {
+          "label": "OCHA access and displacement materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNOSAT damage assessment materials",
+          "url": "https://unosat.org"
+        },
+        {
+          "label": "Multi-outlet Netzarim corridor coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-tunnel-seawater-flooding-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Tunnel Seawater Flooding & Aquifer Risk Pattern (2023–2025)",
+      "date": "December 2023 – 2025 (tunnel-flood cohort)",
+      "location": "Gaza Strip tunnel network / coastal aquifer interface",
+      "summary": "Israeli government acknowledgments and multi-source reporting document IDF seawater-pumping operations into Hamas tunnel networks — a military tunnel-destruction method with multi-source environmental-risk analysis for coastal aquifer salinization affecting civilian drinking water. Pattern card for tunnel-flood operations and groundwater civilian risk, dual-sourced and distinct from well-contamination and desalination cards.",
+      "evidence": "Israeli public military statements on seawater pumping, multi-outlet coverage of the operation, and multi-source environmental analysis of aquifer salinization risk establish multi-source tunnel-flooding with civilian water-risk dimensions. Exact pumped volumes and aquifer impact magnitudes are incomplete; multi-source seawater tunnel flooding with documented environmental-risk debate is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government / IDF public materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet seawater tunnel-flood coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "UNEP / multi-source environmental risk context",
+          "url": "https://www.unep.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "oct7-forensic-body-identification-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "October 7 Forensic Body Identification Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (forensic-ID cohort)",
+      "location": "Israel forensic institutes / October 7 massacre sites",
+      "summary": "Israeli government forensic authorities and multi-source reporting document prolonged DNA and forensic identification of civilian remains from the October 7 multi-site assault — including burned and fragmented remains that delayed burial and family notification. Pattern card for forensic identification burden as civilian-harm aftermath required for non-selective documentation, distinct from aggregate killed and sexual-violence cards.",
+      "evidence": "Israeli Ministry of Health / forensic institute public updates and multi-outlet coverage of DNA identification campaigns establish multi-source prolonged forensic ID of October 7 civilian dead. Exact remaining unidentified counts change over time; multi-source large-scale forensic identification of massacre victims is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government forensic / health materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet October 7 forensic identification coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli multi-outlet forensic institute reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
         }
       ],
       "tier": "verified",
