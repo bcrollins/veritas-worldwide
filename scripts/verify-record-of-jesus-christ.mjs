@@ -212,35 +212,15 @@ assert(llms.includes('/record-of-jesus-christ'), 'llms.txt missing ROC path')
 assert(llms.includes('record-of-jesus-christ/corpus.json'), 'llms.txt missing corpus.json')
 assert(llms.includes('record-of-jesus-christ.pdf'), 'llms.txt missing ROC PDF')
 assert(llms.includes('historical-jesus-evidence'), 'llms.txt missing historical-jesus topic hub')
+// Permanent depth advertise: any 3-digit "N+" near ROC copy (survives 400→410→417 floors).
 assert(
-  llms.includes('400+') ||
-    llms.includes('390+') ||
-    llms.includes('380+') ||
-    llms.includes('370+') ||
-    llms.includes('360+') ||
-    llms.includes('350+') ||
-    llms.includes('340+') ||
-    llms.includes('330+') ||
-    llms.includes('320+') ||
-    llms.includes('300+') ||
-    llms.includes('290+') ||
-    llms.includes('280+') ||
-    llms.includes('270+') ||
-    llms.includes('260+') ||
-    llms.includes('250+') ||
-    llms.includes('240+') ||
-    llms.includes('200+') ||
-    llms.includes('190+') ||
-    llms.includes('180+') ||
-    llms.includes('170+') ||
-    llms.includes('191') ||
-    llms.includes('150+'),
-  'llms.txt should advertise corpus depth',
+  /\b([4-9]\d{2}|\d{3})\+\b/.test(llms) && llms.includes('record-of-jesus-christ'),
+  'llms.txt should advertise corpus depth (e.g. 400+ / 410+ tier-labeled claims)',
 )
 const corpusPath = path.join(root, 'public/record-of-jesus-christ/corpus.json')
 assert(fs.existsSync(corpusPath), 'public ROC corpus.json missing — run npm run export:roc-corpus')
 const corpus = JSON.parse(fs.readFileSync(corpusPath, 'utf8'))
-assert(corpus.claimCount >= 400, `corpus claimCount should include wave13 (≥216), got ${corpus.claimCount}`)
+assert(corpus.claimCount >= 417, `corpus claimCount should include wave35 (≥417), got ${corpus.claimCount}`)
 assert(corpus.meta?.publisher === 'Veritas Worldwide', 'corpus publisher must be entity-only')
 assert(fs.existsSync(path.join(root, 'public/og/record-of-jesus-christ.png')), 'ROC OG PNG missing')
 assert(fs.existsSync(path.join(root, 'public/record-of-jesus-christ/figures/cmb-power-spectrum-schematic.svg')), 'CMB figure missing')
