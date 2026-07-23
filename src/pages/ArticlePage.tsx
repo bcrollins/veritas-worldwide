@@ -1,5 +1,15 @@
 import { useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
+
+const ARTICLE_HUBS: readonly RelatedHub[] = [
+  { to: '/news', label: 'News' },
+  { to: '/read', label: 'Read' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/search', label: 'Search' },
+]
+
 import { getArticleBySlug, CATEGORY_META, type ArticleBlock, type ArticleSource } from '../data/articles'
 import NewsletterSignup from '../components/NewsletterSignup'
 import { chapterMeta } from '../data/chapterMeta'
@@ -297,42 +307,11 @@ export default function ArticlePage() {
             <span>{article.sources.length} sources cited</span>
           </div>
 
-          <nav
-            className="mt-6 flex flex-wrap gap-2"
-            aria-label="Related hubs"
-            data-testid="article-related-hubs"
-          >
-            <Link
-              to="/news"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              News
-            </Link>
-            <Link
-              to="/read"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Read
-            </Link>
-            <Link
-              to="/israel-dossier"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Dossiers
-            </Link>
-            <Link
-              to="/profiles"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Profiles
-            </Link>
-            <Link
-              to="/search"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Search
-            </Link>
-          </nav>
+          <RelatedHubs
+            testId="article-related-hubs"
+            hubs={ARTICLE_HUBS}
+            className="mt-6"
+          />
         </header>
 
         {/* ── Hero Image ───────────────────────────── */}

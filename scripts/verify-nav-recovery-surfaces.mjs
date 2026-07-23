@@ -34,6 +34,12 @@ const surfaces = [
   ['src/pages/ProfilesIndexPage.tsx', 'profiles-research-pack-banner'],
   ['src/pages/ReadTheBookPage.tsx', 'read-toc-by-part'],
   ['src/pages/MediaKitPage.tsx', 'media-kit-related-hubs'],
+  ['src/components/RelatedHubs.tsx', 'PRIMARY_RELATED_HUBS'],
+  ['src/components/RelatedHubs.tsx', 'export default function RelatedHubs'],
+  ['src/components/RelatedHubs.tsx', 'Related hubs'],
+  ['src/components/RelatedHubs.tsx', 'min-h-[44px]'],
+  ['src/components/RelatedHubs.tsx', 'no-print'],
+  ['src/components/ResearchHubChips.tsx', 'excludePath'],
   ['src/pages/AipacPage.tsx', 'aipac-related-hubs'],
   ['src/pages/TopicPage.tsx', 'topic-related-hubs'],
   ['src/pages/ArticlePage.tsx', 'article-related-hubs'],
@@ -130,10 +136,23 @@ for (const [rel, testid] of [
   ['src/pages/ArticlePage.tsx', 'article-related-hubs'],
   ['src/pages/ProfilePage.tsx', 'profile-related-hubs'],
   ['src/pages/ChapterPage.tsx', 'chapter-related-hubs'],
+  ['src/pages/SupportSuccessPage.tsx', 'support-success-related-hubs'],
+  ['src/pages/SubscribeSuccessPage.tsx', 'subscribe-success-related-hubs'],
 ]) {
   assert(read(rel).includes(testid), `${rel} recovery testid ${testid}`)
-  assert(read(rel).includes('aria-label="Related hubs"'), `${rel} Related hubs aria-label`)
+  assert(read(rel).includes('aria-label="Related hubs"') || read(rel).includes('RelatedHubs'), `${rel} Related hubs aria or component`)
 }
+// Shared RelatedHubs contract: exactly 5 primary hubs
+const relatedHubsSrc = read('src/components/RelatedHubs.tsx')
+const relatedPrimaryBlock = relatedHubsSrc.match(/PRIMARY_RELATED_HUBS[^=]*= \[([\s\S]*?)\] as const/)
+assert(relatedPrimaryBlock, 'PRIMARY_RELATED_HUBS block')
+const relatedPrimaryCount = (relatedPrimaryBlock[1].match(/to:/g) || []).length
+assert(relatedPrimaryCount === 5, `PRIMARY_RELATED_HUBS count ${relatedPrimaryCount} !== 5`)
+assert(relatedHubsSrc.includes("to: '/'") || relatedHubsSrc.includes('to: "/"'), 'PRIMARY includes Record /')
+assert(relatedHubsSrc.includes('/read') && relatedHubsSrc.includes('/search'), 'PRIMARY includes Read+Search')
+// ResearchHubChips excludePath actually filters (not dead-true)
+const researchChipsSrc = read('src/components/ResearchHubChips.tsx')
+assert(researchChipsSrc.includes('if (c.to === excludePath) return false'), 'ResearchHubChips excludePath filters')
 
 // Soft-404 SPA stays noindex (must not set a /404 page URL in meta)
 const notFoundSrc = read('src/pages/NotFoundPage.tsx')

@@ -2,6 +2,16 @@
 
 import React, { useEffect, useState, useMemo, useCallback, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs';
+
+const PROFILE_HUBS: readonly RelatedHub[] = [
+  { to: '/profiles', label: 'Profiles' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/methodology', label: 'Methodology' },
+  { to: '/search', label: 'Search' },
+  { to: '/read', label: 'Read' },
+];
+
 import {
   PowerProfile,
   EvidenceTier,
@@ -975,42 +985,12 @@ export default function ProfilePage(): React.ReactNode {
             <span className="text-ink-faint">/</span>
             <span className="text-crimson">{profile.name}</span>
           </nav>
-          <nav
-            className="flex flex-wrap gap-2 pb-3"
-            aria-label="Related hubs"
-            data-testid="profile-related-hubs"
-          >
-            <Link
-              to="/profiles"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-parchment px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Profiles
-            </Link>
-            <Link
-              to="/israel-dossier"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-parchment px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Dossiers
-            </Link>
-            <Link
-              to="/methodology"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-parchment px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Methodology
-            </Link>
-            <Link
-              to="/search"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-parchment px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Search
-            </Link>
-            <Link
-              to="/read"
-              className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-parchment px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-            >
-              Read
-            </Link>
-          </nav>
+          <RelatedHubs
+            testId="profile-related-hubs"
+            hubs={PROFILE_HUBS}
+            className="pb-3"
+            tone="parchment"
+          />
         </div>
       </div>
 

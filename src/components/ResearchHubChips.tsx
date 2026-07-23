@@ -21,11 +21,11 @@ interface ResearchHubChipsProps {
 
 export default function ResearchHubChips({ excludePath, className = '' }: ResearchHubChipsProps) {
   const { pathname } = useLocation()
+  // When excludePath is set, drop that chip so the current surface does not self-link.
   const chips = CHIPS.filter((c) => {
-    if (excludePath && (c.to === excludePath || pathname.startsWith(excludePath))) {
-      // still show others; if this chip is current, mark active rather than exclude
-      return true
-    }
+    if (!excludePath) return true
+    if (c.to === excludePath) return false
+    if (excludePath !== '/' && c.to.startsWith(`${excludePath}/`)) return false
     return true
   })
 

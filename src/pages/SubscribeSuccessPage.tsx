@@ -1,5 +1,14 @@
 import { useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import RelatedHubs, { type RelatedHub } from '../components/RelatedHubs'
+
+const SUBSCRIBE_SUCCESS_HUBS: readonly RelatedHub[] = [
+  { to: '/read', label: 'Read' },
+  { to: '/news', label: 'News' },
+  { to: '/israel-dossier', label: 'Dossiers' },
+  { to: '/search', label: 'Search' },
+]
+
 import { getArticleBySlug } from '../data/articles'
 import { chapterMeta } from '../data/chapterMeta'
 import { getInstituteTopicBySlug } from '../data/instituteCatalog'
@@ -304,36 +313,11 @@ export default function SubscribeSuccessPage() {
                   </button>
                 )}
               </div>
-              <nav
-                className="mt-6 flex flex-wrap gap-2"
-                aria-label="Related hubs"
-                data-testid="subscribe-success-related-hubs"
-              >
-                <Link
-                  to="/read"
-                  className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-                >
-                  Read
-                </Link>
-                <Link
-                  to="/news"
-                  className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-                >
-                  News
-                </Link>
-                <Link
-                  to="/israel-dossier"
-                  className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-                >
-                  Dossiers
-                </Link>
-                <Link
-                  to="/search"
-                  className="inline-flex min-h-[44px] items-center rounded-full border border-border bg-surface px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson"
-                >
-                  Search
-                </Link>
-              </nav>
+              <RelatedHubs
+            testId="subscribe-success-related-hubs"
+            hubs={SUBSCRIBE_SUCCESS_HUBS}
+            className="mt-6"
+          />
             </div>
           </div>
         </div>
