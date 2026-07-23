@@ -2411,6 +2411,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-mental-health-trauma-children-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['mk84-use', 'artillery-use'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Child Mental Health Trauma Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (psychosocial cohort)',
+    location: 'Gaza Strip',
+    summary:
+      'UNICEF, Save the Children, and multi-source psychosocial assessments document mass traumatic stress, grief, and developmental harm among Gaza children under continuous bombardment and displacement. Pattern card for the mental-health civilian-harm floor, distinct from physical casualty cards.',
+    evidence:
+      'UNICEF/Save the Children field assessments, multi-source clinical reporting, and academic/NGO mental-health surveys establish elevated trauma indicators among children. Exact clinical prevalence is incomplete; multi-source mass-trauma pattern is the claim.',
+    sources: [
+      { label: 'UNICEF psychosocial materials — Gaza', url: 'https://www.unicef.org' },
+      { label: 'Save the Children public reports', url: 'https://www.savethechildren.org' },
+      { label: 'Multi-outlet child trauma coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public materials', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0, injured: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3391,6 +3418,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-disabled-elderly-killed-pattern-2023-2025', 'gaza-evacuation-orders-pattern-2023-2024'],
     tags: ['disabled', 'elderly', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-child-trauma-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Child Mental Health Trauma Pattern',
+    description: 'UNICEF/multi-source documentation of mass traumatic stress among Gaza children.',
+    source: 'UNICEF / Save the Children',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-mental-health-trauma-children-pattern-2023-2025', 'gaza-children-killed-pattern-2023-2025'],
+    tags: ['children', 'mental-health', 'civilians', 'gaza'],
   },
 
 ]
