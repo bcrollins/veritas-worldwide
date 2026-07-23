@@ -128,6 +128,10 @@ const required = [
   'mike-johnson',
   'jim-jordan',
   'dianne-feinstein',
+  'elon-musk',
+  'michael-flynn',
+  'steve-bannon',
+  'rashida-tlaib',
 ];
 const scores = {};
 for (const id of required) {
@@ -859,8 +863,75 @@ for (const f of (feinsteinP.documentedFalsehoods || []).filter((x) => x.tier ===
   if (f.statementUrl === f.debunkUrl) throw new Error('dianne-feinstein dual-cite collision: ' + f.id);
 }
 
+
+// Elon Musk densify gate (n≥3)
+const musk = scores['elon-musk'];
+if (!musk || musk.n < 3) throw new Error('elon-musk needs ≥3 verified falsehoods, got ' + (musk?.n ?? 0));
+if (musk.score > 50) throw new Error('elon-musk score expected ≤50 after densify, got ' + musk.score);
+const muskP = getProfileBySlug('elon-musk');
+for (const id of [
+  'musk-cbp-one-free-flights-illegal-immigration-2024',
+  'musk-nbc-covered-up-hunter-biden-laptop-2022',
+  'musk-biden-recruiting-immigrants-democratic-majority-2024',
+]) {
+  if (!(muskP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('elon-musk missing docket id: ' + id);
+  }
+}
+for (const f of (muskP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('musk dual-cite collision: ' + f.id);
+}
+
+// Michael Flynn densify gate (n≥3)
+const flynn = scores['michael-flynn'];
+if (!flynn || flynn.n < 3) throw new Error('michael-flynn needs ≥3 verified falsehoods, got ' + (flynn?.n ?? 0));
+if (flynn.score > 30) throw new Error('michael-flynn score expected ≤30 after densify, got ' + flynn.score);
+const flynnP = getProfileBySlug('michael-flynn');
+for (const id of [
+  'flynn-lied-to-fbi-kislyak-denial-2017',
+  'flynn-no-turkish-agent-work-undisclosed-2016',
+  'flynn-qanon-martial-law-overturn-2020',
+]) {
+  if (!(flynnP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('michael-flynn missing docket id: ' + id);
+  }
+}
+for (const f of (flynnP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('flynn dual-cite collision: ' + f.id);
+}
+
+// Steve Bannon densify gate (n≥3)
+const bannon = scores['steve-bannon'];
+if (!bannon || bannon.n < 3) throw new Error('steve-bannon needs ≥3 verified falsehoods, got ' + (bannon?.n ?? 0));
+if (bannon.score > 30) throw new Error('steve-bannon score expected ≤30 after densify, got ' + bannon.score);
+const bannonP = getProfileBySlug('steve-bannon');
+for (const id of [
+  'bannon-we-build-the-wall-funds-for-wall-2019',
+  'bannon-not-required-to-comply-jan6-subpoena',
+  'bannon-war-room-stolen-election-certainty-2020',
+]) {
+  if (!(bannonP.documentedFalsehoods || []).some((f) => f.id === id)) {
+    throw new Error('steve-bannon missing docket id: ' + id);
+  }
+}
+for (const f of (bannonP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('bannon dual-cite collision: ' + f.id);
+}
+
+// Rashida Tlaib integrity gate (n≥1 seed)
+const tlaib = scores['rashida-tlaib'];
+if (!tlaib || tlaib.n < 1) throw new Error('rashida-tlaib needs ≥1 verified falsehood, got ' + (tlaib?.n ?? 0));
+if (tlaib.score > 90) throw new Error('rashida-tlaib score expected ≤90, got ' + tlaib.score);
+const tlaibP = getProfileBySlug('rashida-tlaib');
+if (!(tlaibP.documentedFalsehoods || []).some((f) => f.id === 'tlaib-detroit-police-health-spending-2020')) {
+  throw new Error('rashida-tlaib missing Detroit budget docket id');
+}
+for (const f of (tlaibP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('tlaib dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 41) throw new Error('expected ≥41 compiled dockets, got ' + docketCount);
+if (docketCount < 45) throw new Error('expected ≥45 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,
