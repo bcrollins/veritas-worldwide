@@ -84,6 +84,11 @@ assert(
   appShell.includes("/researcher") && appShell.includes('Researcher tools'),
   'Footer research column must link Researcher tools hub',
 )
+const terms = read('src/pages/TermsPage.tsx')
+assert(
+  terms.includes('/research-pack.zip'),
+  'Terms license section must reference research-pack.zip',
+)
 const platformHealth = read('scripts/verify-platform-health.mjs')
 assert(
   platformHealth.includes('/research-pack.zip') && platformHealth.includes('Research pack'),

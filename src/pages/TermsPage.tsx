@@ -105,7 +105,15 @@ export default function TermsPage() {
                 <p>All editorial content on Veritas Worldwide is published under the <strong className="text-ink">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</strong> license unless otherwise noted.</p>
                 <p>You are free to share and adapt our content for non-commercial purposes, provided you give appropriate credit, link back to the original, and distribute your contributions under the same license. Commercial use requires explicit written permission.</p>
                 <p>
-                  Machine-readable research corpora (including Israel Dossier and Record of Jesus Christ <code className="text-ink">corpus.json</code> exports and the public evidence taxonomy) are published by <strong className="text-ink">Veritas Worldwide</strong> under the same CC BY-NC-SA 4.0 terms unless a specific file states otherwise. Attribute the publisher entity — not a personal author. Contact rights@veritasworldwide.com for commercial licensing.
+                  Machine-readable research corpora (including Israel Dossier and Record of Jesus Christ{' '}
+                  <code className="text-ink">corpus.json</code> exports, the public evidence taxonomy, and the
+                  offline research pack at{' '}
+                  <a href="/research-pack.zip" className="text-crimson hover:underline">
+                    /research-pack.zip
+                  </a>
+                  ) are published by <strong className="text-ink">Veritas Worldwide</strong> under the same CC
+                  BY-NC-SA 4.0 terms unless a specific file states otherwise. Attribute the publisher entity —
+                  not a personal author. Contact rights@veritasworldwide.com for commercial licensing.
                 </p>
               </div>
             </section>
@@ -113,7 +121,12 @@ export default function TermsPage() {
             <section id="use" className="mb-10">
               <h2 className="text-xl font-serif font-semibold text-ink mb-3">Acceptable Use</h2>
               <div className="space-y-3 text-sm text-ink-muted leading-relaxed">
-                <p>You agree not to use this site to harass, threaten, or defame any individual, or to misrepresent the content as your own original work. Automated scraping or bulk downloading of content is prohibited without prior authorization.</p>
+                <p>
+                  You agree not to use this site to harass, threaten, or defame any individual, or to misrepresent
+                  the content as your own original work. Automated scraping or bulk downloading of content is
+                  prohibited without prior authorization, except for the published rate-limited research pack and
+                  individual corpus JSON endpoints intended for research reuse.
+                </p>
                 <p>Forum and community features require civil discourse. We reserve the right to moderate or remove content that violates our community guidelines.</p>
               </div>
             </section>
