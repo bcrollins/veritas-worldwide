@@ -8919,6 +8919,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-hypothermia-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Hypothermia Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hypothermia cohort)',
+    location: 'Gaza Strip tent camps and makeshift shelters',
+    summary:
+      'UNICEF, OCHA, and multi-source winter reporting document elevated hypothermia risk among Gaza children in flooded, uninsulated tents under winter storms — a seasonal child-harm pattern dual to summer heat and distinct from winter-tent flooding structural card.',
+    evidence:
+      'UNICEF child-protection materials, OCHA winterization notes, and multi-outlet coverage establish multi-source pediatric hypothermia risk. Exact case counts evolve; multi-source wartime pediatric hypothermia risk is the claim.',
+    sources: [
+      { label: 'UNICEF child-protection materials', url: 'https://www.unicef.org' },
+      { label: 'OCHA winterization materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza winter tent coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-dental-care-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Dental Care Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (dental-care cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony and multi-source reporting document untreated dental pain and denial of dental care for Israeli civilian hostages — a medical-neglect pattern distinct from chronic-meds and medical-exams cards.',
+    evidence:
+      'Multi-source released-hostage medical and testimony records establish multi-source dental-care denial. Exact cases vary; multi-source dental-care denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-paramedics-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Paramedics Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (paramedic-attack cohort)',
+    location: 'West Bank villages and road incidents',
+    summary:
+      'PRCS, OCHA, and multi-source reporting document elevated settler attacks on Palestinian paramedics after October 7 — assaulting EMS workers treating civilian casualties. Pattern card for paramedic attacks distinct from ambulance blocking and Gaza PRCS EMS cards.',
+    evidence:
+      'PRCS incident tallies, OCHA protection notes, and multi-outlet coverage establish multi-source settler attacks on paramedics. Exact injury counts evolve; multi-source wartime settler attacks on paramedics is the claim.',
+    sources: [
+      { label: 'PRCS ambulance / EMS materials', url: 'https://www.palestinercs.org' },
+      { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet paramedic attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -13945,6 +14026,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['journalists', 'settlers', 'press', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-hypothermia-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Hypothermia Risk Pattern',
+    description: 'UNICEF/OCHA multi-source documentation of elevated hypothermia risk among children in winter tent camps.',
+    source: 'UNICEF / OCHA / multi-outlet',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-hypothermia-risk-pattern-2023-2025',
+      'gaza-winter-tent-flooding-pattern-2023-2025',
+      'gaza-summer-heat-tent-harm-pattern-2023-2025',
+    ],
+    tags: ['hypothermia', 'children', 'winter', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-dental-care-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Dental Care Pattern',
+    description: 'Multi-source documentation of untreated dental pain and denial of dental care for civilian hostages.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-dental-care-pattern-2023-2025',
+      'israel-hostages-denied-medications-chronic-pattern-2023-2025',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'medical', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-paramedic-attacks-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Paramedics Pattern',
+    description: 'PRCS/OCHA multi-source documentation of elevated settler attacks on Palestinian paramedics after October 7.',
+    source: 'PRCS / OCHA / multi-outlet',
+    sourceUrl: 'https://www.palestinercs.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-paramedics-pattern-2023-2025',
+      'west-bank-settler-blocking-ambulances-pattern-2023-2025',
+      'gaza-red-crescent-ems-harm-pattern-2023-2025',
+    ],
+    tags: ['paramedics', 'settlers', 'ems', 'west-bank'],
+  },
+
+
 
 
 
