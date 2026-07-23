@@ -998,4 +998,9 @@ const appZFinal = read('src/App.tsx')
 assert(cookieZ.includes('z-[100]'), 'cookie z-100 unique final')
 assert(appZFinal.includes('z-50'), 'tab z-50 unique final')
 
+
+// Sticky membership z-40 under cookie unique final
+const stickyZFinal = read('src/components/StickyMembershipBar.tsx')
+assert(stickyZFinal.includes('z-40'), 'membership z-40 unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
