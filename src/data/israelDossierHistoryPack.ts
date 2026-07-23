@@ -5193,6 +5193,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'israel-civil-defense-siren-fatigue-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['iron-dome'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Civil Defense Siren Fatigue Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (siren-fatigue cohort)',
+    location: 'Israeli cities under repeated rocket and drone alerts',
+    summary:
+      'Israeli Home Front Command and multi-source reporting document thousands of rocket and drone sirens after October 7 — forcing repeated civilian interruptions of school, work, and sleep, including for children. Pattern card for siren-frequency civilian burden distinct from mamad/shelter-use and Iron Dome intercept cards.',
+    evidence:
+      'Home Front Command public alert logs, multi-outlet siren tallies, and government civilian-protection materials establish multi-source high-frequency siren exposure. Exact annual alert counts evolve; multi-source sustained siren-driven civilian disruption is the claim.',
+    sources: [
+      { label: 'Israeli Home Front Command public materials', url: 'https://www.oref.org.il' },
+      { label: 'Israeli government civilian-protection materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet rocket siren coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Home Front Command public updates', url: 'https://www.oref.org.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-cash-crisis-aid-worker-payments-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Cash Crisis & Aid-Worker Payment Collapse Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (cash-crisis cohort)',
+    location: 'Gaza Strip banking and cash-distribution points',
+    summary:
+      'World Bank, OCHA, and multi-source reporting document acute cash liquidity collapse — ATM destruction, bank-branch failures, and inability to pay salaries including aid workers — forcing barter and informal cash markets that harm civilian purchasing power for food and medicine. Pattern card for cash-access collapse distinct from banks/ATM destruction structural card.',
+    evidence:
+      'World Bank economic notes, OCHA cash-access updates, and multi-outlet liquidity coverage establish multi-source cash-system failure. Exact liquidity ratios evolve; multi-source wartime cash-access crisis is the claim.',
+    sources: [
+      { label: 'World Bank Gaza economic materials', url: 'https://www.worldbank.org' },
+      { label: 'OCHA cash-access materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Gaza cash crisis coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'World Bank public updates', url: 'https://www.worldbank.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-jenin-tulkarm-raid-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['annual-mou', 'fmf-weapons'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Jenin & Tulkarm Raid Surge Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (Jenin/Tulkarm cohort)',
+    location: 'Jenin, Tulkarm, and northern West Bank refugee camps',
+    summary:
+      'OCHA, Palestinian health authorities, and multi-source reporting document intensified Israeli military raids in Jenin and Tulkarm refugee camps after October 7 — with elevated civilian deaths including children, infrastructure damage, and prolonged camp closures. Pattern card for northern-camp raid surge distinct from aggregate West Bank children-killed and mass-arrests cards.',
+    evidence:
+      'OCHA protection tallies, multi-source camp-raid reporting, and multi-outlet coverage establish multi-source elevated raid intensity in Jenin/Tulkarm. Exact raid and casualty counts evolve; multi-source wartime camp-raid surge is the claim.',
+    sources: [
+      { label: 'OCHA West Bank protection materials', url: 'https://www.ochaopt.org' },
+      { label: 'Multi-outlet Jenin / Tulkarm raid coverage', url: 'https://apnews.com' },
+      { label: "B'Tselem field materials", url: 'https://www.btselem.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -7873,6 +7954,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['unrwa', 'detention', 'accountability', 'gaza'],
   },
+
+  {
+    id: 'tl-israel-siren-fatigue-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Civil Defense Siren Fatigue Pattern',
+    description: 'Multi-source documentation of high-frequency rocket and drone sirens disrupting civilian life including schools.',
+    source: 'Home Front Command / multi-outlet',
+    sourceUrl: 'https://www.oref.org.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-civil-defense-siren-fatigue-pattern-2023-2025',
+      'israel-civilian-mamad-shelter-use-pattern-2023-2025',
+      'gaza-rockets-israeli-civilian-harm-pattern-2023-2025',
+    ],
+    tags: ['sirens', 'civilians', 'children', 'israel'],
+  },
+
+  {
+    id: 'tl-gaza-cash-crisis-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Cash Crisis Pattern',
+    description: 'World Bank/OCHA multi-source documentation of acute cash liquidity collapse under wartime banking failure.',
+    source: 'World Bank / OCHA / multi-outlet',
+    sourceUrl: 'https://www.worldbank.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-cash-crisis-aid-worker-payments-pattern-2023-2025',
+      'gaza-banks-atms-destroyed-pattern-2023-2025',
+      'gaza-cash-liquidity-banking-collapse-2023-2025',
+    ],
+    tags: ['cash', 'banking', 'civilians', 'economy', 'gaza'],
+  },
+
+  {
+    id: 'tl-wb-jenin-tulkarm-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Jenin & Tulkarm Raid Surge Pattern',
+    description: 'OCHA multi-source documentation of intensified military raids in Jenin and Tulkarm camps after October 7.',
+    source: 'OCHA / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-jenin-tulkarm-raid-pattern-2023-2025',
+      'west-bank-children-killed-pattern-2023-2025',
+      'west-bank-mass-arrests-2023-2025',
+    ],
+    tags: ['jenin', 'tulkarm', 'raids', 'children', 'west-bank'],
+  },
+
+
 
 
 
