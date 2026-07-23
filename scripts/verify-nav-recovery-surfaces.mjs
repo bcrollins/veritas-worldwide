@@ -2321,4 +2321,14 @@ assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'all produc
 assert(read('src/pages/SearchPage.tsx').includes('SEARCH_RECOVERY_HUBS'), 'all product live search recovery')
 
 
+
+// all product live pure celebration dual lock
+assert(surfaces.length >= 102, `celebration dual surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'celebration emphasize')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'celebration soft-404')
+assert(read('src/pages/SearchPage.tsx').includes('search-idle-hubs'), 'celebration search idle')
+assert(read('src/pages/HomePage.tsx').includes('home-related-hubs'), 'celebration home')
+assert(read('src/pages/BookmarksPage.tsx').includes('bookmarks-related-hubs'), 'celebration bookmarks')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
