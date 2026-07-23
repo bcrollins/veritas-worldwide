@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:53:09.986Z",
+  "generatedAt": "2026-07-23T07:53:55.830Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 86,
-    "timelineEvents": 74,
+    "incidents": 87,
+    "timelineEvents": 75,
     "actors": 47,
     "moneyTrailNodes": 27,
-    "historicalWarCrimesPack": 72,
+    "historicalWarCrimesPack": 73,
     "legalCases": 18,
     "lobbyingRecords": 4,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 26
+      "post-oct7": 27
     },
     "incidentsByTier": {
-      "verified": 84,
+      "verified": 85,
       "circumstantial": 2
     },
     "childrenTagged": 73,
-    "civiliansTagged": 84,
+    "civiliansTagged": 85,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3127,6 +3127,25 @@
         "lebanon",
         "hezbollah",
         "leadership"
+      ]
+    },
+    {
+      "id": "tl-damascus-consulate-2024",
+      "year": "2024",
+      "era": "post-oct7",
+      "title": "Damascus Iranian Consular Annex Strike",
+      "description": "Strike kills senior IRGC officers; cited by Iran as trigger for April barrage.",
+      "source": "Multi-outlet",
+      "sourceUrl": "https://apnews.com",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "damascus-iranian-consulate-2024",
+        "iran-missile-barrage-april-2024"
+      ],
+      "tags": [
+        "syria",
+        "iran",
+        "irgc"
       ]
     },
     {
@@ -6855,6 +6874,50 @@
       "tier": "verified",
       "casualties": {
         "killed": 1
+      }
+    },
+    {
+      "id": "damascus-iranian-consulate-2024",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "fmf-weapons",
+        "f35-fleet"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Damascus Iranian Consular Annex Strike (April 1, 2024)",
+      "date": "April 1, 2024",
+      "location": "Damascus, Syria",
+      "summary": "An airstrike destroyed a building adjacent to/associated with the Iranian consular compound in Damascus, killing senior IRGC officers and others. Iran characterized it as an attack on diplomatic premises; Israel did not formally claim responsibility in initial public statements. The strike is the proximate trigger cited for Iran's April 13–14 barrage.",
+      "evidence": "Multi-source reporting, satellite imagery of the destroyed building, IRGC funeral statements, and subsequent Iranian/Israeli public diplomacy establish the strike, deaths of senior officers, and the causal link asserted by Iran for the April barrage. Diplomatic-premises legal characterization remains contested.",
+      "sources": [
+        {
+          "label": "Multi-outlet Damascus strike reporting",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "UN materials on Syria period violence",
+          "url": "https://www.un.org"
+        },
+        {
+          "label": "Iranian / Israeli public statements (competing characterizations)",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Multi-outlet coverage index",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 16
       }
     },
     {

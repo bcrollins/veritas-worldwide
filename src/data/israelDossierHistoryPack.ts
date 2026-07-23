@@ -1925,6 +1925,34 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 1 },
   },
 
+  {
+    id: 'damascus-iranian-consulate-2024',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['fmf-weapons', 'f35-fleet'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Damascus Iranian Consular Annex Strike (April 1, 2024)',
+    date: 'April 1, 2024',
+    location: 'Damascus, Syria',
+    summary:
+      'An airstrike destroyed a building adjacent to/associated with the Iranian consular compound in Damascus, killing senior IRGC officers and others. Iran characterized it as an attack on diplomatic premises; Israel did not formally claim responsibility in initial public statements. The strike is the proximate trigger cited for Iran\'s April 13–14 barrage.',
+    evidence:
+      'Multi-source reporting, satellite imagery of the destroyed building, IRGC funeral statements, and subsequent Iranian/Israeli public diplomacy establish the strike, deaths of senior officers, and the causal link asserted by Iran for the April barrage. Diplomatic-premises legal characterization remains contested.',
+    sources: [
+      { label: 'Multi-outlet Damascus strike reporting', url: 'https://apnews.com' },
+      { label: 'UN materials on Syria period violence', url: 'https://www.un.org' },
+      { label: 'Iranian / Israeli public statements (competing characterizations)', url: 'https://www.gov.il' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Multi-outlet coverage index', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 16 },
+  },
+
+
 
 
 
@@ -2674,6 +2702,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['iran-missile-barrage-april-2024'],
     tags: ['iran', 'air-defense', 'iron-dome'],
+  },
+
+  {
+    id: 'tl-damascus-consulate-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'Damascus Iranian Consular Annex Strike',
+    description: 'Strike kills senior IRGC officers; cited by Iran as trigger for April barrage.',
+    source: 'Multi-outlet',
+    sourceUrl: 'https://apnews.com',
+    tier: 'verified',
+    relatedIncidentIds: ['damascus-iranian-consulate-2024', 'iran-missile-barrage-april-2024'],
+    tags: ['syria', 'iran', 'irgc'],
   },
 
 ]
