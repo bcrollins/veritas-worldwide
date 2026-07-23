@@ -1889,6 +1889,18 @@ export const ISRAEL_DOSSIER_LEGAL_CASES: DossierLegalCase[] = [
     status: 'ongoing',
   },
 
+  {
+    title: 'Nicaragua v. Germany — Genocide Convention Intervention (ICJ 2024)',
+    court: 'International Court of Justice (ICJ)',
+    date: '2024 (application / provisional measures phase)',
+    ruling:
+      'Nicaragua instituted proceedings against Germany alleging failure to prevent genocide and complicity via arms exports to Israel; the Court issued provisional-measures orders addressing Germany\'s obligations under the Genocide Convention and arms-export diligence. Parallel diplomatic-legal pressure track on third-state enablement.',
+    significance:
+      'Extends Genocide Convention litigation beyond Israel itself to major arms-exporting third states — structural map of third-state responsibility claims adjacent to U.S. FMF enablement questions.',
+    sourceUrl: 'https://www.icj-cij.org',
+    status: 'ongoing',
+  },
+
 ]
 
 export const ISRAEL_DOSSIER_EXPANDED_STATS: DossierStatCard[] = [

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:48:54.129Z",
+  "generatedAt": "2026-07-23T07:49:26.110Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
@@ -9,7 +9,7 @@
     "actors": 47,
     "moneyTrailNodes": 27,
     "historicalWarCrimesPack": 71,
-    "legalCases": 17,
+    "legalCases": 18,
     "lobbyingRecords": 4,
     "incidentsByEra": {
       "mandate-1948": 3,
@@ -7098,6 +7098,15 @@
       "ruling": "Standing Commission of Inquiry continues to investigate all alleged violations of international humanitarian and human rights law in the Occupied Palestinian Territory and Israel, including post–October 7 conduct by all parties. Periodic reports document patterns of civilian harm, settlement violence, and accountability gaps.",
       "significance": "Ongoing multi-year UN investigative architecture distinct from one-off fact-finding missions (Goldstone, GMR). Provides continuous public-record reporting stream used by courts, states, and civil society.",
       "sourceUrl": "https://www.ohchr.org/en/hr-bodies/hrc/co-i-opt/index",
+      "status": "ongoing"
+    },
+    {
+      "title": "Nicaragua v. Germany — Genocide Convention Intervention (ICJ 2024)",
+      "court": "International Court of Justice (ICJ)",
+      "date": "2024 (application / provisional measures phase)",
+      "ruling": "Nicaragua instituted proceedings against Germany alleging failure to prevent genocide and complicity via arms exports to Israel; the Court issued provisional-measures orders addressing Germany's obligations under the Genocide Convention and arms-export diligence. Parallel diplomatic-legal pressure track on third-state enablement.",
+      "significance": "Extends Genocide Convention litigation beyond Israel itself to major arms-exporting third states — structural map of third-state responsibility claims adjacent to U.S. FMF enablement questions.",
+      "sourceUrl": "https://www.icj-cij.org",
       "status": "ongoing"
     }
   ],
