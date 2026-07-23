@@ -1664,4 +1664,18 @@ for (const name of relatedPagesEnd) {
 assert(relatedCountEnd >= 30, `RelatedHubs public mounts end ${relatedCountEnd}`)
 
 
+
+// Hick primaryLinks count 5 ultimate end final
+const appHickEnd = read('src/App.tsx')
+const plHick = appHickEnd.match(/const primaryLinks[^=]*= \[([\s\S]*?)\]/)
+assert(plHick, 'primaryLinks hick end')
+assert((plHick[1].match(/to:\s*['"]/g) || []).length === 5, 'Hick primaryLinks exactly 5 end')
+assert(!/label:\s*['"]More['"]/.test(appHickEnd), 'No More drawer end')
+
+// server soft-404 Primary hubs string end
+const serverHick = read('server.js')
+assert(serverHick.includes('Primary hubs'), 'server Primary hubs end')
+assert(serverHick.includes('server-soft-404'), 'server-soft-404 end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
