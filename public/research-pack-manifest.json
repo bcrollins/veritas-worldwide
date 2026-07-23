@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-23T12:13:14.083Z",
+  "generatedAt": "2026-07-23T12:17:41.095Z",
   "publisher": "Veritas Worldwide",
   "path": "/research-pack.zip",
-  "bytes": 318113,
-  "sha256": "8953738c18e0841e55f96d186c69c43b2ac676b3eb8d7dcdca5b38a1848cb759",
+  "bytes": 320697,
+  "sha256": "c496e0c14257542c465b82225045df10b335a5d03ea3bf59c4cc6a39435436a8",
   "maxBytesBudget": 8388608,
   "fileCount": 11,
   "files": [
@@ -24,13 +24,13 @@
     },
     {
       "path": "israel-dossier/corpus.json",
-      "bytes": 2136310,
-      "sha256": "c3f2e784fc9e532e12a793a9d5d672fe29f803e251bcdeb8a47680b20b22ee94"
+      "bytes": 2156427,
+      "sha256": "e0f237ddfd444c136419e7a7ab8fc1240fa4a69409931ecf5c15b7ce6bb3de8e"
     },
     {
       "path": "israel-dossier/visual-investigations.json",
-      "bytes": 62155,
-      "sha256": "6ced4e5916e719802dce0e99f660f2973d877957c19aaef7c8916b963b634ef4"
+      "bytes": 67035,
+      "sha256": "ad56c6a00ad3faa2590e16e4414e0c8ebc321761e025931b249b91ee407355db"
     },
     {
       "path": "record-of-jesus-christ/soft-floor.json",
@@ -39,8 +39,8 @@
     },
     {
       "path": "israel-dossier/soft-floor.json",
-      "bytes": 198,
-      "sha256": "cc5bab74cb4c7563411e096409f3794f9aa12039f5fa2e0b5c44ed52359f5241"
+      "bytes": 276,
+      "sha256": "29871f3ad2979c40f6466a7f2612027911a774af379f96f6965b21d7f2ab9dcb"
     },
     {
       "path": "israel-dossier/templates/manifest.json",
@@ -54,13 +54,13 @@
     },
     {
       "path": "llms.txt",
-      "bytes": 13497,
-      "sha256": "d74b930c82195c620e1734ebbf57af60aba78225c14fbf196f1d94d50533badb"
+      "bytes": 13558,
+      "sha256": "dd3e336fae4d34f5c5a0abf8948b67036daff31cf2e09765fb54d18abaa38be9"
     },
     {
       "path": "README.md",
       "bytes": 863,
-      "sha256": "17ef7bb4eab7e5cc963db3957ae3f58889c1e476218fb828c9e27e5a281f9ef9"
+      "sha256": "3dfea307acd3489aaa649f48ad5d836efa043ae12972de3686b27e2bc4844553"
     }
   ],
   "note": "Offline research pack of public machine corpora. Entity-only attribution."

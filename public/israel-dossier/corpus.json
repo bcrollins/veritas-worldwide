@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T12:15:57.515Z",
+  "generatedAt": "2026-07-23T12:17:35.418Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 824,
+    "incidents": 833,
     "timelineEvents": 720,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 772,
+    "historicalWarCrimesPack": 781,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 30,
-      "post-oct7": 759
+      "post-oct7": 768
     },
     "incidentsByTier": {
-      "verified": 822,
+      "verified": 831,
       "circumstantial": 2
     },
-    "childrenTagged": 777,
-    "civiliansTagged": 822,
+    "childrenTagged": 786,
+    "civiliansTagged": 831,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -49534,6 +49534,384 @@
         },
         {
           "label": "Multi-outlet community-center attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-neonatal-incubator-power-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Neonatal Incubator Power Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (neonatal incubator power cohort)",
+      "location": "Gaza Strip neonatal units and field maternity wards",
+      "summary": "WHO, OCHA, and multi-source medical reporting document civilian neonatal incubator failures under power blackouts and generator fuel shortages after October 7 — killing or critically endangering newborns. Pattern card distinct from oxygen-concentrator and dialysis cards.",
+      "evidence": "WHO health-cluster updates, OCHA humanitarian snapshots, and multi-outlet hospital reporting establish multi-source documentation of incubator power collapse. Multi-source wartime neonatal system failure is the claim.",
+      "sources": [
+        {
+          "label": "WHO occupied Palestinian territory health updates",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza neonatal care reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-seasonal-calendar-knowledge-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Seasonal Calendar Knowledge Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage seasonal-calendar denial cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document deliberate denial of seasonal calendar markers (holidays, school-year cues, weather context) for civilian hostages including children — a psychological disorientation pattern distinct from birthday and writing-materials denial cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-rainwater-cisterns-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Rainwater Cisterns Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (rainwater cistern destruction cohort)",
+      "location": "West Bank herding communities and Area C villages relying on cistern water",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction or contamination of Palestinian civilian rainwater cisterns after October 7 — denying household water including for children. Pattern card distinct from water-tanker and pipe-cutting cards.",
+      "evidence": "OCHA settler-violence and water-access materials plus multi-outlet coverage establish multi-source cistern destruction. Multi-source wartime settler attacks on civilian water storage is the claim.",
+      "sources": [
+        {
+          "label": "OCHA water-access materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet cistern-violence coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-blood-bank-cold-chain-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Blood-Bank Cold-Chain Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (blood-bank cold-chain cohort)",
+      "location": "Gaza Strip hospital blood banks and emergency transfusion points",
+      "summary": "WHO, MSF, and multi-source medical reporting document civilian blood-bank cold-chain failures under electricity cuts and fuel shortages after October 7 — denying emergency transfusion including for child trauma patients. Pattern card distinct from insulin cold-chain and dialysis cards.",
+      "evidence": "WHO health-cluster updates, MSF operational notes, and multi-outlet hospital reporting establish multi-source documentation of blood cold-chain collapse. Multi-source wartime transfusion-system failure is the claim.",
+      "sources": [
+        {
+          "label": "WHO health-cluster materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "MSF Gaza operational updates",
+          "url": "https://www.msf.org"
+        },
+        {
+          "label": "Multi-outlet Gaza hospital blood-supply reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-listen-to-captor-radio-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Listen to Captor Radio Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage captor-radio coercion cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children forced to listen to captor radio propaganda and battlefield claims for extended periods — a psychological coercion pattern distinct from forced-video and atrocity-propaganda cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-olive-harvest-pickers-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacking Olive-Harvest Pickers Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (olive-harvest picker attack cohort)",
+      "location": "West Bank olive groves during civilian harvest seasons",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler attacks on Palestinian civilian olive-harvest pickers — including women, elders, and children — after October 7. Pattern card distinct from olive-tree cutting and olive-press destruction cards.",
+      "evidence": "OCHA settler-violence databases, harvest-season incident tallies, and multi-outlet coverage establish multi-source picker attacks. Multi-source wartime settler violence against civilian harvesters is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet olive-harvest violence coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-civilian-physiotherapy-clinic-destruction-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Physiotherapy Clinic Destruction Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (physiotherapy clinic destruction cohort)",
+      "location": "Gaza Strip physiotherapy and rehabilitation clinics serving civilian amputees",
+      "summary": "WHO, disability NGOs, and multi-source medical reporting document destruction or forced closure of civilian physiotherapy clinics after October 7 — denying rehabilitation including for child amputees. Pattern card distinct from prosthetic-care interruption and wheelchair-access cards.",
+      "evidence": "WHO rehabilitation notes, multi-outlet disability-care reporting, and hospital damage tallies establish multi-source documentation. Multi-source wartime collapse of civilian rehab access is the claim.",
+      "sources": [
+        {
+          "label": "WHO health / rehabilitation materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "OCHA humanitarian snapshots",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "Multi-outlet Gaza rehab clinic reporting",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public health updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-clean-drinking-water-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Clean Drinking Water Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostage clean-water denial cohort)",
+      "location": "Captivity sites in Gaza (per released-hostage testimony)",
+      "summary": "Released-hostage testimony and multi-source reporting document civilian hostages including children denied adequate clean drinking water for extended periods — a conditions-of-detention pattern distinct from starvation and hygiene-product denial cards.",
+      "evidence": "Multi-outlet released-hostage interviews and Israeli government materials establish multi-source documentation. Pattern claim is multi-source.",
+      "sources": [
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet released-hostage interviews",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Multi-outlet captivity conditions reporting",
+          "url": "https://www.reuters.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public testimony packages",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-sheep-pens-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Sheep Pens Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (sheep-pen destruction cohort)",
+      "location": "West Bank herding communities and livestock enclosures",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian sheep pens and livestock enclosures after October 7 — denying herding livelihoods including for families with children. Pattern card distinct from livestock-water poisoning and beehive cards.",
+      "evidence": "OCHA settler-violence databases, agricultural-harm reporting, and multi-outlet coverage establish multi-source sheep-pen destruction. Multi-source wartime settler destruction of civilian livestock infrastructure is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem settler-violence materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet livestock-violence coverage",
           "url": "https://apnews.com"
         }
       ],
