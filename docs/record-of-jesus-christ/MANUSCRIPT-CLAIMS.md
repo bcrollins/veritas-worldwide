@@ -1,9 +1,9 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:30:47.506Z  
+**Generated:** 2026-07-23T09:33:06.364Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 236  
-**Tier histogram:** `{"circumstantial": 12, "contested": 28, "interpretive": 20, "literary_theological": 3, "speculative": 2, "verified": 81, "well_attested": 90}`
+**Claim count:** 245  
+**Tier histogram:** `{"circumstantial": 13, "contested": 29, "interpretive": 21, "literary_theological": 3, "speculative": 2, "verified": 84, "well_attested": 93}`
 
 Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.json`.
 
@@ -16,6 +16,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `ane-black-obelisk` | verified | proof_grade_data | The Black Obelisk of Shalmaneser III depicts Jehu (or a representative) of Israel paying tribute — an extra-biblical visual control for the Omride/Jehu period. |
 | `ane-cos-corpus` | well_attested | attested_report | The Context of Scripture (COS) and ANET anthologies assemble primary ANE texts used as comparative controls for Hebrew Bible literature and historiography. |
 | `ane-cyrus-cylinder` | verified | proof_grade_data | The Cyrus Cylinder (c. 539 BCE) records Achaemenid policy of restoring temples and returning displaced populations after the conquest of Babylon. |
+| `ane-deir-alla` | well_attested | proof_grade_data | The Deir Alla inscription mentions Balaam son of Beor — a rare extra-biblical onomastic parallel to Numbers 22–24 traditions. |
 | `ane-ekron-inscription` | verified | proof_grade_data | The Ekron royal dedicatory inscription names Philistine rulers and a temple of Ptgyh — primary control for Iron Age Philistine urban religion and politics. |
 | `ane-exodus-historicity` | contested | debate | The historicity and scale of an Israelite exodus from Egypt remain contested in critical scholarship. |
 | `ane-flood-literature` | well_attested | attested_report | Mesopotamian flood traditions (Atrahasis, Gilgamesh XI) are independent literary parallels to Genesis flood narrative forms. |
@@ -34,6 +35,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `arch-bar-kokhba` | verified | proof_grade_data | The Bar Kokhba revolt (132–135 CE) is archaeologically and papyrologically attested; its aftermath reshaped Judean demography and Jewish–Christian trajectories. |
 | `arch-bethsaida` | contested | debate | Bethsaida identification and Early Roman occupation layers are active archaeological research topics relevant to Galilee Gospel geography. |
 | `arch-caesarea-maritima` | verified | proof_grade_data | Caesarea Maritima — Herodian harbor city and later Roman provincial capital — is extensively excavated and contextualizes prefectural administration relevant to Pilate traditions. |
+| `arch-caesarea-philippi` | verified | proof_grade_data | Paneas / Caesarea Philippi (Banias) is archaeologically documented as a Herodian/Philip city at the Jordan headwaters with a Paneion cult site. |
 | `arch-capernaum` | well_attested | attested_report | Capernaum (Kefar Nahum) was a fishing village on the Sea of Galilee with Early Roman occupation; a later synagogue stands over earlier remains. |
 | `arch-destruction-70` | verified | proof_grade_data | The Roman destruction of Jerusalem and the Temple in 70 CE is multiply attested (Josephus; archaeological burn/destruction layers; Roman triumph iconography such as the Arch of Titus spoils relief). |
 | `arch-galilee-boat` | verified | proof_grade_data | The “Jesus Boat” (first-century Galilee boat, discovered 1986) illustrates fishing technology on the lake in the Early Roman period. |
@@ -78,12 +80,14 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `cosmo-reionization` | well_attested | science_model | CMB optical depth and high-z galaxy surveys constrain the epoch of reionization when the first stars ionized the intergalactic medium. |
 | `cosmo-sound-horizon` | verified | science_model | The sound horizon at recombination sets the BAO standard-ruler scale used in late-universe distance measurements. |
 | `cosmo-structure-formation` | verified | science_model | Large-scale structure (galaxy clustering, weak lensing) provides independent ΛCDM tests complementary to the CMB and BAO. |
+| `cosmo-weak-lensing` | verified | science_model | Weak gravitational lensing maps the projected mass distribution of the universe and constrains S8/σ8 amplitude parameters in ΛCDM fits. |
 | `ec-1clement` | well_attested | attested_report | 1 Clement (usually dated late 1st c.) attests early Roman Christian leadership correspondence and cites Jesus traditions and Pauline letters as authoritative. |
 | `ec-apostolic-fathers` | verified | proof_grade_data | The Apostolic Fathers (1 Clement, Didache, Ignatius, Polycarp, etc.) provide early non-NT Christian primary sources. |
 | `ec-aristides` | well_attested | attested_report | The Apology of Aristides (2nd c.) is an early Christian apology preserved in Syriac/Greek traditions describing Christian ethics to a Roman audience. |
 | `ec-athanasius` | verified | proof_grade_data | Athanasius, 39th Festal Letter (367 CE), lists the exact 27-book New Testament canon later ratified in the West. |
 | `ec-barnabas` | well_attested | attested_report | The Epistle of Barnabas (late 1st / early 2nd c.) allegorizes Hebrew Bible law and shows early Christian supersessionist interpretation. |
 | `ec-didache` | well_attested | attested_report | The Didache preserves an early Christian “two ways” ethic, baptismal and eucharistic instructions, and itinerant ministry rules — dating commonly late 1st / early 2nd c. |
+| `ec-diognetus` | well_attested | attested_report | The Epistle to Diognetus (2nd/3rd c.?) is an early Christian apology describing Christian life as a civic “soul of the world.” |
 | `ec-eusebius-he` | well_attested | attested_report | Eusebius’s Ecclesiastical History (early 4th c.) is a foundational but tendentious narrative source for earlier Christian writers, martyrdoms, and canon discussions. |
 | `ec-gospel-harmony` | well_attested | attested_report | Tatian’s Diatessaron (late 2nd c.) harmonized the four Gospels into a single narrative widely used in Syriac Christianity — evidence of early fourfold Gospel prestige and of textual fluidity in use. |
 | `ec-gospel-thomas` | contested | debate | The Gospel of Thomas (Nag Hammadi) is a sayings gospel whose dating and dependence on canonical Gospels are contested. |
@@ -118,6 +122,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `hj-gal2-conflict` | well_attested | attested_report | Galatians 2 records a conflict between Paul and Cephas (Peter) at Antioch over table fellowship with gentiles — primary evidence of diversity and dispute in the earliest movement. |
 | `hj-galilee-context` | well_attested | attested_report | Early Roman Galilee included agricultural villages, fishing economy on the lake, and nearby urban centers such as Sepphoris and Tiberias. |
 | `hj-galilee-economy` | well_attested | reconstruction | Galilee under Antipas was an agrarian and fishing economy with urbanization at Sepphoris and Tiberias; Jesus traditions sit in that social landscape. |
+| `hj-healings-reputation` | well_attested | reconstruction | Healing activity is multiply attested as part of Jesus’ public reputation in Synoptic tradition; historians often accept a healing reputation while bracketing modern medical ontologies. |
 | `hj-herod-death` | contested | debate | The death of Herod the Great is conventionally dated to 4 BCE (with minority arguments for 1 BCE / other), anchoring the latest plausible nativity window in Matthew’s framework. |
 | `hj-james-leadership` | well_attested | attested_report | James the brother of Jesus is attested as a Jerusalem leadership figure (Paul; Acts; Josephus Ant. 20.200) until his death c. 62 CE. |
 | `hj-jewishness-consensus` | well_attested | reconstruction | Mainstream historical Jesus research treats Jesus as a first-century Jew operating within Second Temple Judaism, not as a later Gentile construct. |
@@ -156,6 +161,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `mod-jesus-seminar` | contested | debate | The Jesus Seminar (1980s–2000s) popularized colored-bead voting on sayings authenticity; its methods and conclusions remain highly contested in the guild. |
 | `mod-living-text` | interpretive | reconstruction | “Living text” models (e.g., Parker) emphasize early Christian textual fluidity and community use rather than a single frozen original always recoverable. |
 | `mod-memory-approach` | interpretive | reconstruction | Social/collective memory approaches reconstruct how groups remembered Jesus rather than claiming verbatim ipsissima verba recovery. |
+| `mod-memory-distortion` | interpretive | reconstruction | Social memory research emphasizes both conservation and distortion in group remembering — neither pure invention nor pure stenography. |
 | `mod-multiple-attestation-limits` | interpretive | reconstruction | Multiple attestation increases historical confidence when sources are independent; Synoptic dependence and shared traditions limit independence assumptions. |
 | `mod-mythicism-fringe` | well_attested | debate | Full mythicism (Jesus of Nazareth as entirely non-historical) remains a fringe position in mainstream historical scholarship of Second Temple Judaism and early Christianity. |
 | `mod-na28-ubs5` | verified | proof_grade_data | Nestle-Aland 28 and UBS5 are the standard working critical Greek NT editions for most academic exegesis; their apparatus documents selected variants, not every known reading. |
@@ -176,6 +182,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nc-lucian-peregrinus` | well_attested | attested_report | Lucian of Samosata (2nd c.) satirizes Christians in The Passing of Peregrinus, treating Christ as a crucified “sophist” founder of a cult. |
 | `nc-mara` | circumstantial | reconstruction | The Syriac letter of Mara bar Serapion mentions a “wise king” executed by the Jews; identification with Jesus is possible but not certain. |
 | `nc-mara-bar-serapion` | circumstantial | attested_report | The Mara bar Serapion letter (Syriac; date debated, often 1st–3rd c.) may allude to a “wise king” of the Jews executed by his people — identification with Jesus is uncertain. |
+| `nc-marcus-aurelius-christians` | circumstantial | attested_report | Marcus Aurelius (Meditations) and second-century elite literature occasionally notice Christians as a social type; such notices are thin and polemical. |
 | `nc-martial-juvenes` | well_attested | attested_report | No contemporary Roman historian from Jesus’ lifetime mentions him; the earliest non-Christian literary controls (Josephus, Tacitus, Pliny) are decades later. |
 | `nc-pliny` | verified | proof_grade_data | Pliny the Younger, Epistles 10.96–97, describes early second-century Christian worship practices in Bithynia-Pontus and imperial policy under Trajan. |
 | `nc-pliny-christians` | verified | proof_grade_data | Pliny the Younger’s letter to Trajan (Ep. 10.96) describes early 2nd-century Bithynian Christians worshiping Christ “as a god” and legal policy toward them. |
@@ -216,6 +223,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `nt-paul-dates` | well_attested | reconstruction | Undisputed Pauline letters are typically dated c. 49–58 CE and are the earliest surviving Christian literary corpus. |
 | `nt-pericope-adulterae` | well_attested | proof_grade_data | The pericope adulterae (John 7:53–8:11) is widely judged a later insertion on strong external manuscript grounds, though the story circulated early in the Latin and some Greek traditions. |
 | `nt-scribal-habits` | verified | proof_grade_data | Codicology and singular-reading studies document mechanical scribal habits (leaps, dittography, harmonization) that explain many variants without theological motive. |
+| `nt-singular-readings` | verified | proof_grade_data | Singular readings (unique to one MS) are used in scribal-habits studies to profile individual copyists without treating them as initial text. |
 | `nt-synoptic-problem` | contested | debate | The Synoptic Problem (literary relationship of Matthew, Mark, Luke) remains an active field; Markan priority is majority, Q hypothesis is majority but contested by Farrer and other models. |
 | `nt-textual-criticism` | verified | proof_grade_data | Greek New Testament continuous-text manuscripts number on the order of several thousand, with additional lectionaries and versions. |
 | `nt-variants` | verified | proof_grade_data | Hundreds of thousands of variant readings exist across the tradition; the vast majority are orthographic or trivial, while a minority affect meaning. |
@@ -241,6 +249,7 @@ Entity-only attribution. Regenerated from `public/record-of-jesus-christ/corpus.
 | `st-philo` | verified | proof_grade_data | Philo of Alexandria provides contemporary diaspora Jewish philosophical and exegetical context for the early first century CE. |
 | `st-pompey-63` | verified | proof_grade_data | Pompey’s intervention in Judea (63 BCE) brought Hasmonean civil conflict under Roman arbitration and began lasting Roman overlordship. |
 | `st-prefecture` | verified | proof_grade_data | Roman Judea after 6 CE was administered by equestrian prefects (later procurators) based primarily at Caesarea, with troops and judicial powers including capital cases in practice. |
+| `st-roman-census-practices` | contested | debate | Roman provincial censuses and tax registrations are documented empire-wide; Luke’s census of Quirinius is a specific chronological crux relative to Herod’s death. |
 | `st-samaria-papyri` | verified | proof_grade_data | The Wadi Daliyeh (Samaria) papyri document mid-4th-century BCE legal/administrative life under late Persian / early Hellenistic rule in Samaria. |
 | `st-synagogue-origins` | contested | debate | The institutional origins and pre-70 function of “synagogues” remain debated; archaeological assembly buildings and literary references do not form a single simple type. |
 | `st-temple-economy` | well_attested | attested_report | The Jerusalem Temple system involved tithes, offerings, and currency exchange for worshippers — a documented economic-religious complex in Josephus and later rabbinic memory. |
