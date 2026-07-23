@@ -491,8 +491,10 @@ assert(
     server.includes("'/share'") &&
     server.includes("'/content-pack'") &&
     server.includes("'/brand-kit'") &&
-    server.includes("'/media-kit'"),
-  'server must 301 /content-packs+/share → /content-pack and /brand-kit → /media-kit',
+    server.includes("'/media-kit'") &&
+    server.includes("'/home'") &&
+    server.includes("'/packs'"),
+  'server must 301 content-pack/share/brand-kit/home/packs aliases to canonical hubs',
 )
 assert(server.includes("'/about'") && server.includes("'/read'") && server.includes("'/methodology'"), 'STATIC_CANONICAL_PATHS must include core hubs')
 const knownExactBlock = server.match(/const knownExact = new Set\(\[([\s\S]*?)\]\)/)?.[1] || ''

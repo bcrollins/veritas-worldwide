@@ -1759,6 +1759,10 @@ const PATH_ALIASES = new Map([
   ['/content-packs', '/content-pack'],
   ['/share', '/content-pack'],
   ['/brand-kit', '/media-kit'],
+  // Common crawl guesses → real hubs (avoid soft-404 or homepage-shell index bloat).
+  ['/home', '/'],
+  ['/index', '/'],
+  ['/packs', '/content-pack'],
 ])
 
 app.use((req, res, next) => {
