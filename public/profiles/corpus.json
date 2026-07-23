@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:05:18.801Z",
+  "generatedAt": "2026-07-23T08:06:29.798Z",
   "count": 96,
   "profiles": [
     {
@@ -980,7 +980,7 @@
       "name": "Matt Gaetz",
       "title": "Former U.S. Representative (R-FL)",
       "category": "politician",
-      "summary": "Former Florida Republican House member (2017–2024) and Freedom Caucus firebrand. Consistent pro-Israel security voting with high-visibility Trump-aligned politics. Documented pro-Israel PAC support (OpenSecrets). Left Congress 2024 amid attorney general nomination fight. Integrity docket: dual-cited PolitiFact False on “1 of 5” federal murder charges being illegal aliens (cherry-picked USSC year). Primary: OpenSecrets, House record, PolitiFact, USSC.",
+      "summary": "Former Florida Republican House member (2017–2024) and Freedom Caucus firebrand. Consistent pro-Israel security voting with high-visibility Trump-aligned politics. Documented pro-Israel PAC support (OpenSecrets). Left Congress 2024 amid attorney general nomination fight. Integrity docket: dual-cited PolitiFact Falses — “1 of 5” federal murder charges being illegal aliens (cherry-picked USSC year) and Biden “arming up the IRS” for Fallujah-style tax enforcement (CI ammo is century-old law-enforcement routine). Primary: OpenSecrets, House record, PolitiFact, USSC, IRS CI.",
       "photo": "/profiles/matt-gaetz.jpg",
       "url": "https://veritasworldwide.com/profile/matt-gaetz",
       "bioguideId": "G000578",
@@ -993,8 +993,8 @@
         "Trump Ally",
         "Integrity Docket"
       ],
-      "integrityScore": 85,
-      "integrityFalsehoods": 1,
+      "integrityScore": 70,
+      "integrityFalsehoods": 2,
       "integrityHasDocket": true
     },
     {

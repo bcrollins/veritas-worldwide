@@ -526,11 +526,17 @@ for (const f of (aocP.documentedFalsehoods || []).filter((x) => x.tier === 'veri
 
 // Matt Gaetz integrity gate
 const gaetz = scores['matt-gaetz'];
-if (!gaetz || gaetz.n < 1) throw new Error('matt-gaetz needs ≥1 verified falsehood, got ' + (gaetz?.n ?? 0));
-if (gaetz.score > 90) throw new Error('matt-gaetz score expected ≤90, got ' + gaetz.score);
+if (!gaetz || gaetz.n < 2) throw new Error('matt-gaetz needs ≥2 verified falsehoods, got ' + (gaetz?.n ?? 0));
+if (gaetz.score > 75) throw new Error('matt-gaetz score expected ≤75, got ' + gaetz.score);
 const gaetzP = getProfileBySlug('matt-gaetz');
 if (!(gaetzP.documentedFalsehoods || []).some((f) => f.id === 'gaetz-one-in-five-federal-murder-illegal-aliens-2019')) {
   throw new Error('matt-gaetz missing 1-in-5 murder docket id');
+}
+if (!(gaetzP.documentedFalsehoods || []).some((f) => f.id === 'gaetz-irs-arming-up-biden-disarming-2022')) {
+  throw new Error('matt-gaetz missing IRS arming docket id');
+}
+for (const f of (gaetzP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('matt-gaetz dual-cite collision: ' + f.id);
 }
 for (const f of (gaetzP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
   if (f.statementUrl === f.debunkUrl) throw new Error('gaetz dual-cite collision: ' + f.id);

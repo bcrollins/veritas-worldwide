@@ -5823,7 +5823,7 @@ export const PROFILES: PowerProfile[] = [
     state: 'FL',
     photoUrl: getProfilePhoto('matt-gaetz'),
     summary:
-      'Former Florida Republican House member (2017–2024) and Freedom Caucus firebrand. Consistent pro-Israel security voting with high-visibility Trump-aligned politics. Documented pro-Israel PAC support (OpenSecrets). Left Congress 2024 amid attorney general nomination fight. Integrity docket: dual-cited PolitiFact False on “1 of 5” federal murder charges being illegal aliens (cherry-picked USSC year). Primary: OpenSecrets, House record, PolitiFact, USSC.',
+      'Former Florida Republican House member (2017–2024) and Freedom Caucus firebrand. Consistent pro-Israel security voting with high-visibility Trump-aligned politics. Documented pro-Israel PAC support (OpenSecrets). Left Congress 2024 amid attorney general nomination fight. Integrity docket: dual-cited PolitiFact Falses — “1 of 5” federal murder charges being illegal aliens (cherry-picked USSC year) and Biden “arming up the IRS” for Fallujah-style tax enforcement (CI ammo is century-old law-enforcement routine). Primary: OpenSecrets, House record, PolitiFact, USSC, IRS CI.',
     tags: [
       'Former Representative',
       'Freedom Caucus',
@@ -5909,6 +5909,14 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2019',
       },
+      {
+        claim:
+          'Integrity docket: Aug 2022 claim government is “arming up the IRS” because Biden is raising taxes and “disarming Americans” rated False (CI special agents armed since 1919; ammo spend routine/training-driven, not Biden-era militarization).',
+        source: 'PolitiFact False; IRS Criminal Investigation; GAO firearms report',
+        url: 'https://www.politifact.com/factchecks/2022/aug/12/matt-gaetz/no-biden-not-arming-irs-guns-and-ammunition/',
+        tier: 'verified',
+        date: '2022',
+      },
     ],
     documentedFalsehoods: [
       {
@@ -5930,12 +5938,35 @@ export const PROFILES: PowerProfile[] = [
         severity: 'material',
         tier: 'verified',
       },
+      {
+        id: 'gaetz-irs-arming-up-biden-disarming-2022',
+        statement:
+          'Government is arming up the IRS because “Joe Biden is raising taxes and disarming Americans” — “arming up the IRS like they are preparing to take Fallujah.”',
+        saidAt: 'August 4, 2022',
+        context:
+          'Tucker Carlson Tonight segment on IRS ammunition purchases; Gaetz had also introduced a “Disarm the IRS Act” and cited ~$725k FY2022 ammo spending.',
+        whyFalse:
+          'PolitiFact rated False. IRS Criminal Investigation (armed special agents since the 1919 Intelligence Unit) buys guns/ammo for criminal tax, money-laundering, and cybercrime enforcement — not routine audits. FY2022 ammo spend was on par with recent years and below early-2010s levels (GAO/IRS figures). Agent headcount was not surging under Biden. No evidence tying century-old CI arming practice to Biden tax or gun-policy agendas.',
+        correction:
+          'Armed IRS special agents predate Biden by a century; recent ammo purchases are routine training/operations spending, not a Fallujah-style militarization linked to tax hikes or civilian disarmament.',
+        statementSource: 'Tucker Carlson Tonight / Fox News archive, Aug 4, 2022 (Gaetz interview)',
+        statementUrl:
+          'https://archive.org/details/FOXNEWSW_20220805_000000_Tucker_Carlson_Tonight/start/3420/end/3480',
+        debunkSource: 'PolitiFact — False (Aug 12, 2022); IRS CI annual reports; GAO-19-175',
+        debunkUrl: 'https://www.politifact.com/factchecks/2022/aug/12/matt-gaetz/no-biden-not-arming-irs-guns-and-ammunition/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/matt-gaetz/summary?cid=N00039794' },
       {
         label: 'PolitiFact — 1-in-5 murder (False)',
         url: 'https://www.politifact.com/factchecks/2019/feb/19/matt-gaetz/gaetz-misrepresents-federal-data-murder-immigrants/',
+      },
+      {
+        label: 'PolitiFact — IRS arming claim (False)',
+        url: 'https://www.politifact.com/factchecks/2022/aug/12/matt-gaetz/no-biden-not-arming-irs-guns-and-ammunition/',
       },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Matt_Gaetz' },
     ],
