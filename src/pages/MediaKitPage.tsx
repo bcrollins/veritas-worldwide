@@ -213,6 +213,18 @@ export default function MediaKitPage() {
                 Usage &amp; legal
               </a>
             </div>
+            {kitSha && (
+              <p className="mt-3 break-all font-mono text-[0.65rem] text-ink-muted/70">
+                sha256:{kitSha.slice(0, 24)}…{' '}
+                <a
+                  href="/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.sha256"
+                  className="text-crimson hover:underline"
+                  download
+                >
+                  checksum file
+                </a>
+              </p>
+            )}
           </div>
           <div className="flex shrink-0 items-center justify-center rounded-2xl border border-border bg-parchment p-8">
             <img
