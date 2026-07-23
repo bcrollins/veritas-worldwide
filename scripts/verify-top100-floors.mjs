@@ -209,6 +209,11 @@ assert(
   '#38 profiles corpus count field matches profiles array length',
 )
 
+// Continuous wave: corpus search kind filter
+const corpusSearch = read('src/components/CorpusSearchPanel.tsx')
+assert(corpusSearch.includes('kindFilter') || corpusSearch.includes("setKindFilter"), 'corpus search kind filter')
+assert(existsSync(join(root, 'public/research-pack.zip')), 'research-pack.zip present')
+
 if (failures.length) {
   console.error('[verify:top100-floors] FAIL')
   for (const f of failures) console.error(' -', f)
