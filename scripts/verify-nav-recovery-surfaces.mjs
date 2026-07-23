@@ -2210,4 +2210,9 @@ assert(read('src/pages/AccessibilityPage.tsx').includes('A11Y_HUBS'), 'A11Y_HUBS
 assert(read('src/pages/PrivacyPage.tsx').includes('PRIVACY_HUBS'), 'PRIVACY_HUBS still present end')
 
 
+
+// recovery suite PASS surfaces count report final ultimate
+assert(Number.isFinite(surfaces.length) && surfaces.length >= 102, `PASS report surfaces ${surfaces.length}`)
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
