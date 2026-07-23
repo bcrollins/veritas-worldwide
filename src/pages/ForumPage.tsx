@@ -11,6 +11,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
   SITE_URL,
   SITE_NAME,
 } from '../lib/seo'
@@ -1045,6 +1046,28 @@ export default function ForumPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Forum', url: `${SITE_URL}/forum` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What is the Veritas Community Forum?',
+          answer:
+            'A source-first discussion surface for The Record and Institute materials. Readers talk evidence tiers, citations, and archive methods — not algorithmic engagement bait.',
+        },
+        {
+          question: 'Is the forum a live multi-user community yet?',
+          answer:
+            'The current beta keeps threads, awards, and reports in the browser until shared persistence, moderation, and identity systems are production-ready. Treat it as a local reader sandbox.',
+        },
+        {
+          question: 'Do forum posts count as sources in The Record?',
+          answer:
+            'No. Forum discussion is not an evidence tier. Primary claims still require primary documents, court records, or other checkable sources listed on chapter and Sources pages.',
+        },
+        {
+          question: 'Who moderates the forum?',
+          answer:
+            'Veritas Worldwide sets product rules. In the current beta, report tools are device-local. Contact rights@veritasworldwide.com for product or safety concerns.',
+        },
       ]),
     ])
     return () => {

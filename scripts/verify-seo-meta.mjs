@@ -704,3 +704,29 @@ assert(topicsIndexPage.includes('faqJsonLd'), 'TopicsIndexPage must emit FAQPage
 const institutePage = read('src/pages/InstitutePage.tsx')
 assert(institutePage.includes('faqJsonLd'), 'InstitutePage must emit FAQPage schema')
 
+assert(
+  prerender.includes("route === '/timeline'") &&
+    prerender.includes('What is The Record interactive timeline?'),
+  'prerender must emit Timeline FAQPage',
+)
+assert(
+  prerender.includes("route === '/analytics'") &&
+    prerender.includes('What does the Reader Analytics page show?'),
+  'prerender must emit Analytics FAQPage',
+)
+assert(
+  prerender.includes("route === '/forum'") &&
+    prerender.includes('What is the Veritas Community Forum?'),
+  'prerender must emit Forum FAQPage',
+)
+const timelinePage = read('src/pages/TimelinePage.tsx')
+assert(timelinePage.includes('faqJsonLd'), 'TimelinePage must emit FAQPage schema')
+const analyticsPage = read('src/pages/AnalyticsPage.tsx')
+assert(analyticsPage.includes('faqJsonLd'), 'AnalyticsPage must emit FAQPage schema')
+const forumPageSeo = read('src/pages/ForumPage.tsx')
+assert(forumPageSeo.includes('faqJsonLd'), 'ForumPage must emit FAQPage schema')
+assert(
+  forumPageSeo.includes('Do forum posts count as sources'),
+  'Forum FAQ must state discussion is not an evidence tier',
+)
+

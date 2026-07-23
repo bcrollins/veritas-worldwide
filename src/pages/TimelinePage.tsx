@@ -7,6 +7,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
   itemListJsonLd,
   SITE_URL,
   SITE_NAME,
@@ -85,6 +86,28 @@ export default function TimelinePage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Timeline', url: `${SITE_URL}/timeline` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What is The Record interactive timeline?',
+          answer:
+            'A chronological map of Volume I archive parts spanning primary-source history from the early modern era to the present. Each node opens the corresponding chapter with full citations.',
+        },
+        {
+          question: 'How are eras defined on the timeline?',
+          answer:
+            'Chapters are placed by their historical date range and grouped into eras (pre-modern through 21st century) so readers can scan by period without losing chapter-level sources.',
+        },
+        {
+          question: 'Is the timeline free to use?',
+          answer:
+            'Yes. The timeline and all linked chapters are free to read. Membership is optional public-interest funding and does not paywall the archive.',
+        },
+        {
+          question: 'Who publishes the timeline?',
+          answer:
+            'Veritas Worldwide only. Entity attribution — no personal byline. Methodology and Sources explain evidence standards.',
+        },
       ]),
       itemListJsonLd({
         name: 'The Record — chronological archive parts',

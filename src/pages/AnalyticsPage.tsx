@@ -18,6 +18,7 @@ import {
   setJsonLd,
   removeJsonLd,
   breadcrumbJsonLd,
+  faqJsonLd,
 } from '../lib/seo'
 import { formatSignupSourceLabel } from '../lib/signupAttribution'
 
@@ -983,6 +984,28 @@ export default function AnalyticsPage() {
       breadcrumbJsonLd([
         { name: 'The Record', url: SITE_URL },
         { name: 'Reader Analytics', url: `${SITE_URL}/analytics` },
+      ]),
+      faqJsonLd([
+        {
+          question: 'What does the Reader Analytics page show?',
+          answer:
+            'A public transparency surface for The Record: lifetime readers, daily traffic, geographic distribution, and related health signals — not an advertising dashboard.',
+        },
+        {
+          question: 'Does Veritas sell analytics data?',
+          answer:
+            'No. Analytics are purpose-specific for understanding publication performance. See the Privacy Policy for what is collected and why. No ad trackers on the archive.',
+        },
+        {
+          question: 'Are analytics required to use The Record?',
+          answer:
+            'No. The archive is free to read without creating an account. Optional consent controls apply where third-party measurement is configured.',
+        },
+        {
+          question: 'Who publishes these analytics?',
+          answer:
+            'Veritas Worldwide only. Entity attribution — no personal byline. Corrections and privacy contact: privacy@veritasworldwide.com.',
+        },
       ]),
     ])
     return () => {

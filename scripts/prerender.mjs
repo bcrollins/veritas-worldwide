@@ -3745,6 +3745,166 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+
+  if (route === '/timeline') {
+    return [
+      {
+        ...basePage,
+        '@type': 'CollectionPage',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Timeline', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What is The Record interactive timeline?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'A chronological map of Volume I archive parts spanning primary-source history from the early modern era to the present. Each node opens the corresponding chapter with full citations.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How are eras defined on the timeline?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Chapters are placed by their historical date range and grouped into eras (pre-modern through 21st century) so readers can scan by period without losing chapter-level sources.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is the timeline free to use?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. The timeline and all linked chapters are free to read. Membership is optional public-interest funding and does not paywall the archive.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Who publishes the timeline?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas Worldwide only. Entity attribution — no personal byline. Methodology and Sources explain evidence standards.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
+  if (route === '/analytics') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Reader Analytics', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What does the Reader Analytics page show?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'A public transparency surface for The Record: lifetime readers, daily traffic, geographic distribution, and related health signals — not an advertising dashboard.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Does Veritas sell analytics data?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'No. Analytics are purpose-specific for understanding publication performance. See the Privacy Policy for what is collected and why. No ad trackers on the archive.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Are analytics required to use The Record?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'No. The archive is free to read without creating an account. Optional consent controls apply where third-party measurement is configured.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Who publishes these analytics?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas Worldwide only. Entity attribution — no personal byline. Corrections and privacy contact: privacy@veritasworldwide.com.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
+  if (route === '/forum') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Forum', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What is the Veritas Community Forum?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'A source-first discussion surface for The Record and Institute materials. Readers talk evidence tiers, citations, and archive methods — not algorithmic engagement bait.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is the forum a live multi-user community yet?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'The current beta keeps threads, awards, and reports in the browser until shared persistence, moderation, and identity systems are production-ready. Treat it as a local reader sandbox.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Do forum posts count as sources in The Record?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'No. Forum discussion is not an evidence tier. Primary claims still require primary documents, court records, or other checkable sources listed on chapter and Sources pages.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Who moderates the forum?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Veritas Worldwide sets product rules. In the current beta, report tools are device-local. Contact rights@veritasworldwide.com for product or safety concerns.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   if (route === '/topics') {
     return [
       {
