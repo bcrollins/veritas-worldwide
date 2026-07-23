@@ -732,4 +732,9 @@ for (const rel of [
   assert(body.includes('ResearchHubChips') && body.includes('excludePath='), `${rel} excludePath`)
 }
 
+
+// Personal timeline ResearchHubChips excludePath
+const personalTlPage = read('src/pages/PersonalTimelinePage.tsx')
+assert(personalTlPage.includes('ResearchHubChips') && personalTlPage.includes('excludePath='), 'PersonalTimeline excludePath')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
