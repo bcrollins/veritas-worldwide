@@ -47,6 +47,67 @@ const STRIPE_PRODUCTS = [
   },
 ] as const
 
+type OsintHealth = {
+  orderIntakeCount?: number
+  checkoutReady?: boolean
+  stripeConfigured?: boolean
+  retentionDays?: number
+}
+
+/** Public health + operator runbook for redacted OSINT order tail (token stays server-side). */
+function OsintOrdersOpsPanel() {
+  const [health, setHealth] = useState<OsintHealth | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+    fetch('/api/services/comprehensive-profile/health', { headers: { accept: 'application/json' } })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (!cancelled && data) setHealth(data)
+      })
+      .catch(() => {
+        if (!cancelled) setHealth(null)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  return (
+    <div className="mt-4 rounded-lg border border-white/10 bg-white/[0.03] p-4" data-testid="admin-osint-ops-panel">
+      <p className="font-sans text-[10px] font-bold uppercase tracking-widest text-white/40">OSINT order ops</p>
+      <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div>
+          <p className="font-sans text-[9px] uppercase tracking-wider text-white/25">Intake count</p>
+          <p className="font-mono text-lg text-white/80">{health?.orderIntakeCount ?? '—'}</p>
+        </div>
+        <div>
+          <p className="font-sans text-[9px] uppercase tracking-wider text-white/25">Checkout</p>
+          <p className="font-mono text-sm text-white/80">
+            {health?.checkoutReady ? 'ready' : health ? 'offline' : '—'}
+          </p>
+        </div>
+        <div>
+          <p className="font-sans text-[9px] uppercase tracking-wider text-white/25">Stripe</p>
+          <p className="font-mono text-sm text-white/80">
+            {health?.stripeConfigured ? 'configured' : health ? 'missing key' : '—'}
+          </p>
+        </div>
+        <div>
+          <p className="font-sans text-[9px] uppercase tracking-wider text-white/25">Retention</p>
+          <p className="font-mono text-sm text-white/80">
+            {health?.retentionDays ?? 90}d
+          </p>
+        </div>
+      </div>
+      <p className="mt-3 font-mono text-[10px] leading-relaxed text-white/30">
+        curl -sS -H &quot;Authorization: Bearer $OSINT_OPS_TOKEN&quot; \
+        &quot;https://veritasworldwide.com/api/admin/osint-orders?limit=25&quot;
+      </p>
+    </div>
+  )
+}
+
 export default function AdminSubscriptions() {
   const [subscriptions, setSubscriptions] = useState<SubscriptionInfo[]>([])
 

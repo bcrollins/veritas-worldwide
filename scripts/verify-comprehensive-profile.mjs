@@ -83,6 +83,9 @@ assert(page.includes('osint-form-error'), 'form error id for aria-describedby mi
 assert(page.includes('aria-describedby'), 'form aria-describedby missing')
 assert(page.includes('osint-mobile-sticky-checkout') || page.includes('sticky'), 'mobile/desktop sticky checkout missing')
 assert(page.includes('min-h-[44px]'), '44px touch targets expected on OSINT form')
+assert(server.includes('purgeExpiredOsintOrders') || server.includes('OSINT_RETENTION_DAYS'), 'OSINT retention purge missing')
+assert(server.includes('/api/admin/osint-orders'), 'admin OSINT orders redacted tail missing')
+assert(server.includes('redactOsintOrder'), 'OSINT order redaction helper missing')
 
 // Methodology completeness floor
 const methodologyHits = (constants.match(/methodology/gi) || []).length
