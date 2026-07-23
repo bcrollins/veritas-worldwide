@@ -270,6 +270,10 @@ assert(
   server.includes('comprehensive-profile/success') && server.includes("X-Robots-Tag"),
   'server must be able to emit X-Robots-Tag for transactional success paths',
 )
+assert(
+  server.includes('isNoindexPublicPath') || server.includes('NOINDEX_EXACT_PATHS'),
+  'server prerender middleware must tag noindex paths with X-Robots-Tag',
+)
 
 assert(botMeta.includes('applyBotPageMeta'), 'bot meta must use applyBotPageMeta helper for shell rewrite')
 assert(

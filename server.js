@@ -1706,6 +1706,27 @@ function normalizePrerenderRoute(routePath) {
   return routePath.endsWith('/') ? routePath.slice(0, -1) : routePath
 }
 
+/** Paths that must never be indexed even when served as prerendered static HTML. */
+const NOINDEX_EXACT_PATHS = new Set([
+  '/bernie',
+  '/comprehensive-profile/success',
+  '/subscribe/success',
+  '/membership/success',
+  '/donation/success',
+  '/thank-you',
+  '/bookmarks',
+  '/search',
+])
+
+function isNoindexPublicPath(pathname) {
+  const route = normalizePrerenderRoute(pathname || '/')
+  if (NOINDEX_EXACT_PATHS.has(route)) return true
+  if (route.startsWith('/admin')) return true
+  if (route.startsWith('/bernie/')) return true
+  if (route.startsWith('/comprehensive-profile/success')) return true
+  return false
+}
+
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next()
   if (req.path.startsWith('/api/') || path.extname(req.path)) return next()
@@ -1718,6 +1739,10 @@ app.use((req, res, next) => {
   if (!fs.existsSync(filePath)) return next()
 
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+  // Prerender HTML may already include meta robots=noindex; header is defense-in-depth for crawlers.
+  if (isNoindexPublicPath(route)) {
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow')
+  }
   res.sendFile(filePath)
 })
 
