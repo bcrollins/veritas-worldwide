@@ -83,12 +83,34 @@ assert(page.includes('osint-form-error'), 'form error id for aria-describedby mi
 assert(page.includes('aria-describedby'), 'form aria-describedby missing')
 assert(page.includes('osint-mobile-sticky-checkout') || page.includes('sticky'), 'mobile/desktop sticky checkout missing')
 assert(page.includes('min-h-[44px]'), '44px touch targets expected on OSINT form')
+assert(page.includes('aria-required'), 'OSINT form must mark required fields aria-required')
+assert(page.includes('aria-invalid'), 'OSINT form must support aria-invalid on field errors')
+assert(page.includes('aria-busy'), 'OSINT form/submit must expose aria-busy while submitting')
+assert(page.includes('companyWebsite') || page.includes('osint-company-website'), 'honeypot field required for bot abuse control')
+assert(page.includes('osint-form-hint') || page.includes('sr-only'), 'screen-reader form hint missing')
+assert(page.includes('scroll-mt-28') || page.includes('scroll-mt-'), 'sticky jump target needs scroll margin')
+assert(page.includes('FIELD_IDS') || page.includes('osint-client-name'), 'explicit field ids for labels required')
+assert(page.includes('intakeReady') || page.includes('Pay now'), 'sticky checkout ready-state missing')
+assert(success.includes('sanitizeOsintOrderId') || success.includes('osint_'), 'success page must sanitize order id')
 assert(server.includes('purgeExpiredOsintOrders') || server.includes('OSINT_RETENTION_DAYS'), 'OSINT retention purge missing')
 assert(server.includes('/api/admin/osint-orders'), 'admin OSINT orders redacted tail missing')
 assert(server.includes('redactOsintOrder'), 'OSINT order redaction helper missing')
 assert(server.includes('OSINT ops token not configured'), 'admin OSINT API must 503 without token')
 assert(server.includes("pth.startsWith('/api/')") || server.includes('startsWith("/api/")'),
   'sensitive-path deny must skip /api/ so admin OSINT routes work')
+assert(server.includes('osintTokensEqual') || server.includes('timingSafeEqual'), 'admin token compare must be timing-safe')
+assert(server.includes('OSINT_LAWFUL_PURPOSES') || server.includes('due-diligence'), 'lawful-purpose allowlist missing')
+assert(server.includes('sanitizeOsintKnownLinks'), 'knownLinks URL allowlist sanitizer missing')
+assert(server.includes('mintOsintOrderId') || server.includes('OSINT_ORDER_ID_RE'), 'order id mint/format guard missing')
+assert(server.includes('honeypot') || server.includes('companyWebsite'), 'server honeypot handling missing')
+assert(
+  server.includes("startsWith(OSINT_ORDERS_DIR") || server.includes('OSINT_ORDERS_PATH must resolve under data'),
+  'OSINT order path must fail-closed under data/',
+)
+assert(
+  !server.includes('qToken !== expected') || server.includes('Prefer Authorization header'),
+  'admin OSINT must not accept query-string tokens (Referer/log leak)',
+)
 
 
 // Methodology completeness floor

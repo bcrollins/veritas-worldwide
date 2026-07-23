@@ -2,6 +2,7 @@ import express from 'express'
 import compression from 'compression'
 import path from 'path'
 import fs from 'fs'
+import crypto from 'crypto'
 import { fileURLToPath } from 'url'
 import { registerDatabaseAndAuthRoutes } from './server-auth.js'
 import { createChapterDataTools } from './server-chapter-data.js'
@@ -2015,12 +2016,38 @@ app.use((req, res, next) => {
 // Intake + Stripe Checkout Session (or static Payment Link fallback).
 // Orders stored under data/osint-orders.ndjson (operator pickup). Entity-only.
 
-const OSINT_ORDERS_PATH = path.join(__dirname, 'data', 'osint-orders.ndjson')
+const OSINT_ORDERS_DIR = path.resolve(__dirname, 'data')
+const OSINT_ORDERS_PATH = path.resolve(OSINT_ORDERS_DIR, 'osint-orders.ndjson')
+// Fail closed if path escapes data/ (misconfigured DATA_DIR / symlink thrash).
+if (!OSINT_ORDERS_PATH.startsWith(OSINT_ORDERS_DIR + path.sep) && OSINT_ORDERS_PATH !== OSINT_ORDERS_DIR) {
+  throw new Error('[osint] OSINT_ORDERS_PATH must resolve under data/')
+}
 const OSINT_PRICE_CENTS = 49900
 const OSINT_PRODUCT_NAME = 'Comprehensive Online Profile'
+const OSINT_ORDER_ID_RE = /^osint_[a-z0-9_]{6,80}$/i
+const OSINT_LAWFUL_PURPOSES = new Set([
+  'due-diligence',
+  'journalism',
+  'academic',
+  'legal',
+  'personal-safety',
+  'other',
+])
 
 const OSINT_REFUSE_RE = /\b(stalk|stalking|doxx?|swat|kidnap|assassinate|murder|hack\s*into|break\s*into\s*(her|his|their)\s*(phone|email)|revenge\s*porn|blackmail)\b/i
 
+/** Constant-time compare for ops bearer tokens (timing-safe when lengths match). */
+function osintTokensEqual(provided, expected) {
+  if (typeof provided !== 'string' || typeof expected !== 'string' || !expected) return false
+  const a = Buffer.from(provided)
+  const b = Buffer.from(expected)
+  if (a.length !== b.length) {
+    // Still do a compare against itself to keep rough timing shape
+    crypto.timingSafeEqual(b, b)
+    return false
+  }
+  return crypto.timingSafeEqual(a, b)
+}
 
 function ensureOsintOrdersFile() {
   const dir = path.dirname(OSINT_ORDERS_PATH)
@@ -2040,6 +2067,30 @@ function sanitizeOsintString(value, max = 2000) {
 
 function isValidEmailLoose(email) {
   return typeof email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254
+}
+
+/** Keep only http(s) URLs from free-text knownLinks (max 20 lines). */
+function sanitizeOsintKnownLinks(raw) {
+  const text = sanitizeOsintString(raw, 4000)
+  if (!text) return ''
+  const lines = text.split(/\r?\n/).map((l) => l.trim()).filter(Boolean).slice(0, 20)
+  const kept = []
+  for (const line of lines) {
+    try {
+      const u = new URL(line)
+      if (u.protocol !== 'http:' && u.protocol !== 'https:') continue
+      if (u.username || u.password) continue
+      kept.push(u.toString().slice(0, 500))
+    } catch {
+      // skip non-URLs rather than store javascript: / data: / etc.
+    }
+  }
+  return kept.join('\n')
+}
+
+function mintOsintOrderId() {
+  const id = `osint_${Date.now().toString(36)}_${crypto.randomBytes(5).toString('hex')}`
+  return OSINT_ORDER_ID_RE.test(id) ? id : `osint_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`
 }
 
 async function createStripeCheckoutSessionForOsint({ orderId, email, successUrl, cancelUrl }) {
@@ -2082,10 +2133,23 @@ async function createStripeCheckoutSessionForOsint({ orderId, email, successUrl,
 
 app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '48kb' }), async (req, res) => {
   try {
+    res.setHeader('Cache-Control', 'no-store')
     const body = req.body || {}
+
+    // Honeypot: bots that fill companyWebsite get a silent fake-accept (no order written).
+    const honeypot = sanitizeOsintString(body.companyWebsite || body.website || body.url, 200)
+    if (honeypot) {
+      console.warn('[osint] honeypot trip', { ip: typeof req.ip === 'string' ? req.ip.slice(0, 64) : '' })
+      return res.status(202).json({
+        orderId: mintOsintOrderId(),
+        message: 'Order intake recorded. Veritas will follow up within one business day.',
+      })
+    }
+
     const clientEmail = sanitizeOsintString(body.clientEmail, 254).toLowerCase()
     const clientName = sanitizeOsintString(body.clientName, 200)
     const subjectFullName = sanitizeOsintString(body.subjectFullName, 300)
+    const lawfulPurpose = sanitizeOsintString(body.lawfulPurpose, 80)
 
     if (!isValidEmailLoose(clientEmail) || !clientName || subjectFullName.length < 2) {
       return res.status(400).json({ error: 'Client name, valid email, and subject full name are required.' })
@@ -2093,8 +2157,11 @@ app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '
     if (!body.attestLawful || !body.attestNoHarassment || !body.attestAdult) {
       return res.status(400).json({ error: 'All legal attestations are required.' })
     }
+    if (!OSINT_LAWFUL_PURPOSES.has(lawfulPurpose)) {
+      return res.status(400).json({ error: 'Select a valid lawful-purpose category.' })
+    }
 
-    const purposeBlob = [body.purposeDetail, body.notes, body.lawfulPurpose, body.subjectIdentifiers].map(String).join(' ')
+    const purposeBlob = [body.purposeDetail, body.notes, lawfulPurpose, body.subjectIdentifiers].map(String).join(' ')
     if (OSINT_REFUSE_RE.test(purposeBlob)) {
       return res.status(400).json({
         error:
@@ -2102,7 +2169,11 @@ app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '
       })
     }
 
-    const orderId = `osint_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`
+    const orderId = mintOsintOrderId()
+    if (!OSINT_ORDER_ID_RE.test(orderId)) {
+      return res.status(500).json({ error: 'Unable to mint order reference. Please try again.' })
+    }
+
     const record = {
       orderId,
       createdAt: new Date().toISOString(),
@@ -2115,9 +2186,9 @@ app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '
       subjectLocation: sanitizeOsintString(body.subjectLocation, 300),
       subjectDobOrAge: sanitizeOsintString(body.subjectDobOrAge, 80),
       subjectIdentifiers: sanitizeOsintString(body.subjectIdentifiers, 2000),
-      lawfulPurpose: sanitizeOsintString(body.lawfulPurpose, 80),
+      lawfulPurpose,
       purposeDetail: sanitizeOsintString(body.purposeDetail, 2000),
-      knownLinks: sanitizeOsintString(body.knownLinks, 4000),
+      knownLinks: sanitizeOsintKnownLinks(body.knownLinks),
       notes: sanitizeOsintString(body.notes, 4000),
       attestLawful: true,
       attestNoHarassment: true,
@@ -2126,7 +2197,7 @@ app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '
       userAgent: sanitizeOsintString(req.get('user-agent') || '', 400),
     }
 
-        appendOsintOrder(record)
+    appendOsintOrder(record)
 
     // Funnel signal: OSINT service order intake (PII stripped — order id + purpose only)
     try {
@@ -2147,9 +2218,19 @@ app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '
       console.warn('[osint] analytics service_order_recorded failed', analyticsErr?.message || analyticsErr)
     }
 
-    const site = process.env.PUBLIC_SITE_URL || 'https://veritasworldwide.com'
-    const successUrl = `${site}/comprehensive-profile/success?order=${encodeURIComponent(orderId)}`
-    const cancelUrl = `${site}/comprehensive-profile?canceled=1`
+    const site = (process.env.PUBLIC_SITE_URL || 'https://veritasworldwide.com').replace(/\/$/, '')
+    // Only allow our own origin for Stripe return URLs (path hardening).
+    let siteOrigin
+    try {
+      siteOrigin = new URL(site)
+      if (siteOrigin.protocol !== 'https:' && siteOrigin.protocol !== 'http:') {
+        throw new Error('bad protocol')
+      }
+    } catch {
+      siteOrigin = new URL('https://veritasworldwide.com')
+    }
+    const successUrl = `${siteOrigin.origin}/comprehensive-profile/success?order=${encodeURIComponent(orderId)}`
+    const cancelUrl = `${siteOrigin.origin}/comprehensive-profile?canceled=1`
 
     let checkoutUrl = await createStripeCheckoutSessionForOsint({
       orderId,
@@ -2165,6 +2246,12 @@ app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '
         ''
     }
 
+    // Only ever hand the browser an https Stripe (or known) checkout URL.
+    if (checkoutUrl && !/^https:\/\//i.test(checkoutUrl)) {
+      console.warn('[osint] rejected non-https checkoutUrl')
+      checkoutUrl = ''
+    }
+
     if (!checkoutUrl) {
       // Lead captured; operator completes payment offline. Do not 500 — product surface stays usable.
       return res.status(202).json({
@@ -2174,7 +2261,6 @@ app.post('/api/services/comprehensive-profile/checkout', express.json({ limit: '
       })
     }
 
-    res.setHeader('Cache-Control', 'no-store')
     return res.json({ orderId, checkoutUrl })
   } catch (err) {
     console.error('[osint] checkout error', err?.message || err)
@@ -2295,8 +2381,8 @@ app.get('/api/admin/osint-orders', (req, res) => {
   }
   const auth = String(req.get('authorization') || '')
   const bearer = auth.toLowerCase().startsWith('bearer ') ? auth.slice(7).trim() : ''
-  const qToken = typeof req.query.token === 'string' ? req.query.token : ''
-  if (bearer !== expected && qToken !== expected) {
+  // Prefer Authorization header only — query tokens leak via logs/Referer.
+  if (!osintTokensEqual(bearer, expected)) {
     return res.status(401).json({ error: 'Unauthorized' })
   }
   const limit = Math.min(100, Math.max(1, Number(req.query.limit) || 25))
@@ -2330,7 +2416,7 @@ app.post('/api/admin/osint-orders/purge', express.json({ limit: '4kb' }), (req, 
   }
   const auth = String(req.get('authorization') || '')
   const bearer = auth.toLowerCase().startsWith('bearer ') ? auth.slice(7).trim() : ''
-  if (bearer !== expected) {
+  if (!osintTokensEqual(bearer, expected)) {
     return res.status(401).json({ error: 'Unauthorized' })
   }
   try {

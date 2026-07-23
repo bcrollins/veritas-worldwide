@@ -25,6 +25,8 @@ const floors = [
   { path: 'src/pages/RecordOfJesusChristPage.tsx', min: 12, label: 'record of jesus christ filters/exports' },
   { path: 'src/pages/SearchPage.tsx', min: 4, label: 'search chips' },
   { path: 'src/pages/MembershipPage.tsx', min: 8, label: 'membership CTAs' },
+  { path: 'src/pages/ComprehensiveProfilePage.tsx', min: 14, label: 'OSINT intake form + sticky checkout' },
+  { path: 'src/pages/ComprehensiveProfileSuccessPage.tsx', min: 2, label: 'OSINT success CTAs' },
   { path: 'src/pages/TimelinePage.tsx', min: 4, label: 'timeline filters' },
   { path: 'src/components/AuthModal.tsx', min: 6, label: 'auth modal' },
   { path: 'src/components/CookieConsent.tsx', min: 4, label: 'cookie consent' },

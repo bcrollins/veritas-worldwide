@@ -39,15 +39,27 @@ npm run verify:comprehensive-profile
 
 - Rate limit: 8 requests/minute per client key on `/api/services/comprehensive-profile/*`.
 - Keyword refuse-list blocks clear harassment/stalking/hacking language at intake (400).
-- Lawful-purpose attestations required client-side and server-side.
+- Lawful-purpose **allowlist** (`due-diligence|journalism|academic|legal|personal-safety|other`) + attestations required client-side and server-side.
+- Honeypot field `companyWebsite` — filled bots get a silent 202 with no order written.
+- `knownLinks` keeps only `http(s)` URLs (no credentials, max 20 lines).
+- Order IDs are `osint_<base36>_<hex>` only; success page and client refuse free-form query junk.
+- Checkout redirect URLs must be `https://` (Stripe session or configured Payment Link).
 - Health: `orderIntakeCount` is a non-PII counter only.
+
+## Accessibility (product form)
+
+- Explicit `htmlFor` / `id` pairing on all intake fields.
+- `aria-required`, `aria-invalid`, field-level error text, and a focusable `role="alert"` summary.
+- `aria-busy` on form + submit during Stripe handoff.
+- Mobile sticky checkout bar (`data-testid="osint-mobile-sticky-checkout"`) with safe-area padding and ready-state (“Pay now” when attestations + required fields complete).
+- FAQ summaries are keyboard-focusable with visible focus rings.
 
 ## Operations (entity-only)
 
 - **Health:** `GET /api/services/comprehensive-profile/health` → `checkoutReady`, `stripeConfigured`, `orderIntakeCount`, `rateLimitPerMinute` (8), `retentionDays` (default 90).
 - **Rate limit:** 8 requests/minute per IP on `/api/services/comprehensive-profile/*`.
-- **PII store:** `data/osint-orders.ndjson` (gitignored, never public). Hard-denied at `/data/*`.
-- **Redacted tail:** `GET /api/admin/osint-orders` with `Authorization: Bearer $OSINT_OPS_TOKEN` (or `ADMIN_OPS_TOKEN`). Returns email domain + subject initials only.
+- **PII store:** `data/osint-orders.ndjson` (gitignored, never public). Path resolves under `data/` only; hard-denied at `/data/*`.
+- **Redacted tail:** `GET /api/admin/osint-orders` with **`Authorization: Bearer $OSINT_OPS_TOKEN` only** (query-string tokens rejected — Referer/log leak). Timing-safe compare. Returns email domain + subject initials only.
 - **Purge:** `POST /api/admin/osint-orders/purge` with same bearer; boot-time best-effort purge for aged delivered/pending rows.
 - **Stripe:** set `STRIPE_SECRET_KEY` on Railway for live Checkout sessions.
 - **Contact:** rights@veritasworldwide.com only — no personal operator identity.

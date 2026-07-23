@@ -9,12 +9,22 @@ import { recordAnalyticsEvent } from '../lib/analytics'
  * Post-checkout landing for Comprehensive Online Profile ($499).
  * Configure Stripe success_url → /comprehensive-profile/success?order={ORDER_ID}
  */
+/** Only accept server-shaped order IDs — never reflect free-form query junk. */
+function sanitizeOsintOrderId(raw: string | null | undefined): string | undefined {
+  if (!raw || typeof raw !== 'string') return undefined
+  const trimmed = raw.trim()
+  if (!/^osint_[a-z0-9_]{6,80}$/i.test(trimmed)) return undefined
+  return trimmed
+}
+
 export default function ComprehensiveProfileSuccessPage() {
   const [params] = useSearchParams()
-  const orderId =
-    params.get('order') ||
-    (typeof window !== 'undefined' ? localStorage.getItem('veritas_osint_order_id') : null) ||
-    undefined
+  const orderId = useMemo(() => {
+    const fromQuery = sanitizeOsintOrderId(params.get('order'))
+    if (fromQuery) return fromQuery
+    if (typeof window === 'undefined') return undefined
+    return sanitizeOsintOrderId(localStorage.getItem('veritas_osint_order_id'))
+  }, [params])
 
   const stripe = useMemo(() => {
     if (typeof window === 'undefined') return { success: false as const }
@@ -33,6 +43,7 @@ export default function ComprehensiveProfileSuccessPage() {
     recordAnalyticsEvent('payment_completed', {
       product: 'comprehensive_profile',
       amount: String(COMPREHENSIVE_PROFILE.priceUsd),
+      // Never send unsanitized query strings into analytics
       order_id: orderId || '',
     })
 
