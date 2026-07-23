@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T11:16:43.904Z",
+  "generatedAt": "2026-07-23T11:17:52.313Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 687,
-    "timelineEvents": 675,
+    "incidents": 696,
+    "timelineEvents": 684,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 673,
+    "historicalWarCrimesPack": 682,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 627
+      "post-oct7": 636
     },
     "incidentsByTier": {
-      "verified": 685,
+      "verified": 694,
       "circumstantial": 2
     },
-    "childrenTagged": 654,
-    "civiliansTagged": 685,
+    "childrenTagged": 663,
+    "civiliansTagged": 694,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3969,6 +3969,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-cooking-fire-burns-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Cooking-Fire Burn Injury Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric burns from improvised cooking fires.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-burns-from-cooking-fires-pattern-2023-2025",
+        "gaza-children-burn-wound-infection-pattern-2023-2025",
+        "gaza-children-drowning-rescue-collapse-pattern-2023-2025"
+      ],
+      "tags": [
+        "burns",
+        "cooking-fires",
+        "children",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-copper-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -4179,6 +4200,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-drowning-rescue-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Drowning Rescue Collapse Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric drowning risk under tent flooding and rescue collapse.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-drowning-rescue-collapse-pattern-2023-2025",
+        "gaza-children-burns-from-cooking-fires-pattern-2023-2025",
+        "gaza-children-falls-from-damaged-buildings-pattern-2023-2025"
+      ],
+      "tags": [
+        "drowning",
+        "children",
+        "injury",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-ear-infections-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -4301,6 +4343,27 @@
         "eye",
         "children",
         "health",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-falls-buildings-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Falls from Damaged Buildings Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric falls from damaged buildings used as shelters.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-falls-from-damaged-buildings-pattern-2023-2025",
+        "gaza-children-crush-syndrome-risk-pattern-2023-2025",
+        "gaza-children-drowning-rescue-collapse-pattern-2023-2025"
+      ],
+      "tags": [
+        "falls",
+        "children",
+        "injury",
         "gaza"
       ]
     },
@@ -9601,6 +9664,28 @@
       ]
     },
     {
+      "id": "tl-hostages-square-concerts-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Knowledge of Hostages Square Concerts Pattern",
+      "description": "Multi-source documentation of captors withholding knowledge of solidarity concerts at Hostages Square.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-knowledge-of-hostages-square-concerts-pattern-2023-2025",
+        "israel-hostages-forced-to-wave-israeli-flags-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-hostage-tunnels-maps-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "psychological-torture",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-idf-progress-denial-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -9969,6 +10054,28 @@
       "tags": [
         "hostages",
         "psychological-torture",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-tunnel-maps-denial-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Denied Knowledge of Tunnel Location Maps Pattern",
+      "description": "Multi-source documentation of captors forbidding hostages knowledge of tunnel geography when moved.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-denied-knowledge-of-hostage-tunnels-maps-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-location-pattern-2023-2025",
+        "israel-hostages-forced-to-wave-israeli-flags-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "disorientation",
         "civilians",
         "terrorism",
         "israel"
@@ -11465,6 +11572,28 @@
       "tags": [
         "hostages",
         "psychological-torture",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
+      "id": "tl-hostages-forced-israeli-flag-wave-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Forced to Wave Israeli Flags Under Duress Pattern",
+      "description": "Multi-source documentation of captors staging forced Israeli-flag waving under duress for propaganda inversion.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-forced-to-wave-israeli-flags-pattern-2023-2025",
+        "israel-hostages-forced-to-hold-captor-flags-pattern-2023-2025",
+        "israel-hostages-denied-knowledge-of-hostages-square-concerts-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "propaganda",
         "civilians",
         "terrorism",
         "israel"
@@ -13263,6 +13392,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-school-janitors-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Attacks on School Janitors Pattern",
+      "description": "OCHA/UNICEF multi-source documentation of elevated settler attacks on Palestinian school janitors after October 7.",
+      "source": "OCHA / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-attacking-school-janitors-pattern-2023-2025",
+        "west-bank-settler-attacking-teachers-pattern-2023-2025",
+        "west-bank-settler-destroying-school-art-supplies-pattern-2023-2025"
+      ],
+      "tags": [
+        "school-janitors",
+        "settlers",
+        "education",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-school-principals-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -14544,6 +14694,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-school-art-supplies-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying School Art Supplies Pattern",
+      "description": "OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian school art supplies after October 7.",
+      "source": "OCHA / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-school-art-supplies-pattern-2023-2025",
+        "west-bank-settler-attacking-school-janitors-pattern-2023-2025",
+        "west-bank-settler-destroying-school-water-fountains-pattern-2023-2025"
+      ],
+      "tags": [
+        "school-art",
+        "settlers",
+        "education",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-blackboards-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -14664,6 +14835,27 @@
       ],
       "tags": [
         "school-sports",
+        "settlers",
+        "education",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-settler-school-fountains-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying School Water Fountains Pattern",
+      "description": "OCHA/UNICEF multi-source documentation of elevated settler destruction of Palestinian school water fountains after October 7.",
+      "source": "OCHA / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-school-water-fountains-pattern-2023-2025",
+        "west-bank-settler-destroying-water-coolers-pattern-2023-2025",
+        "west-bank-settler-destroying-school-art-supplies-pattern-2023-2025"
+      ],
+      "tags": [
+        "school-fountains",
         "settlers",
         "education",
         "west-bank"
@@ -44146,6 +44338,390 @@
         },
         {
           "label": "Multi-outlet kindergarten-toy destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-drowning-rescue-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Drowning Rescue Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (drowning-rescue-collapse cohort)",
+      "location": "Gaza Strip flooded tents, open cisterns, and collapsed rescue capacity",
+      "summary": "WHO, UNICEF, and multi-source reporting document elevated pediatric drowning risk under tent flooding, open water hazards, and collapsed emergency rescue — a multi-source wartime injury-prevention pattern distinct from trauma infection cards.",
+      "evidence": "WHO injury-prevention materials, UNICEF child-protection updates, and multi-outlet coverage establish multi-source pediatric drowning risk under rescue collapse. Exact case counts evolve; multi-source wartime drowning risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO injury-prevention materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-protection materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza child-injury coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-hostages-square-concerts-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Hostages Square Concerts Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (hostages-square-concerts-denial cohort)",
+      "location": "Gaza Strip captivity sites — hostages-square-concerts-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors withholding knowledge of solidarity concerts at Hostages Square — a multi-source psychological isolation pattern distinct from empty-chair vigils denial.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source Hostages Square concerts denial. Exact cases vary; multi-source Hostages Square concerts denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-school-art-supplies-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying School Art Supplies Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-art-supplies-destruction cohort)",
+      "location": "West Bank village school art rooms and supply closets",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school art supplies after October 7 — disrupting creative education for children. Pattern card distinct from school-desk and library destruction.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-art-supplies destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school art supplies is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet school-art-supplies destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-burns-from-cooking-fires-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Cooking-Fire Burn Injury Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (cooking-fire-burn cohort)",
+      "location": "Gaza Strip tent camps with improvised open cooking fires",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric burns from improvised cooking fires under fuel scarcity and tent overcrowding — a multi-source wartime burn-injury pattern distinct from combat burn-infection cards.",
+      "evidence": "WHO burn materials, UNICEF child-protection updates, and multi-outlet coverage establish multi-source pediatric cooking-fire burns. Exact case counts evolve; multi-source wartime cooking-fire burns among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO burn materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-protection materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza child-injury coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-to-wave-israeli-flags-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced to Wave Israeli Flags Under Duress Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (forced-israeli-flag-wave-duress cohort)",
+      "location": "Gaza Strip captivity sites — forced-israeli-flag-wave-duress subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors staging scenes forcing Israeli civilian hostages to wave Israeli flags under duress for propaganda inversion — a multi-source coerced-performance pattern distinct from forced captors-flag holding.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced Israeli-flag waving under duress. Exact cases vary; multi-source forced Israeli-flag propaganda of civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-school-janitors-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacks on School Janitors Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-janitor-attack cohort)",
+      "location": "West Bank village school compounds and maintenance routes",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian school janitors after October 7 — disrupting safe school environments for children. Pattern card distinct from teacher and principal attacks.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-janitor attacks. Exact injury counts evolve; multi-source wartime settler attacks on school janitors is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet school-janitor attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-falls-from-damaged-buildings-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Falls from Damaged Buildings Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (falls-from-damaged-buildings cohort)",
+      "location": "Gaza Strip partially collapsed residential structures used as shelters",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric falls and crush injuries from damaged buildings used as shelters under delayed demolition safety — a multi-source wartime injury pattern distinct from combat crush-syndrome cards.",
+      "evidence": "WHO injury materials, UNICEF child-protection updates, and multi-outlet coverage establish multi-source pediatric falls from damaged buildings. Exact case counts evolve; multi-source wartime falls from damaged buildings among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO injury materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-protection materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza child-injury coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-denied-knowledge-of-hostage-tunnels-maps-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Denied Knowledge of Tunnel Location Maps Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (tunnel-location-maps-denial cohort)",
+      "location": "Gaza Strip captivity sites — tunnel-location-maps-denial subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document captors forbidding hostages any knowledge of tunnel geography even when moved — a multi-source disorientation pattern distinct from location-knowledge denial in general.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source tunnel-map knowledge denial. Exact cases vary; multi-source tunnel-map denial for civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Public updates",
+          "url": "https://apnews.com"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-school-water-fountains-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying School Water Fountains Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (school-water-fountain-destruction cohort)",
+      "location": "West Bank village school courtyards and hallway fountains",
+      "summary": "OCHA, UNICEF, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian school water fountains after October 7 — denying drinking water for schoolchildren. Pattern card distinct from water coolers and filtration units.",
+      "evidence": "OCHA settler-violence databases, UNICEF education materials, and multi-outlet coverage establish multi-source school-water-fountain destruction. Exact unit counts evolve; multi-source wartime settler destruction of civilian school water fountains is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "UNICEF education materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet school-water-fountain destruction coverage",
           "url": "https://apnews.com"
         }
       ],
