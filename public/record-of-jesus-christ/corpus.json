@@ -6,16 +6,16 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T09:14:32.258Z",
-  "claimCount": 200,
+  "generatedAt": "2026-07-23T09:21:23.200Z",
+  "claimCount": 209,
   "tierHistogram": {
-    "verified": 69,
-    "well_attested": 76,
-    "contested": 26,
-    "interpretive": 15,
+    "verified": 72,
+    "well_attested": 79,
+    "contested": 27,
+    "interpretive": 16,
     "speculative": 2,
     "literary_theological": 3,
-    "circumstantial": 9
+    "circumstantial": 10
   },
   "claims": [
     {
@@ -66,6 +66,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChrist.ts"
+    },
+    {
+      "id": "ane-hezekiah-bulla",
+      "claim": "Bullae and seals naming Hezekiah (and debated related officials) provide epigraphic controls for late-8th-century Judah’s royal administration.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
       "id": "ane-hezekiah-lmlk",
@@ -185,6 +192,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "arch-gamla",
+      "claim": "Gamla (Golan) destruction in the First Jewish Revolt is archaeologically and literarily documented (Josephus), illustrating Galilee/Golan war archaeology.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
       "id": "arch-herodium",
@@ -346,6 +360,13 @@
       "tier": "verified",
       "proofVsConcept": "science_model",
       "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "cosmo-dark-matter-status",
+      "claim": "Multiple independent lines (galaxy rotation curves, cluster lensing, CMB acoustic peaks) favor a non-baryonic dark matter component within ΛCDM.",
+      "tier": "verified",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
       "id": "cosmo-desi-bao",
@@ -528,6 +549,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "ec-papias",
+      "claim": "Papias of Hierapolis (early 2nd c.), preserved in fragments via Eusebius, offers early traditions about Mark and Matthew’s composition — valuable and debated.",
+      "tier": "circumstantial",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
       "id": "ec-polycarp",
@@ -761,6 +789,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "hj-prayer-abba",
+      "claim": "The address “Abba” in Mark 14:36 and Pauline usage (Rom 8:15; Gal 4:6) is often cited in debates about Jesus’ prayer language; over-claims about uniqueness are contested.",
+      "tier": "contested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave12.ts"
+    },
+    {
       "id": "hj-q-hypothesis",
       "claim": "The Two-Source Hypothesis posits Markan priority plus a sayings source “Q” behind Matthew and Luke; Q remains a scholarly reconstruction without a surviving manuscript.",
       "tier": "contested",
@@ -887,6 +922,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "mod-multiple-attestation-limits",
+      "claim": "Multiple attestation increases historical confidence when sources are independent; Synoptic dependence and shared traditions limit independence assumptions.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave12.ts"
+    },
+    {
       "id": "mod-mythicism-fringe",
       "claim": "Full mythicism (Jesus of Nazareth as entirely non-historical) remains a fringe position in mainstream historical scholarship of Second Temple Judaism and early Christianity.",
       "tier": "well_attested",
@@ -990,6 +1032,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristExtras.ts"
+    },
+    {
+      "id": "nc-lucian-peregrinus",
+      "claim": "Lucian of Samosata (2nd c.) satirizes Christians in The Passing of Peregrinus, treating Christ as a crucified “sophist” founder of a cult.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
       "id": "nc-mara",
@@ -1272,6 +1321,13 @@
       "file": "src/data/recordOfJesusChrist.ts"
     },
     {
+      "id": "nt-versional-evidence",
+      "claim": "Early versions (Old Latin, Syriac, Coptic) are independent textual witnesses that can preserve early readings not always visible in later Greek majority streams.",
+      "tier": "well_attested",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave12.ts"
+    },
+    {
       "id": "nt-western-text",
       "claim": "The so-called Western text (e.g., Codex Bezae in Acts) often presents freer, paraphrastic readings that complicate simple Alexandrian/Byzantine dichotomies.",
       "tier": "well_attested",
@@ -1312,6 +1368,13 @@
       "tier": "verified",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave9.ts"
+    },
+    {
+      "id": "st-hasmonean-period",
+      "claim": "The Hasmonean period (2nd–1st c. BCE) established Jewish political autonomy later dismantled under Roman client and provincial rule — essential pre-history for first-century Judea.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave12.ts"
     },
     {
       "id": "st-herod-antipas",
