@@ -10,6 +10,7 @@
 
 - **Interval 1 (2026-07-23):** #1 #2 #3 #4 #5 #6 #7 #9 #22 #88 Implemented/Absorbed. Pure 29/29 PASS. Peer ROC densify left unstaged.
 - **Interval 2 (2026-07-23):** soft-floor.json auto; wave barrel Wave3–61; wave61 → 651 claims; /bernie+/admin all-UA noindex HTML inject; ROC sticky + ?q/?tier/?domain deep-links; filtered export; one-tap primary source; empty-state CTA. Local export 651. LIVE was 642 pre-deploy.
+- **Interval 6 (2026-07-23):** #34 Volume II noindex scaffold; absorb security/integrity already pure-gated (#36 #45 #56 #58 #59 #63 #69 #71).
 - **Interval 5 (2026-07-23):** #20 print grayscale, #27 reduced-motion, #33 multi-volume IA, #48 media SHA, #50 Terms/Privacy FAQ.
 - **Interval 4 (2026-07-23):** wave63 → 669 LIVE ship path; soft-floor auto 669.
 - **Interval 3 (2026-07-23):** wave62 → 660; sync-roc-geo-floors (650+/660+); #16 #17 #23 Implemented; LIVE anonymity PASS at 651 then ship 660.
@@ -173,7 +174,7 @@ WHAT TO IMPLEMENT: Home + nav labels “Volume I” / “Record of Jesus Christ�
 
 ## #34 — Scaffold Volume II placeholder hub (noindex until content)
 Area: Scaffold · Anchor: Staff-plus · Score: 6.5→8.5 · PRIORITY: 7 · Launch-critical: no  
-Status: **Pending**
+Status: **Implemented** (2026-07-23) — /volume-ii noindex scaffold hub → ROC/Bible/Volume I; server knownExact + inject noindex.
 
 ## #35 — Bible ↔ ROC bidirectional bot FAQ parity hold
 Area: Schema · Anchor: AP · Score: 8.8→9.3 · PRIORITY: 7 · Launch-critical: no  
@@ -181,7 +182,7 @@ Status: **Absorbed** (bible FAQ shipped)
 
 ## #36 — Profiles integrity score explain drawer
 Area: Profiles · Anchor: ProPublica · Score: 8.0→9.2 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — Profile integrity docket modal + ?docket=1 deep-link already live.
 
 ## #37 — Profiles dual-cite false docket always n≥3 floor expansion
 Area: Profiles · Anchor: AP · Score: 8.4→9.5 · PRIORITY: 9 · Launch-critical: yes  
@@ -217,7 +218,7 @@ Status: **Pending**
 
 ## #45 — News withdrawn slug hard 404 forever
 Area: News · Anchor: AP · Score: 9.0→9.8 · PRIORITY: 9 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — withdrawn news slugs pure-gated in verify-article-sources + platform-health.
 
 ## #46 — Institute Field Manual PDF Content-Disposition stable
 Area: Institute · Anchor: Staff-plus · Score: 8.5→9.2 · PRIORITY: 7 · Launch-critical: no  
@@ -261,7 +262,7 @@ Status: **Implemented** (2026-07-23) — verify:analytics-privacy in pure suite;
 
 ## #56 — Auth password change rate limit pure floor
 Area: Security · Anchor: Staff-plus · Score: 8.5→9.3 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — change-password rateLimit pure floor in server-security-invariants.
 
 ## #57 — JWT access TTL 7d pure assert
 Area: Security · Anchor: OPSEC · Score: 9.0→9.5 · PRIORITY: 8 · Launch-critical: yes  
@@ -269,11 +270,11 @@ Status: **Pending**
 
 ## #58 — CSP frame-ancestors hold; no third-party image CDN
 Area: Security · Anchor: Staff-plus · Score: 9.0→9.5 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — CSP frame-ancestors pure floor.
 
 ## #59 — HSTS preload never removed pure floor
 Area: Security · Anchor: Google · Score: 9.5→9.8 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — HSTS preload pure floor.
 
 ## #60 — Stripe checkout hosts only in CSP connect-src
 Area: Security · Anchor: Staff-plus · Score: 8.8→9.4 · PRIORITY: 8 · Launch-critical: yes  
@@ -289,7 +290,7 @@ Status: **Pending**
 
 ## #63 — Admin login noindex + rate limit pure
 Area: OPSEC · Anchor: OPSEC · Score: 9.0→9.6 · PRIORITY: 9 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — admin login noindex pure + live-bot matrix.
 
 ## #64 — Personal timeline export watermark entity-only
 Area: Researcher · Anchor: OPSEC · Score: 7.5→9.0 · PRIORITY: 7 · Launch-critical: no  
@@ -313,7 +314,7 @@ Status: **Pending**
 
 ## #69 — Corrections email one-tap on every chapter footer
 Area: Trust · Anchor: AP · Score: 8.0→9.2 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — CorrectionsCTA on ChapterPage (peer + interval).
 
 ## #70 — About page entity model never personal bio
 Area: OPSEC · Anchor: OPSEC · Score: 9.2→9.8 · PRIORITY: 9 · Launch-critical: yes  
@@ -321,7 +322,7 @@ Status: **Pending**
 
 ## #71 — sameAs Organization only official entity accounts
 Area: Schema · Anchor: Google · Score: 9.0→9.6 · PRIORITY: 8 · Launch-critical: yes  
-Status: **Pending**
+Status: **Absorbed** — Organization sameAs entity-only pure floors in seo-meta.
 
 ## #72 — OG images first-party only pure floor
 Area: SEO · Anchor: Google · Score: 9.0→9.5 · PRIORITY: 7 · Launch-critical: no  

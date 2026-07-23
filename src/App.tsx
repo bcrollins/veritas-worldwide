@@ -62,6 +62,7 @@ const SubscribeSuccessPage = lazy(() => import('./pages/SubscribeSuccessPage'))
 const SupportSuccessPage = lazy(() => import('./pages/SupportSuccessPage'))
 const BibleHistoryPage = lazy(() => import('./pages/BibleHistoryPage'))
 const RecordOfJesusChristPage = lazy(() => import('./pages/RecordOfJesusChristPage'))
+const VolumeIIHubPage = lazy(() => import('./pages/VolumeIIHubPage'))
 const BernieShowPage = lazy(() => import('./pages/BernieShowPage'))
 const ArticlePage = lazy(() => import('./pages/ArticlePage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
@@ -880,6 +881,7 @@ export default function App() {
                   <Route path="methodology" element={<InstituteMethodologyPage />} />
                 </Route>
                 <Route path="/bible" element={<BibleHistoryPage />} />
+                <Route path="/volume-ii" element={<VolumeIIHubPage />} />
                 <Route path="/record-of-jesus-christ" element={<RecordOfJesusChristPage />} />
                 <Route path="/bernie" element={<BernieShowPage />} />
                 <Route path="/admin/login" element={<AdminLoginPage />} />

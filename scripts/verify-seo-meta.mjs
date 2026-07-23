@@ -610,6 +610,22 @@ assert(
   'brand kit SHA256 file must ship in public exports',
 )
 // #50 — Terms/Privacy FAQ bot parity
+
+// #34 — Volume II scaffold hub is noindex + registered SPA (not soft-404)
+const volumeII = read('src/pages/VolumeIIHubPage.tsx')
+const appTsxVolume = read('src/App.tsx')
+assert(volumeII.includes("robots: 'noindex, follow'") || volumeII.includes('noindex'), 'Volume II hub must be noindex')
+assert(volumeII.includes('Record of Jesus Christ'), 'Volume II hub must link ROC evidence surface')
+assert(appTsxVolume.includes('VolumeIIHubPage') && appTsxVolume.includes('/volume-ii'), 'App must route /volume-ii')
+assert(
+  server.includes("'/volume-ii'"),
+  'server must register /volume-ii as known SPA route',
+)
+assert(
+  server.includes("'/volume-ii'") && server.includes('NOINDEX_EXACT_PATHS'),
+  'server NOINDEX paths must include volume-ii scaffold',
+)
+
 assert(read('src/pages/TermsPage.tsx').includes('faqJsonLd'), 'TermsPage must emit FAQPage')
 assert(read('src/pages/PrivacyPage.tsx').includes('faqJsonLd'), 'PrivacyPage must emit FAQPage')
 

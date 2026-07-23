@@ -1727,6 +1727,7 @@ const STATIC_CANONICAL_PATHS = new Set([
   '/accessibility',
   '/analytics',
   '/bible',
+  '/volume-ii',
   '/bookmarks',
   '/comprehensive-profile',
   '/content-pack',
@@ -1827,6 +1828,8 @@ const NOINDEX_EXACT_PATHS = new Set([
   '/thank-you',
   '/bookmarks',
   '/search',
+  // Multi-volume scaffold hub — noindex until full catalog ships
+  '/volume-ii',
 ])
 
 function isNoindexPublicPath(pathname) {
@@ -2370,6 +2373,7 @@ function isKnownSpaRoute(pathname) {
     '/bernie',
     '/bible',
     '/record-of-jesus-christ',
+    '/volume-ii',
     '/comprehensive-profile',
     '/comprehensive-profile/success',
     '/forum',
@@ -2473,7 +2477,8 @@ app.use((req, res) => {
     req.path === '/subscribe/success' ||
     req.path === '/membership/success' ||
     req.path === '/donation/success' ||
-    req.path === '/thank-you'
+    req.path === '/thank-you' ||
+    req.path === '/volume-ii'
 
   if (forceNoindexHtml) {
     res.setHeader('X-Robots-Tag', 'noindex, nofollow')
