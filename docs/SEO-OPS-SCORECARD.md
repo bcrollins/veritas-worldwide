@@ -238,7 +238,7 @@ Verified live Googlebot matrix on tip lineage including `f92ff79` + SEO ships th
 - `express.static` **redirect:false** (asset dirs like `dist/brand-kit` no longer 301-loop)
 - Prerender default static hubs emit **BreadcrumbList** (membership, content-pack, media-kit, privacy, terms, profiles, news, read, forum, deep-state, analytics, accessibility, israel-dossier, …)
 - Institute hub + Field Manual emit **BreadcrumbList**
-- **FAQPage LIVE (Googlebot) 17/17:** About, Methodology, Sources, ROC, Membership, Media Kit, Content Pack, Privacy, Terms, Accessibility, Institute Methodology, Israel Dossier, Bible History, Deep State, News, Power Profiles, Read
+- **FAQPage LIVE (Googlebot) 19/19:** About, Methodology, Sources, ROC, Membership, Media Kit, Content Pack, Privacy, Terms, Accessibility, Institute Methodology, Israel Dossier, Bible History, Deep State, News, Power Profiles, Read, Topics, Institute hub
 - Pure: `verify:seo-meta` + `verify:soft-404-gates`; live: `verify:live-bot-noindex` **PASS** (incl. no `/404` canonical on junk)
 - Railway unblock: `SEOConfig.url` optional for noindex soft-404 shells
 - PATH_ALIASES freeze: content-packs, share, brand-kit, home, index, packs, donate, support, contact
