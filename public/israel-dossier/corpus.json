@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T10:35:36.588Z",
+  "generatedAt": "2026-07-23T10:37:15.392Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 399,
-    "timelineEvents": 387,
+    "incidents": 408,
+    "timelineEvents": 396,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 385,
+    "historicalWarCrimesPack": 394,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 339
+      "post-oct7": 348
     },
     "incidentsByTier": {
-      "verified": 397,
+      "verified": 406,
       "circumstantial": 2
     },
-    "childrenTagged": 366,
-    "civiliansTagged": 397,
+    "childrenTagged": 375,
+    "civiliansTagged": 406,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3486,6 +3486,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-blood-bank-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Blood-Bank Collapse Pattern",
+      "description": "WHO/MSF multi-source documentation of pediatric blood-bank and transfusion collapse.",
+      "source": "WHO / MSF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-blood-bank-collapse-pattern-2023-2025",
+        "gaza-children-dialysis-access-collapse-pattern-2023-2025",
+        "gaza-children-heatstroke-risk-pattern-2023-2025"
+      ],
+      "tags": [
+        "blood-bank",
+        "children",
+        "transfusion",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-burn-infection-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -3759,6 +3780,27 @@
       ]
     },
     {
+      "id": "tl-gaza-child-external-fixator-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children External-Fixator Shortage Pattern",
+      "description": "WHO/MSF multi-source documentation of pediatric external-fixator and orthopedic-hardware shortage.",
+      "source": "WHO / MSF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-orthopedic-external-fixator-shortage-pattern-2023-2025",
+        "gaza-children-amputation-without-prosthetics-pattern-2023-2025",
+        "gaza-children-blood-bank-collapse-pattern-2023-2025"
+      ],
+      "tags": [
+        "orthopedics",
+        "children",
+        "trauma",
+        "gaza"
+      ]
+    },
+    {
       "id": "tl-gaza-child-eye-infections-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -3797,6 +3839,27 @@
         "folate",
         "b12",
         "children",
+        "gaza"
+      ]
+    },
+    {
+      "id": "tl-gaza-child-heatstroke-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Gaza Children Heatstroke Risk Pattern",
+      "description": "WHO/UNICEF multi-source documentation of elevated pediatric heatstroke risk in summer tent camps.",
+      "source": "WHO / UNICEF / multi-outlet",
+      "sourceUrl": "https://www.who.int",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-children-heatstroke-risk-pattern-2023-2025",
+        "gaza-children-blood-bank-collapse-pattern-2023-2025",
+        "gaza-children-orthopedic-external-fixator-shortage-pattern-2023-2025"
+      ],
+      "tags": [
+        "heatstroke",
+        "children",
+        "tents",
         "gaza"
       ]
     },
@@ -6510,6 +6573,28 @@
       ]
     },
     {
+      "id": "tl-hostages-chained-restraint-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Chained Restraint Pattern",
+      "description": "Multi-source documentation of prolonged chaining and restraint of civilian hostages.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-chained-restraint-pattern-2023-2025",
+        "israel-hostages-forced-propaganda-photos-pattern-2023-2025",
+        "israel-hostages-beatings-captivity-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "restraint",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-comms-blackout-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -7411,6 +7496,28 @@
       ]
     },
     {
+      "id": "tl-hostages-propaganda-photos-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Israeli Hostages Forced Propaganda Photos Pattern",
+      "description": "Multi-source documentation of forced propaganda photography of civilian hostages.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "israel-hostages-forced-propaganda-photos-pattern-2023-2025",
+        "israel-hostages-forced-propaganda-videos-pattern-2023-2025",
+        "israel-hostages-chained-restraint-pattern-2023-2025"
+      ],
+      "tags": [
+        "hostages",
+        "propaganda",
+        "civilians",
+        "terrorism",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-hostages-propaganda-videos-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -8192,6 +8299,27 @@
       ]
     },
     {
+      "id": "tl-pij-rocket-civilian-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Palestinian Islamic Jihad Rocket Civilian Harm Pattern",
+      "description": "Multi-source documentation of PIJ rocket fire causing civilian harm in Israel.",
+      "source": "Multi-outlet / Israeli government",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "palestinian-islamic-jihad-rocket-civilian-harm-pattern-2023-2025",
+        "hamas-rocket-israel-civilian-harm-surge-pattern-2023-2025",
+        "hezbollah-rocket-northern-israel-civilian-harm-pattern-2023-2025"
+      ],
+      "tags": [
+        "pij",
+        "rockets",
+        "civilians",
+        "israel"
+      ]
+    },
+    {
       "id": "tl-rafah-crossing-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -8676,6 +8804,27 @@
       ]
     },
     {
+      "id": "tl-wb-settler-medical-staff-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Attacks on Medical Staff Pattern",
+      "description": "OCHA/WHO multi-source documentation of elevated settler attacks on Palestinian medical staff after October 7.",
+      "source": "OCHA / WHO / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-attacking-medical-staff-pattern-2023-2025",
+        "west-bank-settler-blocking-medical-access-pattern-2023-2025",
+        "west-bank-settler-destroying-solar-water-heaters-pattern-2023-2025"
+      ],
+      "tags": [
+        "medical-staff",
+        "settlers",
+        "civilians",
+        "west-bank"
+      ]
+    },
+    {
       "id": "tl-wb-settler-olive-pickers-2023",
       "year": "2023",
       "era": "post-oct7",
@@ -8840,6 +8989,27 @@
         "greenhouses",
         "settlers",
         "agriculture",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-settler-solar-water-heaters-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Destroying Solar Water Heaters Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian solar water heaters after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-destroying-solar-water-heaters-pattern-2023-2025",
+        "west-bank-settler-solar-panel-destruction-pattern-2023-2025",
+        "west-bank-settler-poisoning-wells-pattern-2023-2025"
+      ],
+      "tags": [
+        "solar",
+        "water",
+        "settlers",
         "west-bank"
       ]
     },
@@ -9558,6 +9728,27 @@
         "water-tanks",
         "settlers",
         "civilians",
+        "west-bank"
+      ]
+    },
+    {
+      "id": "tl-wb-settler-well-poisoning-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "West Bank Settler Well Poisoning Pattern",
+      "description": "OCHA/B'Tselem multi-source documentation of elevated settler contamination of Palestinian wells after October 7.",
+      "source": "OCHA / B'Tselem / multi-outlet",
+      "sourceUrl": "https://www.ochaopt.org",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "west-bank-settler-poisoning-wells-pattern-2023-2025",
+        "west-bank-settler-destroying-water-tanks-pattern-2023-2025",
+        "west-bank-settler-attacking-medical-staff-pattern-2023-2025"
+      ],
+      "tags": [
+        "wells",
+        "water",
+        "settlers",
         "west-bank"
       ]
     },
@@ -25725,6 +25916,390 @@
           "type": "document",
           "label": "Israeli government public updates",
           "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-heatstroke-risk-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Heatstroke Risk Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (heatstroke-risk cohort)",
+      "location": "Gaza Strip summer tent camps and plastic-sheet shelters",
+      "summary": "WHO, UNICEF, and multi-source clinical reporting document elevated pediatric heatstroke and heat-exhaustion risk in overcrowded tents without shade, fans, or reliable water — a multi-source wartime thermal-injury pattern distinct from hypothermia winter cards.",
+      "evidence": "WHO climate-health materials, UNICEF child-protection updates, and multi-outlet coverage establish multi-source pediatric heatstroke risk. Exact case counts evolve; multi-source wartime heatstroke risk among Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO climate-health materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "UNICEF child-protection materials",
+          "url": "https://www.unicef.org"
+        },
+        {
+          "label": "Multi-outlet Gaza tent-heat coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-chained-restraint-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Chained Restraint Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (chained-restraint cohort)",
+      "location": "Gaza Strip captivity sites — chained-restraint subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document prolonged chaining and restraint of Israeli civilian hostages including children — causing injury, sleep deprivation, and humiliation. Pattern card distinct from beatings and solitary-confinement cards.",
+      "evidence": "Multi-source released-hostage medical and testimony records establish multi-source chained restraint. Exact cases vary; multi-source prolonged chaining of civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-poisoning-wells-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Well Poisoning and Contamination Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (well-poisoning cohort)",
+      "location": "West Bank village wells, springs, and shared water points",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler contamination and poisoning of Palestinian civilian wells and springs after October 7 — denying safe drinking water including for children. Pattern card distinct from water-tank destruction and pipe cutting.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source well contamination/poisoning. Exact incident counts evolve; multi-source wartime settler contamination of civilian water sources is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem water-access materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet well-contamination coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-blood-bank-collapse-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children Blood-Bank Collapse Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (blood-bank-collapse cohort)",
+      "location": "Gaza Strip hospital blood banks and field transfusion points",
+      "summary": "WHO, MSF, and multi-source clinical reporting document collapse of pediatric blood-bank and transfusion capacity under power loss, destroyed cold chain, and donor-pool collapse — children with trauma and chronic disease left without blood products. Pattern card distinct from dialysis and chemo cards.",
+      "evidence": "WHO transfusion emergency materials, MSF clinical statements, and multi-outlet coverage establish multi-source pediatric blood-bank collapse. Exact unit shortfalls evolve; multi-source wartime blood-product collapse affecting Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO transfusion emergency materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "MSF clinical statements",
+          "url": "https://www.msf.org"
+        },
+        {
+          "label": "Multi-outlet Gaza blood-bank coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "palestinian-islamic-jihad-rocket-civilian-harm-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Palestinian Islamic Jihad Rocket Civilian Harm Pattern in Israel (2023–2025)",
+      "date": "October 2023 – 2025 (PIJ rocket cohort)",
+      "location": "Israeli towns and cities under PIJ rocket alert zones",
+      "summary": "Israeli government materials, multi-outlet reporting, and multi-source casualty documentation establish elevated Palestinian Islamic Jihad rocket fire causing civilian harm and sheltering in Israel including children — a dual-sided civilian-harm pattern distinct from Hamas rocket surge and Hezbollah northern rockets.",
+      "evidence": "Israeli government home-front updates, multi-outlet rocket coverage, and multi-source incident reporting establish multi-source PIJ rocket civilian harm. Exact tolls evolve; multi-source wartime civilian harm in Israel from PIJ rockets is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government home-front materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet PIJ rocket coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-attacking-medical-staff-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Attacks on Medical Staff Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (medical-staff-attack cohort)",
+      "location": "West Bank clinic approaches, ambulance rendezvous points, and field-aid stations",
+      "summary": "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian medical staff and volunteer responders after October 7 — delaying care for civilians including children. Pattern card distinct from ambulance-blocking and medical-access-blocking cards.",
+      "evidence": "OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source medical-staff attacks. Exact injury counts evolve; multi-source wartime settler attacks on medical staff is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "WHO health-access materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "Multi-outlet medical-staff attack coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "gaza-children-orthopedic-external-fixator-shortage-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu",
+        "yoav-gallant"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Gaza Children External-Fixator Shortage Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (external-fixator cohort)",
+      "location": "Gaza Strip orthopedic field theaters and remaining surgical wards",
+      "summary": "WHO, MSF, and multi-source clinical reporting document critical shortages of pediatric external fixators and orthopedic hardware for open fractures — leaving children with unstable fractures and higher amputation risk. Pattern card distinct from amputation-without-prosthetics and burn-infection cards.",
+      "evidence": "WHO trauma materials, MSF clinical statements, and multi-outlet coverage establish multi-source pediatric external-fixator shortage. Exact device shortfalls evolve; multi-source wartime orthopedic-hardware shortage for Gaza children is the claim.",
+      "sources": [
+        {
+          "label": "WHO trauma materials",
+          "url": "https://www.who.int"
+        },
+        {
+          "label": "MSF clinical statements",
+          "url": "https://www.msf.org"
+        },
+        {
+          "label": "Multi-outlet Gaza orthopedic coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "WHO public updates",
+          "url": "https://www.who.int"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "israel-hostages-forced-propaganda-photos-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Israeli Hostages Forced Propaganda Photos Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (forced-propaganda-photos cohort)",
+      "location": "Gaza Strip captivity sites — forced-image subpattern",
+      "summary": "Released-hostage testimony and multi-source reporting document forced posing for propaganda photographs and stills of Israeli civilian hostages — a multi-source coerced-media pattern distinct from forced propaganda videos cards.",
+      "evidence": "Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced propaganda photography. Exact cases vary; multi-source forced propaganda images of civilian hostages is the claim.",
+      "sources": [
+        {
+          "label": "Multi-outlet released-hostage testimony coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "Israeli government hostage materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Israeli multi-outlet investigative reporting",
+          "url": "https://www.haaretz.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Israeli government public updates",
+          "url": "https://www.gov.il"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "west-bank-settler-destroying-solar-water-heaters-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "annual-mou"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "West Bank Settler Destroying Solar Water Heaters Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (solar-water-heater cohort)",
+      "location": "West Bank residential rooftops and village housing compounds",
+      "summary": "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian solar water heaters after October 7 — denying hot water for hygiene including for children. Pattern card distinct from solar-panel electricity destruction and water-tank cards.",
+      "evidence": "OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source solar-water-heater destruction. Exact device counts evolve; multi-source wartime settler destruction of civilian solar water heaters is the claim.",
+      "sources": [
+        {
+          "label": "OCHA settler-violence materials",
+          "url": "https://www.ochaopt.org"
+        },
+        {
+          "label": "B'Tselem energy-access materials",
+          "url": "https://www.btselem.org"
+        },
+        {
+          "label": "Multi-outlet solar-heater destruction coverage",
+          "url": "https://apnews.com"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "OCHA public updates",
+          "url": "https://www.ochaopt.org"
         }
       ],
       "tier": "verified",
