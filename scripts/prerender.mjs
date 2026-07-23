@@ -2915,6 +2915,50 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
     ]
   }
 
+  if (route === '/israel-dossier') {
+    return [
+      basePage,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Israel Dossier', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What is the Israel Dossier?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'A public, multi-source investigation of U.S.–Israel policy covering money trail nodes, documented incidents, legal cases, lobbying records, and enablement actors — each claim tied to checkable government, UN, court, or multi-outlet sources.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Where do the figures come from?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Primary trails include CRS RL33222 and related reports, UN OCHA/WHO/UNICEF humanitarian updates, ICJ and ICC public records, CPJ journalist tallies, OpenSecrets lobby data, and contemporaneous multi-outlet reporting.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is the dossier one-sided?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Editorial rules require documented civilian-targeting and war-crimes records for all parties with multi-source evidence, including October 7 attacks and hostage-taking, alongside Gaza wartime civilian-harm patterns. Ethnicity or religion is never treated as evidence.',
+            },
+          },
+        ],
+      },
+    ]
+  }
+
   if (route === '/institute') {
     return [
       {

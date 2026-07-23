@@ -256,6 +256,17 @@ assert(
   a11yPage.includes('Are evidence tiers colorblind-safe?'),
   'Accessibility FAQ must cover evidence-tier colorblind safety',
 )
+assert(
+  prerender.includes("route === '/israel-dossier'") &&
+    prerender.includes('What is the Israel Dossier?'),
+  'prerender must emit Israel Dossier FAQPage for bot-visible investigation queries',
+)
+const dossierPage = read('src/pages/IsraelDossierPage.tsx')
+assert(dossierPage.includes('faqJsonLd'), 'IsraelDossierPage must emit FAQPage schema')
+assert(
+  dossierPage.includes('What is the Israel Dossier?'),
+  'Israel Dossier FAQ must define the investigation surface for SERP/PAA',
+)
 assert(existsSync(join(root, 'docs/SEO-OPS-SCORECARD.md')), 'SEO ops scorecard + GSC runbook must exist')
 assert(existsSync(join(root, 'docs/SEO-AUDIT-50.md')), 'SEO 50-item audit must exist')
 
