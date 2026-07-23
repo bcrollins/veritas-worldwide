@@ -529,4 +529,12 @@ assert(analytics.includes('analytics-related-hubs'), 'analytics-related-hubs')
 assert(analytics.includes('RelatedHubs'), 'Analytics RelatedHubs')
 assert(analytics.includes('/read') || analytics.includes("to: '/read'"), 'Analytics Read recovery')
 
+
+// Membership free-archive recovery destinations
+const membership = read('src/pages/MembershipPage.tsx')
+assert(membership.includes('membership-related-hubs'), 'membership-related-hubs')
+assert(membership.includes('RelatedHubs'), 'Membership RelatedHubs')
+assert(membership.includes('/read') || membership.includes("to: '/read'"), 'Membership Read recovery')
+assert(membership.includes('/israel-dossier') || membership.includes("to: '/israel-dossier'"), 'Membership Dossiers recovery')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
