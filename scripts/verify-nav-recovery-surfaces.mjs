@@ -559,4 +559,13 @@ const a11y = read('src/pages/AccessibilityPage.tsx')
 assert(a11y.includes('accessibility-related-hubs') && a11y.includes('RelatedHubs'), 'A11y RelatedHubs')
 assert(a11y.includes('/about') || a11y.includes("to: '/about'") || a11y.includes('/read'), 'A11y About/Read recovery')
 
+
+// Timeline + Topics index recovery destinations
+const timeline = read('src/pages/TimelinePage.tsx')
+const topicsIdx = read('src/pages/TopicsIndexPage.tsx')
+assert(timeline.includes('timeline-related-hubs') && timeline.includes('RelatedHubs'), 'Timeline RelatedHubs')
+assert(topicsIdx.includes('topics-related-hubs') && topicsIdx.includes('RelatedHubs'), 'Topics RelatedHubs')
+assert(timeline.includes('/read') || timeline.includes("to: '/read'"), 'Timeline Read recovery')
+assert(topicsIdx.includes('/profiles') || topicsIdx.includes("to: '/profiles'"), 'Topics Profiles recovery')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
