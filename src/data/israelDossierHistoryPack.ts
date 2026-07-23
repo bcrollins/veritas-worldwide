@@ -1712,6 +1712,32 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     tier: 'verified',
     casualties: { killed: 45 },
   },
+  {
+    id: 'october-7-nova-festival-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: false,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Nova Music Festival Massacre (October 7, 2023)',
+    date: 'October 7, 2023',
+    location: 'Near Re\'im, southern Israel',
+    summary:
+      'Hamas and other militants attacked the Nova music festival near the Gaza border on October 7, killing hundreds of mostly young civilians and taking hostages. This depth entry isolates the festival massacre from the broader October 7 multi-site attack card for chronology and civilian-targeting documentation.',
+    evidence:
+      'Israeli government casualty lists, multi-source forensic reporting, hostage releases, and international press establish the festival as a primary civilian massacre site within the October 7 attacks. Death toll estimates for the festival alone are typically 360+ in multi-source reporting.',
+    sources: [
+      { label: 'Israeli government October 7 public record', url: 'https://www.gov.il' },
+      { label: 'Britannica — October 7 attacks', url: 'https://www.britannica.com/event/October-7-attacks' },
+      { label: 'UN reporting on October 7 hostages/civilians', url: 'https://www.un.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Britannica October 7 attacks', url: 'https://www.britannica.com/event/October-7-attacks' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 360 },
+  },
 
 ]
 
@@ -2359,6 +2385,18 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['tel-al-sultan-rafah-2024', 'rafah-tent-camp-2024'],
     tags: ['civilians', 'children', 'rafah', 'displacement'],
+  },
+  {
+    id: 'tl-nova-festival-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Nova Music Festival Massacre — October 7',
+    description: 'Hundreds of civilians killed at outdoor music festival near Gaza border; multi-source festival-site death toll.',
+    source: 'Israeli gov / Britannica',
+    sourceUrl: 'https://www.britannica.com/event/October-7-attacks',
+    tier: 'verified',
+    relatedIncidentIds: ['october-7-nova-festival-2023', 'oct7-hamas-attack-2023'],
+    tags: ['civilians', 'terrorism', 'october-7'],
   },
 
 ]

@@ -42,7 +42,7 @@ const assert = (condition, message) => {
 
 const canon = read(files.canon)
 const currentNeedles = [
-  "ISRAEL_DOSSIER_LAST_VERIFIED = '2026-07-22'",
+  "ISRAEL_DOSSIER_LAST_VERIFIED = '2026-07-23'",
   "value: '72,289+'",
   "value: '21,289+'",
   "value: '261+'",

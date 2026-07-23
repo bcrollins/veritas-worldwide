@@ -358,7 +358,7 @@ export interface DossierPublicBriefing {
   editorChecks: string[]
 }
 
-export const ISRAEL_DOSSIER_LAST_VERIFIED = '2026-07-22'
+export const ISRAEL_DOSSIER_LAST_VERIFIED = '2026-07-23'
 
 export const ISRAEL_DOSSIER_ASSETS = {
   // Prefer first-party editorial heroes over generated OG cards so chapter + dossier
@@ -1209,6 +1209,18 @@ export const ISRAEL_DOSSIER_MONEY_TRAIL: DossierMoneyTrailNode[] = [
     sourceUrl: 'https://www.opensecrets.org/political-action-committees-pacs/democratic-majority-for-israel/C00694455/summary/2024',
     children: ['pro-israel-lobby-2024', 'udp-superpac-2024'],
     relatedProfileIds: ['josh-gottheimer', 'ritchie-torres', 'chuck-schumer', 'hakeem-jeffries', 'haim-saban'],
+  },
+  {
+    id: 'cufi-evangelical-lobby',
+    label: 'Christians United for Israel (CUFI) — Evangelical Lobby Layer',
+    amount: 'membership-mass mobilization (not pure PAC dollars)',
+    type: 'lobby',
+    date: '2006–ongoing',
+    detail:
+      'CUFI is the largest U.S. pro-Israel Christian organization by self-reported membership, mobilizing evangelical voters and congressional pressure for unconditional Israel security support. Distinct from AIPAC hard-money/Super PAC vehicles: CUFI is grassroots/membership-driven enablement tracked as a parallel political force on the Republican/evangelical side of the aid orthodoxy map.',
+    sourceUrl: 'https://cufi.org',
+    children: ['pro-israel-lobby-2024', 'annual-mou', 'hr815'],
+    relatedProfileIds: ['mike-pence', 'mike-johnson', 'ted-cruz', 'lindsey-graham', 'donald-trump'],
   },
 
 ]

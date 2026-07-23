@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:20:20.716Z",
-  "lastVerified": "2026-07-22",
+  "generatedAt": "2026-07-23T07:24:43.121Z",
+  "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 78,
-    "timelineEvents": 66,
+    "incidents": 79,
+    "timelineEvents": 67,
     "actors": 47,
-    "moneyTrailNodes": 22,
-    "historicalWarCrimesPack": 64,
+    "moneyTrailNodes": 23,
+    "historicalWarCrimesPack": 65,
     "legalCases": 14,
     "lobbyingRecords": 4,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 25,
       "blockade-2007-2023": 25,
-      "post-oct7": 19
+      "post-oct7": 20
     },
     "incidentsByTier": {
-      "verified": 76,
+      "verified": 77,
       "circumstantial": 2
     },
     "childrenTagged": 67,
-    "civiliansTagged": 76,
+    "civiliansTagged": 77,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -35,7 +35,7 @@
       "delivery": 3,
       "weapon": 7,
       "impact": 3,
-      "lobby": 4
+      "lobby": 5
     }
   },
   "publicRecords": [
@@ -471,6 +471,27 @@
         "chuck-schumer",
         "hakeem-jeffries",
         "haim-saban"
+      ]
+    },
+    {
+      "id": "cufi-evangelical-lobby",
+      "label": "Christians United for Israel (CUFI) — Evangelical Lobby Layer",
+      "amount": "membership-mass mobilization (not pure PAC dollars)",
+      "type": "lobby",
+      "date": "2006–ongoing",
+      "detail": "CUFI is the largest U.S. pro-Israel Christian organization by self-reported membership, mobilizing evangelical voters and congressional pressure for unconditional Israel security support. Distinct from AIPAC hard-money/Super PAC vehicles: CUFI is grassroots/membership-driven enablement tracked as a parallel political force on the Republican/evangelical side of the aid orthodoxy map.",
+      "sourceUrl": "https://cufi.org",
+      "children": [
+        "pro-israel-lobby-2024",
+        "annual-mou",
+        "hr815"
+      ],
+      "relatedProfileIds": [
+        "mike-pence",
+        "mike-johnson",
+        "ted-cruz",
+        "lindsey-graham",
+        "donald-trump"
       ]
     }
   ],
@@ -2919,6 +2940,25 @@
         "civilians",
         "west-bank",
         "us-aid"
+      ]
+    },
+    {
+      "id": "tl-nova-festival-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Nova Music Festival Massacre — October 7",
+      "description": "Hundreds of civilians killed at outdoor music festival near Gaza border; multi-source festival-site death toll.",
+      "source": "Israeli gov / Britannica",
+      "sourceUrl": "https://www.britannica.com/event/October-7-attacks",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "october-7-nova-festival-2023",
+        "oct7-hamas-attack-2023"
+      ],
+      "tags": [
+        "civilians",
+        "terrorism",
+        "october-7"
       ]
     },
     {
@@ -5632,6 +5672,47 @@
       "tier": "verified",
       "casualties": {
         "killed": 1
+      }
+    },
+    {
+      "id": "october-7-nova-festival-2023",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [],
+      "legalStatus": "multi-source-investigation",
+      "title": "Nova Music Festival Massacre (October 7, 2023)",
+      "date": "October 7, 2023",
+      "location": "Near Re'im, southern Israel",
+      "summary": "Hamas and other militants attacked the Nova music festival near the Gaza border on October 7, killing hundreds of mostly young civilians and taking hostages. This depth entry isolates the festival massacre from the broader October 7 multi-site attack card for chronology and civilian-targeting documentation.",
+      "evidence": "Israeli government casualty lists, multi-source forensic reporting, hostage releases, and international press establish the festival as a primary civilian massacre site within the October 7 attacks. Death toll estimates for the festival alone are typically 360+ in multi-source reporting.",
+      "sources": [
+        {
+          "label": "Israeli government October 7 public record",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Britannica — October 7 attacks",
+          "url": "https://www.britannica.com/event/October-7-attacks"
+        },
+        {
+          "label": "UN reporting on October 7 hostages/civilians",
+          "url": "https://www.un.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "Britannica October 7 attacks",
+          "url": "https://www.britannica.com/event/October-7-attacks"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 360
       }
     },
     {
