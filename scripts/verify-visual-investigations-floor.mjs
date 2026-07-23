@@ -20,4 +20,4 @@ if (failures.length) {
   for (const f of failures) console.error(' -', f)
   process.exit(1)
 }
-console.log('[verify:visual-investigations-floor] PASS — VI pack wired, corpus≥788, researcher hub+prerender')
+console.log('[verify:visual-investigations-floor] PASS — VI pack wired, corpus≥797, researcher hub+prerender')
