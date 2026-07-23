@@ -353,3 +353,26 @@ Shell keyboard a11y now covers: skip-link (existing), desktop nav, mobile tabs, 
 | `b94ceadd` | activeChip (crimson) + darkActiveChip (amber) for route-matching hub |
 | `9848c02d` | pure densify lock v35 + coverage asserts |
 
+
+## Continuation session summary (BOIL) — product shipped on main
+
+### Sprint 9 — RelatedHubs research/institute dual recovery
+- 13 pages: Institute (+book/meth/course/guide), Methodology, Sources, Volume II, Researcher, Content Pack, Bible, ROC, Personal Timeline
+- Pure: 115 recovery needles; `verify-related-hubs-coverage` (43 public pages); pure suite **47**
+- Commits: `dcd84eb6`, `3732f86f`, `426da3c5`, `ba087ca3`
+
+### Sprint 9b–9g — keyboard focus platform
+- Shell: desktop primary/utility/drawer, mobile tabs, footer, cookie
+- Chips: RelatedHubs, ResearchHubChips, DossierHubSpokes
+- Engagement: sticky membership, exit-intent, AuthModal, newsletter, share, corrections
+- Reader chrome: 27+ components with min-h-[44px] now focus-visible
+- Pure densify locks recovery v16–v40, IA v15–v27
+
+### Sprint 9h–9i — RelatedHubs current hub
+- `aria-current` + useLocation
+- `activeChip` / `darkActiveChip` visual current state
+- Pure densify locks v34–v40 / IA v22–v27
+
+### Multi-agent
+Never staged peer densify (`public/israel-dossier/*`, history pack, VI). Entity author only. Soft-404 live continuous green under densify tip flood (lag ~100+ commits expected).
+
