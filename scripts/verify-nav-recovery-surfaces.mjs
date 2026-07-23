@@ -2301,4 +2301,11 @@ assert(privacyAwait && (privacyAwait[1].match(/to:/g) || []).length === 5, 'awai
 assert(termsAwait && (termsAwait[1].match(/to:/g) || []).length === 5, 'await legal5 TERMS count')
 
 
+
+// legal five hub Membership recovery pure green final lock
+assert(read('src/pages/PrivacyPage.tsx').includes("to: '/membership'") || read('src/pages/PrivacyPage.tsx').includes('/membership'), 'Privacy Membership final lock')
+assert(read('src/pages/TermsPage.tsx').includes("to: '/membership'") || read('src/pages/TermsPage.tsx').includes('/membership'), 'Terms Membership final lock')
+assert(surfaces.length >= 102, `legal five surfaces ${surfaces.length}`)
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
