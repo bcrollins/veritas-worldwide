@@ -6165,6 +6165,87 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-scabies-skin-disease-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Scabies & Crowding Skin-Disease Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (scabies cohort)',
+    location: 'Gaza Strip overcrowded shelters and displacement sites',
+    summary:
+      'WHO, UNICEF, and multi-source health reporting document surges in scabies and crowding-related skin diseases among displaced civilians including children under collapsed WASH and shelter density. Pattern card for scabies/skin disease distinct from infectious-disease aggregate and sewage cards.',
+    evidence:
+      'WHO health-cluster materials, UNICEF WASH notes, and multi-outlet coverage establish multi-source scabies/skin-disease surges in overcrowded shelters. Exact case counts evolve; multi-source wartime crowding skin-disease surge is the claim.',
+    sources: [
+      { label: 'WHO health emergency materials', url: 'https://www.who.int' },
+      { label: 'UNICEF WASH materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza scabies coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'WHO public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-medications-chronic-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Chronic Medications Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (chronic-meds cohort)',
+    location: 'Gaza Strip captivity sites',
+    summary:
+      'Released-hostage testimony, Israeli medical authorities, and multi-source reporting document denial or interruption of chronic medications for Israeli civilian hostages — insulin, heart meds, psychiatric drugs — a protected-person medical-treatment crime pattern distinct from aggregate medical-neglect and elderly-medical cards.',
+    evidence:
+      'Multi-source released-hostage medical assessments and multi-outlet coverage establish multi-source chronic-medication denial in captivity. Exact drug lists per case vary; multi-source chronic-meds denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Israeli government hostage / health materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet hostage medication denial coverage', url: 'https://apnews.com' },
+      { label: 'ICRC medical standards context', url: 'https://www.icrc.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public updates', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-agricultural-takeover-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Agricultural Land Takeover Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (ag-takeover cohort)',
+    location: 'West Bank Area C agricultural lands and grazing areas',
+    summary:
+      'OCHA, Kerem Navot, and multi-source reporting document accelerated settler seizure of Palestinian agricultural land after October 7 — fencing, cultivation takeover, and access denial that empties civilian livelihood land. Pattern card for agricultural takeover distinct from herding dispossession and olive-harvest violence cards.',
+    evidence:
+      'OCHA protection databases, multi-source land-tracking analysis, and multi-outlet coverage establish multi-source agricultural land takeover. Exact dunam counts evolve; multi-source wartime ag-land seizure is the claim.',
+    sources: [
+      { label: 'OCHA protection materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem land materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet settler land takeover coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 
 ]
 
@@ -9457,6 +9538,59 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['labor', 'permits', 'civilians', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-scabies-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Scabies & Crowding Skin-Disease Pattern',
+    description: 'WHO/UNICEF multi-source documentation of scabies and crowding skin-disease surges in displacement shelters.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-scabies-skin-disease-pattern-2023-2025',
+      'gaza-infectious-disease-surge-pattern-2023-2025',
+      'gaza-winter-tent-flooding-pattern-2023-2025',
+    ],
+    tags: ['scabies', 'disease', 'children', 'civilians', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-chronic-meds-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Chronic Medications Pattern',
+    description: 'Multi-source documentation of denial or interruption of chronic medications for civilian hostages.',
+    source: 'Israeli government / multi-outlet / ICRC',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-medications-chronic-pattern-2023-2025',
+      'oct7-hostages-medical-neglect-pattern-2023-2025',
+      'israel-hostages-elderly-medical-captivity-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'medications', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-ag-takeover-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Agricultural Land Takeover Pattern',
+    description: 'OCHA multi-source documentation of accelerated settler seizure of Palestinian agricultural land after October 7.',
+    source: 'OCHA / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-agricultural-takeover-pattern-2023-2025',
+      'west-bank-herding-bedouin-dispossession-pattern-2023-2025',
+      'gaza-olive-groves-destruction-pattern-2023-2025',
+    ],
+    tags: ['agriculture', 'settlers', 'civilians', 'west-bank'],
+  },
+
+
 
 
 
