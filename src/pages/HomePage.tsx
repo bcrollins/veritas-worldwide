@@ -366,6 +366,10 @@ export default function HomePage() {
                 <a href="/profiles/corpus.json" className="text-crimson hover:underline">
                   /profiles/corpus.json
                 </a>
+                . Offline pack of all public corpora:{' '}
+                <a href="/research-pack.zip" className="text-crimson hover:underline" download="veritas-research-pack.zip">
+                  research-pack.zip
+                </a>
                 .
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -409,6 +413,20 @@ export default function HomePage() {
                 >
                   Download corpus (JSON)
                 </a>
+                <a
+                  href="/research-pack.zip"
+                  className="inline-flex min-h-[44px] items-center font-sans text-xs font-semibold tracking-[0.1em] uppercase text-ink-muted hover:text-crimson transition-colors"
+                  download="veritas-research-pack.zip"
+                  data-testid="home-research-pack-zip"
+                >
+                  Offline research pack (ZIP)
+                </a>
+                <Link
+                  to="/researcher"
+                  className="inline-flex min-h-[44px] items-center font-sans text-xs font-semibold tracking-[0.1em] uppercase text-ink-muted hover:text-crimson transition-colors"
+                >
+                  Researcher tools &rarr;
+                </Link>
               </div>
             </section>
           </FadeInSection>

@@ -53,6 +53,11 @@ assert(
   methodology.includes('/research-pack.zip') && methodology.includes('methodology-research-pack-zip'),
   'Methodology downloads must link research pack zip',
 )
+const home = read('src/pages/HomePage.tsx')
+assert(
+  home.includes('/research-pack.zip') && home.includes('home-research-pack-zip'),
+  'Home Power Profiles section must surface research pack zip',
+)
 
 const llms = read('public/llms.txt')
 assert(llms.includes('research-pack'), 'llms.txt must index research pack')
