@@ -515,4 +515,11 @@ assert(read('src/components/ResearchHubChips.tsx').includes('no-print'), 'Resear
 assert(read('src/components/DossierHubSpokes.tsx').includes('no-print'), 'DossierHubSpokes no-print')
 assert(read('src/components/StickyMembershipBar.tsx').includes('no-print'), 'StickyMembership no-print')
 
+
+// Accessible names on recovery components
+assert(read('src/components/RelatedHubs.tsx').includes('Related hubs'), 'RelatedHubs aria Related hubs')
+assert(read('src/components/ResearchHubChips.tsx').includes('Research hub'), 'ResearchHubChips aria Research hub')
+assert(read('src/components/DossierHubSpokes.tsx').includes('Also in Dossiers') || read('src/components/DossierHubSpokes.tsx').includes('Dossier hub'), 'DossierHubSpokes aria')
+assert(read('src/components/StickyMembershipBar.tsx').includes('Dismiss membership bar'), 'membership dismiss aria')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
