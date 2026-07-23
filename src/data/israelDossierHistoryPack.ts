@@ -3438,6 +3438,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'oct7-children-killed-pattern-2023',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'October 7 Israeli Children Killed Pattern',
+    date: 'October 7, 2023 (children cohort)',
+    location: 'Southern Israel (kibbutzim, Nova festival, roads)',
+    summary:
+      'Israeli government fatality lists and multi-source forensic/press reporting document dozens of Israeli children killed during the October 7 multi-site assault — including infants and school-age children in homes and vehicles. Pattern card isolating child fatalities within the October 7 civilian massacre record for non-selective documentation.',
+    evidence:
+      'Israeli government named fatality lists, multi-outlet contemporaneous reporting, and forensic documentation establish multi-source child deaths on October 7. Exact age-band counts are refined over time; multi-source intentional targeting of civilian sites that killed children is the claim.',
+    sources: [
+      { label: 'Israeli government public fatality materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet October 7 child casualty coverage', url: 'https://apnews.com' },
+      { label: 'UN / multi-source October 7 civilian documentation context', url: 'https://www.un.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Israeli government public materials', url: 'https://www.gov.il' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5012,6 +5039,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['demolition', 'displacement', 'children', 'west-bank'],
   },
+
+  {
+    id: 'tl-oct7-children-killed-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'October 7 Israeli Children Killed Pattern',
+    description: 'Multi-source documentation of Israeli children killed during the October 7 multi-site civilian assault.',
+    source: 'Israeli government / multi-outlet',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'oct7-children-killed-pattern-2023',
+      'oct7-hamas-attack-2023',
+      'october-7-nova-festival-2023',
+    ],
+    tags: ['children', 'civilians', 'terrorism', 'israel'],
+  },
+
 
 
 
