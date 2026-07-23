@@ -1,0 +1,65 @@
+# 50 Nav/UX Refinements — Veritas (SCOPE: entire platform)
+
+Grouped sprints. **Shipped this session: Sprint 1 (#1–#12).** Remaining are backlog for next intervals.
+
+## Sprint 1 — Hub budget + mobile shell (SHIPPED)
+1. Primary hubs ≤5 (Record, Read, Dossiers, Profiles, Search) — Hick  
+2. Elevate Search to primary hub — search-as-nav  
+3. Mobile bottom tab bar thumb-zone — 2-tap  
+4. Safe-area pad main + membership bar above tab — Apple HIG  
+5. Drawer named **Browse** for News/Forum (no More) — progressive disclosure  
+6. Drawer **Account & Trust** consolidates membership/legal — no deletion  
+7. Dossiers hub active for /forum + /deep-state — hub-and-spoke  
+8. Researcher + Volume II in Research drawer — preserve  
+9. Pure `verify:nav-ia` floor — regression  
+10. Docs IA before/after + preservation ledger  
+11. Desktop utility = News · Institute · Topics — secondary strip  
+12. Sticky membership bar offset mobile — no double-stack  
+
+## Sprint 2 — Dossier hub spokes (next)
+13. Sticky subnav on /israel-dossier: Briefing · Deep State · Forum · Profiles  
+14. Deep-state page “Also in Dossiers” back-link  
+15. Forum page breadcrumb to Dossiers hub  
+16. Home hero single primary CTA row (Read · Dossiers · Search)  
+17. Home News chip in 1-tap from Record hub  
+18. Profiles hub strip: integrity sort + pack + OSINT (already partially)  
+19. Read hub chapter list density (grouping by part)  
+20. Timeline under Browse + Read “Related”  
+
+## Sprint 3 — Research hub
+21. /researcher as Learn hub landing polish (section cards only)  
+22. Methodology ↔ Sources bidirectional hub chips  
+23. Institute entry from Research drawer only (already)  
+24. Content pack in Research (already)  
+25. Search empty-state: top destinations (Read, Dossiers, Profiles, Pack)  
+26. Command-palette style? No new feature — improve Search placeholder labels  
+27. Bookmarks quick routes already pack — add News  
+28. Analytics under Account (already)  
+29. Media kit under Account (already)  
+30. Comprehensive profile under Account (already)  
+
+## Sprint 4 — Information scent & labels
+31. Label “The Record” tab short “Record” mobile only (done tab)  
+32. Dossiers tooltip: Israel · Deep State · Forum  
+33. Footer mirror ≤5 hub order for scent consistency  
+34. Breadcrumb component on all major pages  
+35. Aria-current already on hubs — extend to drawer  
+36. Focus ring audit drawer links  
+37. Skip link already present  
+38. Language selector stays Account drawer  
+39. Theme toggle stays Account drawer  
+40. Sign-in spatial consistency  
+
+## Sprint 5 — Depth & scan
+41. Chapter page sticky section TOC already — keep  
+42. Israel sticky TOC peer — do not thrash  
+43. News desk filters compact  
+44. Forum mobile action bar  
+45. Membership pricing above fold  
+46. Empty bookmarks already guided  
+47. Soft-404 CTAs to 5 hubs  
+48. 404 page hub chips  
+49. Cookie consent above tab bar z-index check  
+50. Pure floor expand: primaryLinks count + drawerBrowse presence  
+
+**Capability check:** News, Forum, Deep State, Timeline, all research surfaces, OSINT, membership, legal — all reachable ≤3 taps. Zero removals.
