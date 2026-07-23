@@ -186,8 +186,6 @@ for (const rel of sub44Files) {
 // Skip-to-content must exist on public, institute, and admin shells with 44px focus targets.
 const skipShells = [
   { path: 'src/App.tsx', target: '#main-content', label: 'public shell' },
-  { path: 'src/pages/PersonalTimelinePage.tsx', min: 13, label: 'personal timeline researcher tool' },
-  { path: 'src/pages/VolumeIIHubPage.tsx', min: 5, label: 'volume II scaffold' },
   { path: 'src/components/institute/InstituteLayout.tsx', target: '#institute-main', label: 'institute shell' },
   { path: 'src/pages/admin/AdminLayout.tsx', target: '#admin-main', label: 'admin shell' },
 ]
