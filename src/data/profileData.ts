@@ -3844,26 +3844,44 @@ export const PROFILES: PowerProfile[] = [
   {
     id: 'dick-cheney',
     name: 'Dick Cheney',
-    title: '46th Vice President',
+    title: '46th U.S. Vice President (2001–2009); former Secretary of Defense',
     category: 'politician',
     bioguideId: 'C000321',
     party: 'R',
     state: 'WY',
     photoUrl: getProfilePhoto('dick-cheney'),
-    summary: 'Former Vice President under George W. Bush. Architect of Iraq War. Halliburton connections.',
-    tags: ['Vice President', 'Iraq War', 'Neoconservative', 'Wyoming', 'Republican'],
-    career: ['Vice President 2001-2009', 'Secretary of Defense 1989-1993', 'Congressman', 'Halliburton CEO'],
+    summary:
+      'Vice President under George W. Bush; former Defense Secretary and Halliburton CEO. Principal public advocate for the 2003 Iraq invasion on WMD grounds later disproven by the Iraq Survey Group / Duelfer Report. Integrity docket covers dual-cited certainty claims about reconstituted nuclear weapons and related WMD threat framing. Primary: White House archives, Senate Intelligence Committee, ISG/Duelfer, FactCheck.org.',
+    tags: ['Vice President', 'Iraq War', 'WMD', 'Neoconservative', 'Wyoming', 'Republican', 'Halliburton', 'Integrity Docket'],
+    career: [
+      'U.S. Representative (R-WY); White House Chief of Staff under Ford',
+      '1989–1993 — Secretary of Defense',
+      '1995–2000 — Halliburton CEO',
+      '2001–2009 — 46th Vice President of the United States',
+      '2002–2003 — Lead public case for Iraq invasion on WMD grounds',
+    ],
     websites: [
-      { label: 'American Enterprise Institute', url: 'https://www.aei.org' }
+      { label: 'Bush White House archives', url: 'https://georgewbush-whitehouse.archives.gov' },
+      { label: 'Senate Intelligence Committee', url: 'https://www.intelligence.senate.gov' },
+      { label: 'FactCheck.org — Iraq WMD record', url: 'https://www.factcheck.org/2005/09/anti-war-ad-says-bush-cheney-rumsfeld/' },
+      { label: 'Ballotpedia', url: 'https://ballotpedia.org/Dick_Cheney' },
     ],
     quotes: [
       {
         text: 'We will not permit the world\'s most dangerous regimes to threaten us with the world\'s most destructive weapons.',
-        context: 'VFW National Convention speech making case for Iraq War',
+        context: 'VFW National Convention speech making the public case for confronting Iraq.',
         date: '2002',
         source: 'White House Archives',
-        url: 'https://georgewbush-whitehouse.archives.gov'
-      }
+        url: 'https://georgewbush-whitehouse.archives.gov',
+      },
+      {
+        text: 'We know they have reconstituted nuclear weapons.',
+        context:
+          'March 16, 2003 Meet the Press interview days before the invasion — categorical nuclear reconstitution claim later contradicted by the Iraq Survey Group.',
+        date: 'March 16, 2003',
+        source: 'NBC Meet the Press / contemporaneous transcript archives',
+        url: 'https://www.factcheck.org/2005/09/anti-war-ad-says-bush-cheney-rumsfeld/',
+      },
     ],
     donations: [
       {
@@ -3871,31 +3889,31 @@ export const PROFILES: PowerProfile[] = [
         amount: 1200000,
         year: '1979-2000',
         source: 'OpenSecrets',
-        url: 'https://www.opensecrets.org'
-      }
+        url: 'https://www.opensecrets.org',
+      },
     ],
     policyActions: [
       {
-        action: 'Architect of 2003 Iraq invasion',
+        action: 'Principal public advocate and executive enabler of the 2003 Iraq invasion',
         date: '2003',
-        context: 'Used intelligence on WMDs later proven false',
-        source: 'Senate Intelligence Committee Report',
-        url: 'https://www.intelligence.senate.gov'
+        context: 'WMD certainty claims central to public case; intelligence later discredited by ISG/Duelfer and Senate Intelligence reviews.',
+        source: 'Senate Intelligence Committee Report; White House record',
+        url: 'https://www.intelligence.senate.gov',
       },
       {
-        action: 'Awarded no-bid contracts to Halliburton in Iraq',
-        date: '2003',
-        context: 'Former CEO of Halliburton received $39.5B in Iraq contracts',
-        source: 'Congressional Research Service',
-        url: 'https://crsreports.congress.gov'
-      }
+        action: 'Halliburton / KBR received multi-billion Iraq reconstruction contracts during Cheney VP tenure',
+        date: '2003–2008',
+        context: 'Former CEO; congressional oversight of no-bid / LOGCAP contracting.',
+        source: 'Congressional Research Service / oversight record',
+        url: 'https://crsreports.congress.gov',
+      },
     ],
     connections: [
       {
         name: 'Halliburton',
-        relationship: 'Former CEO, company received $39.5B Iraq contracts',
+        relationship: 'Former CEO; company received multi-billion Iraq contracts during VP tenure',
         evidence: 'SEC filings and congressional investigations',
-        tier: 'verified'
+        tier: 'verified',
       },
       {
         name: 'Project for New American Century (PNAC)',
@@ -3906,20 +3924,40 @@ export const PROFILES: PowerProfile[] = [
     ],
     sourcedClaims: [
       {
-        claim: 'Halliburton received $39.5B in Iraq War contracts while Cheney served as VP',
-        source: 'Congressional Research Service',
+        claim: 'Halliburton / KBR received multi-billion Iraq reconstruction and LOGCAP contracts during Cheney VP tenure (CRS/oversight record).',
+        source: 'Congressional Research Service / oversight',
         url: 'https://crsreports.congress.gov',
         tier: 'verified',
-        date: '2008'
+        date: '2003–2008',
       },
       {
-        claim: 'Made false claims about Iraq WMDs and al-Qaeda links to justify invasion',
-        source: 'Senate Intelligence Committee',
-        url: 'https://www.intelligence.senate.gov',
+        claim:
+          'March 16, 2003 Meet the Press: claimed Iraq had "reconstituted nuclear weapons." Iraq Survey Group / Duelfer Report found no reconstituted nuclear weapons program; Senate Intelligence Committee later documented flawed WMD assessments.',
+        source: 'FactCheck.org synthesis; ISG/Duelfer; Senate Intelligence',
+        url: 'https://www.factcheck.org/2005/09/anti-war-ad-says-bush-cheney-rumsfeld/',
         tier: 'verified',
-        date: '2008'
-      }
-    ]
+        date: '2003–2005',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'cheney-iraq-reconstituted-nuclear-weapons-2003',
+        statement: 'We know they have reconstituted nuclear weapons.',
+        saidAt: 'March 16, 2003',
+        context:
+          'NBC Meet the Press interview three days before the Iraq invasion — categorical nuclear reconstitution claim to the public.',
+        whyFalse:
+          'The Iraq Survey Group (Duelfer Report) found no evidence that Iraq had reconstituted nuclear weapons. Postwar intelligence reviews (including Senate Intelligence Committee work) established that prewar certainty claims about active nuclear reconstitution were false relative to the ground truth recovered after the invasion.',
+        correction:
+          'Iraq had not reconstituted nuclear weapons. The categorical "we know" claim was false.',
+        statementSource: 'NBC Meet the Press Mar 16, 2003 (transcript via FactCheck.org archive)',
+        statementUrl: 'https://www.factcheck.org/2005/09/anti-war-ad-says-bush-cheney-rumsfeld/',
+        debunkSource: 'Iraq Survey Group / Duelfer Report findings; Senate Intelligence Committee reviews',
+        debunkUrl: 'https://www.intelligence.senate.gov',
+        severity: 'egregious',
+        tier: 'verified',
+      },
+    ],
   },
   {
     id: 'henry-kissinger',

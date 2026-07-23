@@ -105,6 +105,7 @@ const required = [
   'antony-blinken',
   'bob-menendez',
   'mike-pence',
+  'dick-cheney',
 ];
 const scores = {};
 for (const id of required) {
@@ -276,8 +277,17 @@ if (!(penceP.documentedFalsehoods || []).some((f) => f.id === 'pence-border-wall
   throw new Error('mike-pence missing 90% immigration docket id');
 }
 
+// Dick Cheney WMD integrity gate
+const cheney = scores['dick-cheney'];
+if (!cheney || cheney.n < 1) throw new Error('dick-cheney needs ≥1 verified falsehood, got ' + (cheney?.n ?? 0));
+if (cheney.score > 80) throw new Error('dick-cheney score expected ≤80, got ' + cheney.score);
+const cheneyP = getProfileBySlug('dick-cheney');
+if (!(cheneyP.documentedFalsehoods || []).some((f) => f.id === 'cheney-iraq-reconstituted-nuclear-weapons-2003')) {
+  throw new Error('dick-cheney missing WMD docket id');
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 18) throw new Error('expected ≥18 compiled dockets, got ' + docketCount);
+if (docketCount < 19) throw new Error('expected ≥19 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

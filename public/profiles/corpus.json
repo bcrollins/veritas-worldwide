@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:20:50.332Z",
+  "generatedAt": "2026-07-23T07:22:06.468Z",
   "count": 96,
   "profiles": [
     {
@@ -682,22 +682,25 @@
     {
       "id": "dick-cheney",
       "name": "Dick Cheney",
-      "title": "46th Vice President",
+      "title": "46th U.S. Vice President (2001–2009); former Secretary of Defense",
       "category": "politician",
-      "summary": "Former Vice President under George W. Bush. Architect of Iraq War. Halliburton connections.",
+      "summary": "Vice President under George W. Bush; former Defense Secretary and Halliburton CEO. Principal public advocate for the 2003 Iraq invasion on WMD grounds later disproven by the Iraq Survey Group / Duelfer Report. Integrity docket covers dual-cited certainty claims about reconstituted nuclear weapons and related WMD threat framing. Primary: White House archives, Senate Intelligence Committee, ISG/Duelfer, FactCheck.org.",
       "photo": "/profiles/dick-cheney.jpg",
       "url": "https://veritasworldwide.com/profile/dick-cheney",
       "bioguideId": "C000321",
       "tags": [
         "Vice President",
         "Iraq War",
+        "WMD",
         "Neoconservative",
         "Wyoming",
-        "Republican"
+        "Republican",
+        "Halliburton",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 75,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "henry-kissinger",
