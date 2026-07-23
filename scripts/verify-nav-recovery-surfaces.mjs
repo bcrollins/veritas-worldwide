@@ -869,4 +869,11 @@ const subOkHubs = read('src/pages/SubscribeSuccessPage.tsx')
 assert(subOkHubs.includes('subscribe-success-related-hubs'), 'subscribe-success-related-hubs testid')
 assert(subOkHubs.includes('/news'), 'Subscribe success News dest')
 
+
+// Support success RelatedHubs Dossiers destination
+const supOkHubs = read('src/pages/SupportSuccessPage.tsx')
+assert(supOkHubs.includes('support-success-related-hubs'), 'support-success-related-hubs testid')
+assert(supOkHubs.includes('/israel-dossier'), 'Support success Dossiers dest')
+assert(supOkHubs.includes('/profiles'), 'Support success Profiles dest')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
