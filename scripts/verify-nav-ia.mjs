@@ -226,6 +226,13 @@ const instBook = fs.readFileSync(path.join(root, 'src/pages/InstituteBookPage.ts
 assert(instMeth.includes('ResearchHubChips'), 'Institute methodology mounts research chips')
 assert(instBook.includes('ResearchHubChips'), 'Institute book mounts research chips')
 
+
+// RelatedHubs PRIMARY destinations match shell primaryLinks
+const relatedHubsFile = fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
+for (const dest of ["'/'", "'/read'", "'/israel-dossier'", "'/profiles'", "'/search'"]) {
+  assert(relatedHubsFile.includes(`to: ${dest}`), `RelatedHubs has ${dest}`)
+}
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
