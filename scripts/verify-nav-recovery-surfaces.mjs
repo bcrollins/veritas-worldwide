@@ -2041,4 +2041,16 @@ assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'emphasiz
 assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'soft-404 primary coexistence')
 
 
+
+// A11Y_HUBS Membership Profiles ultimate
+const a11yUlt = read('src/pages/AccessibilityPage.tsx')
+assert(a11yUlt.includes('/membership') && a11yUlt.includes('/profiles'), 'A11Y Membership+Profiles ultimate')
+assert(a11yUlt.includes('A11Y_HUBS'), 'A11Y_HUBS ultimate')
+
+// OSINT_HUBS Dossiers ultimate
+const osintUlt = read('src/pages/ComprehensiveProfilePage.tsx')
+assert(osintUlt.includes('/israel-dossier'), 'OSINT Dossiers ultimate')
+assert(osintUlt.includes('OSINT_HUBS'), 'OSINT_HUBS ultimate')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
