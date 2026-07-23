@@ -6,13 +6,13 @@
     "page": "https://veritasworldwide.com/record-of-jesus-christ",
     "attribution": "Veritas Worldwide only"
   },
-  "generatedAt": "2026-07-23T10:21:59.292Z",
-  "claimCount": 399,
+  "generatedAt": "2026-07-23T10:23:05.076Z",
+  "claimCount": 408,
   "tierHistogram": {
-    "well_attested": 158,
-    "verified": 141,
+    "well_attested": 163,
+    "verified": 144,
     "contested": 36,
-    "interpretive": 40,
+    "interpretive": 41,
     "speculative": 2,
     "literary_theological": 3,
     "circumstantial": 19
@@ -173,6 +173,13 @@
       "file": "src/data/recordOfJesusChristWave10.ts"
     },
     {
+      "id": "ane-khirbet-qeiyafa",
+      "claim": "Khirbet Qeiyafa (Judah/Shephelah, early Iron Age) is a fortified site whose dating and political affiliation are central to debates on the 10th-century BCE Judahite state.",
+      "tier": "well_attested",
+      "proofVsConcept": "debate",
+      "file": "src/data/recordOfJesusChristWave34.ts"
+    },
+    {
       "id": "ane-kuntillet-ajrud",
       "claim": "Inscriptions from Kuntillet ‘Ajrud include blessing formulae pairing Yahweh with other divine names — key data for Israelite religion debates.",
       "tier": "well_attested",
@@ -297,6 +304,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave4.ts"
+    },
+    {
+      "id": "arch-babatha-archive",
+      "claim": "The Babatha archive (Nahal Hever) is a major Judean Desert papyrus find documenting a Jewish woman’s legal and economic life under Roman rule in the early 2nd century CE.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave34.ts"
     },
     {
       "id": "arch-bar-kokhba",
@@ -726,6 +740,13 @@
       "file": "src/data/recordOfJesusChristWave8.ts"
     },
     {
+      "id": "cosmo-desi-bao-dynamics",
+      "claim": "DESI baryon acoustic oscillation measurements are testing whether dark energy’s equation of state evolves with time, with early data releases prompting active ΛCDM extension debates.",
+      "tier": "well_attested",
+      "proofVsConcept": "science_model",
+      "file": "src/data/recordOfJesusChristWave34.ts"
+    },
+    {
       "id": "cosmo-expansion",
       "claim": "Spectroscopic redshift of galaxies correlates with distance (Hubble–Lemaître law), indicating metric expansion of space.",
       "tier": "verified",
@@ -941,6 +962,13 @@
       "tier": "well_attested",
       "proofVsConcept": "attested_report",
       "file": "src/data/recordOfJesusChristWave26.ts"
+    },
+    {
+      "id": "ec-barnabas-epistle",
+      "claim": "The Epistle of Barnabas (late 1st / early 2nd c.) offers allegorical OT interpretation and a “two ways” ethic — early Christian reception, not a first-generation Jesus source.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave34.ts"
     },
     {
       "id": "ec-didache",
@@ -1468,6 +1496,13 @@
       "file": "src/data/recordOfJesusChristWave5.ts"
     },
     {
+      "id": "hj-parables-core",
+      "claim": "Parables as a characteristic teaching form of Jesus are among the most widely accepted features of the historical Jesus tradition, though individual parable authenticity and original wording remain reconstructed case-by-case.",
+      "tier": "well_attested",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave34.ts"
+    },
+    {
       "id": "hj-passion-week-outline",
       "claim": "A final Jerusalem visit ending in arrest and crucifixion under Pilate is a standard historical outline shared across diverse HJ reconstructions.",
       "tier": "well_attested",
@@ -1902,6 +1937,13 @@
       "file": "src/data/recordOfJesusChristExtras.ts"
     },
     {
+      "id": "mod-wright-critical-realism",
+      "claim": "N.T. Wright’s critical-realist historical method reconstructs Jesus as a Jewish prophet enacting return-from-exile and kingdom narratives — a major Third Quest synthesis with explicit theological engagement.",
+      "tier": "interpretive",
+      "proofVsConcept": "reconstruction",
+      "file": "src/data/recordOfJesusChristWave34.ts"
+    },
+    {
       "id": "nc-celsus",
       "claim": "Celsus (2nd c.), preserved mainly via Origen’s Contra Celsum, is an early pagan critic who treats Jesus as a historical magician/charlatan figure rather than a mythic non-entity.",
       "tier": "well_attested",
@@ -2019,6 +2061,13 @@
       "tier": "circumstantial",
       "proofVsConcept": "debate",
       "file": "src/data/recordOfJesusChristWave33.ts"
+    },
+    {
+      "id": "nc-no-contemporary-imperial-acta",
+      "claim": "No contemporary Roman imperial acta, trial minutes, or census rolls naming Jesus of Nazareth are known to survive; non-Christian literary controls begin decades later.",
+      "tier": "well_attested",
+      "proofVsConcept": "attested_report",
+      "file": "src/data/recordOfJesusChristWave34.ts"
     },
     {
       "id": "nc-pliny",
@@ -2385,6 +2434,13 @@
       "file": "src/data/recordOfJesusChristWave26.ts"
     },
     {
+      "id": "nt-p-egerton",
+      "claim": "Papyrus Egerton 2 is an early non-canonical gospel fragment with Johannine and Synoptic-like episodes — evidence of diverse Jesus-narrative circulation in the second century.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave34.ts"
+    },
+    {
       "id": "nt-p45-cheaster",
       "claim": "Papyrus P45 (Chester Beatty) is a major early substantial Gospels/Acts witness typically dated 3rd century.",
       "tier": "verified",
@@ -2516,6 +2572,13 @@
       "tier": "well_attested",
       "proofVsConcept": "proof_grade_data",
       "file": "src/data/recordOfJesusChristWave7.ts"
+    },
+    {
+      "id": "st-4qinstruction",
+      "claim": "4QInstruction (Musar leMevin) is a major Qumran wisdom text combining sapiential and apocalyptic themes — evidence of instructional diversity in late Second Temple Judaism.",
+      "tier": "verified",
+      "proofVsConcept": "proof_grade_data",
+      "file": "src/data/recordOfJesusChristWave34.ts"
     },
     {
       "id": "st-alexander-jannaeus",

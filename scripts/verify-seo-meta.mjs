@@ -408,7 +408,7 @@ assert(
   topicHubs.includes('400+ tier-labeled') ||
     topicHubs.includes('400+ tier-labeled') ||
     topicHubs.includes('300+ tier-labeled'),
-  'historical Jesus topic must advertise current 390+ claim floor',
+  'historical Jesus topic must advertise current 400+ claim floor',
 )
 
 // Soft-404: unknown /chapter/* must not soft-serve homepage shells to crawlers.
