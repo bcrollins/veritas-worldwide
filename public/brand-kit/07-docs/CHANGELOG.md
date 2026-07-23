@@ -1,0 +1,22 @@
+# Brand Kit Changelog — Veritas Worldwide Press
+
+## 2.6.0 — 2026-07-23
+- Evidence-tier social cards (Verified, Documented, Contested, Unverified)
+- Presentation title slide (1920×1080) + podcast cover (1400×1400)
+- X post card (1600×900), newsletter/Substack header, source attribution stamp
+- Brand do/don't usage sheet
+- PNG rasters for platform banners (X, LinkedIn, Facebook, YouTube, story)
+- CHANGELOG.md (this file)
+
+## 2.5.0
+- LinkedIn article header, IG carousel slides 1–3, press release body HTML
+- Media Kit UX: version badge, copy boilerplate, asset groups
+
+## 2.4.0
+- Quote card, YouTube thumbnail, brand voice doc, expanded verify live checks
+
+## 2.3.0
+- Story, highlights, business card, static media-kit.html, tokens.css
+
+## 2.0.0 – 2.2.0
+- Production vector system, ZIP + SHA-256, admin brand kit surface, AI refs

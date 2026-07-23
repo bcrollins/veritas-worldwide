@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Presentation title slide">
+  <rect width="1920" height="1080" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1920" height="8" fill="#8B1A1A"/>
+  <rect x="0" y="1072" width="1920" height="8" fill="#8B1A1A"/>
+  <circle cx="200" cy="200" r="64" fill="none" stroke="#8B1A1A" stroke-width="5"/>
+  <text x="200" y="222" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#FFFFFF">V</text>
+  <text x="120" y="480" font-family="Georgia, serif" font-size="88" font-weight="700" fill="#FFFFFF">The Record</text>
+  <text x="120" y="560" font-family="Georgia, serif" font-size="36" font-style="italic" fill="rgba(255,255,255,0.7)">A documentary archive of power and institutions</text>
+  <line x1="120" y1="620" x2="420" y2="620" stroke="#B8860B" stroke-width="2"/>
+  <text x="120" y="700" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="5" fill="#B8860B">VERITAS WORLDWIDE PRESS</text>
+  <text x="120" y="960" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">Primary sources. Public record. Your conclusions. · veritasworldwide.com</text>
+</svg>

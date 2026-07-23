@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Veritas Worldwide Brand Kit Generator v2.2
+ * Veritas Worldwide Brand Kit Generator v2.6
  * Produces production SVG/PNG brand assets + downloadable ZIP for admin.
  * Run: node scripts/generate-brand-kit.mjs
  */
@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const KIT = join(ROOT, 'public', 'brand-kit')
 const EXPORTS = join(KIT, 'exports')
-const KIT_VERSION = '2.5.0'
+const KIT_VERSION = '2.6.0'
 
 const C = {
   parchment: '#FAF8F5',
@@ -437,6 +437,11 @@ All paths are relative to \`https://veritasworldwide.com\`.
 | **YouTube** | app-icon / social-profile | \`social-banner-youtube.svg\` (2560×1440) | @VeritasWorldwide |
 | **TikTok** | social-profile-400.png | N/A | @veritasworldwidepress |
 | **Pinterest** | social-profile | story or OG for pins | veritasworldwide |
+| **Substack / Newsletter** | logo-mark-512 | \`newsletter-header.svg\` (1200×400) | Weekly dispatch header |
+| **Podcast (Apple/Spotify)** | \`podcast-cover.svg\` / \`.png\` (1400×1400) | — | The Record cover art |
+| **X feed posts** | — | \`x-post-card.svg\` (1600×900) | Shareable documentary cards |
+| **Presentations** | — | \`09-templates/presentation-title.svg\` (1920×1080) | Deck title slide |
+| **Evidence tier cards** | — | \`evidence-tier-*.svg\` (1080×1080) | Verified / Documented / Contested / Unverified |
 | **Open Graph / default share** | — | \`/og-image.png\` + \`/brand-kit/05-og/\` | Site-wide default |
 
 ## Bios (copy/paste)
@@ -551,6 +556,155 @@ function igCarouselSlideSvg(n, title, subtitle) {
   <line x1="80" y1="560" x2="280" y2="560" stroke="${C.crimson}" stroke-width="2"/>
   <text x="80" y="980" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
 </svg>`
+}
+
+
+/** Evidence-tier social card — core Veritas product visual language */
+function evidenceTierCardSvg(tier, color, claimLine) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="Evidence tier card: ${tier}">
+  <rect width="1080" height="1080" fill="${C.black}"/>
+  <rect x="0" y="0" width="1080" height="8" fill="${color}"/>
+  <rect x="0" y="1072" width="1080" height="8" fill="${color}"/>
+  <text x="80" y="120" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="6" fill="${C.gold}">THE RECORD · EVIDENCE TIER</text>
+  <rect x="80" y="180" width="280" height="48" rx="4" fill="${color}"/>
+  <text x="220" y="212" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="3" fill="${C.white}">${tier.toUpperCase()}</text>
+  <text x="80" y="360" font-family="Georgia, serif" font-size="40" font-weight="700" fill="${C.white}">${claimLine}</text>
+  <text x="80" y="430" font-family="Georgia, serif" font-size="24" font-style="italic" fill="rgba(255,255,255,0.65)">Labeled for the reader. Sources open.</text>
+  <line x1="80" y1="500" x2="320" y2="500" stroke="${color}" stroke-width="2"/>
+  <text x="80" y="560" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.45)">Primary sources. Public record. Your conclusions.</text>
+  <circle cx="920" cy="900" r="56" fill="none" stroke="${C.crimson}" stroke-width="4"/>
+  <text x="920" y="916" text-anchor="middle" font-family="Georgia, serif" font-size="48" font-weight="700" fill="${C.white}">V</text>
+  <text x="80" y="980" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">veritasworldwide.com</text>
+</svg>`
+}
+
+function presentationTitleSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Presentation title slide">
+  <rect width="1920" height="1080" fill="${C.black}"/>
+  <rect x="0" y="0" width="1920" height="8" fill="${C.crimson}"/>
+  <rect x="0" y="1072" width="1920" height="8" fill="${C.crimson}"/>
+  <circle cx="200" cy="200" r="64" fill="none" stroke="${C.crimson}" stroke-width="5"/>
+  <text x="200" y="222" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.white}">V</text>
+  <text x="120" y="480" font-family="Georgia, serif" font-size="88" font-weight="700" fill="${C.white}">The Record</text>
+  <text x="120" y="560" font-family="Georgia, serif" font-size="36" font-style="italic" fill="rgba(255,255,255,0.7)">A documentary archive of power and institutions</text>
+  <line x1="120" y1="620" x2="420" y2="620" stroke="${C.gold}" stroke-width="2"/>
+  <text x="120" y="700" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="5" fill="${C.gold}">VERITAS WORLDWIDE PRESS</text>
+  <text x="120" y="960" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">Primary sources. Public record. Your conclusions. · veritasworldwide.com</text>
+</svg>`
+}
+
+function podcastCoverSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1400" viewBox="0 0 1400 1400" role="img" aria-label="Podcast cover art">
+  <rect width="1400" height="1400" fill="${C.black}"/>
+  <rect x="0" y="0" width="1400" height="12" fill="${C.crimson}"/>
+  <rect x="0" y="1388" width="1400" height="12" fill="${C.crimson}"/>
+  <circle cx="700" cy="560" r="200" fill="none" stroke="${C.crimson}" stroke-width="10"/>
+  <circle cx="700" cy="560" r="178" fill="none" stroke="${C.crimson}" stroke-width="3" opacity="0.7"/>
+  <path d="M560 400 L610 400 C618 400 624 404 628 412 L690 600 L700 630 L710 600 L772 412 C776 404 782 400 790 400 L840 400 C850 400 856 406 852 416 L730 680 C722 700 700 712 700 712 C700 712 678 700 670 680 L548 416 C544 406 550 400 560 400 Z" fill="${C.white}"/>
+  <rect x="552" y="392" width="80" height="12" rx="2" fill="${C.white}"/>
+  <rect x="768" y="392" width="80" height="12" rx="2" fill="${C.white}"/>
+  <text x="700" y="900" text-anchor="middle" font-family="Georgia, serif" font-size="72" font-weight="700" fill="${C.white}">The Record</text>
+  <text x="700" y="970" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="22" letter-spacing="6" fill="${C.gold}">VERITAS WORLDWIDE PRESS</text>
+  <text x="700" y="1040" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-style="italic" fill="rgba(255,255,255,0.55)">Primary sources. Public record.</text>
+</svg>`
+}
+
+function xPostCardSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="X post card">
+  <rect width="1600" height="900" fill="${C.black}"/>
+  <rect x="0" y="0" width="1600" height="6" fill="${C.crimson}"/>
+  <rect x="0" y="894" width="1600" height="6" fill="${C.crimson}"/>
+  <text x="80" y="100" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5" fill="${C.gold}">VERITAS WORLDWIDE PRESS</text>
+  <text x="80" y="320" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.white}">Document the power.</text>
+  <text x="80" y="400" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.white}">Open the sources.</text>
+  <text x="80" y="500" font-family="Georgia, serif" font-size="28" font-style="italic" fill="rgba(255,255,255,0.7)">Primary sources. Public record. Your conclusions.</text>
+  <line x1="80" y1="560" x2="320" y2="560" stroke="${C.crimson}" stroke-width="2"/>
+  <text x="80" y="820" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.45)">veritasworldwide.com</text>
+  <circle cx="1420" cy="720" r="70" fill="none" stroke="${C.crimson}" stroke-width="5"/>
+  <text x="1420" y="740" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.white}">V</text>
+</svg>`
+}
+
+function newsletterHeaderSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-label="Newsletter header">
+  <rect width="1200" height="400" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="1200" height="6" fill="${C.crimson}"/>
+  <rect x="0" y="394" width="1200" height="6" fill="${C.crimson}"/>
+  <circle cx="100" cy="200" r="48" fill="none" stroke="${C.crimson}" stroke-width="4"/>
+  <text x="100" y="214" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-weight="700" fill="${C.ink}">V</text>
+  <text x="180" y="180" font-family="Georgia, serif" font-size="36" font-weight="700" letter-spacing="3" fill="${C.ink}">VERITAS WORLDWIDE PRESS</text>
+  <text x="180" y="220" font-family="Georgia, serif" font-size="22" font-style="italic" fill="${C.inkMuted}">The Record — weekly documentary dispatch</text>
+  <text x="180" y="270" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2" fill="${C.crimson}">PRIMARY SOURCES · PUBLIC RECORD · YOUR CONCLUSIONS</text>
+</svg>`
+}
+
+function sourceStampSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Source attribution stamp">
+  <circle cx="256" cy="256" r="230" fill="none" stroke="${C.crimson}" stroke-width="8"/>
+  <circle cx="256" cy="256" r="200" fill="none" stroke="${C.crimson}" stroke-width="2" opacity="0.6"/>
+  <text x="256" y="200" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="${C.crimson}">SOURCE</text>
+  <text x="256" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-weight="700" fill="${C.ink}">VERITAS</text>
+  <text x="256" y="320" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" letter-spacing="3" fill="${C.inkMuted}">PUBLIC RECORD</text>
+  <text x="256" y="380" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="${C.crimson}">veritasworldwide.com</text>
+</svg>`
+}
+
+function brandDoDontSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Brand do and don't guide">
+  <rect width="1600" height="900" fill="${C.parchment}"/>
+  <rect x="0" y="0" width="1600" height="6" fill="${C.crimson}"/>
+  <text x="80" y="80" font-family="Georgia, serif" font-size="36" font-weight="700" fill="${C.ink}">Logo usage — Do / Don't</text>
+  <text x="80" y="120" font-family="Inter, Helvetica, Arial, sans-serif" font-size="16" fill="${C.inkMuted}">Veritas Worldwide Press · Brand kit v${KIT_VERSION}</text>
+  <rect x="80" y="180" width="680" height="620" fill="#fff" stroke="#d4cfc6" stroke-width="1"/>
+  <text x="110" y="230" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#1B7A3D">DO</text>
+  <circle cx="220" cy="380" r="70" fill="none" stroke="${C.crimson}" stroke-width="5"/>
+  <text x="220" y="398" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.ink}">V</text>
+  <text x="110" y="520" font-family="Georgia, serif" font-size="18" fill="${C.ink}">Preserve seal proportions</text>
+  <text x="110" y="560" font-family="Georgia, serif" font-size="18" fill="${C.ink}">Use brand tokens only</text>
+  <text x="110" y="600" font-family="Georgia, serif" font-size="18" fill="${C.ink}">Clear space = V serif height</text>
+  <text x="110" y="640" font-family="Georgia, serif" font-size="18" fill="${C.ink}">Prefer SVG over raster</text>
+  <rect x="840" y="180" width="680" height="620" fill="#fff" stroke="#d4cfc6" stroke-width="1"/>
+  <text x="870" y="230" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="${C.crimson}">DON'T</text>
+  <ellipse cx="980" cy="380" rx="100" ry="50" fill="none" stroke="${C.crimson}" stroke-width="5" opacity="0.5"/>
+  <text x="980" y="398" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${C.ink}" opacity="0.4" transform="rotate(-12 980 380)">V</text>
+  <text x="870" y="520" font-family="Georgia, serif" font-size="18" fill="${C.ink}">Stretch or skew the seal</text>
+  <text x="870" y="560" font-family="Georgia, serif" font-size="18" fill="${C.ink}">Recolor outside tokens</text>
+  <text x="870" y="600" font-family="Georgia, serif" font-size="18" fill="${C.ink}">Drop shadows / neon effects</text>
+  <text x="870" y="640" font-family="Georgia, serif" font-size="18" fill="${C.ink}">Busy photo without scrim</text>
+</svg>`
+}
+
+function changelogMd() {
+  return `# Brand Kit Changelog — Veritas Worldwide Press
+
+## 2.6.0 — ${new Date().toISOString().slice(0, 10)}
+- Evidence-tier social cards (Verified, Documented, Contested, Unverified)
+- Presentation title slide (1920×1080) + podcast cover (1400×1400)
+- X post card (1600×900), newsletter/Substack header, source attribution stamp
+- Brand do/don't usage sheet
+- PNG rasters for platform banners (X, LinkedIn, Facebook, YouTube, story)
+- CHANGELOG.md (this file)
+
+## 2.5.0
+- LinkedIn article header, IG carousel slides 1–3, press release body HTML
+- Media Kit UX: version badge, copy boilerplate, asset groups
+
+## 2.4.0
+- Quote card, YouTube thumbnail, brand voice doc, expanded verify live checks
+
+## 2.3.0
+- Story, highlights, business card, static media-kit.html, tokens.css
+
+## 2.0.0 – 2.2.0
+- Production vector system, ZIP + SHA-256, admin brand kit surface, AI refs
+`
 }
 
 function pressReleaseBodyHtml() {
@@ -808,6 +962,16 @@ function altTextManifest() {
       { path: '09-templates/letterhead.svg', alt: 'Veritas Worldwide Press letterhead template' },
       { path: '09-templates/press-release-header.svg', alt: 'Press release header with Veritas branding' },
       { path: '09-templates/email-signature.html', alt: 'HTML email signature for Veritas Worldwide Press' },
+      { path: '04-social/evidence-tier-verified.svg', alt: 'Evidence tier card: Verified' },
+      { path: '04-social/evidence-tier-documented.svg', alt: 'Evidence tier card: Documented' },
+      { path: '04-social/evidence-tier-contested.svg', alt: 'Evidence tier card: Contested' },
+      { path: '04-social/evidence-tier-unverified.svg', alt: 'Evidence tier card: Unverified' },
+      { path: '04-social/podcast-cover.svg', alt: 'The Record podcast cover art' },
+      { path: '04-social/x-post-card.svg', alt: 'X post share card for The Record' },
+      { path: '04-social/newsletter-header.svg', alt: 'Newsletter header for Veritas Worldwide' },
+      { path: '09-templates/presentation-title.svg', alt: 'Presentation title slide for The Record' },
+      { path: '09-templates/source-stamp.svg', alt: 'Source attribution stamp' },
+      { path: '07-docs/brand-do-dont.svg', alt: 'Logo usage do and do not guide' },
     ],
   }, null, 2)
 }
@@ -835,7 +999,7 @@ function buildZip() {
 }
 
 function main() {
-  console.log('Generating Veritas Worldwide Brand Kit v2.0…')
+  console.log(`Generating Veritas Worldwide Brand Kit v${KIT_VERSION}…`)
   ensureDirs()
 
   // Root-level aliases (manifest + legacy paths)
@@ -936,6 +1100,16 @@ Editorial and licensing: rights@veritasworldwide.com
   writeSvg('04-social/ig-carousel-1.svg', igCarouselSlideSvg(1, 'The Record', 'A documentary archive of power and institutions'))
   writeSvg('04-social/ig-carousel-2.svg', igCarouselSlideSvg(2, 'Primary sources', 'Public filings, transcripts, and attributable records'))
   writeSvg('04-social/ig-carousel-3.svg', igCarouselSlideSvg(3, 'Your conclusions', 'Methodology and sources stay open to inspect'))
+  writeSvg('04-social/evidence-tier-verified.svg', evidenceTierCardSvg('Verified', '#1B7A3D', 'Confirmed in primary sources'))
+  writeSvg('04-social/evidence-tier-documented.svg', evidenceTierCardSvg('Documented', '#2B6CB0', 'On the public record'))
+  writeSvg('04-social/evidence-tier-contested.svg', evidenceTierCardSvg('Contested', '#B8860B', 'Competing accounts remain'))
+  writeSvg('04-social/evidence-tier-unverified.svg', evidenceTierCardSvg('Unverified', '#8B1A1A', 'Not yet confirmed'))
+  writeSvg('04-social/podcast-cover.svg', podcastCoverSvg())
+  writeSvg('04-social/x-post-card.svg', xPostCardSvg())
+  writeSvg('04-social/newsletter-header.svg', newsletterHeaderSvg())
+  writeSvg('09-templates/presentation-title.svg', presentationTitleSvg())
+  writeSvg('09-templates/source-stamp.svg', sourceStampSvg())
+  writeSvg('07-docs/brand-do-dont.svg', brandDoDontSvg())
   writeFileSync(join(KIT, '09-templates', 'email-signature.html'), emailSignatureHtml())
   writeFileSync(join(KIT, '09-templates', 'media-kit.html'), mediaKitHtml())
   writeFileSync(join(KIT, '09-templates', 'press-release-body.html'), pressReleaseBodyHtml())
@@ -944,6 +1118,7 @@ Editorial and licensing: rights@veritasworldwide.com
   writeFileSync(join(KIT, '07-docs', 'WCAG-CONTRAST.md'), wcagContrastMd())
   writeFileSync(join(KIT, '07-docs', 'SOCIAL-ASSET-MATRIX.md'), socialAssetMatrixMd())
   writeFileSync(join(KIT, '07-docs', 'BRAND-VOICE.md'), brandVoiceMd())
+  writeFileSync(join(KIT, '07-docs', 'CHANGELOG.md'), changelogMd())
 
   // Rasterize key assets
   const rasters = [
@@ -971,6 +1146,21 @@ Editorial and licensing: rights@veritasworldwide.com
     ['04-social/ig-carousel-1.svg', '04-social/ig-carousel-1.png', 1080],
     ['04-social/ig-carousel-2.svg', '04-social/ig-carousel-2.png', 1080],
     ['04-social/ig-carousel-3.svg', '04-social/ig-carousel-3.png', 1080],
+    ['04-social/evidence-tier-verified.svg', '04-social/evidence-tier-verified.png', 1080],
+    ['04-social/evidence-tier-documented.svg', '04-social/evidence-tier-documented.png', 1080],
+    ['04-social/evidence-tier-contested.svg', '04-social/evidence-tier-contested.png', 1080],
+    ['04-social/evidence-tier-unverified.svg', '04-social/evidence-tier-unverified.png', 1080],
+    ['04-social/podcast-cover.svg', '04-social/podcast-cover.png', 1400],
+    ['04-social/x-post-card.svg', '04-social/x-post-card.png', 1600],
+    ['04-social/newsletter-header.svg', '04-social/newsletter-header.png', 1200],
+    ['04-social/social-banner-x.svg', '04-social/social-banner-x.png', 1500],
+    ['04-social/social-banner-linkedin.svg', '04-social/social-banner-linkedin.png', 1584],
+    ['04-social/social-banner-facebook.svg', '04-social/social-banner-facebook.png', 820],
+    ['04-social/social-banner-youtube.svg', '04-social/social-banner-youtube.png', 1920],
+    ['04-social/story-1080x1920.svg', '04-social/story-1080x1920.png', 1080],
+    ['09-templates/presentation-title.svg', '09-templates/presentation-title.png', 1920],
+    ['09-templates/source-stamp.svg', '09-templates/source-stamp.png', 512],
+    ['07-docs/brand-do-dont.svg', '07-docs/brand-do-dont.png', 1600],
   ]
   for (const [src, dest, w] of rasters) {
     try {
@@ -1004,12 +1194,12 @@ Editorial and licensing: rights@veritasworldwide.com
       { id: '01-logos', title: 'Logos', description: 'Primary seal, full lockups, monochrome variants' },
       { id: '02-icons', title: 'Icons & Favicon', description: 'App icon, favicon, apple-touch, sized marks' },
       { id: '03-wordmarks', title: 'Wordmarks', description: 'Text-only brand typography' },
-      { id: '04-social', title: 'Social', description: 'Profile, banners, story, highlights, quote cards' },
+      { id: '04-social', title: 'Social', description: 'Banners, evidence tiers, podcast, X/IG cards, quote' },
       { id: '05-og', title: 'Open Graph', description: 'Default social share card' },
       { id: '06-tokens', title: 'Design Tokens', description: 'Colors, type, CSS custom properties' },
-      { id: '07-docs', title: 'Documentation', description: 'Guide, voice, legal, hashtags, contrast' },
+      { id: '07-docs', title: 'Documentation', description: "Guide, voice, legal, do/don't, changelog" },
       { id: '08-ai-generated', title: 'AI References', description: 'Grok Imagine brand direction renders' },
-      { id: '09-templates', title: 'Templates', description: 'Letterhead, signature, press, business card, media kit' },
+      { id: '09-templates', title: 'Templates', description: 'Letterhead, press, deck title, source stamp' },
     ],
     downloads: [
       { label: 'Ultimate Brand Kit (.zip)', href: '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip', adminOnly: true },
@@ -1026,6 +1216,16 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'YouTube thumbnail (SVG)', href: '/brand-kit/04-social/youtube-thumbnail.svg' },
       { label: 'LinkedIn article header', href: '/brand-kit/04-social/linkedin-article-header.svg' },
       { label: 'IG carousel 1–3', href: '/brand-kit/04-social/ig-carousel-1.svg' },
+      { label: 'X post card (SVG)', href: '/brand-kit/04-social/x-post-card.svg' },
+      { label: 'Evidence tier: Verified', href: '/brand-kit/04-social/evidence-tier-verified.svg' },
+      { label: 'Evidence tier: Documented', href: '/brand-kit/04-social/evidence-tier-documented.svg' },
+      { label: 'Evidence tier: Contested', href: '/brand-kit/04-social/evidence-tier-contested.svg' },
+      { label: 'Evidence tier: Unverified', href: '/brand-kit/04-social/evidence-tier-unverified.svg' },
+      { label: 'Podcast cover (PNG)', href: '/brand-kit/04-social/podcast-cover.png' },
+      { label: 'Newsletter header', href: '/brand-kit/04-social/newsletter-header.svg' },
+      { label: 'Presentation title slide', href: '/brand-kit/09-templates/presentation-title.svg' },
+      { label: 'Source attribution stamp', href: '/brand-kit/09-templates/source-stamp.svg' },
+      { label: "Brand do/don't sheet", href: '/brand-kit/07-docs/brand-do-dont.svg' },
       { label: 'Social asset matrix', href: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md' },
       { label: 'Email signature (HTML)', href: '/brand-kit/09-templates/email-signature.html' },
       { label: 'Letterhead (SVG)', href: '/brand-kit/09-templates/letterhead.svg' },
@@ -1035,13 +1235,18 @@ Editorial and licensing: rights@veritasworldwide.com
       { label: 'Public media kit page', href: '/media-kit' },
       { label: 'Brand guide (MD)', href: '/brand-kit/07-docs/BRAND-GUIDE.md' },
       { label: 'Brand voice (MD)', href: '/brand-kit/07-docs/BRAND-VOICE.md' },
+      { label: 'Changelog (MD)', href: '/brand-kit/07-docs/CHANGELOG.md' },
       { label: 'Hashtags (MD)', href: '/brand-kit/07-docs/HASHTAGS.md' },
       { label: 'Tokens (JSON)', href: '/brand-kit/06-tokens/tokens.json' },
       { label: 'Tokens (CSS)', href: '/brand-kit/06-tokens/tokens.css' },
       { label: 'ZIP SHA-256', href: '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.sha256' },
     ],
     platformAssets: {
-      x: { profile: '/brand-kit/04-social/social-profile-400.png', banner: '/brand-kit/04-social/social-banner-x.svg' },
+      x: {
+        profile: '/brand-kit/04-social/social-profile-400.png',
+        banner: '/brand-kit/04-social/social-banner-x.svg',
+        postCard: '/brand-kit/04-social/x-post-card.svg',
+      },
       instagram: {
         profile: '/brand-kit/04-social/social-profile-400.png',
         story: '/brand-kit/04-social/story-1080x1920.svg',
@@ -1061,6 +1266,14 @@ Editorial and licensing: rights@veritasworldwide.com
         profile: '/brand-kit/02-icons/app-icon-512.png',
         banner: '/brand-kit/04-social/social-banner-youtube.svg',
         thumbnail: '/brand-kit/04-social/youtube-thumbnail.svg',
+      },
+      podcast: { cover: '/brand-kit/04-social/podcast-cover.png' },
+      newsletter: { header: '/brand-kit/04-social/newsletter-header.svg' },
+      evidenceTiers: {
+        verified: '/brand-kit/04-social/evidence-tier-verified.svg',
+        documented: '/brand-kit/04-social/evidence-tier-documented.svg',
+        contested: '/brand-kit/04-social/evidence-tier-contested.svg',
+        unverified: '/brand-kit/04-social/evidence-tier-unverified.svg',
       },
     },
   }

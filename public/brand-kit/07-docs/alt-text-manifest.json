@@ -1,5 +1,5 @@
 {
-  "version": "2.5.0",
+  "version": "2.6.0",
   "assets": [
     {
       "path": "01-logos/logo-mark.svg",
@@ -64,6 +64,46 @@
     {
       "path": "09-templates/email-signature.html",
       "alt": "HTML email signature for Veritas Worldwide Press"
+    },
+    {
+      "path": "04-social/evidence-tier-verified.svg",
+      "alt": "Evidence tier card: Verified"
+    },
+    {
+      "path": "04-social/evidence-tier-documented.svg",
+      "alt": "Evidence tier card: Documented"
+    },
+    {
+      "path": "04-social/evidence-tier-contested.svg",
+      "alt": "Evidence tier card: Contested"
+    },
+    {
+      "path": "04-social/evidence-tier-unverified.svg",
+      "alt": "Evidence tier card: Unverified"
+    },
+    {
+      "path": "04-social/podcast-cover.svg",
+      "alt": "The Record podcast cover art"
+    },
+    {
+      "path": "04-social/x-post-card.svg",
+      "alt": "X post share card for The Record"
+    },
+    {
+      "path": "04-social/newsletter-header.svg",
+      "alt": "Newsletter header for Veritas Worldwide"
+    },
+    {
+      "path": "09-templates/presentation-title.svg",
+      "alt": "Presentation title slide for The Record"
+    },
+    {
+      "path": "09-templates/source-stamp.svg",
+      "alt": "Source attribution stamp"
+    },
+    {
+      "path": "07-docs/brand-do-dont.svg",
+      "alt": "Logo usage do and do not guide"
     }
   ]
 }

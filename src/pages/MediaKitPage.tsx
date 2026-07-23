@@ -5,6 +5,14 @@ import { clearMetaTags, removeJsonLd, setJsonLd, setMetaTags, SITE_NAME, SITE_UR
 const BOILERPLATE =
   'Veritas Worldwide is an independent investigative publisher. Our flagship work, The Record, is a multi-chapter documentary archive built on primary sources, public records, and explicit evidence-tier labeling. Primary sources. Public record. Your conclusions.'
 
+const TOKEN_SWATCHES = [
+  { name: 'Parchment', hex: '#FAF8F5', on: 'text-ink' },
+  { name: 'Ink', hex: '#1A1A1A', on: 'text-white' },
+  { name: 'Crimson', hex: '#8B1A1A', on: 'text-white' },
+  { name: 'Gold', hex: '#B8860B', on: 'text-white' },
+  { name: 'Obsidian', hex: '#0A0A0A', on: 'text-white' },
+] as const
+
 const ASSETS = [
   {
     title: 'Logo mark',
@@ -28,6 +36,7 @@ const ASSETS = [
     links: [
       { href: '/og-image.png', label: 'OG image' },
       { href: '/brand-kit/04-social/social-banner-x.svg', label: 'X banner' },
+      { href: '/brand-kit/04-social/x-post-card.svg', label: 'X post card' },
       { href: '/brand-kit/04-social/story-1080x1920.svg', label: 'IG story' },
       { href: '/brand-kit/04-social/ig-carousel-1.svg', label: 'IG carousel 1' },
       { href: '/brand-kit/04-social/ig-carousel-2.svg', label: 'IG carousel 2' },
@@ -35,17 +44,32 @@ const ASSETS = [
       { href: '/brand-kit/04-social/quote-card.svg', label: 'Quote card' },
       { href: '/brand-kit/04-social/youtube-thumbnail.svg', label: 'YouTube thumbnail' },
       { href: '/brand-kit/04-social/linkedin-article-header.svg', label: 'LinkedIn article header' },
+      { href: '/brand-kit/04-social/newsletter-header.svg', label: 'Newsletter header' },
+      { href: '/brand-kit/04-social/podcast-cover.png', label: 'Podcast cover' },
       { href: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md', label: 'Asset matrix' },
     ],
   },
   {
+    title: 'Evidence tier cards',
+    description: 'On-brand social cards for Verified, Documented, Contested, and Unverified labels.',
+    links: [
+      { href: '/brand-kit/04-social/evidence-tier-verified.svg', label: 'Verified' },
+      { href: '/brand-kit/04-social/evidence-tier-documented.svg', label: 'Documented' },
+      { href: '/brand-kit/04-social/evidence-tier-contested.svg', label: 'Contested' },
+      { href: '/brand-kit/04-social/evidence-tier-unverified.svg', label: 'Unverified' },
+    ],
+  },
+  {
     title: 'Press templates',
-    description: 'Letterhead, email signature, business card, press release body.',
+    description: 'Letterhead, email signature, business card, press release, deck title, source stamp.',
     links: [
       { href: '/brand-kit/09-templates/letterhead.svg', label: 'Letterhead' },
       { href: '/brand-kit/09-templates/email-signature.html', label: 'Email signature' },
       { href: '/brand-kit/09-templates/business-card.svg', label: 'Business card' },
       { href: '/brand-kit/09-templates/press-release-body.html', label: 'Press release template' },
+      { href: '/brand-kit/09-templates/presentation-title.svg', label: 'Presentation title' },
+      { href: '/brand-kit/09-templates/source-stamp.svg', label: 'Source stamp' },
+      { href: '/brand-kit/07-docs/brand-do-dont.svg', label: 'Logo do / don\'t' },
       { href: '/brand-kit/09-templates/media-kit.html', label: 'Static media kit' },
     ],
   },
@@ -176,6 +200,35 @@ export default function MediaKitPage() {
             </button>
           </div>
           <p className="mt-4 max-w-3xl font-body leading-relaxed text-ink-muted">{BOILERPLATE}</p>
+        </section>
+
+        <section className="mt-12">
+          <h2 className="font-display text-2xl font-semibold text-ink">Color tokens</h2>
+          <p className="mt-2 max-w-2xl font-body text-sm text-ink-muted">
+            Production palette. Never use gold for body copy on parchment. Full ratios in{' '}
+            <a
+              href="/brand-kit/07-docs/WCAG-CONTRAST.md"
+              className="font-semibold text-crimson hover:text-crimson-dark"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WCAG contrast notes
+            </a>
+            .
+          </p>
+          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-5">
+            {TOKEN_SWATCHES.map(swatch => (
+              <div
+                key={swatch.hex}
+                className="overflow-hidden rounded-xl border border-border"
+              >
+                <div className={`flex h-20 items-end p-3 ${swatch.on}`} style={{ backgroundColor: swatch.hex }}>
+                  <span className="font-mono text-xs opacity-90">{swatch.hex}</span>
+                </div>
+                <p className="bg-surface px-3 py-2 font-sans text-xs font-medium text-ink">{swatch.name}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="mt-12">

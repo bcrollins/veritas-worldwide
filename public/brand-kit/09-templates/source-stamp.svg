@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Source attribution stamp">
+  <circle cx="256" cy="256" r="230" fill="none" stroke="#8B1A1A" stroke-width="8"/>
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#8B1A1A" stroke-width="2" opacity="0.6"/>
+  <text x="256" y="200" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#8B1A1A">SOURCE</text>
+  <text x="256" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-weight="700" fill="#1A1A1A">VERITAS</text>
+  <text x="256" y="320" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="14" letter-spacing="3" fill="#666666">PUBLIC RECORD</text>
+  <text x="256" y="380" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#8B1A1A">veritasworldwide.com</text>
+</svg>

@@ -26,6 +26,14 @@ const PREVIEW_ASSETS = [
   { label: 'YouTube Thumb', href: '/brand-kit/04-social/youtube-thumbnail.svg', bg: 'bg-black' },
   { label: 'LinkedIn Article', href: '/brand-kit/04-social/linkedin-article-header.svg', bg: 'bg-parchment' },
   { label: 'IG Carousel 1', href: '/brand-kit/04-social/ig-carousel-1.svg', bg: 'bg-black' },
+  { label: 'Evidence Verified', href: '/brand-kit/04-social/evidence-tier-verified.svg', bg: 'bg-black' },
+  { label: 'Evidence Contested', href: '/brand-kit/04-social/evidence-tier-contested.svg', bg: 'bg-black' },
+  { label: 'Podcast Cover', href: '/brand-kit/04-social/podcast-cover.svg', bg: 'bg-black' },
+  { label: 'X Post Card', href: '/brand-kit/04-social/x-post-card.svg', bg: 'bg-black' },
+  { label: 'Newsletter', href: '/brand-kit/04-social/newsletter-header.svg', bg: 'bg-parchment' },
+  { label: 'Deck Title', href: '/brand-kit/09-templates/presentation-title.svg', bg: 'bg-black' },
+  { label: 'Source Stamp', href: '/brand-kit/09-templates/source-stamp.svg', bg: 'bg-parchment' },
+  { label: 'Do / Don\'t', href: '/brand-kit/07-docs/brand-do-dont.svg', bg: 'bg-parchment' },
 ]
 
 const TOKEN_SWATCHES = [
@@ -356,6 +364,22 @@ export default function AdminBrandKit() {
           >
             Brand voice →
           </a>
+          <a
+            href="/brand-kit/07-docs/CHANGELOG.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Changelog →
+          </a>
+          <a
+            href="/brand-kit/07-docs/brand-do-dont.svg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center font-sans text-xs text-white/50 hover:text-crimson"
+          >
+            Logo do/don&apos;t →
+          </a>
         </div>
       </section>
 
@@ -380,6 +404,8 @@ export default function AdminBrandKit() {
                 ['LinkedIn', '/brand-kit/01-logos/logo-mark-512.png', '/brand-kit/04-social/social-banner-linkedin.svg'],
                 ['Facebook', '/brand-kit/04-social/social-profile-400.png', '/brand-kit/04-social/social-banner-facebook.svg'],
                 ['YouTube', '/brand-kit/02-icons/app-icon-512.png', '/brand-kit/04-social/social-banner-youtube.svg'],
+                ['Podcast', '/brand-kit/04-social/podcast-cover.png', '/brand-kit/04-social/podcast-cover.svg'],
+                ['Newsletter', '/brand-kit/01-logos/logo-mark-512.png', '/brand-kit/04-social/newsletter-header.svg'],
               ].map(row => (
                 <tr key={row[0]} className="border-b border-white/5">
                   <td className="px-2 py-2 font-semibold text-white/90">{row[0]}</td>

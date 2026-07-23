@@ -1,7 +1,7 @@
 {
-  "version": "2.5.0",
+  "version": "2.6.0",
   "name": "Veritas Worldwide Ultimate Brand Kit",
-  "generatedAt": "2026-07-23T07:00:14.664Z",
+  "generatedAt": "2026-07-23T07:14:20.257Z",
   "zipPath": "/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip",
   "publicMediaKit": "/media-kit",
   "staticMediaKit": "/brand-kit/09-templates/media-kit.html",
@@ -24,7 +24,7 @@
     {
       "id": "04-social",
       "title": "Social",
-      "description": "Profile, banners, story, highlights, quote cards"
+      "description": "Banners, evidence tiers, podcast, X/IG cards, quote"
     },
     {
       "id": "05-og",
@@ -39,7 +39,7 @@
     {
       "id": "07-docs",
       "title": "Documentation",
-      "description": "Guide, voice, legal, hashtags, contrast"
+      "description": "Guide, voice, legal, do/don't, changelog"
     },
     {
       "id": "08-ai-generated",
@@ -49,7 +49,7 @@
     {
       "id": "09-templates",
       "title": "Templates",
-      "description": "Letterhead, signature, press, business card, media kit"
+      "description": "Letterhead, press, deck title, source stamp"
     }
   ],
   "downloads": [
@@ -111,6 +111,46 @@
       "href": "/brand-kit/04-social/ig-carousel-1.svg"
     },
     {
+      "label": "X post card (SVG)",
+      "href": "/brand-kit/04-social/x-post-card.svg"
+    },
+    {
+      "label": "Evidence tier: Verified",
+      "href": "/brand-kit/04-social/evidence-tier-verified.svg"
+    },
+    {
+      "label": "Evidence tier: Documented",
+      "href": "/brand-kit/04-social/evidence-tier-documented.svg"
+    },
+    {
+      "label": "Evidence tier: Contested",
+      "href": "/brand-kit/04-social/evidence-tier-contested.svg"
+    },
+    {
+      "label": "Evidence tier: Unverified",
+      "href": "/brand-kit/04-social/evidence-tier-unverified.svg"
+    },
+    {
+      "label": "Podcast cover (PNG)",
+      "href": "/brand-kit/04-social/podcast-cover.png"
+    },
+    {
+      "label": "Newsletter header",
+      "href": "/brand-kit/04-social/newsletter-header.svg"
+    },
+    {
+      "label": "Presentation title slide",
+      "href": "/brand-kit/09-templates/presentation-title.svg"
+    },
+    {
+      "label": "Source attribution stamp",
+      "href": "/brand-kit/09-templates/source-stamp.svg"
+    },
+    {
+      "label": "Brand do/don't sheet",
+      "href": "/brand-kit/07-docs/brand-do-dont.svg"
+    },
+    {
       "label": "Social asset matrix",
       "href": "/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md"
     },
@@ -147,6 +187,10 @@
       "href": "/brand-kit/07-docs/BRAND-VOICE.md"
     },
     {
+      "label": "Changelog (MD)",
+      "href": "/brand-kit/07-docs/CHANGELOG.md"
+    },
+    {
       "label": "Hashtags (MD)",
       "href": "/brand-kit/07-docs/HASHTAGS.md"
     },
@@ -166,7 +210,8 @@
   "platformAssets": {
     "x": {
       "profile": "/brand-kit/04-social/social-profile-400.png",
-      "banner": "/brand-kit/04-social/social-banner-x.svg"
+      "banner": "/brand-kit/04-social/social-banner-x.svg",
+      "postCard": "/brand-kit/04-social/x-post-card.svg"
     },
     "instagram": {
       "profile": "/brand-kit/04-social/social-profile-400.png",
@@ -190,8 +235,20 @@
       "profile": "/brand-kit/02-icons/app-icon-512.png",
       "banner": "/brand-kit/04-social/social-banner-youtube.svg",
       "thumbnail": "/brand-kit/04-social/youtube-thumbnail.svg"
+    },
+    "podcast": {
+      "cover": "/brand-kit/04-social/podcast-cover.png"
+    },
+    "newsletter": {
+      "header": "/brand-kit/04-social/newsletter-header.svg"
+    },
+    "evidenceTiers": {
+      "verified": "/brand-kit/04-social/evidence-tier-verified.svg",
+      "documented": "/brand-kit/04-social/evidence-tier-documented.svg",
+      "contested": "/brand-kit/04-social/evidence-tier-contested.svg",
+      "unverified": "/brand-kit/04-social/evidence-tier-unverified.svg"
     }
   },
-  "zipBytes": 1200485,
-  "zipSha256": "6096e48e1410304da318d3a3fc6fff39e958232c5d67147bfc62ab53c9082d09"
+  "zipBytes": 1601108,
+  "zipSha256": "760addc9161e6a146d1c804f9b7d1599a515fbc2160601e74100ac21f4674510"
 }

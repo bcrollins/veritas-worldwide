@@ -13,6 +13,11 @@ All paths are relative to `https://veritasworldwide.com`.
 | **YouTube** | app-icon / social-profile | `social-banner-youtube.svg` (2560×1440) | @VeritasWorldwide |
 | **TikTok** | social-profile-400.png | N/A | @veritasworldwidepress |
 | **Pinterest** | social-profile | story or OG for pins | veritasworldwide |
+| **Substack / Newsletter** | logo-mark-512 | `newsletter-header.svg` (1200×400) | Weekly dispatch header |
+| **Podcast (Apple/Spotify)** | `podcast-cover.svg` / `.png` (1400×1400) | — | The Record cover art |
+| **X feed posts** | — | `x-post-card.svg` (1600×900) | Shareable documentary cards |
+| **Presentations** | — | `09-templates/presentation-title.svg` (1920×1080) | Deck title slide |
+| **Evidence tier cards** | — | `evidence-tier-*.svg` (1080×1080) | Verified / Documented / Contested / Unverified |
 | **Open Graph / default share** | — | `/og-image.png` + `/brand-kit/05-og/` | Site-wide default |
 
 ## Bios (copy/paste)
