@@ -86,6 +86,16 @@ const surfaces = [
   ['src/components/StickyMembershipBar.tsx', 'hover:bg-crimson-dark'],
   ['src/components/StickyMembershipBar.tsx', 'shrink-0'],
   ['src/components/StickyMembershipBar.tsx', 'veritas_cookie_consent'],
+  ['src/components/StickyMembershipBar.tsx', 'Fund the investigation'],
+  ['src/components/StickyMembershipBar.tsx', 'Memberships start at'],
+  ['src/components/StickyMembershipBar.tsx', 'scrollY > 400'],
+  ['src/components/StickyMembershipBar.tsx', 'passive: true'],
+  ['src/components/StickyMembershipBar.tsx', 'sessionStorage'],
+  ['src/components/StickyMembershipBar.tsx', 'veritas-cookie-consent'],
+  ['src/components/StickyMembershipBar.tsx', 'sticky-bar'],
+  ['src/components/StickyMembershipBar.tsx', 'Dismiss membership bar'],
+  ['src/components/StickyMembershipBar.tsx', '/admin'],
+  ['src/components/StickyMembershipBar.tsx', '/thank-you'],
 ]
 
 for (const [rel, needle] of surfaces) {
