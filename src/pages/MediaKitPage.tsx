@@ -301,6 +301,8 @@ export default function MediaKitPage() {
               { label: 'Media OG', href: '/brand-kit/05-og/og-media-kit.svg', bg: 'bg-parchment' },
               { label: 'Pinterest', href: '/brand-kit/04-social/pinterest-pin.svg', bg: 'bg-obsidian' },
               { label: 'TikTok', href: '/brand-kit/04-social/tiktok-cover.svg', bg: 'bg-obsidian' },
+              { label: 'Reddit', href: '/brand-kit/04-social/reddit-banner.svg', bg: 'bg-obsidian' },
+              { label: 'Reels', href: '/brand-kit/04-social/reels-safe-zone.svg', bg: 'bg-obsidian' },
             ].map(a => (
               <a
                 key={a.href}
