@@ -277,6 +277,15 @@ const searchPageSeo = read('src/pages/SearchPage.tsx')
 assert(searchPageSeo.includes('breadcrumbJsonLd'), 'Search page must emit breadcrumbs even when noindex')
 assert(searchPageSeo.includes("robots: 'noindex, follow'"), 'Search page must remain noindex')
 
+// Speakable schema selectors must exist in ChapterPage DOM (voice / Google Assistant).
+const chapterDom = read('src/pages/ChapterPage.tsx')
+assert(chapterDom.includes('chapter-subtitle'), 'ChapterPage must expose .chapter-subtitle for speakable schema')
+assert(chapterDom.includes('data-speakable="lede"'), 'ChapterPage lede must be data-speakable for voice SEO')
+assert(
+  prerender.includes("route === '/institute/methodology'") && prerender.includes('How does Veritas Institute choose topics?'),
+  'prerender must emit bot-visible FAQ for /institute/methodology',
+)
+
 console.log(
   '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, image sitemap floors green',
 )

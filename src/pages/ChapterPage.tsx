@@ -1009,13 +1009,16 @@ export default function ChapterPage() {
             </span>
           </div>
 
-          {/* Title */}
+          {/* Title — speakable cssSelector: h1 (chapterJsonLd SpeakableSpecification) */}
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-ink leading-[1.05] mb-5">
             {chapter.title}
           </h1>
 
-          {/* Subtitle */}
-          <p className="font-body text-xl md:text-2xl text-ink-muted italic leading-relaxed mb-6 max-w-3xl">
+          {/* Subtitle — speakable .chapter-subtitle + data-speakable="lede" */}
+          <p
+            className="chapter-subtitle font-body text-xl md:text-2xl text-ink-muted italic leading-relaxed mb-6 max-w-3xl"
+            data-speakable="lede"
+          >
             {chapter.subtitle}
           </p>
 

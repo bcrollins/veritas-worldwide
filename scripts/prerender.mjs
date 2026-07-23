@@ -2632,6 +2632,45 @@ function buildStaticPageJsonLd(page, route, modifiedTime) {
         ...basePage,
         '@type': 'AboutPage',
       },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Record', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Veritas Institute', item: `${SITE_URL}/institute` },
+          { '@type': 'ListItem', position: 3, name: 'Methodology', item: url },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'How does Veritas Institute choose topics?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Topics start from durable public need—household failures, roadside failures, emergency basics, repair literacy, and trade pathways with clear real-world use—then anchor to public safety, extension, licensing, and labor guidance.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is Institute content the same as DIY entertainment?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'No. High-stakes medical, electrical, gas, structural, and legal matters are never presented as casual DIY. The fastest answer still has to be a defensible, source-backed answer.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Where do Institute sources come from?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Public safety agencies, extension systems, licensing boards, manufacturers, utilities, labor guidance, and accredited training routes.',
+            },
+          },
+        ],
+      },
     ]
   }
 
