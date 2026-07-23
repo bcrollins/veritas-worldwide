@@ -2270,4 +2270,16 @@ assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'densify compl
 assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'densify complete Terms Membership')
 
 
+
+// RelatedHubs platform boil complete pure green final
+assert(surfaces.length >= 102, `boil complete surfaces ${surfaces.length}`)
+assert(read('src/components/RelatedHubs.tsx').includes('PRIMARY_RELATED_HUBS'), 'boil PRIMARY')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'boil emphasize')
+assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'boil soft-404')
+assert(read('src/pages/AccessibilityPage.tsx').includes('/membership'), 'boil A11Y Membership')
+assert(read('src/pages/PrivacyPage.tsx').includes('/membership'), 'boil Privacy Membership')
+assert(read('src/pages/TermsPage.tsx').includes('/membership'), 'boil Terms Membership')
+assert(read('src/pages/ComprehensiveProfilePage.tsx').includes('/israel-dossier'), 'boil OSINT Dossiers')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
