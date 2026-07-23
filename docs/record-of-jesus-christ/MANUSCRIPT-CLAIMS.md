@@ -1,9 +1,9 @@
 # Manuscript Claims Export — Record of Jesus Christ
 
-**Generated:** 2026-07-23T09:54:18.892Z  
+**Generated:** 2026-07-23T09:57:07.159Z  
 **Publisher:** Veritas Worldwide  
-**Claim count:** 318  
-**Tier histogram:** `{"circumstantial": 15, "contested": 32, "interpretive": 31, "literary_theological": 3, "speculative": 2, "verified": 113, "well_attested": 122}`
+**Claim count:** 327  
+**Tier histogram:** `{"circumstantial": 16, "contested": 33, "interpretive": 32, "literary_theological": 3, "speculative": 2, "verified": 117, "well_attested": 124}`
 
 Entity-only attribution. Live on veritasworldwide.com.
 
@@ -32,6 +32,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ane-lachish-letters` | verified | proof_grade_data | The Lachish ostraca (letters) are late-Iron-Age Hebrew administrative/military correspondence relevant to Judah’s final decades before the Babylonian destruction. |
 | `ane-lachish-reliefs` | verified | proof_grade_data | Sennacherib’s Lachish reliefs (British Museum) depict the 701 BCE siege visually, complementing annals and biblical narratives. |
 | `ane-merneptah` | verified | proof_grade_data | The Merneptah Stele (c. 1208 BCE) contains the earliest known extra-biblical reference to “Israel” as a people in Canaan. |
+| `ane-merneptah-israel` | verified | proof_grade_data | The Merneptah Stele (c. 1208 BCE) contains the earliest widely accepted extra-biblical mention of “Israel” as a people in Canaan. |
 | `ane-mesha` | verified | proof_grade_data | The Mesha Stele (c. 840 BCE) names Omri of Israel, Yahweh, and Moabite campaigns paralleling 2 Kings 3. |
 | `ane-moabite-stone-context` | verified | proof_grade_data | The Mesha Stele (Moabite Stone) remains a primary control for Omride-period geopolitics and Yahwistic onomastics in Transjordan. |
 | `ane-sennacherib` | verified | proof_grade_data | Sennacherib’s annals (Taylor Prism / related prisms) describe the 701 BCE campaign against Judah and Hezekiah’s tribute without claiming Jerusalem’s capture. |
@@ -55,6 +56,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `arch-hippos-sussita` | verified | proof_grade_data | Hippos-Sussita (Decapolis) excavations illuminate Greco-Roman urbanism east of the Sea of Galilee relevant to Gospel geographic horizons. |
 | `arch-james-ossuary` | contested | debate | The so-called James ossuary inscription (“James son of Joseph brother of Jesus”) remains contested regarding authenticity of the brother phrase and provenance. |
 | `arch-jericho` | contested | debate | Jericho’s Late Bronze destruction layers and relation to a conquest narrative remain a classic contested case in biblical archaeology. |
+| `arch-jerusalem-burn-layer-70` | verified | proof_grade_data | Burn layers and collapse debris in Second Temple Jerusalem strata align with the 70 CE destruction horizon across multiple excavation areas. |
 | `arch-jerusalem-destruction-layers` | verified | proof_grade_data | Destruction layers and burn evidence in Jerusalem’s Upper City and related loci align with the 70 CE Roman destruction horizon. |
 | `arch-jerusalem-pilgrim-road` | verified | proof_grade_data | The Stepped Street / pilgrim road from the Pool of Siloam toward the Temple Mount is excavated and dated to the late Second Temple period. |
 | `arch-kursi` | interpretive | tradition | Kursi (traditional Gergesa/Gadara region) has a Byzantine monastery commemorating the swine miracle tradition — reception archaeology, not first-century proof of the miracle. |
@@ -94,6 +96,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `cosmo-flatness` | verified | science_model | Spatial curvature is consistent with flat geometry (Ω_k ≈ 0) within ΛCDM fits to CMB and BAO data. |
 | `cosmo-hubble-tension` | contested | science_model | The Hubble tension denotes a statistically significant discrepancy between early-universe (CMB-inferred) and some late-universe local H₀ measurements. |
 | `cosmo-inflation-status` | well_attested | science_model | Cosmic inflation is the leading early-universe paradigm for flatness and horizon problems; direct detection of primordial B-mode polarization remains an active observational goal. |
+| `cosmo-lambda-equation` | contested | science_model | Dark energy is commonly parameterized with equation-of-state w ≈ −1 (cosmological constant-like); deviations are constrained but not fully excluded by current surveys. |
 | `cosmo-matter-energy` | well_attested | science_model | Planck baseline ΛCDM reports cold dark matter and dark energy as dominant density components of the present universe. |
 | `cosmo-matter-power` | verified | science_model | The matter power spectrum from galaxy surveys and Lyman-α forests constrains structure growth consistent with cold dark matter frameworks at large scales. |
 | `cosmo-neutrino-bbn` | verified | science_model | Standard BBN and CMB analyses constrain the effective number of neutrino species (N_eff) near the Standard Model expectation. |
@@ -119,6 +122,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `ec-gospel-harmony` | well_attested | attested_report | Tatian’s Diatessaron (late 2nd c.) harmonized the four Gospels into a single narrative widely used in Syriac Christianity — evidence of early fourfold Gospel prestige and of textual fluidity in use. |
 | `ec-gospel-thomas` | contested | debate | The Gospel of Thomas (Nag Hammadi) is a sayings gospel whose dating and dependence on canonical Gospels are contested. |
 | `ec-ignatius` | well_attested | attested_report | Ignatius of Antioch’s letters (early 2nd c., authenticity of middle recension majority) show monepiscopacy advocacy and high Christological language in transit to martyrdom. |
+| `ec-ignatius-eucharist` | well_attested | attested_report | Ignatius emphasizes eucharistic unity and episcopal authority in letters en route to Rome — early 2nd-c. church order evidence. |
 | `ec-ignatius-letters` | well_attested | attested_report | Ignatius of Antioch’s letters (early 2nd c., middle recension) document episcopal structure and early christological confessions en route to martyrdom. |
 | `ec-irenaeus` | verified | proof_grade_data | Irenaeus (c. 180 CE) argues for a fourfold Gospel (Matthew, Mark, Luke, John) against alternative gospel usages. |
 | `ec-justin-apology` | well_attested | attested_report | Justin Martyr’s First Apology (mid-2nd c.) describes Christian worship, “memoirs of the apostles,” and defends Christians before a Roman audience. |
@@ -173,6 +177,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `hj-magi-star` | literary_theological | tradition | Magi and star narratives in Matthew 2 are literary-theological traditions; astronomical “explanations” are speculative correlations, not historical proof. |
 | `hj-meal-practice` | well_attested | reconstruction | Shared meals / table fellowship appear as a distinctive social practice in Synoptic traditions and are widely treated as historically characteristic of Jesus’ movement. |
 | `hj-miracles-method` | interpretive | reconstruction | Miracle narratives are not historically “verified” under naturalistic historical method; historians can study reports, meanings, and social effects of wonder-traditions. |
+| `hj-multiple-attestation-crucifixion` | verified | attested_report | Jesus’ crucifixion is multiply attested in Christian sources and referenced by Tacitus, forming a high-confidence historical core event. |
 | `hj-parables` | well_attested | reconstruction | Parables form a characteristic teaching form in the Synoptic tradition and are widely treated as a historically distinctive feature of Jesus’ public speech. |
 | `hj-pauline-chronology` | contested | debate | Pauline absolute chronology is reconstructed from Acts, the letters, and external anchors (Gallio inscription at Delphi); competing schemes (Ramsay, Knox, Hyldahl, et al.) differ by several years. |
 | `hj-peter-rome` | circumstantial | reconstruction | Peter’s presence and martyrdom in Rome are early traditions (1 Clement; later Acts of Peter) with varying historical confidence; New Testament itself does not narrate a Roman martyrdom. |
@@ -190,6 +195,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `hj-titles` | contested | debate | Titles applied to Jesus (Messiah/Christ, Son of Man, Son of God, Lord) have layered historical and literary-theological histories; none should be treated as a single unproblematic first-century label without analysis. |
 | `hj-women-movement` | well_attested | attested_report | Early Christian sources name women as patrons, witnesses, and coworkers (e.g., Mary Magdalene traditions; Romans 16 co-workers); social roles are historically reconstructable within limits. |
 | `mod-contextual-credibility` | interpretive | reconstruction | Contextual credibility / historical plausibility criteria ask whether a tradition fits first-century Jewish Palestine — necessary but not sufficient for authenticity. |
+| `mod-corpus-not-creed` | interpretive | reconstruction | This Record is an evidentiary index, not a confession of faith; tier labels and proofVsConcept flags are designed to block creed-as-history conflation. |
 | `mod-criteria-coherence-limits` | interpretive | reconstruction | Coherence criteria risk circularity: they test sayings against a reconstructed “core Jesus” that itself depends on prior authentications. |
 | `mod-criteria-critique` | interpretive | reconstruction | Classical criteria of authenticity (embarrassment, dissimilarity, multiple attestation) are historiographical tools with known biases; recent memory and social approaches revise their use. |
 | `mod-criteria-embarrassment` | interpretive | reconstruction | The criterion of embarrassment is a heuristic, not a proof algorithm; it can be misapplied when later communities reframe “embarrassing” material. |
@@ -235,6 +241,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nc-lucian-peregrinus` | well_attested | attested_report | Lucian of Samosata (2nd c.) satirizes Christians in The Passing of Peregrinus, treating Christ as a crucified “sophist” founder of a cult. |
 | `nc-mara` | circumstantial | reconstruction | The Syriac letter of Mara bar Serapion mentions a “wise king” executed by the Jews; identification with Jesus is possible but not certain. |
 | `nc-mara-bar-serapion` | circumstantial | attested_report | The Mara bar Serapion letter (Syriac; date debated, often 1st–3rd c.) may allude to a “wise king” of the Jews executed by his people — identification with Jesus is uncertain. |
+| `nc-mara-serapion-limits` | circumstantial | attested_report | Mara bar Serapion’s “wise king” remains an uncertain possible allusion; chronological and referent ambiguity prevent strong HJ use. |
 | `nc-marcus-aurelius-christians` | circumstantial | attested_report | Marcus Aurelius (Meditations) and second-century elite literature occasionally notice Christians as a social type; such notices are thin and polemical. |
 | `nc-martial-juvenes` | well_attested | attested_report | No contemporary Roman historian from Jesus’ lifetime mentions him; the earliest non-Christian literary controls (Josephus, Tacitus, Pliny) are decades later. |
 | `nc-pliny` | verified | proof_grade_data | Pliny the Younger, Epistles 10.96–97, describes early second-century Christian worship practices in Bithynia-Pontus and imperial policy under Trajan. |
@@ -259,6 +266,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `nt-comma-johanneum` | well_attested | proof_grade_data | The Comma Johanneum (1 John 5:7–8 Trinitarian expansion in some later Latin/Textus Receptus traditions) is absent from the earliest Greek manuscript tradition and is treated as secondary in modern critical editions. |
 | `nt-continuous-text-vs-lectionary` | well_attested | proof_grade_data | Continuous-text manuscripts and lectionaries serve different liturgical and scholarly roles; critical editions weight continuous early witnesses more heavily for initial text. |
 | `nt-correctors-hands` | verified | proof_grade_data | Corrector hands in major codices (ℵ B A) document layered revision of manuscripts over time, crucial for stemmatic and CBGM analyses. |
+| `nt-ecm-catholic-epistles` | verified | proof_grade_data | The ECM of the Catholic Epistles pioneered CBGM application at scale and revised selected NA readings based on coherence analysis. |
 | `nt-ecm-method` | verified | proof_grade_data | The Editio Critica Maior (ECM) and the Coherence-Based Genealogical Method (CBGM) model manuscript relationships as a guided stemmatic network rather than a simple bipartite Alexandrian/Byzantine tree. |
 | `nt-ending-mark` | well_attested | proof_grade_data | The longer ending of Mark (16:9–20) is absent from the earliest major Greek witnesses (ℵ B) and is treated in critical editions as secondary, while shorter alternative endings also exist. |
 | `nt-eusebius-ch` | well_attested | attested_report | Eusebius’s Church History is an indispensable but tendentious fourth-century source for earlier Christian literature and martyrdoms; source-critical caution is mandatory. |
@@ -307,6 +315,7 @@ Entity-only attribution. Live on veritasworldwide.com.
 | `st-herod-great-death` | contested | debate | Herod the Great’s death is commonly dated 4 BCE (with minority 1 BCE arguments), framing the terminus for Matthew’s birth narrative chronology. |
 | `st-herod-temple` | verified | proof_grade_data | Herod’s expansion of the Jerusalem Temple Mount is archaeologically and literarily documented (Josephus; Western Wall / Temple Mount retaining architecture). |
 | `st-herod-temple-expansion` | verified | proof_grade_data | Herod’s Temple Mount expansion created a massive platform whose retaining architecture remains archaeologically visible (Western Wall, etc.). |
+| `st-high-priest-politics` | well_attested | attested_report | High-priestly appointment and deposition under Herodian and Roman authorities show the Temple leadership’s political entanglement with imperial power. |
 | `st-isaiah-stability` | well_attested | attested_report | Comparison of 1QIsaᵃ (c. 2nd–1st century BCE) with the medieval Masoretic Text shows high overall agreement with mostly orthographic and minor variants. |
 | `st-josephus-corpus` | verified | proof_grade_data | Flavius Josephus (late first century CE) is a principal non-Christian Jewish historian for Herodian and early Roman Judea. |
 | `st-lxx-textual` | verified | proof_grade_data | The Septuagint often preserves readings that differ from the medieval Masoretic Text; some align with Qumran Hebrew witnesses. |
