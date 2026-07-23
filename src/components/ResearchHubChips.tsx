@@ -42,7 +42,7 @@ export default function ResearchHubChips({ excludePath, className = '' }: Resear
             key={chip.to}
             to={chip.to}
             data-testid={`research-chip-${chip.to.replace(/\//g, '').replace(/^-/, '') || 'root'}`}
-            className={`inline-flex min-h-[44px] items-center rounded-full border px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold tracking-wide transition-colors ${
+            className={`inline-flex min-h-[44px] items-center rounded-full border px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2 ${
               active
                 ? 'border-crimson bg-crimson text-white'
                 : 'border-border bg-surface text-ink-muted hover:border-crimson/50 hover:text-crimson'
