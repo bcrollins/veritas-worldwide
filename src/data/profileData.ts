@@ -5383,8 +5383,16 @@ export const PROFILES: PowerProfile[] = [
     state: 'KY',
     photoUrl: getProfilePhoto('rand-paul'),
     summary:
-      'Kentucky Republican and leading Senate non-interventionist. Frequent NO vote or conditionality advocate on large foreign-aid packages including Israel-related supplementals — a documented counterweight to bipartisan unconditional-aid orthodoxy. Primary: Senate roll calls, OpenSecrets, official statements. Included for full-spectrum enablement analysis (opposition votes are also part of the public record).',
-    tags: ['Senator', 'Non-Interventionist', 'Kentucky', 'Republican', 'Aid Conditionality', 'Foreign Aid Skeptic'],
+      'Kentucky Republican and leading Senate non-interventionist. Frequent NO vote or conditionality advocate on large foreign-aid packages including Israel-related supplementals — a documented counterweight to bipartisan unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact False on Jan 2022 campaign ad claiming no one hospitalized for omicron (Houston Methodist + UKHSA studies documented hospitalizations before ad). Primary: Senate roll calls, OpenSecrets, official statements, PolitiFact. Included for full-spectrum enablement analysis (opposition votes are also part of the public record).',
+    tags: [
+      'Senator',
+      'Non-Interventionist',
+      'Kentucky',
+      'Republican',
+      'Aid Conditionality',
+      'Foreign Aid Skeptic',
+      'Integrity Docket',
+    ],
     career: [
       'Ophthalmologist (public bio)',
       '2011– — U.S. Senate',
@@ -5440,10 +5448,42 @@ export const PROFILES: PowerProfile[] = [
         tier: 'verified',
         date: '2011–2024',
       },
+      {
+        claim:
+          'Integrity docket: Jan 2022 reelection ad claim “no one has been hospitalized for” omicron rated False (pre-ad studies documented hundreds of hospitalizations); campaign pulled ad.',
+        source: 'PolitiFact False; Houston Methodist medRxiv + UKHSA technical briefing',
+        url: 'https://www.politifact.com/factchecks/2022/jan/07/rand-paul/sen-rand-pauls-ad-was-wrong-claiming-there-are-no-/',
+        tier: 'verified',
+        date: '2022',
+      },
+    ],
+    documentedFalsehoods: [
+      {
+        id: 'paul-no-omicron-hospitalizations-2022',
+        statement: '“No one has been hospitalized for” the omicron variant of COVID-19.',
+        saidAt: 'January 4, 2022',
+        context: 'Facebook reelection fundraising ad minimizing omicron risk while soliciting contributions for a third Senate term.',
+        whyFalse:
+          'PolitiFact rated False. Studies published before the ad ran documented omicron hospitalizations — e.g. Houston Methodist analysis (15% of omicron patients hospitalized as of late Dec 2021) and UK Health Security Agency briefing with hundreds of omicron hospital admissions. Milder relative to delta is not zero hospitalizations. Campaign pulled the ad.',
+        correction:
+          'Omicron caused hospitalizations before and during the ad’s run; absolute “no one” language was false even if early severity looked lower than delta.',
+        statementSource: 'Rand Paul for U.S. Senate Facebook ad (Meta Ad Library ID 301711262002565), Jan 4, 2022',
+        statementUrl:
+          'https://www.facebook.com/ads/library/?active_status=all&ad_type=political_and_issue_ads&country=US&id=301711262002565&view_all_page_id=54172246106&search_type=page&media_type=all',
+        debunkSource: 'PolitiFact — False (Jan 7, 2022); Houston Methodist medRxiv study + UKHSA Omicron severity briefing',
+        debunkUrl:
+          'https://www.politifact.com/factchecks/2022/jan/07/rand-paul/sen-rand-pauls-ad-was-wrong-claiming-there-are-no-/',
+        severity: 'material',
+        tier: 'verified',
+      },
     ],
     websites: [
       { label: 'Official Senate site', url: 'https://www.paul.senate.gov' },
       { label: 'OpenSecrets Profile', url: 'https://www.opensecrets.org/members-of-congress/rand-paul/summary?cid=N00030836' },
+      {
+        label: 'PolitiFact — omicron hospitalizations (False)',
+        url: 'https://www.politifact.com/factchecks/2022/jan/07/rand-paul/sen-rand-pauls-ad-was-wrong-claiming-there-are-no-/',
+      },
       { label: 'Ballotpedia', url: 'https://ballotpedia.org/Rand_Paul' },
     ],
   },

@@ -118,6 +118,7 @@ const required = [
   'hakeem-jeffries',
   'elizabeth-warren',
   'jared-kushner',
+  'rand-paul',
 ];
 const scores = {};
 for (const id of required) {
@@ -473,8 +474,20 @@ for (const f of (kushnerP.documentedFalsehoods || []).filter((x) => x.tier === '
   if (f.statementUrl === f.debunkUrl) throw new Error('kushner dual-cite collision: ' + f.id);
 }
 
+// Rand Paul integrity gate
+const randPaul = scores['rand-paul'];
+if (!randPaul || randPaul.n < 1) throw new Error('rand-paul needs ≥1 verified falsehood, got ' + (randPaul?.n ?? 0));
+if (randPaul.score > 90) throw new Error('rand-paul score expected ≤90, got ' + randPaul.score);
+const randPaulP = getProfileBySlug('rand-paul');
+if (!(randPaulP.documentedFalsehoods || []).some((f) => f.id === 'paul-no-omicron-hospitalizations-2022')) {
+  throw new Error('rand-paul missing omicron hospitalizations docket id');
+}
+for (const f of (randPaulP.documentedFalsehoods || []).filter((x) => x.tier === 'verified')) {
+  if (f.statementUrl === f.debunkUrl) throw new Error('rand-paul dual-cite collision: ' + f.id);
+}
+
 const docketCount = PROFILES.filter((p) => p.documentedFalsehoods != null).length;
-if (docketCount < 31) throw new Error('expected ≥31 compiled dockets, got ' + docketCount);
+if (docketCount < 32) throw new Error('expected ≥32 compiled dockets, got ' + docketCount);
 
 console.log(JSON.stringify({ clean: clean.score, demo: demo.score, docketCount, scores }, null, 2));
 `,

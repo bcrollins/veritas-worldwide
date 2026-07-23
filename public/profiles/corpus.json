@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T07:42:57.470Z",
+  "generatedAt": "2026-07-23T07:45:48.364Z",
   "count": 96,
   "profiles": [
     {
@@ -890,7 +890,7 @@
       "name": "Rand Paul",
       "title": "U.S. Senator (R-KY)",
       "category": "politician",
-      "summary": "Kentucky Republican and leading Senate non-interventionist. Frequent NO vote or conditionality advocate on large foreign-aid packages including Israel-related supplementals — a documented counterweight to bipartisan unconditional-aid orthodoxy. Primary: Senate roll calls, OpenSecrets, official statements. Included for full-spectrum enablement analysis (opposition votes are also part of the public record).",
+      "summary": "Kentucky Republican and leading Senate non-interventionist. Frequent NO vote or conditionality advocate on large foreign-aid packages including Israel-related supplementals — a documented counterweight to bipartisan unconditional-aid orthodoxy. Integrity docket: dual-cited PolitiFact False on Jan 2022 campaign ad claiming no one hospitalized for omicron (Houston Methodist + UKHSA studies documented hospitalizations before ad). Primary: Senate roll calls, OpenSecrets, official statements, PolitiFact. Included for full-spectrum enablement analysis (opposition votes are also part of the public record).",
       "photo": "/profiles/rand-paul.jpg",
       "url": "https://veritasworldwide.com/profile/rand-paul",
       "bioguideId": "P000603",
@@ -900,11 +900,12 @@
         "Kentucky",
         "Republican",
         "Aid Conditionality",
-        "Foreign Aid Skeptic"
+        "Foreign Aid Skeptic",
+        "Integrity Docket"
       ],
-      "integrityScore": null,
-      "integrityFalsehoods": 0,
-      "integrityHasDocket": false
+      "integrityScore": 85,
+      "integrityFalsehoods": 1,
+      "integrityHasDocket": true
     },
     {
       "id": "ilhan-omar",
