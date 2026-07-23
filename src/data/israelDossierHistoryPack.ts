@@ -3924,6 +3924,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-greenhouses-irrigation-destruction-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Greenhouses & Irrigation Systems Destruction Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (greenhouse cohort)',
+    location: 'Gaza Strip greenhouse / irrigation zones',
+    summary:
+      'FAO and multi-source satellite reporting document widespread destruction of greenhouses and irrigation systems that had been a primary source of vegetables for civilians — a production-capacity collapse distinct from open cropland and flour-mill cards. Pattern card for protected agricultural infrastructure destruction.',
+    evidence:
+      'FAO greenhouse/irrigation assessments and multi-source satellite reporting establish multi-source protected-agriculture collapse. Exact hectare counts evolve; multi-source greenhouse system destruction is the claim.',
+    sources: [
+      { label: 'FAO agricultural infrastructure materials', url: 'https://www.fao.org' },
+      { label: 'UNOSAT / multi-source satellite analyses', url: 'https://unosat.org' },
+      { label: 'OCHA food-security materials', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'FAO public materials', url: 'https://www.fao.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -5804,6 +5831,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['media', 'press', 'civilians', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-greenhouses-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Greenhouses & Irrigation Destruction Pattern',
+    description: 'FAO multi-source documentation of destroyed greenhouses and irrigation systems collapsing vegetable production.',
+    source: 'FAO / UNOSAT / OCHA',
+    sourceUrl: 'https://www.fao.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-greenhouses-irrigation-destruction-pattern-2023-2025',
+      'gaza-agricultural-land-destruction-pattern-2023-2025',
+      'gaza-livestock-poultry-destruction-pattern-2023-2025',
+    ],
+    tags: ['agriculture', 'greenhouses', 'food', 'children', 'gaza'],
+  },
+
 
 
 
