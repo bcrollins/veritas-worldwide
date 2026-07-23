@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T07:33:44.356Z",
+  "generatedAt": "2026-07-23T07:40:28.125Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 82,
-    "timelineEvents": 70,
+    "incidents": 83,
+    "timelineEvents": 71,
     "actors": 47,
     "moneyTrailNodes": 26,
-    "historicalWarCrimesPack": 68,
+    "historicalWarCrimesPack": 69,
     "legalCases": 16,
     "lobbyingRecords": 4,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 22
+      "post-oct7": 23
     },
     "incidentsByTier": {
-      "verified": 80,
+      "verified": 81,
       "circumstantial": 2
     },
-    "childrenTagged": 70,
-    "civiliansTagged": 80,
+    "childrenTagged": 71,
+    "civiliansTagged": 81,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3173,6 +3173,25 @@
         "children",
         "rafah",
         "displacement"
+      ]
+    },
+    {
+      "id": "tl-gaza-us-aid-pier-2024",
+      "year": "2024",
+      "era": "post-oct7",
+      "title": "U.S. Gaza Humanitarian Pier — Throughput Failure",
+      "description": "High-visibility U.S. temporary pier delivers limited tonnage before suspensions; multi-source operational failure record.",
+      "source": "DoD / multi-outlet",
+      "sourceUrl": "https://www.defense.gov",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "gaza-us-aid-pier-2024",
+        "starvation-aid-blockade"
+      ],
+      "tags": [
+        "aid",
+        "humanitarian",
+        "united-states"
       ]
     }
   ],
@@ -6577,6 +6596,50 @@
       "tier": "verified",
       "casualties": {
         "killed": 45
+      }
+    },
+    {
+      "id": "gaza-us-aid-pier-2024",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "joe-biden",
+        "antony-blinken"
+      ],
+      "relatedMoneyNodeIds": [
+        "oct7-emergency-arms-surge"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "U.S. Gaza Humanitarian Pier Failure (2024)",
+      "date": "May–July 2024",
+      "location": "Gaza Mediterranean coast",
+      "summary": "The U.S.-built temporary Gaza humanitarian pier delivered limited aid tonnage relative to need before storm damage, security incidents, and operational failures forced repeated suspensions. Multi-source reporting documents the gap between announced capacity and actual sustained deliveries during peak famine risk.",
+      "evidence": "DoD/CENTCOM public briefings, GAO-style oversight reporting in press, and multi-outlet investigations establish low realized throughput versus announced goals. The claim is operational failure of a high-visibility aid-delivery mechanism — not a kinetic massacre card.",
+      "sources": [
+        {
+          "label": "DoD / CENTCOM pier briefings (public record)",
+          "url": "https://www.defense.gov"
+        },
+        {
+          "label": "Multi-outlet pier throughput investigations",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "UN aid access reporting context",
+          "url": "https://www.un.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "DoD public materials",
+          "url": "https://www.defense.gov"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
       }
     },
     {

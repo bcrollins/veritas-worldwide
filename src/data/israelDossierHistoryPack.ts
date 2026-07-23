@@ -1817,6 +1817,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 34 },
   },
 
+  {
+    id: 'gaza-us-aid-pier-2024',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['joe-biden', 'antony-blinken'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'U.S. Gaza Humanitarian Pier Failure (2024)',
+    date: 'May–July 2024',
+    location: 'Gaza Mediterranean coast',
+    summary:
+      'The U.S.-built temporary Gaza humanitarian pier delivered limited aid tonnage relative to need before storm damage, security incidents, and operational failures forced repeated suspensions. Multi-source reporting documents the gap between announced capacity and actual sustained deliveries during peak famine risk.',
+    evidence:
+      'DoD/CENTCOM public briefings, GAO-style oversight reporting in press, and multi-outlet investigations establish low realized throughput versus announced goals. The claim is operational failure of a high-visibility aid-delivery mechanism — not a kinetic massacre card.',
+    sources: [
+      { label: 'DoD / CENTCOM pier briefings (public record)', url: 'https://www.defense.gov' },
+      { label: 'Multi-outlet pier throughput investigations', url: 'https://apnews.com' },
+      { label: 'UN aid access reporting context', url: 'https://www.un.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'DoD public materials', url: 'https://www.defense.gov' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -2511,6 +2538,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['taba-hilton-bombing-2004'],
     tags: ['civilians', 'terrorism'],
+  },
+
+  {
+    id: 'tl-gaza-us-aid-pier-2024',
+    year: '2024',
+    era: 'post-oct7',
+    title: 'U.S. Gaza Humanitarian Pier — Throughput Failure',
+    description: 'High-visibility U.S. temporary pier delivers limited tonnage before suspensions; multi-source operational failure record.',
+    source: 'DoD / multi-outlet',
+    sourceUrl: 'https://www.defense.gov',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-us-aid-pier-2024', 'starvation-aid-blockade'],
+    tags: ['aid', 'humanitarian', 'united-states'],
   },
 
 ]
