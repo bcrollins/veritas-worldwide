@@ -38,6 +38,7 @@ const BRAND_ASSETS = {
   mark512: '/brand-kit/01-logos/logo-mark-512.png',
   appIcon: '/brand-kit/02-icons/app-icon-512.png',
   bannerX: '/brand-kit/04-social/social-banner-x.svg',
+  bannerXPng: '/brand-kit/04-social/social-banner-x.png',
   bannerIgStory: '/brand-kit/04-social/story-1080x1920.svg',
   bannerLinkedIn: '/brand-kit/04-social/social-banner-linkedin.svg',
   bannerFacebook: '/brand-kit/04-social/social-banner-facebook.svg',
@@ -48,9 +49,18 @@ const BRAND_ASSETS = {
   ytThumb: '/brand-kit/04-social/youtube-thumbnail.svg',
   linkedInArticle: '/brand-kit/04-social/linkedin-article-header.svg',
   igCarousel1: '/brand-kit/04-social/ig-carousel-1.svg',
+  xPostCard: '/brand-kit/04-social/x-post-card.svg',
+  podcastCover: '/brand-kit/04-social/podcast-cover.png',
+  newsletterHeader: '/brand-kit/04-social/newsletter-header.svg',
+  evidenceVerified: '/brand-kit/04-social/evidence-tier-verified.svg',
+  evidenceDocumented: '/brand-kit/04-social/evidence-tier-documented.svg',
+  evidenceContested: '/brand-kit/04-social/evidence-tier-contested.svg',
+  evidenceUnverified: '/brand-kit/04-social/evidence-tier-unverified.svg',
+  quoteCard: '/brand-kit/04-social/quote-card.svg',
   og: '/og-image.png',
   zip: '/brand-kit/exports/Veritas-Worldwide-Ultimate-Brand-Kit.zip',
   matrix: '/brand-kit/04-social/SOCIAL-ASSET-MATRIX.md',
+  hashtags: '/brand-kit/07-docs/HASHTAGS.md',
 }
 
 const PLATFORM_SETUP: Record<string, string[]> = {
@@ -58,10 +68,12 @@ const PLATFORM_SETUP: Record<string, string[]> = {
     'Create account at x.com/signup',
     'Set handle to @VeritasWorldwide',
     `Upload profile: ${BRAND_ASSETS.profile} (or ${BRAND_ASSETS.profileSvg})`,
-    `Upload banner 1500×500: ${BRAND_ASSETS.bannerX}`,
+    `Upload banner 1500×500: ${BRAND_ASSETS.bannerX} / ${BRAND_ASSETS.bannerXPng}`,
+    `Post cards: ${BRAND_ASSETS.xPostCard} · ${BRAND_ASSETS.quoteCard}`,
+    `Evidence-tier cards: ${BRAND_ASSETS.evidenceVerified} (+ documented/contested/unverified)`,
     'Set bio (medium) + website https://veritasworldwide.com',
     'Pin introductory tweet with /og-image.png card',
-    'Queue 10+ posts; hashtags from /brand-kit/07-docs/HASHTAGS.md',
+    `Queue 10+ posts; hashtags from ${BRAND_ASSETS.hashtags}`,
   ],
   'Instagram': [
     'Create/convert to Professional Account',
@@ -71,9 +83,15 @@ const PLATFORM_SETUP: Record<string, string[]> = {
     `Highlight covers: ${BRAND_ASSETS.highlightChapters}, ${BRAND_ASSETS.highlightSources}, ${BRAND_ASSETS.highlightRecord}`,
     `Story template: ${BRAND_ASSETS.bannerIgStory}`,
     `Carousel slides: ${BRAND_ASSETS.igCarousel1} (+ -2.svg, -3.svg)`,
+    `Evidence-tier feed posts: ${BRAND_ASSETS.evidenceVerified} series`,
     'Post 9-grid launch content; full kit ZIP in admin Brand Kit',
   ],
-  'Threads': ['Download Threads app', 'Login with Instagram account', 'Set bio (short)', 'Post 5+ introduction threads', 'Follow relevant accounts'],
+  'Threads': [
+    'Download Threads app · login with Instagram',
+    'Set bio (short)',
+    `Share quote + evidence cards: ${BRAND_ASSETS.quoteCard}`,
+    'Post 5+ introduction threads',
+  ],
   'LinkedIn': [
     'Create Company Page: Veritas Worldwide Press',
     `Upload logo: ${BRAND_ASSETS.mark512}`,
@@ -108,11 +126,26 @@ const PLATFORM_SETUP: Record<string, string[]> = {
     'Set bio (medium); boards by chapter topic',
     `Pin from OG / story assets: ${BRAND_ASSETS.og}`,
   ],
-  'Reddit': ['Create subreddit r/VeritasWorldwide', 'Set community description (long bio)', 'Add rules (civil discourse, sources required)', 'Create wiki with reading guide', 'Post 5+ discussion threads', 'Enable post flair by chapter'],
-  'Discord': ['Create server: Veritas Worldwide', 'Set up channels: #welcome, #general, #chapter-discussion, #source-submissions, #evidence-review', 'Create roles: Reader, Contributor, Moderator', 'Set up welcome message + rules', 'Create invite link', 'Post in 5+ channels'],
+  'Reddit': [
+    'Create subreddit r/VeritasWorldwide',
+    'Set community description (long bio)',
+    'Add rules (civil discourse, sources required)',
+    'Create wiki with reading guide',
+    `Use evidence-tier flair art: ${BRAND_ASSETS.evidenceVerified}`,
+    'Post 5+ discussion threads',
+  ],
+  'Discord': [
+    'Create server: Veritas Worldwide',
+    'Channels: #welcome, #general, #chapter-discussion, #source-submissions, #evidence-review',
+    'Roles: Reader, Contributor, Moderator',
+    'Welcome message + rules',
+    'Create invite link',
+  ],
   'Substack': [
     'Create publication · subdomain veritasworldwide',
-    `Logo: ${BRAND_ASSETS.mark512} · Cover: ${BRAND_ASSETS.og}`,
+    `Logo: ${BRAND_ASSETS.mark512}`,
+    `Newsletter header: ${BRAND_ASSETS.newsletterHeader}`,
+    `Podcast cover if audio: ${BRAND_ASSETS.podcastCover}`,
     'Set about (long bio); publish 3+ posts',
     'Import email list from HubSpot',
   ],
@@ -166,7 +199,7 @@ export default function AdminSocialHub() {
         <div>
           <p className="font-sans text-[10px] font-bold uppercase tracking-widest text-crimson">Brand assets ready</p>
           <p className="mt-1 font-sans text-xs text-white/50">
-            Profile, banners, highlights, and OG cards ship from the Ultimate Brand Kit. Use exact paths in setup checklists.
+            Profile, banners, evidence-tier cards, podcast cover, and OG assets ship from Brand Kit v2.6. Use exact paths in setup checklists.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -199,9 +232,14 @@ export default function AdminSocialHub() {
         {[
           { label: 'Profile', href: BRAND_ASSETS.profile },
           { label: 'X Banner', href: BRAND_ASSETS.bannerX },
+          { label: 'X Post Card', href: BRAND_ASSETS.xPostCard },
           { label: 'LinkedIn', href: BRAND_ASSETS.bannerLinkedIn },
           { label: 'YouTube', href: BRAND_ASSETS.bannerYouTube },
           { label: 'IG Story', href: BRAND_ASSETS.bannerIgStory },
+          { label: 'Quote Card', href: BRAND_ASSETS.quoteCard },
+          { label: 'Evidence ✓', href: BRAND_ASSETS.evidenceVerified },
+          { label: 'Podcast', href: BRAND_ASSETS.podcastCover },
+          { label: 'Newsletter', href: BRAND_ASSETS.newsletterHeader },
           { label: 'OG Card', href: BRAND_ASSETS.og },
         ].map(a => (
           <a
