@@ -471,3 +471,5 @@ for (const [rel, label] of [
 }
 
 assert(/SLUG_CONTENT_PATH[\s\S]{0,80}\/i/.test(server) || server.includes('/?$/i'), 'SLUG_CONTENT_PATH must be case-insensitive (/i flag)')
+
+assert(server.includes('rawPath') || server.includes("split('?')[0]"), 'slug canonical middleware must inspect raw URL for trailing slashes')
