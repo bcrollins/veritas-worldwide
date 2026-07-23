@@ -405,6 +405,17 @@ const osintIa = fs.readFileSync(path.join(root, 'src/pages/ComprehensiveProfileP
 const osintB = osintIa.match(/const OSINT_HUBS[^=]*= \[([\s\S]*?)\]/)
 assert(osintB && (osintB[1].match(/to:/g) || []).length === 5, 'OSINT_HUBS count 5 IA')
 
+
+// PRIVACY TERMS Membership IA
+const privacyIa = fs.readFileSync(path.join(root, 'src/pages/PrivacyPage.tsx'), 'utf8')
+const privacyBIa = privacyIa.match(/const PRIVACY_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(privacyBIa && (privacyBIa[1].match(/to:/g) || []).length === 5, 'PRIVACY_HUBS count 5 IA')
+assert(privacyBIa[1].includes('/membership'), 'PRIVACY Membership IA')
+const termsIa = fs.readFileSync(path.join(root, 'src/pages/TermsPage.tsx'), 'utf8')
+const termsBIa = termsIa.match(/const TERMS_HUBS[^=]*= \[([\s\S]*?)\]/)
+assert(termsBIa && (termsBIa[1].match(/to:/g) || []).length === 5, 'TERMS_HUBS count 5 IA')
+assert(termsBIa[1].includes('/membership'), 'TERMS Membership IA')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
