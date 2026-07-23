@@ -2979,6 +2979,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'hezbollah-rockets-northern-israel-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['iron-dome'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Hezbollah Rocket & Drone Fire on Northern Israel Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (northern front cohort)',
+    location: 'Northern Israel / Lebanon border communities',
+    summary:
+      'Israeli government casualty and displacement tallies, multi-source press, and UN reporting document sustained Hezbollah rocket, missile, and drone fire into northern Israel after October 7 — killing and wounding civilians, destroying homes, and forcing mass evacuation of border communities. Pattern card for non-state rocket fire against Israeli civilians concurrent with the Gaza war — required for a non-selective civilian-harm record.',
+    evidence:
+      'Israeli Home Front Command/government public tallies, multi-outlet contemporaneous coverage, and UNIFIL/UN reporting establish multi-source cross-border fire and civilian displacement. Exact fatality counts evolve; multi-source sustained civilian-targeting rocket/drone fire from Lebanon is the claim.',
+    sources: [
+      { label: 'Israeli government / Home Front public materials', url: 'https://www.gov.il' },
+      { label: 'Multi-outlet northern Israel rocket coverage', url: 'https://apnews.com' },
+      { label: 'UNIFIL / UN Lebanon context materials', url: 'https://unifil.unmissions.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNIFIL public materials', url: 'https://unifil.unmissions.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4265,6 +4292,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['records', 'displacement', 'civilians', 'children', 'gaza'],
   },
+
+  {
+    id: 'tl-hezbollah-north-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Hezbollah Rocket Fire — Northern Israel Pattern',
+    description: 'Multi-source documentation of sustained rocket/drone fire into northern Israel and mass civilian displacement after October 7.',
+    source: 'Israeli government / multi-outlet / UNIFIL',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'hezbollah-rockets-northern-israel-pattern-2023-2025',
+      'oct7-hamas-attack-2023',
+      'iran-missile-barrage-april-2024',
+    ],
+    tags: ['rockets', 'hezbollah', 'civilians', 'children', 'israel'],
+  },
+
 
 
 

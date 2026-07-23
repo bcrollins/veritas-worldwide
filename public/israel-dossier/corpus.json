@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T08:56:17.215Z",
+  "generatedAt": "2026-07-23T08:57:35.454Z",
   "lastVerified": "2026-07-23",
   "disclaimer": "High-evidence sample with labeled tiers. Not an exhaustive ledger of all war crimes or civilian harm since 1948. Prefer primary sources linked on each row.",
   "counts": {
-    "incidents": 125,
-    "timelineEvents": 113,
+    "incidents": 126,
+    "timelineEvents": 114,
     "actors": 47,
     "moneyTrailNodes": 32,
-    "historicalWarCrimesPack": 111,
+    "historicalWarCrimesPack": 112,
     "legalCases": 20,
     "lobbyingRecords": 7,
     "incidentsByEra": {
@@ -16,14 +16,14 @@
       "1948-1967": 6,
       "occupation-1967-2005": 26,
       "blockade-2007-2023": 25,
-      "post-oct7": 65
+      "post-oct7": 66
     },
     "incidentsByTier": {
-      "verified": 123,
+      "verified": 124,
       "circumstantial": 2
     },
-    "childrenTagged": 102,
-    "civiliansTagged": 123,
+    "childrenTagged": 103,
+    "civiliansTagged": 124,
     "actorsByCategory": {
       "us-executive": 12,
       "us-congress": 28,
@@ -3640,6 +3640,28 @@
         "civilians",
         "gaza",
         "casualties"
+      ]
+    },
+    {
+      "id": "tl-hezbollah-north-2023",
+      "year": "2023",
+      "era": "post-oct7",
+      "title": "Hezbollah Rocket Fire — Northern Israel Pattern",
+      "description": "Multi-source documentation of sustained rocket/drone fire into northern Israel and mass civilian displacement after October 7.",
+      "source": "Israeli government / multi-outlet / UNIFIL",
+      "sourceUrl": "https://www.gov.il",
+      "tier": "verified",
+      "relatedIncidentIds": [
+        "hezbollah-rockets-northern-israel-pattern-2023-2025",
+        "oct7-hamas-attack-2023",
+        "iran-missile-barrage-april-2024"
+      ],
+      "tags": [
+        "rockets",
+        "hezbollah",
+        "civilians",
+        "children",
+        "israel"
       ]
     },
     {
@@ -8398,6 +8420,49 @@
           "type": "document",
           "label": "OCHA public updates",
           "url": "https://www.ochaopt.org"
+        }
+      ],
+      "tier": "verified",
+      "casualties": {
+        "killed": 0
+      }
+    },
+    {
+      "id": "hezbollah-rockets-northern-israel-pattern-2023-2025",
+      "era": "post-oct7",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "relatedProfileIds": [
+        "benjamin-netanyahu"
+      ],
+      "relatedMoneyNodeIds": [
+        "iron-dome"
+      ],
+      "legalStatus": "multi-source-investigation",
+      "title": "Hezbollah Rocket & Drone Fire on Northern Israel Pattern (2023–2025)",
+      "date": "October 2023 – 2025 (northern front cohort)",
+      "location": "Northern Israel / Lebanon border communities",
+      "summary": "Israeli government casualty and displacement tallies, multi-source press, and UN reporting document sustained Hezbollah rocket, missile, and drone fire into northern Israel after October 7 — killing and wounding civilians, destroying homes, and forcing mass evacuation of border communities. Pattern card for non-state rocket fire against Israeli civilians concurrent with the Gaza war — required for a non-selective civilian-harm record.",
+      "evidence": "Israeli Home Front Command/government public tallies, multi-outlet contemporaneous coverage, and UNIFIL/UN reporting establish multi-source cross-border fire and civilian displacement. Exact fatality counts evolve; multi-source sustained civilian-targeting rocket/drone fire from Lebanon is the claim.",
+      "sources": [
+        {
+          "label": "Israeli government / Home Front public materials",
+          "url": "https://www.gov.il"
+        },
+        {
+          "label": "Multi-outlet northern Israel rocket coverage",
+          "url": "https://apnews.com"
+        },
+        {
+          "label": "UNIFIL / UN Lebanon context materials",
+          "url": "https://unifil.unmissions.org"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "UNIFIL public materials",
+          "url": "https://unifil.unmissions.org"
         }
       ],
       "tier": "verified",
