@@ -34,6 +34,10 @@ Allow: /veritas-institute-field-manual.pdf
 Allow: /the-record.pdf
 Allow: /record-of-jesus-christ/record-of-jesus-christ.pdf
 
+# Offline research pack (machine corpora ZIP + SHA-256 manifest)
+Allow: /research-pack.zip
+Allow: /research-pack-manifest.json
+
 # Security disclosure (RFC 9116)
 Allow: /.well-known/security.txt
 Allow: /security.txt
@@ -43,9 +47,11 @@ Allow: /llms.txt
 Allow: /humans.txt
 Allow: /feed.xml
 Allow: /sitemap.xml
+Allow: /evidence-taxonomy.json
 Allow: /profiles/corpus.json
 Allow: /israel-dossier/workbooks/
 Allow: /israel-dossier/corpus.json
+Allow: /israel-dossier/visual-investigations.json
 Allow: /record-of-jesus-christ
 Allow: /record-of-jesus-christ/
 Allow: /record-of-jesus-christ/corpus.json
