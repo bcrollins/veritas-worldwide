@@ -395,7 +395,7 @@ assert(canon.includes('relatedProfileIds'), 'canon missing relatedProfileIds wir
   assert(vi.includes("type: 'video'"), 'VI pack must include video multimedia')
   assert(!/brollins|brandoncrollins|aerolink/i.test(vi), 'VI pack identity leak')
   const cards = (vi.match(/id: 'vi-/g) || []).length
-  assert(cards >= 28, `VI pack should have ≥28 visual cards, got ${cards}`)
+  assert(cards >= 36, `VI pack should have ≥36 visual cards, got ${cards}`)
   const sourceUrls = (vi.match(/url: 'https?:\/\//g) || []).length
   assert(sourceUrls >= cards * 2, `VI dual-cite floor: need ≥2 URLs/card avg, cards=${cards} urls=${sourceUrls}`)
   const expanded = read(files.expanded)

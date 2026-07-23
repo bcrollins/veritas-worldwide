@@ -4,12 +4,12 @@
     "publisher": "Veritas Worldwide",
     "path": "/israel-dossier#visual-investigations",
     "method": "Multi-source video/photo/investigation packages; dual-cite floors; multi-party civilian-harm documentation. Ethnicity is never evidence.",
-    "generatedAt": "2026-07-23T12:08:53.928Z"
+    "generatedAt": "2026-07-23T12:09:33.006Z"
   },
   "counts": {
-    "incidentsWithVideoAndCivilians": 37,
-    "viPackCards": 29,
-    "totalIncidents": 806
+    "incidentsWithVideoAndCivilians": 43,
+    "viPackCards": 36,
+    "totalIncidents": 813
   },
   "incidents": [
     {
@@ -658,7 +658,7 @@
       "location": "Gaza Strip",
       "tier": "verified",
       "targetsCivilians": true,
-      "targetsChildren": false,
+      "targetsChildren": true,
       "sources": [
         {
           "label": "CPJ — Israel-Gaza war journalist casualties",
@@ -671,6 +671,18 @@
         {
           "label": "Al Jazeera / wire journalist-killing packages",
           "url": "https://www.aljazeera.com/tag/gaza/"
+        },
+        {
+          "label": "UNRWA emergency updates",
+          "url": "https://www.unrwa.org/"
+        },
+        {
+          "label": "UN news / SG materials on UN staff deaths",
+          "url": "https://news.un.org/"
+        },
+        {
+          "label": "AP / Reuters UNRWA staff casualty packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ],
       "multimedia": [
@@ -688,6 +700,11 @@
           "type": "photo-essay",
           "label": "Memorial / press-vest photo packages",
           "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "video",
+          "label": "Wire/agency video of UNRWA facility and staff harm",
+          "url": "https://www.unrwa.org/"
         }
       ]
     },
@@ -888,6 +905,206 @@
           "type": "document",
           "label": "ICRC operational statements",
           "url": "https://www.icrc.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-forensic-architecture-medical-infrastructure-2023-2024",
+      "title": "Forensic Architecture — Destruction of Medical Infrastructure (Spatial Analysis)",
+      "date": "2023–2024",
+      "location": "Gaza Strip (hospitals, clinics, ambulances)",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "Forensic Architecture — investigations index",
+          "url": "https://forensic-architecture.org/investigation"
+        },
+        {
+          "label": "WHO — OPT emergency health",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        },
+        {
+          "label": "OHCHR medical personnel protection materials",
+          "url": "https://www.ohchr.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "investigation",
+          "label": "Forensic Architecture spatial investigation packages",
+          "url": "https://forensic-architecture.org/investigation"
+        },
+        {
+          "type": "video",
+          "label": "FA / partner video explainers on medical infrastructure",
+          "url": "https://forensic-architecture.org/investigation"
+        },
+        {
+          "type": "document",
+          "label": "WHO OPT hospital functionality updates",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        }
+      ]
+    },
+    {
+      "id": "vi-israeli-tv-and-channel14-soldier-content-2023-2025",
+      "title": "Israeli Media Amplification of Soldier Trophy Content — Authenticated Circulations",
+      "date": "2023–2025",
+      "location": "Gaza Strip / Israeli media ecosystem",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": false,
+      "sources": [
+        {
+          "label": "B’Tselem video archives",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "Reuters Middle East authentication packages",
+          "url": "https://www.reuters.com/world/middle-east/"
+        },
+        {
+          "label": "Breaking the Silence materials",
+          "url": "https://www.breakingthesilence.org.il/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem authenticated soldier-content bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "investigation",
+          "label": "Wire authentication of unit social posts",
+          "url": "https://www.reuters.com/world/middle-east/"
+        },
+        {
+          "type": "document",
+          "label": "Breaking the Silence testimony archive",
+          "url": "https://www.breakingthesilence.org.il/"
+        }
+      ]
+    },
+    {
+      "id": "vi-north-gaza-evacuation-orders-vs-fire-2023-2024",
+      "title": "Evacuation Orders vs. Fire — Visual Record of Civilians Hit After Displacement Directives",
+      "date": "2023–2024",
+      "location": "Northern and central Gaza displacement routes",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "Al Jazeera Investigations — Gaza packages",
+          "url": "https://www.aljazeera.com/program/investigations/"
+        },
+        {
+          "label": "Airwars Gaza Patterns of Harm",
+          "url": "https://gaza-patterns-harm.airwars.org/"
+        },
+        {
+          "label": "OCHA OPT humanitarian updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "AJ Investigations — displacement-route fire analyses",
+          "url": "https://www.aljazeera.com/program/investigations/"
+        },
+        {
+          "type": "investigation",
+          "label": "Airwars geospatial harm patterns",
+          "url": "https://gaza-patterns-harm.airwars.org/"
+        },
+        {
+          "type": "document",
+          "label": "OCHA displacement updates",
+          "url": "https://www.ochaopt.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-west-bank-night-raid-bodycam-and-resident-video-2023-2025",
+      "title": "West Bank Night Raids — Bodycam & Resident Video of Civilian Harm",
+      "date": "2023–2025",
+      "location": "West Bank (Jenin, Nablus, Tulkarm, and other cities)",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "B’Tselem video documentation",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "label": "PRCS operational updates",
+          "url": "https://www.palestinercs.org/"
+        },
+        {
+          "label": "AP / Haaretz West Bank raid packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "B’Tselem resident/raid video bank",
+          "url": "https://www.btselem.org/video"
+        },
+        {
+          "type": "video",
+          "label": "Press packages of night raid aftermath",
+          "url": "https://www.haaretz.com/israel-news/"
+        },
+        {
+          "type": "document",
+          "label": "PRCS West Bank incident logs",
+          "url": "https://www.palestinercs.org/"
+        }
+      ]
+    },
+    {
+      "id": "vi-hostage-release-and-oct7-civilian-video-balance-2023-2025",
+      "title": "October 7 Hostage Videos & Release Footage — Civilian Captivity Visual Record",
+      "date": "2023–2025",
+      "location": "Gaza Strip / southern Israel interface",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "AP / Reuters hostage coverage packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "label": "OHCHR materials on October 7 crimes",
+          "url": "https://www.ohchr.org/"
+        },
+        {
+          "label": "NYT / multi-outlet hostage investigation packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "video",
+          "label": "Authenticated hostage/release footage packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
+        },
+        {
+          "type": "investigation",
+          "label": "Multi-outlet hostage investigation packages",
+          "url": "https://www.nytimes.com/news-event/israel-hamas-gaza"
+        },
+        {
+          "type": "document",
+          "label": "UN documentation on October 7 civilian crimes",
+          "url": "https://www.ohchr.org/"
         }
       ]
     },
@@ -1451,6 +1668,46 @@
           "type": "document",
           "label": "WFP emergency access updates",
           "url": "https://www.wfp.org/emergencies/palestine-emergency"
+        }
+      ]
+    },
+    {
+      "id": "vi-starvation-ipc-visual-context-2024-2025",
+      "title": "IPC Famine Risk & Starvation Visual Record — Emaciated Civilians Under Siege",
+      "date": "2024–2025",
+      "location": "Gaza Strip (especially northern governorates)",
+      "tier": "verified",
+      "targetsCivilians": true,
+      "targetsChildren": true,
+      "sources": [
+        {
+          "label": "IPC — famine/food insecurity classifications",
+          "url": "https://www.ipcinfo.org/"
+        },
+        {
+          "label": "WFP Palestine emergency",
+          "url": "https://www.wfp.org/emergencies/palestine-emergency"
+        },
+        {
+          "label": "WHO OPT emergency health",
+          "url": "https://www.who.int/emergencies/situations/occupied-palestinian-territory"
+        }
+      ],
+      "multimedia": [
+        {
+          "type": "document",
+          "label": "IPC technical briefs",
+          "url": "https://www.ipcinfo.org/"
+        },
+        {
+          "type": "video",
+          "label": "WFP / press visual packages on food access collapse",
+          "url": "https://www.wfp.org/emergencies/palestine-emergency"
+        },
+        {
+          "type": "photo-essay",
+          "label": "Multi-outlet medical malnutrition photo packages",
+          "url": "https://apnews.com/hub/israel-hamas-war"
         }
       ]
     },
