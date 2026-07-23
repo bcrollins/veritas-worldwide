@@ -2043,14 +2043,14 @@ assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'soft
 
 
 // A11Y_HUBS Membership Profiles ultimate
-const a11yUlt = read('src/pages/AccessibilityPage.tsx')
-assert(a11yUlt.includes('/membership') && a11yUlt.includes('/profiles'), 'A11Y Membership+Profiles ultimate')
-assert(a11yUlt.includes('A11Y_HUBS'), 'A11Y_HUBS ultimate')
+const a11yPageUlt = read('src/pages/AccessibilityPage.tsx')
+assert(a11yPageUlt.includes('/membership') && a11yPageUlt.includes('/profiles'), 'A11Y Membership+Profiles ultimate')
+assert(a11yPageUlt.includes('A11Y_HUBS'), 'A11Y_HUBS ultimate')
 
 // OSINT_HUBS Dossiers ultimate
-const osintUlt = read('src/pages/ComprehensiveProfilePage.tsx')
-assert(osintUlt.includes('/israel-dossier'), 'OSINT Dossiers ultimate')
-assert(osintUlt.includes('OSINT_HUBS'), 'OSINT_HUBS ultimate')
+const osintPageUlt = read('src/pages/ComprehensiveProfilePage.tsx')
+assert(osintPageUlt.includes('/israel-dossier'), 'OSINT Dossiers ultimate')
+assert(osintPageUlt.includes('OSINT_HUBS'), 'OSINT_HUBS ultimate')
 
 
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
