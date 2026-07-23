@@ -295,6 +295,21 @@ assert(
   'prerender llms generator must emit Privacy in Trust layers',
 )
 
+// P0 anonymity: entity-only language in ops/outreach docs (no personal byline)
+const opsDocs = [
+  'docs/SEO-OPS-SCORECARD.md',
+  'docs/SEO-AUDIT-50.md',
+  'docs/BACKLINK-OUTREACH.md',
+]
+for (const rel of opsDocs) {
+  if (!existsSync(join(root, rel))) continue
+  const body = read(rel)
+  assert(
+    !/Brandon\s+Rollins/i.test(body) && !/brandoncrollins@/i.test(body) && !/brollins565@/i.test(body),
+    `${rel} must not contain personal operator identity (use entity-only language)`,
+  )
+}
+
 console.log(
-  '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, image sitemap floors green',
+  '[verify:seo-meta] PASS — meta clamps, robots, soft-404, FAQ, breadcrumbs, consent, anonymity floors green',
 )

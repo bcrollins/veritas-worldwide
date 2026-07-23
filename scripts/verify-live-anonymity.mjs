@@ -5,7 +5,18 @@
  * Attribution: Veritas Worldwide only.
  */
 const base = (process.env.PLATFORM_VERIFY_BASE_URL || 'https://veritasworldwide.com').replace(/\/$/, '')
-const paths = ['/', '/record-of-jesus-christ', '/about', '/methodology', '/bible']
+const paths = [
+  '/',
+  '/record-of-jesus-christ',
+  '/about',
+  '/methodology',
+  '/bible',
+  '/sources',
+  '/media-kit',
+  '/privacy',
+  '/terms',
+  '/institute/methodology',
+]
 
 const FORBIDDEN = [
   /bcrollins/i,
@@ -13,6 +24,8 @@ const FORBIDDEN = [
   /brandoncrollins@/i,
   /github\.com\/bcrollins/i,
   /@incollection\{rollins/i,
+  /Brandon\s+Rollins/i,
+  /aerolink\.one/i,
 ]
 
 const failures = []

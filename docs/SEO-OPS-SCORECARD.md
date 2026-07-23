@@ -1,6 +1,6 @@
 # Veritas Worldwide — SEO Ops Scorecard & GSC Runbook
 
-**Owner:** Brandon Rollins / Veritas Worldwide  
+**Owner:** Veritas Worldwide (entity operator only — no personal byline)  
 **Property:** https://veritasworldwide.com  
 **Last updated:** 2026-07-23  
 **Companion audit:** `docs/SEO-AUDIT-50.md`

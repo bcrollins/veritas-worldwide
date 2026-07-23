@@ -38,8 +38,7 @@ You're free to cite any page. If useful, we can also share the dual-cited
 integrity docket format we use on power profiles.
 
 Best,
-Brandon Rollins
-Veritas Worldwide
+Veritas Worldwide Press — Editorial
 rights@veritasworldwide.com
 ```
 
