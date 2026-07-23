@@ -2627,6 +2627,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-fuel-electricity-siege-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant', 'joe-biden'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Fuel & Electricity Siege Pattern (2023–2025)',
+    date: 'October 9, 2023 – 2025 (energy siege window)',
+    location: 'Gaza Strip',
+    summary:
+      'Israeli complete-siege announcements and multi-source utility reporting document severe cuts to fuel and electricity essential for hospitals, water desalination, sewage, and bakeries. Pattern card for energy siege as a civilian-harm multiplier enabling health/WASH collapse cards.',
+    evidence:
+      'Gallant siege announcement (public record), multi-source IEC/Gaza utility outage reporting, WHO hospital fuel crisis statements, and OCHA humanitarian snapshots establish multi-source energy-system collapse. Exact megawatt/fuel-liter figures evolve; multi-source system collapse is the claim.',
+    sources: [
+      { label: 'OHCHR / multi-source siege documentation', url: 'https://www.ohchr.org/en/countries/palestine' },
+      { label: 'WHO hospital fuel crisis materials', url: 'https://www.who.int' },
+      { label: 'OCHA humanitarian snapshots', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'OCHA public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -3711,6 +3738,19 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     tier: 'verified',
     relatedIncidentIds: ['gaza-unrwa-ban-pattern-2024-2025', 'unrwa-staff-deaths', 'gaza-aid-workers-killed-pattern-2023-2025'],
     tags: ['unrwa', 'aid', 'humanitarian', 'gaza'],
+  },
+
+  {
+    id: 'tl-gaza-fuel-electricity-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Fuel & Electricity Siege Pattern',
+    description: 'Multi-source documentation of energy cuts collapsing hospital, water, and bakery capacity.',
+    source: 'OHCHR / WHO / OCHA',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: ['gaza-fuel-electricity-siege-pattern-2023-2025', 'gaza-health-system-collapse-2023-2025', 'gaza-water-sanitation-collapse-2023-2025'],
+    tags: ['siege', 'fuel', 'electricity', 'civilians', 'children', 'gaza'],
   },
 
 ]
