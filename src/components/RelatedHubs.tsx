@@ -22,11 +22,11 @@ export const PRIMARY_RELATED_HUBS: readonly RelatedHub[] = [
 ] as const
 
 const chipBase =
-  'inline-flex min-h-[44px] items-center rounded-full border border-border px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson'
+  'inline-flex min-h-[44px] items-center rounded-full border border-border px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-ink-muted transition-colors hover:border-crimson hover:text-crimson focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson focus-visible:ring-offset-2'
 
 /** Emphasized chip (soft-404 Record CTA, home primary escape). */
 const emphasizeChip =
-  'inline-flex min-h-[44px] items-center justify-center rounded-full bg-crimson px-5 py-2.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-crimson-dark'
+  'inline-flex min-h-[44px] items-center justify-center rounded-full bg-crimson px-5 py-2.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-crimson-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-crimson'
 
 interface RelatedHubsProps {
   /** data-testid for pure floors (page-specific) */
@@ -44,7 +44,7 @@ interface RelatedHubsProps {
 }
 
 const darkChip =
-  'inline-flex min-h-[44px] items-center rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white/80 transition-colors hover:border-amber-400/60 hover:text-amber-300'
+  'inline-flex min-h-[44px] items-center rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 font-sans text-[0.65rem] font-semibold text-white/80 transition-colors hover:border-amber-400/60 hover:text-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink'
 
 export default function RelatedHubs({
   testId,
