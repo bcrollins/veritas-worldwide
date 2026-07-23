@@ -1052,4 +1052,10 @@ assert(nfFinal, 'buildNotFoundHtml final')
 const hrefsFinal = [...nfFinal[1].matchAll(/href="(\/[^"]*)"/g)].map((x) => x[1])
 assert(hrefsFinal.length === 5, 'server soft-404 hub count 5 unique final')
 
+
+// RelatedHubs default export unique final
+const relatedExportFinal = read('src/components/RelatedHubs.tsx')
+assert(relatedExportFinal.includes('export default function RelatedHubs'), 'RelatedHubs export default unique final')
+assert(relatedExportFinal.includes('export const PRIMARY_RELATED_HUBS') || relatedExportFinal.includes('PRIMARY_RELATED_HUBS'), 'PRIMARY export unique final')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
