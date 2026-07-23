@@ -3330,6 +3330,33 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-sewage-flooding-disease-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Sewage Flooding & Contaminated Water Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (sewage cohort)',
+    location: 'Gaza Strip urban streets / camps / coastal outfalls',
+    summary:
+      'UNICEF, WHO, and multi-source WASH reporting document sewage flooding into streets and shelters after treatment plant and pumping failures — driving contaminated water exposure especially for children. Pattern card for sewage overflow harm distinct from general WASH collapse and desalination cards.',
+    evidence:
+      'UNICEF/WHO WASH situation reports and multi-outlet visual coverage establish multi-source sewage flooding episodes. Exact spill volumes evolve; multi-source recurrent sewage flooding into civilian spaces is the claim.',
+    sources: [
+      { label: 'UNICEF WASH situation materials', url: 'https://www.unicef.org' },
+      { label: 'WHO environmental health materials', url: 'https://www.who.int' },
+      { label: 'OCHA humanitarian situation materials', url: 'https://www.ochaopt.org' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'UNICEF public WASH updates', url: 'https://www.unicef.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
 ]
 
 /** Timeline densification: war-crimes and civilian-targeting milestones not already in the base timeline. */
@@ -4836,6 +4863,24 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['rockets', 'civilians', 'children', 'israel', 'gaza'],
   },
+
+  {
+    id: 'tl-gaza-sewage-flood-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Sewage Flooding & Contaminated Water Pattern',
+    description: 'UNICEF/WHO multi-source documentation of sewage flooding into streets and shelters after treatment/pumping failures.',
+    source: 'UNICEF / WHO / OCHA',
+    sourceUrl: 'https://www.unicef.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-sewage-flooding-disease-pattern-2023-2025',
+      'gaza-water-sanitation-collapse-2023-2025',
+      'gaza-infectious-disease-surge-pattern-2023-2025',
+    ],
+    tags: ['sewage', 'water', 'children', 'disease', 'gaza'],
+  },
+
 
 
 
