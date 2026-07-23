@@ -1777,4 +1777,12 @@ for (const dest of ['/read', '/israel-dossier', '/profiles', '/search']) {
 assert(footerHubEnd.includes('site-footer') || footerHubEnd.includes('Footer'), 'footer present end')
 
 
+
+// DossierHubSpokes sticky z-order ultimate end
+const spokesZEnd = read('src/components/DossierHubSpokes.tsx')
+assert(spokesZEnd.includes('z-30') || spokesZEnd.includes('z-40') || spokesZEnd.includes('sticky'), 'spokes sticky z end')
+assert(spokesZEnd.includes('exclude'), 'spokes exclude end')
+assert(spokesZEnd.includes('DOSSIER_SPOKES'), 'DOSSIER_SPOKES end')
+
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
