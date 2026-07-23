@@ -2839,4 +2839,24 @@ assert(read('src/pages/NotFoundPage.tsx').includes('not-found-hub-chips'), 'perp
 assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v23 emphasize')
 assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v23 methodology')
 
+
+
+// RelatedHubs platform perpetual densify lock v24
+assert(surfaces.length >= 115, `perpetual v24 surfaces ${surfaces.length}`)
+assert(read('src/App.tsx').includes('focus-visible:ring-offset-obsidian'), 'perpetual v24 footer focus')
+assert(read('src/App.tsx').includes('desktopPrimaryLinkClass'), 'perpetual v24 desktop primary')
+assert(read('src/App.tsx').includes('mobile-tab-bar'), 'perpetual v24 mobile tab bar')
+assert(read('src/components/RelatedHubs.tsx').includes('focus-visible:ring-2'), 'perpetual v24 RelatedHubs focus')
+assert(read('src/components/ResearchHubChips.tsx').includes('focus-visible:ring-2'), 'perpetual v24 Research chips focus')
+assert(read('src/components/DossierHubSpokes.tsx').includes('focus-visible:ring-2'), 'perpetual v24 spokes focus')
+assert(read('src/components/CookieConsent.tsx').includes('focus-visible:ring-2'), 'perpetual v24 cookie focus')
+assert(read('src/pages/InstitutePage.tsx').includes('institute-related-hubs'), 'perpetual v24 institute')
+assert(read('src/pages/MethodologyPage.tsx').includes('methodology-related-hubs'), 'perpetual v24 methodology')
+assert(read('src/pages/SourcesPage.tsx').includes('sources-related-hubs'), 'perpetual v24 sources')
+assert(read('src/pages/ResearcherHubPage.tsx').includes('researcher-related-hubs'), 'perpetual v24 researcher')
+assert(read('src/pages/RecordOfJesusChristPage.tsx').includes('roc-related-hubs'), 'perpetual v24 roc')
+assert(read('scripts/verify-related-hubs-coverage.mjs').includes('related-hubs-coverage'), 'perpetual v24 coverage')
+assert(read('server.js').includes('server-soft-404'), 'perpetual v24 server soft-404')
+assert(read('src/components/RelatedHubs.tsx').includes('emphasizeTo'), 'perpetual v24 emphasize')
+
 console.log(`[verify:nav-recovery] PASS — ${surfaces.length} surface needles + research/dossier families green`)
