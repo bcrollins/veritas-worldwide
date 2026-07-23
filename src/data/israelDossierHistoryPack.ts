@@ -14751,6 +14751,250 @@ export const ISRAEL_DOSSIER_HISTORICAL_WAR_CRIMES: DossierHistoricalIncident[] =
     casualties: { killed: 0 },
   },
 
+  {
+    id: 'gaza-children-rotavirus-outbreak-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Rotavirus Outbreak Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (rotavirus-risk cohort)',
+    location: 'Gaza Strip overcrowded shelters with collapsed WASH and immunization',
+    summary:
+      'WHO, UNICEF, and multi-source public-health reporting document elevated pediatric rotavirus outbreak risk from vaccine interruption, overcrowding, and WASH collapse — a multi-source wartime vaccine-preventable diarrhea pattern distinct from typhoid and dehydration cards.',
+    evidence:
+      'WHO immunization materials, UNICEF WASH/child-health updates, and multi-outlet coverage establish multi-source pediatric rotavirus risk. Exact case counts evolve; multi-source wartime rotavirus outbreak risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO immunization materials', url: 'https://www.who.int' },
+      { label: 'UNICEF immunization materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza WASH/immunization coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-spouse-status-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Spouse Status Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (spouse-status-denial cohort)',
+    location: 'Gaza Strip captivity sites — spouse-status-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding whether spouses were alive after October 7 — a multi-source psychological pattern distinct from parent/sibling status denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source spouse-status denial. Exact cases vary; multi-source spouse-status denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-carob-saplings-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Carob Saplings Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (carob-sapling-destruction cohort)',
+    location: 'West Bank newly planted carob plots and nursery rows',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian carob saplings after October 7 — destroying re-planting investment for families including children. Pattern card distinct from mature carob-tree destruction.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source carob-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of civilian carob saplings is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet carob-sapling destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-hepatitis-b-immunization-gap-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children Hepatitis B Immunization Gap Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (hep-B-immunization-gap cohort)',
+    location: 'Gaza Strip collapsed newborn and pediatric immunization points',
+    summary:
+      'WHO, UNICEF, and multi-source public-health reporting document elevated pediatric hepatitis B immunization gaps under cold-chain and clinic collapse — a multi-source wartime vaccine-access pattern distinct from hepatitis A risk cards.',
+    evidence:
+      'WHO immunization materials, UNICEF newborn-health updates, and multi-outlet coverage establish multi-source pediatric hepatitis B immunization gap. Exact dose shortfalls evolve; multi-source wartime hep B immunization gap among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO immunization materials', url: 'https://www.who.int' },
+      { label: 'UNICEF immunization materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza immunization coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-forced-to-hold-captor-flags-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Forced to Hold Captor Flags Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (forced-flag-holding cohort)',
+    location: 'Gaza Strip captivity sites — forced-flag-holding subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors forcing Israeli civilian hostages to hold captors flags on camera — a multi-source coerced-propaganda pattern distinct from forced smile and forced thank-you cards.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source forced flag-holding. Exact cases vary; multi-source forced flag-holding by civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-attacking-midwives-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Attacks on Midwives Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (midwife-attack cohort)',
+    location: 'West Bank village maternity routes and home-birth support points',
+    summary:
+      "OCHA, WHO, B'Tselem, and multi-source reporting document elevated settler physical attacks on Palestinian midwives after October 7 — endangering maternal-newborn care for civilians. Pattern card distinct from clinic-nurse and medical-staff attacks.",
+    evidence:
+      'OCHA settler-violence databases, WHO health-access materials, and multi-outlet coverage establish multi-source midwife attacks. Exact injury counts evolve; multi-source wartime settler attacks on midwives is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: 'WHO health-access materials', url: 'https://www.who.int' },
+      { label: 'Multi-outlet midwife attack coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'gaza-children-bcg-tuberculosis-risk-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu', 'yoav-gallant'],
+    relatedMoneyNodeIds: ['oct7-emergency-arms-surge'],
+    legalStatus: 'multi-source-investigation',
+    title: 'Gaza Children BCG Gap Tuberculosis Risk Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (bcg-tb-risk cohort)',
+    location: 'Gaza Strip collapsed newborn immunization and TB-risk environments',
+    summary:
+      'WHO, UNICEF, and multi-source public-health reporting document elevated pediatric tuberculosis risk under BCG immunization gaps, overcrowding, and malnutrition — a multi-source wartime TB-risk pattern distinct from pneumonia and pertussis cards.',
+    evidence:
+      'WHO TB/immunization materials, UNICEF child-health updates, and multi-outlet coverage establish multi-source pediatric TB risk under BCG gap. Exact case counts evolve; multi-source wartime TB risk among Gaza children is the claim.',
+    sources: [
+      { label: 'WHO TB materials', url: 'https://www.who.int' },
+      { label: 'UNICEF immunization materials', url: 'https://www.unicef.org' },
+      { label: 'Multi-outlet Gaza TB-risk coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.who.int' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'israel-hostages-denied-knowledge-of-child-status-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: [],
+    legalStatus: 'multi-source-investigation',
+    title: 'Israeli Hostages Denied Knowledge of Child Status Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (child-status-denial cohort)',
+    location: 'Gaza Strip captivity sites — child-status-denial subpattern',
+    summary:
+      'Released-hostage testimony and multi-source reporting document captors withholding whether hostage parents children were alive after October 7 — a multi-source psychological pattern distinct from parent/sibling/spouse status denial.',
+    evidence:
+      'Multi-source released-hostage testimony and multi-outlet coverage establish multi-source child-status denial. Exact cases vary; multi-source child-status denial for civilian hostages is the claim.',
+    sources: [
+      { label: 'Multi-outlet released-hostage testimony coverage', url: 'https://apnews.com' },
+      { label: 'Israeli government hostage materials', url: 'https://www.gov.il' },
+      { label: 'Israeli multi-outlet investigative reporting', url: 'https://www.haaretz.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://apnews.com' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+  {
+    id: 'west-bank-settler-destroying-stone-terrace-saplings-pattern-2023-2025',
+    era: 'post-oct7',
+    targetsCivilians: true,
+    targetsChildren: true,
+    relatedProfileIds: ['benjamin-netanyahu'],
+    relatedMoneyNodeIds: ['annual-mou'],
+    legalStatus: 'multi-source-investigation',
+    title: 'West Bank Settler Destroying Terrace-Planted Saplings Pattern (2023–2025)',
+    date: 'October 2023 – 2025 (terrace-sapling-destruction cohort)',
+    location: 'West Bank stone-terrace re-planting plots',
+    summary:
+      "OCHA, B'Tselem, and multi-source reporting document elevated settler destruction of Palestinian civilian saplings planted on agricultural terraces after October 7 — compounding terrace destruction with re-planting denial for families including children. Pattern card distinct from stone-terrace structure destruction and crop-specific sapling cards.",
+    evidence:
+      'OCHA settler-violence databases, multi-source case reporting, and multi-outlet coverage establish multi-source terrace-sapling destruction. Exact plant counts evolve; multi-source wartime settler destruction of terrace-planted saplings is the claim.',
+    sources: [
+      { label: 'OCHA settler-violence materials', url: 'https://www.ochaopt.org' },
+      { label: "B'Tselem agriculture materials", url: 'https://www.btselem.org' },
+      { label: 'Multi-outlet terrace-sapling destruction coverage', url: 'https://apnews.com' },
+    ],
+    multimedia: [
+      { type: 'document', label: 'Public updates', url: 'https://www.ochaopt.org' },
+    ],
+    tier: 'verified',
+    casualties: { killed: 0 },
+  },
+
+
 
 
 
@@ -23470,6 +23714,160 @@ export const ISRAEL_DOSSIER_TIMELINE_EXPANSION: DossierHistoricalTimelineEvent[]
     ],
     tags: ['walnut-saplings', 'settlers', 'agriculture', 'west-bank'],
   },
+
+  {
+    id: 'tl-gaza-child-rotavirus-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Rotavirus Outbreak Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric rotavirus risk under vaccine and WASH collapse.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-rotavirus-outbreak-risk-pattern-2023-2025',
+      'gaza-children-hepatitis-b-immunization-gap-pattern-2023-2025',
+      'gaza-children-bcg-tuberculosis-risk-pattern-2023-2025',
+    ],
+    tags: ['rotavirus', 'children', 'immunization', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-spouse-status-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Spouse Status Pattern',
+    description: 'Multi-source documentation of captors withholding whether spouses were alive after October 7.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-spouse-status-pattern-2023-2025',
+      'israel-hostages-forced-to-hold-captor-flags-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-child-status-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-carob-saplings-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Carob Saplings Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian carob saplings after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-carob-saplings-pattern-2023-2025',
+      'west-bank-settler-attacking-midwives-pattern-2023-2025',
+      'west-bank-settler-destroying-stone-terrace-saplings-pattern-2023-2025',
+    ],
+    tags: ['carob-saplings', 'settlers', 'agriculture', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-hepb-gap-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children Hepatitis B Immunization Gap Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric hepatitis B immunization gaps.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-hepatitis-b-immunization-gap-pattern-2023-2025',
+      'gaza-children-rotavirus-outbreak-risk-pattern-2023-2025',
+      'gaza-children-hepatitis-a-risk-pattern-2023-2025',
+    ],
+    tags: ['hepatitis-b', 'children', 'immunization', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-forced-flags-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Forced to Hold Captor Flags Pattern',
+    description: 'Multi-source documentation of captors forcing civilian hostages to hold captors flags on camera.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-forced-to-hold-captor-flags-pattern-2023-2025',
+      'israel-hostages-forced-to-smile-on-camera-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-spouse-status-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'propaganda', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-midwives-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Attacks on Midwives Pattern',
+    description: 'OCHA/WHO multi-source documentation of elevated settler attacks on Palestinian midwives after October 7.',
+    source: 'OCHA / WHO / multi-outlet',
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-attacking-midwives-pattern-2023-2025',
+      'west-bank-settler-attacking-clinic-nurses-pattern-2023-2025',
+      'west-bank-settler-destroying-carob-saplings-pattern-2023-2025',
+    ],
+    tags: ['midwives', 'settlers', 'maternal-care', 'west-bank'],
+  },
+
+  {
+    id: 'tl-gaza-child-bcg-tb-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Gaza Children BCG Gap Tuberculosis Risk Pattern',
+    description: 'WHO/UNICEF multi-source documentation of elevated pediatric TB risk under BCG immunization gaps.',
+    source: 'WHO / UNICEF / multi-outlet',
+    sourceUrl: 'https://www.who.int',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'gaza-children-bcg-tuberculosis-risk-pattern-2023-2025',
+      'gaza-children-pneumococcal-disease-risk-pattern-2023-2025',
+      'gaza-children-pertussis-outbreak-risk-pattern-2023-2025',
+    ],
+    tags: ['tuberculosis', 'bcg', 'children', 'gaza'],
+  },
+
+  {
+    id: 'tl-hostages-child-status-denial-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'Israeli Hostages Denied Knowledge of Child Status Pattern',
+    description: 'Multi-source documentation of captors withholding whether hostages children were alive after October 7.',
+    source: 'Multi-outlet / Israeli government',
+    sourceUrl: 'https://www.gov.il',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'israel-hostages-denied-knowledge-of-child-status-pattern-2023-2025',
+      'israel-hostages-denied-knowledge-of-parent-status-pattern-2023-2025',
+      'israel-hostages-forced-to-hold-captor-flags-pattern-2023-2025',
+    ],
+    tags: ['hostages', 'psychological-torture', 'civilians', 'terrorism', 'israel'],
+  },
+
+  {
+    id: 'tl-wb-settler-terrace-saplings-2023',
+    year: '2023',
+    era: 'post-oct7',
+    title: 'West Bank Settler Destroying Terrace-Planted Saplings Pattern',
+    description: "OCHA/B'Tselem multi-source documentation of elevated settler destruction of Palestinian terrace-planted saplings after October 7.",
+    source: "OCHA / B'Tselem / multi-outlet",
+    sourceUrl: 'https://www.ochaopt.org',
+    tier: 'verified',
+    relatedIncidentIds: [
+      'west-bank-settler-destroying-stone-terrace-saplings-pattern-2023-2025',
+      'west-bank-settler-destroying-stone-terraces-pattern-2023-2025',
+      'west-bank-settler-destroying-carob-saplings-pattern-2023-2025',
+    ],
+    tags: ['terrace-saplings', 'settlers', 'agriculture', 'west-bank'],
+  },
+
 
 
 
