@@ -15,24 +15,90 @@
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="theme-color" content="#FAF8F5" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1A1A1A" media="(prefers-color-scheme: dark)" />
-    <meta name="description" content="The Record — A Documentary History of Power, Money, and the Institutions That Shaped the Modern World. Published by Veritas Worldwide." />
-    <meta property="og:title" content="The Record | Veritas Worldwide" />
-    <meta property="og:description" content="Primary Sources. Public Record. Your Conclusions." />
+    <!-- First-paint SEO (aligned with src/lib/seo.ts defaults for crawlers that skip/limit JS) -->
+    <title>The Record | Primary Sources — Veritas Worldwide</title>
+    <meta name="description" content="Primary-source documentary history of power, money, and institutions. 32 archive parts, 500+ citations, free public access. Verify every claim yourself." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta property="og:title" content="The Record | Primary Sources — Veritas Worldwide" />
+    <meta property="og:description" content="Primary-source documentary history of power, money, and institutions. 32 archive parts, 500+ citations, free public access. Verify every claim yourself." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://veritasworldwide.com" />
     <meta property="og:site_name" content="Veritas Worldwide" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:image" content="https://veritasworldwide.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="The Record — Veritas Worldwide documentary archive" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@VeritasWorldwide" />
-    <meta name="twitter:title" content="The Record | Veritas Worldwide" />
-    <meta name="twitter:description" content="A Documentary History of Power, Money, and the Institutions That Shaped the Modern World." />
+    <meta name="twitter:title" content="The Record | Primary Sources — Veritas Worldwide" />
+    <meta name="twitter:description" content="Primary-source documentary history of power, money, and institutions. 32 archive parts, 500+ citations, free public access." />
     <meta name="twitter:image" content="https://veritasworldwide.com/og-image.png" />
+    <meta name="twitter:image:alt" content="The Record — Veritas Worldwide documentary archive" />
     <link rel="canonical" href="https://veritasworldwide.com" />
     <link rel="alternate" type="application/rss+xml" title="The Record — Veritas Worldwide" href="/feed.xml" />
     <link rel="manifest" href="/manifest.json" />
+    <!-- Static JSON-LD for first paint / non-JS crawlers (client hydrates page-specific schemas) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Veritas Worldwide",
+      "alternateName": "The Record",
+      "url": "https://veritasworldwide.com",
+      "description": "Primary-source documentary history of power, money, and institutions. 32 archive parts, 500+ citations, free public access.",
+      "inLanguage": "en-US",
+      "publisher": { "@type": "Organization", "name": "Veritas Worldwide", "url": "https://veritasworldwide.com" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://veritasworldwide.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "NewsMediaOrganization"],
+      "name": "Veritas Worldwide",
+      "alternateName": "The Record",
+      "url": "https://veritasworldwide.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://veritasworldwide.com/brand-kit/01-logos/logo-mark-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://veritasworldwide.com/og-image.png",
+      "description": "Independent investigative journalism built on primary sources. The Record documents institutional power with public archives.",
+      "foundingDate": "2025",
+      "sameAs": [
+        "https://x.com/VeritasWorldwide",
+        "https://www.reddit.com/r/VeritasWorldwide",
+        "https://github.com/bcrollins/veritas-worldwide"
+      ],
+      "publishingPrinciples": "https://veritasworldwide.com/methodology",
+      "correctionsPolicy": "https://veritasworldwide.com/methodology",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "rights@veritasworldwide.com",
+          "contactType": "editorial",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "corrections@veritasworldwide.com",
+          "contactType": "corrections",
+          "availableLanguage": "English"
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Hot analytics origins only; defer Stripe until checkout (CWV TBT) -->
@@ -81,7 +147,7 @@
         'cookie_flags': 'SameSite=None;Secure'
       });
     </script>
-    <title>The Record | Veritas Worldwide</title>
+    
     <!-- HubSpot Tracking Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/245470580.js"></script>
   </head>
