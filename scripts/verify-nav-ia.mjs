@@ -387,6 +387,15 @@ const bmDualIa = fs.readFileSync(path.join(root, 'src/pages/BookmarksPage.tsx'),
 assert((bmDualIa.match(/<RelatedHubs\b/g) || []).length >= 2, 'Bookmarks dual RelatedHubs IA end')
 assert(bmDualIa.includes('BOOKMARKS_HUBS'), 'BOOKMARKS_HUBS IA end')
 
+
+// RelatedHubs emphasizeTo IA + NotFound dual RelatedHubs
+const relatedEmphIa = fs.readFileSync(path.join(root, 'src/components/RelatedHubs.tsx'), 'utf8')
+assert(relatedEmphIa.includes('emphasizeTo'), 'RelatedHubs emphasizeTo IA')
+assert(relatedEmphIa.includes('bg-crimson'), 'RelatedHubs emphasize crimson IA')
+const nfEmphIa = fs.readFileSync(path.join(root, 'src/pages/NotFoundPage.tsx'), 'utf8')
+assert((nfEmphIa.match(/<RelatedHubs\b/g) || []).length >= 2, 'NotFound dual RelatedHubs IA')
+assert(nfEmphIa.includes('emphasizeTo="/"') || nfEmphIa.includes("emphasizeTo='/'"), 'NotFound emphasize Record IA')
+
 console.log(
   `[verify:nav-ia] PASS — primary hubs=${toCount}, mobile tab bar, Browse re-homes, dossier spokes, research chips, footer hub order, read TOC parts, recovery hubs across Browse/Research/Account/legal, soft-404, cookie z-order`,
 )
