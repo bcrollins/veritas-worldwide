@@ -1,4 +1,8 @@
-# Top-100 Value Ledger — pointer
+# Top-100 Value Ledger
 
-**Canonical terminal ledger (100/100):** [`TOP100-VALUE-LEDGER-2026-07-23.md`](./TOP100-VALUE-LEDGER-2026-07-23.md)  
-**Wave 2:** [`WAVE2-CONTINUOUS-2026-07-23.md`](./WAVE2-CONTINUOUS-2026-07-23.md)
+**Active wave:** Wave 4 (2026-07-23)  
+**JSON:** `../../.claude-state/top100-value-ledger-2026-07-23-v4.json`  
+**Outline:** `../../.claude-state/top100-value-ledger-2026-07-23-v4-OUTLINE.md`  
+**Truth model:** `../../.claude-state/top100-truth-model-2026-07-23-v4.md`  
+
+Entity-only. Operator anonymity is non-negotiable.

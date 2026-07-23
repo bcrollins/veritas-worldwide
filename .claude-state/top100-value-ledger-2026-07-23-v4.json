@@ -1,39 +1,36 @@
 {
+  "title": "Veritas Worldwide Top-100 Value Sweep Wave 4",
   "version": "4.0",
-  "wave": "Wave 4 Top-100 Value Engine",
-  "updatedAt": "2026-07-23T12:30:22.346052+00:00",
+  "built": "2026-07-23",
+  "generatedAt": "2026-07-23T12:29:45.500387+00:00",
+  "attribution": "Veritas Worldwide only",
+  "operatorReferenceInternal": "BR",
   "verdict": "Ship",
+  "anonymityPosture": "Entity-only public surfaces; pure+live anonymity PASS; residual operator GH org transfer + history scrub + Stripe portal branding + optional Sentry DSN",
+  "truthModel": {
+    "liveCommit": "6d1f6acd025b",
+    "tipNote": "multi-agent densify ahead of live",
+    "publicChapterCount": 32,
+    "prerenderedRouteCount": 685,
+    "profiles": 96,
+    "integrityN3": 96,
+    "weakHomepage": 0,
+    "israelIncidentsLive": 855,
+    "rocClaimsLive": 696,
+    "researchPack": "live 200 dual-write health.checks true",
+    "osintCheckoutReady": true,
+    "pureSuites": 44,
+    "purePass": true,
+    "liveAnonymityPass": true,
+    "botNoindexPass": true
+  },
+  "summary": "Wave 4: {'Implemented': 91, 'Pending': 2, 'Absorbed': 5, 'Blocked': 2}. Terminal non-operator work absorbed from continuous densify + research-pack productization. Operator Pending: GH org transfer, git history scrub. Blocked: Stripe portal branding, optional Sentry DSN.",
   "statusCounts": {
     "Implemented": 91,
     "Pending": 2,
     "Absorbed": 5,
     "Blocked": 2
   },
-  "anonymityPosture": "Entity-only public surfaces; pure+live anonymity PASS; residual operator GH org transfer + history scrub + Stripe portal branding + optional Sentry DSN",
-  "pendingOperator": [
-    {
-      "rank": 3,
-      "title": "Transfer GitHub repo to org-only identity",
-      "status": "Pending"
-    },
-    {
-      "rank": 4,
-      "title": "Scrub git author history of personal identity",
-      "status": "Pending"
-    }
-  ],
-  "blocked": [
-    {
-      "rank": 56,
-      "title": "Optional Sentry DSN forward",
-      "status": "Blocked"
-    },
-    {
-      "rank": 60,
-      "title": "Stripe customer portal entity branding",
-      "status": "Blocked"
-    }
-  ],
   "items": [
     {
       "rank": 1,
@@ -2135,5 +2132,6 @@
       "note": "This wave",
       "shippedAt": "2026-07-23T12:29:45.500387+00:00"
     }
-  ]
+  ],
+  "lastShip": "2026-07-23T12:29:45.500387+00:00"
 }
